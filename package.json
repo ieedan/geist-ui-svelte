@@ -1,7 +1,10 @@
 {
 	"name": "geist-ui-svelte",
 	"version": "0.0.7",
-	"author": { "name": "Aidan Bleser", "url": "https://aidanbleser.com"},
+	"author": {
+		"name": "Aidan Bleser",
+		"url": "https://aidanbleser.com"
+	},
 	"scripts": {
 		"dev": "vite dev",
 		"build": "vite build && npm run package",
