@@ -3,12 +3,14 @@
 </script>
 
 <div
-	class="flex h-screen flex-col place-items-center justify-center gap-5 bg-white dark:bg-gray-999">
+	class="flex h-screen flex-col place-items-center justify-center gap-5 bg-white dark:bg-gray-999"
+>
 	<button
 		on:click={() => {
 			document.documentElement.classList.toggle("dark");
 		}}
-		class="dark:text-white">
+		class="dark:text-white"
+	>
 		Toggle Mode
 	</button>
 	<div class="flex-grow flex place-items-center justify-center flex-col gap-3">
