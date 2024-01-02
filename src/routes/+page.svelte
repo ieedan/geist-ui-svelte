@@ -1,5 +1,6 @@
 <script>
 	import Button from "$lib/button/Button.svelte";
+	import FieldSet from "$lib/fieldset/FieldSet.svelte";
 </script>
 
 <div
@@ -13,7 +14,7 @@
 	>
 		Toggle Mode
 	</button>
-	<div class="flex-grow flex place-items-center justify-center flex-col gap-3">
+	<div class="flex place-items-center justify-center flex-col gap-3">
 		<div class="flex place-items-center justify-center gap-3">
 			<Button style="default">Default</Button>
 			<Button style="secondary">Start Deploying</Button>
@@ -39,4 +40,12 @@
 			<Button style="secondary-light" ghost>Secondary Light</Button>
 		</div>
 	</div>
+	<FieldSet>
+		<h2>Heading</h2>
+		<p>Some content here whatever you want really</p>
+		<div slot="footer" class="w-full flex justify-between place-items-center">
+			<small>Error</small>
+			<Button style="error" size="xs" ghost>Delete</Button>
+		</div>
+	</FieldSet>
 </div>
