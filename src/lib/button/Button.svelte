@@ -1,17 +1,29 @@
 <script lang="ts">
 	import Loading from "$lib/utils/Loading.svelte";
 	import type { ButtonStyle, Size } from "$lib/types.js";
-	export let disabled = false;
+	import type { HTMLButtonAttributes } from "svelte/elements";
 
+	export let disabled = false;
 	export let style: ButtonStyle = "default";
 	export let width: string | null = null;
 	export let loading: boolean = false;
 	export let ghost: boolean = false;
-
 	export let size: Size = "md";
+	export let type: HTMLButtonAttributes["type"] = "button";
 </script>
 
 <button
+	{type}
+	{...$$restProps}
+	on:click
+	on:change
+	on:keydown
+	on:keyup
+	on:touchstart|passive
+	on:touchend
+	on:touchcancel
+	on:mouseenter
+	on:mouseleave
 	disabled={disabled || loading}
 	data-style={style}
 	data-size={size}
@@ -77,11 +89,11 @@
 	data-[style='abort']:bg-transparent data-[style='abort']:enabled:hover:bg-transparent data-[style='abort']:enabled:hover:dark:bg-transparent data-[style='abort']:border-transparent
 	data-[style='abort']:text-gray-400 data-[style='abort']:dark:text-gray-600
 
-	  data-[ghost=true]:data-[type='secondary']:border-gray-100
+  data-[ghost=true]:data-[type='secondary']:border-gray-100
     data-[type='abort']:border-transparent data-[type='secondary']:border-black data-[ghost=true]:data-[type='secondary']:bg-transparent
 	data-[type='error']:bg-red-500 data-[type='secondary']:bg-black data-[type='success']:bg-blue-500 data-[type='warning']:bg-orange-300">
 	{#if loading}
-		<Loading class="absolute left-1/2 top-1/2 -translate-y-1/2 -translate-x-1/2"/>
+		<Loading class="absolute left-1/2 top-1/2 -translate-y-1/2 -translate-x-1/2" />
 	{/if}
 	<div class="group-data-[loading=true]:opacity-0">
 		<slot />
