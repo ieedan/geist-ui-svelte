@@ -18,7 +18,7 @@
 	data-ghost={ghost}
 	data-loading={loading}
 	style="width: {width ? width : 'auto'};"
-	class="transition-all rounded-md border px-4
+	class="transition-all rounded-md border px-4 group relative
 	
 	data-[size='lg']:h-[40px] data-[size='md']:h-[36px] data-[size='sm']:h-[32px]
 	data-[size='xl']:h-[44px] data-[size='xs']:h-[28px] data-[size='lg']:text-lg data-[size='sm']:text-sm
@@ -81,10 +81,11 @@
     data-[type='abort']:border-transparent data-[type='secondary']:border-black data-[ghost=true]:data-[type='secondary']:bg-transparent
 	data-[type='error']:bg-red-500 data-[type='secondary']:bg-black data-[type='success']:bg-blue-500 data-[type='warning']:bg-orange-300">
 	{#if loading}
-		<Loading />
-	{:else}
-		<slot />
+		<Loading class="absolute left-1/2 top-1/2 -translate-y-1/2 -translate-x-1/2"/>
 	{/if}
+	<div class="group-data-[loading=true]:opacity-0">
+		<slot />
+	</div>
 </button>
 
 <!--

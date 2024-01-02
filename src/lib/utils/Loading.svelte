@@ -1,4 +1,9 @@
-<div class="flex gap-1 loading-container">
+<script lang="ts">
+	let className: string = '';
+	export { className as class }
+</script>
+
+<div class="flex gap-1 loading-container {className}">
 	<span class="h-[6px] w-[6px] rounded-full bg-gray-200 transition-all animate-loading-blink"></span>
 	<span class="h-[6px] w-[6px] rounded-full bg-gray-200 transition-all animate-loading-blink"></span>
 	<span class="h-[6px] w-[6px] rounded-full bg-gray-200 transition-all animate-loading-blink"></span>
