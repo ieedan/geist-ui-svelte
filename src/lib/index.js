@@ -1,4 +1,4 @@
-export { default as Button } from './button/Button.svelte'
+export { default as Button } from "./button/Button.svelte";
 
 // Types
-export * from './types'
+export * from "./types";
