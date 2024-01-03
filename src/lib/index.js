@@ -20,5 +20,9 @@ export { default as Loading } from "./loading/Loading.svelte";
 
 export { default as Dot } from "./dot/Dot.svelte";
 
+export { default as ChevronIcon } from "./icons/ChevronIcon.svelte";
+
+export { default as CheckMarkIcon } from "./icons/CheckMarkIcon.svelte";
+
 // Types
 export * from "./types";

@@ -72,6 +72,14 @@
 		"./Dot.svelte": {
 			"types": "./dist/dot/Dot.svelte.d.ts",
 			"svelte": "./dist/dot/Dot.svelte"
+		},
+		"./ChevronIcon.svelte": {
+			"types": "./dist/icons/ChevronIcon.svelte.d.ts",
+			"svelte": "./dist/icons/ChevronIcon.svelte"
+		},
+		"./CheckMarkIcon.svelte": {
+			"types": "./dist/icons/CheckMarkIcon.svelte.d.ts",
+			"svelte": "./dist/icons/CheckMarkIcon.svelte"
 		}
 	},
 	"files": [

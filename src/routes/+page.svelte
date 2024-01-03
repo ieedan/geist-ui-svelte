@@ -10,6 +10,10 @@
 	import Spacer from "$lib/spacer/Spacer.svelte";
 	import Loading from '$lib/loading/Loading.svelte';
 	import Dot from "$lib/dot/Dot.svelte";
+	import chevronUp from '$lib/assets/icons/chevron-up.svg'
+	import checkMark from '$lib/assets/icons/check-mark.svg'
+	import CheckMark from "$lib/icons/CheckMarkIcon.svelte";
+	import ChevronIcon from "$lib/icons/ChevronIcon.svelte";
 
 	let date = "";
 </script>
@@ -57,6 +61,19 @@
 			<Toggle disabled />
 			<Toggle checked={true} disabled />
 		</div>
+	</div>
+	<Divider/>
+	<div>
+		<CheckMark />
+		<CheckMark size={50}/>
+		<CheckMark size={15}/>
+		<CheckMark color="success"/>
+		<CheckMark color="warning"/>
+		<CheckMark color="error"/>
+		<CheckMark color="secondary"/>
+		<ChevronIcon/>
+		<ChevronIcon rotation="90deg"/>
+		<ChevronIcon color="warning"/>
 	</div>
 	<Divider />
 	<div>
