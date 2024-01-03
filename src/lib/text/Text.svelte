@@ -20,7 +20,7 @@
 	data-del={del}
 	data-blockquote={blockquote}
 	data-style={style}
-	class="text-gray-999 dark:text-gray-0 geist-ui-text data-[i=true]:italic data-[b=true]:font-bold flex justify-between place-items-center
+	class="text-gray-999 dark:text-gray-0 geist-ui-text data-[i=true]:italic data-[b=true]:font-bold data-[blockquote=true]:flex justify-between place-items-center
     data-[del=true]:line-through data-[style='secondary']:text-gray-500 data-[style='success']:text-blue-600
     data-[style='warning']:text-orange-300 data-[style='warning']:dark:text-orange-400 data-[style='error']:text-red-500
     data-[style='error']:dark:text-red-600 data-[style='abort']:text-gray-300 data-[style='abort']:dark:text-gray-700
