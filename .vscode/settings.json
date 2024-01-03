@@ -14,7 +14,5 @@
 		".svelte-kit": true
 	},
 	"explorerExclude.backup": {},
-	"cSpell.words": [
-		"hoverable"
-	]
+	"cSpell.words": ["hoverable"]
 }

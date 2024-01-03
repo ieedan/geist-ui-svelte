@@ -104,7 +104,8 @@
 
   data-[ghost=true]:data-[type='secondary']:border-gray-100
     data-[type='abort']:border-transparent data-[type='secondary']:border-black data-[ghost=true]:data-[type='secondary']:dark:bg-gray-999
-	data-[type='error']:bg-red-500 data-[type='secondary']:bg-black data-[type='success']:bg-blue-500 data-[type='warning']:bg-orange-300">
+	data-[type='error']:bg-red-500 data-[type='secondary']:bg-black data-[type='success']:bg-blue-500 data-[type='warning']:bg-orange-300"
+>
 	{#if loading}
 		<Loading size="md" class="absolute left-1/2 top-1/2 -translate-y-1/2 -translate-x-1/2" />
 	{/if}

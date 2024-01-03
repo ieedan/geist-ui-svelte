@@ -35,7 +35,8 @@
     aria-checked:data-[color='warning']:dark:bg-orange-400 aria-checked:data-[color='error']:bg-red-500
     aria-checked:data-[color='error']:dark:bg-red-600 aria-checked:bg-blue-500 transition-all"
 	data-color={color}
-	on:click={toggle}>
+	on:click={toggle}
+>
 	<div
 		class="rounded-full size-3 transition-all bg-gray-0 dark:bg-gray-999 absolute
         group-disabled:group-aria-[checked=false]:dark:bg-gray-700 group-disabled:group-aria-checked:dark:bg-gray-900

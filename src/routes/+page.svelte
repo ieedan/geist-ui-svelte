@@ -16,7 +16,8 @@
 		on:click={() => {
 			document.documentElement.classList.toggle("dark");
 		}}
-		class="dark:text-white">
+		class="dark:text-white"
+	>
 		Toggle Mode
 	</button>
 	<Divider />

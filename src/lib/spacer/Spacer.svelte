@@ -8,4 +8,5 @@
 	{...$$restProps}
 	data-inline={inline}
 	style="height: {h}px; width: {w}px;"
-	class="data-[inline=false]:block data-[inline=true]:inline-block"></span>
+	class="data-[inline=false]:block data-[inline=true]:inline-block"
+></span>
