@@ -49,6 +49,7 @@
 		<Text type="h5">heading</Text>
 		<Text type="h6">heading</Text>
 		<Text type="p">heading</Text>
+		<Text type="p" blockquote>heading</Text>
 		<Text type="span">heading</Text>
 		<Text type="small">heading</Text>
 		<Text type="small" style="secondary">heading</Text>

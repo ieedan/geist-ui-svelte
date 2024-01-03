@@ -20,6 +20,7 @@
 	export let ghost: boolean = false;
 	export let size: Size = "md";
 	export let type: HTMLButtonAttributes["type"] = "button";
+	export let square = false;
 </script>
 
 <button
@@ -39,8 +40,9 @@
 	data-size={size}
 	data-ghost={ghost}
 	data-loading={loading}
+	data-square={square}
 	style="width: {width ? width : 'auto'};"
-	class="transition-all rounded-md border px-4 group relative
+	class="transition-all rounded-md border px-4 data-[square=true]:p-1 group relative
 	
 	data-[size='lg']:h-[40px] data-[size='md']:h-[36px] data-[size='sm']:h-[32px]
 	data-[size='xl']:h-[44px] data-[size='xs']:h-[28px] data-[size='lg']:text-lg data-[size='sm']:text-sm
