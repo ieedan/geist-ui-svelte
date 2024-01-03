@@ -3,6 +3,7 @@
 	import Card from "$lib/card/Card.svelte";
 	import FieldSet from "$lib/fieldset/FieldSet.svelte";
 	import Text from "$lib/text/Text.svelte";
+	import Divider from "$lib/divider/Divider.svelte";
 </script>
 
 <div
@@ -70,6 +71,15 @@
 	<Card>
 		<Text type="h5">Geist UI Svelte</Text>
 		<Text>Helping you solve your users problems with powerful UI</Text>
+	</Card>
+	<Card>
+		<Text type="h5">Geist UI Svelte</Text>
+		<Text>Helping you solve your users problems with powerful UI</Text>
+		<Divider margin="sm"/>
+		<div class="flex justify-between place-items-center">
+			<Text type="small">There was an error with the request</Text>
+			<Button color="success" size="xs">Continue</Button>
+		</div>
 	</Card>
 	<Card hoverable>
 		<Text type="h5">Geist UI Svelte</Text>
