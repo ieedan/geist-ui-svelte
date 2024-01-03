@@ -13,5 +13,6 @@
 		"**/.svelte-kit": true,
 		".svelte-kit": true
 	},
-	"explorerExclude.backup": {}
+	"explorerExclude.backup": {},
+	"cSpell.words": ["hoverable"]
 }
