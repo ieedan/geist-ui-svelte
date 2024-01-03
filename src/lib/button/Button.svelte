@@ -1,5 +1,5 @@
 <script lang="ts">
-	import Loading from "$lib/utils/Loading.svelte";
+	import Loading from "$lib/loading/Loading.svelte";
 	import type { Size } from "$lib/types.js";
 	import type { HTMLButtonAttributes } from "svelte/elements";
 

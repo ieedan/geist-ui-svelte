@@ -8,6 +8,7 @@
 	import Key from "$lib/key/Key.svelte";
 	import Input from "$lib/input/Input.svelte";
 	import Spacer from "$lib/spacer/Spacer.svelte";
+	import Loading from '$lib/loading/Loading.svelte';
 
 	let date = "";
 </script>
@@ -78,6 +79,18 @@
 		<Input placeholder="Days to completion" type="number" id="number-input">
 			<Text type="small" color="abort">Days to complete</Text>
 		</Input>
+	</div>
+	<Divider/>
+	<div>
+		<Loading/>
+		<Spacer h={30}/>
+		<Loading type="success"/>
+		<Spacer h={30}/>
+		<Loading type="warning"/>
+		<Spacer h={30}/>
+		<Loading type="error"/>
+		<Spacer h={30}/>
+		<Loading type="secondary"/>
 	</div>
 	<Divider />
 	<div>
