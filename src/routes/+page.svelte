@@ -9,6 +9,7 @@
 	import Input from "$lib/input/Input.svelte";
 	import Spacer from "$lib/spacer/Spacer.svelte";
 	import Loading from '$lib/loading/Loading.svelte';
+	import Dot from "$lib/dot/Dot.svelte";
 
 	let date = "";
 </script>
@@ -79,6 +80,13 @@
 		<Input placeholder="Days to completion" type="number" id="number-input">
 			<Text type="small" color="abort">Days to complete</Text>
 		</Input>
+	</div>
+	<Divider/>
+	<div>
+		<Dot style="margin-left: 5px; margin-right: 5px;"/><Text>Secondary</Text>
+		<Dot style="margin-left: 5px; margin-right: 5px;" type="success"/><Text>Success</Text>
+		<Dot style="margin-left: 5px; margin-right: 5px;" type="warning"/><Text>Warning</Text>
+		<Dot style="margin-left: 5px; margin-right: 5px;" type="error"/><Text>Error</Text>
 	</div>
 	<Divider/>
 	<div>

@@ -68,6 +68,10 @@
 		"./Loading.svelte": {
 			"types": "./dist/loading/Loading.svelte.d.ts",
 			"svelte": "./dist/loading/Loading.svelte"
+		},
+		"./Dot.svelte": {
+			"types": "./dist/dot/Dot.svelte.d.ts",
+			"svelte": "./dist/dot/Dot.svelte"
 		}
 	},
 	"files": [

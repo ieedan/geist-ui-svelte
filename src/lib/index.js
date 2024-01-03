@@ -18,5 +18,7 @@ export { default as Input } from "./input/Input.svelte";
 
 export { default as Loading } from "./loading/Loading.svelte";
 
+export { default as Dot } from "./dot/Dot.svelte";
+
 // Types
 export * from "./types";
