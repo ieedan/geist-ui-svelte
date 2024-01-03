@@ -1,4 +1,3 @@
-
 <img src="./src/lib/assets/demo-page.png">
 
 A UI Library for Svelte built to match Vercel's design inspired by other libraries such as geist-ui.

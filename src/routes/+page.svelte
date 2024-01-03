@@ -5,14 +5,13 @@
 	import Text from "$lib/text/Text.svelte";
 	import Divider from "$lib/divider/Divider.svelte";
 	import Toggle from "$lib/toggle/Toggle.svelte";
-	import Spacer from "$lib/spacer/Spacer.svelte";
 	import Key from "$lib/key/Key.svelte";
 </script>
 
 <div class="flex flex-col place-items-center justify-center gap-5 bg-white dark:bg-gray-999 py-5">
 	<div class="flex place-items-center justify-center flex-col gap-3">
 		<Text type="h2">Geist-UI-Svelte</Text>
-		<Divider/>
+		<Divider />
 		<div class="flex place-items-center justify-center gap-3">
 			<Button>Default</Button>
 			<Button color="secondary">Start Deploying</Button>
@@ -36,7 +35,7 @@
 			<Button color="error" ghost>Error</Button>
 			<Button color="abort" ghost>Abort</Button>
 			<Button color="secondary-light" ghost>Secondary Light</Button>
-			<Toggle checked={false}/>
+			<Toggle checked={false} />
 			<Toggle checked={true} color="error" />
 			<Toggle checked={true} color="warning" />
 			<Toggle checked={true} color="success" />
