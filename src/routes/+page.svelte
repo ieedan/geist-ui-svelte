@@ -6,6 +6,7 @@
 	import Divider from "$lib/divider/Divider.svelte";
 	import Toggle from "$lib/toggle/Toggle.svelte";
 	import Spacer from "$lib/spacer/Spacer.svelte";
+	import Key from "$lib/key/Key.svelte";
 
 	let toggled = true;
 </script>
@@ -69,10 +70,10 @@
 			<Spacer w="100" inline />
 			<Text>Spacing</Text>
 		</div>
-		<Spacer h="50"/>
+		<Spacer h="50" />
 		<Text>Spacing</Text>
 	</div>
-	<Divider/>
+	<Divider />
 	<div>
 		<Text type="h1">heading</Text>
 		<Text type="h2">heading</Text>
@@ -121,5 +122,33 @@
 		<Text type="h5">Geist UI Svelte</Text>
 		<Text>Helping you solve your users problems with powerful UI</Text>
 	</Card>
+	<Divider />
+	<div class="flex flex-col gap-1">
+		<div>
+			<Key size="xl">Ctrl</Key>
+			<Text color="secondary">+</Text>
+			<Key size="xl">K</Key>
+		</div>
+		<div>
+			<Key size="lg">Ctrl</Key>
+			<Text color="secondary">+</Text>
+			<Key size="lg">K</Key>
+		</div>
+		<div>
+			<Key>Ctrl</Key>
+			<Text color="secondary">+</Text>
+			<Key>K</Key>
+		</div>
+		<div>
+			<Key size="sm">Ctrl</Key>
+			<Text color="secondary">+</Text>
+			<Key size="sm">K</Key>
+		</div>
+		<div>
+			<Key size="xs">Ctrl</Key>
+			<Text color="secondary">+</Text>
+			<Key size="xs">K</Key>
+		</div>
+	</div>
 	<Divider />
 </div>

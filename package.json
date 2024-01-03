@@ -32,6 +32,34 @@
 		"./Button.svelte": {
 			"types": "./dist/button/Button.svelte.d.ts",
 			"svelte": "./dist/button/Button.svelte"
+		},
+		"./Toggle.svelte": {
+			"types": "./dist/toggle/Toggle.svelte.d.ts",
+			"svelte": "./dist/toggle/Toggle.svelte"
+		},
+		"./Card.svelte": {
+			"types": "./dist/card/Card.svelte.d.ts",
+			"svelte": "./dist/card/Card.svelte"
+		},
+		"./Spacer.svelte": {
+			"types": "./dist/spacer/Spacer.svelte.d.ts",
+			"svelte": "./dist/spacer/Spacer.svelte"
+		},
+		"./Divider.svelte": {
+			"types": "./dist/divider/Divider.svelte.d.ts",
+			"svelte": "./dist/divider/Divider.svelte"
+		},
+		"./FieldSet.svelte": {
+			"types": "./dist/fieldset/FieldSet.svelte.d.ts",
+			"svelte": "./dist/fieldset/FieldSet.svelte"
+		},
+		"./Text.svelte": {
+			"types": "./dist/text/Text.svelte.d.ts",
+			"svelte": "./dist/text/Text.svelte"
+		},
+		"./Key.svelte": {
+			"types": "./dist/key/Key.svelte.d.ts",
+			"svelte": "./dist/key/Key.svelte"
 		}
 	},
 	"files": [
