@@ -53,28 +53,28 @@
 			<Toggle checked={true} color="success" />
 			<Toggle checked={true} color="secondary" />
 			<Toggle disabled />
-			<Toggle checked={true} disabled/>
+			<Toggle checked={true} disabled />
 		</div>
 	</div>
-	<Divider/>
+	<Divider />
 	<div>
-		<Input placeholder="Some text"/>
-		<Spacer h={10}/>
-		<Input placeholder="Disabled" disabled/>
-		<Spacer h={10}/>
-		<Input placeholder="Readonly" value="readOnly" readonly/>
-		<Spacer h={10}/>
-		<Input placeholder="ieedan" containerLabel="username"/>
-		<Spacer h={10}/>
-		<Input placeholder="https://github" containerLabel=".com" labelPlacement="end"/>
-		<Spacer h={10}/>
-		<Input placeholder="Your secret password" type="password"/>
-		<Spacer h={10}/>
-		<Input placeholder="Days to completion" type="number"/>
-		<Spacer h={10}/>
-		<Input type="date" bind:value={date}/>
+		<Input placeholder="Some text" />
+		<Spacer h={10} />
+		<Input placeholder="Disabled" disabled />
+		<Spacer h={10} />
+		<Input placeholder="Readonly" value="readOnly" readonly />
+		<Spacer h={10} />
+		<Input placeholder="ieedan" containerLabel="username" />
+		<Spacer h={10} />
+		<Input placeholder="https://github" containerLabel=".com" labelPlacement="end" />
+		<Spacer h={10} />
+		<Input placeholder="Your secret password" type="password" />
+		<Spacer h={10} />
+		<Input placeholder="Days to completion" type="number" />
+		<Spacer h={10} />
+		<Input type="date" bind:value={date} />
 		<Text>{date}</Text>
-		<Spacer h={10}/>
+		<Spacer h={10} />
 		<Input placeholder="Days to completion" type="number" id="number-input">
 			<Text type="small" color="abort">Days to complete</Text>
 		</Input>
