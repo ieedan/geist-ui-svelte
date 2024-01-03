@@ -14,5 +14,7 @@ export { default as FieldSet } from "./fieldset/FieldSet.svelte";
 
 export { default as Key } from "./key/Key.svelte";
 
+export { default as Input } from "./input/Input.svelte";
+
 // Types
 export * from "./types";

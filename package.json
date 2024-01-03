@@ -1,6 +1,6 @@
 {
 	"name": "geist-ui-svelte",
-	"version": "0.0.9",
+	"version": "0.0.10",
 	"author": {
 		"name": "Aidan Bleser",
 		"url": "https://aidanbleser.com"
@@ -60,6 +60,10 @@
 		"./Key.svelte": {
 			"types": "./dist/key/Key.svelte.d.ts",
 			"svelte": "./dist/key/Key.svelte"
+		},
+		"./Input.svelte": {
+			"types": "./dist/input/Input.svelte.d.ts",
+			"svelte": "./dist/input/Input.svelte"
 		}
 	},
 	"files": [

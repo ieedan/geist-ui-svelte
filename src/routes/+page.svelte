@@ -6,9 +6,21 @@
 	import Divider from "$lib/divider/Divider.svelte";
 	import Toggle from "$lib/toggle/Toggle.svelte";
 	import Key from "$lib/key/Key.svelte";
+	import Input from "$lib/input/Input.svelte";
+	import Spacer from "$lib/spacer/Spacer.svelte";
+
+	let date = "";
 </script>
 
 <div class="flex flex-col place-items-center justify-center gap-5 bg-white dark:bg-gray-999 py-5">
+	<button
+		on:click={() => {
+			document.documentElement.classList.toggle("dark");
+		}}
+		class="dark:text-white"
+	>
+		Toggle Mode
+	</button>
 	<div class="flex place-items-center justify-center flex-col gap-3">
 		<Text type="h2">Geist-UI-Svelte</Text>
 		<Divider />
@@ -45,14 +57,29 @@
 		</div>
 	</div>
 	<Divider />
-	<button
-		on:click={() => {
-			document.documentElement.classList.toggle("dark");
-		}}
-		class="dark:text-white"
-	>
-		Toggle Mode
-	</button>
+	<div>
+		<Input placeholder="Some text" />
+		<Spacer h={10} />
+		<Input placeholder="Disabled" disabled />
+		<Spacer h={10} />
+		<Input placeholder="Readonly" value="readOnly" readonly />
+		<Spacer h={10} />
+		<Input placeholder="ieedan" containerLabel="username" />
+		<Spacer h={10} />
+		<Input placeholder="https://github" containerLabel=".com" labelPlacement="end" />
+		<Spacer h={10} />
+		<Input placeholder="Your secret password" type="password" />
+		<Spacer h={10} />
+		<Input placeholder="Days to completion" type="number" />
+		<Spacer h={10} />
+		<Input type="date" bind:value={date} />
+		<Text>{date}</Text>
+		<Spacer h={10} />
+		<Input placeholder="Days to completion" type="number" id="number-input">
+			<Text type="small" color="abort">Days to complete</Text>
+		</Input>
+	</div>
+	<Divider />
 	<div>
 		<Text type="h1">heading</Text>
 		<Text type="h2">heading</Text>

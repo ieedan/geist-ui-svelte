@@ -1,6 +1,6 @@
 <script lang="ts">
-	export let h: number | string = 1;
-	export let w: number | string = 1;
+	export let h: number = 1;
+	export let w: number = 1;
 	export let inline: boolean = false;
 </script>
 
