@@ -4,7 +4,7 @@
 	import type { HTMLButtonAttributes } from "svelte/elements";
 
 	export let disabled = false;
-	export let style:
+	export let color:
 		| "default"
 		| "secondary"
 		| "success"
@@ -36,7 +36,7 @@
 	on:mouseenter
 	on:mouseleave
 	disabled={disabled || loading}
-	data-style={style}
+	data-style={color}
 	data-size={size}
 	data-ghost={ghost}
 	data-loading={loading}

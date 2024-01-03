@@ -35,7 +35,7 @@ module.exports = {
 				"@typescript-eslint/no-shadow": "error",
 				"@typescript-eslint/no-explicit-any": "error",
 				"no-nested-ternary": "error",
-				"@cspell/spellchecker": ["error", { cspell: { words: ["Avanzar", "Adient"] } }],
+				"@cspell/spellchecker": ["error", { cspell: { words: ["hoverable"] } }],
 			},
 		},
 	],
@@ -46,5 +46,6 @@ module.exports = {
 		"@typescript-eslint/no-shadow": "error",
 		"@typescript-eslint/no-explicit-any": "error",
 		"no-nested-ternary": "error",
+		"@cspell/spellchecker": ["error", { cspell: { words: ["hoverable"] } }],
 	},
 };
