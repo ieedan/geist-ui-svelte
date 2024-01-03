@@ -1,6 +1,8 @@
 <script lang="ts">
+	import type { Size } from "$lib/types.js";
+
 	export let height = "1px";
-	export let margin: "none" | "xs" | "sm" | "md" | "lg" | "xl" = "none";
+	export let margin: "none" | Size = "none";
 </script>
 
 <hr

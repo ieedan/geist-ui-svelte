@@ -4,19 +4,21 @@
 	import FieldSet from "$lib/fieldset/FieldSet.svelte";
 	import Text from "$lib/text/Text.svelte";
 	import Divider from "$lib/divider/Divider.svelte";
+	import Toggle from "$lib/toggle/Toggle.svelte";
+	import Spacer from "$lib/spacer/Spacer.svelte";
+
+	let toggled = true;
 </script>
 
-<div
-	class="flex flex-col place-items-center justify-center gap-5 bg-white dark:bg-gray-999 py-10"
->
+<div class="flex flex-col place-items-center justify-center gap-5 bg-white dark:bg-gray-999 py-10">
 	<button
 		on:click={() => {
 			document.documentElement.classList.toggle("dark");
 		}}
-		class="dark:text-white"
-	>
+		class="dark:text-white">
 		Toggle Mode
 	</button>
+	<Divider />
 	<div class="flex place-items-center justify-center flex-col gap-3">
 		<div class="flex place-items-center justify-center gap-3">
 			<Button>Default</Button>
@@ -42,7 +44,35 @@
 			<Button color="abort" ghost>Abort</Button>
 			<Button color="secondary-light" ghost>Secondary Light</Button>
 		</div>
+		<Divider />
+		<Toggle disabled />
+		<Toggle checked={true} disabled />
+		<div class="flex place-items-center gap-2">
+			<Toggle bind:checked={toggled} />
+			<Text type="small">
+				{#if toggled}
+					Enabled
+				{:else}
+					Disabled
+				{/if}
+			</Text>
+		</div>
+		<Toggle checked={true} color="error" />
+		<Toggle checked={true} color="warning" />
+		<Toggle checked={true} color="success" />
+		<Toggle checked={true} color="secondary" />
+		<Divider />
 	</div>
+	<div>
+		<div>
+			<Text>Spacing</Text>
+			<Spacer w="100" inline />
+			<Text>Spacing</Text>
+		</div>
+		<Spacer h="50"/>
+		<Text>Spacing</Text>
+	</div>
+	<Divider/>
 	<div>
 		<Text type="h1">heading</Text>
 		<Text type="h2">heading</Text>
@@ -60,6 +90,7 @@
 		<Text type="small" color="error">small error</Text>
 		<Text type="small" color="abort">small abort</Text>
 	</div>
+	<Divider />
 	<FieldSet>
 		<Text type="h5">Heading</Text>
 		<Text type="p">Some content here whatever you want really</Text>
@@ -68,6 +99,7 @@
 			<Button color="error" size="xs" ghost>Delete</Button>
 		</div>
 	</FieldSet>
+	<Divider />
 	<Card>
 		<Text type="h5">Geist UI Svelte</Text>
 		<Text>Helping you solve your users problems with powerful UI</Text>
@@ -75,7 +107,7 @@
 	<Card>
 		<Text type="h5">Geist UI Svelte</Text>
 		<Text>Helping you solve your users problems with powerful UI</Text>
-		<Divider margin="sm"/>
+		<Divider margin="sm" />
 		<div class="flex justify-between place-items-center">
 			<Text type="small">There was an error with the request</Text>
 			<Button color="success" size="xs">Continue</Button>
@@ -89,4 +121,5 @@
 		<Text type="h5">Geist UI Svelte</Text>
 		<Text>Helping you solve your users problems with powerful UI</Text>
 	</Card>
+	<Divider />
 </div>
