@@ -48,15 +48,15 @@
 		<Text type="h4">heading</Text>
 		<Text type="h5">heading</Text>
 		<Text type="h6">heading</Text>
-		<Text type="p">heading</Text>
-		<Text type="p" blockquote>heading</Text>
-		<Text type="span">heading</Text>
-		<Text type="small">heading</Text>
-		<Text type="small" style="secondary">heading</Text>
-		<Text type="small" style="success">heading</Text>
-		<Text type="small" style="warning">heading</Text>
-		<Text type="small" style="error">heading</Text>
-		<Text type="small" style="abort">heading</Text>
+		<Text type="p">paragraph</Text>
+		<Text type="p" blockquote>paragraph blockquote</Text>
+		<Text type="span">span</Text>
+		<Text type="small">small</Text>
+		<Text type="small" style="secondary">small secondary</Text>
+		<Text type="small" style="success">small success</Text>
+		<Text type="small" style="warning">small warning</Text>
+		<Text type="small" style="error">small error</Text>
+		<Text type="small" style="abort">small abort</Text>
 	</div>
 	<FieldSet>
 		<Text type="h5">Heading</Text>

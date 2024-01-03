@@ -31,6 +31,10 @@
 </svelte:element>
 
 <style lang="postcss">
+	small, p, span.geist-ui-text {
+		@apply inline;
+	}
+
 	small.geist-ui-text {
 		@apply text-xs;
 	}
