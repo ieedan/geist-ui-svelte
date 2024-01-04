@@ -11,7 +11,7 @@
 	export let readonly: boolean = false;
 	export let containerLabel: string = "";
 	export let labelPlacement: "start" | "end" = "start";
-	export let id: string = "";
+	export let id: string | undefined = undefined;
 	export let width: string = "auto";
 
 	const change = (e: Event) => {

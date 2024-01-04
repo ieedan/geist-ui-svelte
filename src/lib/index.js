@@ -30,5 +30,9 @@ export { default as Modal } from "./modal/Modal.svelte";
 
 export { default as TextArea } from "./textarea/TextArea.svelte";
 
+export { default as Select } from "./select/Select.svelte";
+
+export { default as Option } from "./select/Option.svelte";
+
 // Types
 export * from "./types";

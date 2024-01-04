@@ -1,6 +1,6 @@
 {
 	"name": "geist-ui-svelte",
-	"version": "0.0.14",
+	"version": "0.0.15",
 	"author": {
 		"name": "Aidan Bleser",
 		"url": "https://aidanbleser.com"
@@ -92,6 +92,14 @@
 		"./TextArea.svelte": {
 			"types": "./dist/textarea/TextArea.svelte.d.ts",
 			"svelte": "./dist/textarea/TextArea.svelte"
+		},
+		"./Select.svelte": {
+			"types": "./dist/select/Select.svelte.d.ts",
+			"svelte": "./dist/select/Select.svelte"
+		},
+		"./Option.svelte": {
+			"types": "./dist/select/Option.svelte.d.ts",
+			"svelte": "./dist/select/Option.svelte"
 		}
 	},
 	"files": [
@@ -128,5 +136,8 @@
 	},
 	"svelte": "./dist/index.js",
 	"types": "./dist/index.d.ts",
-	"type": "module"
+	"type": "module",
+	"dependencies": {
+		"@popperjs/core": "^2.11.8"
+	}
 }

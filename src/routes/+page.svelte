@@ -15,12 +15,139 @@
 	import Checkbox from "$lib/checkbox/Checkbox.svelte";
 	import Modal from "$lib/modal/Modal.svelte";
 	import TextArea from "$lib/textarea/TextArea.svelte";
+	import Select from "$lib/select/Select.svelte";
+	import Option from "$lib/select/Option.svelte";
+	import toMap from "$lib/util/to-map.js";
 
 	let date = "";
 
 	let modalRef: Modal;
 
 	let textAreaValue = "";
+
+	const buildings = toMap(
+		[
+			{
+				name: "PC",
+				areas: [
+					{
+						name: "780 Doors",
+						machines: [
+							{
+								name: "1LHF",
+							},
+							{
+								name: "2LHR",
+							},
+							{
+								name: "3RHR",
+							},
+							{
+								name: "4RHF",
+							},
+						],
+					},
+					{
+						name: "920 Doors",
+						machines: [
+							{
+								name: "3LHF",
+							},
+							{
+								name: "2RHF",
+							},
+							{
+								name: "1RR",
+							},
+						],
+					},
+				],
+			},
+			{
+				name: "SouthPort",
+				areas: [
+					{
+						name: "Metals",
+						machines: [
+							{
+								name: "Machine 1",
+							},
+							{
+								name: "Machine 2",
+							},
+							{
+								name: "Machine 3",
+							},
+							{
+								name: "SPOT",
+							},
+						],
+					},
+					{
+						name: "920 Seats",
+						machines: [
+							{
+								name: "Front Driver",
+							},
+							{
+								name: "Front Passenger",
+							},
+							{
+								name: "Rear 40%",
+							},
+							{
+								name: "Rear 60%",
+							},
+						],
+					},
+				],
+			},
+			{
+				name: "JIT",
+				areas: [
+					{
+						name: "Headliners",
+						machines: [
+							{
+								name: "HL Press 1",
+							},
+							{
+								name: "HL Press 2",
+							},
+						],
+					},
+					{
+						name: "780/660 Seats",
+						machines: [
+							{
+								name: "Front Driver",
+							},
+							{
+								name: "Front Passenger",
+							},
+							{
+								name: "Rear 40%",
+							},
+							{
+								name: "Rear 60%",
+							},
+						],
+					},
+				],
+			},
+		],
+		(a) => {
+			return { key: a.name, value: a };
+		},
+	);
+
+	let selectedBuilding = "PC";
+	let selectedArea = "780 Doors";
+	let selectedMachine = "1LHF";
+	$: selectedBuildingObject = buildings.get(selectedBuilding);
+	$: selectedAreaObject = buildings
+		.get(selectedBuilding)
+		?.areas.find((a) => a.name == selectedArea);
 </script>
 
 <div class="flex flex-col place-items-center justify-center gap-5 bg-white dark:bg-gray-999 py-5">
@@ -69,6 +196,57 @@
 			<Toggle disabled />
 			<Toggle checked={true} disabled />
 		</div>
+	</div>
+	<Divider />
+	<div>
+		<Select placeholder="Choose one" allowNone allowXSS={true}>
+			<Option value={1}><Dot style="margin-right: 6px;" type="success" />Option 1</Option>
+			<Option value={2}><Dot style="margin-right: 6px;" type="warning" />Option 2</Option>
+			<Divider />
+			<Option value={3}><Dot style="margin-right: 6px;" type="error" />Option 3</Option>
+		</Select>
+		<Spacer h={10} />
+		<Select placeholder="Choose one" allowNone allowXSS={false}>
+			<Option value={1}><Dot style="margin-right: 6px;" type="success" />Option 1</Option>
+			<Option value={2}><Dot style="margin-right: 6px;" type="warning" />Option 2</Option>
+			<Divider />
+			<Option value={3}><Dot style="margin-right: 6px;" type="error" />Option 3</Option>
+		</Select>
+		<Spacer h={10} />
+		<Select allowXSS={true}>
+			<Option value={0}>None</Option>
+			<Option value={1}><Dot style="margin-right: 4px;" type="success" />Option 1</Option>
+			<Option value={2}><Dot style="margin-right: 4px;" type="warning" />Option 2</Option>
+			<Option value={3}><Dot style="margin-right: 4px;" type="error" />Option 3</Option>
+		</Select>
+		<Spacer h={10} />
+		<Select placeholder="None" disabled allowXSS={true}>
+			<Option value={1}>Option 1</Option>
+			<Option value={2}>Option 2</Option>
+			<Option value={3}>Option 3</Option>
+		</Select>
+		<Spacer h={10} />
+		<Select bind:value={selectedBuilding} allowXSS={true}>
+			{#each buildings as [name, building] (name)}
+				<Option value={name}>{building.name}</Option>
+			{/each}
+		</Select>
+		<Spacer h={10} />
+		<Select bind:value={selectedArea} allowXSS={true}>
+			{#if selectedBuildingObject}
+				{#each selectedBuildingObject.areas as area (area.name)}
+					<Option value={area.name}>{area.name}</Option>
+				{/each}
+			{/if}
+		</Select>
+		<Spacer h={10} />
+		<Select bind:value={selectedMachine} allowXSS={true}>
+			{#if selectedAreaObject}
+				{#each selectedAreaObject.machines as machine (machine.name)}
+					<Option value={machine.name}>{machine.name}</Option>
+				{/each}
+			{/if}
+		</Select>
 	</div>
 	<Divider />
 	<div>
