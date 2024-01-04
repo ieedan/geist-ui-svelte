@@ -9,7 +9,7 @@ jobs:
     CD:
         runs-on: ubuntu-latest
         permissions:
-          pull-requests: write
+            pull-requests: write
 
         steps:
             - name: Checkout code
