@@ -8,7 +8,7 @@
 	import Key from "$lib/key/Key.svelte";
 	import Input from "$lib/input/Input.svelte";
 	import Spacer from "$lib/spacer/Spacer.svelte";
-	import Loading from '$lib/loading/Loading.svelte';
+	import Loading from "$lib/loading/Loading.svelte";
 	import Dot from "$lib/dot/Dot.svelte";
 	import CheckMark from "$lib/icons/CheckMarkIcon.svelte";
 	import ChevronIcon from "$lib/icons/ChevronIcon.svelte";
@@ -64,25 +64,25 @@
 			<Toggle checked={true} disabled />
 		</div>
 	</div>
-	<Divider/>
+	<Divider />
 	<div>
 		<Checkbox><Text>Default</Text></Checkbox>
 		<Checkbox color="success"><Text>Success</Text></Checkbox>
 		<Checkbox color="warning"><Text>Warning</Text></Checkbox>
 		<Checkbox color="error"><Text>Error</Text></Checkbox>
 	</div>
-	<Divider/>
+	<Divider />
 	<div>
 		<CheckMark />
-		<CheckMark size={50}/>
-		<CheckMark size={15}/>
-		<CheckMark color="success"/>
-		<CheckMark color="warning"/>
-		<CheckMark color="error"/>
-		<CheckMark color="secondary"/>
-		<ChevronIcon/>
-		<ChevronIcon rotation="90deg"/>
-		<ChevronIcon color="warning"/>
+		<CheckMark size={50} />
+		<CheckMark size={15} />
+		<CheckMark color="success" />
+		<CheckMark color="warning" />
+		<CheckMark color="error" />
+		<CheckMark color="secondary" />
+		<ChevronIcon />
+		<ChevronIcon rotation="90deg" />
+		<ChevronIcon color="warning" />
 	</div>
 	<Divider />
 	<div>
@@ -107,24 +107,24 @@
 			<Text type="small" color="abort">Days to complete</Text>
 		</Input>
 	</div>
-	<Divider/>
+	<Divider />
 	<div>
-		<Dot style="margin-left: 5px; margin-right: 5px;"/><Text>Secondary</Text>
-		<Dot style="margin-left: 5px; margin-right: 5px;" type="success"/><Text>Success</Text>
-		<Dot style="margin-left: 5px; margin-right: 5px;" type="warning"/><Text>Warning</Text>
-		<Dot style="margin-left: 5px; margin-right: 5px;" type="error"/><Text>Error</Text>
+		<Dot style="margin-left: 5px; margin-right: 5px;" /><Text>Secondary</Text>
+		<Dot style="margin-left: 5px; margin-right: 5px;" type="success" /><Text>Success</Text>
+		<Dot style="margin-left: 5px; margin-right: 5px;" type="warning" /><Text>Warning</Text>
+		<Dot style="margin-left: 5px; margin-right: 5px;" type="error" /><Text>Error</Text>
 	</div>
-	<Divider/>
+	<Divider />
 	<div>
-		<Loading/>
-		<Spacer h={30}/>
-		<Loading type="success"/>
-		<Spacer h={30}/>
-		<Loading type="warning"/>
-		<Spacer h={30}/>
-		<Loading type="error"/>
-		<Spacer h={30}/>
-		<Loading type="secondary"/>
+		<Loading />
+		<Spacer h={30} />
+		<Loading type="success" />
+		<Spacer h={30} />
+		<Loading type="warning" />
+		<Spacer h={30} />
+		<Loading type="error" />
+		<Spacer h={30} />
+		<Loading type="secondary" />
 	</div>
 	<Divider />
 	<div>

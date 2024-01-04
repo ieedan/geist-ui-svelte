@@ -13,4 +13,5 @@
 	data-[size='lg']:size-4 data-[size='xl']:size-5 bg-gray-200 data-[type='success']:bg-blue-500
   data-[type='warning']:bg-orange-300
   data-[type='warning']:dark:bg-orange-400 data-[type='error']:bg-red-500
-    data-[type='error']:dark:bg-red-600 inline-block"></span>
+    data-[type='error']:dark:bg-red-600 inline-block"
+></span>

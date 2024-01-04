@@ -109,7 +109,7 @@
 	data-[style='warning-light']:data-[ghost=true]:enabled:hover:dark:text-gray-0 data-[style='warning-light']:data-[ghost=true]:enabled:hover:dark:bg-orange-400
 
 	data-[style='error']:bg-red-500 data-[style='error']:text-gray-0 data-[style='error']:enabled:hover:text-red-500
-	data-[style='error']:border-red-500 data-[style='error']:enabled:hover:bg-gray-0 data-[style='error']:enabled:hover:dark:bg-gray-999 
+	data-[style='error']:border-red-500 data-[style='error']:enabled:hover:bg-gray-0 data-[style='error']:enabled:hover:dark:bg-gray-999
 	data-[style='error']:dark:border-red-600 data-[style='error']:dark:bg-red-600
 
 	data-[style='error']:data-[ghost=true]:bg-gray-0 data-[style='error']:data-[ghost=true]:text-red-500 data-[style='error']:data-[ghost=true]:enabled:hover:text-gray-0
@@ -117,8 +117,8 @@
 	data-[style='error']:data-[ghost=true]:dark:text-red-600 data-[style='error']:data-[ghost=true]:dark:border-red-600
  
 	data-[style='error-light']:bg-red-500 data-[style='error-light']:text-gray-0
-	data-[style='error-light']:border-red-500 data-[style='error-light']:enabled:hover:bg-red-400 data-[style='error-light']:enabled:hover:border-red-400 
-	data-[style='error-light']:enabled:hover:dark:bg-red-500 data-[style='error-light']:enabled:hover:dark:border-red-500 
+	data-[style='error-light']:border-red-500 data-[style='error-light']:enabled:hover:bg-red-400 data-[style='error-light']:enabled:hover:border-red-400
+	data-[style='error-light']:enabled:hover:dark:bg-red-500 data-[style='error-light']:enabled:hover:dark:border-red-500
 	data-[style='error-light']:dark:border-red-600 data-[style='error-light']:dark:bg-red-600
 
 	data-[style='abort']:bg-gray-0 data-[style='abort']:dark:bg-gray-999 data-[style='abort']:enabled:hover:bg-gray-0 data-[style='abort']:enabled:hover:dark:bg-gray-999 data-[style='abort']:border-transparent
