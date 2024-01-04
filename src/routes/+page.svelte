@@ -73,15 +73,20 @@
 	<Divider />
 	<div>
 		<Button on:click={() => modalRef.toggleShow()}>Show Modal</Button>
-		<Modal bind:this={modalRef} class="h-3/4 sm:w-[640px] sm:h-[522px]"/>
+		<Modal bind:this={modalRef} class="h-3/4 sm:w-[640px] sm:h-[522px]" />
 	</div>
-	<Divider/>
+	<Divider />
 	<div class="w-full px-4 flex place-items-center justify-center flex-col">
-		<TextArea placeholder="console.log('Welcome');"/>
+		<TextArea placeholder="console.log('Welcome');" />
 		<Spacer h={10} />
-		<TextArea placeholder="console.log('Welcome');" disabled/>
+		<TextArea placeholder="console.log('Welcome');" disabled />
 		<Spacer h={10} />
-		<TextArea placeholder="console.log('Welcome');" width="100%" height="50px" bind:value={textAreaValue}/>
+		<TextArea
+			placeholder="console.log('Welcome');"
+			width="100%"
+			height="50px"
+			bind:value={textAreaValue}
+		/>
 		<Text>{textAreaValue}</Text>
 	</div>
 	<Divider />
