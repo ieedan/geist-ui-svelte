@@ -51,11 +51,11 @@ jobs:
               uses: mshick/add-pr-comment@v2
               with:
                   message: |
-                      🚨 Version conflict detected! The version in package.json is already published on npm. Please update the version number.
+                      🚨 Version conflict detected! The version in package.json ($CURRENT_VERSION) is already published on npm. Please update the version number.
 
                       _(UTC) ${{ env.CURRENT_DATETIME }}_
                   repo-token: ${{ secrets.GITHUB_TOKEN }}
-                  allow-repeats: true
+                  allow-repeats: false
 
             - name: Install dependencies
               if: success()
