@@ -24,5 +24,7 @@ export { default as ChevronIcon } from "./icons/ChevronIcon.svelte";
 
 export { default as CheckMarkIcon } from "./icons/CheckMarkIcon.svelte";
 
+export { default as Checkbox } from "./checkbox/Checkbox.svelte";
+
 // Types
 export * from "./types";

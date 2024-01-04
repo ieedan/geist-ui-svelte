@@ -10,10 +10,9 @@
 	import Spacer from "$lib/spacer/Spacer.svelte";
 	import Loading from '$lib/loading/Loading.svelte';
 	import Dot from "$lib/dot/Dot.svelte";
-	import chevronUp from '$lib/assets/icons/chevron-up.svg'
-	import checkMark from '$lib/assets/icons/check-mark.svg'
 	import CheckMark from "$lib/icons/CheckMarkIcon.svelte";
 	import ChevronIcon from "$lib/icons/ChevronIcon.svelte";
+	import Checkbox from "$lib/checkbox/Checkbox.svelte";
 
 	let date = "";
 </script>
@@ -32,8 +31,6 @@
 		<Divider />
 		<div class="flex place-items-center justify-center gap-3">
 			<Button>Default</Button>
-			<Button color="secondary">Start Deploying</Button>
-			<Button ghost color="secondary">See docs</Button>
 			<Button loading>Do thing</Button>
 			<Button disabled color="secondary">Disabled</Button>
 			<Button size="xs">xs</Button>
@@ -41,13 +38,18 @@
 			<Button size="md">md</Button>
 			<Button size="lg">lg</Button>
 			<Button size="xl">xl</Button>
-		</div>
-		<div class="flex flex-wrap place-items-center justify-center gap-3">
+			<Button color="secondary">Secondary</Button>
 			<Button color="success">Success</Button>
 			<Button color="warning">Warning</Button>
 			<Button color="error">Error</Button>
 			<Button color="abort">Abort</Button>
+		</div>
+		<div class="flex flex-wrap place-items-center justify-center gap-3">
 			<Button color="secondary-light">Secondary Light</Button>
+			<Button color="success-light">Success Light</Button>
+			<Button color="warning-light">Warning Light</Button>
+			<Button color="error-light">Error Light</Button>
+			<Button ghost color="secondary">Secondary</Button>
 			<Button color="success" ghost>Success</Button>
 			<Button color="warning" ghost>Warning</Button>
 			<Button color="error" ghost>Error</Button>
@@ -61,6 +63,13 @@
 			<Toggle disabled />
 			<Toggle checked={true} disabled />
 		</div>
+	</div>
+	<Divider/>
+	<div>
+		<Checkbox><Text>Default</Text></Checkbox>
+		<Checkbox color="success"><Text>Success</Text></Checkbox>
+		<Checkbox color="warning"><Text>Warning</Text></Checkbox>
+		<Checkbox color="error"><Text>Error</Text></Checkbox>
 	</div>
 	<Divider/>
 	<div>

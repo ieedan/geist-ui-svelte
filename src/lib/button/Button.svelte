@@ -82,6 +82,12 @@
 	data-[style='success']:data-[ghost=true]:bg-gray-0 data-[style='success']:data-[ghost=true]:text-blue-600 data-[style='success']data-[ghost=true]::border-blue-600
 	data-[style='success']:enabled:hover:data-[ghost=true]:bg-blue-600 data-[style='success']:enabled:hover:data-[ghost=true]:text-gray-0 data-[style='success']:data-[ghost=true]:dark:bg-gray-999
 
+	data-[style='success-light']:bg-blue-600 data-[style='success-light']:text-gray-0 data-[style='success-light']:border-blue-600
+	data-[style='success-light']:enabled:hover:bg-blue-500 data-[style='success-light']:enabled:hover:border-blue-500
+
+	data-[style='success-light']:data-[ghost=true]:bg-gray-0 data-[style='success-light']:data-[ghost=true]:text-blue-600 data-[style='success-light']data-[ghost=true]::border-blue-600
+	data-[style='success-light']:enabled:hover:data-[ghost=true]:bg-blue-600 data-[style='success-light']:enabled:hover:data-[ghost=true]:text-gray-0 data-[style='success-light']:data-[ghost=true]:dark:bg-gray-999
+
 	data-[style='warning']:bg-orange-300 data-[style='warning']:text-gray-0 data-[style='warning']:enabled:hover:bg-gray-0
 	data-[style='warning']:border-orange-300 data-[style='warning']:enabled:hover:text-orange-300
 	data-[style='warning']:dark:bg-orange-400 data-[style='warning']:dark:text-gray-0 data-[style='warning']:enabled:hover:dark:bg-gray-999
@@ -92,19 +98,31 @@
 	data-[style='warning']:data-[ghost=true]:dark:bg-gray-999 data-[style='warning']:data-[ghost=true]:dark:text-orange-400
 	data-[style='warning']:data-[ghost=true]:enabled:hover:dark:text-gray-0 data-[style='warning']:data-[ghost=true]:enabled:hover:dark:bg-orange-400
 
+	data-[style='warning-light']:bg-orange-300 data-[style='warning-light']:text-gray-0 data-[style='warning-light']:enabled:hover:bg-orange-200
+	data-[style='warning-light']:border-orange-300 data-[style='warning-light']:enabled:hover:border-orange-200
+	data-[style='warning-light']:dark:bg-orange-400 data-[style='warning-light']:dark:text-gray-0 data-[style='warning-light']:enabled:hover:dark:bg-orange-300
+	data-[style='warning-light']:dark:border-orange-400 data-[style='warning-light']:enabled:hover:dark:border-orange-300
+
+	data-[style='warning-light']:data-[ghost=true]:bg-gray-0 data-[style='warning-light']:data-[ghost=true]:text-orange-300
+	data-[style='warning-light']:data-[ghost=true]:enabled:hover:text-gray-0 data-[style='warning-light']:data-[ghost=true]:enabled:hover:bg-orange-300
+	data-[style='warning-light']:data-[ghost=true]:dark:bg-gray-999 data-[style='warning-light']:data-[ghost=true]:dark:text-orange-400
+	data-[style='warning-light']:data-[ghost=true]:enabled:hover:dark:text-gray-0 data-[style='warning-light']:data-[ghost=true]:enabled:hover:dark:bg-orange-400
+
 	data-[style='error']:bg-red-500 data-[style='error']:text-gray-0 data-[style='error']:enabled:hover:text-red-500
-	data-[style='error']:border-red-500 data-[style='error']:enabled:hover:bg-gray-0 data-[style='error']:enabled:hover:dark:bg-gray-999 data-[style='error']:dark:border-red-600 data-[style='error']:dark:bg-red-600
+	data-[style='error']:border-red-500 data-[style='error']:enabled:hover:bg-gray-0 data-[style='error']:enabled:hover:dark:bg-gray-999 
+	data-[style='error']:dark:border-red-600 data-[style='error']:dark:bg-red-600
 
 	data-[style='error']:data-[ghost=true]:bg-gray-0 data-[style='error']:data-[ghost=true]:text-red-500 data-[style='error']:data-[ghost=true]:enabled:hover:text-gray-0
 	data-[style='error']:data-[ghost=true]:border-red-500 data-[style='error']:data-[ghost=true]:enabled:hover:bg-red-500 data-[style='error']:data-[ghost=true]:dark:bg-gray-999 data-[style='error']:data-[ghost=true]:enabled:hover:dark:bg-red-600
 	data-[style='error']:data-[ghost=true]:dark:text-red-600 data-[style='error']:data-[ghost=true]:dark:border-red-600
  
-	data-[style='abort']:bg-gray-0 data-[style='abort']:dark:bg-gray-999 data-[style='abort']:enabled:hover:bg-gray-0 data-[style='abort']:enabled:hover:dark:bg-gray-999 data-[style='abort']:border-transparent
-	data-[style='abort']:text-gray-400 data-[style='abort']:dark:text-gray-600
+	data-[style='error-light']:bg-red-500 data-[style='error-light']:text-gray-0
+	data-[style='error-light']:border-red-500 data-[style='error-light']:enabled:hover:bg-red-400 data-[style='error-light']:enabled:hover:border-red-400 
+	data-[style='error-light']:enabled:hover:dark:bg-red-500 data-[style='error-light']:enabled:hover:dark:border-red-500 
+	data-[style='error-light']:dark:border-red-600 data-[style='error-light']:dark:bg-red-600
 
-  data-[ghost=true]:data-[type='secondary']:border-gray-100
-    data-[type='abort']:border-transparent data-[type='secondary']:border-black data-[ghost=true]:data-[type='secondary']:dark:bg-gray-999
-	data-[type='error']:bg-red-500 data-[type='secondary']:bg-black data-[type='success']:bg-blue-500 data-[type='warning']:bg-orange-300"
+	data-[style='abort']:bg-gray-0 data-[style='abort']:dark:bg-gray-999 data-[style='abort']:enabled:hover:bg-gray-0 data-[style='abort']:enabled:hover:dark:bg-gray-999 data-[style='abort']:border-transparent
+	data-[style='abort']:text-gray-400 data-[style='abort']:dark:text-gray-600"
 >
 	{#if loading}
 		<Loading size="md" class="absolute left-1/2 top-1/2 -translate-y-1/2 -translate-x-1/2" />
