@@ -61,5 +61,5 @@ export default {
 	import Button from "geist-ui-svelte/Button.svelte";
 </script>
 
-<Button> Click Me! </Button>
+<button> Click Me! </button>
 ```

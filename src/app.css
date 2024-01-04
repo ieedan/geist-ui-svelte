@@ -2,6 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-html.dark  {
-    color-scheme: dark;
+html.dark {
+	color-scheme: dark;
 }

@@ -11,15 +11,17 @@
 	export let disabled: boolean = false;
 
 	const toggle = () => {
-		console.log('toggled');
-		
 		checked = !checked;
 		dispatch("click");
 		dispatch("change", { checked });
 	};
 </script>
 
-<label for={id} class="flex place-items-center gap-2 group aria-disabled:hover:cursor-not-allowed select-none hover:cursor-pointer" aria-disabled={disabled}>
+<label
+	for={id}
+	class="flex place-items-center gap-2 group aria-disabled:hover:cursor-not-allowed select-none hover:cursor-pointer"
+	aria-disabled={disabled}
+>
 	<button
 		on:click|preventDefault|stopPropagation={toggle}
 		{id}
@@ -38,7 +40,7 @@
         data-[ghost=true]:dark:aria-checked:bg-gray-999 data-[ghost=true]:aria-checked:bg-gray-0
         data-[color='warning']:dark:aria-checked:bg-orange-400 data-[color='error']:aria-checked:bg-red-500
         data-[color='error']:dark:aria-checked:bg-red-600 data-[color='error']:aria-checked:border-red-500
-		disabled:bg-gray-50 disabled:hover:cursor-not-allowed disabled:aria-checked:data-[color]:bg-gray-300 
+		disabled:bg-gray-50 disabled:hover:cursor-not-allowed disabled:aria-checked:data-[color]:bg-gray-300
 		disabled:aria-checked:data-[color]:border-gray-300 disabled:dark:bg-gray-950 .
 		disabled:dark:aria-checked:data-[color]:bg-gray-700 disabled:dark:aria-checked:data-[color]:border-gray-700"
 	>
