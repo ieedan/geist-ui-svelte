@@ -38,11 +38,11 @@ jobs:
                   fi
 
             - name: Get current date
-              if: steps.version_check.outputs.conflict == 'true'
+              if: failure()
               run: echo "CURRENT_DATETIME=$(TZ=UTC date +'%Y-%m-%d %I:%M %p')" >> $GITHUB_ENV
 
             - name: Comment PR on failure
-              if: steps.version_check.outputs.conflict == 'true'
+              if: failure()
               uses: mshick/add-pr-comment@v2
               with:
                   message: |
@@ -51,13 +51,18 @@ jobs:
                       _(UTC) ${{ env.CURRENT_DATETIME }}_
                   repo-token: ${{ secrets.GITHUB_TOKEN }}
                   allow-repeats: true
+
             - name: Install dependencies
+              if: success()
               run: npm install
             - name: Package
+              if: success()
               run: npm run package
             - name: Build
+              if: success()
               run: npm run build
             - name: Publish Dry Run
+              if: success()
               run: npm publish --dry-run
               env:
                   NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
