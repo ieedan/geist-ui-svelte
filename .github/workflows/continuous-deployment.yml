@@ -32,7 +32,7 @@ jobs:
                   LATEST_PUBLISHED_VERSION=$(npm view $PACKAGE_NAME version)
                   echo "Latest published version is $LATEST_PUBLISHED_VERSION"
 
-                  if [ "$CURRENT_VERSION" = "$LATEST_PUBLISHED_VERSION" ]; then
+                  if [ "$CURRENT_VERSION" = "$LATEST_PUBLISHED_VERSION" ] then
                     echo "Version conflict detected! The version $CURRENT_VERSION is already published."
                     echo "::set-output name=conflict::true"
                   else
