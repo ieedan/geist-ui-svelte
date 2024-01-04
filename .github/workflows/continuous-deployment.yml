@@ -26,6 +26,7 @@ jobs:
             PACKAGE_NAME=$(cat package.json | jq -r '.name')
             CURRENT_VERSION=$(cat package.json | jq -r '.version')
             echo "Current version is $CURRENT_VERSION"
+            echo "Package name is $PACKAGE_NAME"
   
             echo "Fetching latest published version for $PACKAGE_NAME..."
             LATEST_PUBLISHED_VERSION=$(npm view $PACKAGE_NAME version)
