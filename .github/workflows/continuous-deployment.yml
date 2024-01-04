@@ -36,6 +36,7 @@ jobs:
                   echo "Fetching latest published version for $PACKAGE_NAME..."
                   LATEST_PUBLISHED_VERSION=$(npm view $PACKAGE_NAME version)
                   echo "Latest published version is $LATEST_PUBLISHED_VERSION"
+                  echo "LATEST_PUBLISHED_VERSION=$LATEST_PUBLISHED_VERSION" >> $GITHUB_ENV
 
                   if [ "$CURRENT_VERSION" = "$LATEST_PUBLISHED_VERSION" ]; then
                       echo "Current version is the same as the latest published version. Failing the run."
