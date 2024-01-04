@@ -88,6 +88,10 @@
 		"./Modal.svelte": {
 			"types": "./dist/modal/Modal.svelte.d.ts",
 			"svelte": "./dist/modal/Modal.svelte"
+		},
+		"./TextArea.svelte": {
+			"types": "./dist/textarea/TextArea.svelte.d.ts",
+			"svelte": "./dist/textarea/TextArea.svelte"
 		}
 	},
 	"files": [

@@ -28,5 +28,7 @@ export { default as Checkbox } from "./checkbox/Checkbox.svelte";
 
 export { default as Modal } from "./modal/Modal.svelte";
 
+export { default as TextArea } from "./textarea/TextArea.svelte";
+
 // Types
 export * from "./types";

@@ -14,10 +14,13 @@
 	import ChevronIcon from "$lib/icons/ChevronIcon.svelte";
 	import Checkbox from "$lib/checkbox/Checkbox.svelte";
 	import Modal from "$lib/modal/Modal.svelte";
+	import TextArea from "$lib/textarea/TextArea.svelte";
 
 	let date = "";
 
 	let modalRef: Modal;
+
+	let textAreaValue = "";
 </script>
 
 <div class="flex flex-col place-items-center justify-center gap-5 bg-white dark:bg-gray-999 py-5">
@@ -71,6 +74,15 @@
 	<div>
 		<Button on:click={() => modalRef.toggleShow()}>Show Modal</Button>
 		<Modal bind:this={modalRef} class="h-3/4 sm:w-[640px] sm:h-[522px]"/>
+	</div>
+	<Divider/>
+	<div class="w-full px-4 flex place-items-center justify-center flex-col">
+		<TextArea placeholder="console.log('Welcome');"/>
+		<Spacer h={10} />
+		<TextArea placeholder="console.log('Welcome');" disabled/>
+		<Spacer h={10} />
+		<TextArea placeholder="console.log('Welcome');" width="100%" height="50px" bind:value={textAreaValue}/>
+		<Text>{textAreaValue}</Text>
 	</div>
 	<Divider />
 	<div>
