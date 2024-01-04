@@ -19,6 +19,7 @@
 	import Option from "$lib/select/Option.svelte";
 	import toMap from "$lib/util/to-map.js";
 	import Badge from "$lib/badge/Badge.svelte";
+	import Code from "$lib/code/Code.svelte";
 
 	let date = "";
 
@@ -196,6 +197,13 @@
 			<Toggle disabled />
 			<Toggle checked={true} disabled />
 		</div>
+	</div>
+	<Divider />
+	<div>
+		<Code lang="ts" code={`const thing = (): number => {
+	let thisThing = thing();
+	return thisThing;
+}`}/>
 	</div>
 	<Divider />
 	<div>
