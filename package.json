@@ -1,6 +1,6 @@
 {
 	"name": "geist-ui-svelte",
-	"version": "0.0.10",
+	"version": "0.0.11",
 	"author": {
 		"name": "Aidan Bleser",
 		"url": "https://aidanbleser.com"
@@ -64,6 +64,26 @@
 		"./Input.svelte": {
 			"types": "./dist/input/Input.svelte.d.ts",
 			"svelte": "./dist/input/Input.svelte"
+		},
+		"./Loading.svelte": {
+			"types": "./dist/loading/Loading.svelte.d.ts",
+			"svelte": "./dist/loading/Loading.svelte"
+		},
+		"./Dot.svelte": {
+			"types": "./dist/dot/Dot.svelte.d.ts",
+			"svelte": "./dist/dot/Dot.svelte"
+		},
+		"./ChevronIcon.svelte": {
+			"types": "./dist/icons/ChevronIcon.svelte.d.ts",
+			"svelte": "./dist/icons/ChevronIcon.svelte"
+		},
+		"./CheckMarkIcon.svelte": {
+			"types": "./dist/icons/CheckMarkIcon.svelte.d.ts",
+			"svelte": "./dist/icons/CheckMarkIcon.svelte"
+		},
+		"./Checkbox.svelte": {
+			"types": "./dist/checkbox/Checkbox.svelte.d.ts",
+			"svelte": "./dist/checkbox/Checkbox.svelte"
 		}
 	},
 	"files": [
