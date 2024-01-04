@@ -16,7 +16,7 @@
 	import Modal from "$lib/modal/Modal.svelte";
 	import TextArea from "$lib/textarea/TextArea.svelte";
 	import Select from "$lib/select/Select.svelte";
-	import SelectOption from "$lib/select/SelectOption.svelte";
+	import Option from "$lib/select/Option.svelte";
 	import toMap from "$lib/util/to-map.js";
 
 	let date = "";
@@ -197,41 +197,41 @@
 	<Divider />
 	<div>
 		<Select placeholder="Choose one" allowNone>
-			<SelectOption value={1}
-				><Dot style="margin-right: 6px;" type="success" />Option 1</SelectOption>
-			<SelectOption value={2}
-				><Dot style="margin-right: 6px;" type="warning" />Option 2</SelectOption>
+			<Option value={1}
+				><Dot style="margin-right: 6px;" type="success" />Option 1</Option>
+			<Option value={2}
+				><Dot style="margin-right: 6px;" type="warning" />Option 2</Option>
 			<Divider />
-			<SelectOption value={3}
-				><Dot style="margin-right: 6px;" type="error" />Option 3</SelectOption>
+			<Option value={3}
+				><Dot style="margin-right: 6px;" type="error" />Option 3</Option>
 		</Select>
 		<Spacer h={10} />
 		<Select>
-			<SelectOption value={0}>None</SelectOption>
-			<SelectOption value={1}
-				><Dot style="margin-right: 4px;" type="success" />Option 1</SelectOption>
-			<SelectOption value={2}
-				><Dot style="margin-right: 4px;" type="warning" />Option 2</SelectOption>
-			<SelectOption value={3}
-				><Dot style="margin-right: 4px;" type="error" />Option 3</SelectOption>
+			<Option value={0}>None</Option>
+			<Option value={1}
+				><Dot style="margin-right: 4px;" type="success" />Option 1</Option>
+			<Option value={2}
+				><Dot style="margin-right: 4px;" type="warning" />Option 2</Option>
+			<Option value={3}
+				><Dot style="margin-right: 4px;" type="error" />Option 3</Option>
 		</Select>
 		<Spacer h={10} />
 		<Select placeholder="None" disabled>
-			<SelectOption value={1}>Option 1</SelectOption>
-			<SelectOption value={2}>Option 2</SelectOption>
-			<SelectOption value={3}>Option 3</SelectOption>
+			<Option value={1}>Option 1</Option>
+			<Option value={2}>Option 2</Option>
+			<Option value={3}>Option 3</Option>
 		</Select>
 		<Spacer h={10} />
 		<Select bind:value={selectedBuilding}>
 			{#each buildings as [name, building] (name)}
-				<SelectOption value={name}>{building.name}</SelectOption>
+				<Option value={name}>{building.name}</Option>
 			{/each}
 		</Select>
 		<Spacer h={10} />
 		<Select bind:value={selectedArea}>
 			{#if selectedBuildingObject}
 				{#each selectedBuildingObject.areas as area (area.name)}
-					<SelectOption value={area.name}>{area.name}</SelectOption>
+					<Option value={area.name}>{area.name}</Option>
 				{/each}
 			{/if}
 		</Select>
@@ -239,7 +239,7 @@
 		<Select bind:value={selectedMachine}>
 			{#if selectedAreaObject}
 				{#each selectedAreaObject.machines as machine (machine.name)}
-					<SelectOption value={machine.name}>{machine.name}</SelectOption>
+					<Option value={machine.name}>{machine.name}</Option>
 				{/each}
 			{/if}
 		</Select>

@@ -92,6 +92,14 @@
 		"./TextArea.svelte": {
 			"types": "./dist/textarea/TextArea.svelte.d.ts",
 			"svelte": "./dist/textarea/TextArea.svelte"
+		},
+		"./Select.svelte": {
+			"types": "./dist/select/Select.svelte.d.ts",
+			"svelte": "./dist/select/Select.svelte"
+		},
+		"./Option.svelte": {
+			"types": "./dist/select/Option.svelte.d.ts",
+			"svelte": "./dist/select/Option.svelte"
 		}
 	},
 	"files": [
