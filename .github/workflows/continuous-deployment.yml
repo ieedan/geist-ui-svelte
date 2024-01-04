@@ -6,59 +6,59 @@ on:
             - main
 
 jobs:
-  CD:
-    runs-on: ubuntu-latest
+    CD:
+        runs-on: ubuntu-latest
 
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v4
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '18'
-          registry-url: "https://registry.npmjs.org"
+            - name: Set up Node.js
+              uses: actions/setup-node@v3
+              with:
+                  node-version: "18"
+                  registry-url: "https://registry.npmjs.org"
 
-      - name: Check for version conflict
-        id: version_check
-        run: |
-            echo "Fetching version from package.json..."
-            PACKAGE_NAME=$(cat package.json | jq -r '.name')
-            CURRENT_VERSION=$(cat package.json | jq -r '.version')
-            echo "Current version is $CURRENT_VERSION"
-  
-            echo "Fetching latest published version for $PACKAGE_NAME..."
-            LATEST_PUBLISHED_VERSION=$(npm view $PACKAGE_NAME version)
-            echo "Latest published version is $LATEST_PUBLISHED_VERSION"
-  
-            if [ "$CURRENT_VERSION" = "$LATEST_PUBLISHED_VERSION" ]; then
-              echo "Version conflict detected! The version $CURRENT_VERSION is already published."
-              echo "::set-output name=conflict::true"
-            else
-              echo "No version conflict. Proceeding with the workflow."
-              echo "::set-output name=conflict::false"
+            - name: Check for version conflict
+              id: version_check
+              run: |
+                  echo "Fetching version from package.json..."
+                  PACKAGE_NAME=$(cat package.json | jq -r '.name')
+                  CURRENT_VERSION=$(cat package.json | jq -r '.version')
+                  echo "Current version is $CURRENT_VERSION"
 
-      - name: Get current date
-        if: steps.version_check.outputs.conflict == 'true'
-        run: echo "CURRENT_DATETIME=$(TZ=UTC date +'%Y-%m-%d %I:%M %p')" >> $GITHUB_ENV
+                  echo "Fetching latest published version for $PACKAGE_NAME..."
+                  LATEST_PUBLISHED_VERSION=$(npm view $PACKAGE_NAME version)
+                  echo "Latest published version is $LATEST_PUBLISHED_VERSION"
 
-      - name: Comment PR on failure
-        if: steps.version_check.outputs.conflict == 'true'
-        uses: mshick/add-pr-comment@v2
-        with:
-            message: |
-                🚨 Version conflict detected! The version in package.json is already published on npm. Please update the version number.
+                  if [ "$CURRENT_VERSION" = "$LATEST_PUBLISHED_VERSION" ]; then
+                    echo "Version conflict detected! The version $CURRENT_VERSION is already published."
+                    echo "::set-output name=conflict::true"
+                  else
+                    echo "No version conflict. Proceeding with the workflow."
+                    echo "::set-output name=conflict::false"
 
-                _(UTC) ${{ env.CURRENT_DATETIME }}_
-            repo-token: ${{ secrets.GITHUB_TOKEN }}
-            allow-repeats: true
-      - name: Install dependencies
-        run: npm install
-      - name: Package
-        run: npm run package
-      - name: Build
-        run: npm run build
-      - name: Publish Dry Run
-        run: npm publish --dry-run
-        env:
-            NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
+            - name: Get current date
+              if: steps.version_check.outputs.conflict == 'true'
+              run: echo "CURRENT_DATETIME=$(TZ=UTC date +'%Y-%m-%d %I:%M %p')" >> $GITHUB_ENV
+
+            - name: Comment PR on failure
+              if: steps.version_check.outputs.conflict == 'true'
+              uses: mshick/add-pr-comment@v2
+              with:
+                  message: |
+                      🚨 Version conflict detected! The version in package.json is already published on npm. Please update the version number.
+
+                      _(UTC) ${{ env.CURRENT_DATETIME }}_
+                  repo-token: ${{ secrets.GITHUB_TOKEN }}
+                  allow-repeats: true
+            - name: Install dependencies
+              run: npm install
+            - name: Package
+              run: npm run package
+            - name: Build
+              run: npm run build
+            - name: Publish Dry Run
+              run: npm publish --dry-run
+              env:
+                  NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
