@@ -70,13 +70,13 @@
 						name: "Metals",
 						machines: [
 							{
-								name: "GMAW 1",
+								name: "Machine 1",
 							},
 							{
-								name: "GMAW 2",
+								name: "Machine 2",
 							},
 							{
-								name: "GMAW 3",
+								name: "Machine 3",
 							},
 							{
 								name: "SPOT",
@@ -145,7 +145,9 @@
 	let selectedArea = "780 Doors";
 	let selectedMachine = "1LHF";
 	$: selectedBuildingObject = buildings.get(selectedBuilding);
-	$: selectedAreaObject = buildings.get(selectedBuilding)?.areas.find(a => a.name == selectedArea);
+	$: selectedAreaObject = buildings
+		.get(selectedBuilding)
+		?.areas.find((a) => a.name == selectedArea);
 </script>
 
 <div class="flex flex-col place-items-center justify-center gap-5 bg-white dark:bg-gray-999 py-5">
@@ -153,7 +155,8 @@
 		on:click={() => {
 			document.documentElement.classList.toggle("dark");
 		}}
-		class="dark:text-white">
+		class="dark:text-white"
+	>
 		Toggle Mode
 	</button>
 	<div class="flex place-items-center justify-center flex-col gap-3">
@@ -197,23 +200,17 @@
 	<Divider />
 	<div>
 		<Select placeholder="Choose one" allowNone>
-			<Option value={1}
-				><Dot style="margin-right: 6px;" type="success" />Option 1</Option>
-			<Option value={2}
-				><Dot style="margin-right: 6px;" type="warning" />Option 2</Option>
+			<Option value={1}><Dot style="margin-right: 6px;" type="success" />Option 1</Option>
+			<Option value={2}><Dot style="margin-right: 6px;" type="warning" />Option 2</Option>
 			<Divider />
-			<Option value={3}
-				><Dot style="margin-right: 6px;" type="error" />Option 3</Option>
+			<Option value={3}><Dot style="margin-right: 6px;" type="error" />Option 3</Option>
 		</Select>
 		<Spacer h={10} />
 		<Select>
 			<Option value={0}>None</Option>
-			<Option value={1}
-				><Dot style="margin-right: 4px;" type="success" />Option 1</Option>
-			<Option value={2}
-				><Dot style="margin-right: 4px;" type="warning" />Option 2</Option>
-			<Option value={3}
-				><Dot style="margin-right: 4px;" type="error" />Option 3</Option>
+			<Option value={1}><Dot style="margin-right: 4px;" type="success" />Option 1</Option>
+			<Option value={2}><Dot style="margin-right: 4px;" type="warning" />Option 2</Option>
+			<Option value={3}><Dot style="margin-right: 4px;" type="error" />Option 3</Option>
 		</Select>
 		<Spacer h={10} />
 		<Select placeholder="None" disabled>
@@ -259,7 +256,8 @@
 			placeholder="console.log('Welcome');"
 			width="100%"
 			height="50px"
-			bind:value={textAreaValue} />
+			bind:value={textAreaValue}
+		/>
 		<Text>{textAreaValue}</Text>
 	</div>
 	<Divider />

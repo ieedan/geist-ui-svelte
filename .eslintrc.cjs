@@ -35,6 +35,7 @@ module.exports = {
 				"@typescript-eslint/no-shadow": "error",
 				"@typescript-eslint/no-explicit-any": "error",
 				"no-nested-ternary": "error",
+				"svelte/no-at-html-tags": "warn",
 				"@cspell/spellchecker": ["error", { cspell: { words: ["hoverable"] } }],
 			},
 		},
