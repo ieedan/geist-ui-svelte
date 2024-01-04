@@ -59,6 +59,7 @@ jobs:
                   allow-repeats: true
 
             - name: Commit changes
+              if: success()
               run: |
                   git config --local user.email "action@github.com"
                   git config --local user.name "GitHub Action"
