@@ -247,6 +247,20 @@
 				{/each}
 			{/if}
 		</Select>
+		<Spacer h={10} />
+		<Select placeholder="Choose one" allowNone allowXSS={true} noIcon>
+			<Option value={1}><Dot style="margin-right: 6px;" type="success" />Option 1</Option>
+			<Option value={2}><Dot style="margin-right: 6px;" type="warning" />Option 2</Option>
+			<Divider />
+			<Option value={3}><Dot style="margin-right: 6px;" type="error" />Option 3</Option>
+		</Select>
+		<Spacer h={10} />
+		<Select placeholder="Choose one" allowNone allowXSS={true} shadow>
+			<Option value={1}><Dot style="margin-right: 6px;" type="success" />Option 1</Option>
+			<Option value={2}><Dot style="margin-right: 6px;" type="warning" />Option 2</Option>
+			<Divider />
+			<Option value={3}><Dot style="margin-right: 6px;" type="error" />Option 3</Option>
+		</Select>
 	</div>
 	<Divider />
 	<div>
