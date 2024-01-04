@@ -34,5 +34,7 @@ export { default as Select } from "./select/Select.svelte";
 
 export { default as Option } from "./select/Option.svelte";
 
+export { default as Badge } from "./badge/Badge.svelte";
+
 // Types
 export * from "./types";

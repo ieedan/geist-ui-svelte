@@ -1,13 +1,13 @@
 <script lang="ts">
 	import CheckMarkIcon from "$lib/icons/CheckMarkIcon.svelte";
-	import type { IconColor } from "$lib/types.js";
+	import type { Color } from "$lib/types.js";
 	import { createEventDispatcher } from "svelte";
 
 	const dispatch = createEventDispatcher();
 
 	export let checked = false;
 	export let id: string | undefined = undefined;
-	export let color: IconColor = "default";
+	export let color: Color = "default";
 	export let disabled: boolean = false;
 
 	const toggle = () => {

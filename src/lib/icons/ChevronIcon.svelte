@@ -1,8 +1,8 @@
 <script lang="ts">
-	import type { IconColor, Rotation } from "$lib/types.js";
+	import type { Color, Rotation } from "$lib/types.js";
 
 	export let rotation: Rotation = "0deg";
-	export let color: IconColor = "default";
+	export let color: Color = "default";
 	export let size: number = 24;
 	export let ghost: boolean = false;
 </script>
