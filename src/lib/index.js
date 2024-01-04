@@ -26,5 +26,7 @@ export { default as CheckMarkIcon } from "./icons/CheckMarkIcon.svelte";
 
 export { default as Checkbox } from "./checkbox/Checkbox.svelte";
 
+export { default as Modal } from "./modal/Modal.svelte";
+
 // Types
 export * from "./types";

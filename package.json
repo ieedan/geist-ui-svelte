@@ -84,6 +84,10 @@
 		"./Checkbox.svelte": {
 			"types": "./dist/checkbox/Checkbox.svelte.d.ts",
 			"svelte": "./dist/checkbox/Checkbox.svelte"
+		},
+		"./Modal.svelte": {
+			"types": "./dist/modal/Modal.svelte.d.ts",
+			"svelte": "./dist/modal/Modal.svelte"
 		}
 	},
 	"files": [
