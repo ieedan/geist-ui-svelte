@@ -215,7 +215,7 @@
 		<Spacer h={10} />
 		<Select allowXSS={true}>
 			<Option value={0}>None</Option>
-			<Option value={1}><Dot style="margin-right: 4px;" type="success" />Option 1</Option>
+			<Option value={1} disabled><Dot style="margin-right: 4px;" type="success" />Option 1</Option>
 			<Option value={2}><Dot style="margin-right: 4px;" type="warning" />Option 2</Option>
 			<Option value={3}><Dot style="margin-right: 4px;" type="error" />Option 3</Option>
 		</Select>
