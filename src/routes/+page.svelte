@@ -15,12 +15,137 @@
 	import Checkbox from "$lib/checkbox/Checkbox.svelte";
 	import Modal from "$lib/modal/Modal.svelte";
 	import TextArea from "$lib/textarea/TextArea.svelte";
+	import Select from "$lib/select/Select.svelte";
+	import SelectOption from "$lib/select/SelectOption.svelte";
+	import toMap from "$lib/util/to-map.js";
 
 	let date = "";
 
 	let modalRef: Modal;
 
 	let textAreaValue = "";
+
+	const buildings = toMap(
+		[
+			{
+				name: "PC",
+				areas: [
+					{
+						name: "780 Doors",
+						machines: [
+							{
+								name: "1LHF",
+							},
+							{
+								name: "2LHR",
+							},
+							{
+								name: "3RHR",
+							},
+							{
+								name: "4RHF",
+							},
+						],
+					},
+					{
+						name: "920 Doors",
+						machines: [
+							{
+								name: "3LHF",
+							},
+							{
+								name: "2RHF",
+							},
+							{
+								name: "1RR",
+							},
+						],
+					},
+				],
+			},
+			{
+				name: "SouthPort",
+				areas: [
+					{
+						name: "Metals",
+						machines: [
+							{
+								name: "GMAW 1",
+							},
+							{
+								name: "GMAW 2",
+							},
+							{
+								name: "GMAW 3",
+							},
+							{
+								name: "SPOT",
+							},
+						],
+					},
+					{
+						name: "920 Seats",
+						machines: [
+							{
+								name: "Front Driver",
+							},
+							{
+								name: "Front Passenger",
+							},
+							{
+								name: "Rear 40%",
+							},
+							{
+								name: "Rear 60%",
+							},
+						],
+					},
+				],
+			},
+			{
+				name: "JIT",
+				areas: [
+					{
+						name: "Headliners",
+						machines: [
+							{
+								name: "HL Press 1",
+							},
+							{
+								name: "HL Press 2",
+							},
+						],
+					},
+					{
+						name: "780/660 Seats",
+						machines: [
+							{
+								name: "Front Driver",
+							},
+							{
+								name: "Front Passenger",
+							},
+							{
+								name: "Rear 40%",
+							},
+							{
+								name: "Rear 60%",
+							},
+						],
+					},
+				],
+			},
+		],
+		(a) => {
+			return { key: a.name, value: a };
+		},
+	);
+
+	let selectedBuilding = "PC";
+	let selectedArea = "780 Doors";
+	let selectedMachine = "1LHF";
+	$: selectedBuildingObject = buildings.get(selectedBuilding);
+	$: selectedAreaObject = buildings.get(selectedBuilding)?.areas.find(a => a.name == selectedArea);
 </script>
 
 <div class="flex flex-col place-items-center justify-center gap-5 bg-white dark:bg-gray-999 py-5">
@@ -28,8 +153,7 @@
 		on:click={() => {
 			document.documentElement.classList.toggle("dark");
 		}}
-		class="dark:text-white"
-	>
+		class="dark:text-white">
 		Toggle Mode
 	</button>
 	<div class="flex place-items-center justify-center flex-col gap-3">
@@ -72,6 +196,56 @@
 	</div>
 	<Divider />
 	<div>
+		<Select placeholder="Choose one" allowNone>
+			<SelectOption value={1}
+				><Dot style="margin-right: 6px;" type="success" />Option 1</SelectOption>
+			<SelectOption value={2}
+				><Dot style="margin-right: 6px;" type="warning" />Option 2</SelectOption>
+			<Divider />
+			<SelectOption value={3}
+				><Dot style="margin-right: 6px;" type="error" />Option 3</SelectOption>
+		</Select>
+		<Spacer h={10} />
+		<Select>
+			<SelectOption value={0}>None</SelectOption>
+			<SelectOption value={1}
+				><Dot style="margin-right: 4px;" type="success" />Option 1</SelectOption>
+			<SelectOption value={2}
+				><Dot style="margin-right: 4px;" type="warning" />Option 2</SelectOption>
+			<SelectOption value={3}
+				><Dot style="margin-right: 4px;" type="error" />Option 3</SelectOption>
+		</Select>
+		<Spacer h={10} />
+		<Select placeholder="None" disabled>
+			<SelectOption value={1}>Option 1</SelectOption>
+			<SelectOption value={2}>Option 2</SelectOption>
+			<SelectOption value={3}>Option 3</SelectOption>
+		</Select>
+		<Spacer h={10} />
+		<Select bind:value={selectedBuilding}>
+			{#each buildings as [name, building] (name)}
+				<SelectOption value={name}>{building.name}</SelectOption>
+			{/each}
+		</Select>
+		<Spacer h={10} />
+		<Select bind:value={selectedArea}>
+			{#if selectedBuildingObject}
+				{#each selectedBuildingObject.areas as area (area.name)}
+					<SelectOption value={area.name}>{area.name}</SelectOption>
+				{/each}
+			{/if}
+		</Select>
+		<Spacer h={10} />
+		<Select bind:value={selectedMachine}>
+			{#if selectedAreaObject}
+				{#each selectedAreaObject.machines as machine (machine.name)}
+					<SelectOption value={machine.name}>{machine.name}</SelectOption>
+				{/each}
+			{/if}
+		</Select>
+	</div>
+	<Divider />
+	<div>
 		<Button on:click={() => modalRef.toggleShow()}>Show Modal</Button>
 		<Modal bind:this={modalRef} class="h-3/4 sm:w-[640px] sm:h-[522px]" />
 	</div>
@@ -85,8 +259,7 @@
 			placeholder="console.log('Welcome');"
 			width="100%"
 			height="50px"
-			bind:value={textAreaValue}
-		/>
+			bind:value={textAreaValue} />
 		<Text>{textAreaValue}</Text>
 	</div>
 	<Divider />
