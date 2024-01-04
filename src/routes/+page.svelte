@@ -199,33 +199,40 @@
 	</div>
 	<Divider />
 	<div>
-		<Select placeholder="Choose one" allowNone>
+		<Select placeholder="Choose one" allowNone allowXSS={true}>
 			<Option value={1}><Dot style="margin-right: 6px;" type="success" />Option 1</Option>
 			<Option value={2}><Dot style="margin-right: 6px;" type="warning" />Option 2</Option>
 			<Divider />
 			<Option value={3}><Dot style="margin-right: 6px;" type="error" />Option 3</Option>
 		</Select>
 		<Spacer h={10} />
-		<Select>
+		<Select placeholder="Choose one" allowNone allowXSS={false}>
+			<Option value={1}><Dot style="margin-right: 6px;" type="success" />Option 1</Option>
+			<Option value={2}><Dot style="margin-right: 6px;" type="warning" />Option 2</Option>
+			<Divider />
+			<Option value={3}><Dot style="margin-right: 6px;" type="error" />Option 3</Option>
+		</Select>
+		<Spacer h={10} />
+		<Select allowXSS={true}>
 			<Option value={0}>None</Option>
 			<Option value={1}><Dot style="margin-right: 4px;" type="success" />Option 1</Option>
 			<Option value={2}><Dot style="margin-right: 4px;" type="warning" />Option 2</Option>
 			<Option value={3}><Dot style="margin-right: 4px;" type="error" />Option 3</Option>
 		</Select>
 		<Spacer h={10} />
-		<Select placeholder="None" disabled>
+		<Select placeholder="None" disabled allowXSS={true}>
 			<Option value={1}>Option 1</Option>
 			<Option value={2}>Option 2</Option>
 			<Option value={3}>Option 3</Option>
 		</Select>
 		<Spacer h={10} />
-		<Select bind:value={selectedBuilding}>
+		<Select bind:value={selectedBuilding} allowXSS={true}>
 			{#each buildings as [name, building] (name)}
 				<Option value={name}>{building.name}</Option>
 			{/each}
 		</Select>
 		<Spacer h={10} />
-		<Select bind:value={selectedArea}>
+		<Select bind:value={selectedArea} allowXSS={true}>
 			{#if selectedBuildingObject}
 				{#each selectedBuildingObject.areas as area (area.name)}
 					<Option value={area.name}>{area.name}</Option>
@@ -233,7 +240,7 @@
 			{/if}
 		</Select>
 		<Spacer h={10} />
-		<Select bind:value={selectedMachine}>
+		<Select bind:value={selectedMachine} allowXSS={true}>
 			{#if selectedAreaObject}
 				{#each selectedAreaObject.machines as machine (machine.name)}
 					<Option value={machine.name}>{machine.name}</Option>

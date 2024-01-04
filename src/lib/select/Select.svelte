@@ -11,10 +11,14 @@
 	let buttonRef: HTMLButtonElement;
 	export let value: HTMLOptionAttributes["value"] = undefined;
 	let selectedHTML: string = "";
+	let selectedInnerText: string = "";
 	export let disabled = false;
 	export let placeholder: string = "";
 	export let width: string = "184px";
 	export let allowNone: boolean = false;
+	/** Enabling this will opt you into dangerous XSS behavior but will allow the HTML in your
+	 * option to be rendered as the displayed selection */
+	export let allowXSS: boolean = false;
 
 	const toggleShow = () => {
 		show = !show;
@@ -73,6 +77,7 @@
 		for (let i = 0; i < children.length; i++) {
 			if (children[i].hasAttribute("data-option-html")) {
 				selectedHTML = children[i].innerHTML;
+				selectedInnerText = (children[i] as HTMLDivElement).innerText;
 				break;
 			}
 		}
@@ -155,8 +160,10 @@
 	<div class="px-2">
 		{#if value == undefined}
 			<span>{placeholder}</span>
-		{:else}
+		{:else if allowXSS}
 			{@html selectedHTML}
+		{:else}
+			<span>{selectedInnerText}</span>
 		{/if}
 	</div>
 	<ChevronIcon rotation="90deg" color="secondary" size={16} />
@@ -175,7 +182,7 @@
 @component
 [Open Issue](https://github.com/ieedan/geist-ui-svelte/issues)
 ### Important Notes
-Make sure to use keyed each blocks when working with lists that may be mutated
+Make sure to use keyed each blocks when working with lists that may be mutated.
 ##### Example:
 ```svelte
 <Select bind:value={val}>
