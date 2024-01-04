@@ -44,6 +44,7 @@
 			on:click
 			on:keydown
 			on:keyup
+			on:input
 			on:touchstart|passive
 			on:touchend
 			on:touchcancel
@@ -68,6 +69,7 @@
 			on:click
 			on:keydown
 			on:keyup
+			on:input
 			on:touchstart|passive
 			on:touchend
 			on:touchcancel
@@ -92,6 +94,7 @@
 			on:click
 			on:keydown
 			on:keyup
+			on:input
 			on:touchstart|passive
 			on:touchend
 			on:touchcancel
@@ -115,6 +118,7 @@
 			on:click
 			on:keydown
 			on:keyup
+			on:input
 			on:touchstart|passive
 			on:touchend
 			on:touchcancel

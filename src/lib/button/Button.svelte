@@ -131,8 +131,3 @@
 		<slot />
 	</div>
 </button>
-
-<!--
-@component
-To do: Docs 
--->
