@@ -70,6 +70,8 @@
 		<Checkbox color="success"><Text>Success</Text></Checkbox>
 		<Checkbox color="warning"><Text>Warning</Text></Checkbox>
 		<Checkbox color="error"><Text>Error</Text></Checkbox>
+		<Checkbox color="error" disabled><Text>Disabled</Text></Checkbox>
+		<Checkbox color="error" checked={true} disabled><Text>Disabled</Text></Checkbox>
 	</div>
 	<Divider />
 	<div>
