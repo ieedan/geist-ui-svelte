@@ -9,8 +9,9 @@
 	{...$$restProps}
 	data-type={type}
 	class="flex flex-col place-items-center justify-center w-full
-	 bg-gray-0 dark:bg-gray-999 h-svh data-[type='secondary']:bg-gray-50 
-	 data-[type='secondary']:dark:bg-gray-950 {className}">
+	 bg-gray-0 dark:bg-gray-999 h-svh data-[type='secondary']:bg-gray-50
+	 data-[type='secondary']:dark:bg-gray-950 {className}"
+>
 	<slot />
 </section>
 

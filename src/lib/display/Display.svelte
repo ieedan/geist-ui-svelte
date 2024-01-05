@@ -8,7 +8,8 @@
 <div
 	{...$$restProps}
 	style="width: {width}; {style}"
-	class="flex place-items-center justify-center flex-col">
+	class="flex place-items-center justify-center flex-col"
+>
 	<slot />
 	<div class="pt-4">
 		<small class="text-gray-800 dark:text-gray-700">{@html caption}</small>
