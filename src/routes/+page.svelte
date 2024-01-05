@@ -25,8 +25,8 @@
 	import demoImage from "$lib/assets/snippets.png";
 	import demoImage2 from "$lib/assets/snippets-dark.png";
 	import Image from "$lib/image/Image.svelte";
-	import Hero from "$lib/hero/Hero.svelte";
 	import Center from "$lib/center/Center.svelte";
+	import Display from "$lib/display/Display.svelte";
 
 	let date = "";
 
@@ -160,7 +160,7 @@
 </script>
 
 <div class="flex flex-col place-items-center justify-center gap-5 bg-white dark:bg-gray-999 py-5">
-	<Hero>
+	<Center>
 		<button
 			on:click={() => {
 				document.documentElement.classList.toggle("dark");
@@ -203,15 +203,11 @@
 			<Toggle disabled />
 			<Toggle checked={true} disabled />
 		</div>
-	</Hero>
-	<Hero type="secondary" id="thing">
-		<Text type="h1">Geist-UI-Svelte</Text>
-		<Spacer h={20} />
-		<div class="flex place-items-center gap-2">
-			<Button color="secondary-light">Get Started</Button>
-			<Button>See Docs</Button>
-		</div>
-	</Hero>
+	</Center>
+	<Divider />
+	<Display caption="The different options for code snippets.">
+		<Image src={demoImage} alt="Testing picture of geist-ui" width="250px" height="63.2px" />
+	</Display>
 	<Divider />
 	<div>
 		<Center class="w-full">

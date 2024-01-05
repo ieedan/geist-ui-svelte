@@ -132,6 +132,10 @@
 		"./Center.svelte": {
 			"types": "./dist/center/Center.svelte.d.ts",
 			"svelte": "./dist/center/Center.svelte"
+		},
+		"./Display.svelte": {
+			"types": "./dist/display/Display.svelte.d.ts",
+			"svelte": "./dist/display/Display.svelte"
 		}
 	},
 	"files": [

@@ -34,6 +34,8 @@ export { default as Hero } from "./hero/Hero.svelte";
 
 export { default as Center } from "./center/Center.svelte";
 
+export { default as Display } from "./display/Display.svelte";
+
 export { default as Spacer } from "./spacer/Spacer.svelte";
 
 export { default as Divider } from "./divider/Divider.svelte";

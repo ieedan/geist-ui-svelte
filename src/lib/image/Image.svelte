@@ -40,5 +40,5 @@
 		<img {...$$restProps} {width} {height} {src} {alt} />
 	</div>
 {:else}
-	<img {...$$restProps} {width} {height} {src} {alt} class="rounded-md" />
+	<img {...$$restProps} {width} {height} {src} {alt} />
 {/if}
