@@ -2,33 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Sets scroll bar to dark when in dark mode */
 html.dark {
 	color-scheme: dark;
 }
 
+/* Prevents layout shift when hiding / showing the scrollbar */
 html {
 	scrollbar-gutter: stable;
-}
-
-html.dark .shiki,
-html.dark .shiki span {
-	color: var(--shiki-dark) !important;
-	background-color: var(--shiki-dark-bg) !important;
-	/* Optional, if you also want font styles */
-	font-style: var(--shiki-dark-font-style) !important;
-	font-weight: var(--shiki-dark-font-weight) !important;
-	text-decoration: var(--shiki-dark-text-decoration) !important;
-}
-
-.scrollbar-hide {
-	-ms-overflow-style: none; /* Internet Explorer and Edge */
-	scrollbar-width: none; /* Firefox */
-}
-
-.scrollbar-hide::-webkit-scrollbar {
-	display: none; /* Chrome, Safari, and Opera */
-}
-
-::-webkit-scrollbar-corner {
-	background: rgba(0, 0, 0, 0);
 }
