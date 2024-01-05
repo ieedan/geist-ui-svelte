@@ -22,6 +22,11 @@
 	import Code from "$lib/code/Code.svelte";
 	import CloneIcon from "$lib/icons/CloneIcon.svelte";
 	import Snippet from "$lib/snippet/Snippet.svelte";
+	import demoImage from "$lib/assets/snippets.png";
+	import demoImage2 from "$lib/assets/snippets-dark.png";
+	import Image from "$lib/image/Image.svelte";
+	import Center from "$lib/center/Center.svelte";
+	import Display from "$lib/display/Display.svelte";
 
 	let date = "";
 
@@ -155,18 +160,18 @@
 </script>
 
 <div class="flex flex-col place-items-center justify-center gap-5 bg-white dark:bg-gray-999 py-5">
-	<button
-		on:click={() => {
-			document.documentElement.classList.toggle("dark");
-		}}
-		class="dark:text-white"
-	>
-		Toggle Mode
-	</button>
-	<div class="flex place-items-center justify-center flex-col gap-3">
+	<Center>
+		<button
+			on:click={() => {
+				document.documentElement.classList.toggle("dark");
+			}}
+			class="dark:text-white"
+		>
+			Toggle Mode
+		</button>
 		<Text type="h2">Geist-UI-Svelte</Text>
-		<Divider />
-		<div class="flex place-items-center justify-center gap-3">
+		<Divider margin="lg" />
+		<div class="flex flex-wrap place-items-center justify-center gap-3">
 			<Button>Default</Button>
 			<Button href="https://google.com" target="_blank">https://google.com</Button>
 			<Button loading>Do thing</Button>
@@ -181,8 +186,6 @@
 			<Button color="warning">Warning</Button>
 			<Button color="error">Error</Button>
 			<Button color="abort">Abort</Button>
-		</div>
-		<div class="flex flex-wrap place-items-center justify-center gap-3">
 			<Button color="secondary-light">Secondary Light</Button>
 			<Button color="success-light">Success Light</Button>
 			<Button color="warning-light">Warning Light</Button>
@@ -201,6 +204,55 @@
 			<Toggle disabled />
 			<Toggle checked={true} disabled />
 		</div>
+	</Center>
+	<Divider />
+	<Display caption="The different options for code snippets.">
+		<Image src={demoImage} alt="Testing picture of geist-ui" width="250px" height="63.2px" />
+	</Display>
+	<Divider />
+	<div>
+		<Center class="w-full">
+			<Image
+				src={demoImage}
+				alt="Testing picture of geist-ui"
+				width="250px"
+				height="63.2px"
+			/>
+		</Center>
+		<Spacer h={10} />
+		<Image
+			src={demoImage}
+			alt="Testing picture of geist-ui"
+			width="500px"
+			height="126.4px"
+			browserURL="https://aidanbleser.com"
+		/>
+		<Spacer h={10} />
+		<Image
+			src={demoImage}
+			alt="Testing picture of geist-ui"
+			width="500px"
+			height="126.4px"
+			browserURL="http://aidanbleser.com"
+			browserInvert
+		/>
+		<Spacer h={10} />
+		<Image
+			src={demoImage2}
+			alt="Testing picture of geist-ui"
+			width="500px"
+			height="126.4px"
+			browserURL="https://aidanbleser.com"
+		/>
+		<Spacer h={10} />
+		<Image
+			src={demoImage2}
+			alt="Testing picture of geist-ui"
+			width="500px"
+			height="126.4px"
+			browserURL="https://aidanbleser.com"
+			browserInvert
+		/>
 	</div>
 	<Divider />
 	<div>
@@ -373,8 +425,9 @@
 	</div>
 	<Divider />
 	<div>
-		<Dot style="margin-left: 5px; margin-right: 5px;" /><Text>Secondary</Text>
+		<Dot /><Text>Secondary</Text>
 		<Dot style="margin-left: 5px; margin-right: 5px;" type="success" /><Text>Success</Text>
+		<Dot style="margin-left: 5px; margin-right: 5px;" type="go" /><Text>Success</Text>
 		<Dot style="margin-left: 5px; margin-right: 5px;" type="warning" /><Text>Warning</Text>
 		<Dot style="margin-left: 5px; margin-right: 5px;" type="error" /><Text>Error</Text>
 	</div>
