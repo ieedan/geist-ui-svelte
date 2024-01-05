@@ -36,6 +36,8 @@ export { default as Code } from "./code/Code.svelte";
 
 export { default as Snippet } from "./snippet/Snippet.svelte";
 
+export { default as Image } from "./image/Image.svelte";
+
 /* Icons */
 
 export { default as ChevronIcon } from "./icons/ChevronIcon.svelte";
@@ -43,6 +45,8 @@ export { default as ChevronIcon } from "./icons/ChevronIcon.svelte";
 export { default as CheckMarkIcon } from "./icons/CheckMarkIcon.svelte";
 
 export { default as CloneIcon } from "./icons/CloneIcon.svelte";
+
+export { default as LockIcon } from "./icons/LockIcon.svelte";
 
 /* Types */
 

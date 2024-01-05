@@ -1,6 +1,6 @@
 {
 	"name": "geist-ui-svelte",
-	"version": "0.0.18",
+	"version": "0.0.19",
 	"author": {
 		"name": "Aidan Bleser",
 		"url": "https://aidanbleser.com"
@@ -116,6 +116,14 @@
 		"./Snippet.svelte": {
 			"types": "./dist/snippet/Snippet.svelte.d.ts",
 			"svelte": "./dist/snippet/Snippet.svelte"
+		},
+		"./Image.svelte": {
+			"types": "./dist/image/Image.svelte.d.ts",
+			"svelte": "./dist/image/Image.svelte"
+		},
+		"./LockIcon.svelte": {
+			"types": "./dist/icons/LockIcon.svelte.d.ts",
+			"svelte": "./dist/icons/LockIcon.svelte"
 		}
 	},
 	"files": [

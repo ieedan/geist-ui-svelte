@@ -22,6 +22,9 @@
 	import Code from "$lib/code/Code.svelte";
 	import CloneIcon from "$lib/icons/CloneIcon.svelte";
 	import Snippet from "$lib/snippet/Snippet.svelte";
+	import demoImage from "$lib/assets/snippets.png";
+	import demoImage2 from "$lib/assets/snippets-dark.png";
+	import Image from "$lib/image/Image.svelte";
 
 	let date = "";
 
@@ -159,8 +162,7 @@
 		on:click={() => {
 			document.documentElement.classList.toggle("dark");
 		}}
-		class="dark:text-white"
-	>
+		class="dark:text-white">
 		Toggle Mode
 	</button>
 	<div class="flex place-items-center justify-center flex-col gap-3">
@@ -201,6 +203,40 @@
 			<Toggle disabled />
 			<Toggle checked={true} disabled />
 		</div>
+	</div>
+	<Divider />
+	<div>
+		<Image src={demoImage} alt="Testing picture of geist-ui" width="250px" height="63.2px" />
+		<Spacer h={10} />
+		<Image
+			src={demoImage}
+			alt="Testing picture of geist-ui"
+			width="500px"
+			height="126.4px"
+			browserURL="https://aidanbleser.com" />
+		<Spacer h={10} />
+		<Image
+			src={demoImage}
+			alt="Testing picture of geist-ui"
+			width="500px"
+			height="126.4px"
+			browserURL="http://aidanbleser.com"
+			browserInvert />
+		<Spacer h={10} />
+		<Image
+			src={demoImage2}
+			alt="Testing picture of geist-ui"
+			width="500px"
+			height="126.4px"
+			browserURL="https://aidanbleser.com" />
+		<Spacer h={10} />
+		<Image
+			src={demoImage2}
+			alt="Testing picture of geist-ui"
+			width="500px"
+			height="126.4px"
+			browserURL="https://aidanbleser.com"
+			browserInvert />
 	</div>
 	<Divider />
 	<div>
@@ -251,8 +287,7 @@
 		<Select allowXSS={true}>
 			<Option value={0}>None</Option>
 			<Option value={1} disabled
-				><Dot style="margin-right: 4px;" type="success" />Option 1</Option
-			>
+				><Dot style="margin-right: 4px;" type="success" />Option 1</Option>
 			<Option value={2}><Dot style="margin-right: 4px;" type="warning" />Option 2</Option>
 			<Option value={3}><Dot style="margin-right: 4px;" type="error" />Option 3</Option>
 		</Select>
@@ -335,8 +370,7 @@
 			placeholder="console.log('Welcome');"
 			width="100%"
 			height="50px"
-			bind:value={textAreaValue}
-		/>
+			bind:value={textAreaValue} />
 		<Text>{textAreaValue}</Text>
 	</div>
 	<Divider />
@@ -373,8 +407,9 @@
 	</div>
 	<Divider />
 	<div>
-		<Dot style="margin-left: 5px; margin-right: 5px;" /><Text>Secondary</Text>
+		<Dot /><Text>Secondary</Text>
 		<Dot style="margin-left: 5px; margin-right: 5px;" type="success" /><Text>Success</Text>
+		<Dot style="margin-left: 5px; margin-right: 5px;" type="go" /><Text>Success</Text>
 		<Dot style="margin-left: 5px; margin-right: 5px;" type="warning" /><Text>Warning</Text>
 		<Dot style="margin-left: 5px; margin-right: 5px;" type="error" /><Text>Error</Text>
 	</div>
