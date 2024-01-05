@@ -168,6 +168,7 @@
 		<Divider />
 		<div class="flex place-items-center justify-center gap-3">
 			<Button>Default</Button>
+			<Button href="https://google.com" target="_blank">https://google.com</Button>
 			<Button loading>Do thing</Button>
 			<Button disabled color="secondary">Disabled</Button>
 			<Button size="xs">xs</Button>
@@ -230,27 +231,6 @@
 	return thisThing;
 }`}
 		</Code>
-	</div>
-	<Divider />
-	<div>
-		<div class="flex flex-col gap-2 w-full place-items-center justify-center">
-			<Badge type="default" size="xs">1</Badge>
-			<Badge type="default" size="sm">2</Badge>
-			<Badge type="default" size="md">3</Badge>
-			<Badge type="default" size="lg">4</Badge>
-			<Badge type="default" size="xl">5</Badge>
-		</div>
-		<Spacer h={10} />
-		<Badge type="default">Default</Badge>
-		<Badge type="success">Success</Badge>
-		<Badge type="warning">Warning</Badge>
-		<Badge type="error">Error</Badge>
-		<Badge type="secondary">Secondary</Badge>
-		<Badge type="default" ghost>Default</Badge>
-		<Badge type="success" ghost>Success</Badge>
-		<Badge type="warning" ghost>Warning</Badge>
-		<Badge type="error" ghost>Error</Badge>
-		<Badge type="secondary" ghost>Secondary</Badge>
 	</div>
 	<Divider />
 	<div>
@@ -318,6 +298,27 @@
 			<Divider />
 			<Option value={3}><Dot style="margin-right: 6px;" type="error" />Option 3</Option>
 		</Select>
+	</div>
+	<Divider />
+	<div>
+		<div class="flex flex-col gap-2 w-full place-items-center justify-center">
+			<Badge type="default" size="xs">1</Badge>
+			<Badge type="default" size="sm">2</Badge>
+			<Badge type="default" size="md">3</Badge>
+			<Badge type="default" size="lg">4</Badge>
+			<Badge type="default" size="xl">5</Badge>
+		</div>
+		<Spacer h={10} />
+		<Badge type="default">Default</Badge>
+		<Badge type="success">Success</Badge>
+		<Badge type="warning">Warning</Badge>
+		<Badge type="error">Error</Badge>
+		<Badge type="secondary">Secondary</Badge>
+		<Badge type="default" ghost>Default</Badge>
+		<Badge type="success" ghost>Success</Badge>
+		<Badge type="warning" ghost>Warning</Badge>
+		<Badge type="error" ghost>Error</Badge>
+		<Badge type="secondary" ghost>Secondary</Badge>
 	</div>
 	<Divider />
 	<div>
