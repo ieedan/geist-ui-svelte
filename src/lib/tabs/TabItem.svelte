@@ -52,7 +52,8 @@
 		on:click={click}
 		{disabled}
 		role="tab"
-		aria-selected={selected}>
+		aria-selected={selected}
+	>
 		<slot />
 	</button>
 {:else}
@@ -63,7 +64,8 @@
 		class="z-[1] flex place-items-center justify-center border-b-2 border-transparent px-3 py-3 text-sm text-gray-600
 	transition-all hover:text-black data-[active=true]:border-b-black data-[active=true]:text-black
 	dark:text-gray-400 dark:data-[active=true]:border-b-white dark:data-[active=true]:text-white
-	dark:data-[active=false]:hover:text-white text-nowrap">
+	dark:data-[active=false]:hover:text-white text-nowrap"
+	>
 		<slot />
 	</a>
 {/if}
