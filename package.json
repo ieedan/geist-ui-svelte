@@ -104,6 +104,18 @@
 		"./Badge.svelte": {
 			"types": "./dist/badge/Badge.svelte.d.ts",
 			"svelte": "./dist/badge/Badge.svelte"
+		},
+		"./Code.svelte": {
+			"types": "./dist/code/Code.svelte.d.ts",
+			"svelte": "./dist/code/Code.svelte"
+		},
+		"./CloneIcon.svelte": {
+			"types": "./dist/icons/CloneIcon.svelte.d.ts",
+			"svelte": "./dist/icons/CloneIcon.svelte"
+		},
+		"./Snippet.svelte": {
+			"types": "./dist/snippet/Snippet.svelte.d.ts",
+			"svelte": "./dist/snippet/Snippet.svelte"
 		}
 	},
 	"files": [
@@ -131,7 +143,6 @@
 		"prettier": "^3.1.1",
 		"prettier-plugin-svelte": "^3.1.2",
 		"publint": "^0.1.9",
-		"shikiji": "^0.9.17",
 		"svelte": "^4.2.7",
 		"svelte-check": "^3.6.0",
 		"tailwindcss": "^3.4.0",
@@ -143,6 +154,9 @@
 	"types": "./dist/index.d.ts",
 	"type": "module",
 	"dependencies": {
-		"@popperjs/core": "^2.11.8"
+		"@fortawesome/free-regular-svg-icons": "^6.5.1",
+		"@fortawesome/svelte-fontawesome": "^0.2.1",
+		"@popperjs/core": "^2.11.8",
+		"highlight.js": "^11.9.0"
 	}
 }

@@ -36,5 +36,11 @@ export { default as Option } from "./select/Option.svelte";
 
 export { default as Badge } from "./badge/Badge.svelte";
 
+export { default as Code } from "./code/Code.svelte";
+
+export { default as CloneIcon } from "./icons/CloneIcon.svelte";
+
+export { default as Snippet } from "./snippet/Snippet.svelte";
+
 // Types
 export * from "./types";

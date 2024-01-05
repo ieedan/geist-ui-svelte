@@ -171,7 +171,7 @@
 	</div>
 	{#if !noIcon}
 		<div data-show={show} class="data-[show=true]:rotate-180 transition-all">
-			<ChevronIcon rotation="90deg" color="secondary" size={16} />
+			<ChevronIcon rotation="90deg" type="secondary" size={16} />
 		</div>
 	{/if}
 </button>

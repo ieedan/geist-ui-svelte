@@ -2,9 +2,10 @@
 	import type { Color, Rotation } from "$lib/types.js";
 
 	export let rotation: Rotation = "0deg";
-	export let color: Color = "default";
+	export let type: Color = "default";
 	export let size: number = 24;
 	export let ghost: boolean = false;
+	export let color: string = "auto";
 </script>
 
 <svg
@@ -16,8 +17,9 @@
 	xmlns="http://www.w3.org/2000/svg">
 	<path
 		d="M9 18l6-6-6-6"
-		data-color={color}
+		data-color={type}
 		data-ghost={ghost}
+		style="stroke: {color};"
 		class="stroke-gray-999 dark:stroke-gray-0 data-[color='success']:stroke-blue-500
 		data-[color='warning']:stroke-orange-300 transition-all
 		data-[color='secondary']:stroke-gray-200 data-[color='secondary']:dark:stroke-gray-800

@@ -1,29 +1,15 @@
 <script lang="ts">
-	import { getHighlighter, type BundledLanguage } from "shikiji";
+	import hljs from "highlight.js";
 	import { onMount } from "svelte";
+	import "highlight.js/styles/github-dark.css";
 
-	export let code: string = "";
-	export let lang: BundledLanguage = "js";
-	let codeHTML: string = "";
+	let codeRef: HTMLElement;
 
 	onMount(async () => {
-		const highlighter = await getHighlighter({
-			themes: ["light-plus", "dark-plus"],
-			langs: [lang],
-		});
-
-		codeHTML = highlighter.codeToHtml(code, {
-			lang: lang,
-			themes: {
-				light: "light-plus",
-				dark: "dark-plus",
-			},
-		});
+		hljs.highlightElement(codeRef);
 	});
 </script>
 
-<pre><code>{@html codeHTML}</code></pre>
-
-<style lang="postcss">
-	
-</style>
+<div class="rounded-lg overflow-hidden">
+	<pre><code class="whitespace-pre-wrap" bind:this={codeRef}><slot /></code></pre>
+</div>
