@@ -168,6 +168,7 @@
 		<Divider />
 		<div class="flex place-items-center justify-center gap-3">
 			<Button>Default</Button>
+			<Button href="https://google.com" target="_blank">https://google.com</Button>
 			<Button loading>Do thing</Button>
 			<Button disabled color="secondary">Disabled</Button>
 			<Button size="xs">xs</Button>

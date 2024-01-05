@@ -20,10 +20,6 @@ export { default as Loading } from "./loading/Loading.svelte";
 
 export { default as Dot } from "./dot/Dot.svelte";
 
-export { default as ChevronIcon } from "./icons/ChevronIcon.svelte";
-
-export { default as CheckMarkIcon } from "./icons/CheckMarkIcon.svelte";
-
 export { default as Checkbox } from "./checkbox/Checkbox.svelte";
 
 export { default as Modal } from "./modal/Modal.svelte";
@@ -38,9 +34,16 @@ export { default as Badge } from "./badge/Badge.svelte";
 
 export { default as Code } from "./code/Code.svelte";
 
-export { default as CloneIcon } from "./icons/CloneIcon.svelte";
-
 export { default as Snippet } from "./snippet/Snippet.svelte";
 
-// Types
+/* Icons */
+
+export { default as ChevronIcon } from "./icons/ChevronIcon.svelte";
+
+export { default as CheckMarkIcon } from "./icons/CheckMarkIcon.svelte";
+
+export { default as CloneIcon } from "./icons/CloneIcon.svelte";
+
+/* Types */
+
 export * from "./types";
