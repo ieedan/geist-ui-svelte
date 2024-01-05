@@ -42,10 +42,11 @@
         data-[color='error']:dark:aria-checked:bg-red-600 data-[color='error']:aria-checked:border-red-500
 		disabled:bg-gray-50 disabled:hover:cursor-not-allowed disabled:aria-checked:data-[color]:bg-gray-300
 		disabled:aria-checked:data-[color]:border-gray-300 disabled:dark:bg-gray-950 .
-		disabled:dark:aria-checked:data-[color]:bg-gray-700 disabled:dark:aria-checked:data-[color]:border-gray-700"
+		disabled:dark:aria-checked:data-[color]:bg-gray-700 disabled:dark:aria-checked:data-[color]:border-gray-700
+		text-gray-0 dark:text-gray-999"
 	>
 		{#if checked}
-			<CheckMarkIcon size={16} ghost />
+			<CheckMarkIcon size={16} />
 		{/if}
 	</button>
 	<span><slot /></span>
