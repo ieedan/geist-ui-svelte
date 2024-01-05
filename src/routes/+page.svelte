@@ -202,11 +202,26 @@
 		</div>
 	</div>
 	<Divider />
+	<div>
+		<Button><CloneIcon /></Button>
+		<Button color="warning"><CloneIcon /></Button>
+		<CloneIcon size={16} />
+		<CheckMarkIcon />
+		<CheckMarkIcon size={50} />
+		<CheckMarkIcon size={15} />
+		<ChevronIcon />
+		<ChevronIcon rotation="90deg" />
+	</div>
+	<Divider />
 	<Snippet text="npm i geist-ui-svelte" />
+	<Snippet text="npm i geist-ui-svelte" type="subtle" />
+	<Snippet text="npm i geist-ui-svelte" type="success" />
 	<Snippet text="npm i geist-ui-svelte" type="error" />
 	<Snippet text="npm i geist-ui-svelte" type="warning" />
 	<Snippet text="npm i geist-ui-svelte" type="secondary" />
-	<Snippet text={["npm create vite@latest", "npm i geist-ui-svelte"]} />
+	<Snippet text="npm i geist-ui-svelte" type="dark" />
+	<Snippet text="npm i geist-ui-svelte" type="lite" />
+	<Snippet text={["npm create vite@latest", "npm i geist-ui-svelte"]} type="lite" />
 	<Divider />
 	<div>
 		<Code
@@ -331,20 +346,6 @@
 		<Checkbox color="error"><Text>Error</Text></Checkbox>
 		<Checkbox color="error" disabled><Text>Disabled</Text></Checkbox>
 		<Checkbox color="error" checked={true} disabled><Text>Disabled</Text></Checkbox>
-	</div>
-	<Divider />
-	<div>
-		<CloneIcon size={16} />
-		<CheckMarkIcon />
-		<CheckMarkIcon size={50} />
-		<CheckMarkIcon size={15} />
-		<CheckMarkIcon type="success" />
-		<CheckMarkIcon type="warning" />
-		<CheckMarkIcon type="error" />
-		<CheckMarkIcon type="secondary" />
-		<ChevronIcon />
-		<ChevronIcon rotation="90deg" />
-		<ChevronIcon type="warning" />
 	</div>
 	<Divider />
 	<div>

@@ -171,8 +171,11 @@
 		{/if}
 	</div>
 	{#if !noIcon}
-		<div data-show={show} class="data-[show=true]:rotate-180 transition-all">
-			<ChevronIcon rotation="90deg" type="secondary" size={16} />
+		<div
+			data-show={show}
+			class="data-[show=true]:rotate-180 transition-all dark:text-gray-700 text-gray-300"
+		>
+			<ChevronIcon rotation="90deg" size={16} />
 		</div>
 	{/if}
 </button>
