@@ -33,7 +33,8 @@
 		{:else}
 			<div
 				class="rounded-full text-xs flex place-items-center justify-center border size-7 border-gray-100 dark:border-gray-900"
-				><span>{shortName}</span></div>
+				><span>{shortName}</span></div
+			>
 		{/if}
 		{#if detail}
 			<div class="flex flex-col">
@@ -51,7 +52,8 @@
 		{:else}
 			<div
 				class="rounded-full text-xs flex place-items-center justify-center border size-7 border-gray-100 dark:border-gray-900"
-				><span>{shortName}</span></div>
+				><span>{shortName}</span></div
+			>
 		{/if}
 		{#if detail}
 			<div class="flex flex-col">

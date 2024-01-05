@@ -208,14 +208,23 @@
 			<Toggle checked={true} disabled />
 		</div>
 	</Center>
-	<Divider/>
+	<Divider />
 	<div class="flex place-items-center gap-2">
-		<User name="Aidan Bleser"/>
-		<User name="Eva Rivera"/>
-		<User name="Eva "/>
-		<User img="https://avatars.githubusercontent.com/u/117548273?v=4" name="Aidan" detail details="Trash Dev"/>
-		<User img="https://avatars.githubusercontent.com/u/117548273?v=4" name="Aidan" detail/>
-		<User img="https://avatars.githubusercontent.com/u/117548273?v=4" href="https://github.com/ieedan" name="Aidan"/>
+		<User name="Aidan Bleser" />
+		<User name="Eva Rivera" />
+		<User name="Eva " />
+		<User
+			img="https://avatars.githubusercontent.com/u/117548273?v=4"
+			name="Aidan"
+			detail
+			details="Trash Dev"
+		/>
+		<User img="https://avatars.githubusercontent.com/u/117548273?v=4" name="Aidan" detail />
+		<User
+			img="https://avatars.githubusercontent.com/u/117548273?v=4"
+			href="https://github.com/ieedan"
+			name="Aidan"
+		/>
 	</div>
 	<Divider />
 	<Tabs>
