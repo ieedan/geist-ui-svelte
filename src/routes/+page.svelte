@@ -10,7 +10,7 @@
 	import Spacer from "$lib/spacer/Spacer.svelte";
 	import Loading from "$lib/loading/Loading.svelte";
 	import Dot from "$lib/dot/Dot.svelte";
-	import CheckMark from "$lib/icons/CheckMarkIcon.svelte";
+	import CheckMarkIcon from "$lib/icons/CheckMarkIcon.svelte";
 	import ChevronIcon from "$lib/icons/ChevronIcon.svelte";
 	import Checkbox from "$lib/checkbox/Checkbox.svelte";
 	import Modal from "$lib/modal/Modal.svelte";
@@ -18,6 +18,10 @@
 	import Select from "$lib/select/Select.svelte";
 	import Option from "$lib/select/Option.svelte";
 	import toMap from "$lib/util/to-map.js";
+	import Badge from "$lib/badge/Badge.svelte";
+	import Code from "$lib/code/Code.svelte";
+	import CloneIcon from "$lib/icons/CloneIcon.svelte";
+	import Snippet from "$lib/snippet/Snippet.svelte";
 
 	let date = "";
 
@@ -198,6 +202,42 @@
 		</div>
 	</div>
 	<Divider />
+	<Snippet text="npm i geist-ui-svelte" />
+	<Snippet text="npm i geist-ui-svelte" type="error" />
+	<Snippet text="npm i geist-ui-svelte" type="warning" />
+	<Snippet text="npm i geist-ui-svelte" type="secondary" />
+	<Snippet text={["npm create vite@latest", "npm i geist-ui-svelte"]} />
+	<Divider />
+	<div>
+		<Code
+			>{@html `const thing = (): number => {
+	let thisThing = thing();
+	return thisThing;
+}`}
+		</Code>
+	</div>
+	<Divider />
+	<div>
+		<div class="flex flex-col gap-2 w-full place-items-center justify-center">
+			<Badge type="default" size="xs">1</Badge>
+			<Badge type="default" size="sm">2</Badge>
+			<Badge type="default" size="md">3</Badge>
+			<Badge type="default" size="lg">4</Badge>
+			<Badge type="default" size="xl">5</Badge>
+		</div>
+		<Spacer h={10} />
+		<Badge type="default">Default</Badge>
+		<Badge type="success">Success</Badge>
+		<Badge type="warning">Warning</Badge>
+		<Badge type="error">Error</Badge>
+		<Badge type="secondary">Secondary</Badge>
+		<Badge type="default" ghost>Default</Badge>
+		<Badge type="success" ghost>Success</Badge>
+		<Badge type="warning" ghost>Warning</Badge>
+		<Badge type="error" ghost>Error</Badge>
+		<Badge type="secondary" ghost>Secondary</Badge>
+	</div>
+	<Divider />
 	<div>
 		<Select placeholder="Choose one" allowNone allowXSS={true}>
 			<Option value={1}><Dot style="margin-right: 6px;" type="success" />Option 1</Option>
@@ -215,7 +255,9 @@
 		<Spacer h={10} />
 		<Select allowXSS={true}>
 			<Option value={0}>None</Option>
-			<Option value={1}><Dot style="margin-right: 4px;" type="success" />Option 1</Option>
+			<Option value={1} disabled
+				><Dot style="margin-right: 4px;" type="success" />Option 1</Option
+			>
 			<Option value={2}><Dot style="margin-right: 4px;" type="warning" />Option 2</Option>
 			<Option value={3}><Dot style="margin-right: 4px;" type="error" />Option 3</Option>
 		</Select>
@@ -246,6 +288,20 @@
 					<Option value={machine.name}>{machine.name}</Option>
 				{/each}
 			{/if}
+		</Select>
+		<Spacer h={10} />
+		<Select placeholder="Choose one" allowNone allowXSS={true} noIcon>
+			<Option value={1}><Dot style="margin-right: 6px;" type="success" />Option 1</Option>
+			<Option value={2}><Dot style="margin-right: 6px;" type="warning" />Option 2</Option>
+			<Divider />
+			<Option value={3}><Dot style="margin-right: 6px;" type="error" />Option 3</Option>
+		</Select>
+		<Spacer h={10} />
+		<Select placeholder="Choose one" allowNone allowXSS={true} shadow>
+			<Option value={1}><Dot style="margin-right: 6px;" type="success" />Option 1</Option>
+			<Option value={2}><Dot style="margin-right: 6px;" type="warning" />Option 2</Option>
+			<Divider />
+			<Option value={3}><Dot style="margin-right: 6px;" type="error" />Option 3</Option>
 		</Select>
 	</div>
 	<Divider />
@@ -278,16 +334,17 @@
 	</div>
 	<Divider />
 	<div>
-		<CheckMark />
-		<CheckMark size={50} />
-		<CheckMark size={15} />
-		<CheckMark color="success" />
-		<CheckMark color="warning" />
-		<CheckMark color="error" />
-		<CheckMark color="secondary" />
+		<CloneIcon size={16} />
+		<CheckMarkIcon />
+		<CheckMarkIcon size={50} />
+		<CheckMarkIcon size={15} />
+		<CheckMarkIcon type="success" />
+		<CheckMarkIcon type="warning" />
+		<CheckMarkIcon type="error" />
+		<CheckMarkIcon type="secondary" />
 		<ChevronIcon />
 		<ChevronIcon rotation="90deg" />
-		<ChevronIcon color="warning" />
+		<ChevronIcon type="warning" />
 	</div>
 	<Divider />
 	<div>

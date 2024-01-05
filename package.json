@@ -1,6 +1,6 @@
 {
 	"name": "geist-ui-svelte",
-	"version": "0.0.15",
+	"version": "0.0.16",
 	"author": {
 		"name": "Aidan Bleser",
 		"url": "https://aidanbleser.com"
@@ -100,6 +100,22 @@
 		"./Option.svelte": {
 			"types": "./dist/select/Option.svelte.d.ts",
 			"svelte": "./dist/select/Option.svelte"
+		},
+		"./Badge.svelte": {
+			"types": "./dist/badge/Badge.svelte.d.ts",
+			"svelte": "./dist/badge/Badge.svelte"
+		},
+		"./Code.svelte": {
+			"types": "./dist/code/Code.svelte.d.ts",
+			"svelte": "./dist/code/Code.svelte"
+		},
+		"./CloneIcon.svelte": {
+			"types": "./dist/icons/CloneIcon.svelte.d.ts",
+			"svelte": "./dist/icons/CloneIcon.svelte"
+		},
+		"./Snippet.svelte": {
+			"types": "./dist/snippet/Snippet.svelte.d.ts",
+			"svelte": "./dist/snippet/Snippet.svelte"
 		}
 	},
 	"files": [
@@ -138,6 +154,7 @@
 	"types": "./dist/index.d.ts",
 	"type": "module",
 	"dependencies": {
-		"@popperjs/core": "^2.11.8"
+		"@popperjs/core": "^2.11.8",
+		"highlight.js": "^11.9.0"
 	}
 }
