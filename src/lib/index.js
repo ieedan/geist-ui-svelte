@@ -40,6 +40,10 @@ export { default as Spacer } from "./spacer/Spacer.svelte";
 
 export { default as Divider } from "./divider/Divider.svelte";
 
+export { default as Tabs } from "./tabs/Tabs.svelte";
+
+export { default as TabItem } from "./tabs/TabItem.svelte";
+
 /* Interactivity */
 
 export { default as Modal } from "./modal/Modal.svelte";
