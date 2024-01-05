@@ -1,4 +1,6 @@
 <script lang="ts">
+	import type { TextAlignment } from "$lib/types.js";
+
 	let textRef: HTMLElement;
 
 	export let type: "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "p" | "small" | "span" = "p";
@@ -7,6 +9,8 @@
 	export let b = false;
 	export let del = false;
 	export let blockquote = false;
+	export let align: TextAlignment = "initial";
+	export let style: string = "";
 
 	export let color: "default" | "secondary" | "success" | "warning" | "error" | "abort" =
 		"default";
@@ -14,6 +18,7 @@
 
 <svelte:element
 	this={type}
+	style="text-align: {align};{style}"
 	bind:this={textRef}
 	data-i={i}
 	data-b={b}
@@ -26,8 +31,7 @@
     data-[style='error']:dark:text-red-600 data-[style='abort']:text-gray-300 data-[style='abort']:dark:text-gray-700
     data-[blockquote=true]:bg-gray-50 data-[blockquote=true]:border-gray-100 data-[blockquote=true]:dark:bg-gray-950
     data-[blockquote=true]:dark:border-gray-900 data-[blockquote=true]:border data-[blockquote=true]:px-2 data-[blockquote=true]:py-1
-    data-[blockquote=true]:rounded-md p-0 m-0"
->
+    data-[blockquote=true]:rounded-md p-0 m-0">
 	<slot />
 </svelte:element>
 

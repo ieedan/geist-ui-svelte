@@ -25,6 +25,8 @@
 	import demoImage from "$lib/assets/snippets.png";
 	import demoImage2 from "$lib/assets/snippets-dark.png";
 	import Image from "$lib/image/Image.svelte";
+	import Hero from "$lib/hero/Hero.svelte";
+	import Center from "$lib/center/Center.svelte";
 
 	let date = "";
 
@@ -158,17 +160,17 @@
 </script>
 
 <div class="flex flex-col place-items-center justify-center gap-5 bg-white dark:bg-gray-999 py-5">
-	<button
-		on:click={() => {
-			document.documentElement.classList.toggle("dark");
-		}}
-		class="dark:text-white">
-		Toggle Mode
-	</button>
-	<div class="flex place-items-center justify-center flex-col gap-3">
+	<Hero>
+		<button
+			on:click={() => {
+				document.documentElement.classList.toggle("dark");
+			}}
+			class="dark:text-white">
+			Toggle Mode
+		</button>
 		<Text type="h2">Geist-UI-Svelte</Text>
-		<Divider />
-		<div class="flex place-items-center justify-center gap-3">
+		<Divider margin="lg" />
+		<div class="flex flex-wrap place-items-center justify-center gap-3">
 			<Button>Default</Button>
 			<Button href="https://google.com" target="_blank">https://google.com</Button>
 			<Button loading>Do thing</Button>
@@ -183,8 +185,6 @@
 			<Button color="warning">Warning</Button>
 			<Button color="error">Error</Button>
 			<Button color="abort">Abort</Button>
-		</div>
-		<div class="flex flex-wrap place-items-center justify-center gap-3">
 			<Button color="secondary-light">Secondary Light</Button>
 			<Button color="success-light">Success Light</Button>
 			<Button color="warning-light">Warning Light</Button>
@@ -203,10 +203,24 @@
 			<Toggle disabled />
 			<Toggle checked={true} disabled />
 		</div>
-	</div>
+	</Hero>
+	<Hero type="secondary" id="thing">
+		<Text type="h1">Geist-UI-Svelte</Text>
+		<Spacer h={20} />
+		<div class="flex place-items-center gap-2">
+			<Button color="secondary-light">Get Started</Button>
+			<Button>See Docs</Button>
+		</div>
+	</Hero>
 	<Divider />
 	<div>
-		<Image src={demoImage} alt="Testing picture of geist-ui" width="250px" height="63.2px" />
+		<Center class="w-full">
+			<Image
+				src={demoImage}
+				alt="Testing picture of geist-ui"
+				width="250px"
+				height="63.2px" />
+		</Center>
 		<Spacer h={10} />
 		<Image
 			src={demoImage}

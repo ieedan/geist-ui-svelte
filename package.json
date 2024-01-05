@@ -124,6 +124,14 @@
 		"./LockIcon.svelte": {
 			"types": "./dist/icons/LockIcon.svelte.d.ts",
 			"svelte": "./dist/icons/LockIcon.svelte"
+		},
+		"./Hero.svelte": {
+			"types": "./dist/hero/Hero.svelte.d.ts",
+			"svelte": "./dist/hero/Hero.svelte"
+		},
+		"./Center.svelte": {
+			"types": "./dist/center/Center.svelte.d.ts",
+			"svelte": "./dist/center/Center.svelte"
 		}
 	},
 	"files": [
