@@ -58,3 +58,18 @@ dark:border-gray-900 relative"
 		data-show={showHoverBackground}
 	></div>
 </div>
+
+<style lang="postcss">
+	.scrollbar-hide {
+		-ms-overflow-style: none; /* Internet Explorer and Edge */
+		scrollbar-width: none; /* Firefox */
+	}
+
+	.scrollbar-hide::-webkit-scrollbar {
+		display: none; /* Chrome, Safari, and Opera */
+	}
+
+	::-webkit-scrollbar-corner {
+		background: rgba(0, 0, 0, 0);
+	}
+</style>

@@ -1,6 +1,6 @@
 {
 	"name": "geist-ui-svelte",
-	"version": "0.0.20",
+	"version": "0.0.21",
 	"author": {
 		"name": "Aidan Bleser",
 		"url": "https://aidanbleser.com"
@@ -144,6 +144,10 @@
 		"./TabItem.svelte": {
 			"types": "./dist/tabs/TabItem.svelte.d.ts",
 			"svelte": "./dist/tabs/TabItem.svelte"
+		},
+		"./User.svelte": {
+			"types": "./dist/user/User.svelte.d.ts",
+			"svelte": "./dist/user/User.svelte"
 		}
 	},
 	"files": [

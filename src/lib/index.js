@@ -12,6 +12,8 @@ export { default as Dot } from "./dot/Dot.svelte";
 
 export { default as Badge } from "./badge/Badge.svelte";
 
+export { default as User } from "./user/User.svelte";
+
 /* Inputs */
 
 export { default as TextArea } from "./textarea/TextArea.svelte";

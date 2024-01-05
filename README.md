@@ -54,6 +54,20 @@ export default {
 };
 ```
 
+We also recommend you use add this to your CSS
+
+```css
+/* Sets scroll bar to dark when in dark mode */
+html.dark {
+	color-scheme: dark;
+}
+
+/* Prevents layout shift when hiding / showing the scrollbar */
+html {
+	scrollbar-gutter: stable;
+}
+```
+
 3. Import the components into your project using `geist-ui-svelte/x.svelte`
 
 ```html
