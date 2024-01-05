@@ -119,11 +119,13 @@
 		data-[style='error-light']:dark:border-red-600 data-[style='error-light']:dark:bg-red-600
 
 		data-[style='abort']:bg-gray-0 data-[style='abort']:dark:bg-gray-999 data-[style='abort']:hover:bg-gray-0 data-[style='abort']:hover:dark:bg-gray-999 data-[style='abort']:border-transparent
-		data-[style='abort']:text-gray-400 data-[style='abort']:dark:text-gray-600">
+		data-[style='abort']:text-gray-400 data-[style='abort']:dark:text-gray-600"
+	>
 		{#if loading}
 			<Loading
 				size="md"
-				class="absolute left-1/2 top-1/2 -translate-y-1/2 -translate-x-1/2" />
+				class="absolute left-1/2 top-1/2 -translate-y-1/2 -translate-x-1/2"
+			/>
 		{/if}
 		<div class="group-data-[loading=true]:opacity-0">
 			<slot />
@@ -229,11 +231,13 @@
 		data-[style='error-light']:dark:border-red-600 data-[style='error-light']:dark:bg-red-600
 
 		data-[style='abort']:bg-gray-0 data-[style='abort']:dark:bg-gray-999 data-[style='abort']:enabled:hover:bg-gray-0 data-[style='abort']:enabled:hover:dark:bg-gray-999 data-[style='abort']:border-transparent
-		data-[style='abort']:text-gray-400 data-[style='abort']:dark:text-gray-600">
+		data-[style='abort']:text-gray-400 data-[style='abort']:dark:text-gray-600"
+	>
 		{#if loading}
 			<Loading
 				size="md"
-				class="absolute left-1/2 top-1/2 -translate-y-1/2 -translate-x-1/2" />
+				class="absolute left-1/2 top-1/2 -translate-y-1/2 -translate-x-1/2"
+			/>
 		{/if}
 		<div class="group-data-[loading=true]:opacity-0">
 			<slot />
