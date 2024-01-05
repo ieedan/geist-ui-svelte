@@ -27,6 +27,8 @@
 	import Image from "$lib/image/Image.svelte";
 	import Center from "$lib/center/Center.svelte";
 	import Display from "$lib/display/Display.svelte";
+	import Tabs from "$lib/tabs/Tabs.svelte";
+	import TabItem from "$lib/tabs/TabItem.svelte";
 
 	let date = "";
 
@@ -205,6 +207,22 @@
 			<Toggle checked={true} disabled />
 		</div>
 	</Center>
+	<Divider />
+	<Tabs>
+		<TabItem href="/">Page 1</TabItem>
+		<TabItem href="/place2">Page 2</TabItem>
+		<TabItem href="/place3">Page 3</TabItem>
+	</Tabs>
+	<Tabs>
+		<TabItem>Overview</TabItem>
+		<TabItem>About</TabItem>
+		<TabItem>About Us</TabItem>
+		<TabItem initialSelected>Features</TabItem>
+		<TabItem>Pricing</TabItem>
+		<TabItem>Docs</TabItem>
+		<TabItem>Profile</TabItem>
+		<TabItem>Settings</TabItem>
+	</Tabs>
 	<Divider />
 	<Display caption="The different options for code snippets.">
 		<Image src={demoImage} alt="Testing picture of geist-ui" width="250px" height="63.2px" />
