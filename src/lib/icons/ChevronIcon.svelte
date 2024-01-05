@@ -14,7 +14,8 @@
 	height={size}
 	viewBox="0 0 24 24"
 	fill="none"
-	xmlns="http://www.w3.org/2000/svg">
+	xmlns="http://www.w3.org/2000/svg"
+>
 	<path
 		d="M9 18l6-6-6-6"
 		data-color={type}
@@ -28,5 +29,6 @@
 		data-[color='error']:dark:stroke-red-600"
 		stroke-width="2"
 		stroke-linecap="round"
-		stroke-linejoin="round" />
+		stroke-linejoin="round"
+	/>
 </svg>

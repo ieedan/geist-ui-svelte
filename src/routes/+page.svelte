@@ -159,7 +159,8 @@
 		on:click={() => {
 			document.documentElement.classList.toggle("dark");
 		}}
-		class="dark:text-white">
+		class="dark:text-white"
+	>
 		Toggle Mode
 	</button>
 	<div class="flex place-items-center justify-center flex-col gap-3">
@@ -200,15 +201,16 @@
 			<Toggle checked={true} disabled />
 		</div>
 	</div>
-	<Divider/>
-	<Snippet text="npm i geist-ui-svelte"/>
-	<Snippet text="npm i geist-ui-svelte" type="error"/>
-	<Snippet text="npm i geist-ui-svelte" type="warning"/>
-	<Snippet text="npm i geist-ui-svelte" type="secondary"/>
-	<Snippet text={["npm create vite@latest","npm i geist-ui-svelte"]}/>
+	<Divider />
+	<Snippet text="npm i geist-ui-svelte" />
+	<Snippet text="npm i geist-ui-svelte" type="error" />
+	<Snippet text="npm i geist-ui-svelte" type="warning" />
+	<Snippet text="npm i geist-ui-svelte" type="secondary" />
+	<Snippet text={["npm create vite@latest", "npm i geist-ui-svelte"]} />
 	<Divider />
 	<div>
-		<Code>{@html `const thing = (): number => {
+		<Code
+			>{@html `const thing = (): number => {
 	let thisThing = thing();
 	return thisThing;
 }`}
@@ -254,7 +256,8 @@
 		<Select allowXSS={true}>
 			<Option value={0}>None</Option>
 			<Option value={1} disabled
-				><Dot style="margin-right: 4px;" type="success" />Option 1</Option>
+				><Dot style="margin-right: 4px;" type="success" />Option 1</Option
+			>
 			<Option value={2}><Dot style="margin-right: 4px;" type="warning" />Option 2</Option>
 			<Option value={3}><Dot style="margin-right: 4px;" type="error" />Option 3</Option>
 		</Select>
@@ -316,7 +319,8 @@
 			placeholder="console.log('Welcome');"
 			width="100%"
 			height="50px"
-			bind:value={textAreaValue} />
+			bind:value={textAreaValue}
+		/>
 		<Text>{textAreaValue}</Text>
 	</div>
 	<Divider />
@@ -330,7 +334,7 @@
 	</div>
 	<Divider />
 	<div>
-		<CloneIcon size={16}/>
+		<CloneIcon size={16} />
 		<CheckMarkIcon />
 		<CheckMarkIcon size={50} />
 		<CheckMarkIcon size={15} />

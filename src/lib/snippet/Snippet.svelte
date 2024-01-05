@@ -16,7 +16,8 @@
 	data-[color='secondary']:border-gray-200 data-[color='secondary']:dark:border-gray-800
 	data-[ghost=true]:dark:border-gray-999 data-[ghost=true]:border-gray-0
 	data-[color='warning']:dark:border-orange-400 data-[color='error']:border-red-500
-	data-[color='error']:dark:border-red-600">
+	data-[color='error']:dark:border-red-600"
+>
 	<code class="flex flex-col">
 		{#if Array.isArray(text)}
 			{#each text as line}

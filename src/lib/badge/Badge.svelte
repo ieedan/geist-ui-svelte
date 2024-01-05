@@ -32,4 +32,5 @@
      data-[ghost=true]:data-[color='default']:dark:border-gray-0 data-[color='default']:dark:text-gray-999 border-gray-999
        rounded-2xl px-3 py-[2px] w-fit data-[size='lg']:text-lg data-[size='lg']:rounded-3xl data-[size='sm']:text-sm
        data-[size='xl']:text-2xl data-[size='xs']:text-xs data-[size='xl']:rounded-3xl data-[size='sm']:rounded-2xl"
-	><slot /></span>
+	><slot /></span
+>

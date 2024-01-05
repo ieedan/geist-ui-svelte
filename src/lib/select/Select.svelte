@@ -159,7 +159,8 @@
 	class="flex justify-between place-items-center w-full py-1 pr-1 border h-[34px] focus:border-gray-200 focus:dark:border-gray-800
   disabled:bg-gray-50 dark:disabled:bg-gray-925 disabled:hover:cursor-not-allowed transition-all
   border-gray-100 dark:border-gray-900 rounded-md data-[place-holder=true]:text-gray-300
-  data-[place-holder=true]:dark:text-gray-700 disabled:text-gray-300 dark:disabled:text-gray-700">
+  data-[place-holder=true]:dark:text-gray-700 disabled:text-gray-300 dark:disabled:text-gray-700"
+>
 	<div class="px-2">
 		{#if value == undefined}
 			<span>{placeholder}</span>
@@ -181,7 +182,8 @@
 	style="width: {width};"
 	bind:this={dropDownRef}
 	class="absolute bg-gray-0 dark:bg-gray-999 border border-gray-100 dark:border-gray-900 z-10 transition-all
-         rounded-md data-[show=false]:opacity-0 data-[show=false]:pointer-events-none data-[shadow=true]:shadow-sm dark:shadow-gray-999">
+         rounded-md data-[show=false]:opacity-0 data-[show=false]:pointer-events-none data-[shadow=true]:shadow-sm dark:shadow-gray-999"
+>
 	<slot />
 </div>
 

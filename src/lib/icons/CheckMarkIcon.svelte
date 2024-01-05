@@ -21,10 +21,10 @@
 		data-color={type}
 		data-ghost={ghost}
 		style="stroke: {color};"
-		class="stroke-gray-999 dark:stroke-gray-0 data-[color='success']:stroke-blue-500 
-		data-[color='warning']:stroke-orange-300 data-[color='secondary']:stroke-gray-200 
-		data-[color='secondary']:dark:stroke-gray-800 data-[ghost=true]:dark:stroke-gray-999 
-		data-[ghost=true]:stroke-gray-0 data-[color='warning']:dark:stroke-orange-400 
+		class="stroke-gray-999 dark:stroke-gray-0 data-[color='success']:stroke-blue-500
+		data-[color='warning']:stroke-orange-300 data-[color='secondary']:stroke-gray-200
+		data-[color='secondary']:dark:stroke-gray-800 data-[ghost=true]:dark:stroke-gray-999
+		data-[ghost=true]:stroke-gray-0 data-[color='warning']:dark:stroke-orange-400
 		data-[color='error']:stroke-red-500 data-[color='error']:dark:stroke-red-600"
 		stroke-width="2"
 		stroke-linecap="round"

@@ -14,7 +14,8 @@
 	height={size}
 	viewBox="0 0 350 350"
 	fill="none"
-	xmlns="http://www.w3.org/2000/svg">
+	xmlns="http://www.w3.org/2000/svg"
+>
 	<rect
 		x="103.5"
 		y="69.5"
@@ -30,7 +31,8 @@
 	data-[ghost=true]:dark:stroke-gray-999 data-[ghost=true]:stroke-gray-0
 	data-[color='warning']:dark:stroke-orange-400 data-[color='error']:stroke-red-500
 	data-[color='error']:dark:stroke-red-600"
-		stroke-width="25" />
+		stroke-width="25"
+	/>
 	<path
 		fill-rule="evenodd"
 		clip-rule="evenodd"
@@ -45,5 +47,6 @@
 	data-[color='secondary']:fill-gray-200 data-[color='secondary']:dark:fill-gray-800
 	data-[ghost=true]:dark:fill-gray-999 data-[ghost=true]:fill-gray-0
 	data-[color='warning']:dark:fill-orange-400 data-[color='error']:fill-red-500
-	data-[color='error']:dark:fill-red-600" />
+	data-[color='error']:dark:fill-red-600"
+	/>
 </svg>
