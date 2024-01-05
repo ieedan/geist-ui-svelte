@@ -154,8 +154,6 @@
 	"types": "./dist/index.d.ts",
 	"type": "module",
 	"dependencies": {
-		"@fortawesome/free-regular-svg-icons": "^6.5.1",
-		"@fortawesome/svelte-fontawesome": "^0.2.1",
 		"@popperjs/core": "^2.11.8",
 		"highlight.js": "^11.9.0"
 	}
