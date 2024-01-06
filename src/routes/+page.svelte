@@ -30,6 +30,8 @@
 	import Tabs from "$lib/tabs/Tabs.svelte";
 	import TabItem from "$lib/tabs/TabItem.svelte";
 	import User from "$lib/user/User.svelte";
+	import ButtonDropdown from "$lib/button-dropdown/ButtonDropdown.svelte";
+	import PlusIcon from "$lib/icons/PlusIcon.svelte";
 
 	let date = "";
 
@@ -208,6 +210,21 @@
 			<Toggle checked={true} disabled />
 		</div>
 	</Center>
+	<Divider/>
+	<div>
+		<ButtonDropdown>
+			<div slot="main">Create Project</div>
+		</ButtonDropdown>
+		<Spacer h={10} />
+		<ButtonDropdown disabled>
+			<div slot="main">Create Project</div>
+		</ButtonDropdown>
+		<Spacer h={10} />
+		<ButtonDropdown>
+			<div slot="main">Create Project</div>
+			<PlusIcon slot="icon" size={12}/>
+		</ButtonDropdown>
+	</div>
 	<Divider />
 	<div class="flex place-items-center gap-2">
 		<User name="Aidan Bleser" />

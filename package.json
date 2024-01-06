@@ -148,6 +148,10 @@
 		"./User.svelte": {
 			"types": "./dist/user/User.svelte.d.ts",
 			"svelte": "./dist/user/User.svelte"
+		},
+		"./PlusIcon.svelte": {
+			"types": "./dist/icons/PlusIcon.svelte.d.ts",
+			"svelte": "./dist/icons/PlusIcon.svelte"
 		}
 	},
 	"files": [

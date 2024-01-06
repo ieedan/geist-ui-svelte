@@ -72,6 +72,8 @@ export { default as CloneIcon } from "./icons/CloneIcon.svelte";
 
 export { default as LockIcon } from "./icons/LockIcon.svelte";
 
+export { default as PlusIcon } from "./icons/PlusIcon.svelte";
+
 /* Types */
 
 export * from "./types";
