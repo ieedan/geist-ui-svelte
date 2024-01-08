@@ -168,6 +168,10 @@
 		"./Page.svelte": {
 			"types": "./dist/page/Page.svelte.d.ts",
 			"svelte": "./dist/page/Page.svelte"
+		},
+		"./Header.svelte": {
+			"types": "./dist/header/Header.svelte.d.ts",
+			"svelte": "./dist/header/Header.svelte"
 		}
 	},
 	"files": [

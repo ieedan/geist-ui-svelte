@@ -50,6 +50,8 @@ export { default as Tabs } from "./tabs/Tabs.svelte";
 
 export { default as TabItem } from "./tabs/TabItem.svelte";
 
+export { default as Header } from "./header/Header.svelte";
+
 /* Interactivity */
 
 export { default as Modal } from "./modal/Modal.svelte";

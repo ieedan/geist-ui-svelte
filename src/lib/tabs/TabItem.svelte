@@ -45,15 +45,17 @@
 
 {#if to == undefined}
 	<button
-		class="z-[1] flex place-items-center justify-center border-b-2 border-transparent px-3 py-3 text-sm text-gray-600
-		transition-all hover:text-black aria-selected:border-b-black aria-selected:text-black
-		dark:text-gray-400 dark:aria-selected:border-b-white dark:aria-selected:text-white
+		class="z-[1] flex place-items-center justify-center border-b-2
+		border-transparent px-3 py-3 text-sm text-gray-600
+		transition-all hover:text-black
+		group-data-[border=true]/tabs:aria-selected:border-b-black aria-selected:text-black
+		dark:text-gray-400 group-data-[border=true]/tabs:dark:aria-selected:border-b-white
+		dark:aria-selected:text-white
 		dark:aria-[selected='false']:hover:text-white text-nowrap"
 		on:click={click}
 		{disabled}
 		role="tab"
-		aria-selected={selected}
-	>
+		aria-selected={selected}>
 		<slot />
 	</button>
 {:else}
@@ -62,10 +64,10 @@
 		aria-disabled={disabled}
 		data-active={active}
 		class="z-[1] flex place-items-center justify-center border-b-2 border-transparent px-3 py-3 text-sm text-gray-600
-	transition-all hover:text-black data-[active=true]:border-b-black data-[active=true]:text-black
-	dark:text-gray-400 dark:data-[active=true]:border-b-white dark:data-[active=true]:text-white
-	dark:data-[active=false]:hover:text-white text-nowrap"
-	>
+	transition-all hover:text-black group-data-[border=true]/tabs:data-[active=true]:border-b-black
+	data-[active=true]:text-black dark:text-gray-400
+	group-data-[border=true]/tabs:dark:data-[active=true]:border-b-white dark:data-[active=true]:text-white
+	dark:data-[active=false]:hover:text-white text-nowrap">
 		<slot />
 	</a>
 {/if}
