@@ -30,10 +30,26 @@
 	import Tabs from "$lib/tabs/Tabs.svelte";
 	import TabItem from "$lib/tabs/TabItem.svelte";
 	import User from "$lib/user/User.svelte";
+	import ButtonDropdown from "$lib/button-dropdown/ButtonDropdown.svelte";
+	import PlusIcon from "$lib/icons/PlusIcon.svelte";
+	import ButtonDropdownItem from "$lib/button-dropdown/ButtonDropdownItem.svelte";
+	import Drawer from "$lib/drawer/Drawer.svelte";
+	import Page from "$lib/page/Page.svelte";
+	import Header from "$lib/header/Header.svelte";
+	import Dropdown from "$lib/dropdown/Dropdown.svelte";
+	import DropdownItem from "$lib/dropdown/DropdownItem.svelte";
 
 	let date = "";
+	let visible = false;
+	let visibleR = false;
+	let visibleL = false;
+	let visibleT = false;
+	let visibleB = false;
+	let pageVisible = false;
 
-	let modalRef: Modal;
+	let modalVisible = false;
+	let modeButtonRef: HTMLButtonElement;
+	let modeVisible = false;
 
 	let textAreaValue = "";
 
@@ -162,16 +178,46 @@
 		?.areas.find((a) => a.name == selectedArea);
 </script>
 
-<div class="flex flex-col place-items-center justify-center gap-5 bg-white dark:bg-gray-999 py-5">
+<div class="flex flex-col place-items-center justify-center gap-5 bg-white dark:bg-gray-999">
+	<Header sticky>
+		<div class="flex place-items-center justify-between w-full px-6 max-w-5xl py-2">
+			<Text type="h5">geist-ui-svelte</Text>
+			<Tabs border={false}>
+				<TabItem href="/">Home</TabItem>
+				<TabItem href="/guide">Guide</TabItem>
+				<TabItem href="/components">Components</TabItem>
+				<TabItem href="/hooks">Hooks</TabItem>
+			</Tabs>
+			<div>
+				<button
+					bind:this={modeButtonRef}
+					on:click={() => {
+						modeVisible = true;
+					}}
+					class="dark:text-white"
+				>
+					Mode
+				</button>
+				<Dropdown anchorRef={modeButtonRef} bind:visible={modeVisible}>
+					<DropdownItem
+						on:click={() => {
+							document.documentElement.classList.add("dark");
+						}}
+					>
+						Dark
+					</DropdownItem>
+					<DropdownItem
+						on:click={() => {
+							document.documentElement.classList.remove("dark");
+						}}
+					>
+						Light
+					</DropdownItem>
+				</Dropdown>
+			</div>
+		</div>
+	</Header>
 	<Center>
-		<button
-			on:click={() => {
-				document.documentElement.classList.toggle("dark");
-			}}
-			class="dark:text-white"
-		>
-			Toggle Mode
-		</button>
 		<Text type="h2">Geist-UI-Svelte</Text>
 		<Divider margin="lg" />
 		<div class="flex flex-wrap place-items-center justify-center gap-3">
@@ -208,6 +254,57 @@
 			<Toggle checked={true} disabled />
 		</div>
 	</Center>
+	<Divider label="Page" />
+	<div>
+		<Button on:click={() => (pageVisible = true)}>Show page</Button>
+		<Page bind:visible={pageVisible}>
+			<Text>Welcome to the page</Text>
+		</Page>
+	</div>
+	<Divider />
+	<div>
+		<Button on:click={() => (visible = true)}>Show Drawer</Button>
+		<Drawer bind:visible>
+			<Text>Hello from some text</Text>
+		</Drawer>
+		<Button on:click={() => (visibleT = true)}>Show Top</Button>
+		<Drawer bind:visible={visibleT} placement="top">
+			<Text>Hello from some text</Text>
+		</Drawer>
+		<Button on:click={() => (visibleL = true)}>Show Left</Button>
+		<Drawer bind:visible={visibleL} placement="left">
+			<Text>Hello from some text</Text>
+		</Drawer>
+		<Button on:click={() => (visibleB = true)}>Show Bottom</Button>
+		<Drawer bind:visible={visibleB} placement="bottom">
+			<Text>Hello from some text</Text>
+		</Drawer>
+		<Button on:click={() => (visibleR = true)}>Show Right</Button>
+		<Drawer bind:visible={visibleR} placement="right">
+			<Text>Hello from some text</Text>
+		</Drawer>
+	</div>
+	<Divider />
+	<div>
+		<ButtonDropdown>
+			<div slot="main">Create Project</div>
+			<ButtonDropdownItem>Thing 1</ButtonDropdownItem>
+			<ButtonDropdownItem>Thing 2</ButtonDropdownItem>
+		</ButtonDropdown>
+		<Spacer h={10} />
+		<ButtonDropdown disabled>
+			<div slot="main">Create Project</div>
+			<ButtonDropdownItem>Thing 1</ButtonDropdownItem>
+			<ButtonDropdownItem>Thing 2</ButtonDropdownItem>
+		</ButtonDropdown>
+		<Spacer h={10} />
+		<ButtonDropdown>
+			<div slot="main">Create Project</div>
+			<PlusIcon slot="icon" size={12} />
+			<ButtonDropdownItem>Thing 1</ButtonDropdownItem>
+			<ButtonDropdownItem>Thing 2</ButtonDropdownItem>
+		</ButtonDropdown>
+	</div>
 	<Divider />
 	<div class="flex place-items-center gap-2">
 		<User name="Aidan Bleser" />
@@ -411,8 +508,8 @@
 	</div>
 	<Divider />
 	<div>
-		<Button on:click={() => modalRef.toggleShow()}>Show Modal</Button>
-		<Modal bind:this={modalRef} class="h-3/4 sm:w-[640px] sm:h-[522px]" />
+		<Button on:click={() => (modalVisible = true)}>Show Modal</Button>
+		<Modal bind:visible={modalVisible} class="h-3/4 sm:w-[640px] sm:h-[522px]" />
 	</div>
 	<Divider />
 	<div class="w-full px-4 flex place-items-center justify-center flex-col">

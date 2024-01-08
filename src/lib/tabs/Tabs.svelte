@@ -1,4 +1,5 @@
 <script lang="ts">
+	export let border: boolean = true;
 	let showHoverBackground = false;
 	let hoverBackgroundRef: HTMLDivElement;
 	let elementRef: HTMLElement;
@@ -39,8 +40,9 @@
 </script>
 
 <div
-	class="flex place-items-center border-b px-2 border-gray-100 overflow-hidden w-full
-dark:border-gray-900 relative"
+	data-border={border}
+	class="flex place-items-center data-[border=true]:border-b px-2 border-gray-100 overflow-hidden
+dark:border-gray-900 relative group/tabs"
 >
 	<!-- svelte-ignore a11y-mouse-events-have-key-events -->
 	<nav

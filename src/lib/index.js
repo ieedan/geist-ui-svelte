@@ -30,6 +30,10 @@ export { default as Input } from "./input/Input.svelte";
 
 export { default as Button } from "./button/Button.svelte";
 
+export { default as ButtonDropdown } from "./button-dropdown/ButtonDropdown.svelte";
+
+export { default as ButtonDropdownItem } from "./button-dropdown/ButtonDropdownItem.svelte";
+
 /* Layout */
 
 export { default as Hero } from "./hero/Hero.svelte";
@@ -46,9 +50,19 @@ export { default as Tabs } from "./tabs/Tabs.svelte";
 
 export { default as TabItem } from "./tabs/TabItem.svelte";
 
+export { default as Header } from "./header/Header.svelte";
+
 /* Interactivity */
 
 export { default as Modal } from "./modal/Modal.svelte";
+
+export { default as Drawer } from "./drawer/Drawer.svelte";
+
+export { default as Page } from "./page/Page.svelte";
+
+export { default as Dropdown } from "./dropdown/Dropdown.svelte";
+
+export { default as DropdownItem } from "./dropdown/DropdownItem.svelte";
 
 /* Utilities */
 
@@ -71,6 +85,8 @@ export { default as CheckMarkIcon } from "./icons/CheckMarkIcon.svelte";
 export { default as CloneIcon } from "./icons/CloneIcon.svelte";
 
 export { default as LockIcon } from "./icons/LockIcon.svelte";
+
+export { default as PlusIcon } from "./icons/PlusIcon.svelte";
 
 /* Types */
 
