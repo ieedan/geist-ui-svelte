@@ -244,7 +244,7 @@
 			<section class="h-5 data-[show=false]:hidden md:hidden" data-show={navigationExpanded}
 			></section>
 			<button
-				class="flex w-full place-items-center justify-between rounded-md border border-gray-100
+				class="sticky bottom-0 bg-gray-0 dark:bg-gray-999 flex w-full place-items-center justify-between rounded-md border border-gray-100
 			px-2 py-1 md:hidden dark:border-gray-900"
 				on:click={toggleNavigationExpanded}
 			>

@@ -119,7 +119,8 @@
 		data-[style='error-light']:hover:dark:bg-red-500 data-[style='error-light']:hover:dark:border-red-500
 		data-[style='error-light']:dark:border-red-600 data-[style='error-light']:dark:bg-red-600
 
-		data-[style='abort']:bg-gray-0 data-[style='abort']:dark:bg-gray-999 data-[style='abort']:hover:bg-gray-0 data-[style='abort']:hover:dark:bg-gray-999 data-[style='abort']:border-transparent
+		data-[style='abort']:bg-transparent data-[style='abort']:dark:bg-transparent data-[style='abort']:hover:bg-transparent 
+		data-[style='abort']:hover:dark:bg-transparent data-[style='abort']:border-transparent
 		data-[style='abort']:text-gray-400 data-[style='abort']:dark:text-gray-600"
 	>
 		{#if loading}
@@ -231,7 +232,8 @@
 		data-[style='error-light']:enabled:hover:dark:bg-red-500 data-[style='error-light']:enabled:hover:dark:border-red-500
 		data-[style='error-light']:dark:border-red-600 data-[style='error-light']:dark:bg-red-600
 
-		data-[style='abort']:bg-gray-0 data-[style='abort']:dark:bg-gray-999 data-[style='abort']:enabled:hover:bg-gray-0 data-[style='abort']:enabled:hover:dark:bg-gray-999 data-[style='abort']:border-transparent
+		data-[style='abort']:bg-transparent data-[style='abort']:dark:bg-transparent data-[style='abort']:hover:bg-transparent 
+		data-[style='abort']:hover:dark:bg-transparent data-[style='abort']:border-transparent
 		data-[style='abort']:text-gray-400 data-[style='abort']:dark:text-gray-600"
 	>
 		{#if loading}

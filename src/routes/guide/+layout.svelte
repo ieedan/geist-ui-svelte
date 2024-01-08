@@ -148,10 +148,11 @@
 				</div>
 			</button>
 		</nav>
-		<div class="slot-width relative w-full max-w-3xl md:left-[300px]">
+		<div class="slot-width relative w-full max-w-3xl md:left-[300px] px-4">
 			<Spacer h={30} />
 			<slot />
 			<ArrowNavigation {next} {last} />
+			<div class="block md:hidden"><Spacer h={59} /></div>
 		</div>
 	</div>
 </div>

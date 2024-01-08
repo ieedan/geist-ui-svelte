@@ -11,5 +11,5 @@
 </script>
 
 <div class="rounded-lg overflow-hidden">
-	<pre><code class="whitespace-pre-wrap" bind:this={codeRef}><slot /></code></pre>
+	<pre><code class="whitespace-pre" bind:this={codeRef}><slot /></code></pre>
 </div>

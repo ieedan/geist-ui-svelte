@@ -31,7 +31,7 @@
 </script>
 
 <div
-	style="width: {width};"
+	style="width: {width}; max-width: 100%;"
 	data-color={type}
 	class="flex justify-between place-items-start font-serif border px-3 py-[10px] rounded-md
 	border-gray-999 dark:border-gray-0 data-[color='success']:border-blue-600
