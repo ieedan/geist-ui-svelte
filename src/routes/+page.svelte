@@ -218,7 +218,7 @@
 			<Toggle checked={true} disabled />
 		</div>
 	</Center>
-	<Divider />
+	<Divider label="Page"/>
 	<div>
 		<Button on:click={() => pageVisible = true}>Show page</Button>
 		<Page bind:visible={pageVisible}>
