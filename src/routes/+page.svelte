@@ -36,13 +36,14 @@
 	import Drawer from "$lib/drawer/Drawer.svelte";
 
 	let date = "";
-	let visible = true;
+	let visible = false;
 	let visibleR = false;
 	let visibleL = false;
 	let visibleT = false;
 	let visibleB = false;
+	let pageVisible = false;
 
-	let modalRef: Modal;
+	let modalVisible = false;
 
 	let textAreaValue = "";
 
@@ -455,8 +456,8 @@
 	</div>
 	<Divider />
 	<div>
-		<Button on:click={() => modalRef.toggleShow()}>Show Modal</Button>
-		<Modal bind:this={modalRef} class="h-3/4 sm:w-[640px] sm:h-[522px]" />
+		<Button on:click={() => modalVisible = true}>Show Modal</Button>
+		<Modal bind:visible={modalVisible} class="h-3/4 sm:w-[640px] sm:h-[522px]" />
 	</div>
 	<Divider />
 	<div class="w-full px-4 flex place-items-center justify-center flex-col">

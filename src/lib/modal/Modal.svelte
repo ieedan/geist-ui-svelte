@@ -1,9 +1,8 @@
 <script lang="ts">
-	import { onDestroy, onMount } from "svelte";
+	import { onMount } from "svelte";
 
 	let dialogRef: HTMLDivElement;
-	export let initialVisibility: boolean = false;
-	let shown = initialVisibility;
+	export let visible = false;
 	/** Customize the width of the modal here
 	 *
 	 *  ```svelte
@@ -13,19 +12,15 @@
 	let className: string = "";
 	export { className as class };
 
-	export const toggleShow = () => {
-		shown = !shown;
-		document.body.classList.toggle("overflow-hidden", shown);
-	};
+	$: {
+		if (typeof window !== "undefined" && document) {
+			document.body.classList.toggle("overflow-hidden", visible);
+		}
+	}
 
-	export const show = () => {
-		shown = true;
-		document.body.classList.toggle("overflow-hidden", shown);
-	};
-
-	export const hide = () => {
-		shown = false;
-		document.body.classList.toggle("overflow-hidden", shown);
+	const hide = () => {
+		visible = false;
+		document.body.classList.toggle("overflow-hidden", visible);
 	};
 
 	const docKeydown = (e: KeyboardEvent) => {
@@ -33,7 +28,7 @@
 	};
 
 	onMount(() => {
-		if (shown) {
+		if (visible) {
 			document.body.classList.add("overflow-hidden")
 		}
 	});
@@ -44,7 +39,7 @@
 <!-- svelte-ignore a11y-click-events-have-key-events -->
 <!-- svelte-ignore a11y-no-static-element-interactions -->
 <div
-	data-show={shown}
+	data-show={visible}
 	on:click={hide}
 	class="fixed left-0 top-0 z-[49] h-screen w-full bg-gray-400 transition-all
     data-[show=false]:pointer-events-none data-[show=false]:opacity-0
@@ -52,7 +47,7 @@
 ></div>
 
 <div
-	data-show={shown}
+	data-show={visible}
 	role="dialog"
 	bind:this={dialogRef}
 	class="bg-gray-0 dark:bg-gray-999 max-w-full w-full bottom-0 left-0 fixed sm:top-1/2 transition-all
