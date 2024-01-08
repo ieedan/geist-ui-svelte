@@ -215,7 +215,7 @@
 	<title>{currentDoc?.name} - geist-ui-svelte</title>
 </svelte:head>
 
-<div class="flex min-h-svh justify-center">
+<div class="flex justify-center">
 	<div class="flex w-full max-w-5xl">
 		<nav
 			bind:this={navigationRef}

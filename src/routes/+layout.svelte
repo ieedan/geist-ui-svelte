@@ -15,7 +15,7 @@
 	let menuVisible = false;
 </script>
 
-<main>
+<main class="bg-gray-0 dark:bg-gray-999 min-h-svh">
 	<Header sticky>
 		<div class="flex place-items-center justify-between w-full px-6 max-w-5xl py-2">
 			<a href="/"><Text type="h5">geist-ui-svelte</Text></a>
