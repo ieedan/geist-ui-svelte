@@ -189,7 +189,8 @@
 					on:click={() => {
 						document.documentElement.classList.toggle("dark");
 					}}
-					class="dark:text-white">
+					class="dark:text-white"
+				>
 					Toggle Mode
 				</button>
 			</div>
@@ -292,12 +293,14 @@
 			img="https://avatars.githubusercontent.com/u/117548273?v=4"
 			name="Aidan"
 			detail
-			details="Trash Dev" />
+			details="Trash Dev"
+		/>
 		<User img="https://avatars.githubusercontent.com/u/117548273?v=4" name="Aidan" detail />
 		<User
 			img="https://avatars.githubusercontent.com/u/117548273?v=4"
 			href="https://github.com/ieedan"
-			name="Aidan" />
+			name="Aidan"
+		/>
 	</div>
 	<Divider />
 	<Tabs>
@@ -326,7 +329,8 @@
 				src={demoImage}
 				alt="Testing picture of geist-ui"
 				width="250px"
-				height="63.2px" />
+				height="63.2px"
+			/>
 		</Center>
 		<Spacer h={10} />
 		<Image
@@ -334,7 +338,8 @@
 			alt="Testing picture of geist-ui"
 			width="500px"
 			height="126.4px"
-			browserURL="https://aidanbleser.com" />
+			browserURL="https://aidanbleser.com"
+		/>
 		<Spacer h={10} />
 		<Image
 			src={demoImage}
@@ -342,14 +347,8 @@
 			width="500px"
 			height="126.4px"
 			browserURL="http://aidanbleser.com"
-			browserInvert />
-		<Spacer h={10} />
-		<Image
-			src={demoImage2}
-			alt="Testing picture of geist-ui"
-			width="500px"
-			height="126.4px"
-			browserURL="https://aidanbleser.com" />
+			browserInvert
+		/>
 		<Spacer h={10} />
 		<Image
 			src={demoImage2}
@@ -357,7 +356,16 @@
 			width="500px"
 			height="126.4px"
 			browserURL="https://aidanbleser.com"
-			browserInvert />
+		/>
+		<Spacer h={10} />
+		<Image
+			src={demoImage2}
+			alt="Testing picture of geist-ui"
+			width="500px"
+			height="126.4px"
+			browserURL="https://aidanbleser.com"
+			browserInvert
+		/>
 	</div>
 	<Divider />
 	<div>
@@ -408,7 +416,8 @@
 		<Select allowXSS={true}>
 			<Option value={0}>None</Option>
 			<Option value={1} disabled
-				><Dot style="margin-right: 4px;" type="success" />Option 1</Option>
+				><Dot style="margin-right: 4px;" type="success" />Option 1</Option
+			>
 			<Option value={2}><Dot style="margin-right: 4px;" type="warning" />Option 2</Option>
 			<Option value={3}><Dot style="margin-right: 4px;" type="error" />Option 3</Option>
 		</Select>
@@ -491,7 +500,8 @@
 			placeholder="console.log('Welcome');"
 			width="100%"
 			height="50px"
-			bind:value={textAreaValue} />
+			bind:value={textAreaValue}
+		/>
 		<Text>{textAreaValue}</Text>
 	</div>
 	<Divider />

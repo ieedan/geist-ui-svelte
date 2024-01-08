@@ -55,7 +55,8 @@
 		on:click={click}
 		{disabled}
 		role="tab"
-		aria-selected={selected}>
+		aria-selected={selected}
+	>
 		<slot />
 	</button>
 {:else}
@@ -67,7 +68,8 @@
 	transition-all hover:text-black group-data-[border=true]/tabs:data-[active=true]:border-b-black
 	data-[active=true]:text-black dark:text-gray-400
 	group-data-[border=true]/tabs:dark:data-[active=true]:border-b-white dark:data-[active=true]:text-white
-	dark:data-[active=false]:hover:text-white text-nowrap">
+	dark:data-[active=false]:hover:text-white text-nowrap"
+	>
 		<slot />
 	</a>
 {/if}
