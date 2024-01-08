@@ -32,6 +32,7 @@
 	import User from "$lib/user/User.svelte";
 	import ButtonDropdown from "$lib/button-dropdown/ButtonDropdown.svelte";
 	import PlusIcon from "$lib/icons/PlusIcon.svelte";
+	import ButtonDropdownItem from "$lib/button-dropdown/ButtonDropdownItem.svelte";
 
 	let date = "";
 
@@ -214,15 +215,21 @@
 	<div>
 		<ButtonDropdown>
 			<div slot="main">Create Project</div>
+			<ButtonDropdownItem>Thing 1</ButtonDropdownItem>
+			<ButtonDropdownItem>Thing 2</ButtonDropdownItem>
 		</ButtonDropdown>
 		<Spacer h={10} />
 		<ButtonDropdown disabled>
 			<div slot="main">Create Project</div>
+			<ButtonDropdownItem>Thing 1</ButtonDropdownItem>
+			<ButtonDropdownItem>Thing 2</ButtonDropdownItem>
 		</ButtonDropdown>
 		<Spacer h={10} />
 		<ButtonDropdown>
 			<div slot="main">Create Project</div>
 			<PlusIcon slot="icon" size={12}/>
+			<ButtonDropdownItem>Thing 1</ButtonDropdownItem>
+			<ButtonDropdownItem>Thing 2</ButtonDropdownItem>
 		</ButtonDropdown>
 	</div>
 	<Divider />

@@ -30,6 +30,10 @@ export { default as Input } from "./input/Input.svelte";
 
 export { default as Button } from "./button/Button.svelte";
 
+export { default as ButtonDropdown } from "./button-dropdown/ButtonDropdown.svelte";
+
+export { default as ButtonDropdownItem } from "./button-dropdown/ButtonDropdownItem.svelte";
+
 /* Layout */
 
 export { default as Hero } from "./hero/Hero.svelte";
