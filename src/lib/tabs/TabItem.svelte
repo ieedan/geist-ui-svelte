@@ -8,10 +8,11 @@
 	export let initialSelected: boolean = false;
 	let selected: boolean = initialSelected;
 	export let disabled: boolean = false;
+	export let activeForSubdirectories = true;
 
 	$: to = href ? trimLink(href) : null;
 
-	$: active = href === $page.url.pathname;
+	$: active = href === $page.url.pathname || activeForSubdirectories && $page.url.pathname.startsWith(href ?? "");
 
 	const trimLink = (link: string) => {
 		if (link[link.length - 1] == "/") {

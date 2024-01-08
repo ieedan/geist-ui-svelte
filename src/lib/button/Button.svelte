@@ -43,7 +43,8 @@
 		data-loading={loading}
 		data-square={square}
 		style="width: {width ? width : 'auto'};"
-		class="transition-all rounded-md border px-4 data-[square=true]:p-1 group relative flex place-items-center
+		class="transition-all rounded-md border px-4 data-[square=true]:p-1 group relative 
+		flex place-items-center text-nowrap whitespace-nowrap
 
 		data-[size='lg']:h-[40px] data-[size='md']:h-[36px] data-[size='sm']:h-[32px]
 		data-[size='xl']:h-[44px] data-[size='xs']:h-[28px] data-[size='lg']:text-lg data-[size='sm']:text-sm
@@ -119,13 +120,11 @@
 		data-[style='error-light']:dark:border-red-600 data-[style='error-light']:dark:bg-red-600
 
 		data-[style='abort']:bg-gray-0 data-[style='abort']:dark:bg-gray-999 data-[style='abort']:hover:bg-gray-0 data-[style='abort']:hover:dark:bg-gray-999 data-[style='abort']:border-transparent
-		data-[style='abort']:text-gray-400 data-[style='abort']:dark:text-gray-600"
-	>
+		data-[style='abort']:text-gray-400 data-[style='abort']:dark:text-gray-600">
 		{#if loading}
 			<Loading
 				size="md"
-				class="absolute left-1/2 top-1/2 -translate-y-1/2 -translate-x-1/2"
-			/>
+				class="absolute left-1/2 top-1/2 -translate-y-1/2 -translate-x-1/2" />
 		{/if}
 		<div class="group-data-[loading=true]:opacity-0">
 			<slot />
@@ -231,13 +230,11 @@
 		data-[style='error-light']:dark:border-red-600 data-[style='error-light']:dark:bg-red-600
 
 		data-[style='abort']:bg-gray-0 data-[style='abort']:dark:bg-gray-999 data-[style='abort']:enabled:hover:bg-gray-0 data-[style='abort']:enabled:hover:dark:bg-gray-999 data-[style='abort']:border-transparent
-		data-[style='abort']:text-gray-400 data-[style='abort']:dark:text-gray-600"
-	>
+		data-[style='abort']:text-gray-400 data-[style='abort']:dark:text-gray-600">
 		{#if loading}
 			<Loading
 				size="md"
-				class="absolute left-1/2 top-1/2 -translate-y-1/2 -translate-x-1/2"
-			/>
+				class="absolute left-1/2 top-1/2 -translate-y-1/2 -translate-x-1/2" />
 		{/if}
 		<div class="group-data-[loading=true]:opacity-0">
 			<slot />

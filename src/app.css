@@ -7,7 +7,6 @@ html.dark {
 	color-scheme: dark;
 }
 
-/* Prevents layout shift when hiding / showing the scrollbar */
 html {
 	scrollbar-gutter: stable;
 }
