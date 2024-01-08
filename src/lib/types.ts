@@ -14,3 +14,16 @@ export type TextAlignment =
 	| "inherit"
 	| "initial"
 	| "unset";
+
+export interface Route {
+	name: string;
+	slug: string;
+	routes?: Route[];
+	expanded?: boolean;
+	hidden?: boolean;
+}
+
+export type ShortRoute = {
+	name: string;
+	slug: string;
+};

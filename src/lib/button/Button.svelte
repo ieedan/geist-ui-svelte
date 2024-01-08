@@ -43,7 +43,8 @@
 		data-loading={loading}
 		data-square={square}
 		style="width: {width ? width : 'auto'};"
-		class="transition-all rounded-md border px-4 data-[square=true]:p-1 group relative flex place-items-center
+		class="transition-all rounded-md border px-4 data-[square=true]:p-1 group relative
+		flex place-items-center text-nowrap whitespace-nowrap
 
 		data-[size='lg']:h-[40px] data-[size='md']:h-[36px] data-[size='sm']:h-[32px]
 		data-[size='xl']:h-[44px] data-[size='xs']:h-[28px] data-[size='lg']:text-lg data-[size='sm']:text-sm

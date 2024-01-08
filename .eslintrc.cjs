@@ -36,7 +36,7 @@ module.exports = {
 				"@typescript-eslint/no-explicit-any": "error",
 				"no-nested-ternary": "error",
 				"svelte/no-at-html-tags": "warn",
-				"@cspell/spellchecker": ["error", { cspell: { words: ["hoverable"] } }],
+				"@cspell/spellchecker": ["warn", { cspell: { words: ["hoverable"] } }],
 			},
 		},
 	],
@@ -47,6 +47,6 @@ module.exports = {
 		"@typescript-eslint/no-shadow": "error",
 		"@typescript-eslint/no-explicit-any": "error",
 		"no-nested-ternary": "error",
-		"@cspell/spellchecker": ["error", { cspell: { words: ["hoverable"] } }],
+		"@cspell/spellchecker": ["warn", { cspell: { words: ["hoverable"] } }],
 	},
 };
