@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { onDestroy, onMount } from "svelte";
+
 	let dialogRef: HTMLDivElement;
 	export let initialVisibility: boolean = false;
 	let shown = initialVisibility;
@@ -29,6 +31,12 @@
 	const docKeydown = (e: KeyboardEvent) => {
 		if (e.key == "Escape") hide();
 	};
+
+	onMount(() => {
+		if (shown) {
+			document.body.classList.add("overflow-hidden")
+		}
+	});
 </script>
 
 <svelte:document on:keydown={docKeydown} />

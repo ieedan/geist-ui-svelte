@@ -36,7 +36,7 @@
 	import Drawer from "$lib/drawer/Drawer.svelte";
 
 	let date = "";
-	let visible = false;
+	let visible = true;
 	let visibleR = false;
 	let visibleL = false;
 	let visibleT = false;
@@ -177,8 +177,7 @@
 			on:click={() => {
 				document.documentElement.classList.toggle("dark");
 			}}
-			class="dark:text-white"
-		>
+			class="dark:text-white">
 			Toggle Mode
 		</button>
 		<Text type="h2">Geist-UI-Svelte</Text>
@@ -217,30 +216,30 @@
 			<Toggle checked={true} disabled />
 		</div>
 	</Center>
-	<Divider/>
+	<Divider />
 	<div>
-		<Button on:click={() => visible = true}>Show Drawer</Button>
-		<Drawer bind:visible={visible}>
+		<Button on:click={() => (visible = true)}>Show Drawer</Button>
+		<Drawer bind:visible>
 			<Text>Hello from some text</Text>
 		</Drawer>
-		<Button on:click={() => visibleT = true}>Show Top</Button>
+		<Button on:click={() => (visibleT = true)}>Show Top</Button>
 		<Drawer bind:visible={visibleT} placement="top">
 			<Text>Hello from some text</Text>
 		</Drawer>
-		<Button on:click={() => visibleL = true}>Show Left</Button>
+		<Button on:click={() => (visibleL = true)}>Show Left</Button>
 		<Drawer bind:visible={visibleL} placement="left">
 			<Text>Hello from some text</Text>
 		</Drawer>
-		<Button on:click={() => visibleB = true}>Show Bottom</Button>
+		<Button on:click={() => (visibleB = true)}>Show Bottom</Button>
 		<Drawer bind:visible={visibleB} placement="bottom">
 			<Text>Hello from some text</Text>
 		</Drawer>
-		<Button on:click={() => visibleR = true}>Show Right</Button>
+		<Button on:click={() => (visibleR = true)}>Show Right</Button>
 		<Drawer bind:visible={visibleR} placement="right">
 			<Text>Hello from some text</Text>
 		</Drawer>
 	</div>
-	<Divider/>
+	<Divider />
 	<div>
 		<ButtonDropdown>
 			<div slot="main">Create Project</div>
@@ -256,7 +255,7 @@
 		<Spacer h={10} />
 		<ButtonDropdown>
 			<div slot="main">Create Project</div>
-			<PlusIcon slot="icon" size={12}/>
+			<PlusIcon slot="icon" size={12} />
 			<ButtonDropdownItem>Thing 1</ButtonDropdownItem>
 			<ButtonDropdownItem>Thing 2</ButtonDropdownItem>
 		</ButtonDropdown>
@@ -270,14 +269,12 @@
 			img="https://avatars.githubusercontent.com/u/117548273?v=4"
 			name="Aidan"
 			detail
-			details="Trash Dev"
-		/>
+			details="Trash Dev" />
 		<User img="https://avatars.githubusercontent.com/u/117548273?v=4" name="Aidan" detail />
 		<User
 			img="https://avatars.githubusercontent.com/u/117548273?v=4"
 			href="https://github.com/ieedan"
-			name="Aidan"
-		/>
+			name="Aidan" />
 	</div>
 	<Divider />
 	<Tabs>
@@ -306,8 +303,7 @@
 				src={demoImage}
 				alt="Testing picture of geist-ui"
 				width="250px"
-				height="63.2px"
-			/>
+				height="63.2px" />
 		</Center>
 		<Spacer h={10} />
 		<Image
@@ -315,8 +311,7 @@
 			alt="Testing picture of geist-ui"
 			width="500px"
 			height="126.4px"
-			browserURL="https://aidanbleser.com"
-		/>
+			browserURL="https://aidanbleser.com" />
 		<Spacer h={10} />
 		<Image
 			src={demoImage}
@@ -324,8 +319,14 @@
 			width="500px"
 			height="126.4px"
 			browserURL="http://aidanbleser.com"
-			browserInvert
-		/>
+			browserInvert />
+		<Spacer h={10} />
+		<Image
+			src={demoImage2}
+			alt="Testing picture of geist-ui"
+			width="500px"
+			height="126.4px"
+			browserURL="https://aidanbleser.com" />
 		<Spacer h={10} />
 		<Image
 			src={demoImage2}
@@ -333,16 +334,7 @@
 			width="500px"
 			height="126.4px"
 			browserURL="https://aidanbleser.com"
-		/>
-		<Spacer h={10} />
-		<Image
-			src={demoImage2}
-			alt="Testing picture of geist-ui"
-			width="500px"
-			height="126.4px"
-			browserURL="https://aidanbleser.com"
-			browserInvert
-		/>
+			browserInvert />
 	</div>
 	<Divider />
 	<div>
@@ -393,8 +385,7 @@
 		<Select allowXSS={true}>
 			<Option value={0}>None</Option>
 			<Option value={1} disabled
-				><Dot style="margin-right: 4px;" type="success" />Option 1</Option
-			>
+				><Dot style="margin-right: 4px;" type="success" />Option 1</Option>
 			<Option value={2}><Dot style="margin-right: 4px;" type="warning" />Option 2</Option>
 			<Option value={3}><Dot style="margin-right: 4px;" type="error" />Option 3</Option>
 		</Select>
@@ -477,8 +468,7 @@
 			placeholder="console.log('Welcome');"
 			width="100%"
 			height="50px"
-			bind:value={textAreaValue}
-		/>
+			bind:value={textAreaValue} />
 		<Text>{textAreaValue}</Text>
 	</div>
 	<Divider />
