@@ -160,6 +160,10 @@
 		"./ButtonDropdownItem.svelte": {
 			"types": "./dist/button-dropdown/ButtonDropdownItem.svelte.d.ts",
 			"svelte": "./dist/button-dropdown/ButtonDropdownItem.svelte"
+		},
+		"./Drawer.svelte": {
+			"types": "./dist/drawer/Drawer.svelte.d.ts",
+			"svelte": "./dist/drawer/Drawer.svelte"
 		}
 
 	},

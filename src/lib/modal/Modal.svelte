@@ -38,7 +38,7 @@
 <div
 	data-show={shown}
 	on:click={hide}
-	class="fixed left-0 top-0 z-[49] h-screen w-full bg-gray-0 transition-all
+	class="fixed left-0 top-0 z-[49] h-screen w-full bg-gray-400 transition-all
     data-[show=false]:pointer-events-none data-[show=false]:opacity-0
     data-[show=true]:opacity-80 print:hidden dark:bg-gray-999"
 ></div>

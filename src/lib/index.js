@@ -54,6 +54,8 @@ export { default as TabItem } from "./tabs/TabItem.svelte";
 
 export { default as Modal } from "./modal/Modal.svelte";
 
+export { default as Drawer } from "./drawer/Drawer.svelte";
+
 /* Utilities */
 
 export { default as Key } from "./key/Key.svelte";
