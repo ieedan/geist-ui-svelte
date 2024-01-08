@@ -11,14 +11,15 @@
     
     data-[style='success']:border-blue-500 data-[style='success']:text-blue-500
     
-    data-[style='warning']:border-orange-300 data-[style='warning']:text-orange-300 
+    data-[style='warning']:border-orange-300 data-[style='warning']:text-orange-300
     data-[style='warning']:dark:border-orange-400 data-[style='warning']:dark:text-orange-400
     
-    data-[style='error']:border-red-500 data-[style='error']:text-red-500 
+    data-[style='error']:border-red-500 data-[style='error']:text-red-500
     data-[style='error']:dark:border-red-600 data-[style='error']:dark:text-red-600
     
-    data-[style='secondary']:border-gray-999 data-[style='secondary']:text-gray-999 
-    data-[style='secondary']:dark:border-gray-0 data-[style='secondary']:dark:text-gray-0">
+    data-[style='secondary']:border-gray-999 data-[style='secondary']:text-gray-999
+    data-[style='secondary']:dark:border-gray-0 data-[style='secondary']:dark:text-gray-0"
+>
 	{#if label}
 		NOTE:
 	{/if}

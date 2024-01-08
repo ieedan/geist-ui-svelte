@@ -21,7 +21,7 @@ export interface Route {
 	routes?: Route[];
 	expanded?: boolean;
 	hidden?: boolean;
-};
+}
 
 export type ShortRoute = {
 	name: string;

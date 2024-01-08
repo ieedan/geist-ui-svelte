@@ -15,14 +15,16 @@
 <Snippet
 	width="500px"
 	text={["npm create svelte@latest my-project", "cd my-project"]}
-	type="lite" />
+	type="lite"
+/>
 <Spacer h={10} />
 <Text>Setup TailwindCSS</Text>
 <Spacer h={5} />
 <Snippet
 	width="500px"
 	text={["npm install -D tailwindcss postcss autoprefixer", "npx tailwindcss init -p"]}
-	type="lite" />
+	type="lite"
+/>
 <Spacer h={10} />
 <Text>Configure TailwindCSS with our recommended settings.</Text>
 <Spacer h={5} />
@@ -59,7 +61,8 @@ export default {
 	plugins: [],
 	darkMode: "class",
 };
-`}</Code>
+`}</Code
+>
 <Spacer h={10} />
 <Text>Configure App.css</Text>
 <Spacer h={5} />
@@ -76,7 +79,8 @@ html.dark {
 /* Prevents layout shift when scrollbar is hidden */
 html {
 	scrollbar-gutter: stable;
-}`}</Code>
+}`}</Code
+>
 <Spacer h={10} />
 <Text>Install geist-ui-svelte</Text>
 <Spacer h={5} />

@@ -38,9 +38,9 @@
 			routes: [
 				{
 					name: "Option",
-					slug: "/components/select#option"
-				}
-			]
+					slug: "/components/select#option",
+				},
+			],
 		},
 		{
 			name: "Checkbox",
@@ -56,9 +56,9 @@
 			routes: [
 				{
 					name: "ButtonDropdownItem",
-					slug: "/components/buttondropdown#buttondropdownitem"
-				}
-			]
+					slug: "/components/buttondropdown#buttondropdownitem",
+				},
+			],
 		},
 		"LAYOUT",
 		{
@@ -99,46 +99,46 @@
 			routes: [
 				{
 					name: "TabItem",
-					slug: "/components/tabs#tabitem"
-				}
-			]
+					slug: "/components/tabs#tabitem",
+				},
+			],
 		},
 		{
 			name: "Badge",
-			slug: "/components/badge"
+			slug: "/components/badge",
 		},
 		{
 			name: "User",
-			slug: "/components/user"
+			slug: "/components/user",
 		},
 		{
 			name: "Image",
-			slug: "/components/image"
+			slug: "/components/image",
 		},
 		{
 			name: "Dot",
-			slug: "/components/dot"
+			slug: "/components/dot",
 		},
 		{
 			name: "Link",
-			slug: "/components/link"
+			slug: "/components/link",
 		},
 		{
 			name: "Note",
-			slug: "/components/note"
+			slug: "/components/note",
 		},
 		"INTERACTIVITY",
 		{
 			name: "Modal",
-			slug: "/components/modal"
+			slug: "/components/modal",
 		},
 		{
 			name: "Drawer",
-			slug: "/components/drawer"
+			slug: "/components/drawer",
 		},
 		{
 			name: "Page",
-			slug: "/components/page"
+			slug: "/components/page",
 		},
 		{
 			name: "Dropdown",
@@ -146,27 +146,27 @@
 			routes: [
 				{
 					name: "DropdownItem",
-					slug: "/components/dropdown#dropdownitem"
-				}
-			]
+					slug: "/components/dropdown#dropdownitem",
+				},
+			],
 		},
 		"UTILITIES",
 		{
 			name: "Key",
-			slug: "/components/key"
+			slug: "/components/key",
 		},
 		{
 			name: "Loading",
-			slug: "/components/loading"
+			slug: "/components/loading",
 		},
 		"CODE",
 		{
 			name: "Code",
-			slug: "/components/code"
+			slug: "/components/code",
 		},
 		{
 			name: "Snippet",
-			slug: "/components/snippet"
+			slug: "/components/snippet",
 		},
 	];
 
@@ -209,7 +209,8 @@
 			navigationExpanded = false;
 		}
 	}}
-	on:click={handleDocClick} />
+	on:click={handleDocClick}
+/>
 
 <svelte:head>
 	<title>{currentDoc?.name} - geist-ui-svelte</title>
@@ -222,10 +223,12 @@
 			class="fixed bottom-0 z-40 flex max-h-screen w-full flex-col place-items-end overflow-y-auto
 			border-t border-gray-100 bg-white px-4
 			py-3 md:top-[79px] md:w-[300px] md:border-0 md:bg-transparent dark:border-gray-900
-			dark:bg-gray-999 md:dark:bg-transparent scrollbar-hide">
+			dark:bg-gray-999 md:dark:bg-transparent scrollbar-hide"
+		>
 			<div
 				class="w-full flex-col data-[show=false]:hidden md:data-[show=false]:flex"
-				data-show={navigationExpanded}>
+				data-show={navigationExpanded}
+			>
 				{#each routes as route, i}
 					{#if typeof route === "string"}
 						{#if i > 0}
@@ -243,19 +246,21 @@
 			<button
 				class="flex w-full place-items-center justify-between rounded-md border border-gray-100
 			px-2 py-1 md:hidden dark:border-gray-900"
-				on:click={toggleNavigationExpanded}>
+				on:click={toggleNavigationExpanded}
+			>
 				<div class="flex place-items-center gap-2">
 					{currentDoc?.name}
 				</div>
 				<div
 					class="transition-all data-[show=false]:rotate-180 text-blue-500"
-					data-show={navigationExpanded}>
+					data-show={navigationExpanded}
+				>
 					<ChevronIcon rotation="90deg" />
 				</div>
 			</button>
 		</nav>
 		<div class="slot-width relative w-full max-w-3xl md:left-[300px]">
-			<Spacer h={30}/>
+			<Spacer h={30} />
 			<slot />
 		</div>
 	</div>

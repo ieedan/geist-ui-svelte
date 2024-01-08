@@ -12,7 +12,7 @@
 	export let align: TextAlignment = "initial";
 	export let style: string = "";
 	let className = "";
-	export { className as class }
+	export { className as class };
 
 	export let color: "default" | "secondary" | "success" | "warning" | "error" | "abort" =
 		"default";

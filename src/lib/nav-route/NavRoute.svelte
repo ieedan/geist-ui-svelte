@@ -27,7 +27,7 @@
 			href={slug}
 			data-active={active}
 			class="w-full rounded-md px-2 py-2 text-gray-300 transition-all
-    		data-[active=true]:text-blue-500 dark:text-gray-600 
+    		data-[active=true]:text-blue-500 dark:text-gray-600
 			data-[active=true]:dark:text-blue-500"
 		>
 			{name}
@@ -35,11 +35,11 @@
 		{#if routes}
 			<button on:click={toggleExpanded}>
 				<div
-					class="transition-all hover:text-black data-[show=false]:-rotate-90 
+					class="transition-all hover:text-black data-[show=false]:-rotate-90
 					text-gray-300 dark:text-gray-600 hover:dark:text-white data-[show=true]:dark:text-white"
 					data-show={expanded}
 				>
-					<ChevronIcon rotation="90deg" size={20}/>
+					<ChevronIcon rotation="90deg" size={20} />
 				</div>
 			</button>
 		{/if}

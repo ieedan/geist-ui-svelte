@@ -33,20 +33,23 @@
 						on:click={() => {
 							modeVisible = true;
 						}}
-						class="dark:text-white">
+						class="dark:text-white"
+					>
 						Mode
 					</button>
 					<Dropdown anchorRef={modeButtonRef} bind:visible={modeVisible}>
 						<DropdownItem
 							on:click={() => {
 								document.documentElement.classList.add("dark");
-							}}>
+							}}
+						>
 							Dark
 						</DropdownItem>
 						<DropdownItem
 							on:click={() => {
 								document.documentElement.classList.remove("dark");
-							}}>
+							}}
+						>
 							Light
 						</DropdownItem>
 					</Dropdown>
@@ -54,7 +57,8 @@
 			</div>
 			<div class="flex place-items-center md:hidden">
 				<Button color="abort" on:click={() => (menuVisible = true)}
-					><MenuIcon size={18} /></Button>
+					><MenuIcon size={18} /></Button
+				>
 			</div>
 		</div>
 	</Header>
@@ -63,28 +67,33 @@
 <Page bind:visible={menuVisible}>
 	<div class="flex flex-col">
 		<div
-			class="flex w-full place-items-center justify-between px-6 py-4 border-b-transparent border-b">
+			class="flex w-full place-items-center justify-between px-6 py-4 border-b-transparent border-b"
+		>
 			<a href="/"><Text type="h5">geist-ui-svelte</Text></a>
 			<Button color="abort" on:click={() => (menuVisible = false)}
-				><MenuIcon size={18} /></Button>
+				><MenuIcon size={18} /></Button
+			>
 		</div>
 		<a
 			href="/"
-			on:click={() => menuVisible = false}
+			on:click={() => (menuVisible = false)}
 			class="border-b border-gray-100 px-6 py-2 dark:border-gray-900 hover:bg-gray-50 transition-all
 			dark:hover:bg-gray-950 text-gray-600 hover:text-gray-999 dark:text-gray-600 dark:hover:text-gray-0"
-			>Home</a>
+			>Home</a
+		>
 		<a
 			href="/guide"
-			on:click={() => menuVisible = false}
+			on:click={() => (menuVisible = false)}
 			class="border-b border-gray-100 px-6 py-2 dark:border-gray-900 hover:bg-gray-50 transition-all
 		dark:hover:bg-gray-950 text-gray-600 hover:text-gray-999 dark:text-gray-600 dark:hover:text-gray-0"
-			>Guide</a>
+			>Guide</a
+		>
 		<a
 			href="/components"
-			on:click={() => menuVisible = false}
+			on:click={() => (menuVisible = false)}
 			class="border-b border-gray-100 px-6 py-2 dark:border-gray-900 hover:bg-gray-50 transition-all
 		dark:hover:bg-gray-950 text-gray-600 hover:text-gray-999 dark:text-gray-600 dark:hover:text-gray-0"
-			>Components</a>
+			>Components</a
+		>
 	</div>
 </Page>

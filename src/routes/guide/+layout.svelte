@@ -98,7 +98,8 @@
 			navigationExpanded = false;
 		}
 	}}
-	on:click={handleDocClick} />
+	on:click={handleDocClick}
+/>
 
 <svelte:head>
 	<title>{currentDoc?.name} - geist-ui-svelte</title>
@@ -111,10 +112,12 @@
 			class="fixed bottom-0 z-40 flex max-h-screen w-full flex-col place-items-end overflow-y-auto
 			border-t border-gray-100 bg-white px-4
 			py-3 md:top-[79px] md:w-[300px] md:border-0 md:bg-transparent dark:border-gray-900
-			dark:bg-gray-999 md:dark:bg-transparent scrollbar-hide">
+			dark:bg-gray-999 md:dark:bg-transparent scrollbar-hide"
+		>
 			<div
 				class="w-full flex-col data-[show=false]:hidden md:data-[show=false]:flex"
-				data-show={navigationExpanded}>
+				data-show={navigationExpanded}
+			>
 				{#each routes as route, i}
 					{#if typeof route === "string"}
 						{#if i > 0}
@@ -132,13 +135,15 @@
 			<button
 				class="flex w-full place-items-center justify-between rounded-md border border-gray-100
 			px-2 py-1 md:hidden dark:border-gray-900"
-				on:click={toggleNavigationExpanded}>
+				on:click={toggleNavigationExpanded}
+			>
 				<div class="flex place-items-center gap-2">
 					{currentDoc?.name}
 				</div>
 				<div
 					class="transition-all data-[show=false]:rotate-180 text-blue-500"
-					data-show={navigationExpanded}>
+					data-show={navigationExpanded}
+				>
 					<ChevronIcon rotation="90deg" />
 				</div>
 			</button>
@@ -146,7 +151,7 @@
 		<div class="slot-width relative w-full max-w-3xl md:left-[300px]">
 			<Spacer h={30} />
 			<slot />
-			<ArrowNavigation {next} {last}/>
+			<ArrowNavigation {next} {last} />
 		</div>
 	</div>
 </div>

@@ -12,7 +12,9 @@
 
 	$: to = href ? trimLink(href) : null;
 
-	$: active = href === $page.url.pathname || activeForSubdirectories && $page.url.pathname.startsWith(href ?? "");
+	$: active =
+		href === $page.url.pathname ||
+		(activeForSubdirectories && $page.url.pathname.startsWith(href ?? ""));
 
 	const trimLink = (link: string) => {
 		if (link[link.length - 1] == "/") {

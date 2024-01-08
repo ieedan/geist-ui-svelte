@@ -11,6 +11,6 @@
 </Text>
 <Spacer h={16} />
 <Text>
-	We also try to stay out of the way with your layout avoiding
-	components that determine the structure of your site.
+	We also try to stay out of the way with your layout avoiding components that determine the
+	structure of your site.
 </Text>
