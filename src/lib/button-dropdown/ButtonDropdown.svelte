@@ -45,29 +45,33 @@
 	});
 </script>
 
-<svelte:document on:click={docClick}/>
-<svelte:window on:resize={() => {
-	dropDownRef.style.width = ref.offsetWidth + "px";
-}}/>
- 
+<svelte:document on:click={docClick} />
+<svelte:window
+	on:resize={() => {
+		dropDownRef.style.width = ref.offsetWidth + "px";
+	}}
+/>
+
 <div
-	class="flex place-items-center justify-between border border-gray-100 
+	class="flex place-items-center justify-between border border-gray-100
 	rounded-md dark:border-gray-900 aria-disabled:bg-gray-50 aria-disabled:dark:bg-gray-950 overflow-hidden"
 	aria-disabled={disabled}
-	bind:this={ref}>
+	bind:this={ref}
+>
 	<button
 		on:click={clicked}
 		{disabled}
 		class="px-4 h-8 disabled:hover:cursor-not-allowed font-light text-gray-700 dark:text-gray-500
-		enabled:hover:bg-gray-50 enabled:hover:dark:bg-gray-950 transition-all"
-		><slot name="main" /></button>
+		enabled:hover:bg-gray-50 enabled:hover:dark:bg-gray-950 transition-all"><slot name="main" /></button
+	>
 	<button
 		on:click={toggleShow}
 		{disabled}
 		bind:this={buttonRef}
-		class="flex place-items-center justify-center size-8 
+		class="flex place-items-center justify-center size-8
 		disabled:hover:cursor-not-allowed border-l border-gray-100 text-gray-700 dark:text-gray-500
-		dark:border-gray-900 enabled:hover:bg-gray-50 enabled:hover:dark:bg-gray-950 transition-all">
+		dark:border-gray-900 enabled:hover:bg-gray-50 enabled:hover:dark:bg-gray-950 transition-all"
+	>
 		<slot name="icon">
 			<ChevronIcon rotation="90deg" size={16} />
 		</slot>
@@ -77,7 +81,8 @@
 		data-show={show}
 		bind:this={dropDownRef}
 		class="absolute bg-gray-0 dark:bg-gray-999 border border-gray-100 dark:border-gray-900 z-10 transition-all
-         rounded-md data-[show=false]:opacity-0 data-[show=false]:pointer-events-none data-[shadow=true]:shadow-sm dark:shadow-gray-999">
+         rounded-md data-[show=false]:opacity-0 data-[show=false]:pointer-events-none data-[shadow=true]:shadow-sm dark:shadow-gray-999"
+	>
 		<slot />
 	</div>
 </div>

@@ -21,7 +21,7 @@
 
 	onMount(() => {
 		if (visible) {
-			document.body.classList.add("overflow-hidden")
+			document.body.classList.add("overflow-hidden");
 		}
 	});
 </script>
@@ -35,7 +35,8 @@
 	on:click={hide}
 	class="fixed left-0 top-0 z-[49] h-screen w-full bg-gray-400 transition-all
     data-[show=false]:pointer-events-none data-[show=false]:opacity-0
-    data-[show=true]:opacity-80 print:hidden dark:bg-gray-999"></div>
+    data-[show=true]:opacity-80 print:hidden dark:bg-gray-999"
+></div>
 
 <div
 	data-show={visible}
@@ -49,6 +50,7 @@
     data-[placement='left']:left-0 data-[placement='left']:top-0 border-gray-100 dark:border-gray-900
     data-[placement='right']:right-0 data-[placement='right']:top-0
     data-[placement='left']:border-r data-[placement='right']:border-l
-    data-[placement='bottom']:border-t data-[placement='top']:border-b">
+    data-[placement='bottom']:border-t data-[placement='top']:border-b"
+>
 	<slot />
 </div>

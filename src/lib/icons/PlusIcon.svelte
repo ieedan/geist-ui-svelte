@@ -11,7 +11,8 @@
 	height={size}
 	viewBox="0 0 350 350"
 	fill="none"
-	xmlns="http://www.w3.org/2000/svg">
+	xmlns="http://www.w3.org/2000/svg"
+>
 	<rect x="160" y="15" width="30" height="320" rx="15" fill="currentColor" />
 	<rect
 		x="15"
@@ -20,5 +21,6 @@
 		height="320"
 		rx="15"
 		transform="rotate(-90 15 190)"
-		fill="currentColor" />
+		fill="currentColor"
+	/>
 </svg>

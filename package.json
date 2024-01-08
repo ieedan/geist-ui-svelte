@@ -169,7 +169,6 @@
 			"types": "./dist/page/Page.svelte.d.ts",
 			"svelte": "./dist/page/Page.svelte"
 		}
-
 	},
 	"files": [
 		"dist",

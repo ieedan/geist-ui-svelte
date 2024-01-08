@@ -29,7 +29,7 @@
 
 	onMount(() => {
 		if (visible) {
-			document.body.classList.add("overflow-hidden")
+			document.body.classList.add("overflow-hidden");
 		}
 	});
 </script>
