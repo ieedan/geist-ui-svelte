@@ -60,6 +60,10 @@ export { default as Drawer } from "./drawer/Drawer.svelte";
 
 export { default as Page } from "./page/Page.svelte";
 
+export { default as Dropdown } from "./dropdown/Dropdown.svelte";
+
+export { default as DropdownItem } from "./dropdown/DropdownItem.svelte";
+
 /* Utilities */
 
 export { default as Key } from "./key/Key.svelte";

@@ -36,6 +36,8 @@
 	import Drawer from "$lib/drawer/Drawer.svelte";
 	import Page from "$lib/page/Page.svelte";
 	import Header from "$lib/header/Header.svelte";
+	import Dropdown from "$lib/dropdown/Dropdown.svelte";
+	import DropdownItem from "$lib/dropdown/DropdownItem.svelte";
 
 	let date = "";
 	let visible = false;
@@ -46,6 +48,8 @@
 	let pageVisible = false;
 
 	let modalVisible = false;
+	let modeButtonRef: HTMLButtonElement;
+	let modeVisible = false;
 
 	let textAreaValue = "";
 
@@ -186,13 +190,30 @@
 			</Tabs>
 			<div>
 				<button
+					bind:this={modeButtonRef}
 					on:click={() => {
-						document.documentElement.classList.toggle("dark");
+						modeVisible = true;
 					}}
 					class="dark:text-white"
 				>
-					Toggle Mode
+					Mode
 				</button>
+				<Dropdown anchorRef={modeButtonRef} bind:visible={modeVisible}>
+					<DropdownItem
+						on:click={() => {
+							document.documentElement.classList.add("dark");
+						}}
+					>
+						Dark
+					</DropdownItem>
+					<DropdownItem
+						on:click={() => {
+							document.documentElement.classList.remove("dark");
+						}}
+					>
+						Light
+					</DropdownItem>
+				</Dropdown>
 			</div>
 		</div>
 	</Header>

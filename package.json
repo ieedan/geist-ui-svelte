@@ -172,6 +172,14 @@
 		"./Header.svelte": {
 			"types": "./dist/header/Header.svelte.d.ts",
 			"svelte": "./dist/header/Header.svelte"
+		},
+		"./Dropdown.svelte": {
+			"types": "./dist/dropdown/Dropdown.svelte.d.ts",
+			"svelte": "./dist/dropdown/Dropdown.svelte"
+		},
+		"./DropdownItem.svelte": {
+			"types": "./dist/dropdown/DropdownItem.svelte.d.ts",
+			"svelte": "./dist/dropdown/DropdownItem.svelte"
 		}
 	},
 	"files": [

@@ -1,7 +1,6 @@
 <script lang="ts">
 	import { onMount } from "svelte";
 
-	let pageRef: HTMLDivElement;
 	export let visible = false;
 
 	$: {
@@ -31,7 +30,6 @@
 <div
 	data-show={visible}
 	role="dialog"
-	bind:this={pageRef}
 	class="bg-gray-0 dark:bg-gray-999 max-w-full w-full bottom-0
 	 fixed top-0 left-0 transition-all z-50 data-[show=false]:opacity-0 data-[show=false]:pointer-events-none
     border-gray-100 border dark:border-gray-900"
