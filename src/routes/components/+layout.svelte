@@ -1,10 +1,11 @@
 <script lang="ts">
 	import NavRoute from "$lib/nav-route/NavRoute.svelte";
 	import { page } from "$app/stores";
-	import type { Route } from "$lib/types.js";
+	import type { Route, ShortRoute } from "$lib/types.js";
 	import ChevronIcon from "$lib/icons/ChevronIcon.svelte";
 	import Text from "$lib/text/Text.svelte";
 	import Spacer from "$lib/spacer/Spacer.svelte";
+	import ArrowNavigation from "$lib/arrow-navigation/ArrowNavigation.svelte";
 	let navigationExpanded = false;
 
 	let navigationRef: HTMLElement;
@@ -172,7 +173,48 @@
 
 	$: currentDoc = getCurrentDoc(routes, $page.url.href.replace($page.url.origin, ""));
 
-	const getCurrentDoc = (rs: (Route | string)[], path: string): Route | undefined => {
+	let next: ShortRoute | undefined;
+	let last: ShortRoute | undefined;
+	$: {
+		if (currentDoc && currentDoc.index) {
+			let l = routes[currentDoc.index - 1];
+			if (!l || typeof l === "string") {
+				last = undefined;
+				// Skips over titles if encountered
+				l = routes[currentDoc.index - 2];
+				if (!l || typeof l === "string") {
+
+				} else {
+					last = { slug: l.slug, name: l.name };
+				}
+			} else {
+				last = { slug: l.slug, name: l.name };
+			}
+			let n = routes[currentDoc.index + 1];
+			if (!n || typeof n === "string") {
+				next = undefined;
+				// Skips over titles if encountered
+				n = routes[currentDoc.index + 2];
+				if (!n || typeof n === "string") {
+
+				} else {
+					next = { slug: n.slug, name: n.name };
+				}
+			} else {
+				next = { slug: n.slug, name: n.name };
+			}
+		}
+	}
+
+	interface CurrentRoute extends Route {
+		index?: number;
+	}
+
+	const getCurrentDoc = (
+		rs: (CurrentRoute | string)[],
+		path: string,
+		ogIndex: number | undefined = undefined,
+	): CurrentRoute | undefined => {
 		for (let i = 0; i < rs.length; i++) {
 			const r = rs[i];
 
@@ -182,11 +224,17 @@
 				r.slug[r.slug.length - 1] == "/" ? r.slug.slice(0, r.slug.length - 1) : r.slug;
 			const newPath = path[path.length - 1] == "/" ? path.slice(0, path.length - 1) : path;
 
-			if (slug.toLowerCase() == newPath.toLowerCase()) return r;
+			if (slug.toLowerCase() == newPath.toLowerCase()) {
+				if (!ogIndex) ogIndex = i;
+				r.index = ogIndex;
+				return r;
+			}
 
 			if (!r.routes) continue;
 
-			const doc = getCurrentDoc(r.routes, path);
+			if (!ogIndex) ogIndex = i;
+
+			const doc = getCurrentDoc(r.routes, path, ogIndex);
 
 			if (doc) return doc;
 		}
@@ -209,8 +257,7 @@
 			navigationExpanded = false;
 		}
 	}}
-	on:click={handleDocClick}
-/>
+	on:click={handleDocClick} />
 
 <svelte:head>
 	<title>{currentDoc ? currentDoc.name : "Components"} - geist-ui-svelte</title>
@@ -223,12 +270,11 @@
 			class="fixed bottom-0 z-40 flex max-h-screen w-full flex-col place-items-end overflow-y-auto
 			border-t border-gray-100 bg-white px-4
 			py-3 md:top-[79px] md:w-[300px] md:border-0 md:bg-transparent dark:border-gray-900
-			dark:bg-gray-999 md:dark:bg-transparent scrollbar-hide"
-		>
+			dark:bg-gray-999 md:dark:bg-transparent scrollbar-hide">
 			<div
 				class="w-full flex-col data-[show=false]:hidden md:data-[show=false]:flex"
-				data-show={navigationExpanded}
-			>
+				data-show={navigationExpanded}>
+				<div class="block md:hidden"><Spacer h={30} /></div>
 				{#each routes as route, i}
 					{#if typeof route === "string"}
 						{#if i > 0}
@@ -246,15 +292,13 @@
 			<button
 				class="sticky bottom-0 bg-gray-0 dark:bg-gray-999 flex w-full place-items-center justify-between rounded-md border border-gray-100
 			px-2 py-1 md:hidden dark:border-gray-900"
-				on:click={toggleNavigationExpanded}
-			>
+				on:click={toggleNavigationExpanded}>
 				<div class="flex place-items-center gap-2">
 					{currentDoc?.name}
 				</div>
 				<div
 					class="transition-all data-[show=false]:rotate-180 text-blue-500"
-					data-show={navigationExpanded}
-				>
+					data-show={navigationExpanded}>
 					<ChevronIcon rotation="90deg" />
 				</div>
 			</button>
@@ -262,6 +306,8 @@
 		<div class="slot-width relative w-full max-w-3xl md:left-[300px]">
 			<Spacer h={30} />
 			<slot />
+			<ArrowNavigation {next} {last} />
+			<div class="block md:hidden"><Spacer h={59} /></div>
 		</div>
 	</div>
 </div>

@@ -32,15 +32,29 @@
 	let last: ShortRoute | undefined;
 	$: {
 		if (currentDoc && currentDoc.index) {
-			const l = routes[currentDoc.index - 1];
+			let l = routes[currentDoc.index - 1];
 			if (!l || typeof l === "string") {
 				last = undefined;
+				// Skips over titles if encountered
+				l = routes[currentDoc.index - 2];
+				if (!l || typeof l === "string") {
+
+				} else {
+					last = { slug: l.slug, name: l.name };
+				}
 			} else {
 				last = { slug: l.slug, name: l.name };
 			}
-			const n = routes[currentDoc.index + 1];
+			let n = routes[currentDoc.index + 1];
 			if (!n || typeof n === "string") {
 				next = undefined;
+				// Skips over titles if encountered
+				n = routes[currentDoc.index + 2];
+				if (!n || typeof n === "string") {
+
+				} else {
+					next = { slug: n.slug, name: n.name };
+				}
 			} else {
 				next = { slug: n.slug, name: n.name };
 			}
@@ -98,8 +112,7 @@
 			navigationExpanded = false;
 		}
 	}}
-	on:click={handleDocClick}
-/>
+	on:click={handleDocClick} />
 
 <svelte:head>
 	<title>{currentDoc ? currentDoc.name : "Guide"} - geist-ui-svelte</title>
@@ -112,12 +125,11 @@
 			class="fixed bottom-0 z-40 flex max-h-screen w-full flex-col place-items-end overflow-y-auto
 			border-t border-gray-100 bg-white px-4
 			py-3 md:top-[79px] md:w-[300px] md:border-0 md:bg-transparent dark:border-gray-900
-			dark:bg-gray-999 md:dark:bg-transparent scrollbar-hide"
-		>
+			dark:bg-gray-999 md:dark:bg-transparent scrollbar-hide">
 			<div
 				class="w-full flex-col data-[show=false]:hidden md:data-[show=false]:flex"
-				data-show={navigationExpanded}
-			>
+				data-show={navigationExpanded}>
+				<div class="block md:hidden"><Spacer h={30} /></div>
 				{#each routes as route, i}
 					{#if typeof route === "string"}
 						{#if i > 0}
@@ -135,15 +147,13 @@
 			<button
 				class="flex w-full place-items-center justify-between rounded-md border border-gray-100
 			px-2 py-1 md:hidden dark:border-gray-900"
-				on:click={toggleNavigationExpanded}
-			>
+				on:click={toggleNavigationExpanded}>
 				<div class="flex place-items-center gap-2">
 					{currentDoc?.name}
 				</div>
 				<div
 					class="transition-all data-[show=false]:rotate-180 text-blue-500"
-					data-show={navigationExpanded}
-				>
+					data-show={navigationExpanded}>
 					<ChevronIcon rotation="90deg" />
 				</div>
 			</button>
