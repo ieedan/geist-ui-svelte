@@ -34,6 +34,7 @@
 	import PlusIcon from "$lib/icons/PlusIcon.svelte";
 	import ButtonDropdownItem from "$lib/button-dropdown/ButtonDropdownItem.svelte";
 	import Drawer from "$lib/drawer/Drawer.svelte";
+	import Page from "$lib/page/Page.svelte";
 
 	let date = "";
 	let visible = false;
@@ -218,6 +219,13 @@
 		</div>
 	</Center>
 	<Divider />
+	<div>
+		<Button on:click={() => pageVisible = true}>Show page</Button>
+		<Page bind:visible={pageVisible}>
+			<Text>Welcome to the page</Text>
+		</Page>
+	</div>
+	<Divider/>
 	<div>
 		<Button on:click={() => (visible = true)}>Show Drawer</Button>
 		<Drawer bind:visible>

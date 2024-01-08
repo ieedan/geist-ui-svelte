@@ -56,6 +56,8 @@ export { default as Modal } from "./modal/Modal.svelte";
 
 export { default as Drawer } from "./drawer/Drawer.svelte";
 
+export { default as Page } from "./page/Page.svelte";
+
 /* Utilities */
 
 export { default as Key } from "./key/Key.svelte";

@@ -164,6 +164,10 @@
 		"./Drawer.svelte": {
 			"types": "./dist/drawer/Drawer.svelte.d.ts",
 			"svelte": "./dist/drawer/Drawer.svelte"
+		},
+		"./Page.svelte": {
+			"types": "./dist/page/Page.svelte.d.ts",
+			"svelte": "./dist/page/Page.svelte"
 		}
 
 	},
