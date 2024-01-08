@@ -5,6 +5,10 @@
 	import Text from "$lib/text/Text.svelte";
 </script>
 
+<svelte:head>
+	<title>Home - geist-ui-svelte</title>
+</svelte:head>
+
 <div class="hero-height flex flex-col place-items-center justify-center">
 	<Text type="h1" align="center">geist-ui-svelte</Text>
 	<Spacer h={20} />

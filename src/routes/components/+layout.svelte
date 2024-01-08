@@ -213,7 +213,7 @@
 />
 
 <svelte:head>
-	<title>{currentDoc?.name} - geist-ui-svelte</title>
+	<title>{currentDoc ? currentDoc.name : "Components"} - geist-ui-svelte</title>
 </svelte:head>
 
 <div class="flex justify-center">
