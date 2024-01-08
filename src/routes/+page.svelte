@@ -33,8 +33,14 @@
 	import ButtonDropdown from "$lib/button-dropdown/ButtonDropdown.svelte";
 	import PlusIcon from "$lib/icons/PlusIcon.svelte";
 	import ButtonDropdownItem from "$lib/button-dropdown/ButtonDropdownItem.svelte";
+	import Drawer from "$lib/drawer/Drawer.svelte";
 
 	let date = "";
+	let visible = false;
+	let visibleR = false;
+	let visibleL = false;
+	let visibleT = false;
+	let visibleB = false;
 
 	let modalRef: Modal;
 
@@ -211,6 +217,29 @@
 			<Toggle checked={true} disabled />
 		</div>
 	</Center>
+	<Divider/>
+	<div>
+		<Button on:click={() => visible = true}>Show Drawer</Button>
+		<Drawer bind:visible={visible}>
+			<Text>Hello from some text</Text>
+		</Drawer>
+		<Button on:click={() => visibleT = true}>Show Top</Button>
+		<Drawer bind:visible={visibleT} placement="top">
+			<Text>Hello from some text</Text>
+		</Drawer>
+		<Button on:click={() => visibleL = true}>Show Left</Button>
+		<Drawer bind:visible={visibleL} placement="left">
+			<Text>Hello from some text</Text>
+		</Drawer>
+		<Button on:click={() => visibleB = true}>Show Bottom</Button>
+		<Drawer bind:visible={visibleB} placement="bottom">
+			<Text>Hello from some text</Text>
+		</Drawer>
+		<Button on:click={() => visibleR = true}>Show Right</Button>
+		<Drawer bind:visible={visibleR} placement="right">
+			<Text>Hello from some text</Text>
+		</Drawer>
+	</div>
 	<Divider/>
 	<div>
 		<ButtonDropdown>
