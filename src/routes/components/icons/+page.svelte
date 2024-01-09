@@ -19,6 +19,8 @@
 	import FieldSet from "$lib/fieldset/FieldSet.svelte";
 	import Details from "$lib/details/Details.svelte";
 	import Code from "$lib/code/Code.svelte";
+	import SvelteIcon from "$lib/icons/SvelteIcon.svelte";
+	import CommandIcon from "$lib/icons/CommandIcon.svelte";
 
 	type Icon = {
 		name: string;
@@ -58,6 +60,14 @@
 			name: "Github",
 			component: GithubIcon,
 		},
+		{
+			name: "Svelte",
+			component: SvelteIcon,
+		},
+		{
+			name: "Command",
+			component: CommandIcon,
+		},
 	];
 
 	let currentIcon: Icon | undefined = undefined;
@@ -88,21 +98,21 @@
 <Spacer h={10} />
 <FieldSet>
 	<div class="flex place-items-end gap-1">
-		<SearchIcon size={10} />
-		<SearchIcon size={15} />
-		<SearchIcon size={20} />
-		<SearchIcon size={25} />
-		<SearchIcon size={30} />
+		<SvelteIcon size={10} />
+		<SvelteIcon size={15} />
+		<SvelteIcon size={20} />
+		<SvelteIcon size={25} />
+		<SvelteIcon size={30} />
 	</div>
 	<div slot="footer">
 		<Details label="Code">
 			<Code
 				lang="svelte"
-				code={`<SearchIcon size={10}/>
-<SearchIcon size={15}/>
-<SearchIcon size={20}/>
-<SearchIcon size={25}/>
-<SearchIcon size={30}/>`}
+				code={`<SvelteIcon size={10}/>
+<SvelteIcon size={15}/>
+<SvelteIcon size={20}/>
+<SvelteIcon size={25}/>
+<SvelteIcon size={30}/>`}
 			/>
 		</Details>
 	</div>
@@ -114,19 +124,19 @@
 <Spacer h={10} />
 <FieldSet>
 	<div class="flex place-items-end gap-1">
-		<Text color="success"><SearchIcon size={24} /></Text>
-		<Text color="warning"><SearchIcon size={24} /></Text>
-		<Text color="error"><SearchIcon size={24} /></Text>
-		<Text color="abort"><SearchIcon size={24} /></Text>
+		<Text color="success"><SvelteIcon size={24} /></Text>
+		<Text color="warning"><SvelteIcon size={24} /></Text>
+		<Text color="error"><SvelteIcon size={24} /></Text>
+		<Text color="abort"><SvelteIcon size={24} /></Text>
 	</div>
 	<div slot="footer">
 		<Details label="Code">
 			<Code
 				lang="svelte"
-				code={`<Text color="success"><SearchIcon size={24}/></Text>
-<Text color="warning"><SearchIcon size={24}/></Text>
-<Text color="error"><SearchIcon size={24}/></Text>
-<Text color="abort"><SearchIcon size={24}/></Text>`}
+				code={`<Text color="success"><SvelteIcon size={24}/></Text>
+<Text color="warning"><SvelteIcon size={24}/></Text>
+<Text color="error"><SvelteIcon size={24}/></Text>
+<Text color="abort"><SvelteIcon size={24}/></Text>`}
 			/>
 		</Details>
 	</div>

@@ -46,12 +46,12 @@
 	}
 
 	small.geist-ui-text {
-		@apply text-xs;
+		@apply text-xs font-normal;
 	}
 
 	p,
 	span.geist-ui-text {
-		@apply text-base;
+		@apply text-base font-normal;
 	}
 
 	h1,

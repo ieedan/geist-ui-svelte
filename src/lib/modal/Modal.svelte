@@ -1,5 +1,15 @@
 <script lang="ts">
-	import { onMount } from "svelte";
+	import { createEventDispatcher, onMount } from "svelte";
+
+	const dispatch = createEventDispatcher();
+
+	$: {
+		if (visible) {
+			dispatch("opened");
+		} else {
+			dispatch("closed");
+		}
+	}
 
 	export let visible = false;
 	/** Customize the width of the modal here
@@ -49,8 +59,9 @@
 	data-show={visible}
 	role="dialog"
 	class="bg-gray-0 dark:bg-gray-999 max-w-full w-full bottom-0 left-0 fixed sm:top-1/2 transition-all
-    sm:-translate-x-1/2 sm:left-1/2 sm:-translate-y-1/2 z-50 data-[show=false]:opacity-0 data-[show=false]:pointer-events-none
-    sm:rounded-xl border-gray-100 border dark:border-gray-900 data-[show=false]:translate-y-1 {className}"
+    sm:-translate-x-1/2 sm:left-1/2 sm:-translate-y-1/2 z-50 data-[show=false]:opacity-0
+	data-[show=false]:pointer-events-none sm:rounded-xl border-gray-100 border
+	dark:border-gray-900 data-[show=false]:translate-y-1 {className}"
 >
 	<slot />
 </div>
