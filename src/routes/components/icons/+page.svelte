@@ -88,11 +88,11 @@
 <Spacer h={10} />
 <FieldSet>
 	<div class="flex place-items-end gap-1">
-		<SearchIcon size={10}/>
-		<SearchIcon size={15}/>
-		<SearchIcon size={20}/>
-		<SearchIcon size={25}/>
-		<SearchIcon size={30}/>
+		<SearchIcon size={10} />
+		<SearchIcon size={15} />
+		<SearchIcon size={20} />
+		<SearchIcon size={25} />
+		<SearchIcon size={30} />
 	</div>
 	<div slot="footer">
 		<Details label="Code">
@@ -110,16 +110,14 @@
 <Spacer h={30} />
 <Text type="h4">Color</Text>
 <Spacer h={5} />
-<Text>
-	The parent container will set the color of the icon from its text color.
-</Text>
+<Text>The parent container will set the color of the icon from its text color.</Text>
 <Spacer h={10} />
 <FieldSet>
 	<div class="flex place-items-end gap-1">
-		<Text color="success"><SearchIcon size={24}/></Text>
-		<Text color="warning"><SearchIcon size={24}/></Text>
-		<Text color="error"><SearchIcon size={24}/></Text>
-		<Text color="abort"><SearchIcon size={24}/></Text>
+		<Text color="success"><SearchIcon size={24} /></Text>
+		<Text color="warning"><SearchIcon size={24} /></Text>
+		<Text color="error"><SearchIcon size={24} /></Text>
+		<Text color="abort"><SearchIcon size={24} /></Text>
 	</div>
 	<div slot="footer">
 		<Details label="Code">
