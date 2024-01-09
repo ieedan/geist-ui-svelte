@@ -18,7 +18,7 @@
 <Spacer h={10} />
 <FieldSet>
 	<div class="flex flex-col justify-start">
-		<TextArea placeholder="Some input"/>
+		<TextArea placeholder="Some input" />
 	</div>
 	<div slot="footer">
 		<Details label="Code">
@@ -31,13 +31,16 @@
 <Spacer h={10} />
 <FieldSet>
 	<div class="flex flex-col justify-start gap-1">
-		<TextArea disabled placeholder="Some input"/>
-		<TextArea readonly value="Some input"/>
+		<TextArea disabled placeholder="Some input" />
+		<TextArea readonly value="Some input" />
 	</div>
 	<div slot="footer">
 		<Details label="Code">
-			<Code lang="svelte" code={`<TextArea disabled placeholder="Some input"/>
-<TextArea readonly value="Some input"/>`} />
+			<Code
+				lang="svelte"
+				code={`<TextArea disabled placeholder="Some input"/>
+<TextArea readonly value="Some input"/>`}
+			/>
 		</Details>
 	</div>
 </FieldSet>
@@ -46,14 +49,11 @@
 <Spacer h={10} />
 <FieldSet>
 	<div class="flex flex-col gap-2">
-		<TextArea width="100%" placeholder="Some input"/>
+		<TextArea width="100%" placeholder="Some input" />
 	</div>
 	<div slot="footer">
 		<Details label="Code">
-			<Code
-				lang="svelte"
-				code={`<TextArea width="100%" placeholder="Some input"/>`}
-			/>
+			<Code lang="svelte" code={`<TextArea width="100%" placeholder="Some input"/>`} />
 		</Details>
 	</div>
 </FieldSet>

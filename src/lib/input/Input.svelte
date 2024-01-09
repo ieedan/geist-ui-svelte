@@ -26,7 +26,7 @@
 
 <label for={id}><slot /></label>
 <div
-	style="width: {width ? width : ""};"
+	style="width: {width ? width : ''};"
 	aria-disabled={disabled}
 	data-placement={labelPlacement}
 	data-has-label={containerLabel.length > 0}
@@ -35,9 +35,9 @@
 >
 	{#if containerLabel}
 		<span
-			class="dark:bg-gray-950 bg-gray-50 font-light py-1 px-1 text-gray-300 dark:text-gray-500 
-			border-y border-gray-100 group-data-[placement='end']:order-2 dark:border-gray-900 
-			group-data-[placement='start']:rounded-l-md group-data-[placement='end']:rounded-r-md 
+			class="dark:bg-gray-950 bg-gray-50 font-light py-1 px-1 text-gray-300 dark:text-gray-500
+			border-y border-gray-100 group-data-[placement='end']:order-2 dark:border-gray-900
+			group-data-[placement='start']:rounded-l-md group-data-[placement='end']:rounded-r-md
 			group-data-[placement='start']:border-l group-data-[placement='end']:border-r"
 			>{containerLabel}</span
 		>

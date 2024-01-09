@@ -18,7 +18,7 @@
 <Spacer h={10} />
 <FieldSet>
 	<div class="flex flex-col justify-start">
-		<Input placeholder="Some input"/>
+		<Input placeholder="Some input" />
 	</div>
 	<div slot="footer">
 		<Details label="Code">
@@ -31,13 +31,16 @@
 <Spacer h={10} />
 <FieldSet>
 	<div class="flex flex-col justify-start gap-1">
-		<Input disabled placeholder="Some input"/>
-		<Input readonly value="Some input"/>
+		<Input disabled placeholder="Some input" />
+		<Input readonly value="Some input" />
 	</div>
 	<div slot="footer">
 		<Details label="Code">
-			<Code lang="svelte" code={`<Input disabled placeholder="Some input"/>
-<Input readonly placeholder="Some input"/>`} />
+			<Code
+				lang="svelte"
+				code={`<Input disabled placeholder="Some input"/>
+<Input readonly placeholder="Some input"/>`}
+			/>
 		</Details>
 	</div>
 </FieldSet>
@@ -46,14 +49,11 @@
 <Spacer h={10} />
 <FieldSet>
 	<div class="flex flex-col gap-2">
-		<Input width="100%" placeholder="Some input"/>
+		<Input width="100%" placeholder="Some input" />
 	</div>
 	<div slot="footer">
 		<Details label="Code">
-			<Code
-				lang="svelte"
-				code={`<Input width="100%" placeholder="Some input"/>`}
-			/>
+			<Code lang="svelte" code={`<Input width="100%" placeholder="Some input"/>`} />
 		</Details>
 	</div>
 </FieldSet>
@@ -62,8 +62,8 @@
 <Spacer h={10} />
 <FieldSet>
 	<div class="flex flex-col gap-2">
-		<Input containerLabel="username" placeholder="username"/>
-		<Input containerLabel=".com" labelPlacement="end" placeholder="https://github"/>
+		<Input containerLabel="username" placeholder="username" />
+		<Input containerLabel=".com" labelPlacement="end" placeholder="https://github" />
 	</div>
 	<div slot="footer">
 		<Details label="Code">
@@ -80,9 +80,9 @@
 <Spacer h={10} />
 <FieldSet>
 	<div class="flex flex-col gap-2">
-		<Input type="password" placeholder="Your password" value="987654321"/>
-		<Input type="date"/>
-		<Input type="number" value={10}/>
+		<Input type="password" placeholder="Your password" value="987654321" />
+		<Input type="date" />
+		<Input type="number" value={10} />
 	</div>
 	<div slot="footer">
 		<Details label="Code">
