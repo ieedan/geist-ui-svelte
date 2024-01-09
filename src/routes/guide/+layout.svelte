@@ -32,15 +32,25 @@
 	let last: ShortRoute | undefined;
 	$: {
 		if (currentDoc && currentDoc.index) {
-			const l = routes[currentDoc.index - 1];
+			let l = routes[currentDoc.index - 1];
 			if (!l || typeof l === "string") {
 				last = undefined;
+				// Skips over titles if encountered
+				l = routes[currentDoc.index - 2];
+				if (l && typeof l !== "string") {
+					last = { slug: l.slug, name: l.name };
+				}
 			} else {
 				last = { slug: l.slug, name: l.name };
 			}
-			const n = routes[currentDoc.index + 1];
+			let n = routes[currentDoc.index + 1];
 			if (!n || typeof n === "string") {
 				next = undefined;
+				// Skips over titles if encountered
+				n = routes[currentDoc.index + 2];
+				if (n && typeof n !== "string") {
+					next = { slug: n.slug, name: n.name };
+				}
 			} else {
 				next = { slug: n.slug, name: n.name };
 			}
@@ -102,7 +112,7 @@
 />
 
 <svelte:head>
-	<title>{currentDoc?.name} - geist-ui-svelte</title>
+	<title>{currentDoc ? currentDoc.name : "Guide"} - geist-ui-svelte</title>
 </svelte:head>
 
 <div class="flex justify-center">
@@ -111,13 +121,14 @@
 			bind:this={navigationRef}
 			class="fixed bottom-0 z-40 flex max-h-screen w-full flex-col place-items-end overflow-y-auto
 			border-t border-gray-100 bg-white px-4
-			py-3 md:top-[79px] md:w-[300px] md:border-0 md:bg-transparent dark:border-gray-900
+			py-3 md:top-[79px] md:w-[250px] md:border-0 md:bg-transparent dark:border-gray-900
 			dark:bg-gray-999 md:dark:bg-transparent scrollbar-hide"
 		>
 			<div
 				class="w-full flex-col data-[show=false]:hidden md:data-[show=false]:flex"
 				data-show={navigationExpanded}
 			>
+				<div class="block md:hidden"><Spacer h={30} /></div>
 				{#each routes as route, i}
 					{#if typeof route === "string"}
 						{#if i > 0}
@@ -148,10 +159,11 @@
 				</div>
 			</button>
 		</nav>
-		<div class="slot-width relative w-full max-w-3xl md:left-[300px]">
+		<div class="slot-width relative w-full max-w-3xl md:left-[300px] px-4">
 			<Spacer h={30} />
 			<slot />
 			<ArrowNavigation {next} {last} />
+			<div class="block md:hidden"><Spacer h={59} /></div>
 		</div>
 	</div>
 </div>

@@ -1,15 +1,19 @@
 <script lang="ts">
-	import hljs from "highlight.js";
 	import { onMount } from "svelte";
-	import "highlight.js/styles/github-dark.css";
+	import { codeToHtml, type BundledLanguage } from "shikiji";
 
-	let codeRef: HTMLElement;
+	export let lang: BundledLanguage = "javascript";
+	export let code: string;
+	let highlightedCode: string;
 
 	onMount(async () => {
-		hljs.highlightElement(codeRef);
+		highlightedCode = await codeToHtml(code, {
+			lang,
+			theme: "aurora-x",
+		});
 	});
 </script>
 
-<div class="rounded-lg overflow-hidden">
-	<pre><code class="whitespace-pre-wrap" bind:this={codeRef}><slot /></code></pre>
+<div class="rounded-lg overflow-hidden px-4 py-4" style="background-color: #07090F;">
+	{@html highlightedCode}
 </div>
