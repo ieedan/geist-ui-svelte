@@ -36,12 +36,6 @@
 		{
 			name: "Select",
 			slug: "/components/select",
-			routes: [
-				{
-					name: "Option",
-					slug: "/components/select#option",
-				},
-			],
 		},
 		{
 			name: "Checkbox",
@@ -54,12 +48,6 @@
 		{
 			name: "ButtonDropdown",
 			slug: "/components/buttondropdown",
-			routes: [
-				{
-					name: "ButtonDropdownItem",
-					slug: "/components/buttondropdown#buttondropdownitem",
-				},
-			],
 		},
 		{
 			name: "Search",
