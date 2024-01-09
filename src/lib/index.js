@@ -22,6 +22,8 @@ export { default as ButtonDropdown } from "./button-dropdown/ButtonDropdown.svel
 
 export { default as ButtonDropdownItem } from "./button-dropdown/ButtonDropdownItem.svelte";
 
+export { default as Search } from "./search/Search.svelte";
+
 /* Layout */
 
 export { default as Card } from "./card/Card.svelte";
@@ -95,6 +97,8 @@ export { default as LockIcon } from "./icons/LockIcon.svelte";
 export { default as PlusIcon } from "./icons/PlusIcon.svelte";
 
 export { default as GithubIcon } from "./icons/GithubIcon.svelte";
+
+export { default as SearchIcon } from "./icons/SearchIcon.svelte";
 
 /* Types */
 
