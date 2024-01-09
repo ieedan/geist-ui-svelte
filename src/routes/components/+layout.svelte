@@ -225,16 +225,13 @@
 			const newPath = path[path.length - 1] == "/" ? path.slice(0, path.length - 1) : path;
 
 			if (slug.toLowerCase() == newPath.toLowerCase()) {
-				if (!ogIndex) ogIndex = i;
-				r.index = ogIndex;
+				r.index = i;
 				return r;
 			}
 
 			if (!r.routes) continue;
 
-			if (!ogIndex) ogIndex = i;
-
-			const doc = getCurrentDoc(r.routes, path, ogIndex);
+			const doc = getCurrentDoc(r.routes, path, ogIndex ? ogIndex : i);
 
 			if (doc) return doc;
 		}
