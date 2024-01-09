@@ -16,6 +16,9 @@
 	import Search from "$lib/search/Search.svelte";
 	import Modal from "$lib/modal/Modal.svelte";
 	import type { ComponentType } from "svelte";
+	import FieldSet from "$lib/fieldset/FieldSet.svelte";
+	import Details from "$lib/details/Details.svelte";
+	import Code from "$lib/code/Code.svelte";
 
 	type Icon = {
 		name: string;
@@ -76,6 +79,60 @@
 <Text type="h3">Icons</Text>
 <Spacer h={10} />
 <Text>Symbols to represent different actions.</Text>
+<Spacer h={30} />
+<Text type="h4">Size</Text>
+<Spacer h={5} />
+<Text>
+	Use the <code>`size`</code> attribute to size the icon.
+</Text>
+<Spacer h={10} />
+<FieldSet>
+	<div class="flex place-items-end gap-1">
+		<SearchIcon size={10}/>
+		<SearchIcon size={15}/>
+		<SearchIcon size={20}/>
+		<SearchIcon size={25}/>
+		<SearchIcon size={30}/>
+	</div>
+	<div slot="footer">
+		<Details label="Code">
+			<Code
+				lang="svelte"
+				code={`<SearchIcon size={10}/>
+<SearchIcon size={15}/>
+<SearchIcon size={20}/>
+<SearchIcon size={25}/>
+<SearchIcon size={30}/>`}
+			/>
+		</Details>
+	</div>
+</FieldSet>
+<Spacer h={30} />
+<Text type="h4">Color</Text>
+<Spacer h={5} />
+<Text>
+	The parent container will set the color of the icon from its text color.
+</Text>
+<Spacer h={10} />
+<FieldSet>
+	<div class="flex place-items-end gap-1">
+		<Text color="success"><SearchIcon size={24}/></Text>
+		<Text color="warning"><SearchIcon size={24}/></Text>
+		<Text color="error"><SearchIcon size={24}/></Text>
+		<Text color="abort"><SearchIcon size={24}/></Text>
+	</div>
+	<div slot="footer">
+		<Details label="Code">
+			<Code
+				lang="svelte"
+				code={`<Text color="success"><SearchIcon size={24}/></Text>
+<Text color="warning"><SearchIcon size={24}/></Text>
+<Text color="error"><SearchIcon size={24}/></Text>
+<Text color="abort"><SearchIcon size={24}/></Text>`}
+			/>
+		</Details>
+	</div>
+</FieldSet>
 <Spacer h={20} />
 <Note color="warning">
 	The icons included only represent what is necessary to support the components in this library.
