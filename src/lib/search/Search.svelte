@@ -13,7 +13,7 @@
 	 *   when working with server side search and large data sets.
 	 */
 	export let debounce: number = 0;
-	
+
 	let inputRef: HTMLInputElement;
 
 	export const focus = () => inputRef.focus();
