@@ -61,13 +61,7 @@
 								name: "Fort Saskatchewan",
 							},
 							{
-								name: "Westlock",
-							},
-							{
 								name: "Three Hills",
-							},
-							{
-								name: "Valleyview",
 							},
 						],
 					},
@@ -94,13 +88,13 @@
 				name: "Brazil",
 				states: [
 					{
-						name: "Acre",
+						name: "Bahia",
 						cities: [
 							{
-								name: "Brasileia",
+								name: "Salvador",
 							},
 							{
-								name: "Senador",
+								name: "Prado",
 							},
 						],
 					},
@@ -109,12 +103,6 @@
 						cities: [
 							{
 								name: "Maceio",
-							},
-							{
-								name: "Maragogi",
-							},
-							{
-								name: "Japaratinga",
 							},
 							{
 								name: "Piranhas",
@@ -160,7 +148,8 @@
 				code={`<Select>
 	<Option value={1}>Option 1</Option>
 	<Option value={2}>Option 2</Option>
-</Select>`} />
+</Select>`}
+			/>
 		</Details>
 	</div>
 </FieldSet>
@@ -186,7 +175,8 @@
 				code={`<Select placeholder="Select one" allowNone>
 	<Option value={1}>Option 1</Option>
 	<Option value={2}>Option 2</Option>
-</Select>`} />
+</Select>`}
+			/>
 		</Details>
 	</div>
 </FieldSet>
@@ -207,7 +197,8 @@
 				code={`<Select disabled>
 	<Option value={1}>Option 1</Option>
 	<Option value={2}>Option 2</Option>
-</Select>`} />
+</Select>`}
+			/>
 		</Details>
 	</div>
 </FieldSet>
@@ -228,7 +219,8 @@
 				code={`<Select>
 	<Option value={1}>Option 1</Option>
 	<Option value={2} disabled>Option 2</Option>
-</Select>`} />
+</Select>`}
+			/>
 		</Details>
 	</div>
 </FieldSet>
@@ -249,7 +241,8 @@
 				code={`<Select width="100%">
 	<Option value={1}>Option 1</Option>
 	<Option value={2}>Option 2</Option>
-</Select>`} />
+</Select>`}
+			/>
 		</Details>
 	</div>
 </FieldSet>
@@ -270,7 +263,8 @@
 				code={`<Select width="100%">
 	<Option value={1}>Option 1</Option>
 	<Option value={2}>Option 2</Option>
-</Select>`} />
+</Select>`}
+			/>
 		</Details>
 	</div>
 </FieldSet>
@@ -349,7 +343,8 @@
 		<Spacer inline w={5}/>
 		Option 2
 	</Option>
-</Select>`} />
+</Select>`}
+			/>
 		</Details>
 	</div>
 </FieldSet>
@@ -378,7 +373,8 @@
 	<Text class="px-2" type="small" color="abort">Group 2</Text>
 	<Divider/>
 	<Option value={3}>Option 3</Option>
-</Select>`} />
+</Select>`}
+			/>
 		</Details>
 	</div>
 </FieldSet>
@@ -467,7 +463,8 @@ let selectedCity = "San Diego";
 $: selectedCountryObject = countries.get(selectedCountry);
 $: selectedStateObject = countries
 	.get(selectedCountry)
-	?.states.find((a) => a.name == selectedState);`} />
+	?.states.find((a) => a.name == selectedState);`}
+			/>
 			<Code
 				lang="svelte"
 				code={`<Select bind:value={selectedCountry}>
@@ -488,7 +485,8 @@ $: selectedStateObject = countries
 			<Option value={city.name}>{city.name}</Option>
 		{/each}
 	{/if}
-</Select>`} />
+</Select>`}
+			/>
 		</Details>
 	</div>
 </FieldSet>
