@@ -4,15 +4,23 @@ export enum ColorPreference {
 	OS = "OS",
 }
 
-const useDarkMode = () => {
+const updateTheme = () => {
 	if (
 		localStorage.theme === "dark" ||
+		(localStorage.theme === "OS" &&
+			window.matchMedia("(prefers-color-scheme: dark)").matches) ||
 		(!("theme" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches)
 	) {
 		document.documentElement.classList.add("dark");
 	} else {
 		document.documentElement.classList.remove("dark");
 	}
+};
+
+const useDarkMode = () => {
+	window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", updateTheme);
+
+	updateTheme();
 };
 
 const getCurrentPreference = (): ColorPreference => {
