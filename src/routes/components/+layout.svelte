@@ -151,6 +151,10 @@
 				},
 			],
 		},
+		{
+			name: "Details",
+			slug: "/components/details",
+		},
 		"UTILITIES",
 		{
 			name: "Key",
@@ -182,9 +186,7 @@
 				last = undefined;
 				// Skips over titles if encountered
 				l = routes[currentDoc.index - 2];
-				if (!l || typeof l === "string") {
-
-				} else {
+				if (l && typeof l !== "string") {
 					last = { slug: l.slug, name: l.name };
 				}
 			} else {
@@ -195,9 +197,7 @@
 				next = undefined;
 				// Skips over titles if encountered
 				n = routes[currentDoc.index + 2];
-				if (!n || typeof n === "string") {
-
-				} else {
+				if (n && typeof n !== "string") {
 					next = { slug: n.slug, name: n.name };
 				}
 			} else {
@@ -257,7 +257,8 @@
 			navigationExpanded = false;
 		}
 	}}
-	on:click={handleDocClick} />
+	on:click={handleDocClick}
+/>
 
 <svelte:head>
 	<title>{currentDoc ? currentDoc.name : "Components"} - geist-ui-svelte</title>
@@ -269,11 +270,13 @@
 			bind:this={navigationRef}
 			class="fixed bottom-0 z-40 flex max-h-screen w-full flex-col place-items-end overflow-y-auto
 			border-t border-gray-100 bg-white px-4
-			py-3 md:top-[79px] md:w-[300px] md:border-0 md:bg-transparent dark:border-gray-900
-			dark:bg-gray-999 md:dark:bg-transparent scrollbar-hide">
+			py-3 md:top-[79px] md:w-[250px] md:border-0 md:bg-transparent dark:border-gray-900
+			dark:bg-gray-999 md:dark:bg-transparent scrollbar-hide"
+		>
 			<div
 				class="w-full flex-col data-[show=false]:hidden md:data-[show=false]:flex"
-				data-show={navigationExpanded}>
+				data-show={navigationExpanded}
+			>
 				<div class="block md:hidden"><Spacer h={30} /></div>
 				{#each routes as route, i}
 					{#if typeof route === "string"}
@@ -292,18 +295,20 @@
 			<button
 				class="sticky bottom-0 bg-gray-0 dark:bg-gray-999 flex w-full place-items-center justify-between rounded-md border border-gray-100
 			px-2 py-1 md:hidden dark:border-gray-900"
-				on:click={toggleNavigationExpanded}>
+				on:click={toggleNavigationExpanded}
+			>
 				<div class="flex place-items-center gap-2">
 					{currentDoc?.name}
 				</div>
 				<div
 					class="transition-all data-[show=false]:rotate-180 text-blue-500"
-					data-show={navigationExpanded}>
+					data-show={navigationExpanded}
+				>
 					<ChevronIcon rotation="90deg" />
 				</div>
 			</button>
 		</nav>
-		<div class="slot-width relative w-full max-w-3xl md:left-[300px]">
+		<div class="slot-width relative w-full max-w-3xl md:left-[300px] px-4">
 			<Spacer h={30} />
 			<slot />
 			<ArrowNavigation {next} {last} />

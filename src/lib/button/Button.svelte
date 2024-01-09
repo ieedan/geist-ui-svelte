@@ -15,7 +15,7 @@
 		| "success-light"
 		| "warning-light"
 		| "error-light" = "default";
-	export let width: string | null = null;
+	export let width: string = "fit-content";
 	export let loading: boolean = false;
 	export let ghost: boolean = false;
 	export let size: Size = "md";
@@ -42,7 +42,7 @@
 		data-ghost={ghost}
 		data-loading={loading}
 		data-square={square}
-		style="width: {width ? width : 'auto'};"
+		style="width: {width};"
 		class="transition-all rounded-md border px-4 data-[square=true]:p-1 group relative
 		flex place-items-center text-nowrap whitespace-nowrap
 
@@ -119,13 +119,13 @@
 		data-[style='error-light']:hover:dark:bg-red-500 data-[style='error-light']:hover:dark:border-red-500
 		data-[style='error-light']:dark:border-red-600 data-[style='error-light']:dark:bg-red-600
 
-		data-[style='abort']:bg-transparent data-[style='abort']:dark:bg-transparent data-[style='abort']:hover:bg-transparent 
+		data-[style='abort']:bg-transparent data-[style='abort']:dark:bg-transparent data-[style='abort']:hover:bg-transparent
 		data-[style='abort']:hover:dark:bg-transparent data-[style='abort']:border-transparent
 		data-[style='abort']:text-gray-400 data-[style='abort']:dark:text-gray-600"
 	>
 		{#if loading}
 			<Loading
-				size="md"
+				size="sm"
 				class="absolute left-1/2 top-1/2 -translate-y-1/2 -translate-x-1/2"
 			/>
 		{/if}
@@ -152,7 +152,7 @@
 		data-ghost={ghost}
 		data-loading={loading}
 		data-square={square}
-		style="width: {width ? width : 'auto'};"
+		style="width: {width};"
 		class="transition-all rounded-md border px-4 data-[square=true]:p-1 group relative
 
 		data-[size='lg']:h-[40px] data-[size='md']:h-[36px] data-[size='sm']:h-[32px]
@@ -232,13 +232,13 @@
 		data-[style='error-light']:enabled:hover:dark:bg-red-500 data-[style='error-light']:enabled:hover:dark:border-red-500
 		data-[style='error-light']:dark:border-red-600 data-[style='error-light']:dark:bg-red-600
 
-		data-[style='abort']:bg-transparent data-[style='abort']:dark:bg-transparent data-[style='abort']:hover:bg-transparent 
+		data-[style='abort']:bg-transparent data-[style='abort']:dark:bg-transparent data-[style='abort']:hover:bg-transparent
 		data-[style='abort']:hover:dark:bg-transparent data-[style='abort']:border-transparent
 		data-[style='abort']:text-gray-400 data-[style='abort']:dark:text-gray-600"
 	>
 		{#if loading}
 			<Loading
-				size="md"
+				size="sm"
 				class="absolute left-1/2 top-1/2 -translate-y-1/2 -translate-x-1/2"
 			/>
 		{/if}

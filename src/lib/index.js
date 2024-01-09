@@ -68,6 +68,8 @@ export { default as Dropdown } from "./dropdown/Dropdown.svelte";
 
 export { default as DropdownItem } from "./dropdown/DropdownItem.svelte";
 
+export { default as Details } from "./details/Details.svelte";
+
 /* Utilities */
 
 export { default as Key } from "./key/Key.svelte";
@@ -91,6 +93,8 @@ export { default as CloneIcon } from "./icons/CloneIcon.svelte";
 export { default as LockIcon } from "./icons/LockIcon.svelte";
 
 export { default as PlusIcon } from "./icons/PlusIcon.svelte";
+
+export { default as GithubIcon } from "./icons/GithubIcon.svelte";
 
 /* Types */
 

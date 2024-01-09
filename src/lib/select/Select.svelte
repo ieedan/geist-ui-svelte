@@ -2,10 +2,12 @@
 	import ChevronIcon from "$lib/icons/ChevronIcon.svelte";
 	import findAncestor from "$lib/util/find-ancestor.js";
 	import { createPopper } from "@popperjs/core";
-	import { onMount } from "svelte";
+	import { createEventDispatcher, onMount } from "svelte";
 	import type { HTMLOptionAttributes } from "svelte/elements";
 	export let initialShow = false;
 	let show = initialShow;
+
+	const dispatch = createEventDispatcher();
 
 	let dropDownRef: HTMLDivElement;
 	let buttonRef: HTMLButtonElement;
@@ -36,9 +38,16 @@
 		hide();
 	};
 
+	$: {
+		if (dropDownRef) {
+			const option = findOption(value);
+			if (option) selectOption(option);
+		}
+	}
+
 	const handleMutation = () => {
 		// Check if value is still in list
-		const option = findOption();
+		const option = findOption(value);
 		if (allowNone) {
 			value = undefined;
 			selectedHTML = "";
@@ -55,6 +64,8 @@
 		if (!target) return;
 
 		selectOption(target);
+
+		dispatch("change", { value });
 	};
 
 	const selectOption = (option: HTMLElement) => {
@@ -100,14 +111,14 @@
 		}
 	};
 
-	const findOption = (): HTMLElement | undefined => {
+	const findOption = (val: HTMLOptionAttributes["value"]): HTMLElement | undefined => {
 		const children = Array.from(dropDownRef.children);
 		for (let i = 0; i < children.length; i++) {
 			const child = children[i] as HTMLElement;
 			if (child.tagName != "BUTTON" || !child.hasAttribute("data-value")) continue;
 			const v = child.getAttribute("data-value");
 
-			if (v == value) return child;
+			if (v == val) return child;
 		}
 
 		return undefined;
@@ -131,7 +142,7 @@
 		if (value == undefined && !allowNone) {
 			selectFirstOption();
 		} else {
-			const option = findOption();
+			const option = findOption(value);
 			if (option) {
 				selectOption(option);
 			} else {
@@ -156,9 +167,9 @@
 	style="width: {width};"
 	{disabled}
 	data-place-holder={value == undefined}
-	class="flex justify-between place-items-center w-full py-1 pr-1 border h-[34px] focus:border-gray-200 focus:dark:border-gray-800
-  disabled:bg-gray-50 dark:disabled:bg-gray-925 disabled:hover:cursor-not-allowed transition-all
-  border-gray-100 dark:border-gray-900 rounded-md data-[place-holder=true]:text-gray-300
+	class="flex justify-between h-9 place-items-center w-full py-1 pr-1 border focus:border-gray-200 focus:dark:border-gray-800
+  disabled:bg-gray-50 dark:disabled:bg-gray-925 disabled:hover:cursor-not-allowed transition-all enabled:hover:border-gray-999
+  border-gray-100 dark:border-gray-900 rounded-md data-[place-holder=true]:text-gray-300 enabled:hover:dark:border-gray-0
   data-[place-holder=true]:dark:text-gray-700 disabled:text-gray-300 dark:disabled:text-gray-700"
 >
 	<div class="px-2">
