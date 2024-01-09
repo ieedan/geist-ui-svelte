@@ -14,6 +14,10 @@
 	export let id: string | undefined = undefined;
 	export let width: string | undefined = undefined;
 
+	let inputRef: HTMLInputElement;
+
+	export const focus = () => inputRef.focus();
+
 	const change = (e: Event) => {
 		value = (e.target as HTMLInputElement).value;
 		dispatch("change", { value });
@@ -42,6 +46,7 @@
 		<input
 			{...$$restProps}
 			{id}
+			bind:this={inputRef}
 			on:click
 			on:keydown
 			on:keyup
@@ -67,6 +72,7 @@
 		<input
 			{...$$restProps}
 			{id}
+			bind:this={inputRef}
 			on:click
 			on:keydown
 			on:keyup
@@ -92,6 +98,7 @@
 		<input
 			{...$$restProps}
 			{id}
+			bind:this={inputRef}
 			on:click
 			on:keydown
 			on:keyup
@@ -116,6 +123,7 @@
 		<input
 			{...$$restProps}
 			{id}
+			bind:this={inputRef}
 			on:click
 			on:keydown
 			on:keyup

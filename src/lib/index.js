@@ -100,6 +100,10 @@ export { default as GithubIcon } from "./icons/GithubIcon.svelte";
 
 export { default as SearchIcon } from "./icons/SearchIcon.svelte";
 
+export { default as SvelteIcon } from "./icons/SvelteIcon.svelte";
+
+export { default as CommandIcon } from "./icons/CommandIcon.svelte";
+
 /* Types */
 
 export * from "./types";

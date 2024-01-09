@@ -13,6 +13,10 @@
 	 *   when working with server side search and large data sets.
 	 */
 	export let debounce: number = 0;
+	
+	let inputRef: HTMLInputElement;
+
+	export const focus = () => inputRef.focus();
 
 	const input = () => {
 		clearTimeout(debounceTimeout);
@@ -39,6 +43,7 @@ focus-within:dark:border-gray-800"
 	<SearchIcon size={16} />
 	<input
 		{...$$restProps}
+		bind:this={inputRef}
 		bind:value
 		on:input={input}
 		on:click
