@@ -34,7 +34,8 @@
 <search
 	class="flex place-items-center border border-gray-100 transition-all
 dark:border-gray-900 text-gray-500 rounded-lg px-2 focus-within:border-gray-200
-focus-within:dark:border-gray-800">
+focus-within:dark:border-gray-800"
+>
 	<SearchIcon size={16} />
 	<input
 		{...$$restProps}
@@ -48,13 +49,14 @@ focus-within:dark:border-gray-800">
 		on:touchcancel
 		on:mouseenter
 		on:mouseleave
-        on:change
+		on:change
 		type="text"
 		autocomplete="off"
 		autocorrect="off"
 		{placeholder}
 		class="bg-transparent outline-none py-2 px-2 text-gray-999 dark:text-gray-0 w-full
-        placeholder:font-light placeholder:text-gray-500 placeholder:dark:text-gray-500" />
+        placeholder:font-light placeholder:text-gray-500 placeholder:dark:text-gray-500"
+	/>
 	{#if loading}
 		<Loading size="xs" />
 	{/if}

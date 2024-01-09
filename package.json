@@ -25,7 +25,13 @@
 		"url": "https://github.com/ieedan/geist-ui-svelte/issues"
 	},
 	"homepage": "https://geist-ui-svelte.dev",
-	"keywords": ["UI", "Svelte", "Geist", "Component", "Dark"],
+	"keywords": [
+		"UI",
+		"Svelte",
+		"Geist",
+		"Component",
+		"Dark"
+	],
 	"exports": {
 		".": {
 			"types": "./dist/index.d.ts",

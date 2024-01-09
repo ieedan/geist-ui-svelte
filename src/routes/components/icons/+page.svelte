@@ -14,12 +14,12 @@
 	import Card from "$lib/card/Card.svelte";
 	import Center from "$lib/center/Center.svelte";
 	import Search from "$lib/search/Search.svelte";
-	import Dropdown from "$lib/dropdown/Dropdown.svelte";
 	import Modal from "$lib/modal/Modal.svelte";
+	import type { ComponentType } from "svelte";
 
 	type Icon = {
 		name: string;
-		component: ConstructorOfATypedSvelteComponent;
+		component: ComponentType;
 	};
 
 	const icons: Icon[] = [
@@ -90,7 +90,8 @@
 			<button
 				on:click={() => selectIcon(icon)}
 				class="flex place-items-center justify-center hover:border-gray-100 hover:dark:border-gray-900
-			border border-transparent size-28 rounded-lg transition-all">
+			border border-transparent size-28 rounded-lg transition-all"
+			>
 				<Center class="gap-2">
 					<div><svelte:component this={icon.component} size={28} /></div>
 					<Text type="small" color="secondary">{icon.name}</Text>
@@ -101,7 +102,8 @@
 </Card>
 <Modal
 	bind:visible={showModal}
-	class="md:h-56 md:w-[525px] flex place-items-center justify-center px-4 py-4">
+	class="md:h-56 md:w-[525px] flex place-items-center justify-center px-4 py-4"
+>
 	<div class="flex flex-col justify-center place-items-center gap-3">
 		{#if currentIcon}
 			<Card class="w-full flex place-items-center justify-center">
@@ -111,7 +113,8 @@
 				<Snippet
 					width="500px"
 					type="lite"
-					text={`import { ${currentIcon.name}Icon } from 'geist-ui-svelte'`} />
+					text={`import { ${currentIcon.name}Icon } from 'geist-ui-svelte'`}
+				/>
 			</div>
 		{/if}
 	</div>
