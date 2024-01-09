@@ -38,7 +38,7 @@
 						alt="geist-ui-svelte logo"
 						class="size-6 rounded-full border border-gray-0 dark:border-gray-900"
 					/>
-					<Text type="h5">geist-ui-svelte</Text>
+					<Text type="h5">geist-ui-svelte <Text class="!hidden sm:!inline-block" type="small">v{process.env.PACKAGE_VERSION}</Text></Text>
 				</a>
 			</div>
 			<div class="hidden md:flex place-items-center w-full justify-center md:col-start-2">
@@ -49,9 +49,9 @@
 				</Tabs>
 			</div>
 			<div class="md:col-start-3 hidden md:flex gap-2 place-items-center justify-end">
-				<Button href="https://github.com/ieedan/geist-ui-svelte" target="_blank"
-					><GithubIcon size={16} /></Button
-				>
+				<Button href="https://github.com/ieedan/geist-ui-svelte" target="_blank">
+					<GithubIcon size={16} />
+				</Button>
 				<Select
 					bind:value={currentPreference}
 					on:change={(e) => {

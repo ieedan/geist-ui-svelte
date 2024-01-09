@@ -12,7 +12,7 @@
 	export let containerLabel: string = "";
 	export let labelPlacement: "start" | "end" = "start";
 	export let id: string | undefined = undefined;
-	export let width: string = "auto";
+	export let width: string | undefined = undefined;
 
 	const change = (e: Event) => {
 		value = (e.target as HTMLInputElement).value;
@@ -22,18 +22,19 @@
 
 <label for={id}><slot /></label>
 <div
-	style="width: {width};"
+	style="width: {width ? width : ""};"
 	aria-disabled={disabled}
 	data-placement={labelPlacement}
 	data-has-label={containerLabel.length > 0}
-	class="flex place-items-center
+	class="flex place-items-center w-fit
     group aria-disabled:bg-gray-50 aria-disabled:dark:bg-gray-950 transition-all"
 >
 	{#if containerLabel}
 		<span
-			class="dark:bg-gray-950 bg-gray-50 py-1 px-1 text-gray-300 dark:text-gray-500 border-y border-gray-100
-            group-data-[placement='end']:order-2 dark:border-gray-900 group-data-[placement='start']:rounded-l-md
-            group-data-[placement='end']:rounded-r-md group-data-[placement='start']:border-l group-data-[placement='end']:border-r"
+			class="dark:bg-gray-950 bg-gray-50 font-light py-1 px-1 text-gray-300 dark:text-gray-500 
+			border-y border-gray-100 group-data-[placement='end']:order-2 dark:border-gray-900 
+			group-data-[placement='start']:rounded-l-md group-data-[placement='end']:rounded-r-md 
+			group-data-[placement='start']:border-l group-data-[placement='end']:border-r"
 			>{containerLabel}</span
 		>
 	{/if}
@@ -58,7 +59,7 @@
             flex-grow border group-data-[placement='start']:rounded-r-md group-data-[placement='end']:rounded-l-md
             group-data-[has-label=false]:rounded-md disabled:placeholder:text-gray-300 dark:placeholder:text-gray-600
           focus:border-gray-200 focus:dark:border-gray-800 disabled:hover:cursor-not-allowed transition-all
-          disabled:dark:placeholder:text-gray-600 dark:text-gray-0 text-gray-999"
+          disabled:dark:placeholder:text-gray-600 dark:text-gray-0 text-gray-999 min-w-0"
 			{disabled}
 			{readonly}
 		/>
@@ -85,7 +86,7 @@
             flex-grow border group-data-[placement='start']:rounded-r-md group-data-[placement='end']:rounded-l-md
             group-data-[has-label=false]:rounded-md disabled:placeholder:text-gray-300 dark:placeholder:text-gray-600
           focus:border-gray-200 focus:dark:border-gray-800 disabled:hover:cursor-not-allowed transition-all
-          disabled:dark:placeholder:text-gray-600 dark:text-gray-0 text-gray-999"
+          disabled:dark:placeholder:text-gray-600 dark:text-gray-0 text-gray-999 min-w-0"
 		/>
 	{:else if type == "number"}
 		<input
@@ -109,7 +110,7 @@
         flex-grow border group-data-[placement='start']:rounded-r-md group-data-[placement='end']:rounded-l-md
         group-data-[has-label=false]:rounded-md disabled:placeholder:text-gray-300 dark:placeholder:text-gray-600
       focus:border-gray-200 focus:dark:border-gray-800 disabled:hover:cursor-not-allowed transition-all
-      disabled:dark:placeholder:text-gray-600 dark:text-gray-0 text-gray-999 dark:scheme-dark"
+      disabled:dark:placeholder:text-gray-600 dark:text-gray-0 text-gray-999 dark:scheme-dark min-w-0"
 		/>
 	{:else}
 		<input
@@ -134,7 +135,7 @@
             flex-grow border group-data-[placement='start']:rounded-r-md group-data-[placement='end']:rounded-l-md
             group-data-[has-label=false]:rounded-md disabled:placeholder:text-gray-300 dark:placeholder:text-gray-600
             focus:border-gray-200 focus:dark:border-gray-800 disabled:hover:cursor-not-allowed transition-all
-            disabled:dark:placeholder:text-gray-600 dark:text-gray-0 text-gray-999 dark:scheme-dark"
+            disabled:dark:placeholder:text-gray-600 dark:text-gray-0 text-gray-999 dark:scheme-dark min-w-0"
 		/>
 	{/if}
 </div>
