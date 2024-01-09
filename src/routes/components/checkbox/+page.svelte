@@ -8,39 +8,21 @@
 	import Checkbox from "$lib/checkbox/Checkbox.svelte";
 </script>
 
-<Text type="h3">Button</Text>
+<Text type="h3">Checkbox</Text>
 <Spacer h={10} />
-<Text>The button component is used to trigger an event.</Text>
+<Text>The checkbox is an input with a true / false state.</Text>
 <Spacer h={20} />
-<Snippet width="450px" type="lite" text={`import { Button } from 'geist-ui-svelte';`} />
+<Snippet width="450px" type="lite" text={`import { Checkbox } from 'geist-ui-svelte';`} />
 <Spacer h={30} />
 <Text type="h4">Basic</Text>
 <Spacer h={10} />
 <FieldSet>
 	<div class="flex flex-col justify-start">
-
+		<Checkbox>Notifications</Checkbox>
 	</div>
 	<div slot="footer">
 		<Details label="Code">
-			<Code lang="svelte" code={`<Button>Action</Button>`} />
-		</Details>
-	</div>
-</FieldSet>
-<Spacer h={30} />
-<Text type="h4">Loading</Text>
-<Spacer h={10} />
-<FieldSet>
-	<div class="flex flex-col justify-start">
-
-	</div>
-	<div slot="footer">
-		<Details label="Code">
-			<Code
-				lang="svelte"
-				code={`<Button loading>Action</Button>
-<Spacer h={5}/>
-<Button loading color="success">Action</Button>`}
-			/>
+			<Code lang="svelte" code={`<Checkbox>Notifications</Checkbox>`} />
 		</Details>
 	</div>
 </FieldSet>
@@ -49,11 +31,13 @@
 <Spacer h={10} />
 <FieldSet>
 	<div class="flex flex-col justify-start">
-
+		<Checkbox disabled>Notifications</Checkbox>
+		<Checkbox disabled checked={true}>Notifications</Checkbox>
 	</div>
 	<div slot="footer">
 		<Details label="Code">
-			<Code lang="svelte" code={`<Button disabled>Action</Button>`} />
+			<Code lang="svelte" code={`<Checkbox disabled>Notifications</Checkbox>
+<Checkbox disabled checked={true}>Notifications</Checkbox>`} />
 		</Details>
 	</div>
 </FieldSet>
@@ -62,42 +46,21 @@
 <Spacer h={10} />
 <FieldSet>
 	<div class="flex flex-wrap gap-2">
-
+		<Checkbox checked={true}>Default</Checkbox>
+		<Checkbox color="success" checked={true}>Success</Checkbox>
+		<Checkbox color="warning" checked={true}>Warning</Checkbox>
+		<Checkbox color="error" checked={true}>Error</Checkbox>
+		<Checkbox color="secondary" checked={true}>Secondary</Checkbox>
 	</div>
 	<div slot="footer">
 		<Details label="Code">
 			<Code
 				lang="svelte"
-				code={`<Button color="secondary">Secondary</Button>
-<Button color="success">Success</Button>
-<Button color="warning">Warning</Button>
-<Button color="error">Error</Button>
-<Button color="abort">Abort</Button>
-<Button color="secondary-light">Secondary Light</Button>
-<Button color="success-light">Success Light</Button>
-<Button color="warning-light">Warning Light</Button>
-<Button color="error-light">Error Light</Button>`}
-			/>
-		</Details>
-	</div>
-</FieldSet>
-<Spacer h={30} />
-<Text type="h4">Ghost</Text>
-<Spacer h={5} />
-<Text>Reverses the color fill.</Text>
-<Spacer h={10} />
-<FieldSet>
-	<div class="flex flex-wrap gap-2">
-		
-	</div>
-	<div slot="footer">
-		<Details label="Code">
-			<Code
-				lang="svelte"
-				code={`<Button color="secondary" ghost>Secondary</Button>
-<Button color="success" ghost>Success</Button>
-<Button color="warning" ghost>Warning</Button>
-<Button color="error" ghost>Error</Button>`}
+				code={`<Checkbox checked={true}>Default</Checkbox>
+<Checkbox color="success" checked={true}>Success</Checkbox>
+<Checkbox color="warning" checked={true}>Warning</Checkbox>
+<Checkbox color="error" checked={true}>Error</Checkbox>
+<Checkbox color="secondary" checked={true}>Secondary</Checkbox>`}
 			/>
 		</Details>
 	</div>
