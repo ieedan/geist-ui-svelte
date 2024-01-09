@@ -14,6 +14,21 @@
 	});
 </script>
 
-<div class="rounded-lg overflow-hidden px-4 py-4" style="background-color: #07090F;">
+<div class="rounded-lg overflow-x-auto px-4 py-4 scrollbar-hide" style="background-color: #07090F;">
 	{@html highlightedCode}
 </div>
+
+<style lang="postcss">
+	.scrollbar-hide {
+		-ms-overflow-style: none; /* Internet Explorer and Edge */
+		scrollbar-width: none; /* Firefox */
+	}
+
+	.scrollbar-hide::-webkit-scrollbar {
+		display: none; /* Chrome, Safari, and Opera */
+	}
+
+	::-webkit-scrollbar-corner {
+		background: rgba(0, 0, 0, 0);
+	}
+</style>

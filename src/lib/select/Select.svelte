@@ -84,16 +84,8 @@
 		value = v;
 
 		// Get html of selected option
-
-		const children = Array.from(option.children);
-
-		for (let i = 0; i < children.length; i++) {
-			if (children[i].hasAttribute("data-option-html")) {
-				selectedHTML = children[i].innerHTML;
-				selectedInnerText = (children[i] as HTMLDivElement).innerText;
-				break;
-			}
-		}
+		selectedHTML = option.innerHTML;
+		selectedInnerText = option.innerText;
 
 		// Set selected
 
@@ -161,7 +153,6 @@
 <svelte:document on:click={docClick} />
 
 <button
-	role="listbox"
 	on:click={toggleShow}
 	bind:this={buttonRef}
 	style="width: {width};"
@@ -191,6 +182,8 @@
 	{/if}
 </button>
 <div
+	role="listbox"
+	aria-label="listbox dialog"
 	data-shadow={shadow}
 	data-show={show}
 	style="width: {width};"
