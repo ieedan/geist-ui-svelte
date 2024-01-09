@@ -6,6 +6,7 @@
 </script>
 
 <svg
+	aria-label="menu"
 	style="transform: rotate({rotation});"
 	width={size}
 	height={size}

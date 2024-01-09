@@ -2,6 +2,7 @@
 	import { onMount } from "svelte";
 
 	export let visible = false;
+	export let ariaLabel: string = "page";
 
 	$: {
 		if (typeof window !== "undefined" && document) {
@@ -28,6 +29,7 @@
 <svelte:document on:keydown={docKeydown} />
 
 <div
+	aria-label={ariaLabel}
 	data-show={visible}
 	role="dialog"
 	class="bg-gray-0 dark:bg-gray-999 max-w-full w-full bottom-0

@@ -6,6 +6,7 @@
 </script>
 
 <svg
+	aria-label="svelte logo"
 	style="transform: rotate({rotation}); enable-background:new 0 0 93.2 112;"
 	width={size}
 	height={size}

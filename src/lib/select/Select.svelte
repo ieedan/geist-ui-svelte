@@ -161,7 +161,6 @@
 <svelte:document on:click={docClick} />
 
 <button
-	role="listbox"
 	on:click={toggleShow}
 	bind:this={buttonRef}
 	style="width: {width};"
@@ -191,6 +190,7 @@
 	{/if}
 </button>
 <div
+	role="listbox"
 	data-shadow={shadow}
 	data-show={show}
 	style="width: {width};"

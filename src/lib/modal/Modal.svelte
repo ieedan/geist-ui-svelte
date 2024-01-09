@@ -11,6 +11,7 @@
 		}
 	}
 
+	export let ariaLabel: string = "modal";
 	export let visible = false;
 	/** Customize the width of the modal here
 	 *
@@ -57,6 +58,7 @@
 
 <div
 	data-show={visible}
+	aria-label={ariaLabel}
 	role="dialog"
 	class="bg-gray-0 dark:bg-gray-999 max-w-full w-full bottom-0 left-0 fixed sm:top-1/2 transition-all
     sm:-translate-x-1/2 sm:left-1/2 sm:-translate-y-1/2 z-50 data-[show=false]:opacity-0
