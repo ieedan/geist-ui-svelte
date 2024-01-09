@@ -12,6 +12,7 @@
 	import Option from "$lib/select/Option.svelte";
 	import { onMount } from "svelte";
 	import GithubIcon from "$lib/icons/GithubIcon.svelte";
+	import favicon from "$lib/assets/favicon.svg";
 
 	let menuVisible = false;
 	let currentPreference: ColorPreference;
@@ -31,7 +32,12 @@
 			class="flex justify-between place-items-center md:grid md:grid-cols-3 w-full px-6 max-w-5xl py-2 md:place-items-stretch md:justify-start"
 		>
 			<div class="col-start-1 flex place-items-center justify-start">
-				<a href="/">
+				<a href="/" class="flex place-items-center gap-2">
+					<img
+						src={favicon}
+						alt="geist-ui-svelte logo"
+						class="size-6 rounded-full border border-gray-0 dark:border-gray-900"
+					/>
 					<Text type="h5">geist-ui-svelte</Text>
 				</a>
 			</div>

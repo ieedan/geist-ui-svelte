@@ -1,6 +1,6 @@
 {
 	"name": "geist-ui-svelte",
-	"version": "0.0.25",
+	"version": "0.0.26",
 	"author": {
 		"name": "Aidan Bleser",
 		"url": "https://aidanbleser.com"
@@ -24,6 +24,7 @@
 	"bugs": {
 		"url": "https://github.com/ieedan/geist-ui-svelte/issues"
 	},
+	"homepage": "https://geist-ui-svelte.dev",
 	"exports": {
 		".": {
 			"types": "./dist/index.d.ts",
