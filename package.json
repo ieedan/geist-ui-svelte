@@ -1,6 +1,6 @@
 {
 	"name": "geist-ui-svelte",
-	"version": "0.0.26",
+	"version": "0.0.27",
 	"author": {
 		"name": "Aidan Bleser",
 		"url": "https://aidanbleser.com"
@@ -25,6 +25,13 @@
 		"url": "https://github.com/ieedan/geist-ui-svelte/issues"
 	},
 	"homepage": "https://geist-ui-svelte.dev",
+	"keywords": [
+		"UI",
+		"Svelte",
+		"Geist",
+		"Component",
+		"Dark"
+	],
 	"exports": {
 		".": {
 			"types": "./dist/index.d.ts",
@@ -197,6 +204,10 @@
 		"./Details.svelte": {
 			"types": "./dist/details/Details.svelte.d.ts",
 			"svelte": "./dist/details/Details.svelte"
+		},
+		"./Search.svelte": {
+			"types": "./dist/search/Search.svelte.d.ts",
+			"svelte": "./dist/search/Search.svelte"
 		}
 	},
 	"files": [

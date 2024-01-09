@@ -61,6 +61,10 @@
 				},
 			],
 		},
+		{
+			name: "Search",
+			slug: "/components/search",
+		},
 		"LAYOUT",
 		{
 			name: "Card",
