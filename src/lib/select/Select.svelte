@@ -84,16 +84,8 @@
 		value = v;
 
 		// Get html of selected option
-
-		const children = Array.from(option.children);
-
-		for (let i = 0; i < children.length; i++) {
-			if (children[i].hasAttribute("data-option-html")) {
-				selectedHTML = children[i].innerHTML;
-				selectedInnerText = (children[i] as HTMLDivElement).innerText;
-				break;
-			}
-		}
+		selectedHTML = option.innerHTML;
+		selectedInnerText = option.innerText;
 
 		// Set selected
 
@@ -169,8 +161,7 @@
 	class="flex justify-between h-9 place-items-center w-full py-1 pr-1 border focus:border-gray-200 focus:dark:border-gray-800
   disabled:bg-gray-50 dark:disabled:bg-gray-925 disabled:hover:cursor-not-allowed transition-all enabled:hover:border-gray-999
   border-gray-100 dark:border-gray-900 rounded-md data-[place-holder=true]:text-gray-300 enabled:hover:dark:border-gray-0
-  data-[place-holder=true]:dark:text-gray-700 disabled:text-gray-300 dark:disabled:text-gray-700"
->
+  data-[place-holder=true]:dark:text-gray-700 disabled:text-gray-300 dark:disabled:text-gray-700">
 	<div class="px-2">
 		{#if value == undefined}
 			<span>{placeholder}</span>
@@ -183,21 +174,20 @@
 	{#if !noIcon}
 		<div
 			data-show={show}
-			class="data-[show=true]:rotate-180 transition-all dark:text-gray-700 text-gray-300"
-		>
+			class="data-[show=true]:rotate-180 transition-all dark:text-gray-700 text-gray-300">
 			<ChevronIcon rotation="90deg" size={16} />
 		</div>
 	{/if}
 </button>
 <div
 	role="listbox"
+	aria-label="listbox dialog"
 	data-shadow={shadow}
 	data-show={show}
 	style="width: {width};"
 	bind:this={dropDownRef}
 	class="absolute bg-gray-0 dark:bg-gray-999 border border-gray-100 dark:border-gray-900 z-[1] transition-all
-         rounded-md data-[show=false]:opacity-0 data-[show=false]:pointer-events-none data-[shadow=true]:shadow-sm dark:shadow-gray-999"
->
+         rounded-md data-[show=false]:opacity-0 data-[show=false]:pointer-events-none data-[shadow=true]:shadow-sm dark:shadow-gray-999">
 	<slot />
 </div>
 
