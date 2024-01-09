@@ -91,3 +91,27 @@
 		</Details>
 	</div>
 </FieldSet>
+<Spacer h={30} />
+<Text type="h4">Ghost</Text>
+<Spacer h={5} />
+<Text>Reverses the color fill.</Text>
+<Spacer h={10} />
+<FieldSet>
+	<div class="flex flex-wrap gap-2">
+		<Button color="secondary" ghost>Secondary</Button>
+		<Button color="success" ghost>Success</Button>
+		<Button color="warning" ghost>Warning</Button>
+		<Button color="error" ghost>Error</Button>
+	</div>
+	<div slot="footer">
+		<Details label="Code">
+			<Code
+				lang="svelte"
+				code={`<Button color="secondary" ghost>Secondary</Button>
+<Button color="success" ghost>Success</Button>
+<Button color="warning" ghost>Warning</Button>
+<Button color="error" ghost>Error</Button>`}
+			/>
+		</Details>
+	</div>
+</FieldSet>
