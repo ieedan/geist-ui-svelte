@@ -8,7 +8,6 @@
 	import Page from "$lib/page/Page.svelte";
 	import Button from "$lib/button/Button.svelte";
 	import { Hero } from "$lib/index.js";
-	import ChevronIcon from "$lib/icons/ChevronIcon.svelte";
 	import Note from "$lib/note/Note.svelte";
 
 	export let firstExamplePage = false;
@@ -21,7 +20,7 @@
 <Spacer h={20} />
 <Snippet width="450px" type="lite" text={`import { Hero } from 'geist-ui-svelte';`} />
 <Spacer h={20} />
-<Note color="success">Click show example to see the the full size component.</Note>
+<Note color="success">Click `Show Example` to see the the full size component.</Note>
 <Spacer h={20}/>
 <Text type="h4">Basic</Text>
 <Spacer h={5} />
