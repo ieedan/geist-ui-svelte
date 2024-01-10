@@ -21,6 +21,7 @@
 	export let type: HTMLButtonAttributes["type"] = "button";
 	export let proportional = false;
 	export let href: string | undefined = undefined;
+	export let width: string = "fit-content";
 </script>
 
 {#if href != undefined}
@@ -41,6 +42,7 @@
 		data-ghost={ghost}
 		data-loading={loading}
 		data-square={proportional}
+		style="width: {width};"
 		class="transition-all rounded-md border px-4 data-[square=true]:p-1 group relative
 		flex place-items-center text-nowrap whitespace-nowrap
 
@@ -127,7 +129,7 @@
 				class="absolute left-1/2 top-1/2 -translate-y-1/2 -translate-x-1/2"
 			/>
 		{/if}
-		<div class="group-data-[loading=true]:opacity-0">
+		<div class="group-data-[loading=true]:opacity-0 flex place-items-center justify-center">
 			<slot />
 		</div>
 	</a>
@@ -150,6 +152,7 @@
 		data-ghost={ghost}
 		data-loading={loading}
 		data-square={proportional}
+		style="width: {width};"
 		class="transition-all rounded-md border px-4 data-[square=true]:p-1 group relative
 
 		data-[size='lg']:h-[40px] data-[size='md']:h-[36px] data-[size='sm']:h-[32px]
@@ -239,7 +242,7 @@
 				class="absolute left-1/2 top-1/2 -translate-y-1/2 -translate-x-1/2"
 			/>
 		{/if}
-		<div class="group-data-[loading=true]:opacity-0">
+		<div class="group-data-[loading=true]:opacity-0 flex place-items-center justify-center">
 			<slot />
 		</div>
 	</button>

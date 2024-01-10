@@ -7,7 +7,7 @@
 
 <svg
 	aria-label="edit"
-	style="transform: rotate({rotation});"
+	style="transform: rotate({rotation}); display: inline;"
 	width={size}
 	height={size}
 	viewBox="0 0 350 350"

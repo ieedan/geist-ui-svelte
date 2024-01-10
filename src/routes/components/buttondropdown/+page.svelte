@@ -1,6 +1,6 @@
 <script lang="ts">
-	import ButtonDropdownItem from "$lib/button-dropdown/ButtonDropdownItem.svelte";
-	import ButtonDropdown from "$lib/button-dropdown/ButtonDropdown.svelte";
+	import ButtonDropdownItem from "$lib/buttondropdown/ButtonDropdownItem.svelte";
+	import ButtonDropdown from "$lib/buttondropdown/ButtonDropdown.svelte";
 	import Code from "$lib/code/Code.svelte";
 	import Details from "$lib/details/Details.svelte";
 	import FieldSet from "$lib/fieldset/FieldSet.svelte";

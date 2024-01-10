@@ -17,7 +17,7 @@
 	text={["npm create svelte@latest my-project", "cd my-project"]}
 	type="lite"
 />
-<Spacer h={10} />
+<Spacer h={20} />
 <Text>Setup TailwindCSS</Text>
 <Spacer h={5} />
 <Snippet
@@ -25,7 +25,7 @@
 	text={["npm install -D tailwindcss postcss autoprefixer", "npx tailwindcss init -p"]}
 	type="lite"
 />
-<Spacer h={10} />
+<Spacer h={20} />
 <Text>Configure TailwindCSS with our recommended settings.</Text>
 <Spacer h={5} />
 <Code
@@ -66,7 +66,7 @@ export default {
 	darkMode: "class",
 };`}
 />
-<Spacer h={10} />
+<Spacer h={20} />
 <Text>Configure App.css</Text>
 <Spacer h={5} />
 <Code
@@ -85,9 +85,9 @@ html {
 	scrollbar-gutter: stable;
 }`}
 />
-<Spacer h={10} />
+<Spacer h={20} />
 <Text>Install geist-ui-svelte</Text>
 <Spacer h={5} />
 <Snippet width="500px" text="npm i geist-ui-svelte" type="lite" />
-<Spacer h={10} />
+<Spacer h={20} />
 <Text>Now you're ready to start using our <Link to="/components" color>components!</Link></Text>

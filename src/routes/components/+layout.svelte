@@ -314,11 +314,16 @@
 			<Divider />
 			<Spacer h={10} />
 			<div class="flex place-items-center gap-2">
-				<Link to="https://github.com/ieedan/geist-ui-svelte"><GithubIcon size={20} /></Link>
+				<a
+					href="https://github.com/ieedan/geist-ui-svelte"
+					target="_blank"
+					class="flex place-items-center justify-center">
+					<GithubIcon size={22} />
+				</a>
 				<a
 					href="{GITHUB_DOCS_DIRECTORY}{currentDoc?.name.toLowerCase()}/+page.svelte"
 					target="_blank"
-					class="border border-gray-100 dark:border-gray-900 
+					class="border border-gray-100 dark:border-gray-900 size-7 flex place-items-center justify-center
 					hover:bg-gray-100 dark:hover:bg-gray-900 transition-all rounded-full p-1 text-blue-500">
 					<EditIcon size={16} />
 				</a>

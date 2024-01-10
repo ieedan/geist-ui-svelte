@@ -7,7 +7,7 @@
 
 <svg
 	aria-label="github logo"
-	style="transform: rotate({rotation});"
+	style="transform: rotate({rotation}); display: inline;"
 	width={size}
 	height={size}
 	xmlns="http://www.w3.org/2000/svg"
