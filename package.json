@@ -216,6 +216,10 @@
 		"./CommandIcon.svelte": {
 			"types": "./dist/icons/CommandIcon.svelte.d.ts",
 			"svelte": "./dist/icons/CommandIcon.svelte"
+		},
+		"./EditIcon.svelte": {
+			"types": "./dist/icons/EditIcon.svelte.d.ts",
+			"svelte": "./dist/icons/EditIcon.svelte"
 		}
 	},
 	"files": [

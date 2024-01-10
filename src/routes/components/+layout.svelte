@@ -6,9 +6,19 @@
 	import Text from "$lib/text/Text.svelte";
 	import Spacer from "$lib/spacer/Spacer.svelte";
 	import ArrowNavigation from "$lib/arrow-navigation/ArrowNavigation.svelte";
+	import Divider from "$lib/divider/Divider.svelte";
+	import Link from "$lib/link/Link.svelte";
+	import GithubIcon from "$lib/icons/GithubIcon.svelte";
+	import Button from "$lib/button/Button.svelte";
+	import PlusIcon from "$lib/icons/PlusIcon.svelte";
+	import EditIcon from "$lib/icons/EditIcon.svelte";
 	let navigationExpanded = false;
 
 	let navigationRef: HTMLElement;
+
+	const GITHUB_SOURCE_DIRECTORY = "https://github.com/ieedan/geist-ui-svelte/blob/main/src/lib/";
+	const GITHUB_DOCS_DIRECTORY =
+		"https://github.com/ieedan/geist-ui-svelte/blob/main/src/routes/components/";
 
 	const routes: (Route | string)[] = [
 		"GENERAL",
@@ -246,8 +256,7 @@
 			navigationExpanded = false;
 		}
 	}}
-	on:click={handleDocClick}
-/>
+	on:click={handleDocClick} />
 
 <svelte:head>
 	<title>{currentDoc ? currentDoc.name : "Components"} - geist-ui-svelte</title>
@@ -260,12 +269,10 @@
 			class="fixed bottom-0 z-40 flex max-h-screen w-full flex-col place-items-end overflow-y-auto
 			border-t border-gray-100 bg-white px-4
 			py-3 md:top-[79px] md:w-[250px] md:border-0 md:bg-transparent dark:border-gray-900
-			dark:bg-gray-999 md:dark:bg-transparent scrollbar-hide"
-		>
+			dark:bg-gray-999 md:dark:bg-transparent scrollbar-hide">
 			<div
 				class="w-full flex-col data-[show=false]:hidden md:data-[show=false]:flex"
-				data-show={navigationExpanded}
-			>
+				data-show={navigationExpanded}>
 				<div class="block md:hidden"><Spacer h={30} /></div>
 				{#each routes as route, i}
 					{#if typeof route === "string"}
@@ -275,7 +282,12 @@
 						<Text color="abort" type="small" class="px-2 font-light">{route}</Text>
 						<Spacer h={5} />
 					{:else}
-						<NavRoute {...route} />
+						<NavRoute
+							hidden={route.hidden}
+							routes={route.routes}
+							expanded={route.expanded}
+							slug={route.slug}
+							name={route.name} />
 					{/if}
 				{/each}
 			</div>
@@ -284,15 +296,13 @@
 			<button
 				class="sticky bottom-0 bg-gray-0 dark:bg-gray-999 flex w-full place-items-center justify-between rounded-md border border-gray-100
 			px-2 py-1 md:hidden dark:border-gray-900"
-				on:click={toggleNavigationExpanded}
-			>
+				on:click={toggleNavigationExpanded}>
 				<div class="flex place-items-center gap-2">
 					{currentDoc?.name}
 				</div>
 				<div
 					class="transition-all data-[show=false]:rotate-180 text-blue-500"
-					data-show={navigationExpanded}
-				>
+					data-show={navigationExpanded}>
 					<ChevronIcon rotation="90deg" />
 				</div>
 			</button>
@@ -300,6 +310,19 @@
 		<div class="slot-width relative w-full max-w-3xl md:left-[300px] px-4">
 			<Spacer h={30} />
 			<slot />
+			<Spacer h={30} />
+			<Divider />
+			<Spacer h={10} />
+			<div class="flex place-items-center gap-2">
+				<Link to="https://github.com/ieedan/geist-ui-svelte"><GithubIcon size={20} /></Link>
+				<a
+					href="{GITHUB_DOCS_DIRECTORY}{currentDoc?.name.toLowerCase()}/+page.svelte"
+					target="_blank"
+					class="border border-gray-100 dark:border-gray-900 
+					hover:bg-gray-100 dark:hover:bg-gray-900 transition-all rounded-full p-1 text-blue-500">
+					<EditIcon size={16} />
+				</a>
+			</div>
 			<ArrowNavigation {next} {last} />
 			<div class="block md:hidden"><Spacer h={59} /></div>
 		</div>

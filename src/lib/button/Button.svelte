@@ -15,12 +15,11 @@
 		| "success-light"
 		| "warning-light"
 		| "error-light" = "default";
-	export let width: string = "fit-content";
 	export let loading: boolean = false;
 	export let ghost: boolean = false;
 	export let size: Size = "md";
 	export let type: HTMLButtonAttributes["type"] = "button";
-	export let square = false;
+	export let proportional = false;
 	export let href: string | undefined = undefined;
 </script>
 
@@ -41,8 +40,7 @@
 		data-size={size}
 		data-ghost={ghost}
 		data-loading={loading}
-		data-square={square}
-		style="width: {width};"
+		data-square={proportional}
 		class="transition-all rounded-md border px-4 data-[square=true]:p-1 group relative
 		flex place-items-center text-nowrap whitespace-nowrap
 
@@ -151,8 +149,7 @@
 		data-size={size}
 		data-ghost={ghost}
 		data-loading={loading}
-		data-square={square}
-		style="width: {width};"
+		data-square={proportional}
 		class="transition-all rounded-md border px-4 data-[square=true]:p-1 group relative
 
 		data-[size='lg']:h-[40px] data-[size='md']:h-[36px] data-[size='sm']:h-[32px]

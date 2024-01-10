@@ -21,6 +21,7 @@
 	import Code from "$lib/code/Code.svelte";
 	import SvelteIcon from "$lib/icons/SvelteIcon.svelte";
 	import CommandIcon from "$lib/icons/CommandIcon.svelte";
+	import EditIcon from "$lib/icons/EditIcon.svelte";
 
 	type Icon = {
 		name: string;
@@ -67,6 +68,10 @@
 		{
 			name: "Command",
 			component: CommandIcon,
+		},
+		{
+			name: "Edit",
+			component: EditIcon,
 		},
 	];
 
