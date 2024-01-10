@@ -162,12 +162,12 @@
 			"svelte": "./dist/icons/PlusIcon.svelte"
 		},
 		"./ButtonDropdown.svelte": {
-			"types": "./dist/button-dropdown/ButtonDropdown.svelte.d.ts",
-			"svelte": "./dist/button-dropdown/ButtonDropdown.svelte"
+			"types": "./dist/buttondropdown/ButtonDropdown.svelte.d.ts",
+			"svelte": "./dist/buttondropdown/ButtonDropdown.svelte"
 		},
 		"./ButtonDropdownItem.svelte": {
-			"types": "./dist/button-dropdown/ButtonDropdownItem.svelte.d.ts",
-			"svelte": "./dist/button-dropdown/ButtonDropdownItem.svelte"
+			"types": "./dist/buttondropdown/ButtonDropdownItem.svelte.d.ts",
+			"svelte": "./dist/buttondropdown/ButtonDropdownItem.svelte"
 		},
 		"./Drawer.svelte": {
 			"types": "./dist/drawer/Drawer.svelte.d.ts",
