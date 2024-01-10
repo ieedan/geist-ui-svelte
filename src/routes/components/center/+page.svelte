@@ -5,8 +5,6 @@
 	import Snippet from "$lib/snippet/Snippet.svelte";
 	import Spacer from "$lib/spacer/Spacer.svelte";
 	import Text from "$lib/text/Text.svelte";
-	import Page from "$lib/page/Page.svelte";
-	import Button from "$lib/button/Button.svelte";
 	import Card from "$lib/card/Card.svelte";
 	import Center from "$lib/center/Center.svelte";
 </script>

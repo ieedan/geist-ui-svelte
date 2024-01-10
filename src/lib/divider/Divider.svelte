@@ -15,7 +15,7 @@
     data-[margin='lg']:my-4 data-[margin='xl']:my-5"
 	/>
 	{#if label}
-		<small class="px-2 text-gray-500 dark:text-gray-500">{label}</small>
+		<small class="px-2 text-gray-500 dark:text-gray-500 whitespace-nowrap">{label}</small>
 	{/if}
 	<hr
 		style="height: {height};"
