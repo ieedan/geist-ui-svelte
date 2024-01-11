@@ -9,9 +9,11 @@
 	import Button from "$lib/button/Button.svelte";
 	import { Hero } from "$lib/index.js";
 	import Note from "$lib/note/Note.svelte";
+	import Center from "$lib/center/Center.svelte";
 
 	export let firstExamplePage = false;
 	export let secondExamplePage = false;
+	export let thirdExamplePage = false;
 </script>
 
 <Text type="h3">Hero</Text>
@@ -26,8 +28,7 @@
 <Spacer h={5} />
 <Text
 	>Automatically centers content on the screen and takes up the entire page <code>`100svh`</code
-	>.</Text
->
+	>.</Text>
 <Spacer h={10} />
 <FieldSet>
 	<div class="flex flex-col justify-start">
@@ -43,8 +44,7 @@
 					</div>
 					<Spacer h={150} />
 					<Button on:click={() => (firstExamplePage = false)}
-						>Click here to close or press `Escape`</Button
-					>
+						>Click here to close or press `Escape`</Button>
 				</Hero>
 			</div>
 		</Page>
@@ -60,8 +60,7 @@
 		<Button color="secondary-light">Get Started</Button>
 		<Button>Components</Button>
 	</div>
-</Hero>`}
-			/>
+</Hero>`} />
 		</Details>
 	</div>
 </FieldSet>
@@ -84,8 +83,7 @@
 					</div>
 					<Spacer h={150} />
 					<Button on:click={() => (secondExamplePage = false)}
-						>Click here to close or press `Escape`</Button
-					>
+						>Click here to close or press `Escape`</Button>
 				</Hero>
 			</div>
 		</Page>
@@ -101,8 +99,70 @@
 		<Button color="secondary-light">Get Started</Button>
 		<Button>Components</Button>
 	</div>
-</Hero>`}
-			/>
+</Hero>`} />
+		</Details>
+	</div>
+</FieldSet>
+<Spacer h={30} />
+<!-- This Example is Responsive for Small devices we use type="h2" and for Medium & Large Devices we use type="h1" -->
+<!-- Changes : type="p" is added under h1  -->
+<Text type="h4">Hero with description</Text>
+<Spacer h={5} />
+<Text>Uses Description to describe your Project</Text>
+<Spacer h={10} />
+<FieldSet>
+	<div class="flex flex-col justify-start">
+		<Button on:click={() => (thirdExamplePage = true)}>Show Example</Button>
+		<Page bind:visible={thirdExamplePage}>
+			<div class="max-h-screen overflow-y-auto">
+				<Hero>
+					<div class="hidden sm:flex text-center sm:text-left">
+						<Text type="h1">geist-ui-svelte</Text>
+					</div>
+					<div class="flex sm:hidden text-center sm:text-left">
+						<Text type="h2">geist-ui-svelte</Text>
+					</div>
+					<Spacer h={20} />
+					<div class="px-2 text-center sm:text-left">
+						<Text type="p" color="secondary"
+							>Geist UI Svelte is An open source design system for building modern
+							websites and applications</Text>
+					</div>
+					<Spacer h={20} />
+					<div class="flex place-items-center gap-4">
+						<Button color="secondary-light">Get Started</Button>
+						<Button>Components</Button>
+					</div>
+					<Spacer h={150} />
+					<Button on:click={() => (thirdExamplePage = false)}
+						>Click here to close or press `Escape`</Button>
+				</Hero>
+			</div>
+		</Page>
+	</div>
+	<div slot="footer">
+		<Details label="Code">
+			<Code
+				lang="svelte"
+				code={`<Hero>
+  <div class="hidden sm:flex text-center sm:text-left">
+  	<Text type="h1">geist-ui-svelte</Text>
+  </div>
+  <div class="flex sm:hidden text-center sm:text-left">
+  	<Text type="h2">geist-ui-svelte</Text>
+  </div>
+  <Spacer h={20} />
+  <div class="px-2 text-center sm:text-left">
+  	<Text type="p" color="secondary"
+  	>Geist UI Svelte is An open source design system for building modern
+  	websites and applications</Text>
+  </div>
+  <Spacer h={20} />
+  <div class="flex place-items-center gap-4">
+	<Button color="secondary-light">Get Started</Button>
+	<Button>Components</Button>
+  </div>
+</Hero>`} />
 		</Details>
 	</div>
 </FieldSet>

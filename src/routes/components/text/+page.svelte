@@ -16,8 +16,7 @@
 <Text type="h4">Tag Types</Text>
 <Spacer h={5} />
 <Text
-	>Thanks to <code>{`<svelte:element>`}</code> the text component renders with different html tags.</Text
->
+	>Thanks to <code>{`<svelte:element>`}</code> the text component renders with different html tags.</Text>
 <Spacer h={10} />
 <FieldSet>
 	<div class="flex flex-col">
@@ -43,8 +42,7 @@
 <Text type="h6">Text</Text>
 <Text>Text</Text>
 <Text type="span">Text</Text>
-<Text type="small">Text</Text>`}
-			/>
+<Text type="small">Text</Text>`} />
 		</Details>
 	</div>
 </FieldSet>
@@ -71,8 +69,7 @@
 <Text color="success">Text</Text>
 <Text color="error">Text</Text>
 <Text color="warning">Text</Text>
-<Text color="abort">Text</Text>`}
-			/>
+<Text color="abort">Text</Text>`} />
 		</Details>
 	</div>
 </FieldSet>
@@ -112,8 +109,7 @@
 	<Text color="warning" i>ui</Text>
 	<Text color="success">-</Text>
 	<Text color="error">svelte</Text>
-</Text>`}
-			/>
+</Text>`} />
 		</Details>
 	</div>
 </FieldSet>
