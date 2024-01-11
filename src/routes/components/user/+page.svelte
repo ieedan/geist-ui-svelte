@@ -39,7 +39,8 @@
 				lang="svelte"
 				code={`<User 
 	name="Aidan"
-	img="https://avatars.githubusercontent.com/u/117548273?v=4"/>`} />
+	img="https://avatars.githubusercontent.com/u/117548273?v=4"/>`}
+			/>
 		</Details>
 	</div>
 </FieldSet>
@@ -57,7 +58,8 @@
 				code={`<User 
 	name="Aidan" 
 	img="https://avatars.githubusercontent.com/u/117548273?v=4" 
-	detail/>`} />
+	detail/>`}
+			/>
 		</Details>
 	</div>
 </FieldSet>
@@ -70,7 +72,8 @@
 			name="Aidan"
 			img="https://avatars.githubusercontent.com/u/117548273?v=4"
 			detail
-			details="Trash Dev" />
+			details="Trash Dev"
+		/>
 	</div>
 	<div slot="footer">
 		<Details label="Code">
@@ -80,7 +83,8 @@
 	name="Aidan"
 	img="https://avatars.githubusercontent.com/u/117548273?v=4"
 	detail
-	details="Trash Dev" />`} />
+	details="Trash Dev" />`}
+			/>
 		</Details>
 	</div>
 </FieldSet>

@@ -30,7 +30,8 @@
 	src={exampleDark} 
 	alt="An example image" 
 	width="575px" 
-	height="auto" />`} />
+	height="auto" />`}
+			/>
 		</Details>
 	</div>
 </FieldSet>
@@ -49,7 +50,8 @@
 			src={exampleLight}
 			alt="An example image"
 			width="575px"
-			height="auto" />
+			height="auto"
+		/>
 	</div>
 	<div slot="footer">
 		<Details label="Code">
@@ -59,7 +61,8 @@
 <Spacer h={30}/>
 <Card></Card>
 <Spacer h={10}/>
-<Card></Card>`} />
+<Card></Card>`}
+			/>
 		</Details>
 	</div>
 </FieldSet>
@@ -76,7 +79,8 @@
 			alt="An example image"
 			width="575px"
 			height="auto"
-			browserInvert />
+			browserInvert
+		/>
 	</div>
 	<div slot="footer">
 		<Details label="Code">
@@ -86,7 +90,8 @@
 <Spacer h={30}/>
 <Card></Card>
 <Spacer h={10}/>
-<Card></Card>`} />
+<Card></Card>`}
+			/>
 		</Details>
 	</div>
 </FieldSet>
@@ -105,14 +110,16 @@
 			src={exampleDark}
 			alt="An example image"
 			width="400px"
-			height="auto" />
+			height="auto"
+		/>
 		<Spacer h={10} />
 		<Image
 			browserURL="https://geist-ui-svelte.dev"
 			src={exampleDark}
 			alt="An example image"
 			width="400px"
-			height="auto" />
+			height="auto"
+		/>
 	</div>
 	<div slot="footer">
 		<Details label="Code">
@@ -122,7 +129,8 @@
 <Spacer h={30}/>
 <Card></Card>
 <Spacer h={10}/>
-<Card></Card>`} />
+<Card></Card>`}
+			/>
 		</Details>
 	</div>
 </FieldSet>

@@ -15,7 +15,7 @@
 			theme: "aurora-x",
 		});
 	});
-	
+
 	let copied = false;
 	let copyText = () => {
 		navigator.clipboard.writeText(code).then(() => {
@@ -27,7 +27,8 @@
 
 <div
 	class="rounded-lg overflow-x-auto px-4 py-4 scrollbar-hide relative"
-	style="background-color: #07090F;">
+	style="background-color: #07090F;"
+>
 	{@html highlightedCode}
 	<div class="absolute top-2 right-2 hidden sm:flex">
 		<button on:click={copyText}>
