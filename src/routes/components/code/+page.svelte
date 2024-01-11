@@ -23,7 +23,9 @@
 <Spacer h={10} />
 <FieldSet>
 	<div class="flex flex-col justify-start">
-		<Code lang="javascript" code={`const mergeSort = (arr) => {
+		<Code
+			lang="javascript"
+			code={`const mergeSort = (arr) => {
 	if (arr.length <= 1) return arr;
 		
 	const middle = Math.floor(arr.length / 2);
@@ -62,13 +64,12 @@ const merge = (leftHalf, rightHalf) => {
 	}
 		
 	return mergedArr;
-};`} />
+};`}
+		/>
 	</div>
 	<div slot="footer">
 		<Details label="Code">
-			<Code
-				lang="svelte"
-				code={`<Code lang="js" code={\`...\`}/>`} />
+			<Code lang="svelte" code={`<Code lang="js" code={\`...\`}/>`} />
 		</Details>
 	</div>
 </FieldSet>
