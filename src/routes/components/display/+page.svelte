@@ -7,7 +7,7 @@
 	import Snippet from "$lib/snippet/Snippet.svelte";
 	import Spacer from "$lib/spacer/Spacer.svelte";
 	import Text from "$lib/text/Text.svelte";
-	import exampleImage from '$lib/assets/demo-page.png'
+	import exampleImage from "$lib/assets/demo-page.png";
 </script>
 
 <Text type="h3">Display</Text>
@@ -20,9 +20,11 @@
 <Spacer h={10} />
 <FieldSet>
 	<div class="flex flex-col justify-start gap-2">
-		<Display caption="geist-ui-svelte makes building 
-		pretty, interactive applications easy">
-			<Image src={exampleImage} alt="Thing" width="400px" height="auto"/>
+		<Display
+			caption="geist-ui-svelte makes building 
+		pretty, interactive applications easy"
+		>
+			<Image src={exampleImage} alt="Thing" width="400px" height="auto" />
 		</Display>
 	</div>
 	<div slot="footer">
@@ -32,7 +34,8 @@
 				code={`<Display caption="geist-ui-svelte makes building 
 pretty, interactive applications easy">
 	<Image src={exampleImage} alt="Thing" width="400px" height="auto"/>
-</Display>`} />
+</Display>`}
+			/>
 		</Details>
 	</div>
 </FieldSet>

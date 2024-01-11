@@ -28,7 +28,7 @@
 					of your company or department.
 				</Text>
 				<Spacer h={10} />
-				<Input value="Aidan's Team Name" />
+				<Input value="Team Name" />
 			</div>
 			<div slot="footer" class="flex justify-between place-items-center">
 				<Text type="small">Please use 32 characters at maximum.</Text>
@@ -49,13 +49,14 @@
 			of your company or department.
 		</Text>
 		<Spacer h={10} />
-		<Input value="Aidan's Team Name" />
+		<Input value="Team Name" />
 	</div>
 	<div slot="footer" class="flex justify-between place-items-center">
 		<Text type="small">Please use 32 characters at maximum.</Text>
 		<Button color="secondary-light" size="sm">Save</Button>
 	</div>
-</FieldSet>`} />
+</FieldSet>`}
+			/>
 		</Details>
 	</div>
 </FieldSet>

@@ -8,7 +8,7 @@
 	import Page from "$lib/page/Page.svelte";
 	import Button from "$lib/button/Button.svelte";
 	import Note from "$lib/note/Note.svelte";
-	import Header from '$lib/header/Header.svelte';
+	import Header from "$lib/header/Header.svelte";
 
 	export let firstExamplePage = false;
 </script>
@@ -20,7 +20,7 @@
 <Snippet width="450px" type="lite" text={`import { Header } from 'geist-ui-svelte';`} />
 <Spacer h={20} />
 <Note color="success">Click `Show Example` to see the the full size component.</Note>
-<Spacer h={20}/>
+<Spacer h={20} />
 <Text type="h4">Basic</Text>
 <Spacer h={10} />
 <FieldSet>
@@ -40,7 +40,8 @@
 				lang="svelte"
 				code={`<Header>
 	<Text type="h5">geist-ui-svelte header</Text>
-</Header>`} />
+</Header>`}
+			/>
 		</Details>
 	</div>
 </FieldSet>

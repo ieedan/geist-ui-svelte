@@ -6,7 +6,7 @@
 </script>
 
 <svg
-	aria-label="plus" 
+	aria-label="plus"
 	style="transform: rotate({rotation}); display: inline;"
 	width={size}
 	height={size}

@@ -14,7 +14,11 @@
 <Spacer h={10} />
 <Text>Display related but alternate actions for a button.</Text>
 <Spacer h={20} />
-<Snippet width="100%" type="lite" text={`import { ButtonDropdown, ButtonDropdownItem } from 'geist-ui-svelte';`} />
+<Snippet
+	width="100%"
+	type="lite"
+	text={`import { ButtonDropdown, ButtonDropdownItem } from 'geist-ui-svelte';`}
+/>
 <Spacer h={30} />
 <Text type="h4">Basic</Text>
 <Spacer h={10} />
@@ -28,11 +32,14 @@
 	</div>
 	<div slot="footer">
 		<Details label="Code">
-			<Code lang="svelte" code={`<ButtonDropdown>
+			<Code
+				lang="svelte"
+				code={`<ButtonDropdown>
 	<span slot="main">Default Action</span>
 	<ButtonDropdownItem>Secondary Action</ButtonDropdownItem>
 	<ButtonDropdownItem>Tertiary Action</ButtonDropdownItem>
-</ButtonDropdown>`} />
+</ButtonDropdown>`}
+			/>
 		</Details>
 	</div>
 </FieldSet>
@@ -49,11 +56,14 @@
 	</div>
 	<div slot="footer">
 		<Details label="Code">
-			<Code lang="svelte" code={`<ButtonDropdown disabled>
+			<Code
+				lang="svelte"
+				code={`<ButtonDropdown disabled>
 	<span slot="main">Default Action</span>
 	<ButtonDropdownItem>Secondary Action</ButtonDropdownItem>
 	<ButtonDropdownItem>Tertiary Action</ButtonDropdownItem>
-</ButtonDropdown>`} />
+</ButtonDropdown>`}
+			/>
 		</Details>
 	</div>
 </FieldSet>
@@ -62,7 +72,7 @@
 <Spacer h={10} />
 <FieldSet>
 	<div class="flex flex-wrap gap-2">
-		<ButtonDropdown >
+		<ButtonDropdown>
 			<span slot="main">Default Action</span>
 			<ButtonDropdownItem disabled>Secondary Action</ButtonDropdownItem>
 			<ButtonDropdownItem>Tertiary Action</ButtonDropdownItem>
@@ -86,11 +96,11 @@
 <Spacer h={10} />
 <FieldSet>
 	<div class="flex flex-wrap gap-2">
-		<ButtonDropdown >
+		<ButtonDropdown>
 			<span slot="main">Default Action</span>
 			<ButtonDropdownItem>Secondary Action</ButtonDropdownItem>
 			<ButtonDropdownItem>Tertiary Action</ButtonDropdownItem>
-			<PlusIcon slot="icon" size={12}/>
+			<PlusIcon slot="icon" size={12} />
 		</ButtonDropdown>
 	</div>
 	<div slot="footer">

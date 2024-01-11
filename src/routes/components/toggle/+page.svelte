@@ -18,7 +18,7 @@
 <Spacer h={10} />
 <FieldSet>
 	<div class="flex flex-col justify-start">
-		<Toggle/>
+		<Toggle />
 	</div>
 	<div slot="footer">
 		<Details label="Code">
@@ -31,13 +31,16 @@
 <Spacer h={10} />
 <FieldSet>
 	<div class="flex flex-col justify-start gap-2">
-		<Toggle disabled/>
-		<Toggle disabled checked={true}/>
+		<Toggle disabled />
+		<Toggle disabled checked={true} />
 	</div>
 	<div slot="footer">
 		<Details label="Code">
-			<Code lang="svelte" code={`<Toggle disabled/>
-<Toggle disabled checked={true}/>`} />
+			<Code
+				lang="svelte"
+				code={`<Toggle disabled/>
+<Toggle disabled checked={true}/>`}
+			/>
 		</Details>
 	</div>
 </FieldSet>
@@ -46,11 +49,11 @@
 <Spacer h={10} />
 <FieldSet>
 	<div class="flex flex-wrap gap-2">
-		<Toggle checked={true}/>
-		<Toggle color="secondary" checked={true}/>
-		<Toggle color="warning" checked={true}/>
-		<Toggle color="error" checked={true}/>
-		<Toggle color="success" checked={true}/>
+		<Toggle checked={true} />
+		<Toggle color="secondary" checked={true} />
+		<Toggle color="warning" checked={true} />
+		<Toggle color="error" checked={true} />
+		<Toggle color="success" checked={true} />
 	</div>
 	<div slot="footer">
 		<Details label="Code">

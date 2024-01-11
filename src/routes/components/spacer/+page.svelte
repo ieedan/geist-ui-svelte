@@ -32,7 +32,8 @@
 <Spacer h={30}/>
 <Card></Card>
 <Spacer h={10}/>
-<Card></Card>`} />
+<Card></Card>`}
+			/>
 		</Details>
 	</div>
 </FieldSet>
@@ -55,7 +56,8 @@
 <Spacer w={30} />
 <Card></Card>
 <Spacer w={10} />
-<Card></Card>`} />
+<Card></Card>`}
+			/>
 		</Details>
 	</div>
 </FieldSet>

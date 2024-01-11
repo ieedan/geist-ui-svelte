@@ -41,7 +41,8 @@
 	<Center>
 		<Text>Centered Text</Text>
 	</Center>
-</Card>`} />
+</Card>`}
+			/>
 		</Details>
 	</div>
 </FieldSet>

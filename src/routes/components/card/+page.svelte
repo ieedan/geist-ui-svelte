@@ -26,7 +26,8 @@
 				lang="svelte"
 				code={`<Card>
 	A basic card
-</Card>`} />
+</Card>`}
+			/>
 		</Details>
 	</div>
 </FieldSet>
@@ -43,7 +44,8 @@
 				lang="svelte"
 				code={`<Card hoverable>
 	A hoverable card
-</Card>`} />
+</Card>`}
+			/>
 		</Details>
 	</div>
 </FieldSet>
@@ -54,7 +56,7 @@
 	<div>
 		<Card shadow>
 			<Text type="h6">This card has a shadow.</Text>
-			<Spacer h={10}/>
+			<Spacer h={10} />
 			<Text>
 				Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus fugiat eum,
 				quia aliquam ipsa numquam reprehenderit architecto illo nulla doloremque, dolore id
@@ -70,11 +72,10 @@
 	<Text type="h6">This card has a shadow.</Text>
 	<Spacer h={10}/>
 	<Text>
-		Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus fugiat eum,
-		quia aliquam ipsa numquam reprehenderit architecto illo nulla doloremque, dolore id
-		tempore. Vitae iusto voluptate laborum voluptatibus dolores aliquid.
+		Lorem, ipsum ...
 	</Text>
-</Card>`} />
+</Card>`}
+			/>
 		</Details>
 	</div>
 </FieldSet>

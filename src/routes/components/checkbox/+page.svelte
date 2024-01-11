@@ -36,8 +36,11 @@
 	</div>
 	<div slot="footer">
 		<Details label="Code">
-			<Code lang="svelte" code={`<Checkbox disabled>Notifications</Checkbox>
-<Checkbox disabled checked={true}>Notifications</Checkbox>`} />
+			<Code
+				lang="svelte"
+				code={`<Checkbox disabled>Notifications</Checkbox>
+<Checkbox disabled checked={true}>Notifications</Checkbox>`}
+			/>
 		</Details>
 	</div>
 </FieldSet>

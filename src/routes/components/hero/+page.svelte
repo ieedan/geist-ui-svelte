@@ -21,10 +21,13 @@
 <Snippet width="450px" type="lite" text={`import { Hero } from 'geist-ui-svelte';`} />
 <Spacer h={20} />
 <Note color="success">Click `Show Example` to see the the full size component.</Note>
-<Spacer h={20}/>
+<Spacer h={20} />
 <Text type="h4">Basic</Text>
 <Spacer h={5} />
-<Text>Automatically centers content on the screen and takes up the entire page <code>`100svh`</code>.</Text>
+<Text
+	>Automatically centers content on the screen and takes up the entire page <code>`100svh`</code
+	>.</Text
+>
 <Spacer h={10} />
 <FieldSet>
 	<div class="flex flex-col justify-start">
@@ -40,7 +43,8 @@
 					</div>
 					<Spacer h={150} />
 					<Button on:click={() => (firstExamplePage = false)}
-						>Click here to close or press `Escape`</Button>
+						>Click here to close or press `Escape`</Button
+					>
 				</Hero>
 			</div>
 		</Page>
@@ -56,7 +60,8 @@
 		<Button color="secondary-light">Get Started</Button>
 		<Button>Components</Button>
 	</div>
-</Hero>`} />
+</Hero>`}
+			/>
 		</Details>
 	</div>
 </FieldSet>
@@ -79,7 +84,8 @@
 					</div>
 					<Spacer h={150} />
 					<Button on:click={() => (secondExamplePage = false)}
-						>Click here to close or press `Escape`</Button>
+						>Click here to close or press `Escape`</Button
+					>
 				</Hero>
 			</div>
 		</Page>
@@ -95,7 +101,8 @@
 		<Button color="secondary-light">Get Started</Button>
 		<Button>Components</Button>
 	</div>
-</Hero>`} />
+</Hero>`}
+			/>
 		</Details>
 	</div>
 </FieldSet>

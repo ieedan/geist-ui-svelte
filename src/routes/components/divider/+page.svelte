@@ -25,8 +25,9 @@
 			<Text
 				>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Mollitia illo dicta
 				incidunt placeat cupiditate obcaecati laboriosam labore consectetur expedita libero
-				tenetur pariatur veniam cumque repudiandae, eligendi aliquid ut ea soluta.</Text>
-			<Divider margin="md"/>
+				tenetur pariatur veniam cumque repudiandae, eligendi aliquid ut ea soluta.</Text
+			>
+			<Divider margin="md" />
 			<Text>Footer</Text>
 		</Card>
 	</div>
@@ -38,7 +39,8 @@
 	<Text>Lorem, ipsum dol...</Text>
 	<Divider margin="md"/>
 	<Text>Footer</Text>
-</Card>`} />
+</Card>`}
+			/>
 		</Details>
 	</div>
 </FieldSet>
@@ -47,13 +49,11 @@
 <Spacer h={10} />
 <FieldSet>
 	<div class="flex flex-col justify-start gap-2">
-		<Divider margin="md" label="Your content your way"/>
+		<Divider margin="md" label="Your content your way" />
 	</div>
 	<div slot="footer">
 		<Details label="Code">
-			<Code
-				lang="svelte"
-				code={`<Divider margin="md" label="Your content your way"/>`} />
+			<Code lang="svelte" code={`<Divider margin="md" label="Your content your way"/>`} />
 		</Details>
 	</div>
 </FieldSet>
