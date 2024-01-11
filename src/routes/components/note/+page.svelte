@@ -5,7 +5,6 @@
 	import Snippet from "$lib/snippet/Snippet.svelte";
 	import Spacer from "$lib/spacer/Spacer.svelte";
 	import Text from "$lib/text/Text.svelte";
-	import Card from "$lib/card/Card.svelte";
 	import Note from "$lib/note/Note.svelte";
 </script>
 
@@ -23,10 +22,7 @@
 	</div>
 	<div slot="footer">
 		<Details label="Code">
-			<Code
-				lang="svelte"
-				code={`<Note>This is a basic note</Note>`}
-			/>
+			<Code lang="svelte" code={`<Note>This is a basic note</Note>`} />
 		</Details>
 	</div>
 </FieldSet>
@@ -63,10 +59,7 @@
 	</div>
 	<div slot="footer">
 		<Details label="Code">
-			<Code
-				lang="svelte"
-				code={`<Note label={false}>Elephants remember.</Note>`}
-			/>
+			<Code lang="svelte" code={`<Note label={false}>Elephants remember.</Note>`} />
 		</Details>
 	</div>
 </FieldSet>
