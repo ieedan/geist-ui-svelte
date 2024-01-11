@@ -8,17 +8,11 @@ on:
 jobs:
     CI:
         runs-on: ubuntu-latest
-        environment:
-            name: production
-            url: ${{ steps.deploy.outputs.url }}
-        permissions:
-            pull-requests: write
 
         steps:
             - name: Checkout code
               uses: actions/checkout@v4
               with:
-                  token: ${{ secrets.ACCESS_TOKEN }}
                   ref: ${{ github.head_ref }}
 
             - name: Setup Node.js
@@ -34,38 +28,3 @@ jobs:
 
             - name: Lint
               run: npm run lint
-
-            - name: Get current date
-              if: failure()
-              run: echo "CURRENT_DATETIME=$(TZ=UTC date +'%Y-%m-%d %I:%M %p')" >> $GITHUB_ENV
-
-            - name: Comment PR on failure
-              if: failure()
-              uses: mshick/add-pr-comment@v2
-              with:
-                  message: |
-                      :warning: Continuous Integration Failed! 
-
-                      Check **Files changed**⬆️ to see why. 
-
-                      Test the CI locally:
-                      ```bash
-                      npm run format
-
-                      npm run lint
-                      ```
-
-                      **Make sure CI is passing before merging the PR.**
-
-                      _(UTC) ${{ env.CURRENT_DATETIME }}_
-                  repo-token: ${{ secrets.GITHUB_TOKEN }}
-                  allow-repeats: true
-
-            - name: Commit changes
-              if: success()
-              run: |
-                  git config --local user.email "action@github.com"
-                  git config --local user.name "GitHub Action"
-                  git add -A
-                  git commit -m "Format" || echo "No changes to commit"
-                  git push https://x-access-token:${{ secrets.ACCESS_TOKEN }}@github.com/${{ github.repository }} HEAD:${{ github.head_ref }}
