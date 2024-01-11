@@ -117,6 +117,8 @@
 	};
 
 	onMount(() => {
+		dropDownRef.style.width = buttonRef.offsetWidth + "px";
+
 		const observer = new MutationObserver(handleMutation);
 
 		const config = { childList: true, subtree: true };
@@ -125,7 +127,7 @@
 		observer.observe(dropDownRef, config);
 
 		const popper = createPopper(buttonRef, dropDownRef, {
-			placement: "bottom",
+			placement: "bottom-end",
 			modifiers: [{ name: "offset", options: { offset: [0, 2] } }],
 		});
 
@@ -151,6 +153,9 @@
 </script>
 
 <svelte:document on:click={docClick} />
+<svelte:window on:resize={() => {
+	dropDownRef.style.width = buttonRef.offsetWidth + "px";
+}}/>
 
 <button
 	on:click={toggleShow}
