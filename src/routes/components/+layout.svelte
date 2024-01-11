@@ -95,12 +95,6 @@
 		{
 			name: "Tabs",
 			slug: "/components/tabs",
-			routes: [
-				{
-					name: "TabItem",
-					slug: "/components/tabs#tabitem",
-				},
-			],
 		},
 		{
 			name: "Badge",
@@ -142,12 +136,6 @@
 		{
 			name: "Dropdown",
 			slug: "/components/dropdown",
-			routes: [
-				{
-					name: "DropdownItem",
-					slug: "/components/dropdown#dropdownitem",
-				},
-			],
 		},
 		{
 			name: "Details",
