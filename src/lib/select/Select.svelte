@@ -165,7 +165,7 @@
 	style="width: {width};"
 	{disabled}
 	data-place-holder={value == undefined}
-	class="flex justify-between h-9 place-items-center w-full py-1 pr-1 border focus:border-gray-200 focus:dark:border-gray-800
+	class="flex justify-between h-9 place-items-center w-full bg-gray-0 dark:bg-gray-999 py-1 pr-1 border focus:border-gray-200 focus:dark:border-gray-800
   disabled:bg-gray-50 dark:disabled:bg-gray-925 disabled:hover:cursor-not-allowed transition-all enabled:hover:border-gray-999
   border-gray-100 dark:border-gray-900 rounded-md data-[place-holder=true]:text-gray-300 enabled:hover:dark:border-gray-0
   data-[place-holder=true]:dark:text-gray-700 disabled:text-gray-300 dark:disabled:text-gray-700"
