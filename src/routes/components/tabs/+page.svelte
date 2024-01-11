@@ -5,7 +5,6 @@
 	import Snippet from "$lib/snippet/Snippet.svelte";
 	import Spacer from "$lib/spacer/Spacer.svelte";
 	import Text from "$lib/text/Text.svelte";
-	import Card from "$lib/card/Card.svelte";
 	import Tabs from "$lib/tabs/Tabs.svelte";
 	import TabItem from "$lib/tabs/TabItem.svelte";
 	import GithubIcon from "$lib/icons/GithubIcon.svelte";
@@ -36,7 +35,8 @@
 	<TabItem>Home</TabItem>
 	<TabItem initialSelected={true}>Guide</TabItem>
 	<TabItem>Components</TabItem>
-</Tabs>`} />
+</Tabs>`}
+			/>
 		</Details>
 	</div>
 </FieldSet>
@@ -61,7 +61,8 @@
 	<TabItem>Home</TabItem>
 	<TabItem initialSelected={true}>Guide</TabItem>
 	<TabItem>Components</TabItem>
-</Tabs>`} />
+</Tabs>`}
+			/>
 		</Details>
 	</div>
 </FieldSet>
@@ -105,16 +106,15 @@
 	<TabItem>Account</TabItem>
 	<TabItem>About</TabItem>
 	<TabItem>Contact Us</TabItem>
-</Tabs>`} />
+</Tabs>`}
+			/>
 		</Details>
 	</div>
 </FieldSet>
 <Spacer h={30} />
 <Text type="h4">With Icons</Text>
 <Spacer h={5} />
-<Text>
-	No special configuration tabs allows any html content in its slot.
-</Text>
+<Text>No special configuration tabs allows any html content in its slot.</Text>
 <Spacer h={10} />
 <FieldSet>
 	<div class="flex flex-col justify-start">
@@ -146,7 +146,8 @@
 		<Spacer w={10} />
 		Svelte
 	</TabItem>
-</Tabs>`} />
+</Tabs>`}
+			/>
 		</Details>
 	</div>
 </FieldSet>

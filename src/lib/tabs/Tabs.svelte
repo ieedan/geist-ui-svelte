@@ -50,9 +50,9 @@ dark:border-gray-900 relative group/tabs"
 		class="flex place-items-center transition-all overflow-x-auto scrollbar-hide"
 		on:mouseover={hover}
 		on:scroll={scroll}
-		on:mouseleave={() => showHoverBackground = false}
+		on:mouseleave={() => (showHoverBackground = false)}
 		on:focusin={hover}
-		on:focusout={() => showHoverBackground = false}
+		on:focusout={() => (showHoverBackground = false)}
 	>
 		<slot />
 	</nav>

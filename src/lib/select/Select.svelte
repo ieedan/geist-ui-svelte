@@ -153,9 +153,11 @@
 </script>
 
 <svelte:document on:click={docClick} />
-<svelte:window on:resize={() => {
-	dropDownRef.style.width = buttonRef.offsetWidth + "px";
-}}/>
+<svelte:window
+	on:resize={() => {
+		dropDownRef.style.width = buttonRef.offsetWidth + "px";
+	}}
+/>
 
 <button
 	on:click={toggleShow}
