@@ -263,7 +263,7 @@
 	<div class="flex w-full max-w-5xl">
 		<nav
 			bind:this={navigationRef}
-			class="fixed bottom-0 z-40 flex max-h-screen w-full flex-col place-items-end overflow-y-auto
+			class="fixed bottom-0 z-40 flex max-h-svh w-full flex-col place-items-end overflow-y-auto
 			border-t border-gray-100 bg-white px-4
 			py-3 md:top-[79px] md:w-[250px] md:border-0 md:bg-transparent dark:border-gray-900
 			dark:bg-gray-999 md:dark:bg-transparent scrollbar-hide"
@@ -272,7 +272,7 @@
 				class="w-full flex-col data-[show=false]:hidden md:data-[show=false]:flex"
 				data-show={navigationExpanded}
 			>
-				<div class="block md:hidden"><Spacer h={30} /></div>
+				<div class="hidden md:block"><Spacer h={30} /></div>
 				{#each routes as route, i}
 					{#if typeof route === "string"}
 						{#if i > 0}
@@ -282,6 +282,7 @@
 						<Spacer h={5} />
 					{:else}
 						<NavRoute
+							on:navigated={() => (navigationExpanded = false)}
 							hidden={route.hidden}
 							routes={route.routes}
 							expanded={route.expanded}
