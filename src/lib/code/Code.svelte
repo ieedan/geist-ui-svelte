@@ -15,9 +15,7 @@
 			theme: "aurora-x",
 		});
 	});
-
-	// This code will help user to copy the `CODE` Section part.
-
+	
 	let copied = false;
 	let copyText = () => {
 		navigator.clipboard.writeText(code).then(() => {
