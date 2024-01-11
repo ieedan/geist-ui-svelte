@@ -50,8 +50,6 @@
 </FieldSet>
 <Spacer h={30} />
 <Text type="h4">Colors</Text>
-<Spacer h={5} />
-<Text>Text elements can come in a few different colors.</Text>
 <Spacer h={10} />
 <FieldSet>
 	<div class="flex flex-col">
