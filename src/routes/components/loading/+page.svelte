@@ -18,11 +18,11 @@
 <Spacer h={10} />
 <FieldSet>
 	<div class="flex gap-3 place-items-end justify-start py-2">
-		<Loading size="xs"/>
-		<Loading size="sm"/>
-		<Loading size="md"/>
-		<Loading size="lg"/>
-		<Loading size="xl"/>
+		<Loading size="xs" />
+		<Loading size="sm" />
+		<Loading size="md" />
+		<Loading size="lg" />
+		<Loading size="xl" />
 	</div>
 	<div slot="footer">
 		<Details label="Code">
@@ -43,9 +43,9 @@
 <FieldSet>
 	<div class="flex gap-3 place-items-end justify-start py-2">
 		<Loading />
-		<Loading type="success"/>
-		<Loading type="warning"/>
-		<Loading type="error"/>
+		<Loading type="success" />
+		<Loading type="warning" />
+		<Loading type="error" />
 	</div>
 	<div slot="footer">
 		<Details label="Code">

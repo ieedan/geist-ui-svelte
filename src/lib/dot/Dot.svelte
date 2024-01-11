@@ -7,7 +7,7 @@
 
 <span
 	{...$$restProps}
-	style="width: {size}px; height: {size}px; {color ? `background-color: ${color};` : ""}{style}"
+	style="width: {size}px; height: {size}px; {color ? `background-color: ${color};` : ''}{style}"
 	data-type={type}
 	class="rounded-full bg-gray-999 dark:bg-gray-0 data-[type='secondary']:bg-gray-200 data-[type='success']:bg-blue-500
   data-[type='warning']:bg-orange-300 data-[type='go']:bg-green-600 data-[type='go']:dark:bg-green-700

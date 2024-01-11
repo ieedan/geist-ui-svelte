@@ -5,7 +5,7 @@
 	import Snippet from "$lib/snippet/Snippet.svelte";
 	import Spacer from "$lib/spacer/Spacer.svelte";
 	import Text from "$lib/text/Text.svelte";
-	import Badge from '$lib/badge/Badge.svelte';
+	import Badge from "$lib/badge/Badge.svelte";
 </script>
 
 <Text type="h3">Badge</Text>

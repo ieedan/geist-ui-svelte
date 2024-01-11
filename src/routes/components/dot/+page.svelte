@@ -18,10 +18,10 @@
 <Spacer h={10} />
 <FieldSet>
 	<div class="flex gap-2 justify-start place-items-end">
-		<Dot/>
-		<Dot size={16}/>
-		<Dot size={20}/>
-		<Dot size={24}/>
+		<Dot />
+		<Dot size={16} />
+		<Dot size={20} />
+		<Dot size={24} />
 	</div>
 	<div slot="footer">
 		<Details label="Code">
@@ -40,12 +40,12 @@
 <Spacer h={10} />
 <FieldSet>
 	<div class="flex gap-2 justify-start place-items-end">
-		<Dot/>
-		<Dot type="success"/>
-		<Dot type="warning"/>
-		<Dot type="error"/>
-		<Dot type="secondary"/>
-		<Dot type="go"/>
+		<Dot />
+		<Dot type="success" />
+		<Dot type="warning" />
+		<Dot type="error" />
+		<Dot type="secondary" />
+		<Dot type="go" />
 	</div>
 	<div slot="footer">
 		<Details label="Code">
@@ -66,14 +66,11 @@
 <Spacer h={10} />
 <FieldSet>
 	<div class="flex gap-2 justify-start place-items-end">
-		<Dot color="#ff00ff"/>
+		<Dot color="#ff00ff" />
 	</div>
 	<div slot="footer">
 		<Details label="Code">
-			<Code
-				lang="svelte"
-				code={`<Dot color="#ff00ff"/>`}
-			/>
+			<Code lang="svelte" code={`<Dot color="#ff00ff"/>`} />
 		</Details>
 	</div>
 </FieldSet>

@@ -30,7 +30,8 @@
 	to="https://github.com/ieedan/geist-ui-svelte" 
 	target="_blank">
 	Check out the geist-ui-svelte here
-</Link>`} />
+</Link>`}
+			/>
 		</Details>
 	</div>
 </FieldSet>
@@ -52,7 +53,8 @@
 	target="_blank" 
 	color>
 	Check out the geist-ui-svelte here
-</Link>`} />
+</Link>`}
+			/>
 		</Details>
 	</div>
 </FieldSet>
@@ -84,7 +86,8 @@
 	color 
 	underline>
 	Check out the geist-ui-svelte here
-</Link>`} />
+</Link>`}
+			/>
 		</Details>
 	</div>
 </FieldSet>
