@@ -1,11 +1,26 @@
 <script lang="ts">
-	import CheckMarkIcon from "$lib/icons/CheckMarkIcon.svelte";
 	import ChevronIcon from "$lib/icons/ChevronIcon.svelte";
-	import CloneIcon from "$lib/icons/CloneIcon.svelte";
-	import { fade, scale } from "svelte/transition";
+	import { fade } from "svelte/transition";
+	import { onMount, tick } from "svelte";
 
 	let show = false;
 	export let label: string;
+	/** Adds animation to the open and close of the content */
+	// export let animate: boolean = false;
+
+	// let contentElement: HTMLDivElement;
+	// let contentHeight: number = 0;
+
+	// const updateHeight = async () => {
+	// 	await tick(); // Ensures DOM is updated
+	// 	contentHeight = contentElement.scrollHeight;
+	// };
+
+	// $: if (show) {
+	// 	updateHeight();
+	// }
+
+	// onMount(updateHeight);
 </script>
 
 <div data-show={show} class="group/details flex flex-col gap-2">
@@ -22,4 +37,10 @@
 			<slot />
 		</div>
 	{/key}
+	<!-- <div
+		bind:this={contentElement}
+		class="group-data-[transition=true]/details:transition-all overflow-hidden group-data-[show=false]/details:opacity-0"
+		style="height: {show ? `${contentHeight}px` : '0px'};">
+		<slot />
+	</div> -->
 </div>

@@ -9,7 +9,6 @@
 	import Button from "$lib/button/Button.svelte";
 	import { Hero } from "$lib/index.js";
 	import Note from "$lib/note/Note.svelte";
-	import Center from "$lib/center/Center.svelte";
 
 	export let firstExamplePage = false;
 	export let secondExamplePage = false;
@@ -116,11 +115,11 @@
 		<Page bind:visible={thirdExamplePage}>
 			<div class="max-h-screen overflow-y-auto">
 				<Hero>
-					<div class="hidden sm:flex text-center sm:text-left">
-						<Text type="h1">geist-ui-svelte</Text>
+					<div class="hidden sm:flex">
+						<Text type="h1" align="center">geist-ui-svelte</Text>
 					</div>
-					<div class="flex sm:hidden text-center sm:text-left">
-						<Text type="h2">geist-ui-svelte</Text>
+					<div class="flex sm:hidden">
+						<Text type="h2" align="center">geist-ui-svelte</Text>
 					</div>
 					<Spacer h={20} />
 					<div class="px-2 text-center sm:text-left">
