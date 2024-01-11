@@ -8,17 +8,11 @@ on:
 jobs:
     CD:
         runs-on: ubuntu-latest
-        environment:
-            name: production
-            url: ${{ steps.deploy.outputs.url }}
-        permissions:
-            pull-requests: write
 
         steps:
             - name: Checkout code
               uses: actions/checkout@v4
               with:
-                  token: ${{ secrets.ACCESS_TOKEN }}
                   ref: ${{ github.head_ref }}
 
             - name: Set up Node.js
@@ -35,26 +29,3 @@ jobs:
               run: npm run build
             - name: Publish Dry Run
               run: npm publish --dry-run
-              env:
-                  NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
-
-            - name: Get current date
-              if: failure()
-              run: echo "CURRENT_DATETIME=$(TZ=UTC date +'%Y-%m-%d %I:%M %p')" >> $GITHUB_ENV
-
-            - name: Comment PR on failure
-              if: failure()
-              uses: mshick/add-pr-comment@v2
-              with:
-                  message: |
-                      🚨 CD Failed! Try running these commands in your local enviorment to test CD.
-
-                      ```bash
-                      npm install
-                      npm run package
-                      npm run build
-                      npm run publish --dry-run
-                      ```
-                      _(UTC) ${{ env.CURRENT_DATETIME }}_
-                  repo-token: ${{ secrets.GITHUB_TOKEN }}
-                  allow-repeats: false
