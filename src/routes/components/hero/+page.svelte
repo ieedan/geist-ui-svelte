@@ -144,11 +144,11 @@
 			<Code
 				lang="svelte"
 				code={`<Hero>
-  <div class="hidden sm:flex text-center sm:text-left">
-  	<Text type="h1">geist-ui-svelte</Text>
+  <div class="hidden sm:flex">
+	<Text type="h1" align="center">geist-ui-svelte</Text>
   </div>
-  <div class="flex sm:hidden text-center sm:text-left">
-  	<Text type="h2">geist-ui-svelte</Text>
+  <div class="flex sm:hidden">
+	<Text type="h2" align="center">geist-ui-svelte</Text>
   </div>
   <Spacer h={20} />
   <div class="px-2 text-center sm:text-left">
