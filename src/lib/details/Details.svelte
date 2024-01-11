@@ -1,29 +1,31 @@
 <script lang="ts">
 	import ChevronIcon from "$lib/icons/ChevronIcon.svelte";
-	import { fade } from "svelte/transition";
 	import { onMount, tick } from "svelte";
 
 	let show = false;
 	export let label: string;
 	/** Adds animation to the open and close of the content */
-	// export let animate: boolean = false;
+	export let animate: boolean = true;
 
-	// let contentElement: HTMLDivElement;
-	// let contentHeight: number = 0;
+	let contentElement: HTMLDivElement;
+	let contentHeight: number = 0;
 
-	// const updateHeight = async () => {
-	// 	await tick(); // Ensures DOM is updated
-	// 	contentHeight = contentElement.scrollHeight;
-	// };
+	const updateHeight = async () => {
+		await tick(); // Ensures DOM is updated
+		contentHeight = contentElement.scrollHeight;
+	};
 
-	// $: if (show) {
-	// 	updateHeight();
-	// }
+	$: if (show) {
+		updateHeight();
+	}
 
-	// onMount(updateHeight);
+	onMount(updateHeight);
 </script>
 
-<div data-show={show} class="group/details flex flex-col gap-2">
+<div
+	data-transition={animate}
+	data-show={show}
+	class="group/details flex flex-col data-[show=true]:gap-2 data-[transition=true]:transition-all gap-0">
 	<button
 		on:click={() => (show = !show)}
 		class="flex place-items-center gap-2 text-sm text-gray-600 dark:text-gray-500">
@@ -32,15 +34,10 @@
 		</div>
 		{label}
 	</button>
-	{#key show}
-		<div class="hidden group-data-[show=true]/details:block" in:fade={{ duration: 300 }}>
-			<slot />
-		</div>
-	{/key}
-	<!-- <div
+	<div
 		bind:this={contentElement}
 		class="group-data-[transition=true]/details:transition-all overflow-hidden group-data-[show=false]/details:opacity-0"
 		style="height: {show ? `${contentHeight}px` : '0px'};">
 		<slot />
-	</div> -->
+	</div>
 </div>
