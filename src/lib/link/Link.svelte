@@ -9,7 +9,6 @@
 	href={to}
 	data-underline={underline}
 	data-color={color}
-	class="data-[underline=true]:hover:underline transition-all text-gray-999
-    dark:text-gray-0 data-[color=true]:text-blue-500 inline-flex place-items-center justify-center"
-	><slot /></a
+	class="data-[underline=true]:hover:underline transition-all text-gray-999 w-fit
+    dark:text-gray-0 data-[color=true]:text-blue-500 inline-flex place-items-center"><slot /></a
 >
