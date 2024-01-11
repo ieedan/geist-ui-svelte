@@ -7,7 +7,7 @@
 
 <svg
 	aria-label="check mark"
-	style="transform: rotate({rotation});"
+	style="transform: rotate({rotation}); display: inline;"
 	width={size}
 	height={size}
 	viewBox="0 0 24 24"

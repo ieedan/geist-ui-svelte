@@ -18,9 +18,9 @@ export { default as Checkbox } from "./checkbox/Checkbox.svelte";
 
 export { default as Toggle } from "./toggle/Toggle.svelte";
 
-export { default as ButtonDropdown } from "./button-dropdown/ButtonDropdown.svelte";
+export { default as ButtonDropdown } from "./buttondropdown/ButtonDropdown.svelte";
 
-export { default as ButtonDropdownItem } from "./button-dropdown/ButtonDropdownItem.svelte";
+export { default as ButtonDropdownItem } from "./buttondropdown/ButtonDropdownItem.svelte";
 
 export { default as Search } from "./search/Search.svelte";
 
@@ -103,6 +103,8 @@ export { default as SearchIcon } from "./icons/SearchIcon.svelte";
 export { default as SvelteIcon } from "./icons/SvelteIcon.svelte";
 
 export { default as CommandIcon } from "./icons/CommandIcon.svelte";
+
+export { default as EditIcon } from "./icons/EditIcon.svelte";
 
 /* Types */
 

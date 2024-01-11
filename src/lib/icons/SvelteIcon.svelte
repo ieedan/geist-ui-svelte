@@ -7,7 +7,7 @@
 
 <svg
 	aria-label="svelte logo"
-	style="transform: rotate({rotation}); enable-background:new 0 0 93.2 112;"
+	style="transform: rotate({rotation}); enable-background:new 0 0 93.2 112; display: inline;"
 	width={size}
 	height={size}
 	version="1.1"

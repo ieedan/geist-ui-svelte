@@ -1,6 +1,6 @@
 {
 	"name": "geist-ui-svelte",
-	"version": "0.0.29",
+	"version": "0.0.30",
 	"author": {
 		"name": "Aidan Bleser",
 		"url": "https://aidanbleser.com"
@@ -162,12 +162,12 @@
 			"svelte": "./dist/icons/PlusIcon.svelte"
 		},
 		"./ButtonDropdown.svelte": {
-			"types": "./dist/button-dropdown/ButtonDropdown.svelte.d.ts",
-			"svelte": "./dist/button-dropdown/ButtonDropdown.svelte"
+			"types": "./dist/buttondropdown/ButtonDropdown.svelte.d.ts",
+			"svelte": "./dist/buttondropdown/ButtonDropdown.svelte"
 		},
 		"./ButtonDropdownItem.svelte": {
-			"types": "./dist/button-dropdown/ButtonDropdownItem.svelte.d.ts",
-			"svelte": "./dist/button-dropdown/ButtonDropdownItem.svelte"
+			"types": "./dist/buttondropdown/ButtonDropdownItem.svelte.d.ts",
+			"svelte": "./dist/buttondropdown/ButtonDropdownItem.svelte"
 		},
 		"./Drawer.svelte": {
 			"types": "./dist/drawer/Drawer.svelte.d.ts",
@@ -216,6 +216,10 @@
 		"./CommandIcon.svelte": {
 			"types": "./dist/icons/CommandIcon.svelte.d.ts",
 			"svelte": "./dist/icons/CommandIcon.svelte"
+		},
+		"./EditIcon.svelte": {
+			"types": "./dist/icons/EditIcon.svelte.d.ts",
+			"svelte": "./dist/icons/EditIcon.svelte"
 		}
 	},
 	"files": [

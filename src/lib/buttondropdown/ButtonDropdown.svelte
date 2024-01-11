@@ -53,7 +53,7 @@
 />
 
 <div
-	class="flex place-items-center justify-between border border-gray-100
+	class="flex place-items-center justify-between border border-gray-100 w-fit
 	rounded-md dark:border-gray-900 aria-disabled:bg-gray-50 aria-disabled:dark:bg-gray-950 overflow-hidden"
 	aria-disabled={disabled}
 	bind:this={ref}
@@ -61,7 +61,7 @@
 	<button
 		on:click={clicked}
 		{disabled}
-		class="px-4 h-8 disabled:hover:cursor-not-allowed font-light text-gray-700 dark:text-gray-500
+		class="px-4 h-8 disabled:hover:cursor-not-allowed font-light text-sm text-gray-700 dark:text-gray-500
 		enabled:hover:bg-gray-50 enabled:hover:dark:bg-gray-950 transition-all"><slot name="main" /></button
 	>
 	<button
