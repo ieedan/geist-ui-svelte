@@ -1,5 +1,136 @@
-<script>
-	import Note from "$lib/note/Note.svelte";
+<script lang="ts">
+	import Code from "$lib/code/Code.svelte";
+	import Details from "$lib/details/Details.svelte";
+	import FieldSet from "$lib/fieldset/FieldSet.svelte";
+	import Snippet from "$lib/snippet/Snippet.svelte";
+	import Spacer from "$lib/spacer/Spacer.svelte";
+	import Text from "$lib/text/Text.svelte";
+	import Image from "$lib/image/Image.svelte";
+	import exampleDark from "$lib/assets/demo-dark.png";
+	import exampleLight from "$lib/assets/demo-light.png";
 </script>
 
-<Note color="warning">These docs are under construction you should see something here soon!</Note>
+<Text type="h3">Image</Text>
+<Spacer h={10} />
+<Text>Displays an image.</Text>
+<Spacer h={20} />
+<Snippet width="450px" type="lite" text={`import { Image } from 'geist-ui-svelte';`} />
+<Spacer h={30} />
+<Text type="h4">Basic</Text>
+<Spacer h={10} />
+<FieldSet>
+	<div class="flex flex-col justify-center place-items-center p-4">
+		<Image src={exampleLight} alt="An example image" width="400px" height="auto" />
+	</div>
+	<div slot="footer">
+		<Details label="Code">
+			<Code
+				lang="svelte"
+				code={`<Image 
+	src={exampleDark} 
+	alt="An example image" 
+	width="575px" 
+	height="auto" />`}
+			/>
+		</Details>
+	</div>
+</FieldSet>
+<Spacer h={30} />
+<Text type="h4">Browser Window</Text>
+<Spacer h={5} />
+<Text>
+	Sometimes you want to put your image in a browser window all you need to do is set the
+	<code>`browserURL`</code> attribute.
+</Text>
+<Spacer h={10} />
+<FieldSet>
+	<div class="flex flex-col justify-center place-items-center">
+		<Image
+			browserURL="https://geist-ui-svelte.dev"
+			src={exampleLight}
+			alt="An example image"
+			width="575px"
+			height="auto"
+		/>
+	</div>
+	<div slot="footer">
+		<Details label="Code">
+			<Code
+				lang="svelte"
+				code={`<Card></Card>
+<Spacer h={30}/>
+<Card></Card>
+<Spacer h={10}/>
+<Card></Card>`}
+			/>
+		</Details>
+	</div>
+</FieldSet>
+<Spacer h={30} />
+<Text type="h4">Invert Colors</Text>
+<Spacer h={5} />
+<Text>Change the browser theme with `browserInvert`.</Text>
+<Spacer h={10} />
+<FieldSet>
+	<div class="flex flex-col justify-center place-items-center">
+		<Image
+			browserURL="https://geist-ui-svelte.dev"
+			src={exampleDark}
+			alt="An example image"
+			width="575px"
+			height="auto"
+			browserInvert
+		/>
+	</div>
+	<div slot="footer">
+		<Details label="Code">
+			<Code
+				lang="svelte"
+				code={`<Card></Card>
+<Spacer h={30}/>
+<Card></Card>
+<Spacer h={10}/>
+<Card></Card>`}
+			/>
+		</Details>
+	</div>
+</FieldSet>
+<Spacer h={30} />
+<Text type="h4">Lock Responds to URL</Text>
+<Spacer h={5} />
+<Text>
+	Notice how the <code>`http`</code> url does not have the lock but the <code>`https`</code> url does.
+	Not very important but kinda fun.
+</Text>
+<Spacer h={10} />
+<FieldSet>
+	<div class="flex flex-col justify-center place-items-center">
+		<Image
+			browserURL="http://geist-ui-svelte.dev"
+			src={exampleDark}
+			alt="An example image"
+			width="400px"
+			height="auto"
+		/>
+		<Spacer h={10} />
+		<Image
+			browserURL="https://geist-ui-svelte.dev"
+			src={exampleDark}
+			alt="An example image"
+			width="400px"
+			height="auto"
+		/>
+	</div>
+	<div slot="footer">
+		<Details label="Code">
+			<Code
+				lang="svelte"
+				code={`<Card></Card>
+<Spacer h={30}/>
+<Card></Card>
+<Spacer h={10}/>
+<Card></Card>`}
+			/>
+		</Details>
+	</div>
+</FieldSet>

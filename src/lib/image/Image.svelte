@@ -24,9 +24,9 @@
 			text-gray-0 border-gray-900 data-[invert=true]:border-gray-100 font-light px-4"
 		>
 			<div class="flex place-items-center gap-2">
-				<div class="size-3.5 rounded-full bg-red-500"></div>
-				<div class="size-3.5 rounded-full bg-orange-300"></div>
-				<div class="size-3.5 rounded-full bg-green-500"></div>
+				<div class="size-3 rounded-full bg-red-500"></div>
+				<div class="size-3 rounded-full bg-orange-300"></div>
+				<div class="size-3 rounded-full bg-green-500"></div>
 			</div>
 			<a
 				href={browserURL}
