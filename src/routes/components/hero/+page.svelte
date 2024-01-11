@@ -35,7 +35,7 @@
 		<Page bind:visible={firstExamplePage}>
 			<div class="max-h-screen overflow-y-auto">
 				<Hero>
-					<Text type="h1">geist-ui-svelte</Text>
+					<Text align="center" type="h1">geist-ui-svelte</Text>
 					<Spacer h={20} />
 					<div class="flex place-items-center gap-4">
 						<Button color="secondary-light">Get Started</Button>
@@ -76,7 +76,7 @@
 		<Page bind:visible={secondExamplePage}>
 			<div class="max-h-screen overflow-y-auto">
 				<Hero type="secondary">
-					<Text type="h1">geist-ui-svelte</Text>
+					<Text align="center" type="h1">geist-ui-svelte</Text>
 					<Spacer h={20} />
 					<div class="flex place-items-center gap-4">
 						<Button color="secondary-light">Get Started</Button>
