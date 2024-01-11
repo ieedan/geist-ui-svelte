@@ -8,6 +8,9 @@ on:
 jobs:
     CD:
         runs-on: ubuntu-latest
+        environment: 
+          name: production
+          url: ${{ steps.deploy.outputs.url }}
         permissions:
             pull-requests: write
 
