@@ -282,6 +282,7 @@
 						<Spacer h={5} />
 					{:else}
 						<NavRoute
+							on:navigated={() => (navigationExpanded = false)}
 							hidden={route.hidden}
 							routes={route.routes}
 							expanded={route.expanded}

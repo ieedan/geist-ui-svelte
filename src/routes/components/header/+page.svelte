@@ -39,7 +39,7 @@
 					</div>
 				</Header>
 				<Hero>
-					<Text type="h1">Basic example</Text>
+					<Text type="h1" align="center">Basic example</Text>
 					<Text>Press `Esc` to close at anytime</Text>
 				</Hero>
 			</div>
