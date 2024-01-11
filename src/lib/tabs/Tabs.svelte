@@ -6,7 +6,7 @@
 
 	let lastElement: HTMLElement;
 
-	const hover = (e: MouseEvent) => {
+	const hover = (e: Event) => {
 		const node = e.target as HTMLElement;
 		if (!node.hasAttribute("aria-selected") && !node.hasAttribute("data-active")) {
 			showHoverBackground = false;
@@ -51,6 +51,8 @@ dark:border-gray-900 relative group/tabs"
 		on:mouseover={hover}
 		on:scroll={scroll}
 		on:mouseleave={() => (showHoverBackground = false)}
+		on:focusin={hover}
+		on:focusout={() => (showHoverBackground = false)}
 	>
 		<slot />
 	</nav>

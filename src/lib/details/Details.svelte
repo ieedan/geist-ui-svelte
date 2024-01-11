@@ -5,7 +5,7 @@
 	let show = false;
 	export let label: string;
 	/** Adds animation to the open and close of the content */
-	export let animate: boolean = true;
+	export let animate: boolean = false;
 
 	let contentElement: HTMLDivElement;
 	let contentHeight: number = 0;

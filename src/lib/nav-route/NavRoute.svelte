@@ -2,6 +2,9 @@
 	import { page } from "$app/stores";
 	import ChevronIcon from "$lib/icons/ChevronIcon.svelte";
 	import type { Route } from "$lib/types.js";
+	import { createEventDispatcher } from "svelte";
+
+	const dispatch = createEventDispatcher();
 
 	export let name: string;
 	export let slug: string;
@@ -26,6 +29,7 @@
 		<a
 			href={slug}
 			data-active={active}
+			on:click={() => dispatch("navigated")}
 			class="w-full rounded-md px-2 py-2 text-gray-300 transition-all
     		data-[active=true]:text-blue-500 dark:text-gray-600
 			data-[active=true]:dark:text-blue-500"
@@ -50,7 +54,10 @@
 	>
 		{#if routes}
 			{#each routes as subRoute}
-				<svelte:self {...{ ...subRoute, nested: true }} />
+				<svelte:self
+					on:navigated={() => dispatch("navigated")}
+					{...{ ...subRoute, nested: true }}
+				/>
 			{/each}
 		{/if}
 	</div>
