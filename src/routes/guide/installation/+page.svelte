@@ -12,11 +12,7 @@
 <Spacer h={10} />
 <Text>Initialize a new SvelteKit project</Text>
 <Spacer h={10} />
-<Snippet
-	width="500px"
-	text={["npm create vite@latest", "cd my-project"]}
-	type="lite"
-/>
+<Snippet width="500px" text={["npm create vite@latest", "cd my-project"]} type="lite" />
 <Spacer h={20} />
 <Text>Setup TailwindCSS</Text>
 <Spacer h={10} />
@@ -68,11 +64,11 @@ export default {
 />
 <Spacer h={20} />
 <Text>Install geist-ui-svelte</Text>
-<Spacer h={10}/>
+<Spacer h={10} />
 <Snippet width="500px" text="npm i geist-ui-svelte" type="lite" />
 <Spacer h={20} />
 <Text>Import our CSS into <code>`/routes/+layout.svelte`</code></Text>
 <Spacer h={10} />
-<Snippet width="500px" type="lite" text="import 'geist-ui-svelte/geist-ui-svelte.css';"/>
+<Snippet width="500px" type="lite" text="import 'geist-ui-svelte/geist-ui-svelte.css';" />
 <Spacer h={20} />
 <Text>Now you're ready to start using our <Link to="/components" color>components!</Link></Text>

@@ -1,3 +1,4 @@
+/* eslint-disable @cspell/spellchecker */
 import type { ThemeInput } from "shikiji";
 
 const dark: ThemeInput = {

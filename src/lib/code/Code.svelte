@@ -22,20 +22,22 @@
 	onMount(async () => {
 		const highlighter = await getHighlighter({
 			themes: [light, dark],
-			langs: [lang]
+			langs: [lang],
 		});
 
 		highlightedCode = highlighter.codeToHtml(code, {
 			lang,
 			themes: {
 				dark: "geist-dark",
-				light: "geist"
-			}
+				light: "geist",
+			},
 		});
 	});
 </script>
 
-<div class="rounded-lg overflow-x-auto px-4 py-4 scrollbar-hide relative bg-gray-0 dark:bg-gray-999">
+<div
+	class="rounded-lg overflow-x-auto px-4 py-4 scrollbar-hide relative bg-gray-0 dark:bg-gray-999"
+>
 	{@html highlightedCode}
 	<div class="absolute top-2 right-2 hidden sm:flex">
 		<button on:click={copyText}>
