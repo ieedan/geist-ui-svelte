@@ -4,6 +4,7 @@
 	import Tabs from "$lib/tabs/Tabs.svelte";
 	import TabItem from "$lib/tabs/TabItem.svelte";
 	import "../app.css";
+	import "$lib/geist-ui-svelte.css";
 	import Button from "$lib/button/Button.svelte";
 	import MenuIcon from "$lib/icons/MenuIcon.svelte";
 	import Page from "$lib/page/Page.svelte";
