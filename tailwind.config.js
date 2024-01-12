@@ -3,7 +3,7 @@ export default {
 	content: ["./src/**/*.{html,js,svelte,ts}"],
 	theme: {
 		fontFamily: {
-			serif: ["JetBrains Mono", "Monospace"],
+			serif: ["GeistMono", "Monospace"],
 			sans: ["Inter", "sans-serif"],
 		},
 		extend: {

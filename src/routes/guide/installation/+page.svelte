@@ -11,15 +11,15 @@
 <Text type="h4">Project Setup</Text>
 <Spacer h={10} />
 <Text>Initialize a new SvelteKit project</Text>
-<Spacer h={5} />
+<Spacer h={10} />
 <Snippet
 	width="500px"
-	text={["npm create svelte@latest my-project", "cd my-project"]}
+	text={["npm create vite@latest", "cd my-project"]}
 	type="lite"
 />
 <Spacer h={20} />
 <Text>Setup TailwindCSS</Text>
-<Spacer h={5} />
+<Spacer h={10} />
 <Snippet
 	width="500px"
 	text={["npm install -D tailwindcss postcss autoprefixer", "npx tailwindcss init -p"]}
@@ -27,7 +27,7 @@
 />
 <Spacer h={20} />
 <Text>Configure TailwindCSS with our recommended settings.</Text>
-<Spacer h={5} />
+<Spacer h={10} />
 <Code
 	lang="svelte"
 	code={`/** @type {import('tailwindcss').Config} */
@@ -67,27 +67,12 @@ export default {
 };`}
 />
 <Spacer h={20} />
-<Text>Configure App.css</Text>
-<Spacer h={5} />
-<Code
-	lang="css"
-	code={`@tailwind base;
-@tailwind components;
-@tailwind utilities;
-	
-/* Sets scroll bar to dark when in dark mode */
-html.dark {
-	color-scheme: dark;
-}
-	
-/* Prevents layout shift when scrollbar is hidden */
-html {
-	scrollbar-gutter: stable;
-}`}
-/>
-<Spacer h={20} />
 <Text>Install geist-ui-svelte</Text>
-<Spacer h={5} />
+<Spacer h={10}/>
 <Snippet width="500px" text="npm i geist-ui-svelte" type="lite" />
+<Spacer h={20} />
+<Text>Import our CSS into <code>`/routes/+layout.svelte`</code></Text>
+<Spacer h={10} />
+<Snippet width="500px" type="lite" text="import 'geist-ui-svelte/geist-ui-svelte.css';"/>
 <Spacer h={20} />
 <Text>Now you're ready to start using our <Link to="/components" color>components!</Link></Text>
