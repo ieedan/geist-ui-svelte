@@ -69,6 +69,6 @@ export default {
 <Spacer h={20} />
 <Text>Import our CSS into <code>`/routes/+layout.svelte`</code></Text>
 <Spacer h={10} />
-<Snippet width="500px" type="lite" text="import 'geist-ui-svelte/geist-ui-svelte.css';" />
+<Code lang="ts" code={`import "../../node_modules/geist-ui-svelte/dist/geist-ui-svelte.css";`}/>
 <Spacer h={20} />
 <Text>Now you're ready to start using our <Link to="/components" color>components!</Link></Text>
