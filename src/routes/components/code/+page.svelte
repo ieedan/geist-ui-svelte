@@ -6,6 +6,7 @@
 	import Snippet from "$lib/snippet/Snippet.svelte";
 	import Spacer from "$lib/spacer/Spacer.svelte";
 	import Text from "$lib/text/Text.svelte";
+	import { Edit } from "$lib/types.js";
 </script>
 
 <Text type="h3">Code</Text>
@@ -25,6 +26,7 @@
 	<div class="flex flex-col justify-start">
 		<Code
 			lang="javascript"
+			edits={[{lineNumber: 4, type: Edit.add}, {lineNumber: 9, type: Edit.remove}]}
 			code={`const mergeSort = (arr) => {
 	if (arr.length <= 1) return arr;
 		
