@@ -4,6 +4,12 @@
 	import Snippet from "$lib/snippet/Snippet.svelte";
 	import Spacer from "$lib/spacer/Spacer.svelte";
 	import Text from "$lib/text/Text.svelte";
+	import { Edit } from "$lib/types.js";
+
+	/* eslint-disable no-useless-escape */
+	const importExample = `<script lang="ts">
+	import "../../node_modules/geist-ui-svelte/dist/geist-ui-svelte.css";
+<\/script>`;
 </script>
 
 <Text type="h3">Installation</Text>
@@ -12,7 +18,7 @@
 <Spacer h={10} />
 <Text>Initialize a new SvelteKit project</Text>
 <Spacer h={10} />
-<Snippet width="500px" text={["npm create vite@latest", "cd my-project"]} type="lite" />
+<Snippet width="500px" text={["npm create vite@latest my-project", "cd my-project"]} type="lite" />
 <Spacer h={20} />
 <Text>Setup TailwindCSS</Text>
 <Spacer h={10} />
@@ -26,6 +32,28 @@
 <Spacer h={10} />
 <Code
 	lang="svelte"
+	edits={[
+		{ lineNumber: 4, type: Edit.add },
+		{ lineNumber: 5, type: Edit.add },
+		{ lineNumber: 9, type: Edit.add },
+		{ lineNumber: 10, type: Edit.add },
+		{ lineNumber: 11, type: Edit.add },
+		{ lineNumber: 12, type: Edit.add },
+		{ lineNumber: 13, type: Edit.add },
+		{ lineNumber: 14, type: Edit.add },
+		{ lineNumber: 15, type: Edit.add },
+		{ lineNumber: 16, type: Edit.add },
+		{ lineNumber: 17, type: Edit.add },
+		{ lineNumber: 18, type: Edit.add },
+		{ lineNumber: 19, type: Edit.add },
+		{ lineNumber: 20, type: Edit.add },
+		{ lineNumber: 21, type: Edit.add },
+		{ lineNumber: 22, type: Edit.add },
+		{ lineNumber: 23, type: Edit.add },
+		{ lineNumber: 24, type: Edit.add },
+		{ lineNumber: 25, type: Edit.add },
+		{ lineNumber: 30, type: Edit.add },
+	]}
 	code={`/** @type {import('tailwindcss').Config} */
 export default {
 	content: [
@@ -33,10 +61,6 @@ export default {
 		"./node_modules/geist-ui-svelte/**/*.{html,js,svelte,ts}",
 	],
 	theme: {
-		fontFamily: {
-			serif: ["JetBrains Mono", "Monospace"],
-			sans: ["Inter", "sans-serif"],
-		},
 		extend: {
 			colors: {
 				gray: {
@@ -69,6 +93,6 @@ export default {
 <Spacer h={20} />
 <Text>Import our CSS into <code>`/routes/+layout.svelte`</code></Text>
 <Spacer h={10} />
-<Code lang="ts" code={`import "../../node_modules/geist-ui-svelte/dist/geist-ui-svelte.css";`}/>
+<Code lang="ts" edits={[{ lineNumber: 2, type: Edit.add }]} code={importExample} />
 <Spacer h={20} />
 <Text>Now you're ready to start using our <Link to="/components" color>components!</Link></Text>

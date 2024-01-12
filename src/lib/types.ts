@@ -27,3 +27,13 @@ export type ShortRoute = {
 	name: string;
 	slug: string;
 };
+
+export enum Edit {
+	add,
+	remove,
+}
+
+export type Highlights = {
+	lineNumber: number;
+	type: Edit;
+};
