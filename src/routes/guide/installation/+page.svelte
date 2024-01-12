@@ -8,7 +8,7 @@
 
 	const importExample = `<script lang="ts">
 	import "../../node_modules/geist-ui-svelte/dist/geist-ui-svelte.css";
-<\/script>`; 
+<\/script>`;
 </script>
 
 <Text type="h3">Installation</Text>
@@ -24,7 +24,8 @@
 <Snippet
 	width="500px"
 	text={["npm install -D tailwindcss postcss autoprefixer", "npx tailwindcss init -p"]}
-	type="lite" />
+	type="lite"
+/>
 <Spacer h={20} />
 <Text>Configure TailwindCSS with our recommended settings.</Text>
 <Spacer h={10} />
@@ -82,7 +83,8 @@ export default {
 	},
 	plugins: [],
 	darkMode: "class",
-};`} />
+};`}
+/>
 <Spacer h={20} />
 <Text>Install geist-ui-svelte</Text>
 <Spacer h={10} />
@@ -90,6 +92,6 @@ export default {
 <Spacer h={20} />
 <Text>Import our CSS into <code>`/routes/+layout.svelte`</code></Text>
 <Spacer h={10} />
-<Code lang="ts" edits={[{lineNumber: 2, type: Edit.add}]} code={importExample} />
+<Code lang="ts" edits={[{ lineNumber: 2, type: Edit.add }]} code={importExample} />
 <Spacer h={20} />
 <Text>Now you're ready to start using our <Link to="/components" color>components!</Link></Text>

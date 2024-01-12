@@ -30,10 +30,10 @@ export type ShortRoute = {
 
 export enum Edit {
 	add,
-	remove
+	remove,
 }
 
 export type Highlights = {
 	lineNumber: number;
 	type: Edit;
-}
+};

@@ -66,7 +66,8 @@ const merge = (leftHalf, rightHalf) => {
 	}
 		
 	return mergedArr;
-};`} />
+};`}
+		/>
 	</div>
 	<div slot="footer">
 		<Details label="Code">
@@ -76,13 +77,11 @@ const merge = (leftHalf, rightHalf) => {
 </FieldSet>
 <Spacer h={30} />
 <Text type="h4">With Edit highlighting</Text>
-<Spacer h={5}/>
-<Text>
-	Edit highlighting can be useful when showing differences in code.
-</Text>
+<Spacer h={5} />
+<Text>Edit highlighting can be useful when showing differences in code.</Text>
 <Spacer h={20} />
 <Note color="warning">This currently only works with line numbers enabled.</Note>
-<Spacer h={20}/>
+<Spacer h={20} />
 <FieldSet>
 	<div class="flex flex-col justify-start">
 		<Code
@@ -96,11 +95,14 @@ const merge = (leftHalf, rightHalf) => {
     	"react": "^18.2.0",
 		"svelte": "^4.0.0",
   	},
-}`} />
+}`}
+		/>
 	</div>
 	<div slot="footer">
 		<Details label="Code">
-			<Code lang="svelte" code={`<Code
+			<Code
+				lang="svelte"
+				code={`<Code
 	lang="json"
 	edits={[
 		{ lineNumber: 3, type: Edit.remove },
@@ -111,21 +113,26 @@ const merge = (leftHalf, rightHalf) => {
 	"react": "^18.2.0",
 	"svelte": "^4.0.0",
 	},
-}\`} />`} />
+}\`} />`}
+			/>
 		</Details>
 	</div>
 </FieldSet>
 <Spacer h={30} />
 <Text type="h4">Without line numbers</Text>
 <Spacer h={5} />
-<Text>Remove the line numbers with <code>`lineNumbers={false}`</code> to save space on the page or if its more your style.</Text>
+<Text
+	>Remove the line numbers with <code>`lineNumbers={false}`</code> to save space on the page or if
+	its more your style.</Text
+>
 <Spacer h={10} />
 <FieldSet>
 	<div class="flex flex-col justify-start">
 		<Code
 			lang="sql"
 			lineNumbers={false}
-			code={`SELECT * FROM Closet WHERE Clean = 1 AND Color = 'Black';`} />
+			code={`SELECT * FROM Closet WHERE Clean = 1 AND Color = 'Black';`}
+		/>
 	</div>
 	<div slot="footer">
 		<Details label="Code">
