@@ -6,6 +6,7 @@
 	import Text from "$lib/text/Text.svelte";
 	import { Edit } from "$lib/types.js";
 
+	/* eslint-disable no-useless-escape */
 	const importExample = `<script lang="ts">
 	import "../../node_modules/geist-ui-svelte/dist/geist-ui-svelte.css";
 <\/script>`;

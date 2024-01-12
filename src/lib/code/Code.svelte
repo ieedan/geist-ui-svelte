@@ -39,10 +39,10 @@
 		};
 	});
 
-	const getLines = (code: string): Line[] => {
-		const lines = code.split("\n");
+	const getLines = (c: string): Line[] => {
+		const l = c.split("\n");
 		const linesArr = [];
-		for (let i = 1; i < lines.length + 1; i++) {
+		for (let i = 1; i < l.length + 1; i++) {
 			linesArr.push({ number: i });
 		}
 		return linesArr;
