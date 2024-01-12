@@ -63,6 +63,9 @@
 
 		if (element == undefined) return;
 
+		element.style.width = "100%";
+		element.style.outline = "None";
+
 		editorWidth = element.offsetWidth + 20;
 	};
 
@@ -89,7 +92,7 @@
 <div
 	bind:this={editorRef}
 	class="rounded-lg overflow-x-auto px-4 py-4 scrollbar-hide relative
-	bg-gray-0 dark:bg-gray-999 flex place-items-start">
+	bg-gray-0 dark:bg-gray-999 flex place-items-start selection:bg-blue-400 selection:bg-opacity-30">
 	{#if lineNumbers}
 		<div class="flex min-w-[40px] flex-col place-items-start justify-center">
 			{#each lines as line}
@@ -126,7 +129,7 @@
 					<CheckMarkIcon size={16} />
 				</div>
 			{:else}
-				<div in:scale={{ duration: 100 }}>
+				<div class="hover:text-gray-999 transition-all dark:hover:text-gray-0 text-gray-600 dark:text-gray-400" in:scale={{ duration: 100 }}>
 					<CloneIcon size={16} />
 				</div>
 			{/if}

@@ -3,6 +3,7 @@
 	import Details from "$lib/details/Details.svelte";
 	import FieldSet from "$lib/fieldset/FieldSet.svelte";
 	import Link from "$lib/link/Link.svelte";
+	import Note from "$lib/note/Note.svelte";
 	import Snippet from "$lib/snippet/Snippet.svelte";
 	import Spacer from "$lib/spacer/Spacer.svelte";
 	import Text from "$lib/text/Text.svelte";
@@ -26,7 +27,6 @@
 	<div class="flex flex-col justify-start">
 		<Code
 			lang="javascript"
-			edits={[{lineNumber: 4, type: Edit.add}, {lineNumber: 9, type: Edit.remove}]}
 			code={`const mergeSort = (arr) => {
 	if (arr.length <= 1) return arr;
 		
@@ -66,12 +66,70 @@ const merge = (leftHalf, rightHalf) => {
 	}
 		
 	return mergedArr;
-};`}
-		/>
+};`} />
 	</div>
 	<div slot="footer">
 		<Details label="Code">
 			<Code lang="svelte" code={`<Code lang="js" code={\`...\`}/>`} />
+		</Details>
+	</div>
+</FieldSet>
+<Spacer h={30} />
+<Text type="h4">With Edit highlighting</Text>
+<Spacer h={5}/>
+<Text>
+	Edit highlighting can be useful when showing differences in code.
+</Text>
+<Spacer h={20} />
+<Note color="warning">This currently only works with line numbers enabled.</Note>
+<Spacer h={20}/>
+<FieldSet>
+	<div class="flex flex-col justify-start">
+		<Code
+			lang="json"
+			edits={[
+				{ lineNumber: 3, type: Edit.remove },
+				{ lineNumber: 4, type: Edit.add },
+			]}
+			code={`{
+	"dependencies": {
+    	"react": "^18.2.0",
+		"svelte": "^4.0.0",
+  	},
+}`} />
+	</div>
+	<div slot="footer">
+		<Details label="Code">
+			<Code lang="svelte" code={`<Code
+	lang="json"
+	edits={[
+		{ lineNumber: 3, type: Edit.remove },
+		{ lineNumber: 4, type: Edit.add },
+	]}
+	code={\`{
+"dependencies": {
+	"react": "^18.2.0",
+	"svelte": "^4.0.0",
+	},
+}\`} />`} />
+		</Details>
+	</div>
+</FieldSet>
+<Spacer h={30} />
+<Text type="h4">Without line numbers</Text>
+<Spacer h={5} />
+<Text>Remove the line numbers with <code>`lineNumbers={false}`</code> to save space on the page or if its more your style.</Text>
+<Spacer h={10} />
+<FieldSet>
+	<div class="flex flex-col justify-start">
+		<Code
+			lang="sql"
+			lineNumbers={false}
+			code={`SELECT * FROM Closet WHERE Clean = 1 AND Color = 'Black';`} />
+	</div>
+	<div slot="footer">
+		<Details label="Code">
+			<Code lang="svelte" code={`<Code lang="js" lineNumbers={false} code={\`...\`}/>`} />
 		</Details>
 	</div>
 </FieldSet>
