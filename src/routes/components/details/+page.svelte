@@ -18,9 +18,7 @@
 <Spacer h={10} />
 <FieldSet>
 	<div class="flex flex-col justify-start">
-		<Details label="See more">
-			Some details here
-		</Details>
+		<Details label="See more">Some details here</Details>
 	</div>
 	<div slot="footer">
 		<Details label="Code">
@@ -38,16 +36,13 @@
 <Spacer h={10} />
 <FieldSet>
 	<div class="flex flex-col justify-start">
-		<Details label="See more" 
-		animate>
-			Some details here
-		</Details>
+		<Details label="See more" animate>Some details here</Details>
 	</div>
 	<div slot="footer">
 		<Details label="Code">
 			<Code
 				lang="svelte"
-				edits={[{lineNumber: 2, type: Edit.add}]}
+				edits={[{ lineNumber: 2, type: Edit.add }]}
 				code={`<Details label="See more" 
 	animate>
 	Some details here
@@ -61,16 +56,13 @@
 <Spacer h={10} />
 <FieldSet>
 	<div class="flex flex-col justify-start">
-		<Details label="See more" 
-		initialShow={true}>
-			Some details here
-		</Details>
+		<Details label="See more" initialShow={true}>Some details here</Details>
 	</div>
 	<div slot="footer">
 		<Details label="Code">
 			<Code
 				lang="svelte"
-				edits={[{lineNumber: 2, type: Edit.add}]}
+				edits={[{ lineNumber: 2, type: Edit.add }]}
 				code={`<Details label="See more" 
 	initialShow={true}>
 	Some details here

@@ -67,7 +67,8 @@
 		<code>\`Esc\`</code>.
 		</Text>
 	</div>
-</Modal>`} />
+</Modal>`}
+			/>
 		</Details>
 	</div>
 </FieldSet>

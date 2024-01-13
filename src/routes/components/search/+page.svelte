@@ -26,9 +26,7 @@
 	</div>
 	<div slot="footer">
 		<Details label="Code">
-			<Code
-				lang="svelte"
-				code={`<Search placeholder="Find what you need here" />`} />
+			<Code lang="svelte" code={`<Search placeholder="Find what you need here" />`} />
 		</Details>
 	</div>
 </FieldSet>
@@ -47,7 +45,8 @@
 			placeholder="Type something here"
 			on:input={() => (requestMade = false)}
 			debounce={1000}
-			on:debounce={() => (requestMade = true)} />
+			on:debounce={() => (requestMade = true)}
+		/>
 		{#if requestMade}
 			Finished
 		{/if}
@@ -56,7 +55,10 @@
 		<Details label="Code">
 			<Code
 				lang="svelte"
-				edits={[{lineNumber: 4, type: Edit.add},{lineNumber: 5, type: Edit.add}]}
+				edits={[
+					{ lineNumber: 4, type: Edit.add },
+					{ lineNumber: 5, type: Edit.add },
+				]}
 				code={`<Search
 	placeholder="Find what you need here"
 	on:input={() => (requestMade = false)}
@@ -64,7 +66,8 @@
 	on:debounce={() => (requestMade = true)} />
 {#if requestMade}
 	Finished
-{/if}`} />
+{/if}`}
+			/>
 		</Details>
 	</div>
 </FieldSet>
@@ -72,7 +75,7 @@
 <Text type="h4">Loading</Text>
 <Spacer h={5} />
 <Text>
-	Building on the last example you may want to add a more friendly indicator thats where the 
+	Building on the last example you may want to add a more friendly indicator thats where the
 	<code>`loading`</code> attribute comes in.
 </Text>
 <Spacer h={10} />
@@ -82,8 +85,9 @@
 			placeholder="Type something here"
 			on:input={() => (loading = true)}
 			debounce={1000}
-			on:debounce={() => (loading = false)} 
-			bind:loading={loading}/>
+			on:debounce={() => (loading = false)}
+			bind:loading
+		/>
 		{#if !loading}
 			Results
 		{/if}
@@ -92,7 +96,7 @@
 		<Details label="Code">
 			<Code
 				lang="svelte"
-				edits={[{lineNumber: 6, type: Edit.add}]}
+				edits={[{ lineNumber: 6, type: Edit.add }]}
 				code={`<Search
 	placeholder="Type something here"
 	on:input={() => (loading = true)}
@@ -101,7 +105,8 @@
 	bind:loading={loading}/>
 {#if !loading}
 	Results
-{/if}`} />
+{/if}`}
+			/>
 		</Details>
 	</div>
 </FieldSet>

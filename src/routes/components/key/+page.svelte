@@ -19,7 +19,7 @@
 <Spacer h={10} />
 <FieldSet>
 	<div class="flex justify-start gap-2">
-		<Key><CommandIcon size={16}/></Key>
+		<Key><CommandIcon size={16} /></Key>
 		<Key>K</Key>
 	</div>
 	<div slot="footer">
@@ -27,7 +27,8 @@
 			<Code
 				lang="svelte"
 				code={`<Key><CommandIcon size={16}/></Key>
-<Key>K</Key>`} />
+<Key>K</Key>`}
+			/>
 		</Details>
 	</div>
 </FieldSet>
@@ -38,7 +39,7 @@
 	<div class="flex justify-start gap-2">
 		<Key size="xs">K</Key>
 		<Key size="sm">K</Key>
-		<Key >K</Key>
+		<Key>K</Key>
 		<Key size="lg">K</Key>
 		<Key size="xl">K</Key>
 	</div>
@@ -50,7 +51,8 @@
 <Key size="sm">K</Key>
 <Key >K</Key>
 <Key size="lg">K</Key>
-<Key size="xl">K</Key>`} />
+<Key size="xl">K</Key>`}
+			/>
 		</Details>
 	</div>
 </FieldSet>

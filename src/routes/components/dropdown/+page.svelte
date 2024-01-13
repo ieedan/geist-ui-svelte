@@ -1,5 +1,4 @@
 <script lang="ts">
-	import Button from "$lib/button/Button.svelte";
 	import Code from "$lib/code/Code.svelte";
 	import Details from "$lib/details/Details.svelte";
 	import FieldSet from "$lib/fieldset/FieldSet.svelte";
@@ -24,7 +23,8 @@
 <Text type="h4">Basic</Text>
 <Spacer h={20} />
 <Note color="success"
-	>In a future release this should integrate with components like <code>`Button`</code>.</Note>
+	>In a future release this should integrate with components like <code>`Button`</code>.</Note
+>
 <Spacer h={20} />
 <FieldSet>
 	<div class="">
@@ -47,7 +47,8 @@
 	bind:anchorRef={buttonRef} 
 	bind:visible={showDropdown}>
 	This is a dropdown
-</Dropdown>`} />
+</Dropdown>`}
+			/>
 		</Details>
 	</div>
 </FieldSet>

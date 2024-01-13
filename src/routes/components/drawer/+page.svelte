@@ -45,7 +45,8 @@
 </Button>
 <Drawer bind:visible={showDefaultExample}>
 	This is a drawer
-</Drawer>`} />
+</Drawer>`}
+			/>
 		</Details>
 	</div>
 </FieldSet>
@@ -90,7 +91,8 @@
 </Button>
 <Drawer placement="right" bind:visible={showBottom}>
 	This is a drawer
-</Drawer>`} />
+</Drawer>`}
+			/>
 		</Details>
 	</div>
 </FieldSet>

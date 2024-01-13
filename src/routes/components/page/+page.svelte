@@ -30,7 +30,7 @@
 		<Button on:click={() => (showPage = true)}>Show page</Button>
 		<Page bind:visible={showPage}>
 			<Center class="h-full">
-				<Button on:click={() => showPage = false}>
+				<Button on:click={() => (showPage = false)}>
 					Click here or press <code>`Esc`</code> to exit
 				</Button>
 			</Center>
@@ -47,7 +47,8 @@
 			Click here or press <code>\`Esc\`</code> to exit
 		</Button>
 	</Center>
-</Page>`} />
+</Page>`}
+			/>
 		</Details>
 	</div>
 </FieldSet>
