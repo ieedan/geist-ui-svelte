@@ -147,15 +147,3 @@
 		/>
 	{/if}
 </div>
-
-<style lang="postcss">
-	@tailwind base;
-	@tailwind components;
-	@tailwind utilities;
-
-	@layer utilities {
-		.scheme-dark {
-			color-scheme: dark;
-		}
-	}
-</style>
