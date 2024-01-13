@@ -77,7 +77,10 @@ const merge = (leftHalf, rightHalf) => {
 <Spacer h={30} />
 <Text type="h4">With Edit highlighting</Text>
 <Spacer h={5} />
-<Text>Edit highlighting can be useful when showing differences in code.</Text>
+<Text>
+	Edit highlighting can be useful when showing differences in code. Use type
+	<code>`add`</code> or <code>`remove`</code> to indicate a code addition or code removal.
+</Text>
 <Spacer h={20} />
 <Note color="warning">This currently only works with line numbers enabled.</Note>
 <Spacer h={20} />
@@ -85,7 +88,10 @@ const merge = (leftHalf, rightHalf) => {
 	<div class="flex flex-col justify-start">
 		<Code
 			lang="json"
-			edits={[{ start: 3, end: 4, type: "add" }]}
+			edits={[
+				{ number: 3, type: "remove" },
+				{ number: 4, type: "add" },
+			]}
 			code={`{
 	"dependencies": {
     	"react": "^18.2.0",
@@ -98,13 +104,71 @@ const merge = (leftHalf, rightHalf) => {
 		<Details label="Code">
 			<Code
 				lang="svelte"
+				edits={[{ start: 3, end: 6, type: "add" }]}
 				code={`<Code
 	lang="json"
-	edits={[{ start: 3, end: 4, type: "add" }]}
+	edits={[
+		{ number: 3, type: "remove" },
+		{ number: 4, type: "add" },
+	]}
 	code={\`{
 "dependencies": {
 	"react": "^18.2.0",
 	"svelte": "^4.0.0",
+	},
+}\`} />`}
+			/>
+		</Details>
+	</div>
+</FieldSet>
+<Spacer h={30} />
+<Text type="h4">Multi-line highlighting</Text>
+<Spacer h={5} />
+<Text>
+	Sometimes you may want to highlight a block of code. You can do this using
+	<code>`start`</code> and <code>`end`</code> if no end is specified then it will highlight until the
+	end of the code.
+</Text>
+<Spacer h={10} />
+<FieldSet>
+	<div class="flex flex-col justify-start">
+		<Code
+			lang="json"
+			edits={[
+				{ number: 3, type: "remove" },
+				{ start: 4, end: 8, type: "add" },
+			]}
+			code={`{
+	"dependencies": {
+    	"react": "^18.2.0",
+		"svelte": "^4.0.0",
+		"@sveltejs/adapter-auto": "^3.0.0",
+		"@sveltejs/kit": "^2.0.0",
+		"@sveltejs/package": "^2.0.0",
+		"@sveltejs/vite-plugin-svelte": "^3.0.0",
+  	},
+}`}
+		/>
+	</div>
+	<div slot="footer">
+		<Details label="Code">
+			<Code
+				lang="json"
+				edits={[{ number: 5, type: "add" }]}
+				code={`<Code
+	lang="json"
+	edits={[
+		{ number: 3, type: "remove" },
+		{ start: 4, end: 8, type: "add" },
+	]}
+	code={\`{
+	"dependencies": {
+		"react": "^18.2.0",
+		"svelte": "^4.0.0",
+		"@sveltejs/adapter-auto": "^3.0.0",
+		"@sveltejs/kit": "^2.0.0",
+		"@sveltejs/package": "^2.0.0",
+		"@sveltejs/vite-plugin-svelte": "^3.0.0",
 	},
 }\`} />`}
 			/>
