@@ -120,6 +120,10 @@
 			name: "Note",
 			slug: "/components/note",
 		},
+		{
+			name: "Table",
+			slug: "/components/table",
+		},
 		"INTERACTIVITY",
 		{
 			name: "Modal",
