@@ -5,7 +5,6 @@
 	import Snippet from "$lib/snippet/Snippet.svelte";
 	import Spacer from "$lib/spacer/Spacer.svelte";
 	import Text from "$lib/text/Text.svelte";
-	import { Edit } from "$lib/types.js";
 </script>
 
 <Text type="h3">Details</Text>
@@ -42,7 +41,7 @@
 		<Details label="Code">
 			<Code
 				lang="svelte"
-				edits={[{ lineNumber: 2, type: Edit.add }]}
+				edits={[{ number: 2, type: "add" }]}
 				code={`<Details label="See more" 
 	animate>
 	Some details here
@@ -62,7 +61,7 @@
 		<Details label="Code">
 			<Code
 				lang="svelte"
-				edits={[{ lineNumber: 2, type: Edit.add }]}
+				edits={[{ number: 2, type: "add" }]}
 				code={`<Details label="See more" 
 	initialShow={true}>
 	Some details here

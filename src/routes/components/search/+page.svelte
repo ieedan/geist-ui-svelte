@@ -6,7 +6,6 @@
 	import Snippet from "$lib/snippet/Snippet.svelte";
 	import Spacer from "$lib/spacer/Spacer.svelte";
 	import Text from "$lib/text/Text.svelte";
-	import { Edit } from "$lib/types.js";
 
 	let loading = false;
 	let requestMade = false;
@@ -55,10 +54,7 @@
 		<Details label="Code">
 			<Code
 				lang="svelte"
-				edits={[
-					{ lineNumber: 4, type: Edit.add },
-					{ lineNumber: 5, type: Edit.add },
-				]}
+				edits={[{ start: 4, end: 5, type: "add" }]}
 				code={`<Search
 	placeholder="Find what you need here"
 	on:input={() => (requestMade = false)}
@@ -96,7 +92,7 @@
 		<Details label="Code">
 			<Code
 				lang="svelte"
-				edits={[{ lineNumber: 6, type: Edit.add }]}
+				edits={[{ number: 6, type: "add" }]}
 				code={`<Search
 	placeholder="Type something here"
 	on:input={() => (loading = true)}

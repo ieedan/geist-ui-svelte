@@ -7,7 +7,6 @@
 	import Text from "$lib/text/Text.svelte";
 	import Modal from "$lib/modal/Modal.svelte";
 	import Button from "$lib/button/Button.svelte";
-	import { Edit } from "$lib/types.js";
 
 	let showFirstExample = false;
 </script>
@@ -45,7 +44,7 @@
 		<Details label="Code">
 			<Code
 				lang="svelte"
-				edits={[{ lineNumber: 6, type: Edit.add }]}
+				edits={[{ number: 6, type: "add" }]}
 				code={`<Button on:click={() => (showFirstExample = true)}>
 	Show modal
 </Button>
