@@ -1,6 +1,6 @@
 {
 	"name": "geist-ui-svelte",
-	"version": "0.2.0",
+	"version": "0.3.6",
 	"author": {
 		"name": "Aidan Bleser",
 		"url": "https://aidanbleser.com"
@@ -220,7 +220,8 @@
 		"./EditIcon.svelte": {
 			"types": "./dist/icons/EditIcon.svelte.d.ts",
 			"svelte": "./dist/icons/EditIcon.svelte"
-		}
+		},
+		"./styles/geist-ui-svelte.css": "./dist/styles/geist-ui-svelte.css"
 	},
 	"files": [
 		"dist",
@@ -233,7 +234,6 @@
 	"devDependencies": {
 		"@cspell/eslint-plugin": "^8.1.0",
 		"@sveltejs/adapter-auto": "^3.0.0",
-		"@sveltejs/kit": "^2.0.0",
 		"@sveltejs/package": "^2.0.0",
 		"@sveltejs/vite-plugin-svelte": "^3.0.0",
 		"@types/eslint": "8.56.0",
@@ -261,6 +261,7 @@
 		"@popperjs/core": "^2.11.8",
 		"@vercel/analytics": "^1.1.1",
 		"@vercel/speed-insights": "^1.0.2",
-		"shikiji": "^0.9.18"
+		"shikiji": "^0.9.18",
+		"@sveltejs/kit": "^2.0.0"
 	}
 }

@@ -7,7 +7,7 @@
 
 	/* eslint-disable no-useless-escape */
 	const importExample = `<script lang="ts">
-	import "../../node_modules/geist-ui-svelte/dist/geist-ui-svelte.css";
+	import "geist-ui-svelte/styles/geist-ui-svelte.css";
 <\/script>`;
 </script>
 
