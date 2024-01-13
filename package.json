@@ -220,9 +220,6 @@
 		"./EditIcon.svelte": {
 			"types": "./dist/icons/EditIcon.svelte.d.ts",
 			"svelte": "./dist/icons/EditIcon.svelte"
-		},
-		"./geist-ui-svelte.css": {
-			"svelte": "./dist/geist-ui-svelte.css"
 		}
 	},
 	"files": [
