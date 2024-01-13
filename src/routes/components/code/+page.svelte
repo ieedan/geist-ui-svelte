@@ -65,7 +65,8 @@ const merge = (leftHalf, rightHalf) => {
 	}
 		
 	return mergedArr;
-};`} />
+};`}
+		/>
 	</div>
 	<div slot="footer">
 		<Details label="Code">
@@ -76,9 +77,7 @@ const merge = (leftHalf, rightHalf) => {
 <Spacer h={30} />
 <Text type="h4">With Edit highlighting</Text>
 <Spacer h={5} />
-<Text>
-	Edit highlighting can be useful when showing differences in code.
-</Text>
+<Text>Edit highlighting can be useful when showing differences in code.</Text>
 <Spacer h={20} />
 <Note color="warning">This currently only works with line numbers enabled.</Note>
 <Spacer h={20} />
@@ -92,7 +91,8 @@ const merge = (leftHalf, rightHalf) => {
     	"react": "^18.2.0",
 		"svelte": "^4.0.0",
   	},
-}`} />
+}`}
+		/>
 	</div>
 	<div slot="footer">
 		<Details label="Code">
@@ -106,7 +106,8 @@ const merge = (leftHalf, rightHalf) => {
 	"react": "^18.2.0",
 	"svelte": "^4.0.0",
 	},
-}\`} />`} />
+}\`} />`}
+			/>
 		</Details>
 	</div>
 </FieldSet>
@@ -115,14 +116,16 @@ const merge = (leftHalf, rightHalf) => {
 <Spacer h={5} />
 <Text
 	>Remove the line numbers with <code>`lineNumbers={false}`</code> to save space on the page or if
-	its more your style.</Text>
+	its more your style.</Text
+>
 <Spacer h={10} />
 <FieldSet>
 	<div class="flex flex-col justify-start">
 		<Code
 			lang="sql"
 			lineNumbers={false}
-			code={`SELECT * FROM Closet WHERE Clean = 1 AND Color = 'Black';`} />
+			code={`SELECT * FROM Closet WHERE Clean = 1 AND Color = 'Black';`}
+		/>
 	</div>
 	<div slot="footer">
 		<Details label="Code">
@@ -131,7 +134,8 @@ const merge = (leftHalf, rightHalf) => {
 				code={`<Code 
 	lang="sql" 
 	lineNumbers={false} 
-	code={\`SELECT * FROM Closet WHERE Clean = 1 AND Color = 'Black';\`}/>`} />
+	code={\`SELECT * FROM Closet WHERE Clean = 1 AND Color = 'Black';\`}/>`}
+			/>
 		</Details>
 	</div>
 </FieldSet>

@@ -6,7 +6,6 @@
 	import { scale } from "svelte/transition";
 	import dark from "./dark-theme.js";
 	import light from "./light-theme.js";
-	import toMap from "$lib/util/to-map.js";
 
 	type EditType = "add" | "remove";
 
@@ -22,7 +21,7 @@
 	type SimpleEdit = {
 		number: number;
 		type: EditType;
-	}
+	};
 
 	export let edits: Edit[] = [];
 
@@ -41,14 +40,14 @@
 					end = e.end;
 				}
 
-				for (let l = e.start; l < end + 1; l++) {					
+				for (let l = e.start; l < end + 1; l++) {
 					map.set(l, { number: l, type: e.type });
 				}
 			}
 		}
 
 		return map;
-	}
+	};
 
 	export let lang: BundledLanguage = "javascript";
 	export let code: string;
