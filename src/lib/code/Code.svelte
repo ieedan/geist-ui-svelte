@@ -6,10 +6,50 @@
 	import { scale } from "svelte/transition";
 	import dark from "./dark-theme.js";
 	import light from "./light-theme.js";
-	import { type Highlights, Edit } from "$lib/types.js";
 	import toMap from "$lib/util/to-map.js";
 
-	export let edits: Highlights[] = [];
+	type EditType = "add" | "remove";
+
+	type Edit = {
+		number?: number;
+		/** Start line number if no end is specified will highlight to the end */
+		start?: number;
+		/** End line number */
+		end?: number;
+		type: EditType;
+	};
+
+	type SimpleEdit = {
+		number: number;
+		type: EditType;
+	}
+
+	export let edits: Edit[] = [];
+
+	$: editsMap = parseEdits(edits, lines.length);
+
+	const parseEdits = (es: Edit[], linesLength: number): Map<number, SimpleEdit> => {
+		const map = new Map<number, SimpleEdit>();
+		for (let i = 0; i < es.length; i++) {
+			const e = es[i];
+
+			if (e.number) {
+				map.set(e.number, { number: e.number, type: e.type });
+			} else if (e.start) {
+				let end = linesLength;
+				if (e.end) {
+					end = e.end;
+				}
+
+				for (let l = e.start; l < end + 1; l++) {					
+					map.set(l, { number: l, type: e.type });
+				}
+			}
+		}
+
+		return map;
+	}
+
 	export let lang: BundledLanguage = "javascript";
 	export let code: string;
 	/** When true displays line numbers */
@@ -32,12 +72,6 @@
 	};
 
 	$: lines = getLines(code);
-	$: editsMap = toMap(edits, (a) => {
-		return {
-			key: a.lineNumber,
-			value: a,
-		};
-	});
 
 	const getLines = (c: string): Line[] => {
 		const l = c.split("\n");
@@ -104,7 +138,7 @@
 					{line.number}
 					<div class="w-5">
 						{#if editsMap.has(line.number)}
-							{#if editsMap.get(line.number)?.type == Edit.add}
+							{#if editsMap.get(line.number)?.type == "add"}
 								<div
 									style="width: {editorWidth}px;"
 									class="absolute top-0 left-full text-gray-999 bg-opacity-25 transition-all
