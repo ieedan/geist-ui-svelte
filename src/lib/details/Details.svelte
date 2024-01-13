@@ -2,7 +2,8 @@
 	import ChevronIcon from "$lib/icons/ChevronIcon.svelte";
 	import { onMount, tick } from "svelte";
 
-	let show = false;
+	export let initialShow = false;
+	let show = initialShow;
 	export let label: string;
 	/** Adds animation to the open and close of the content */
 	export let animate: boolean = false;
