@@ -141,7 +141,7 @@
 								<div
 									style="width: {editorWidth}px;"
 									class="absolute top-0 left-full text-gray-999 bg-opacity-25 transition-all
-								bg-blue-200 dark:bg-blue-500 dark:text-gray-0 dark:bg-opacity-25 px-1"
+								bg-blue-200 dark:bg-blue-500 dark:text-gray-0 dark:bg-opacity-25 px-1 pointer-events-none"
 								>
 									+
 								</div>
@@ -149,7 +149,7 @@
 								<div
 									style="width: {editorWidth}px;"
 									class="absolute top-0 left-full text-gray-999 bg-red-600 transition-all
-								dark:bg-red-400 dark:text-gray-0 bg-opacity-25 dark:bg-opacity-25 px-1"
+								dark:bg-red-400 dark:text-gray-0 bg-opacity-25 dark:bg-opacity-25 px-1 pointer-events-none"
 								>
 									-
 								</div>
