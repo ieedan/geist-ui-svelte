@@ -6,7 +6,7 @@
 
 <kbd
 	data-size={size}
-	class="inline-flex justify-center place-items-center font-serif border rounded-md bg-gray-50 dark:text-gray-600 dark:bg-gray-925 dark:border-gray-800 p-1 text-gray-700
+	class="inline-flex justify-center place-items-center gap-1 font-serif border rounded-md bg-gray-50 dark:text-gray-600 dark:bg-gray-925 dark:border-gray-800 p-1 text-gray-700
     data-[size='xs']:min-w-6 data-[size='xs']:min-h-6
     data-[size='sm']:min-w-7 data-[size='sm']:min-h-7
     data-[size='md']:min-w-8 data-[size='md']:min-h-8
