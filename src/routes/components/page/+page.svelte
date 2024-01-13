@@ -1,5 +1,53 @@
-<script>
-	import Note from "$lib/note/Note.svelte";
+<script lang="ts">
+	import Button from "$lib/button/Button.svelte";
+	import Code from "$lib/code/Code.svelte";
+	import Details from "$lib/details/Details.svelte";
+	import FieldSet from "$lib/fieldset/FieldSet.svelte";
+	import Snippet from "$lib/snippet/Snippet.svelte";
+	import Spacer from "$lib/spacer/Spacer.svelte";
+	import Text from "$lib/text/Text.svelte";
+	import Page from "$lib/page/Page.svelte";
+	import Center from "$lib/center/Center.svelte";
+
+	let showPage = false;
 </script>
 
-<Note color="warning">These docs are under construction you should see something here soon!</Note>
+<Text type="h3">Page</Text>
+<Spacer h={10} />
+<Text>Displays a page over the original content.</Text>
+<Spacer h={20} />
+<Snippet width="450px" type="lite" text={`import { Page } from 'geist-ui-svelte';`} />
+<Spacer h={30} />
+<Text type="h4">Basic</Text>
+<Spacer h={5} />
+<Text>
+	A page can be great for layouts that include a mobile menu. If you need a practical example
+	shrink this page to a mobile view and click the menu icon.
+</Text>
+<Spacer h={10} />
+<FieldSet>
+	<div class="flex flex-col justify-start">
+		<Button on:click={() => (showPage = true)}>Show page</Button>
+		<Page bind:visible={showPage}>
+			<Center class="h-full">
+				<Button on:click={() => showPage = false}>
+					Click here or press <code>`Esc`</code> to exit
+				</Button>
+			</Center>
+		</Page>
+	</div>
+	<div slot="footer">
+		<Details label="Code">
+			<Code
+				lang="svelte"
+				code={`<Button on:click={() => (showPage = true)}>Show page</Button>
+<Page bind:visible={showPage}>
+	<Center class="h-full">
+		<Button on:click={() => showPage = false}>
+			Click here or press <code>\`Esc\`</code> to exit
+		</Button>
+	</Center>
+</Page>`} />
+		</Details>
+	</div>
+</FieldSet>
