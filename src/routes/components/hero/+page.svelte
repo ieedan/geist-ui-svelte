@@ -10,9 +10,9 @@
 	import { Hero } from "$lib/index.js";
 	import Note from "$lib/note/Note.svelte";
 
-	export let firstExamplePage = false;
-	export let secondExamplePage = false;
-	export let thirdExamplePage = false;
+	let firstExamplePage = false;
+	let secondExamplePage = false;
+	let thirdExamplePage = false;
 </script>
 
 <Text type="h3">Hero</Text>

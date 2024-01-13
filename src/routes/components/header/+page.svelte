@@ -11,8 +11,8 @@
 	import Header from "$lib/header/Header.svelte";
 	import Hero from "$lib/hero/Hero.svelte";
 
-	export let firstExamplePageVisible = false;
-	export let secondExamplePageVisible = false;
+	let firstExamplePageVisible = false;
+	let secondExamplePageVisible = false;
 </script>
 
 <Text type="h3">Header</Text>

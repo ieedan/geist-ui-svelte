@@ -9,7 +9,7 @@
 	import Button from "$lib/button/Button.svelte";
 	import { Edit } from "$lib/types.js";
 
-	export let showFirstExample = false;
+	let showFirstExample = false;
 </script>
 
 <Text type="h3">Modal</Text>
