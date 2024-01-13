@@ -7,7 +7,6 @@
 	import Snippet from "$lib/snippet/Snippet.svelte";
 	import Spacer from "$lib/spacer/Spacer.svelte";
 	import Text from "$lib/text/Text.svelte";
-	import { Edit } from "$lib/types.js";
 </script>
 
 <Text type="h3">Code</Text>
@@ -86,10 +85,7 @@ const merge = (leftHalf, rightHalf) => {
 	<div class="flex flex-col justify-start">
 		<Code
 			lang="json"
-			edits={[
-				{ lineNumber: 3, type: Edit.remove },
-				{ lineNumber: 4, type: Edit.add },
-			]}
+			edits={[{ start: 3, end: 4, type: "add" }]}
 			code={`{
 	"dependencies": {
     	"react": "^18.2.0",
@@ -104,10 +100,7 @@ const merge = (leftHalf, rightHalf) => {
 				lang="svelte"
 				code={`<Code
 	lang="json"
-	edits={[
-		{ lineNumber: 3, type: Edit.remove },
-		{ lineNumber: 4, type: Edit.add },
-	]}
+	edits={[{ start: 3, end: 4, type: "add" }]}
 	code={\`{
 "dependencies": {
 	"react": "^18.2.0",
