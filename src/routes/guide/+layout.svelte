@@ -1,11 +1,11 @@
 <script lang="ts">
-	import NavRoute from "$lib/nav-route/NavRoute.svelte";
+	import NavRoute from "$lib/docs-components/nav-route/NavRoute.svelte";
 	import { page } from "$app/stores";
 	import type { Route, ShortRoute } from "$lib/types.js";
 	import ChevronIcon from "$lib/icons/ChevronIcon.svelte";
 	import Text from "$lib/text/Text.svelte";
 	import Spacer from "$lib/spacer/Spacer.svelte";
-	import ArrowNavigation from "$lib/arrow-navigation/ArrowNavigation.svelte";
+	import ArrowNavigation from "$lib/docs-components/arrow-navigation/ArrowNavigation.svelte";
 	let navigationExpanded = false;
 
 	let navigationRef: HTMLElement;
