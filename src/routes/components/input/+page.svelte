@@ -41,7 +41,8 @@
 			<Code
 				lang="svelte"
 				code={`<Input disabled placeholder="Some input"/>
-<Input readonly placeholder="Some input"/>`} />
+<Input readonly placeholder="Some input"/>`}
+			/>
 		</Details>
 	</div>
 </FieldSet>
@@ -71,7 +72,8 @@
 			<Code
 				lang="svelte"
 				code={`<Input containerLabel="username" placeholder="username"/>
-<Input containerLabel=".com" labelPlacement="end" placeholder="https://github"/>`} />
+<Input containerLabel=".com" labelPlacement="end" placeholder="https://github"/>`}
+			/>
 		</Details>
 	</div>
 </FieldSet>
@@ -89,7 +91,8 @@
 			<Code
 				lang="svelte"
 				code={`<Input containerLabel="username" placeholder="username"/>
-<Input containerLabel=".com" labelPlacement="end" placeholder="https://github"/>`} />
+<Input containerLabel=".com" labelPlacement="end" placeholder="https://github"/>`}
+			/>
 		</Details>
 	</div>
 </FieldSet>
@@ -108,21 +111,25 @@
 			placeholder="Some input"
 			on:input={() => (debounced = false)}
 			debounce={1000}
-			on:debounce={() => (debounced = true)} />
+			on:debounce={() => (debounced = true)}
+		/>
 		{#if debounced}
 			Debounced
 		{/if}
 	</div>
 	<div slot="footer">
 		<Details label="Code">
-			<Code lang="svelte" code={`<Input
+			<Code
+				lang="svelte"
+				code={`<Input
 	placeholder="Some input"
 	debounce={1000}
 	on:input={() => (debounced = false)}
 	on:debounce={() => (debounced = true)} />
 {#if debounced}
 	Debounced
-{/if}`} />
+{/if}`}
+			/>
 		</Details>
 	</div>
 </FieldSet>

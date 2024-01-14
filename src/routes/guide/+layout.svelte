@@ -21,7 +21,7 @@
 		},
 		{
 			name: "Core Principals",
-			slug: "/guide/coreprincipals",
+			slug: "/guide/core-principals",
 		},
 		{
 			name: "Installation",
@@ -98,7 +98,8 @@
 
 			if (doc) {
 				const lastIndex = doc.slug.lastIndexOf("/") + 1;
-				doc.sourceRoute = GITHUB_DOCS_DIRECTORY + doc.slug.slice(lastIndex) + "/+page.svelte";
+				doc.sourceRoute =
+					GITHUB_DOCS_DIRECTORY + doc.slug.slice(lastIndex) + "/+page.svelte";
 				return doc;
 			}
 		}

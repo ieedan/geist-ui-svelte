@@ -102,7 +102,8 @@
 				{ label: "Property", property: "property" },
 				{ label: "Description", property: "description" },
 				{ label: "Type", property: "type" },
-			]} />
+			]}
+		/>
 	</div>
 	<div slot="footer">
 		<Details label="Code">
@@ -127,7 +128,8 @@
 				{ label: "Property", property: "property" },
 				{ label: "Description", property: "description" },
 				{ label: "Type", property: "type" },
-			]} />
+			]}
+		/>
 	</div>
 	<div slot="footer">
 		<Details label="Code">
@@ -141,7 +143,8 @@
 		{ label: "Property", property: "property" },
 		{ label: "Description", property: "description" },
 		{ label: "Type", property: "type" },
-	]} />`} />
+	]} />`}
+			/>
 		</Details>
 	</div>
 </FieldSet>
