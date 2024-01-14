@@ -1,8 +1,6 @@
 <script lang="ts">
 	import type { TextAlignment } from "$lib/types.js";
 
-	let textRef: HTMLElement;
-
 	export let type: "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "p" | "small" | "span" = "p";
 
 	export let i = false;
@@ -21,7 +19,6 @@
 <svelte:element
 	this={type}
 	style="text-align: {align};{style}"
-	bind:this={textRef}
 	data-i={i}
 	data-b={b}
 	data-del={del}
