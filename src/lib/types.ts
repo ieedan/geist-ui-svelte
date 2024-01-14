@@ -27,3 +27,12 @@ export type ShortRoute = {
 	name: string;
 	slug: string;
 };
+
+export type Column = {
+	label: string;
+	property: string;
+};
+
+export type DataItem = {
+	[key: string]: string;
+};

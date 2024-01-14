@@ -6,6 +6,9 @@
 	import Text from "$lib/text/Text.svelte";
 	import Spacer from "$lib/spacer/Spacer.svelte";
 	import ArrowNavigation from "$lib/docs-components/arrow-navigation/ArrowNavigation.svelte";
+	import Divider from "$lib/divider/Divider.svelte";
+	import GithubIcon from "$lib/icons/GithubIcon.svelte";
+	import EditIcon from "$lib/icons/EditIcon.svelte";
 	let navigationExpanded = false;
 
 	let navigationRef: HTMLElement;
@@ -25,6 +28,9 @@
 			slug: "/guide/installation",
 		},
 	];
+
+	const GITHUB_DOCS_DIRECTORY =
+		"https://github.com/ieedan/geist-ui-svelte/blob/main/src/routes/guide/";
 
 	$: currentDoc = getCurrentDoc(routes, $page.url.href.replace($page.url.origin, ""));
 
@@ -59,6 +65,7 @@
 
 	interface CurrentRoute extends Route {
 		index?: number;
+		sourceRoute?: string;
 	}
 
 	const getCurrentDoc = (
@@ -78,6 +85,8 @@
 			if (slug.toLowerCase() == newPath.toLowerCase()) {
 				if (!ogIndex) ogIndex = i;
 				r.index = ogIndex;
+				const lastIndex = r.slug.lastIndexOf("/") + 1;
+				r.sourceRoute = GITHUB_DOCS_DIRECTORY + r.slug.slice(lastIndex) + "/+page.svelte";
 				return r;
 			}
 
@@ -87,7 +96,12 @@
 
 			const doc = getCurrentDoc(r.routes, path, ogIndex);
 
-			if (doc) return doc;
+			if (doc) {
+				const lastIndex = doc.slug.lastIndexOf("/") + 1;
+				doc.sourceRoute =
+					GITHUB_DOCS_DIRECTORY + doc.slug.slice(lastIndex) + "/+page.svelte";
+				return doc;
+			}
 		}
 	};
 
@@ -162,6 +176,26 @@
 		<div class="slot-width relative w-full max-w-3xl md:left-[300px] px-4">
 			<Spacer h={30} />
 			<slot />
+			<Spacer h={30} />
+			<Divider />
+			<Spacer h={10} />
+			<div class="flex place-items-center gap-2">
+				<a
+					href="https://github.com/ieedan/geist-ui-svelte"
+					target="_blank"
+					class="flex place-items-center justify-center"
+				>
+					<GithubIcon size={22} />
+				</a>
+				<a
+					href={currentDoc?.sourceRoute}
+					target="_blank"
+					class="border border-gray-100 dark:border-gray-900 size-7 flex place-items-center justify-center
+					hover:bg-gray-100 dark:hover:bg-gray-900 transition-all rounded-full p-1 text-blue-500"
+				>
+					<EditIcon size={16} />
+				</a>
+			</div>
 			<ArrowNavigation {next} {last} />
 			<div class="block md:hidden"><Spacer h={59} /></div>
 		</div>

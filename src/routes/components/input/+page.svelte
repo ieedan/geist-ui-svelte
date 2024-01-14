@@ -6,6 +6,8 @@
 	import Spacer from "$lib/spacer/Spacer.svelte";
 	import Text from "$lib/text/Text.svelte";
 	import Input from "$lib/input/Input.svelte";
+
+	let debounced = true;
 </script>
 
 <Text type="h3">Input</Text>
@@ -90,6 +92,43 @@
 				lang="svelte"
 				code={`<Input containerLabel="username" placeholder="username"/>
 <Input containerLabel=".com" labelPlacement="end" placeholder="https://github"/>`}
+			/>
+		</Details>
+	</div>
+</FieldSet>
+<Spacer h={30} />
+<Text type="h4">Debounce</Text>
+<Spacer h={5} />
+<Text>
+	Sometimes when working with data from a server you want to wait for the user to finish typing
+	before making a request. The built in <code>`debounce`</code> property and
+	<code>`on:debounce`</code> event make this easy. Try it out below.
+</Text>
+<Spacer h={10} />
+<FieldSet>
+	<div class="flex flex-col justify-start">
+		<Input
+			placeholder="Some input"
+			on:input={() => (debounced = false)}
+			debounce={1000}
+			on:debounce={() => (debounced = true)}
+		/>
+		{#if debounced}
+			Debounced
+		{/if}
+	</div>
+	<div slot="footer">
+		<Details label="Code">
+			<Code
+				lang="svelte"
+				code={`<Input
+	placeholder="Some input"
+	debounce={1000}
+	on:input={() => (debounced = false)}
+	on:debounce={() => (debounced = true)} />
+{#if debounced}
+	Debounced
+{/if}`}
 			/>
 		</Details>
 	</div>

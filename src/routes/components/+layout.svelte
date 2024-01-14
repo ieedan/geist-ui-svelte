@@ -120,6 +120,10 @@
 			name: "Note",
 			slug: "/components/note",
 		},
+		{
+			name: "Table",
+			slug: "/components/table",
+		},
 		"INTERACTIVITY",
 		{
 			name: "Modal",
@@ -194,6 +198,7 @@
 
 	interface CurrentRoute extends Route {
 		index?: number;
+		sourceRoute?: string;
 	}
 
 	const getCurrentDoc = (
@@ -211,15 +216,25 @@
 			const newPath = path[path.length - 1] == "/" ? path.slice(0, path.length - 1) : path;
 
 			if (slug.toLowerCase() == newPath.toLowerCase()) {
-				r.index = i;
+				if (!ogIndex) ogIndex = i;
+				r.index = ogIndex;
+				const lastIndex = r.slug.lastIndexOf("/") + 1;
+				r.sourceRoute = GITHUB_DOCS_DIRECTORY + r.slug.slice(lastIndex) + "/+page.svelte";
 				return r;
 			}
 
 			if (!r.routes) continue;
 
-			const doc = getCurrentDoc(r.routes, path, ogIndex ? ogIndex : i);
+			if (!ogIndex) ogIndex = i;
 
-			if (doc) return doc;
+			const doc = getCurrentDoc(r.routes, path, ogIndex);
+
+			if (doc) {
+				const lastIndex = doc.slug.lastIndexOf("/") + 1;
+				doc.sourceRoute =
+					GITHUB_DOCS_DIRECTORY + doc.slug.slice(lastIndex) + "/+page.svelte";
+				return doc;
+			}
 		}
 	};
 
@@ -313,7 +328,7 @@
 					<GithubIcon size={22} />
 				</a>
 				<a
-					href="{GITHUB_DOCS_DIRECTORY}{currentDoc?.name.toLowerCase()}/+page.svelte"
+					href={currentDoc?.sourceRoute}
 					target="_blank"
 					class="border border-gray-100 dark:border-gray-900 size-7 flex place-items-center justify-center
 					hover:bg-gray-100 dark:hover:bg-gray-900 transition-all rounded-full p-1 text-blue-500"

@@ -386,7 +386,11 @@
 	observer on the select component. This updates the value to make sure it is contained in the new
 	options when the options change.
 </Text>
-<Spacer h={10} />
+<Spacer h={20} />
+<Note color="warning">
+	Make sure to key your each blocks otherwise the mutation observer may not catch the change.
+</Note>
+<Spacer h={20} />
 <FieldSet>
 	<div class="flex flex-col gap-2">
 		<Select bind:value={selectedCountry}>
