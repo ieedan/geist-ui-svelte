@@ -60,6 +60,10 @@ export { default as Note } from "./note/Note.svelte";
 
 export { default as Table } from "./table/Table.svelte";
 
+export { default as RadioTabs } from "./radiotabs/RadioTabs.svelte";
+
+export { default as RadioTab } from "./radiotabs/RadioTab.svelte";
+
 /* Interactivity */
 
 export { default as Modal } from "./modal/Modal.svelte";
