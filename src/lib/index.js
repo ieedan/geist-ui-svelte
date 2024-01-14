@@ -58,6 +58,8 @@ export { default as Link } from "./link/Link.svelte";
 
 export { default as Note } from "./note/Note.svelte";
 
+export { default as Table } from "./table/Table.svelte";
+
 /* Interactivity */
 
 export { default as Modal } from "./modal/Modal.svelte";
