@@ -151,7 +151,14 @@
 						<Text color="abort" type="small" class="px-2 font-light">{route}</Text>
 						<Spacer h={5} />
 					{:else}
-						<NavRoute {...route} />
+						<NavRoute
+							on:navigated={() => (navigationExpanded = false)}
+							hidden={route.hidden}
+							routes={route.routes}
+							expanded={route.expanded}
+							slug={route.slug}
+							name={route.name}
+						/>
 					{/if}
 				{/each}
 			</div>

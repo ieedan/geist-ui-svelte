@@ -124,6 +124,10 @@
 			name: "Table",
 			slug: "/components/table",
 		},
+		{
+			name: "RadioTabs",
+			slug: "/components/radiotabs",
+		},
 		"INTERACTIVITY",
 		{
 			name: "Modal",
