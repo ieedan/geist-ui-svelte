@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { createEventDispatcher } from "svelte";
+	import { createEventDispatcher, onDestroy } from "svelte";
 	import type { HTMLInputAttributes } from "svelte/elements";
 
 	const dispatch = createEventDispatcher();
@@ -13,8 +13,10 @@
 	export let labelPlacement: "start" | "end" = "start";
 	export let id: string | undefined = undefined;
 	export let width: string | undefined = undefined;
+	export let debounce: number = 0;
 
 	let inputRef: HTMLInputElement;
+	let debounceTimeout: number;
 
 	export const focus = () => inputRef.focus();
 
@@ -22,6 +24,22 @@
 		value = (e.target as HTMLInputElement).value;
 		dispatch("change", { value });
 	};
+
+	const input = () => {
+		clearTimeout(debounceTimeout);
+
+		dispatch("input", { value });
+
+		debounceTimeout = setTimeout(db, debounce);
+	};
+
+	const db = () => {
+		dispatch("debounce", { value });
+	};
+
+	onDestroy(() => {
+		clearTimeout(debounceTimeout);
+	});
 </script>
 
 <label for={id}><slot /></label>
@@ -50,7 +68,7 @@
 			on:click
 			on:keydown
 			on:keyup
-			on:input
+			on:input={input}
 			on:touchstart|passive
 			on:touchend
 			on:touchcancel
