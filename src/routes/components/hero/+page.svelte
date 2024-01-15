@@ -178,9 +178,9 @@
 <Spacer h={5} />
 <Text>
 	Sometimes you want your hero section to account for a header use the <code
-		>`exclusionHeight `</code
+		>`exclusionHeight`</code
 	>
-	to calculate the height of the header and subtract it from the 100svh. This can also be good if you
+	to calculate the height of the header and subtract it from the 100svh. This can also be useful if you
 	have footers or other content that should take space from the hero section.
 </Text>
 <Spacer h={10} />
