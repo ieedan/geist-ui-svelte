@@ -72,7 +72,9 @@
 			<Code
 				lang="svelte"
 				code={`<Input containerLabel="username" placeholder="username"/>
-<Input containerLabel=".com" labelPlacement="end" placeholder="https://github"/>`} />
+<Input containerLabel=".com" 
+labelPlacement="end" 
+placeholder="https://github"/>`} />
 		</Details>
 	</div>
 </FieldSet>
@@ -94,7 +96,9 @@
 		<Details label="Code">
 			<Code
 				lang="svelte"
-				code={`<Input type="password" placeholder="Your password" value="987654321" />
+				code={`<Input type="password" 
+	placeholder="Your password" 
+	value="987654321" />
 <Input type="date" value="2024-12-25" />
 <Input type="number" value={10} />`} />
 		</Details>
