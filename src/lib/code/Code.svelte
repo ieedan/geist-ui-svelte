@@ -124,16 +124,14 @@
 
 <div
 	bind:this={editorRef}
-	class="rounded-lg overflow-x-auto px-4 py-4 scrollbar-hide relative
-	bg-gray-0 dark:bg-gray-999 flex place-items-start selection:bg-blue-400 selection:bg-opacity-30"
->
+	class="rounded-lg px-4 py-4 relative bg-gray-0 dark:bg-gray-999 
+	flex place-items-start selection:bg-blue-400 selection:bg-opacity-30">
 	{#if lineNumbers}
 		<div class="flex min-w-[40px] flex-col place-items-start justify-center">
 			{#each lines as line}
 				<div
 					class="h-[20px] min-w-[20px] select-none text-gray-600 dark:text-gray-400 relative"
-					style="font-size: {fontSize}px;"
-				>
+					style="font-size: {fontSize}px;">
 					{line.number}
 					<div class="w-5">
 						{#if editsMap.has(line.number)}
@@ -141,16 +139,14 @@
 								<div
 									style="width: {editorWidth}px;"
 									class="absolute top-0 left-full text-gray-999 bg-opacity-25 transition-all
-								bg-blue-200 dark:bg-blue-500 dark:text-gray-0 dark:bg-opacity-25 px-1 pointer-events-none"
-								>
+								bg-blue-200 dark:bg-blue-500 dark:text-gray-0 dark:bg-opacity-25 px-1 pointer-events-none">
 									+
 								</div>
 							{:else}
 								<div
 									style="width: {editorWidth}px;"
 									class="absolute top-0 left-full text-gray-999 bg-red-600 transition-all
-								dark:bg-red-400 dark:text-gray-0 bg-opacity-25 dark:bg-opacity-25 px-1 pointer-events-none"
-								>
+								dark:bg-red-400 dark:text-gray-0 bg-opacity-25 dark:bg-opacity-25 px-1 pointer-events-none">
 									-
 								</div>
 							{/if}
@@ -160,7 +156,9 @@
 			{/each}
 		</div>
 	{/if}
-	{@html highlightedCode ?? ""}
+	<div class="overflow-x-auto scrollbar-hide">
+		{@html highlightedCode ?? ""}
+	</div>
 	<div class="absolute top-2 right-2 hidden sm:flex">
 		<button on:click={copyText}>
 			{#if copied}
@@ -170,8 +168,7 @@
 			{:else}
 				<div
 					class="hover:text-gray-999 transition-all dark:hover:text-gray-0 text-gray-600 dark:text-gray-400"
-					in:scale={{ duration: 100 }}
-				>
+					in:scale={{ duration: 100 }}>
 					<CloneIcon size={16} />
 				</div>
 			{/if}
