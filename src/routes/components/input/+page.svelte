@@ -42,7 +42,8 @@
 			<Code
 				lang="svelte"
 				code={`<Input disabled placeholder="Some input"/>
-<Input readonly placeholder="Some input"/>`} />
+<Input readonly placeholder="Some input"/>`}
+			/>
 		</Details>
 	</div>
 </FieldSet>
@@ -74,7 +75,8 @@
 				code={`<Input containerLabel="username" placeholder="username"/>
 <Input containerLabel=".com" 
 labelPlacement="end" 
-placeholder="https://github"/>`} />
+placeholder="https://github"/>`}
+			/>
 		</Details>
 	</div>
 </FieldSet>
@@ -100,7 +102,8 @@ placeholder="https://github"/>`} />
 	placeholder="Your password" 
 	value="987654321" />
 <Input type="date" value="2024-12-25" />
-<Input type="number" value={10} />`} />
+<Input type="number" value={10} />`}
+			/>
 		</Details>
 	</div>
 </FieldSet>
@@ -119,7 +122,8 @@ placeholder="https://github"/>`} />
 			placeholder="Some input"
 			on:input={() => (debounced = false)}
 			debounce={1000}
-			on:debounce={() => (debounced = true)} />
+			on:debounce={() => (debounced = true)}
+		/>
 		{#if debounced}
 			Debounced
 		{/if}
@@ -135,7 +139,8 @@ placeholder="https://github"/>`} />
 	on:debounce={() => (debounced = true)} />
 {#if debounced}
 	Debounced
-{/if}`} />
+{/if}`}
+			/>
 		</Details>
 	</div>
 </FieldSet>

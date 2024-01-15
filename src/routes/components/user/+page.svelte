@@ -16,9 +16,7 @@
 <Spacer h={30} />
 <Text type="h4">Basic</Text>
 <Spacer h={5} />
-<Text>
-	When there is no image supplied it will use your initials for your `Avatar`.
-</Text>
+<Text>When there is no image supplied it will use your initials for your `Avatar`.</Text>
 <Spacer h={10} />
 <FieldSet>
 	<div class="flex gap-2 justify-start">
@@ -29,10 +27,13 @@
 	</div>
 	<div slot="footer">
 		<Details label="Code">
-			<Code lang="svelte" code={`<User name="Aidan" />
+			<Code
+				lang="svelte"
+				code={`<User name="Aidan" />
 <User name="Aidan Bleser" />
 <User name="Aidan R Bleser" />
-<User name="Eva Rivera" />`} />
+<User name="Eva Rivera" />`}
+			/>
 		</Details>
 	</div>
 </FieldSet>
@@ -49,7 +50,8 @@
 				lang="svelte"
 				code={`<User 
 	name="Aidan"
-	img="https://avatars.githubusercontent.com/u/117548273?v=4"/>`} />
+	img="https://avatars.githubusercontent.com/u/117548273?v=4"/>`}
+			/>
 		</Details>
 	</div>
 </FieldSet>
@@ -69,7 +71,8 @@
 				code={`<User 
 	name="Aidan" 
 	img="https://avatars.githubusercontent.com/u/117548273?v=4" 
-	detail/>`} />
+	detail/>`}
+			/>
 		</Details>
 	</div>
 </FieldSet>
@@ -87,7 +90,8 @@
 			name="Aidan"
 			img="https://avatars.githubusercontent.com/u/117548273?v=4"
 			detail
-			details="Trash Dev" />
+			details="Trash Dev"
+		/>
 	</div>
 	<div slot="footer">
 		<Details label="Code">
@@ -97,7 +101,8 @@
 	name="Aidan"
 	img="https://avatars.githubusercontent.com/u/117548273?v=4"
 	detail
-	details="Trash Dev" />`} />
+	details="Trash Dev" />`}
+			/>
 		</Details>
 	</div>
 </FieldSet>

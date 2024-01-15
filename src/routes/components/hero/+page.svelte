@@ -120,9 +120,7 @@
 		<Page bind:visible={thirdExamplePage}>
 			<div class="max-h-screen overflow-y-auto">
 				<Hero>
-					<Text type="h1" size="5xl" smSize="7xl" align="center">
-						geist-ui-svelte
-					</Text>
+					<Text type="h1" size="5xl" smSize="7xl" align="center">geist-ui-svelte</Text>
 					<Spacer h={20} />
 					<div class="px-2 text-center sm:text-left">
 						<Text type="p" color="secondary"
@@ -179,8 +177,8 @@
 	Sometimes you want your hero section to account for a header use the <code
 		>`exclusionHeight`</code
 	>
-	to calculate the height of the header and subtract it from the 100svh. This can also be useful if you
-	have footers or other content that should take space from the hero section.
+	to calculate the height of the header and subtract it from the 100svh. This can also be useful if
+	you have footers or other content that should take space from the hero section.
 </Text>
 <Spacer h={10} />
 <FieldSet>

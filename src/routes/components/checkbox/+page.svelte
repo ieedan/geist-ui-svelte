@@ -70,7 +70,7 @@
 </FieldSet>
 <Spacer h={30} />
 <Text type="h4">Ring</Text>
-<Spacer h={5}/>
+<Spacer h={5} />
 <Text>
 	Add a ring around the checkbox when focused by adding the <code>`ring`</code> attribute.
 </Text>
