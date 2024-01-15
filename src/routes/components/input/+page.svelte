@@ -93,6 +93,7 @@ placeholder="https://github"/>`}
 		<Input type="password" placeholder="Your password" value="987654321" />
 		<Input type="date" value="2024-12-25" />
 		<Input type="number" value={10} />
+		<Input type="email" placeholder="Email" />
 	</div>
 	<div slot="footer">
 		<Details label="Code">
@@ -103,6 +104,42 @@ placeholder="https://github"/>`}
 	value="987654321" />
 <Input type="date" value="2024-12-25" />
 <Input type="number" value={10} />`}
+			/>
+		</Details>
+	</div>
+</FieldSet>
+<Spacer h={30} />
+<Text type="h4">With label</Text>
+<Spacer h={5} />
+<Text>Add a label to the input using the <code>`{"<slot/>"}`</code></Text>
+<Spacer h={10} />
+<FieldSet>
+	<div class="flex flex-col gap-2">
+		<Input type="email" placeholder="Email">
+			<Text type="small" color="secondary">
+				Email
+			</Text>
+		</Input>
+		<Input type="password" placeholder="Password">
+			<Text type="small" color="secondary">
+				Password
+			</Text>
+		</Input>
+	</div>
+	<div slot="footer">
+		<Details label="Code">
+			<Code
+				lang="svelte"
+				code={`<Input type="email" placeholder="Email">
+	<Text type="small" color="secondary">
+		Email
+	</Text>
+</Input>
+<Input type="password" placeholder="Password">
+	<Text type="small" color="secondary">
+		Password
+	</Text>
+</Input>`}
 			/>
 		</Details>
 	</div>
