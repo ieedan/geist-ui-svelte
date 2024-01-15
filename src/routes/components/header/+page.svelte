@@ -13,6 +13,7 @@
 
 	let firstExamplePageVisible = false;
 	let secondExamplePageVisible = false;
+	let thirdExamplePageVisible = false;
 </script>
 
 <Text type="h3">Header</Text>
@@ -62,7 +63,10 @@
 <Spacer h={30} />
 <Text type="h4">Sticky</Text>
 <Spacer h={5} />
-<Text>Pins the header to the top of the screen and allows content to scroll under it.</Text>
+<Text>
+	Pins the header to the top of the screen and allows content to scroll under it while retaining
+	the space it takes up on the screen.
+</Text>
 <Spacer h={10} />
 <FieldSet>
 	<div class="flex flex-col justify-start">
@@ -100,6 +104,60 @@
 				code={`<Header sticky>
 	<div class="flex place-items-center justify-between w-full px-6 max-w-5xl">
 		<Text type="h5">sticky</Text>
+		<Button>Click to close</Button>
+	</div>
+</Header>`}
+			/>
+		</Details>
+	</div>
+</FieldSet>
+<Spacer h={30} />
+<Text type="h4">Fixed</Text>
+<Spacer h={5} />
+<Text>Pins the header to the top of the screen and allows content to scroll under it.</Text>
+<Spacer h={10} />
+<FieldSet>
+	<div class="flex flex-col justify-start">
+		<Button on:click={() => (thirdExamplePageVisible = true)}>Show Example</Button>
+		<Page bind:visible={thirdExamplePageVisible}>
+			<div class="max-h-screen overflow-y-auto">
+				<Header fixed>
+					<div class="flex place-items-center justify-between w-full px-6 max-w-5xl">
+						<Text type="h5">fixed</Text>
+						<Button on:click={() => (thirdExamplePageVisible = false)}
+							>Click to close</Button
+						>
+					</div>
+				</Header>
+				<Hero>
+					<Text type="h1">Fixed header</Text>
+					<Text>Notice how the hero section falls partially under the header here.</Text>
+					<Text>Press `Esc` to close at anytime</Text>
+				</Hero>
+				<div class="flex flex-col place-items-center justify-center">
+					<div class="bg-blue-500 h-96 w-64 rounded-lg"></div>
+					<Spacer h={20} />
+					<div class="bg-orange-300 dark:bg-orange-400 h-96 w-64 rounded-lg"></div>
+					<Spacer h={20} />
+					<div class="bg-red-500 dark:bg-red-600 h-96 w-64 rounded-lg"></div>
+					<Spacer h={20} />
+					<div class="bg-blue-500 h-96 w-64 rounded-lg"></div>
+					<Spacer h={20} />
+					<div class="bg-orange-300 dark:bg-orange-400 h-96 w-64 rounded-lg"></div>
+					<Spacer h={20} />
+					<div class="bg-red-500 dark:bg-red-600 h-96 w-64 rounded-lg"></div>
+				</div>
+			</div>
+		</Page>
+	</div>
+	<div slot="footer">
+		<Details label="Code">
+			<Code
+				lang="svelte"
+				code={`<Header fixed>
+	<div class="flex place-items-center justify-between 
+	w-full px-6 max-w-5xl">
+		<Text type="h5">fixed</Text>
 		<Button>Click to close</Button>
 	</div>
 </Header>`}
