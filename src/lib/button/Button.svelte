@@ -46,8 +46,8 @@
 		class="transition-all rounded-md border px-4 data-[square=true]:p-1 group relative
 		flex place-items-center text-nowrap whitespace-nowrap
 
-		data-[size='lg']:h-[40px] data-[size='md']:h-[36px] data-[size='sm']:h-[32px]
-		data-[size='xl']:h-[44px] data-[size='xs']:h-[28px] data-[size='lg']:text-lg data-[size='sm']:text-sm
+		data-[size='lg']:min-h-[40px] data-[size='md']:min-h-[36px] data-[size='sm']:min-h-[32px]
+		data-[size='xl']:min-h-[44px] data-[size='xs']:min-h-[28px] data-[size='lg']:text-lg data-[size='sm']:text-sm
 		data-[size='xl']:text-2xl data-[size='xs']:text-xs
 
 		bg-gray-0 text-gray-999 border-gray-100 hover:bg-gray-100 dark:bg-gray-999
@@ -155,8 +155,8 @@
 		style="width: {width};"
 		class="transition-all rounded-md border px-4 data-[square=true]:p-1 group relative
 
-		data-[size='lg']:h-[40px] data-[size='md']:h-[36px] data-[size='sm']:h-[32px]
-		data-[size='xl']:h-[44px] data-[size='xs']:h-[28px] data-[size='lg']:text-lg data-[size='sm']:text-sm
+		data-[size='lg']:min-h-[40px] data-[size='md']:min-h-[36px] data-[size='sm']:min-h-[32px]
+		data-[size='xl']:min-h-[44px] data-[size='xs']:min-h-[28px] data-[size='lg']:text-lg data-[size='sm']:text-sm
 		data-[size='xl']:text-2xl data-[size='xs']:text-xs
 
 		disabled:data-[loading=false]:dark:border-gray-900 disabled:data-[loading=false]:dark:bg-gray-925

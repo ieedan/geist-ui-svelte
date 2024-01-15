@@ -120,12 +120,9 @@
 		<Page bind:visible={thirdExamplePage}>
 			<div class="max-h-screen overflow-y-auto">
 				<Hero>
-					<div class="hidden sm:flex">
-						<Text type="h1" align="center">geist-ui-svelte</Text>
-					</div>
-					<div class="flex sm:hidden">
-						<Text type="h2" align="center">geist-ui-svelte</Text>
-					</div>
+					<Text type="h1" size="5xl" smSize="7xl" align="center">
+						geist-ui-svelte
+					</Text>
 					<Spacer h={20} />
 					<div class="px-2 text-center sm:text-left">
 						<Text type="p" color="secondary"
@@ -151,23 +148,25 @@
 			<Code
 				lang="svelte"
 				code={`<Hero>
-  <div class="hidden sm:flex">
-	<Text type="h1" align="center">geist-ui-svelte</Text>
-  </div>
-  <div class="flex sm:hidden">
-	<Text type="h2" align="center">geist-ui-svelte</Text>
-  </div>
-  <Spacer h={20} />
-  <div class="px-2 text-center sm:text-left">
-  	<Text type="p" color="secondary"
-  	>Geist UI Svelte is An open source design system for building modern
-  	websites and applications</Text>
-  </div>
-  <Spacer h={20} />
-  <div class="flex place-items-center gap-4">
-	<Button color="secondary-light">Get Started</Button>
-	<Button>Components</Button>
-  </div>
+	<Text type="h1" size="5xl" smSize="7xl" align="center">
+		geist-ui-svelte
+	</Text>
+	<Spacer h={20} />
+	<div class="px-2 text-center sm:text-left">
+		<Text type="p" color="secondary"
+			>Geist UI Svelte is An open source design system for building modern
+			websites and applications
+		</Text>
+	</div>
+	<Spacer h={20} />
+	<div class="flex place-items-center gap-4">
+		<Button color="secondary-light">Get Started</Button>
+		<Button>Components</Button>
+	</div>
+	<Spacer h={150} />
+	<Button on:click={() => (thirdExamplePage = false)}
+		>Click here to close or press \`Escape\`</Button
+		>
 </Hero>`}
 			/>
 		</Details>
