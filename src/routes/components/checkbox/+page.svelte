@@ -68,3 +68,31 @@
 		</Details>
 	</div>
 </FieldSet>
+<Spacer h={30} />
+<Text type="h4">Ring</Text>
+<Spacer h={5} />
+<Text>
+	Add a ring around the checkbox when focused by adding the <code>`ring`</code> attribute.
+</Text>
+<Spacer h={10} />
+<FieldSet>
+	<div class="flex flex-wrap gap-2">
+		<Checkbox ring checked={true}>Default</Checkbox>
+		<Checkbox ring color="success" checked={true}>Success</Checkbox>
+		<Checkbox ring color="warning" checked={true}>Warning</Checkbox>
+		<Checkbox ring color="error" checked={true}>Error</Checkbox>
+		<Checkbox ring color="secondary" checked={true}>Secondary</Checkbox>
+	</div>
+	<div slot="footer">
+		<Details label="Code">
+			<Code
+				lang="svelte"
+				code={`<Checkbox ring checked={true}>Default</Checkbox>
+<Checkbox ring color="success" checked={true}>Success</Checkbox>
+<Checkbox ring color="warning" checked={true}>Warning</Checkbox>
+<Checkbox ring color="error" checked={true}>Error</Checkbox>
+<Checkbox ring color="secondary" checked={true}>Secondary</Checkbox>`}
+			/>
+		</Details>
+	</div>
+</FieldSet>

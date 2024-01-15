@@ -57,11 +57,13 @@
 		<Details label="Code">
 			<Code
 				lang="svelte"
-				code={`<Card></Card>
-<Spacer h={30}/>
-<Card></Card>
-<Spacer h={10}/>
-<Card></Card>`}
+				code={`<Image
+	browserURL="https://geist-ui-svelte.dev"
+	src={exampleLight}
+	alt="An example image"
+	width="575px"
+	height="auto"
+/>`}
 			/>
 		</Details>
 	</div>
@@ -86,11 +88,14 @@
 		<Details label="Code">
 			<Code
 				lang="svelte"
-				code={`<Card></Card>
-<Spacer h={30}/>
-<Card></Card>
-<Spacer h={10}/>
-<Card></Card>`}
+				code={`<Image
+	browserURL="https://geist-ui-svelte.dev"
+	src={exampleDark}
+	alt="An example image"
+	width="575px"
+	height="auto"
+	browserInvert
+/>`}
 			/>
 		</Details>
 	</div>
@@ -125,11 +130,21 @@
 		<Details label="Code">
 			<Code
 				lang="svelte"
-				code={`<Card></Card>
-<Spacer h={30}/>
-<Card></Card>
-<Spacer h={10}/>
-<Card></Card>`}
+				code={`<Image
+	browserURL="http://geist-ui-svelte.dev"
+	src={exampleDark}
+	alt="An example image"
+	width="400px"
+	height="auto"
+/>
+<Spacer h={10} />
+<Image
+	browserURL="https://geist-ui-svelte.dev"
+	src={exampleDark}
+	alt="An example image"
+	width="400px"
+	height="auto"
+/>`}
 			/>
 		</Details>
 	</div>

@@ -52,7 +52,7 @@
     group/geist-input aria-disabled:bg-gray-50 aria-disabled:dark:bg-gray-950 transition-all"
 >
 	{#if containerLabel}
-		<span 
+		<span
 			class="dark:bg-gray-950 bg-gray-50 font-medium py-1 px-2 text-gray-300 dark:text-gray-500 h-[34px] text-sm
 			border-y border-gray-100 group-data-[placement='end']/geist-input:order-2 dark:border-gray-900 flex place-items-center justify-center
 			group-data-[placement='start']/geist-input:rounded-l-md group-data-[placement='end']/geist-input:rounded-r-md
