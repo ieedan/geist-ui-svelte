@@ -22,6 +22,9 @@
 	import SvelteIcon from "$lib/icons/SvelteIcon.svelte";
 	import CommandIcon from "$lib/icons/CommandIcon.svelte";
 	import EditIcon from "$lib/icons/EditIcon.svelte";
+	import EyeIcon from "$lib/icons/EyeIcon.svelte";
+	import EyeSlash from "$lib/icons/EyeSlashIcon.svelte";
+	import XIcon from "$lib/icons/XIcon.svelte";
 
 	type Icon = {
 		name: string;
@@ -73,6 +76,18 @@
 			name: "Edit",
 			component: EditIcon,
 		},
+		{
+			name: "Eye",
+			component: EyeIcon
+		},
+		{
+			name: "EyeSlash",
+			component: EyeSlash
+		},
+		{
+			name: "X",
+			component: XIcon
+		}
 	];
 
 	let currentIcon: Icon | undefined = undefined;
