@@ -95,7 +95,7 @@
 			<Code
 				lang="svelte"
 				code={`<Input type="password" placeholder="Your password" value="987654321" />
-<Input type="date" />
+<Input type="date" value="2024-12-25" />
 <Input type="number" value={10} />`} />
 		</Details>
 	</div>
