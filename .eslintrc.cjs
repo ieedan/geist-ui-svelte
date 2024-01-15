@@ -48,7 +48,7 @@ module.exports = {
 								"dropdownitem",
 								"radiotabs",
 								"Aidan",
-								"Bleser"
+								"Bleser",
 							],
 						},
 					},
@@ -75,7 +75,7 @@ module.exports = {
 						"dropdownitem",
 						"radiotabs",
 						"Aidan",
-						"Bleser"
+						"Bleser",
 					],
 				},
 			},
