@@ -128,6 +128,10 @@
 			name: "RadioTabs",
 			slug: "/components/radiotabs",
 		},
+		{
+			name: "Skeleton",
+			slug: "/components/skeleton",
+		},
 		"INTERACTIVITY",
 		{
 			name: "Modal",

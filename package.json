@@ -1,6 +1,6 @@
 {
 	"name": "geist-ui-svelte",
-	"version": "0.3.12",
+	"version": "0.3.13",
 	"author": {
 		"name": "Aidan Bleser",
 		"url": "https://aidanbleser.com"
@@ -232,6 +232,14 @@
 		"./RadioTab.svelte": {
 			"types": "./dist/radiotabs/RadioTab.svelte.d.ts",
 			"svelte": "./dist/radiotabs/RadioTab.svelte"
+		},
+		"./Skeleton.svelte": {
+			"types": "./dist/skeleton/Skeleton.svelte.d.ts",
+			"svelte": "./dist/skeleton/Skeleton.svelte"
+		},
+		"./SkeletonContainer.svelte": {
+			"types": "./dist/skeleton/SkeletonContainer.svelte.d.ts",
+			"svelte": "./dist/skeleton/SkeletonContainer.svelte"
 		},
 		"./styles/geist-ui-svelte.css": "./dist/styles/geist-ui-svelte.css"
 	},
