@@ -49,14 +49,14 @@
 	data-placement={labelPlacement}
 	data-has-label={containerLabel.length > 0}
 	class="flex place-items-center w-fit
-    group aria-disabled:bg-gray-50 aria-disabled:dark:bg-gray-950 transition-all"
+    group/geist-input aria-disabled:bg-gray-50 aria-disabled:dark:bg-gray-950 transition-all"
 >
 	{#if containerLabel}
 		<span
 			class="dark:bg-gray-950 bg-gray-50 font-light py-1 px-1 text-gray-300 dark:text-gray-500
-			border-y border-gray-100 group-data-[placement='end']:order-2 dark:border-gray-900
-			group-data-[placement='start']:rounded-l-md group-data-[placement='end']:rounded-r-md
-			group-data-[placement='start']:border-l group-data-[placement='end']:border-r"
+			border-y border-gray-100 group-data-[placement='end']/geist-input:order-2 dark:border-gray-900
+			group-data-[placement='start']/geist-input:rounded-l-md group-data-[placement='end']/geist-input:rounded-r-md
+			group-data-[placement='start']/geist-input:border-l group-data-[placement='end']/geist-input:border-r"
 			>{containerLabel}</span
 		>
 	{/if}
@@ -79,8 +79,8 @@
 			{placeholder}
 			autocomplete="off"
 			class="bg-transparent outline-none px-2 py-1 border-gray-100 dark:border-gray-900 placeholder:text-gray-200
-            flex-grow border group-data-[placement='start']:rounded-r-md group-data-[placement='end']:rounded-l-md
-            group-data-[has-label=false]:rounded-md disabled:placeholder:text-gray-300 dark:placeholder:text-gray-600
+            flex-grow border group-data-[placement='start']/geist-input:rounded-r-md group-data-[placement='end']/geist-input:rounded-l-md
+            group-data-[has-label=false]/geist-input:rounded-md disabled:placeholder:text-gray-300 dark:placeholder:text-gray-600
           focus:border-gray-200 focus:dark:border-gray-800 disabled:hover:cursor-not-allowed transition-all
           disabled:dark:placeholder:text-gray-600 dark:text-gray-0 text-gray-999 min-w-0"
 			{disabled}
@@ -107,8 +107,8 @@
 			{readonly}
 			autocomplete="off"
 			class="bg-transparent outline-none px-2 py-1 border-gray-100 dark:border-gray-900 placeholder:text-gray-200
-            flex-grow border group-data-[placement='start']:rounded-r-md group-data-[placement='end']:rounded-l-md
-            group-data-[has-label=false]:rounded-md disabled:placeholder:text-gray-300 dark:placeholder:text-gray-600
+            flex-grow border group-data-[placement='start']/geist-input:rounded-r-md group-data-[placement='end']/geist-input:rounded-l-md
+            group-data-[has-label=false]/geist-input:rounded-md disabled:placeholder:text-gray-300 dark:placeholder:text-gray-600
           focus:border-gray-200 focus:dark:border-gray-800 disabled:hover:cursor-not-allowed transition-all
           disabled:dark:placeholder:text-gray-600 dark:text-gray-0 text-gray-999 min-w-0"
 		/>
@@ -132,10 +132,10 @@
 			{disabled}
 			{readonly}
 			class="bg-transparent outline-none px-2 py-1 border-gray-100 dark:border-gray-900 placeholder:text-gray-200
-        flex-grow border group-data-[placement='start']:rounded-r-md group-data-[placement='end']:rounded-l-md
-        group-data-[has-label=false]:rounded-md disabled:placeholder:text-gray-300 dark:placeholder:text-gray-600
-      focus:border-gray-200 focus:dark:border-gray-800 disabled:hover:cursor-not-allowed transition-all
-      disabled:dark:placeholder:text-gray-600 dark:text-gray-0 text-gray-999 dark:scheme-dark min-w-0"
+            flex-grow border group-data-[placement='start']/geist-input:rounded-r-md group-data-[placement='end']/geist-input:rounded-l-md
+            group-data-[has-label=false]/geist-input:rounded-md disabled:placeholder:text-gray-300 dark:placeholder:text-gray-600
+          focus:border-gray-200 focus:dark:border-gray-800 disabled:hover:cursor-not-allowed transition-all
+          disabled:dark:placeholder:text-gray-600 dark:text-gray-0 text-gray-999 min-w-0"
 		/>
 	{:else}
 		<input
@@ -158,10 +158,10 @@
 			{disabled}
 			{readonly}
 			class="bg-transparent outline-none px-2 py-1 border-gray-100 dark:border-gray-900 placeholder:text-gray-200
-            flex-grow border group-data-[placement='start']:rounded-r-md group-data-[placement='end']:rounded-l-md
-            group-data-[has-label=false]:rounded-md disabled:placeholder:text-gray-300 dark:placeholder:text-gray-600
-            focus:border-gray-200 focus:dark:border-gray-800 disabled:hover:cursor-not-allowed transition-all
-            disabled:dark:placeholder:text-gray-600 dark:text-gray-0 text-gray-999 dark:scheme-dark min-w-0"
+            flex-grow border group-data-[placement='start']/geist-input:rounded-r-md group-data-[placement='end']/geist-input:rounded-l-md
+            group-data-[has-label=false]/geist-input:rounded-md disabled:placeholder:text-gray-300 dark:placeholder:text-gray-600
+          focus:border-gray-200 focus:dark:border-gray-800 disabled:hover:cursor-not-allowed transition-all
+          disabled:dark:placeholder:text-gray-600 dark:text-gray-0 text-gray-999 min-w-0 dark:scheme-dark"
 		/>
 	{/if}
 </div>
