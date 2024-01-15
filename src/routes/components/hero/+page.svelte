@@ -29,7 +29,8 @@
 <Spacer h={5} />
 <Text
 	>Automatically centers content on the screen and takes up the entire page <code>`100svh`</code
-	>.</Text>
+	>.</Text
+>
 <Spacer h={10} />
 <FieldSet>
 	<div class="flex flex-col justify-start">
@@ -45,7 +46,8 @@
 					</div>
 					<Spacer h={150} />
 					<Button on:click={() => (firstExamplePage = false)}
-						>Click here to close or press `Escape`</Button>
+						>Click here to close or press `Escape`</Button
+					>
 				</Hero>
 			</div>
 		</Page>
@@ -61,7 +63,8 @@
 		<Button color="secondary-light">Get Started</Button>
 		<Button>Components</Button>
 	</div>
-</Hero>`} />
+</Hero>`}
+			/>
 		</Details>
 	</div>
 </FieldSet>
@@ -84,7 +87,8 @@
 					</div>
 					<Spacer h={150} />
 					<Button on:click={() => (secondExamplePage = false)}
-						>Click here to close or press `Escape`</Button>
+						>Click here to close or press `Escape`</Button
+					>
 				</Hero>
 			</div>
 		</Page>
@@ -100,7 +104,8 @@
 		<Button color="secondary-light">Get Started</Button>
 		<Button>Components</Button>
 	</div>
-</Hero>`} />
+</Hero>`}
+			/>
 		</Details>
 	</div>
 </FieldSet>
@@ -135,7 +140,8 @@
 					</div>
 					<Spacer h={150} />
 					<Button on:click={() => (thirdExamplePage = false)}
-						>Click here to close or press `Escape`</Button>
+						>Click here to close or press `Escape`</Button
+					>
 				</Hero>
 			</div>
 		</Page>
@@ -162,7 +168,8 @@
 	<Button color="secondary-light">Get Started</Button>
 	<Button>Components</Button>
   </div>
-</Hero>`} />
+</Hero>`}
+			/>
 		</Details>
 	</div>
 </FieldSet>
@@ -171,7 +178,8 @@
 <Spacer h={5} />
 <Text>
 	Sometimes you want your hero section to account for a header use the <code
-		>`exclusionHeight `</code>
+		>`exclusionHeight `</code
+	>
 	to calculate the height of the header and subtract it from the 100svh. This can also be good if you
 	have footers or other content that should take space from the hero section.
 </Text>
@@ -196,7 +204,8 @@
 					</div>
 					<Spacer h={150} />
 					<Button on:click={() => (fourthExamplePage = false)}
-						>Click here to close or press `Escape`</Button>
+						>Click here to close or press `Escape`</Button
+					>
 				</Hero>
 			</div>
 		</Page>
@@ -224,7 +233,8 @@
 	<Spacer h={150} />
 	<Button on:click={() => (fourthExamplePage = false)}
 		>Click here to close or press \`Escape\`</Button>
-</Hero>`} />
+</Hero>`}
+			/>
 		</Details>
 	</div>
 </FieldSet>

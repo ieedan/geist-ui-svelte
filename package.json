@@ -220,7 +220,7 @@
 		"./EditIcon.svelte": {
 			"types": "./dist/icons/EditIcon.svelte.d.ts",
 			"svelte": "./dist/icons/EditIcon.svelte"
-		}, 
+		},
 		"./Table.svelte": {
 			"types": "./dist/table/Table.svelte.d.ts",
 			"svelte": "./dist/table/Table.svelte"
