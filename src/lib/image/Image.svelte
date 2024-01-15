@@ -20,8 +20,10 @@
 		<div
 			data-invert={browserInvert}
 			class="flex place-items-center justify-between border-b group h-10
-            bg-gray-999 data-[invert=true]:bg-gray-0 data-[invert=true]:text-gray-999
-			text-gray-0 border-gray-900 data-[invert=true]:border-gray-100 font-light px-4"
+            bg-gray-0 border-gray-100 dark:bg-gray-999 text-gray-999 dark:text-gray-0 
+			data-[invert=true]:dark:bg-gray-0 data-[invert=true]:dark:text-gray-999
+			dark:border-gray-900 data-[invert=true]:dark:border-gray-100 font-light px-4 
+			data-[invert=true]:bg-gray-999 data-[invert=true]:text-gray-0 data-[invert=true]:border-gray-900"
 		>
 			<div class="flex place-items-center gap-2">
 				<div class="size-3 rounded-full bg-red-500"></div>
@@ -31,7 +33,8 @@
 			<a
 				href={browserURL}
 				target="_blank"
-				class="text-xs flex place-items-center gap-[2px] px-4 py-1 bg-gray-925 group-data-[invert=true]:bg-gray-50 rounded-sm"
+				class="text-xs flex place-items-center gap-[2px] px-4 py-1 bg-gray-50 
+				group-data-[invert=true]:bg-gray-925 dark:bg-gray-925 group-data-[invert=true]:dark:bg-gray-50 rounded-sm"
 			>
 				{#if isHttps}
 					<LockIcon size={10} />
