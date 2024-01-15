@@ -88,7 +88,7 @@
 		for (let i = 0; i < children.length; i++) {
 			const child = children[i];
 
-			if (child.tagName == "PRE") {
+			if (child.hasAttribute("data-code")) {
 				element = child as HTMLElement;
 				break;
 			}
@@ -156,22 +156,20 @@
 			{/each}
 		</div>
 	{/if}
-	<div class="overflow-x-auto scrollbar-hide">
+	<div data-code class="overflow-x-auto scrollbar-hide">
 		{@html highlightedCode ?? ""}
 	</div>
-	<div class="absolute top-2 right-2 hidden sm:flex">
-		<button on:click={copyText}>
-			{#if copied}
-				<div in:scale={{ duration: 200 }}>
-					<CheckMarkIcon size={16} />
-				</div>
-			{:else}
-				<div
-					class="hover:text-gray-999 transition-all dark:hover:text-gray-0 text-gray-600 dark:text-gray-400"
-					in:scale={{ duration: 100 }}>
-					<CloneIcon size={16} />
-				</div>
-			{/if}
-		</button>
-	</div>
+	<button class="absolute top-2 right-2 hidden sm:flex" on:click={copyText}>
+		{#if copied}
+			<div in:scale={{ duration: 200 }}>
+				<CheckMarkIcon size={16} />
+			</div>
+		{:else}
+			<div
+				class="hover:text-gray-999 transition-all dark:hover:text-gray-0 text-gray-600 dark:text-gray-400"
+				in:scale={{ duration: 100 }}>
+				<CloneIcon size={16} />
+			</div>
+		{/if}
+	</button>
 </div>
