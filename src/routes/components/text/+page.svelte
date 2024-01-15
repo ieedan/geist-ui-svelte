@@ -119,7 +119,8 @@
 <Text>
 	There are times you will need to resize your text for smaller screens. Instead of rendering a
 	different tag which is not accessible and changes the meaning of your page. Use responsive size
-	attributes <code>`size`, `smSize`, `mdSize`, `lgSize`</code>
+	attributes <code>`size`, `smSize`, `mdSize`, `lgSize`</code>. Try it out by opening your dev
+	tools and resizing the screen.
 </Text>
 <Spacer h={10} />
 <FieldSet>
