@@ -141,4 +141,4 @@
 	<input type="text" class="border rounded-l-none rounded-r-md border-gray-900 bg-gray-999 px-2" placeholder="username" >
 </div>
 
-<input type="text">
+<input type="text" placeholder="username" value="welcome">
