@@ -135,10 +135,3 @@
 		</Details>
 	</div>
 </FieldSet>
-<Spacer h={30} />
-<div class="flex"> 
-	<span class="border-y border-l rounded-l-md border-gray-900 bg-gray-950 h-[34px] px-2 py-1">username</span>
-	<input type="text" class="border rounded-l-none rounded-r-md border-gray-900 bg-gray-999 px-2" placeholder="username" >
-</div>
-
-<input type="text" placeholder="username" value="welcome">

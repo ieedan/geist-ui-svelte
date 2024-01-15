@@ -78,7 +78,7 @@
 			type="text"
 			{placeholder}
 			autocomplete="off"
-			class="bg-transparent outline-none px-2 py-1 border-gray-100 dark:border-gray-900 placeholder:text-gray-200
+			class="bg-transparent outline-none px-2 py-1 border-gray-100 dark:border-gray-900 placeholder:text-gray-200 rounded-none
             flex-grow border group-data-[placement='start']/geist-input:rounded-r-md group-data-[placement='end']/geist-input:rounded-l-md
             group-data-[has-label=false]/geist-input:rounded-md disabled:placeholder:text-gray-300 dark:placeholder:text-gray-600
           focus:border-gray-200 focus:dark:border-gray-800 disabled:hover:cursor-not-allowed transition-all
@@ -106,7 +106,7 @@
 			{disabled}
 			{readonly}
 			autocomplete="off"
-			class="bg-transparent outline-none px-2 py-1 border-gray-100 dark:border-gray-900 placeholder:text-gray-200
+			class="bg-transparent outline-none px-2 py-1 border-gray-100 dark:border-gray-900 placeholder:text-gray-200 rounded-none
             flex-grow border group-data-[placement='start']/geist-input:rounded-r-md group-data-[placement='end']/geist-input:rounded-l-md
             group-data-[has-label=false]/geist-input:rounded-md disabled:placeholder:text-gray-300 dark:placeholder:text-gray-600
           focus:border-gray-200 focus:dark:border-gray-800 disabled:hover:cursor-not-allowed transition-all
@@ -131,7 +131,7 @@
 			{placeholder}
 			{disabled}
 			{readonly}
-			class="bg-transparent outline-none px-2 py-1 border-gray-100 dark:border-gray-900 placeholder:text-gray-200
+			class="bg-transparent outline-none px-2 py-1 border-gray-100 dark:border-gray-900 placeholder:text-gray-200 rounded-none
             flex-grow border group-data-[placement='start']/geist-input:rounded-r-md group-data-[placement='end']/geist-input:rounded-l-md
             group-data-[has-label=false]/geist-input:rounded-md disabled:placeholder:text-gray-300 dark:placeholder:text-gray-600
           focus:border-gray-200 focus:dark:border-gray-800 disabled:hover:cursor-not-allowed transition-all
@@ -157,7 +157,7 @@
 			{placeholder}
 			{disabled}
 			{readonly}
-			class="bg-transparent outline-none px-2 py-1 border-gray-100 dark:border-gray-900 placeholder:text-gray-200
+			class="bg-transparent outline-none px-2 py-1 border-gray-100 dark:border-gray-900 placeholder:text-gray-200 rounded-none
             flex-grow border group-data-[placement='start']/geist-input:rounded-r-md group-data-[placement='end']/geist-input:rounded-l-md
             group-data-[has-label=false]/geist-input:rounded-md disabled:placeholder:text-gray-300 dark:placeholder:text-gray-600
           focus:border-gray-200 focus:dark:border-gray-800 disabled:hover:cursor-not-allowed transition-all
