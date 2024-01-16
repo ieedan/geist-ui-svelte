@@ -8,10 +8,8 @@
 	import Button from "$lib/button/Button.svelte";
 	import MenuIcon from "$lib/icons/MenuIcon.svelte";
 	import Page from "$lib/page/Page.svelte";
-	import { ColorPreference, changePreference, getCurrentPreference } from "$lib/TS/dark-mode.js";
 	import Select from "$lib/select/Select.svelte";
 	import Option from "$lib/select/Option.svelte";
-	import { onMount } from "svelte";
 	import GithubIcon from "$lib/icons/GithubIcon.svelte";
 	import favicon from "$lib/assets/favicon.svg";
 	import Modal from "$lib/modal/Modal.svelte";
@@ -20,16 +18,18 @@
 	import Spacer from "$lib/spacer/Spacer.svelte";
 	import CommandIcon from "$lib/icons/CommandIcon.svelte";
 	import { goto } from "$app/navigation";
+	import { ModeWatcher, setMode, userPrefersMode } from "mode-watcher";
 
 	type Component = {
 		slug: string;
 		name: string;
 	};
 
+	$: currentPreference = $userPrefersMode;
+
 	const components: Component[] = process.env.COMPONENTS;
 
 	let menuVisible = false;
-	let currentPreference: ColorPreference;
 	let searchVisible = false;
 	let search = "";
 	let searchRef: Search;
@@ -41,10 +41,6 @@
 				a.name.toLowerCase() == search.toLowerCase()) &&
 			search != "",
 	);
-
-	const setPreference = (preference: ColorPreference) => {
-		changePreference(preference);
-	};
 
 	const navigateSearch = (up: boolean) => {
 		const children = Array.from(searchDivRef.children);
@@ -101,14 +97,11 @@
 			searchEnter();
 		}
 	};
-
-	onMount(() => {
-		currentPreference = getCurrentPreference();
-	});
 </script>
 
 <svelte:document on:keydown={docKeydown} />
 
+<ModeWatcher />
 <main class="bg-gray-0 dark:bg-gray-999 min-h-svh">
 	<Header sticky>
 		<div
@@ -148,15 +141,15 @@
 				<Select
 					bind:value={currentPreference}
 					on:change={(e) => {
-						setPreference(e.detail.value);
+						setMode(e.detail.value);
 					}}
 					allowNone
 					noIcon
 					width="125px"
 				>
-					<Option value={ColorPreference.light}>☀️ Light</Option>
-					<Option value={ColorPreference.dark}>🌙 Dark</Option>
-					<Option value={ColorPreference.OS}>🖥️ System</Option>
+					<Option value="light">☀️ Light</Option>
+					<Option value="dark">🌙 Dark</Option>
+					<Option value="system">🖥️ System</Option>
 				</Select>
 			</div>
 			<div class="flex place-items-center md:hidden col-start-2">
@@ -206,15 +199,15 @@
 			<Select
 				bind:value={currentPreference}
 				on:change={(e) => {
-					setPreference(e.detail.value);
+					setMode(e.detail.value);
 				}}
 				allowNone
 				noIcon
 				width="125px"
 			>
-				<Option value={ColorPreference.light}>☀️ Light</Option>
-				<Option value={ColorPreference.dark}>🌙 Dark</Option>
-				<Option value={ColorPreference.OS}>🖥️ System</Option>
+				<Option value="light">☀️ Light</Option>
+				<Option value="dark">🌙 Dark</Option>
+				<Option value="system">🖥️ System</Option>
 			</Select>
 		</div>
 	</div>

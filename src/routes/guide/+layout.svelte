@@ -26,6 +26,11 @@
 			name: "Installation",
 			slug: "/guide/installation",
 		},
+		"EXAMPLES",
+		{
+			name: "Dark Mode",
+			slug: "/guide/dark-mode",
+		},
 	];
 
 	const GITHUB_DOCS_DIRECTORY =

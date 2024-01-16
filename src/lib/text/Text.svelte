@@ -37,8 +37,8 @@
 	let className = "";
 	export { className as class };
 
-	export let color: "default" | "secondary" | "success" | "warning" | "error" | "abort" =
-		"default";
+	export let color: "inherit" | "dark" | "secondary" | "success" | "warning" | "error" | "abort" =
+		"inherit";
 </script>
 
 <svelte:element
@@ -54,13 +54,16 @@
 	data-md-size={mdSize}
 	data-lg-size={lgSize}
 	data-type={type}
-	class="text-gray-999 dark:text-gray-0 geist-ui-text data-[i=true]:italic data-[b=true]:font-bold data-[blockquote=true]:flex justify-between place-items-center
+	class="data-[style='inherit']:text-inherit data-[style='dark']:text-gray-999
+	data-[style='dark']:dark:text-gray-0 geist-ui-text data-[i=true]:italic
+	data-[b=true]:font-bold data-[blockquote=true]:flex justify-between place-items-center
     data-[del=true]:line-through data-[style='secondary']:text-gray-500 data-[style='success']:text-blue-600
+	data-[style='success']:dark:text-blue-600 data-[style='secondary']:dark:text-gray-500
     data-[style='warning']:text-orange-300 data-[style='warning']:dark:text-orange-400 data-[style='error']:text-red-500
     data-[style='error']:dark:text-red-600 data-[style='abort']:text-gray-300 data-[style='abort']:dark:text-gray-700
     data-[blockquote=true]:bg-gray-50 data-[blockquote=true]:border-gray-100 data-[blockquote=true]:dark:bg-gray-950
-    data-[blockquote=true]:dark:border-gray-900 data-[blockquote=true]:border data-[blockquote=true]:px-2 data-[blockquote=true]:py-1
-    data-[blockquote=true]:rounded-md p-0 m-0
+    data-[blockquote=true]:dark:border-gray-900 data-[blockquote=true]:border data-[blockquote=true]:px-2
+	data-[blockquote=true]:py-1 data-[blockquote=true]:rounded-md p-0 m-0
 	
 	data-[size='xs']:!text-xs data-[size='sm']:!text-sm data-[size='md']:!text-base
 	data-[size='lg']:!text-lg data-[size='xl']:!text-xl data-[size='2xl']:!text-2xl data-[size='3xl']:!text-3xl

@@ -79,3 +79,64 @@
 		</Details>
 	</div>
 </FieldSet>
+<Spacer h={30} />
+<Text type="h4">Colors</Text>
+<Spacer h={5} />
+<Text>
+	Cards can have multiple colors. They also set the <code>`text-color`</code> so that your text always
+	has a good contrast.
+</Text>
+<Spacer h={10} />
+<FieldSet>
+	<div class="flex flex-wrap gap-2">
+		<Card color="transparent">
+			<Text>Transparent</Text>
+		</Card>
+		<Card color="dark">
+			<Text>Dark</Text>
+		</Card>
+		<Card color="secondary">
+			<Text>Secondary</Text>
+		</Card>
+		<Card color="success">
+			<Text>Success</Text>
+		</Card>
+		<Card color="warning">
+			<Text>Warning</Text>
+		</Card>
+		<Card color="error">
+			<Text>Error</Text>
+		</Card>
+		<Card color="abort">
+			<Text>Abort</Text>
+		</Card>
+	</div>
+	<div slot="footer">
+		<Details label="Code">
+			<Code
+				lang="svelte"
+				code={`<Card color="transparent">
+	<Text>Transparent</Text>
+</Card>
+<Card color="dark">
+	<Text>Dark</Text>
+</Card>
+<Card color="secondary">
+	<Text>Secondary</Text>
+</Card>
+<Card color="success">
+	<Text>Success</Text>
+</Card>
+<Card color="warning">
+	<Text>Warning</Text>
+</Card>
+<Card color="error">
+	<Text>Error</Text>
+</Card>
+<Card color="abort">
+	<Text>Abort</Text>
+</Card>`}
+			/>
+		</Details>
+	</div>
+</FieldSet>
