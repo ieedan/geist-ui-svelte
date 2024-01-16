@@ -12,8 +12,8 @@ Breaking changes don't necessarily mean your code won't be merged but it is impo
 
 -->
 
-<!-- 
-What is a breaking change? 
+<!--
+What is a breaking change?
 
 Any change that requires a change to user code with a new package publish.
 
@@ -25,10 +25,10 @@ I change the `label` attribute on the Input component to be called `containerLab
 
 <!-- Check these boxes as they apply -->
 
-- [ ] My code is up to date with main
-- [ ] My code requires a documentation change
-- [ ] I have updated the documentation as required
-- [ ] My code requires a new package version to be created
-- [ ] I have updated the package version
-- [ ] CI is passing
-- [ ] The vercel deployment is passing and the page is working as expected
+-   [ ] My code is up to date with main
+-   [ ] My code requires a documentation change
+-   [ ] I have updated the documentation as required
+-   [ ] My code requires a new package version to be created
+-   [ ] I have updated the package version
+-   [ ] CI is passing
+-   [ ] The vercel deployment is passing and the page is working as expected

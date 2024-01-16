@@ -26,7 +26,8 @@
 				lang="svelte"
 				code={`<Card>
 	A basic card
-</Card>`} />
+</Card>`}
+			/>
 		</Details>
 	</div>
 </FieldSet>
@@ -43,7 +44,8 @@
 				lang="svelte"
 				code={`<Card hoverable>
 	A hoverable card
-</Card>`} />
+</Card>`}
+			/>
 		</Details>
 	</div>
 </FieldSet>
@@ -72,7 +74,8 @@
 	<Text>
 		Lorem, ipsum ...
 	</Text>
-</Card>`} />
+</Card>`}
+			/>
 		</Details>
 	</div>
 </FieldSet>
@@ -132,7 +135,8 @@
 </Card>
 <Card color="abort">
 	<Text>Abort</Text>
-</Card>`} />
+</Card>`}
+			/>
 		</Details>
 	</div>
 </FieldSet>

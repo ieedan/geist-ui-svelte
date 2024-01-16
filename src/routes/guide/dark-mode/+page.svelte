@@ -11,7 +11,7 @@
 
 	$: currentPreference = $userPrefersMode;
 
-    /* eslint-disable no-useless-escape */
+	/* eslint-disable no-useless-escape */
 	const darkModeExample = `<script lang="ts">
     import { setMode, userPrefersMode } from "mode-watcher";
     import Select from "$lib/select/Select.svelte";
@@ -39,8 +39,8 @@
 <Text>
 	If you've already followed our setup for dark mode <Link
 		to="/guide/installation"
-		target="_blank"
-		color>here</Link> then you are all caught up. If not you can learn how to setup dark mode there.
+		color>here</Link
+	> then you are all caught up. If not you can learn how to setup dark mode there.
 </Text>
 <Spacer h={10} />
 <Text>Heres an example of how we would implement a simple 3 way dark mode switcher.</Text>
@@ -54,7 +54,8 @@
 			}}
 			allowNone
 			noIcon
-			width="125px">
+			width="125px"
+		>
 			<Option value="light">☀️ Light</Option>
 			<Option value="dark">🌙 Dark</Option>
 			<Option value="system">🖥️ System</Option>

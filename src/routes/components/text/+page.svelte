@@ -50,7 +50,8 @@
 <Text type="h6">Text</Text>
 <Text>Text</Text>
 <Text type="span">Text</Text>
-<Text type="small">Text</Text>`} />
+<Text type="small">Text</Text>`}
+			/>
 		</Details>
 	</div>
 </FieldSet>
@@ -77,7 +78,8 @@
 <Text color="success">Text</Text>
 <Text color="error">Text</Text>
 <Text color="warning">Text</Text>
-<Text color="abort">Text</Text>`} />
+<Text color="abort">Text</Text>`}
+			/>
 		</Details>
 	</div>
 </FieldSet>
@@ -107,9 +109,9 @@
 <Text>Put your sunglasses on for this part 🕶️.</Text>
 <Spacer h={5} />
 <RadioTabs bind:selected={selectedMode}>
-	<RadioTab id="light" on:selected={() => setMode('light')}>Light</RadioTab>
-	<RadioTab id="dark" on:selected={() => setMode('dark')}>Dark</RadioTab>
-	<RadioTab id="system" on:selected={() => setMode('system')}>System</RadioTab>
+	<RadioTab id="light" on:selected={() => setMode("light")}>Light</RadioTab>
+	<RadioTab id="dark" on:selected={() => setMode("dark")}>Dark</RadioTab>
+	<RadioTab id="system" on:selected={() => setMode("system")}>System</RadioTab>
 </RadioTabs>
 <Spacer h={10} />
 <FieldSet>
@@ -130,7 +132,8 @@
 </Card>
 <Card color="success">
 	<Text color="dark">Success</Text>
-</Card>`} />
+</Card>`}
+			/>
 		</Details>
 	</div>
 </FieldSet>
@@ -175,7 +178,8 @@
 	<Text color="warning" i>ui</Text>
 	<Text color="success">-</Text>
 	<Text color="error">svelte</Text>
-</Text>`} />
+</Text>`}
+			/>
 		</Details>
 	</div>
 </FieldSet>
@@ -204,7 +208,8 @@
 	mdSize="6xl" 
 	lgSize="9xl">
 	geist-ui-svelte
-</Text>`} />
+</Text>`}
+			/>
 		</Details>
 	</div>
 </FieldSet>

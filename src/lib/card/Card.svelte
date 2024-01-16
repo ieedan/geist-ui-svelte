@@ -4,19 +4,26 @@
 	let className: string = "";
 	export { className as class };
 
-	export let color: "transparent" | "dark" | "secondary" | "success" | "warning" | "error" | "abort" = "transparent";
+	export let color:
+		| "transparent"
+		| "dark"
+		| "secondary"
+		| "success"
+		| "warning"
+		| "error"
+		| "abort" = "transparent";
 </script>
 
 <div
 	data-hoverable={hoverable}
 	data-shadow={shadow}
 	data-color={color}
-	class="border rounded-lg ring-gray-100 dark:ring-gray-900 border-gray-100 dark:border-gray-900 
+	class="border rounded-lg ring-gray-100 dark:ring-gray-900 border-gray-100 dark:border-gray-900
 	p-4 data-[hoverable=true]:hover:ring-2 transition-all
     data-[shadow=true]:shadow-md data-[shadow=true]:border-transparent
-	data-[shadow=true]:dark:border-gray-900 
+	data-[shadow=true]:dark:border-gray-900
 	
-	data-[color='dark']:bg-gray-999 data-[color='dark']:border-gray-999 
+	data-[color='dark']:bg-gray-999 data-[color='dark']:border-gray-999
 	data-[color='dark']:dark:bg-gray-0 data-[color='dark']:dark:border-gray-0
 	data-[color='dark']:text-gray-0 data-[color='dark']:dark:text-gray-999
 	data-[color='dark']:ring-gray-800 data-[color='dark']:dark:ring-gray-200
