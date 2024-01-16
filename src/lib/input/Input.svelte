@@ -75,25 +75,25 @@
 	>
 		{#if label}
 			<span
-				class="order-1 group-data-[placement='end']/geist-input:order-7 
-				group-data-[placement='end']/geist-input:border-r group-data-[placement='end']/geist-input:rounded-r-md 
+				class="order-1 group-data-[placement='end']/geist-input:order-7
+				group-data-[placement='end']/geist-input:border-r group-data-[placement='end']/geist-input:rounded-r-md
 				group-data-[placement='start']/geist-input:border-l group-data-[placement='start']/geist-input:rounded-l-md
-			  bg-gray-50 dark:bg-gray-950 border-gray-100 border-y dark:border-gray-900 py-1 px-2 
-			    flex place-items-center justify-center text-gray-300 text-sm dark:text-gray-500 h-full 
-				group-data-[size='sm']/geist-input:text-xs group-data-[size='lg']/geist-input:text-base 
+			  bg-gray-50 dark:bg-gray-950 border-gray-100 border-y dark:border-gray-900 py-1 px-2
+			    flex place-items-center justify-center text-gray-300 text-sm dark:text-gray-500 h-full
+				group-data-[size='sm']/geist-input:text-xs group-data-[size='lg']/geist-input:text-base
 				group-data-[size='xl']/geist-input:text-lg"
 			>
 				{label}
 			</span>
 		{/if}
 		<div
-			class="flex place-items-center group-data-[has-label=true]/geist-input:border order-2 
-			group-data-[placement='end']/geist-input:rounded-l-md group-data-[placement='start']/geist-input:rounded-r-md 
-			focus-within:border-gray-200 dark:focus-within:border-gray-800 transition-all border-gray-100 
+			class="flex place-items-center group-data-[has-label=true]/geist-input:border order-2
+			group-data-[placement='end']/geist-input:rounded-l-md group-data-[placement='start']/geist-input:rounded-r-md
+			focus-within:border-gray-200 dark:focus-within:border-gray-800 transition-all border-gray-100
 			dark:border-gray-900"
 		>
 			<div
-				class="flex place-items-center justify-center pl-2 empty:hidden 
+				class="flex place-items-center justify-center pl-2 empty:hidden
 				order-2 text-gray-800 dark:text-gray-200"
 			>
 				<slot name="icon" />
@@ -108,7 +108,7 @@
 				{id}
 				{disabled}
 				{readonly}
-				class="bg-transparent order-3 min-w-0 text-gray-999 dark:text-gray-0 
+				class="bg-transparent order-3 min-w-0 text-gray-999 dark:text-gray-0
 				disabled:placeholder:text-gray-300 disabled:dark:placeholder:text-gray-600
 				outline-none focus:outline px-2 py-1 w-full rounded-none disabled:hover:cursor-not-allowed
 				disabled:text-gray-300 disabled:dark:text-gray-600 group-data-[size='sm']/geist-input:text-sm
@@ -116,14 +116,14 @@
 				placeholder:text-gray-200 dark:placeholder:text-gray-600"
 			/>
 			<div
-				class="flex place-items-center justify-center pr-2 empty:hidden 
+				class="flex place-items-center justify-center pr-2 empty:hidden
 				order-4 text-gray-800 dark:text-gray-200"
 			>
 				<slot name="iconEnd" />
 			</div>
 			{#if clearable}
 				<button
-					class="order-5 flex place-items-center h-full justify-center px-2 
+					class="order-5 flex place-items-center h-full justify-center px-2
 					transition-all hover:text-gray-999 dark:hover:text-gray-0
 				  text-gray-400 dark:text-gray-600 group-data-[has-value=false]/geist-input:opacity-0"
 					on:click={() => {
@@ -136,7 +136,7 @@
 			{/if}
 			{#if type == "password"}
 				<button
-					class="order-6 absolute px-2 right-0 flex h-full place-items-center 
+					class="order-6 absolute px-2 right-0 flex h-full place-items-center
 					justify-center group-aria-disabled/geist-input:opacity-0
 					group-data-[has-value=false]/geist-input:opacity-0 transition-all"
 					on:click={() => (passwordShown = !passwordShown)}

@@ -50,7 +50,7 @@
 </FieldSet>
 <Spacer h={30} />
 <Text type="h4">Width</Text>
-<Spacer h={5}/>
+<Spacer h={5} />
 <Text>
 	Use the <code>`width`</code> attribute to adjust the width of the input.
 </Text>
@@ -67,24 +67,27 @@
 </FieldSet>
 <Spacer h={30} />
 <Text type="h4">Size</Text>
-<Spacer h={5}/>
+<Spacer h={5} />
 <Text>
 	Use the <code>`size`</code> attribute to adjust the size of the input.
 </Text>
 <Spacer h={10} />
 <FieldSet>
 	<div class="flex flex-col gap-2">
-		<Input placeholder="sm" size="sm"/>
-		<Input placeholder="base" size="base"/>
-		<Input placeholder="lg" size="lg"/>
-		<Input placeholder="xl" size="xl"/>
+		<Input placeholder="sm" size="sm" />
+		<Input placeholder="base" size="base" />
+		<Input placeholder="lg" size="lg" />
+		<Input placeholder="xl" size="xl" />
 	</div>
 	<div slot="footer">
 		<Details label="Code">
-			<Code lang="svelte" code={`<Input placeholder="Some input" size="sm"/>
+			<Code
+				lang="svelte"
+				code={`<Input placeholder="Some input" size="sm"/>
 <Input placeholder="Some input" size="base"/>
 <Input placeholder="Some input" size="lg"/>
-<Input placeholder="Some input" size="xl"/>`} />
+<Input placeholder="Some input" size="xl"/>`}
+			/>
 		</Details>
 	</div>
 </FieldSet>
@@ -118,7 +121,7 @@ placeholder="https://github"/>`}
 <Spacer h={20} />
 <FieldSet>
 	<div class="flex flex-col gap-2">
-		<Input type="password" placeholder="Your password" value="987654321"/>
+		<Input type="password" placeholder="Your password" value="987654321" />
 		<Input type="date" value="2024-12-25" />
 		<Input type="number" value={10} />
 	</div>
