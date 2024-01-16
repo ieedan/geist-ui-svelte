@@ -42,10 +42,6 @@
 			search != "",
 	);
 
-	const setPreference = (preference: "light" | "dark" | "system") => {
-		setMode(preference);
-	};
-
 	const navigateSearch = (up: boolean) => {
 		const children = Array.from(searchDivRef.children);
 
@@ -141,7 +137,7 @@
 				<Select
 					bind:value={currentPreference}
 					on:change={(e) => {
-						setPreference(e.detail.value);
+						setMode(e.detail.value);
 					}}
 					allowNone
 					noIcon
@@ -197,7 +193,7 @@
 			<Select
 				bind:value={currentPreference}
 				on:change={(e) => {
-					setPreference(e.detail.value);
+					setMode(e.detail.value);
 				}}
 				allowNone
 				noIcon

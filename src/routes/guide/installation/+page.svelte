@@ -11,6 +11,15 @@
 <\/script>
 
 <slot/>`;
+
+	/* eslint-disable no-useless-escape */
+	const darkModeExample = `<script lang="ts">
+	import "geist-ui-svelte/styles/geist-ui-svelte.css";
+	import { ModeWatcher } from "mode-watcher";
+<\/script>
+
+<ModeWatcher />
+<slot/>`;
 </script>
 
 <Text type="h3">Installation</Text>
@@ -25,9 +34,8 @@
 <Spacer h={10} />
 <Snippet
 	width="550px"
-	text={["npm install -D tailwindcss@3.4.0 postcss autoprefixer", "npx tailwindcss init -p"]}
-	type="lite"
-/>
+	text={["npm i -D tailwindcss@3.4.0 postcss autoprefixer", "npx tailwindcss init -p"]}
+	type="lite" />
 <Spacer h={20} />
 <Text>Configure TailwindCSS with our recommended settings.</Text>
 <Spacer h={10} />
@@ -67,8 +75,7 @@ export default {
 	},
 	plugins: [],
 	darkMode: "class",
-};`}
-/>
+};`} />
 <Spacer h={20} />
 <Text>Install geist-ui-svelte</Text>
 <Spacer h={10} />
@@ -77,5 +84,26 @@ export default {
 <Text>Import our CSS into <code>`/routes/+layout.svelte`</code></Text>
 <Spacer h={10} />
 <Code lang="ts" edits={[{ number: 2, type: "add" }]} code={importExample} />
+<Spacer h={20} />
+<Text>Setup Dark Mode (Optional)</Text>
+<Spacer h={10} />
+<Snippet width="550px" text="npm i mode-watcher" type="lite" />
+<Spacer h={20} />
+<Text>Add ModeWatcher component to <code>`/routes/+layout.svelte`</code></Text>
+<Spacer h={10} />
+<Code
+	lang="ts"
+	edits={[
+		{ number: 3, type: "add" },
+		{ number: 6, type: "add" },
+	]}
+	code={darkModeExample} />
+<Spacer h={20} />
+<Text>
+	See additional docs for <code>`mode-watcher`</code>
+	<Link to="https://github.com/svecosystem/mode-watcher" target="_blank" color>here</Link>. If you
+	want to see an example of how to implement dark mode switching see
+	<Link to="/guide/dark-mode" target="_blank" color>here</Link>.
+</Text>
 <Spacer h={20} />
 <Text>Now you're ready to start using our <Link to="/components" color>components!</Link></Text>
