@@ -19,7 +19,7 @@
 		promise = new Promise<boolean>((res) => {
 			setTimeout(() => res(true), 3000);
 		});
-		promise.then(() => loading = false);
+		promise.then(() => (loading = false));
 	};
 
 	onMount(() => {
@@ -28,6 +28,12 @@
 
 	/* eslint-disable no-useless-escape */
 	const secondExampleCode = `<script lang="ts">
+	import Skeleton from "$lib/skeleton/Skeleton.svelte";
+	import SkeletonContainer from "$lib/skeleton/SkeletonContainer.svelte";
+	import Button from "$lib/button/Button.svelte";
+	import User from "$lib/user/User.svelte";
+	import { onMount } from "svelte";
+	
 	let loading = true;
 	let promise: Promise<boolean>;
 
@@ -73,7 +79,8 @@
 <Snippet
 	width="600px"
 	type="lite"
-	text={`import { Skeleton, SkeletonContainer } from 'geist-ui-svelte';`} />
+	text={`import { Skeleton, SkeletonContainer } from 'geist-ui-svelte';`}
+/>
 <Spacer h={30} />
 <Text type="h4">Basic</Text>
 <Spacer h={5} />
@@ -104,7 +111,8 @@
         <Skeleton class="w-14 h-4 rounded-md" />
         <Skeleton class="w-24 h-4 rounded-md" />
     </div>
-</SkeletonContainer>`} />
+</SkeletonContainer>`}
+			/>
 		</Details>
 	</div>
 </FieldSet>
@@ -115,11 +123,7 @@
 <Spacer h={10} />
 <FieldSet>
 	<div class="flex flex-col justify-start gap-2">
-		<Button
-			on:click={createPromise}
-			bind:loading>
-			Refresh
-		</Button>
+		<Button on:click={createPromise} bind:loading>Refresh</Button>
 		{#await promise}
 			<SkeletonContainer loading={true} class="flex place-items-center gap-2">
 				<Skeleton class="size-10 rounded-full" />
@@ -136,9 +140,7 @@
 	</div>
 	<div slot="footer">
 		<Details label="Code">
-			<Code
-				lang="svelte"
-				code={secondExampleCode} />
+			<Code lang="svelte" code={secondExampleCode} />
 		</Details>
 	</div>
 </FieldSet>
