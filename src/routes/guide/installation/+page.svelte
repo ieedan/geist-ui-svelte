@@ -17,12 +17,12 @@
 <Spacer h={10} />
 <Text>Initialize a new SvelteKit project</Text>
 <Spacer h={10} />
-<Snippet width="500px" text={["npm create vite@latest my-project", "cd my-project"]} type="lite" />
+<Snippet width="550px" text={["npm create vite@latest my-project", "cd my-project"]} type="lite" />
 <Spacer h={20} />
 <Text>Setup TailwindCSS</Text>
 <Spacer h={10} />
 <Snippet
-	width="500px"
+	width="550px"
 	text={["npm install -D tailwindcss@3.4.0 postcss autoprefixer", "npx tailwindcss init -p"]}
 	type="lite"
 />
@@ -70,7 +70,7 @@ export default {
 <Spacer h={20} />
 <Text>Install geist-ui-svelte</Text>
 <Spacer h={10} />
-<Snippet width="500px" text="npm i geist-ui-svelte" type="lite" />
+<Snippet width="550px" text="npm i geist-ui-svelte" type="lite" />
 <Spacer h={20} />
 <Text>Import our CSS into <code>`/routes/+layout.svelte`</code></Text>
 <Spacer h={10} />
