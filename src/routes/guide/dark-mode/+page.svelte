@@ -37,9 +37,8 @@
 <Text type="h3">How to implement dark mode switching</Text>
 <Spacer h={20} />
 <Text>
-	If you've already followed our setup for dark mode <Link
-		to="/guide/installation"
-		color>here</Link
+	If you've already followed our setup for dark mode <Link to="/guide/installation" color
+		>here</Link
 	> then you are all caught up. If not you can learn how to setup dark mode there.
 </Text>
 <Spacer h={10} />

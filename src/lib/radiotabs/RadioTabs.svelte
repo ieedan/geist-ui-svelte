@@ -48,7 +48,7 @@
 
 		selected = target.id;
 
-		dispatch('change');
+		dispatch("change");
 	};
 
 	onMount(() => {

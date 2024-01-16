@@ -132,7 +132,8 @@
 <Snippet
 	width="600px"
 	type="lite"
-	text={`import { Skeleton, SkeletonContainer } from 'geist-ui-svelte';`} />
+	text={`import { Skeleton, SkeletonContainer } from 'geist-ui-svelte';`}
+/>
 <Spacer h={30} />
 <Text type="h4">Basic</Text>
 <Spacer h={5} />
@@ -143,8 +144,8 @@
 <Spacer h={10} />
 <FieldSet>
 	<div class="flex flex-col justify-start gap-2">
-		<Button on:click={startLoading} bind:loading={loading}>Refresh</Button>
-		<SkeletonContainer bind:loading={loading} class="flex place-items-center gap-2">
+		<Button on:click={startLoading} bind:loading>Refresh</Button>
+		<SkeletonContainer bind:loading class="flex place-items-center gap-2">
 			<Skeleton class="size-10 rounded-full" />
 			<div class="flex flex-col gap-2">
 				<Skeleton class="w-14 h-4 rounded-md" />
@@ -159,9 +160,7 @@
 	</div>
 	<div slot="footer">
 		<Details label="Code">
-			<Code
-				lang="svelte"
-				code={exampleCode} />
+			<Code lang="svelte" code={exampleCode} />
 		</Details>
 	</div>
 </FieldSet>

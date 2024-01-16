@@ -4,8 +4,8 @@
 	import Snippet from "$lib/snippet/Snippet.svelte";
 	import Spacer from "$lib/spacer/Spacer.svelte";
 	import Text from "$lib/text/Text.svelte";
-	import RadioTabs from "$lib/radiotabs/RadioTabs.svelte"
-	import RadioTab from "$lib/radiotabs/RadioTab.svelte"
+	import RadioTabs from "$lib/radiotabs/RadioTabs.svelte";
+	import RadioTab from "$lib/radiotabs/RadioTab.svelte";
 	import { onMount } from "svelte";
 
 	const PACKAGE_MANAGER_KEY = "package-manager";
@@ -31,11 +31,11 @@
 <slot/>`;
 
 	const savePreference = () => {
-		localStorage.setItem(PACKAGE_MANAGER_KEY, type);		
-	}
+		localStorage.setItem(PACKAGE_MANAGER_KEY, type);
+	};
 
 	onMount(() => {
-		type = localStorage.getItem(PACKAGE_MANAGER_KEY) as PackageManager ?? "npm";
+		type = (localStorage.getItem(PACKAGE_MANAGER_KEY) as PackageManager) ?? "npm";
 	});
 </script>
 
@@ -51,7 +51,11 @@
 <Spacer h={10} />
 <Text>Initialize a new SvelteKit project</Text>
 <Spacer h={10} />
-<Snippet width="550px" text={[`${type} create vite@latest my-project`, "cd my-project"]} type="lite" />
+<Snippet
+	width="550px"
+	text={[`${type} create vite@latest my-project`, "cd my-project"]}
+	type="lite"
+/>
 <Spacer h={20} />
 <Text>Setup TailwindCSS</Text>
 <Spacer h={10} />
