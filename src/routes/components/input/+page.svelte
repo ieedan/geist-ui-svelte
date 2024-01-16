@@ -115,12 +115,12 @@ placeholder="https://github"/>`}
 <Spacer h={10} />
 <FieldSet>
 	<div class="flex flex-col gap-2">
-		<Input type="email" placeholder="Email">
+		<Input type="email" placeholder="Email" width="250px">
 			<Text type="small" color="secondary">
 				Email
 			</Text>
 		</Input>
-		<Input type="password" placeholder="Password">
+		<Input type="password" placeholder="Password" width="250px">
 			<Text type="small" color="secondary">
 				Password
 			</Text>
@@ -130,12 +130,12 @@ placeholder="https://github"/>`}
 		<Details label="Code">
 			<Code
 				lang="svelte"
-				code={`<Input type="email" placeholder="Email">
+				code={`<Input type="email" placeholder="Email" width="250px">
 	<Text type="small" color="secondary">
 		Email
 	</Text>
 </Input>
-<Input type="password" placeholder="Password">
+<Input type="password" placeholder="Password" width="250px">
 	<Text type="small" color="secondary">
 		Password
 	</Text>
