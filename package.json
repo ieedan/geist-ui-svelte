@@ -1,6 +1,6 @@
 {
 	"name": "geist-ui-svelte",
-	"version": "0.3.16",
+	"version": "0.3.17",
 	"author": {
 		"name": "Aidan Bleser",
 		"url": "https://aidanbleser.com"
@@ -281,7 +281,6 @@
 		"publint": "^0.1.9",
 		"svelte": "^4.2.7",
 		"svelte-check": "^3.6.3",
-		"tailwindcss": "3.4.0",
 		"tslib": "^2.4.1",
 		"typescript": "^5.0.0",
 		"vite": "^5.0.11"
@@ -294,6 +293,7 @@
 		"@vercel/analytics": "^1.1.1",
 		"@vercel/speed-insights": "^1.0.3",
 		"shikiji": "^0.9.19",
-		"@sveltejs/kit": "^2.3.2"
+		"@sveltejs/kit": "^2.3.2",
+		"tailwindcss": "3.4.0"
 	}
 }
