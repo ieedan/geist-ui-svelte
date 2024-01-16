@@ -10,13 +10,8 @@
 	import RadioTabs from "$lib/radiotabs/RadioTabs.svelte";
 	import RadioTab from "$lib/radiotabs/RadioTab.svelte";
 	import { setMode, userPrefersMode } from "mode-watcher";
-	import { onMount } from "svelte";
 
-	let selectedMode = $userPrefersMode;
-
-	onMount(() => {
-		selectedMode = $userPrefersMode;
-	});
+	$: selectedMode = $userPrefersMode;
 </script>
 
 <Text type="h3">Text</Text>
@@ -109,7 +104,7 @@
 	Notice how when you set the text color to <code>`dark`</code> it breaks the layout in light mode.
 </Note>
 <Spacer h={20} />
-<Text>Put your sunglasses on for this part.</Text>
+<Text>Put your sunglasses on for this part 🕶️.</Text>
 <Spacer h={5} />
 <RadioTabs bind:selected={selectedMode}>
 	<RadioTab id="light" on:selected={() => setMode('light')}>Light</RadioTab>

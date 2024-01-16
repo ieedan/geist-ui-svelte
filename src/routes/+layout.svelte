@@ -19,17 +19,17 @@
 	import CommandIcon from "$lib/icons/CommandIcon.svelte";
 	import { goto } from "$app/navigation";
 	import { ModeWatcher, setMode, userPrefersMode } from "mode-watcher";
-	import { onMount } from "svelte";
 
 	type Component = {
 		slug: string;
 		name: string;
 	};
 
+	$: currentPreference = $userPrefersMode;
+
 	const components: Component[] = process.env.COMPONENTS;
 
 	let menuVisible = false;
-	let currentPreference: "light" | "dark" | "system" = $userPrefersMode;
 	let searchVisible = false;
 	let search = "";
 	let searchRef: Search;
@@ -101,10 +101,6 @@
 			searchEnter();
 		}
 	};
-
-	onMount(() => {
-		currentPreference = $userPrefersMode;
-	})
 </script>
 
 <svelte:document on:keydown={docKeydown} />
