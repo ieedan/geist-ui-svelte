@@ -6,7 +6,7 @@
 </script>
 
 <svg
-	aria-label="edit"
+	aria-label="x"
 	style="transform: rotate({rotation}); display: inline;"
 	width={size}
 	height={size}

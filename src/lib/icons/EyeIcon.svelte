@@ -6,7 +6,7 @@
 </script>
 
 <svg
-	aria-label="check mark"
+	aria-label="eye"
 	style="transform: rotate({rotation}); display: inline;"
 	width={size}
 	height={size}
