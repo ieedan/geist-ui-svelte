@@ -4,6 +4,6 @@
 	export { className as class };
 </script>
 
-<div data-show={loading} class="data-[loading=false]:hidden {className}">
+<div data-show={loading} class="data-[show=false]:hidden {className}">
 	<slot />
 </div>

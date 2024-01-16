@@ -4,6 +4,15 @@
 	import Snippet from "$lib/snippet/Snippet.svelte";
 	import Spacer from "$lib/spacer/Spacer.svelte";
 	import Text from "$lib/text/Text.svelte";
+	import RadioTabs from "$lib/radiotabs/RadioTabs.svelte";
+	import RadioTab from "$lib/radiotabs/RadioTab.svelte";
+	import { onMount } from "svelte";
+
+	const PACKAGE_MANAGER_KEY = "package-manager";
+
+	type PackageManager = "npm" | "pnpm" | "bun";
+
+	let type: "npm" | "pnpm" | "bun";
 
 	/* eslint-disable no-useless-escape */
 	const importExample = `<script lang="ts">
@@ -20,21 +29,39 @@
 
 <ModeWatcher />
 <slot/>`;
+
+	const savePreference = () => {
+		localStorage.setItem(PACKAGE_MANAGER_KEY, type);
+	};
+
+	onMount(() => {
+		type = (localStorage.getItem(PACKAGE_MANAGER_KEY) as PackageManager) ?? "npm";
+	});
 </script>
 
 <Text type="h3">Installation</Text>
-<Spacer h={30} />
+<Spacer h={10} />
+<RadioTabs bind:selected={type} on:change={savePreference}>
+	<RadioTab id="npm">npm</RadioTab>
+	<RadioTab id="pnpm">pnpm</RadioTab>
+	<RadioTab id="bun">bun</RadioTab>
+</RadioTabs>
+<Spacer h={10} />
 <Text type="h4">Project Setup</Text>
 <Spacer h={10} />
 <Text>Initialize a new SvelteKit project</Text>
 <Spacer h={10} />
-<Snippet width="550px" text={["npm create vite@latest my-project", "cd my-project"]} type="lite" />
+<Snippet
+	width="550px"
+	text={[`${type} create vite@latest my-project`, "cd my-project"]}
+	type="lite"
+/>
 <Spacer h={20} />
 <Text>Setup TailwindCSS</Text>
 <Spacer h={10} />
 <Snippet
 	width="550px"
-	text={["npm i -D tailwindcss@3.4.0 postcss autoprefixer", "npx tailwindcss init -p"]}
+	text={[`${type} i -D tailwindcss@3.4.0 postcss autoprefixer`, "npx tailwindcss init -p"]}
 	type="lite"
 />
 <Spacer h={20} />
@@ -81,7 +108,7 @@ export default {
 <Spacer h={20} />
 <Text>Install geist-ui-svelte</Text>
 <Spacer h={10} />
-<Snippet width="550px" text="npm i geist-ui-svelte" type="lite" />
+<Snippet width="550px" text="{type} i geist-ui-svelte" type="lite" />
 <Spacer h={20} />
 <Text>Import our CSS into <code>`/routes/+layout.svelte`</code></Text>
 <Spacer h={10} />
@@ -89,7 +116,7 @@ export default {
 <Spacer h={20} />
 <Text>Setup Dark Mode (Optional)</Text>
 <Spacer h={10} />
-<Snippet width="550px" text="npm i mode-watcher" type="lite" />
+<Snippet width="550px" text="{type} i mode-watcher" type="lite" />
 <Spacer h={20} />
 <Text>Add ModeWatcher component to <code>`/routes/+layout.svelte`</code></Text>
 <Spacer h={10} />
