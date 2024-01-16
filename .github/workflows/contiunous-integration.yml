@@ -1,9 +1,9 @@
 name: CI
 
 on:
-    pull_request:
-        branches:
-            - main
+  pull_request:
+      branches:
+          - main
 
 jobs:
     CI:
@@ -12,8 +12,6 @@ jobs:
         steps:
             - name: Checkout code
               uses: actions/checkout@v4
-              with:
-                  ref: ${{ github.head_ref }}
 
             - name: Setup Node.js
               uses: actions/setup-node@v3
@@ -28,3 +26,12 @@ jobs:
 
             - name: Lint
               run: npm run lint
+            
+            - name: Package
+              run: npm run package
+
+            - name: Build
+              run: npm run build
+
+            - name: Publish Dry Run
+              run: npm publish --dry-run
