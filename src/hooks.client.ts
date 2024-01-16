@@ -1,9 +1,7 @@
 import { dev } from "$app/environment";
 import { inject } from "@vercel/analytics";
-import { useDarkMode } from "$lib/TS/dark-mode.js";
 import { injectSpeedInsights } from "@vercel/speed-insights/sveltekit";
 
-useDarkMode();
 injectSpeedInsights();
 inject({ mode: dev ? "development" : "production" });
 

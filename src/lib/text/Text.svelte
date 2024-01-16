@@ -62,8 +62,8 @@
     data-[style='warning']:text-orange-300 data-[style='warning']:dark:text-orange-400 data-[style='error']:text-red-500
     data-[style='error']:dark:text-red-600 data-[style='abort']:text-gray-300 data-[style='abort']:dark:text-gray-700
     data-[blockquote=true]:bg-gray-50 data-[blockquote=true]:border-gray-100 data-[blockquote=true]:dark:bg-gray-950
-    data-[blockquote=true]:dark:border-gray-900 data-[blockquote=true]:border data-[blockquote=true]:px-2 data-[blockquote=true]:py-1
-    data-[blockquote=true]:rounded-md p-0 m-0
+    data-[blockquote=true]:dark:border-gray-900 data-[blockquote=true]:border data-[blockquote=true]:px-2 
+	data-[blockquote=true]:py-1 data-[blockquote=true]:rounded-md p-0 m-0
 	
 	data-[size='xs']:!text-xs data-[size='sm']:!text-sm data-[size='md']:!text-base
 	data-[size='lg']:!text-lg data-[size='xl']:!text-xl data-[size='2xl']:!text-2xl data-[size='3xl']:!text-3xl
