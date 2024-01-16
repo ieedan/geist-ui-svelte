@@ -7,8 +7,11 @@
 	import Text from "$lib/text/Text.svelte";
 	import Input from "$lib/input/Input.svelte";
 	import Note from "$lib/note/Note.svelte";
+	import SearchIcon from "$lib/icons/SearchIcon.svelte";
 
 	let debounced = true;
+
+	let value: string = "";
 </script>
 
 <Text type="h3">Input</Text>
@@ -42,8 +45,7 @@
 			<Code
 				lang="svelte"
 				code={`<Input disabled placeholder="Some input"/>
-<Input readonly placeholder="Some input"/>`}
-			/>
+<Input readonly placeholder="Some input"/>`} />
 		</Details>
 	</div>
 </FieldSet>
@@ -65,18 +67,17 @@
 <Spacer h={10} />
 <FieldSet>
 	<div class="flex flex-col gap-2">
-		<Input containerLabel="username" placeholder="username" />
-		<Input containerLabel=".com" labelPlacement="end" placeholder="https://github" />
+		<Input label="username" placeholder="username" />
+		<Input label=".com" labelPlacement="end" placeholder="https://github" />
 	</div>
 	<div slot="footer">
 		<Details label="Code">
 			<Code
 				lang="svelte"
-				code={`<Input containerLabel="username" placeholder="username"/>
-<Input containerLabel=".com" 
+				code={`<Input label="username" placeholder="username"/>
+<Input label=".com" 
 labelPlacement="end" 
-placeholder="https://github"/>`}
-			/>
+placeholder="https://github"/>`} />
 		</Details>
 	</div>
 </FieldSet>
@@ -84,7 +85,7 @@ placeholder="https://github"/>`}
 <Text type="h4">Input Types</Text>
 <Spacer h={20} />
 <Note color="warning">
-	In some browsers (thanks safari) failing to provide a default value will cause the date input to
+	In some browsers (thanks Safari) failing to provide a default value will cause the date input to
 	render incorrectly. Make sure you supply a default value to prevent this from happening.
 </Note>
 <Spacer h={20} />
@@ -93,7 +94,6 @@ placeholder="https://github"/>`}
 		<Input type="password" placeholder="Your password" value="987654321" />
 		<Input type="date" value="2024-12-25" />
 		<Input type="number" value={10} />
-		<Input type="email" placeholder="Email" />
 	</div>
 	<div slot="footer">
 		<Details label="Code">
@@ -103,8 +103,7 @@ placeholder="https://github"/>`}
 	placeholder="Your password" 
 	value="987654321" />
 <Input type="date" value="2024-12-25" />
-<Input type="number" value={10} />`}
-			/>
+<Input type="number" value={10} />`} />
 		</Details>
 	</div>
 </FieldSet>
@@ -116,14 +115,10 @@ placeholder="https://github"/>`}
 <FieldSet>
 	<div class="flex flex-col gap-2">
 		<Input type="email" placeholder="Email" width="250px">
-			<Text type="small" color="secondary">
-				Email
-			</Text>
+			<Text type="small" color="secondary">Email</Text>
 		</Input>
 		<Input type="password" placeholder="Password" width="250px">
-			<Text type="small" color="secondary">
-				Password
-			</Text>
+			<Text type="small" color="secondary">Password</Text>
 		</Input>
 	</div>
 	<div slot="footer">
@@ -139,8 +134,57 @@ placeholder="https://github"/>`}
 	<Text type="small" color="secondary">
 		Password
 	</Text>
-</Input>`}
-			/>
+</Input>`} />
+		</Details>
+	</div>
+</FieldSet>
+<Spacer h={30} />
+<Text type="h4">With icon</Text>
+<Spacer h={10} />
+<FieldSet>
+	<div class="flex flex-col gap-2">
+		<Input type="text" placeholder="Search" width="250px">
+			<SearchIcon slot="icon" size={16} />
+		</Input>
+		<Input type="text" placeholder="Search" width="250px">
+			<SearchIcon slot="iconEnd" size={16} />
+		</Input>
+	</div>
+	<div slot="footer">
+		<Details label="Code">
+			<Code
+				lang="svelte"
+				code={`<Input type="text" placeholder="Search" width="250px">
+	<SearchIcon slot="icon" size={16}/>
+</Input>
+<Input type="text" placeholder="Search" width="250px">
+	<SearchIcon slot="iconEnd" size={16}/>
+</Input>`} />
+		</Details>
+	</div>
+</FieldSet>
+<Spacer h={30} />
+<Text type="h4">Clearable</Text>
+<Spacer h={5} />
+<Text>Add a clear button to the input.</Text>
+<Spacer h={10} />
+<FieldSet>
+	<div class="flex flex-col gap-2">
+		<Input
+			type="text"
+			clearable
+			width="250px"
+			placeholder="geist-ui-svelte"
+			value="Some value" />
+	</div>
+	<div slot="footer">
+		<Details label="Code">
+			<Code
+				lang="svelte"
+				code={`<Input type="text" 
+	clearable width="250px"
+	placeholder="geist-ui-svelte" 
+	value="Some value"/>`} />
 		</Details>
 	</div>
 </FieldSet>
@@ -159,8 +203,7 @@ placeholder="https://github"/>`}
 			placeholder="Some input"
 			on:input={() => (debounced = false)}
 			debounce={1000}
-			on:debounce={() => (debounced = true)}
-		/>
+			on:debounce={() => (debounced = true)} />
 		{#if debounced}
 			Debounced
 		{/if}
@@ -176,8 +219,32 @@ placeholder="https://github"/>`}
 	on:debounce={() => (debounced = true)} />
 {#if debounced}
 	Debounced
-{/if}`}
-			/>
+{/if}`} />
+		</Details>
+	</div>
+</FieldSet>
+<Spacer h={30} />
+<Text type="h4">EVERYTHING</Text>
+<Spacer h={5} />
+<Text>
+	While not recommended you can put pretty every gadget on an input here is what that looks like.
+</Text>
+<Spacer h={10} />
+<FieldSet>
+	<div class="flex flex-col justify-start">
+		<Input label="everything" clearable>
+			<SearchIcon slot="icon" size={16} />
+			<SearchIcon slot="iconEnd" size={16} />
+		</Input>
+	</div>
+	<div slot="footer">
+		<Details label="Code">
+			<Code
+				lang="svelte"
+				code={`<Input label="everything" clearable>
+	<SearchIcon slot="icon" size={16}/>
+	<SearchIcon slot="iconEnd" size={16}/>
+</Input>`} />
 		</Details>
 	</div>
 </FieldSet>
