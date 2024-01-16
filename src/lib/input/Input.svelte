@@ -112,7 +112,8 @@
 				disabled:placeholder:text-gray-300 disabled:dark:placeholder:text-gray-600
 				outline-none focus:outline px-2 py-1 w-full rounded-none disabled:hover:cursor-not-allowed
 				disabled:text-gray-300 disabled:dark:text-gray-600 group-data-[size='sm']/geist-input:text-sm
-				group-data-[size='lg']/geist-input:text-lg group-data-[size='xl']/geist-input:text-xl"
+				group-data-[size='lg']/geist-input:text-lg group-data-[size='xl']/geist-input:text-xl
+				placeholder:text-gray-200 dark:placeholder:text-gray-600"
 			/>
 			<div
 				class="flex place-items-center justify-center pr-2 empty:hidden 
