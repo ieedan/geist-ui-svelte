@@ -17,13 +17,14 @@ npm run dev
 
 ### PRs
 
-PRs are welcome we just ask that you can communicate what you are doing before to make sure no one else is working on the same thing.
+PRs are welcome we just ask that you can communicate what you are doing before by opening an issue or discussion.
 
 Before you open a PR make sure to run:
 
 ```bash
 npm run format # prettier format
 npm run lint # eslint check
+npm run package # checks ability to package
 npm run build # make sure build will pass
 ```
 
