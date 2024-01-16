@@ -23,7 +23,7 @@
 <Spacer h={10} />
 <Snippet
 	width="500px"
-	text={["npm install -D tailwindcss postcss autoprefixer", "npx tailwindcss init -p"]}
+	text={["npm install -D tailwindcss@3.4.0 postcss autoprefixer", "npx tailwindcss init -p"]}
 	type="lite"
 />
 <Spacer h={20} />
