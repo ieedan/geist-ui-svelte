@@ -116,6 +116,12 @@ export { default as CommandIcon } from "./icons/CommandIcon.svelte";
 
 export { default as EditIcon } from "./icons/EditIcon.svelte";
 
+export { default as EyeIcon } from "./icons/EyeIcon.svelte";
+
+export { default as EyeSlashIcon } from "./icons/EyeSlashIcon.svelte";
+
+export { default as XIcon } from "./icons/XIcon.svelte";
+
 /* Types */
 
 export * from "./types";

@@ -1,22 +1,34 @@
 <script lang="ts">
+	import EyeIcon from "$lib/icons/EyeIcon.svelte";
+	import EyeSlashIcon from "$lib/icons/EyeSlashIcon.svelte";
+	import XIcon from "$lib/icons/XIcon.svelte";
 	import { createEventDispatcher, onDestroy } from "svelte";
 	import type { HTMLInputAttributes } from "svelte/elements";
 
 	const dispatch = createEventDispatcher();
 
+	export let id: string | undefined = undefined;
+	export let label: string | undefined = undefined;
+	export let labelPlacement: "start" | "end" = "start";
 	export let value: HTMLInputAttributes["value"] = "";
 	export let type: HTMLInputAttributes["type"] = "text";
-	export let placeholder: string = "";
+	export let debounce: number = 0;
 	export let disabled: boolean = false;
 	export let readonly: boolean = false;
-	export let containerLabel: string = "";
-	export let labelPlacement: "start" | "end" = "start";
-	export let id: string | undefined = undefined;
+	export let clearable: boolean = false;
+	export let placeholder: string = "";
 	export let width: string | undefined = undefined;
-	export let debounce: number = 0;
 
 	let inputRef: HTMLInputElement;
 	let debounceTimeout: number;
+
+	let passwordShown = false;
+
+	$: {
+		if (inputRef != undefined) {
+			inputRef.value = value;
+		}
+	}
 
 	export const focus = () => inputRef.focus();
 
@@ -26,6 +38,8 @@
 	};
 
 	const input = () => {
+		value = inputRef.value;
+
 		clearTimeout(debounceTimeout);
 
 		dispatch("input", { value });
@@ -42,126 +56,90 @@
 	});
 </script>
 
-<label for={id}><slot /></label>
-<div
-	style="width: {width ? width : ''};"
-	aria-disabled={disabled}
-	data-placement={labelPlacement}
-	data-has-label={containerLabel.length > 0}
-	class="flex place-items-center w-fit
-    group/geist-input aria-disabled:bg-gray-50 aria-disabled:dark:bg-gray-950 transition-all"
->
-	{#if containerLabel}
-		<span
-			class="dark:bg-gray-950 bg-gray-50 font-medium py-1 px-2 text-gray-300 dark:text-gray-500 h-[34px] text-sm
-			border-y border-gray-100 group-data-[placement='end']/geist-input:order-2 dark:border-gray-900 flex place-items-center justify-center
-			group-data-[placement='start']/geist-input:rounded-l-md group-data-[placement='end']/geist-input:rounded-r-md
-			group-data-[placement='start']/geist-input:border-l group-data-[placement='end']/geist-input:border-r"
-			>{containerLabel}</span
+<div>
+	<label for={id}>
+		<slot />
+	</label>
+	<div
+		style="width: {width ? width : ''};"
+		data-placement={labelPlacement}
+		data-has-value={value.length > 0}
+		data-has-label={label != undefined}
+		class="group/geist-input flex place-items-center relative data-[has-label=false]:border rounded-md
+		border-gray-100 overflow-hidden aria-disabled:bg-gray-50 aria-disabled:dark:bg-gray-950
+		dark:border-gray-900 w-fit data-[has-label=false]:focus-within:border-gray-200
+		data-[has-label=false]:focus-within:dark:border-gray-800 transition-all"
+		aria-disabled={disabled}
+	>
+		{#if label}
+			<span
+				class="order-1 group-data-[placement='end']/geist-input:order-7 group-data-[placement='end']/geist-input:border-r
+			group-data-[placement='end']/geist-input:rounded-r-md group-data-[placement='start']/geist-input:border-l group-data-[placement='start']/geist-input:rounded-l-md
+			bg-gray-50 dark:bg-gray-950 border-gray-100 border-y dark:border-gray-900 font-medium py-1 px-2 flex place-items-center
+			justify-center text-gray-300 dark:text-gray-500"
+			>
+				{label}
+			</span>
+		{/if}
+		<div
+			class="flex place-items-center group-data-[has-label=true]/geist-input:border order-2 group-data-[placement='end']/geist-input:rounded-l-md
+			group-data-[placement='start']/geist-input:rounded-r-md focus-within:border-gray-200 dark:focus-within:border-gray-800 transition-all border-gray-100 dark:border-gray-900"
 		>
-	{/if}
-	{#if type == "text"}
-		<input
-			{...$$restProps}
-			{id}
-			bind:this={inputRef}
-			on:click
-			on:keydown
-			on:keyup
-			on:input={input}
-			on:touchstart|passive
-			on:touchend
-			on:touchcancel
-			on:mouseenter
-			on:mouseleave
-			bind:value
-			type="text"
-			{placeholder}
-			autocomplete="off"
-			class="bg-transparent outline-none px-2 py-1 border-gray-100 dark:border-gray-900 placeholder:text-gray-200 rounded-none
-            flex-grow border group-data-[placement='start']/geist-input:rounded-r-md group-data-[placement='end']/geist-input:rounded-l-md
-            group-data-[has-label=false]/geist-input:rounded-md disabled:placeholder:text-gray-300 dark:placeholder:text-gray-600
-          focus:border-gray-200 focus:dark:border-gray-800 disabled:hover:cursor-not-allowed transition-all
-          disabled:dark:placeholder:text-gray-600 dark:text-gray-0 text-gray-999 min-w-0"
-			{disabled}
-			{readonly}
-		/>
-	{:else if type == "password"}
-		<input
-			{...$$restProps}
-			{id}
-			bind:this={inputRef}
-			on:click
-			on:keydown
-			on:keyup
-			on:input
-			on:touchstart|passive
-			on:touchend
-			on:touchcancel
-			on:mouseenter
-			on:mouseleave
-			bind:value
-			type="password"
-			{placeholder}
-			{disabled}
-			{readonly}
-			autocomplete="off"
-			class="bg-transparent outline-none px-2 py-1 border-gray-100 dark:border-gray-900 placeholder:text-gray-200 rounded-none
-            flex-grow border group-data-[placement='start']/geist-input:rounded-r-md group-data-[placement='end']/geist-input:rounded-l-md
-            group-data-[has-label=false]/geist-input:rounded-md disabled:placeholder:text-gray-300 dark:placeholder:text-gray-600
-          focus:border-gray-200 focus:dark:border-gray-800 disabled:hover:cursor-not-allowed transition-all
-          disabled:dark:placeholder:text-gray-600 dark:text-gray-0 text-gray-999 min-w-0"
-		/>
-	{:else if type == "number"}
-		<input
-			{...$$restProps}
-			{id}
-			bind:this={inputRef}
-			on:click
-			on:keydown
-			on:keyup
-			on:input
-			on:touchstart|passive
-			on:touchend
-			on:touchcancel
-			on:mouseenter
-			on:mouseleave
-			bind:value
-			type="number"
-			{placeholder}
-			{disabled}
-			{readonly}
-			class="bg-transparent outline-none px-2 py-1 border-gray-100 dark:border-gray-900 placeholder:text-gray-200 rounded-none
-            flex-grow border group-data-[placement='start']/geist-input:rounded-r-md group-data-[placement='end']/geist-input:rounded-l-md
-            group-data-[has-label=false]/geist-input:rounded-md disabled:placeholder:text-gray-300 dark:placeholder:text-gray-600
-          focus:border-gray-200 focus:dark:border-gray-800 disabled:hover:cursor-not-allowed transition-all
-          disabled:dark:placeholder:text-gray-600 dark:text-gray-0 text-gray-999 min-w-0"
-		/>
-	{:else}
-		<input
-			{...$$restProps}
-			{id}
-			bind:this={inputRef}
-			on:click
-			on:keydown
-			on:keyup
-			on:input
-			on:touchstart|passive
-			on:touchend
-			on:touchcancel
-			on:mouseenter
-			on:mouseleave
-			{value}
-			{type}
-			on:change={change}
-			{placeholder}
-			{disabled}
-			{readonly}
-			class="bg-transparent outline-none px-2 py-1 border-gray-100 dark:border-gray-900 placeholder:text-gray-200 rounded-none
-            flex-grow border group-data-[placement='start']/geist-input:rounded-r-md group-data-[placement='end']/geist-input:rounded-l-md
-            group-data-[has-label=false]/geist-input:rounded-md disabled:placeholder:text-gray-300 dark:placeholder:text-gray-600
-          focus:border-gray-200 focus:dark:border-gray-800 disabled:hover:cursor-not-allowed transition-all
-          disabled:dark:placeholder:text-gray-600 dark:text-gray-0 text-gray-999 min-w-0 dark:scheme-dark"
-		/>
-	{/if}
+			<div
+				class="flex place-items-center justify-center pl-2 empty:hidden order-2 text-gray-800 dark:text-gray-200"
+			>
+				<slot name="icon" />
+			</div>
+			<input
+				{...$$restProps}
+				bind:this={inputRef}
+				on:change={change}
+				on:input={input}
+				type={passwordShown ? "text" : type}
+				{placeholder}
+				{id}
+				{disabled}
+				{readonly}
+				class="bg-transparent order-3 min-w-0 text-gray-999 dark:text-gray-0 disabled:placeholder:text-gray-300 disabled:dark:placeholder:text-gray-600
+				outline-none focus:outline px-2 py-1 w-full rounded-none disabled:hover:cursor-not-allowed
+				disabled:text-gray-300 disabled:dark:text-gray-600"
+			/>
+			<div
+				class="flex place-items-center justify-center pr-2 empty:hidden order-4 text-gray-800 dark:text-gray-200"
+			>
+				<slot name="iconEnd" />
+			</div>
+			{#if clearable}
+				<button
+					class="order-5 flex place-items-center h-full justify-center px-2 transition-all hover:text-gray-999 dark:hover:text-gray-0
+				text-gray-400 dark:text-gray-600 group-data-[has-value=false]/geist-input:opacity-0"
+					on:click={() => {
+						inputRef.value = "";
+						value = "";
+					}}
+				>
+					<XIcon size={14} />
+				</button>
+			{/if}
+			{#if type == "password"}
+				<button
+					class="order-6 absolute px-2 right-0 flex h-full place-items-center justify-center group-aria-disabled/geist-input:opacity-0
+					group-data-[has-value=false]/geist-input:opacity-0 transition-all"
+					on:click={() => (passwordShown = !passwordShown)}
+				>
+					{#if passwordShown}
+						<EyeSlashIcon size={21} />
+					{:else}
+						<EyeIcon size={21} />
+					{/if}
+				</button>
+			{/if}
+		</div>
+	</div>
 </div>
+
+<style lang="postcss">
+	input[type="password"]::-ms-reveal {
+		display: none;
+	}
+</style>
