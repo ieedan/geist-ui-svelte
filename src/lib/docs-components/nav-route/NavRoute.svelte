@@ -31,8 +31,8 @@
 			data-active={active}
 			on:click={() => dispatch("navigated")}
 			class="w-full rounded-md px-2 py-2 text-gray-500 transition-all
-    		data-[active=true]:text-blue-500 dark:text-gray-600
-			data-[active=true]:dark:text-blue-500"
+    		data-[active=true]:text-blue-600 dark:text-gray-600
+			data-[active=true]:dark:text-blue-600"
 		>
 			{name}
 		</a>

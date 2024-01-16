@@ -66,17 +66,23 @@
 	interface CurrentRoute extends Route {
 		index?: number;
 		sourceRoute?: string;
+		category?: string;
 	}
 
 	const getCurrentDoc = (
 		rs: (CurrentRoute | string)[],
 		path: string,
 		ogIndex: number | undefined = undefined,
+		category: string | undefined = undefined,
 	): CurrentRoute | undefined => {
+		let currentCategory = category;
 		for (let i = 0; i < rs.length; i++) {
 			const r = rs[i];
 
-			if (typeof r === "string") continue;
+			if (typeof r === "string") {
+				currentCategory = r;
+				continue;
+			}
 
 			const slug =
 				r.slug[r.slug.length - 1] == "/" ? r.slug.slice(0, r.slug.length - 1) : r.slug;
@@ -87,6 +93,7 @@
 				r.index = ogIndex;
 				const lastIndex = r.slug.lastIndexOf("/") + 1;
 				r.sourceRoute = GITHUB_DOCS_DIRECTORY + r.slug.slice(lastIndex) + "/+page.svelte";
+				r.category = currentCategory;
 				return r;
 			}
 
@@ -94,12 +101,13 @@
 
 			if (!ogIndex) ogIndex = i;
 
-			const doc = getCurrentDoc(r.routes, path, ogIndex);
+			const doc = getCurrentDoc(r.routes, path, ogIndex, currentCategory);
 
 			if (doc) {
 				const lastIndex = doc.slug.lastIndexOf("/") + 1;
 				doc.sourceRoute =
 					GITHUB_DOCS_DIRECTORY + doc.slug.slice(lastIndex) + "/+page.svelte";
+				doc.category = currentCategory;
 				return doc;
 			}
 		}
@@ -122,8 +130,7 @@
 			navigationExpanded = false;
 		}
 	}}
-	on:click={handleDocClick}
-/>
+	on:click={handleDocClick} />
 
 <svelte:head>
 	<title>{currentDoc ? currentDoc.name : "Guide"} - geist-ui-svelte</title>
@@ -136,19 +143,22 @@
 			class="fixed bottom-0 z-40 flex max-h-screen w-full flex-col place-items-end overflow-y-auto
 			border-t border-gray-100 bg-white px-4
 			py-3 md:top-[79px] md:w-[250px] md:border-0 md:bg-transparent dark:border-gray-900
-			dark:bg-gray-999 md:dark:bg-transparent scrollbar-hide"
-		>
+			dark:bg-gray-999 md:dark:bg-transparent scrollbar-hide">
 			<div
 				class="w-full flex-col data-[show=false]:hidden md:data-[show=false]:flex"
-				data-show={navigationExpanded}
-			>
+				data-show={navigationExpanded}>
 				<div class="block md:hidden"><Spacer h={30} /></div>
 				{#each routes as route, i}
 					{#if typeof route === "string"}
 						{#if i > 0}
 							<Spacer h={25} />
 						{/if}
-						<Text type="small" class="px-2 font-light">{route}</Text>
+						<small
+							data-active={currentDoc?.category == route}
+							class="data-[active=true]:text-blue-600 px-2 transition-all
+						text-gray-999 dark:text-gray-100">
+							{route}
+						</small>
 						<Spacer h={5} />
 					{:else}
 						<NavRoute
@@ -157,8 +167,7 @@
 							routes={route.routes}
 							expanded={route.expanded}
 							slug={route.slug}
-							name={route.name}
-						/>
+							name={route.name} />
 					{/if}
 				{/each}
 			</div>
@@ -167,15 +176,13 @@
 			<button
 				class="flex w-full place-items-center justify-between rounded-md border border-gray-100
 			px-2 py-1 md:hidden dark:border-gray-900"
-				on:click={toggleNavigationExpanded}
-			>
+				on:click={toggleNavigationExpanded}>
 				<div class="flex place-items-center gap-2">
 					{currentDoc?.name}
 				</div>
 				<div
 					class="transition-all data-[show=false]:rotate-180 text-blue-500"
-					data-show={navigationExpanded}
-				>
+					data-show={navigationExpanded}>
 					<ChevronIcon rotation="90deg" />
 				</div>
 			</button>
@@ -190,16 +197,14 @@
 				<a
 					href="https://github.com/ieedan/geist-ui-svelte"
 					target="_blank"
-					class="flex place-items-center justify-center"
-				>
+					class="flex place-items-center justify-center">
 					<GithubIcon size={22} />
 				</a>
 				<a
 					href={currentDoc?.sourceRoute}
 					target="_blank"
 					class="border border-gray-100 dark:border-gray-900 size-7 flex place-items-center justify-center
-					hover:bg-gray-100 dark:hover:bg-gray-900 transition-all rounded-full p-1 text-blue-500"
-				>
+					hover:bg-gray-100 dark:hover:bg-gray-900 transition-all rounded-full p-1 text-blue-500">
 					<EditIcon size={16} />
 				</a>
 			</div>
