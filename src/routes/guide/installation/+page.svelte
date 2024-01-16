@@ -8,7 +8,9 @@
 	/* eslint-disable no-useless-escape */
 	const importExample = `<script lang="ts">
 	import "geist-ui-svelte/styles/geist-ui-svelte.css";
-<\/script>`;
+<\/script>
+
+<slot/>`;
 </script>
 
 <Text type="h3">Installation</Text>
