@@ -3,7 +3,6 @@
 	import { page } from "$app/stores";
 	import type { Route, ShortRoute } from "$lib/types.js";
 	import ChevronIcon from "$lib/icons/ChevronIcon.svelte";
-	import Text from "$lib/text/Text.svelte";
 	import Spacer from "$lib/spacer/Spacer.svelte";
 	import ArrowNavigation from "$lib/docs-components/arrow-navigation/ArrowNavigation.svelte";
 	import Divider from "$lib/divider/Divider.svelte";
@@ -207,17 +206,23 @@
 	interface CurrentRoute extends Route {
 		index?: number;
 		sourceRoute?: string;
+		category?: string;
 	}
 
 	const getCurrentDoc = (
 		rs: (CurrentRoute | string)[],
 		path: string,
 		ogIndex: number | undefined = undefined,
+		category: string | undefined = undefined,
 	): CurrentRoute | undefined => {
+		let currentCategory = category;
 		for (let i = 0; i < rs.length; i++) {
 			const r = rs[i];
 
-			if (typeof r === "string") continue;
+			if (typeof r === "string") {
+				currentCategory = r;
+				continue;
+			}
 
 			const slug =
 				r.slug[r.slug.length - 1] == "/" ? r.slug.slice(0, r.slug.length - 1) : r.slug;
@@ -228,6 +233,7 @@
 				r.index = ogIndex;
 				const lastIndex = r.slug.lastIndexOf("/") + 1;
 				r.sourceRoute = GITHUB_DOCS_DIRECTORY + r.slug.slice(lastIndex) + "/+page.svelte";
+				r.category = currentCategory;
 				return r;
 			}
 
@@ -235,12 +241,13 @@
 
 			if (!ogIndex) ogIndex = i;
 
-			const doc = getCurrentDoc(r.routes, path, ogIndex);
+			const doc = getCurrentDoc(r.routes, path, ogIndex, currentCategory);
 
 			if (doc) {
 				const lastIndex = doc.slug.lastIndexOf("/") + 1;
 				doc.sourceRoute =
 					GITHUB_DOCS_DIRECTORY + doc.slug.slice(lastIndex) + "/+page.svelte";
+				doc.category = currentCategory;
 				return doc;
 			}
 		}
@@ -289,7 +296,13 @@
 						{#if i > 0}
 							<Spacer h={25} />
 						{/if}
-						<Text type="small" class="px-2 font-light">{route}</Text>
+						<small
+							data-active={currentDoc?.category == route}
+							class="data-[active=true]:text-blue-600 px-2 transition-all
+						text-gray-999 dark:text-gray-100"
+						>
+							{route}
+						</small>
 						<Spacer h={5} />
 					{:else}
 						<NavRoute
