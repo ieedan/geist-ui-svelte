@@ -1,17 +1,25 @@
 <script lang="ts">
-	import { onMount } from "svelte";
+	import { createEventDispatcher, onMount } from "svelte";
+
+	const dispatch = createEventDispatcher();
 
 	let tabsRef: HTMLDivElement;
 	export let selected: string = "";
 
-	const setDefault = () => {
+	$: {
+		if (tabsRef) {
+			setDefault(selected);
+		}
+	}
+
+	const setDefault = (v: string) => {
 		const children = Array.from(tabsRef.children);
 
 		let found = false;
 		for (let i = 0; i < children.length; i++) {
 			const child = children[i];
-			if (selected != "") {
-				if (selected == child.id) {
+			if (v != "") {
+				if (v == child.id) {
 					found = true;
 					child.setAttribute("aria-selected", "true");
 				} else {
@@ -26,7 +34,7 @@
 		}
 
 		if (!found) {
-			selected = children[0].id;
+			v = children[0].id;
 			children[0].setAttribute("aria-selected", "true");
 		}
 	};
@@ -39,10 +47,12 @@
 		if (target.tagName != "BUTTON" || target.getAttribute("role") != "tab") return;
 
 		selected = target.id;
+
+		dispatch('change');
 	};
 
 	onMount(() => {
-		setDefault();
+		setDefault(selected);
 
 		tabsRef.addEventListener("click", clicked);
 	});
