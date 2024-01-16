@@ -96,7 +96,8 @@
           disabled:dark:placeholder:text-gray-600 dark:text-gray-0 text-gray-999 min-w-0" />
 		{:else if type == "password"}
 			<div
-				class="focus-within:border-gray-200 focus-within:dark:border-gray-800 border-gray-100 dark:border-gray-900 flex place-items-center border rounded-md w-full">
+				class="focus-within:border-gray-200 focus-within:dark:border-gray-800 border-gray-100 
+				dark:border-gray-900 flex place-items-center border rounded-md w-full relative">
 				<input
 					{...$$restProps}
 					{id}
@@ -114,13 +115,13 @@
 					{placeholder}
 					{disabled}
 					{readonly}
-					class="bg-transparent outline-none px-2 py-1 placeholder:text-gray-200 rounded-none
+					class="bg-transparent outline-none pl-2 pr-[38px] py-1 placeholder:text-gray-200 rounded-none
             flex-grow group-data-[placement='start']/geist-input:rounded-r-md group-data-[placement='end']/geist-input:rounded-l-md
             group-data-[has-label=false]/geist-input:rounded-md disabled:placeholder:text-gray-300 dark:placeholder:text-gray-600
 			 disabled:hover:cursor-not-allowed transition-all disabled:dark:placeholder:text-gray-600 dark:text-gray-0 text-gray-999 min-w-0 appearance-none" />
 				<button
 					data-has-value={value.length > 0}
-					class="flex place-items-center justify-center px-1 group-aria-disabled/geist-input:opacity-0 data-[has-value=false]:opacity-0 transition-all"
+					class="absolute px-2 right-0 flex place-items-center justify-center group-aria-disabled/geist-input:opacity-0 data-[has-value=false]:opacity-0 transition-all"
 					on:click={() => (passwordShown = !passwordShown)}>
 					{#if passwordShown}
 						<EyeSlashIcon size={22} />
