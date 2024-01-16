@@ -78,16 +78,16 @@
 		},
 		{
 			name: "Eye",
-			component: EyeIcon
+			component: EyeIcon,
 		},
 		{
 			name: "EyeSlash",
-			component: EyeSlash
+			component: EyeSlash,
 		},
 		{
 			name: "X",
-			component: XIcon
-		}
+			component: XIcon,
+		},
 	];
 
 	let currentIcon: Icon | undefined = undefined;

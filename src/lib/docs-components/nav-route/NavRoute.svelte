@@ -23,7 +23,8 @@
 <div
 	class="flex w-full flex-col data-[hidden=true]:hidden data-[nested=true]:pl-4"
 	data-nested={nested}
-	data-hidden={hidden}>
+	data-hidden={hidden}
+>
 	<div class="group flex place-items-center justify-between">
 		<a
 			href={slug}
@@ -31,7 +32,8 @@
 			on:click={() => dispatch("navigated")}
 			class="w-full rounded-md px-2 py-2 text-gray-500 transition-all
     		data-[active=true]:text-blue-500 dark:text-gray-600
-			data-[active=true]:dark:text-blue-500">
+			data-[active=true]:dark:text-blue-500"
+		>
 			{name}
 		</a>
 		{#if routes}
@@ -39,7 +41,8 @@
 				<div
 					class="transition-all hover:text-black data-[show=false]:-rotate-90
 					text-gray-300 dark:text-gray-600 hover:dark:text-white data-[show=true]:dark:text-white"
-					data-show={expanded}>
+					data-show={expanded}
+				>
 					<ChevronIcon rotation="90deg" size={20} />
 				</div>
 			</button>
@@ -47,12 +50,14 @@
 	</div>
 	<div
 		class="border-l border-gray-100 data-[show=false]:hidden dark:border-gray-900"
-		data-show={expanded}>
+		data-show={expanded}
+	>
 		{#if routes}
 			{#each routes as subRoute}
 				<svelte:self
 					on:navigated={() => dispatch("navigated")}
-					{...{ ...subRoute, nested: true }} />
+					{...{ ...subRoute, nested: true }}
+				/>
 			{/each}
 		{/if}
 	</div>

@@ -12,7 +12,8 @@
 	height={size}
 	viewBox="0 0 350 350"
 	fill="none"
-	xmlns="http://www.w3.org/2000/svg">
+	xmlns="http://www.w3.org/2000/svg"
+>
 	<path
 		fill-rule="evenodd"
 		clip-rule="evenodd"
@@ -23,7 +24,8 @@
          222 174.5C222 148.266 200.734 127 174.5 127C169.464 127 164.611 127.784 160.056 
          129.236L148.478 117.658C156.401 114.025 165.214 112 174.5 112C209.018 112 237 
          139.982 237 174.5C237 183.786 234.975 192.599 231.342 200.522L219.764 188.944Z"
-		fill="currentColor" />
+		fill="currentColor"
+	/>
 	<path
 		fill-rule="evenodd"
 		clip-rule="evenodd"
@@ -33,7 +35,8 @@
          88C210.817 88 244.789 107.405 270.18 140.939C277.892 151.125 284.751 162.553
           290.564 175H307C280.843 114.094 231.305 73 174.5 73C154.567 73 135.528 78.0602 
           118.081 87.2609L129.256 98.4358Z"
-		fill="currentColor" />
+		fill="currentColor"
+	/>
 	<path
 		fill-rule="evenodd"
 		clip-rule="evenodd"
@@ -43,7 +46,8 @@
         251.885ZM266.73 235.91C283.067 219.454 296.808 198.731 307 175H290.564C284.751 
         187.447 277.892 198.875 270.18 209.061C265.746 214.917 261.051 220.341 256.127
          225.307L266.73 235.91Z"
-		fill="currentColor" />
+		fill="currentColor"
+	/>
 	<rect
 		x="74.6066"
 		y="64"
@@ -51,5 +55,6 @@
 		height="15"
 		rx="7.5"
 		transform="rotate(45 74.6066 64)"
-		fill="currentColor" />
+		fill="currentColor"
+	/>
 </svg>

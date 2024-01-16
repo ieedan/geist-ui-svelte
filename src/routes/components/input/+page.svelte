@@ -10,8 +10,6 @@
 	import SearchIcon from "$lib/icons/SearchIcon.svelte";
 
 	let debounced = true;
-
-	let value: string = "";
 </script>
 
 <Text type="h3">Input</Text>
@@ -45,7 +43,8 @@
 			<Code
 				lang="svelte"
 				code={`<Input disabled placeholder="Some input"/>
-<Input readonly placeholder="Some input"/>`} />
+<Input readonly placeholder="Some input"/>`}
+			/>
 		</Details>
 	</div>
 </FieldSet>
@@ -77,7 +76,8 @@
 				code={`<Input label="username" placeholder="username"/>
 <Input label=".com" 
 labelPlacement="end" 
-placeholder="https://github"/>`} />
+placeholder="https://github"/>`}
+			/>
 		</Details>
 	</div>
 </FieldSet>
@@ -103,7 +103,8 @@ placeholder="https://github"/>`} />
 	placeholder="Your password" 
 	value="987654321" />
 <Input type="date" value="2024-12-25" />
-<Input type="number" value={10} />`} />
+<Input type="number" value={10} />`}
+			/>
 		</Details>
 	</div>
 </FieldSet>
@@ -134,7 +135,8 @@ placeholder="https://github"/>`} />
 	<Text type="small" color="secondary">
 		Password
 	</Text>
-</Input>`} />
+</Input>`}
+			/>
 		</Details>
 	</div>
 </FieldSet>
@@ -159,7 +161,8 @@ placeholder="https://github"/>`} />
 </Input>
 <Input type="text" placeholder="Search" width="250px">
 	<SearchIcon slot="iconEnd" size={16}/>
-</Input>`} />
+</Input>`}
+			/>
 		</Details>
 	</div>
 </FieldSet>
@@ -175,7 +178,8 @@ placeholder="https://github"/>`} />
 			clearable
 			width="250px"
 			placeholder="geist-ui-svelte"
-			value="Some value" />
+			value="Some value"
+		/>
 	</div>
 	<div slot="footer">
 		<Details label="Code">
@@ -184,7 +188,8 @@ placeholder="https://github"/>`} />
 				code={`<Input type="text" 
 	clearable width="250px"
 	placeholder="geist-ui-svelte" 
-	value="Some value"/>`} />
+	value="Some value"/>`}
+			/>
 		</Details>
 	</div>
 </FieldSet>
@@ -203,7 +208,8 @@ placeholder="https://github"/>`} />
 			placeholder="Some input"
 			on:input={() => (debounced = false)}
 			debounce={1000}
-			on:debounce={() => (debounced = true)} />
+			on:debounce={() => (debounced = true)}
+		/>
 		{#if debounced}
 			Debounced
 		{/if}
@@ -219,7 +225,8 @@ placeholder="https://github"/>`} />
 	on:debounce={() => (debounced = true)} />
 {#if debounced}
 	Debounced
-{/if}`} />
+{/if}`}
+			/>
 		</Details>
 	</div>
 </FieldSet>
@@ -244,7 +251,8 @@ placeholder="https://github"/>`} />
 				code={`<Input label="everything" clearable>
 	<SearchIcon slot="icon" size={16}/>
 	<SearchIcon slot="iconEnd" size={16}/>
-</Input>`} />
+</Input>`}
+			/>
 		</Details>
 	</div>
 </FieldSet>
