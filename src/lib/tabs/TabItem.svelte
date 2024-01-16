@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { page } from "$app/stores";
 	import { createEventDispatcher } from "svelte";
 
 	const dispatch = createEventDispatcher();
@@ -12,8 +13,8 @@
 	$: to = href ? trimLink(href) : null;
 
 	$: active =
-		to === window.location.pathname ||
-		(activeForSubdirectories && to != null && window.location.pathname.includes(to));
+		href === $page.url.pathname ||
+		(activeForSubdirectories && $page.url.pathname.startsWith(href ?? ""));
 
 	const trimLink = (link: string) => {
 		if (link[link.length - 1] == "/") {
