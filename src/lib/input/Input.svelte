@@ -1,4 +1,6 @@
 <script lang="ts">
+	import EyeIcon from "$lib/icons/EyeIcon.svelte";
+	import EyeSlashIcon from "$lib/icons/EyeSlashIcon.svelte";
 	import { createEventDispatcher, onDestroy } from "svelte";
 	import type { HTMLInputAttributes } from "svelte/elements";
 
@@ -15,8 +17,16 @@
 	export let width: string | undefined = undefined;
 	export let debounce: number = 0;
 
+	let passwordShown = false;
+
 	let inputRef: HTMLInputElement;
 	let debounceTimeout: number;
+
+	$: {
+		if (inputRef != undefined && type == "password") {
+			inputRef.value = value;
+		}
+	}
 
 	export const focus = () => inputRef.focus();
 
@@ -75,40 +85,50 @@
 				on:mouseleave
 				bind:value
 				type="text"
-				{placeholder}
-				autocomplete="off"
-				class="bg-transparent outline-none px-2 py-1 border-gray-100 dark:border-gray-900 placeholder:text-gray-200 rounded-none
-            flex-grow border group-data-[placement='start']/geist-input:rounded-r-md group-data-[placement='end']/geist-input:rounded-l-md
-            group-data-[has-label=false]/geist-input:rounded-md disabled:placeholder:text-gray-300 dark:placeholder:text-gray-600
-          focus:border-gray-200 focus:dark:border-gray-800 disabled:hover:cursor-not-allowed transition-all
-          disabled:dark:placeholder:text-gray-600 dark:text-gray-0 text-gray-999 min-w-0"
-				{disabled}
-				{readonly} />
-		{:else if type == "password"}
-			<input
-				{...$$restProps}
-				{id}
-				bind:this={inputRef}
-				on:click
-				on:keydown
-				on:keyup
-				on:input
-				on:touchstart|passive
-				on:touchend
-				on:touchcancel
-				on:mouseenter
-				on:mouseleave
-				bind:value
-				type="password"
-				{placeholder}
 				{disabled}
 				{readonly}
+				{placeholder}
 				autocomplete="off"
 				class="bg-transparent outline-none px-2 py-1 border-gray-100 dark:border-gray-900 placeholder:text-gray-200 rounded-none
             flex-grow border group-data-[placement='start']/geist-input:rounded-r-md group-data-[placement='end']/geist-input:rounded-l-md
             group-data-[has-label=false]/geist-input:rounded-md disabled:placeholder:text-gray-300 dark:placeholder:text-gray-600
           focus:border-gray-200 focus:dark:border-gray-800 disabled:hover:cursor-not-allowed transition-all
           disabled:dark:placeholder:text-gray-600 dark:text-gray-0 text-gray-999 min-w-0" />
+		{:else if type == "password"}
+			<div
+				class="focus-within:border-gray-200 focus-within:dark:border-gray-800 border-gray-100 dark:border-gray-900 flex place-items-center border rounded-md w-full">
+				<input
+					{...$$restProps}
+					{id}
+					bind:this={inputRef}
+					on:click
+					on:keydown
+					on:keyup
+					on:touchstart|passive
+					on:touchend
+					on:touchcancel
+					on:mouseenter
+					on:mouseleave
+					on:input={() => (value = inputRef.value)}
+					type={passwordShown ? "text" : "password"}
+					{placeholder}
+					{disabled}
+					{readonly}
+					class="bg-transparent outline-none px-2 py-1 placeholder:text-gray-200 rounded-none
+            flex-grow group-data-[placement='start']/geist-input:rounded-r-md group-data-[placement='end']/geist-input:rounded-l-md
+            group-data-[has-label=false]/geist-input:rounded-md disabled:placeholder:text-gray-300 dark:placeholder:text-gray-600
+			 disabled:hover:cursor-not-allowed transition-all disabled:dark:placeholder:text-gray-600 dark:text-gray-0 text-gray-999 min-w-0 appearance-none" />
+				<button
+					data-has-value={value.length > 0}
+					class="flex place-items-center justify-center px-1 group-aria-disabled/geist-input:opacity-0 data-[has-value=false]:opacity-0 transition-all"
+					on:click={() => (passwordShown = !passwordShown)}>
+					{#if passwordShown}
+						<EyeSlashIcon size={22} />
+					{:else}
+						<EyeIcon size={22} />
+					{/if}
+				</button>
+			</div>
 		{:else if type == "number"}
 			<input
 				{...$$restProps}
@@ -132,7 +152,7 @@
             flex-grow border group-data-[placement='start']/geist-input:rounded-r-md group-data-[placement='end']/geist-input:rounded-l-md
             group-data-[has-label=false]/geist-input:rounded-md disabled:placeholder:text-gray-300 dark:placeholder:text-gray-600
           focus:border-gray-200 focus:dark:border-gray-800 disabled:hover:cursor-not-allowed transition-all
-          disabled:dark:placeholder:text-gray-600 dark:text-gray-0 text-gray-999 min-w-0" />
+          disabled:dark:placeholder:text-gray-600 dark:text-gray-0 text-gray-999 min-w-0 dark:scheme-dark" />
 		{:else}
 			<input
 				{...$$restProps}
@@ -161,3 +181,9 @@
 		{/if}
 	</div>
 </div>
+
+<style lang="postcss">
+	input[type="password"]::-ms-reveal {
+		display: none;
+	}
+</style>
