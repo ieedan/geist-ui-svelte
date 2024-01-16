@@ -239,7 +239,7 @@ placeholder="https://github"/>`}
 <Spacer h={10} />
 <FieldSet>
 	<div class="flex flex-col justify-start">
-		<Input label="everything" clearable>
+		<Input label="everything" clearable placeholder="Everything">
 			<SearchIcon slot="icon" size={16} />
 			<SearchIcon slot="iconEnd" size={16} />
 		</Input>
@@ -248,7 +248,10 @@ placeholder="https://github"/>`}
 		<Details label="Code">
 			<Code
 				lang="svelte"
-				code={`<Input label="everything" clearable>
+				code={`<Input 
+	label="everything"
+	placeholder="Everything"
+	clearable>
 	<SearchIcon slot="icon" size={16}/>
 	<SearchIcon slot="iconEnd" size={16}/>
 </Input>`}
