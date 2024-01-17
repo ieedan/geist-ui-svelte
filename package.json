@@ -277,6 +277,10 @@
 			"types": "./dist/buttongroup/ButtonGroupButton.svelte.d.ts",
 			"svelte": "./dist/buttongroup/ButtonGroupButton.svelte"
 		},
+		"./DarkModeToggle.svelte": {
+			"types": "./dist/darkmodetoggle/DarkModeToggle.svelte.d.ts",
+			"svelte": "./dist/darkmodetoggle/DarkModeToggle.svelte"
+		},
 		"./styles/geist-ui-svelte.css": "./dist/styles/geist-ui-svelte.css"
 	},
 	"files": [

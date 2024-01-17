@@ -133,7 +133,7 @@ export default {
 	See additional docs for <code>`mode-watcher`</code>
 	<Link to="https://github.com/svecosystem/mode-watcher" target="_blank" color>here</Link>. If you
 	want to see an example of how to implement dark mode switching see
-	<Link to="/guide/dark-mode" color>here</Link>.
+	<Link to="/components/darkmodetoggle" color>here</Link>.
 </Text>
 <Spacer h={20} />
 <Text>Now you're ready to start using our <Link to="/components" color>components!</Link></Text>

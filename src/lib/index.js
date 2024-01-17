@@ -92,6 +92,8 @@ export { default as Key } from "./key/Key.svelte";
 
 export { default as Loading } from "./loading/Loading.svelte";
 
+export { default as DarkModeToggle } from "./darkmodetoggle/DarkModeToggle.svelte";
+
 /* Code */
 
 export { default as Code } from "./code/Code.svelte";
