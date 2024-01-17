@@ -17,7 +17,7 @@
 	import CommandIcon from "$lib/icons/CommandIcon.svelte";
 	import { goto } from "$app/navigation";
 	import { ModeWatcher } from "mode-watcher";
-	import DarkModeToggle from "$lib/darkmodetoggle/DarkModeToggle.svelte";
+	import LightSwitch from "$lib/lightswitch/LightSwitch.svelte";
 
 	type Component = {
 		slug: string;
@@ -136,7 +136,7 @@
 				<Button href="https://github.com/ieedan/geist-ui-svelte" target="_blank" square size="md">
 					<GithubIcon size={16} />
 				</Button>
-				<DarkModeToggle/>
+				<LightSwitch/>
 			</div>
 			<div class="flex place-items-center md:hidden col-start-2">
 				<Button color="abort" on:click={() => (menuVisible = true)}>
@@ -182,7 +182,7 @@
 			<Button href="https://github.com/ieedan/geist-ui-svelte" target="_blank" square size="md">
 				<GithubIcon size={16}/>
 			</Button>
-			<DarkModeToggle/>
+			<LightSwitch/>
 		</div>
 	</div>
 </Page>

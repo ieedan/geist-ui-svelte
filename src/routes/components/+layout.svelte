@@ -166,8 +166,8 @@
 			slug: "/components/loading",
 		},
 		{
-			name: "DarkModeToggle",
-			slug: "/components/darkmodetoggle",
+			name: "LightSwitch",
+			slug: "/components/lightswitch",
 		},
 		"CODE",
 		{

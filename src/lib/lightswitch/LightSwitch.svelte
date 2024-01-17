@@ -1,8 +1,8 @@
-<script>
+<script lang="ts">
 	import Button from "$lib/button/Button.svelte";
 	import MoonIcon from "$lib/icons/MoonIcon.svelte";
 	import SunIcon from "$lib/icons/SunIcon.svelte";
-    import { mode, setMode, userPrefersMode } from "mode-watcher";
+    import { mode, setMode } from "mode-watcher";
 
     $: currentMode = $mode;
 
@@ -13,8 +13,6 @@
             setMode('dark');
         }
     }
-
-    $: currentPrefersMode = $userPrefersMode;
 </script>
 
 <Button square size="md" on:click={toggleMode}>
