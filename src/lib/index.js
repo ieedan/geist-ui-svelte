@@ -24,6 +24,10 @@ export { default as ButtonDropdownItem } from "./buttondropdown/ButtonDropdownIt
 
 export { default as Search } from "./search/Search.svelte";
 
+export { default as ButtonGroup } from "./buttongroup/ButtonGroup.svelte";
+
+export { default as ButtonGroupButton } from "./buttongroup/ButtonGroupButton.svelte";
+
 /* Layout */
 
 export { default as Card } from "./card/Card.svelte";

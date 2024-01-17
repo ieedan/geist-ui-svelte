@@ -19,7 +19,7 @@ disabled:dark:border-gray-900 disabled:dark:bg-gray-925
 disabled:dark:text-gray-600 disabled:cursor-not-allowed transition-all
 disabled:border-gray-100 disabled:bg-gray-50 disabled:text-gray-300
 
-group-data-[size='lg']/gbd:text-lg group-data-[size='sm']/gbd:text-sm 
+group-data-[size='lg']/gbd:text-lg group-data-[size='sm']/gbd:text-sm
 group-data-[size='xl']/gbd:text-2xl group-data-[size='xs']/gbd:text-xs
 
 bg-gray-0 text-gray-999 border-gray-100 enabled:hover:bg-gray-100 dark:bg-gray-999
@@ -103,7 +103,8 @@ group-data-[style='error-light']/gbd:group-data-[ghost=true]/gbd:dark:border-red
 
 group-data-[style='abort']/gbd:bg-transparent group-data-[style='abort']/gbd:dark:bg-transparent group-data-[style='abort']/gbd:hover:bg-transparent
 group-data-[style='abort']/gbd:hover:dark:bg-transparent group-data-[style='abort']/gbd:border-transparent
-group-data-[style='abort']/gbd:text-gray-400 group-data-[style='abort']/gbd:dark:text-gray-600">
+group-data-[style='abort']/gbd:text-gray-400 group-data-[style='abort']/gbd:dark:text-gray-600"
+>
 	<slot />
 </button>
 

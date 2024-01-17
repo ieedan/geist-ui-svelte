@@ -12,6 +12,7 @@
 	data-style={color}
 	data-ghost={ghost}
 	data-size={size}
-	class="group/gbd flex place-items-center gap-0 justify-center rounded-md w-fit">
+	class="group/gbd flex place-items-center gap-0 justify-center rounded-md w-fit"
+>
 	<slot />
 </div>

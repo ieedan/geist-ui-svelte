@@ -22,7 +22,7 @@
 		"error-light",
 	];
 
-    /* eslint-disable no-useless-escape */
+	/* eslint-disable no-useless-escape */
 	const colorExampleCode = `<script lang="ts">
     import { ButtonGroup, ButtonColor } from "geist-ui-svelte";
 
@@ -48,8 +48,8 @@
 	</ButtonGroup>
 {/each}`;
 
-/* eslint-disable no-useless-escape */
-const ghostExampleCode = `<script lang="ts">
+	/* eslint-disable no-useless-escape */
+	const ghostExampleCode = `<script lang="ts">
     import { ButtonGroup, ButtonColor } from "geist-ui-svelte";
 
     const colors: ButtonColor[] = [
@@ -82,17 +82,18 @@ const ghostExampleCode = `<script lang="ts">
 <Snippet
 	width="650px"
 	type="lite"
-	text={`import { ButtonGroup, ButtonGroupButton } from 'geist-ui-svelte';`} />
+	text={`import { ButtonGroup, ButtonGroupButton } from 'geist-ui-svelte';`}
+/>
 <Spacer h={30} />
 <Text type="h4">Basic</Text>
 <Spacer h={10} />
 <FieldSet>
 	<div class="flex flex-wrap justify-start gap-2">
 		<ButtonGroup>
-            <ButtonGroupButton>Code</ButtonGroupButton>
-            <ButtonGroupButton>Svelte</ButtonGroupButton>
-            <ButtonGroupButton>Group</ButtonGroupButton>
-        </ButtonGroup>
+			<ButtonGroupButton>Code</ButtonGroupButton>
+			<ButtonGroupButton>Svelte</ButtonGroupButton>
+			<ButtonGroupButton>Group</ButtonGroupButton>
+		</ButtonGroup>
 	</div>
 	<div slot="footer">
 		<Details label="Code">
@@ -102,7 +103,8 @@ const ghostExampleCode = `<script lang="ts">
     <ButtonGroupButton>Code</ButtonGroupButton>
     <ButtonGroupButton>Svelte</ButtonGroupButton>
     <ButtonGroupButton>Group</ButtonGroupButton>
-</ButtonGroup>`} />
+</ButtonGroup>`}
+			/>
 		</Details>
 	</div>
 </FieldSet>
@@ -112,10 +114,10 @@ const ghostExampleCode = `<script lang="ts">
 <FieldSet>
 	<div class="flex flex-wrap justify-start gap-2">
 		<ButtonGroup>
-            <ButtonGroupButton disabled>Code</ButtonGroupButton>
-            <ButtonGroupButton>Svelte</ButtonGroupButton>
-            <ButtonGroupButton>Group</ButtonGroupButton>
-        </ButtonGroup>
+			<ButtonGroupButton disabled>Code</ButtonGroupButton>
+			<ButtonGroupButton>Svelte</ButtonGroupButton>
+			<ButtonGroupButton>Group</ButtonGroupButton>
+		</ButtonGroup>
 	</div>
 	<div slot="footer">
 		<Details label="Code">
@@ -125,7 +127,8 @@ const ghostExampleCode = `<script lang="ts">
     <ButtonGroupButton disabled>Code</ButtonGroupButton>
     <ButtonGroupButton>Svelte</ButtonGroupButton>
     <ButtonGroupButton>Group</ButtonGroupButton>
-</ButtonGroup>`} />
+</ButtonGroup>`}
+			/>
 		</Details>
 	</div>
 </FieldSet>
@@ -144,17 +147,15 @@ const ghostExampleCode = `<script lang="ts">
 	</div>
 	<div slot="footer">
 		<Details label="Code">
-			<Code
-				lang="svelte"
-				code={colorExampleCode} />
+			<Code lang="svelte" code={colorExampleCode} />
 		</Details>
 	</div>
 </FieldSet>
 <Spacer h={30} />
 <Text type="h4">Ghost</Text>
-<Spacer h={5}/>
+<Spacer h={5} />
 <Text>
-    Add <code>`ghost`</code> to invert the background of the button.
+	Add <code>`ghost`</code> to invert the background of the button.
 </Text>
 <Spacer h={10} />
 <FieldSet>
@@ -169,10 +170,7 @@ const ghostExampleCode = `<script lang="ts">
 	</div>
 	<div slot="footer">
 		<Details label="Code">
-			<Code
-				lang="svelte"
-                edits={[{number: 19, type: "add"}]}
-				code={ghostExampleCode} />
+			<Code lang="svelte" edits={[{ number: 19, type: "add" }]} code={ghostExampleCode} />
 		</Details>
 	</div>
 </FieldSet>

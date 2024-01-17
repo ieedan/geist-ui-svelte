@@ -101,7 +101,7 @@
 		data-[style='error']:dark:border-red-600 data-[style='error']:dark:bg-red-600
 
 		data-[style='error']:data-[ghost=true]:bg-gray-0 data-[style='error']:data-[ghost=true]:text-red-500 data-[style='error']:data-[ghost=true]:hover:text-gray-0
-		data-[style='error']:data-[ghost=true]:border-red-500 data-[style='error']:data-[ghost=true]:hover:bg-red-500 data-[style='error']:data-[ghost=true]:dark:bg-gray-999 
+		data-[style='error']:data-[ghost=true]:border-red-500 data-[style='error']:data-[ghost=true]:hover:bg-red-500 data-[style='error']:data-[ghost=true]:dark:bg-gray-999
 		data-[style='error']:data-[ghost=true]:hover:dark:bg-red-600 data-[style='error']:data-[ghost=true]:dark:text-red-600 data-[style='error']:data-[ghost=true]:dark:border-red-600
 
 		data-[style='error-light']:bg-red-500 data-[style='error-light']:text-gray-0
@@ -110,7 +110,7 @@
 		data-[style='error-light']:dark:border-red-600 data-[style='error-light']:dark:bg-red-600
 
 		data-[style='error-light']:data-[ghost=true]:bg-gray-0 data-[style='error-light']:data-[ghost=true]:text-red-500 data-[style='error-light']:data-[ghost=true]:hover:text-gray-0
-		data-[style='error-light']:data-[ghost=true]:border-red-500 data-[style='error-light']:data-[ghost=true]:hover:bg-red-500 data-[style='error-light']:data-[ghost=true]:dark:bg-gray-999 
+		data-[style='error-light']:data-[ghost=true]:border-red-500 data-[style='error-light']:data-[ghost=true]:hover:bg-red-500 data-[style='error-light']:data-[ghost=true]:dark:bg-gray-999
 		data-[style='error-light']:data-[ghost=true]:hover:dark:bg-red-600 data-[style='error-light']:data-[ghost=true]:dark:text-red-600 data-[style='error-light']:data-[ghost=true]:dark:border-red-600
 
 		data-[style='abort']:bg-transparent data-[style='abort']:dark:bg-transparent data-[style='abort']:hover:bg-transparent

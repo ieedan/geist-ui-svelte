@@ -1,6 +1,6 @@
 {
 	"name": "geist-ui-svelte",
-	"version": "0.3.18",
+	"version": "0.3.19",
 	"author": {
 		"name": "Aidan Bleser",
 		"url": "https://aidanbleser.com"
@@ -252,6 +252,14 @@
 		"./XIcon.svelte": {
 			"types": "./dist/icons/XIcon.svelte.d.ts",
 			"svelte": "./dist/icons/XIcon.svelte"
+		},
+		"./ButtonGroup.svelte": {
+			"types": "./dist/buttongroup/ButtonGroup.svelte.d.ts",
+			"svelte": "./dist/buttongroup/ButtonGroup.svelte"
+		},
+		"./ButtonGroupButton.svelte": {
+			"types": "./dist/buttongroup/ButtonGroupButton.svelte.d.ts",
+			"svelte": "./dist/buttongroup/ButtonGroupButton.svelte"
 		},
 		"./styles/geist-ui-svelte.css": "./dist/styles/geist-ui-svelte.css"
 	},
