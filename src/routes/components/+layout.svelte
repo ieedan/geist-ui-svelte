@@ -55,6 +55,10 @@
 			slug: "/components/buttondropdown",
 		},
 		{
+			name: "ButtonGroup",
+			slug: "/components/buttongroup",
+		},
+		{
 			name: "Search",
 			slug: "/components/search",
 		},

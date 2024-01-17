@@ -1,20 +1,10 @@
 <script lang="ts">
 	import Loading from "$lib/loading/Loading.svelte";
-	import type { Size } from "$lib/types.js";
+	import type { ButtonColor, Size } from "$lib/types.js";
 	import type { HTMLButtonAttributes } from "svelte/elements";
 
 	export let disabled = false;
-	export let color:
-		| "default"
-		| "secondary"
-		| "success"
-		| "warning"
-		| "error"
-		| "abort"
-		| "secondary-light"
-		| "success-light"
-		| "warning-light"
-		| "error-light" = "default";
+	export let color: ButtonColor = "default";
 	export let loading: boolean = false;
 	export let ghost: boolean = false;
 	export let size: Size = "md";
@@ -111,13 +101,17 @@
 		data-[style='error']:dark:border-red-600 data-[style='error']:dark:bg-red-600
 
 		data-[style='error']:data-[ghost=true]:bg-gray-0 data-[style='error']:data-[ghost=true]:text-red-500 data-[style='error']:data-[ghost=true]:hover:text-gray-0
-		data-[style='error']:data-[ghost=true]:border-red-500 data-[style='error']:data-[ghost=true]:hover:bg-red-500 data-[style='error']:data-[ghost=true]:dark:bg-gray-999 data-[style='error']:data-[ghost=true]:hover:dark:bg-red-600
-		data-[style='error']:data-[ghost=true]:dark:text-red-600 data-[style='error']:data-[ghost=true]:dark:border-red-600
+		data-[style='error']:data-[ghost=true]:border-red-500 data-[style='error']:data-[ghost=true]:hover:bg-red-500 data-[style='error']:data-[ghost=true]:dark:bg-gray-999 
+		data-[style='error']:data-[ghost=true]:hover:dark:bg-red-600 data-[style='error']:data-[ghost=true]:dark:text-red-600 data-[style='error']:data-[ghost=true]:dark:border-red-600
 
 		data-[style='error-light']:bg-red-500 data-[style='error-light']:text-gray-0
 		data-[style='error-light']:border-red-500 data-[style='error-light']:hover:bg-red-400 data-[style='error-light']:hover:border-red-400
 		data-[style='error-light']:hover:dark:bg-red-500 data-[style='error-light']:hover:dark:border-red-500
 		data-[style='error-light']:dark:border-red-600 data-[style='error-light']:dark:bg-red-600
+
+		data-[style='error-light']:data-[ghost=true]:bg-gray-0 data-[style='error-light']:data-[ghost=true]:text-red-500 data-[style='error-light']:data-[ghost=true]:hover:text-gray-0
+		data-[style='error-light']:data-[ghost=true]:border-red-500 data-[style='error-light']:data-[ghost=true]:hover:bg-red-500 data-[style='error-light']:data-[ghost=true]:dark:bg-gray-999 
+		data-[style='error-light']:data-[ghost=true]:hover:dark:bg-red-600 data-[style='error-light']:data-[ghost=true]:dark:text-red-600 data-[style='error-light']:data-[ghost=true]:dark:border-red-600
 
 		data-[style='abort']:bg-transparent data-[style='abort']:dark:bg-transparent data-[style='abort']:hover:bg-transparent
 		data-[style='abort']:hover:dark:bg-transparent data-[style='abort']:border-transparent
@@ -231,6 +225,10 @@
 		data-[style='error-light']:border-red-500 data-[style='error-light']:enabled:hover:bg-red-400 data-[style='error-light']:enabled:hover:border-red-400
 		data-[style='error-light']:enabled:hover:dark:bg-red-500 data-[style='error-light']:enabled:hover:dark:border-red-500
 		data-[style='error-light']:dark:border-red-600 data-[style='error-light']:dark:bg-red-600
+
+		data-[style='error-light']:data-[ghost=true]:bg-gray-0 data-[style='error-light']:data-[ghost=true]:text-red-500 data-[style='error-light']:data-[ghost=true]:enabled:hover:text-gray-0
+		data-[style='error-light']:data-[ghost=true]:border-red-500 data-[style='error-light']:data-[ghost=true]:enabled:hover:bg-red-500 data-[style='error-light']:data-[ghost=true]:dark:bg-gray-999 data-[style='error-light']:data-[ghost=true]:enabled:hover:dark:bg-red-600
+		data-[style='error-light']:data-[ghost=true]:dark:text-red-600 data-[style='error-light']:data-[ghost=true]:dark:border-red-600
 
 		data-[style='abort']:bg-transparent data-[style='abort']:dark:bg-transparent data-[style='abort']:hover:bg-transparent
 		data-[style='abort']:hover:dark:bg-transparent data-[style='abort']:border-transparent

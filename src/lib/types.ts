@@ -36,3 +36,15 @@ export type Column = {
 export type DataItem = {
 	[key: string]: string;
 };
+
+export type ButtonColor =
+	| "default"
+	| "secondary"
+	| "success"
+	| "warning"
+	| "error"
+	| "abort"
+	| "secondary-light"
+	| "success-light"
+	| "warning-light"
+	| "error-light";
