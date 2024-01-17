@@ -126,6 +126,14 @@ export { default as EyeSlashIcon } from "./icons/EyeSlashIcon.svelte";
 
 export { default as XIcon } from "./icons/XIcon.svelte";
 
+export { default as ChevronUpDownIcon } from "./icons/ChevronUpDownIcon.svelte";
+
+export { default as SunIcon } from "./icons/SunIcon.svelte";
+
+export { default as MoonIcon } from "./icons/MoonIcon.svelte";
+
+export { default as DesktopIcon } from "./icons/DesktopIcon.svelte";
+
 /* Types */
 
 export * from "./types";
