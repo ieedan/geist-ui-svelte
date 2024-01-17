@@ -40,8 +40,10 @@
 		data-[size='xl']:min-h-[44px] data-[size='xs']:min-h-[28px] data-[size='lg']:text-lg data-[size='sm']:text-sm
 		data-[size='xl']:text-2xl data-[size='xs']:text-xs
 
-		bg-gray-0 text-gray-999 border-gray-100 hover:bg-gray-100 dark:bg-gray-999
-		dark:border-gray-900 hover:dark:bg-gray-900 dark:text-gray-0
+		data-[style='default']:bg-gray-0 data-[style='default']:text-gray-999 data-[style='default']:border-gray-100
+		data-[style='default']:hover:bg-gray-100 data-[style='default']:dark:bg-gray-999
+		data-[style='default']:dark:border-gray-900 data-[style='default']:hover:dark:bg-gray-900
+		data-[style='default']:dark:text-gray-0
 
 		data-[style='secondary']:bg-gray-999 data-[style='secondary']:text-gray-0 data-[style='secondary']:border-gray-999
 		data-[style='secondary']:hover:bg-gray-0 data-[style='secondary']:hover:text-gray-999
@@ -155,10 +157,13 @@
 
 		disabled:data-[loading=false]:dark:border-gray-900 disabled:data-[loading=false]:dark:bg-gray-925
 		disabled:data-[loading=false]:dark:text-gray-600 disabled:data-[loading=false]:cursor-not-allowed
-		disabled:data-[loading=false]:border-gray-100 disabled:data-[loading=false]:bg-gray-50 disabled:data-[loading=false]:text-gray-300
+		disabled:data-[loading=false]:border-gray-100 disabled:data-[loading=false]:bg-gray-50 
+		disabled:data-[loading=false]:text-gray-300
 
-		bg-gray-0 text-gray-999 border-gray-100 enabled:hover:bg-gray-100 dark:bg-gray-999
-		dark:border-gray-900 enabled:hover:dark:bg-gray-900 dark:text-gray-0
+		data-[style='default']:bg-gray-0 data-[style='default']:text-gray-999 data-[style='default']:border-gray-100
+		data-[style='default']:enabled:hover:bg-gray-100 data-[style='default']:dark:bg-gray-999
+		data-[style='default']:dark:border-gray-900 data-[style='default']:enabled:hover:dark:bg-gray-900
+		data-[style='default']:dark:text-gray-0
 
 		data-[style='secondary']:bg-gray-999 data-[style='secondary']:text-gray-0 data-[style='secondary']:border-gray-999
 		data-[style='secondary']:enabled:hover:bg-gray-0 data-[style='secondary']:enabled:hover:text-gray-999
@@ -184,14 +189,30 @@
 		data-[style='success']:bg-blue-600 data-[style='success']:text-gray-0 data-[style='success']:border-blue-600
 		data-[style='success']:enabled:hover:bg-gray-0 data-[style='success']:enabled:hover:text-blue-600 data-[style='success']:enabled:hover:dark:bg-gray-999
 
-		data-[style='success']:data-[ghost=true]:bg-gray-0 data-[style='success']:data-[ghost=true]:text-blue-600 data-[style='success']data-[ghost=true]::border-blue-600
-		data-[style='success']:enabled:hover:data-[ghost=true]:bg-blue-600 data-[style='success']:enabled:hover:data-[ghost=true]:text-gray-0 data-[style='success']:data-[ghost=true]:dark:bg-gray-999
+		data-[style='success']:data-[ghost=true]:bg-gray-0
+		data-[style='success']:data-[ghost=true]:text-blue-600
+		data-[style='success']data-[ghost=true]::border-blue-600
+		data-[style='success']:enabled:hover:data-[ghost=true]:bg-blue-600
+		data-[style='success']:enabled:hover:data-[ghost=true]:text-gray-0
+		data-[style='success']:data-[ghost=true]:dark:text-blue-600
+		data-[style='success']data-[ghost=true]:dark:border-blue-600
+		data-[style='success']:enabled:hover:data-[ghost=true]:dark:bg-blue-600
+		data-[style='success']:enabled:hover:data-[ghost=true]:dark:text-gray-0
+		data-[style='success']:data-[ghost=true]:dark:bg-gray-999
 
 		data-[style='success-light']:bg-blue-600 data-[style='success-light']:text-gray-0 data-[style='success-light']:border-blue-600
 		data-[style='success-light']:enabled:hover:bg-blue-500 data-[style='success-light']:enabled:hover:border-blue-500
 
-		data-[style='success-light']:data-[ghost=true]:bg-gray-0 data-[style='success-light']:data-[ghost=true]:text-blue-600 data-[style='success-light']data-[ghost=true]::border-blue-600
-		data-[style='success-light']:enabled:hover:data-[ghost=true]:bg-blue-600 data-[style='success-light']:enabled:hover:data-[ghost=true]:text-gray-0 data-[style='success-light']:data-[ghost=true]:dark:bg-gray-999
+		data-[style='success-light']:data-[ghost=true]:bg-gray-0
+		data-[style='success-light']:data-[ghost=true]:text-blue-600
+		data-[style='success-light']data-[ghost=true]::border-blue-600
+		data-[style='success-light']:enabled:hover:data-[ghost=true]:bg-blue-600
+		data-[style='success-light']:enabled:hover:data-[ghost=true]:text-gray-0
+		data-[style='success-light']:data-[ghost=true]:dark:text-blue-600
+		data-[style='success-light']data-[ghost=true]:dark:border-blue-600
+		data-[style='success-light']:enabled:hover:data-[ghost=true]:dark:bg-blue-600
+		data-[style='success-light']:enabled:hover:data-[ghost=true]:dark:text-gray-0
+		data-[style='success-light']:data-[ghost=true]:dark:bg-gray-999
 
 		data-[style='warning']:bg-orange-300 data-[style='warning']:text-gray-0 data-[style='warning']:enabled:hover:bg-gray-0
 		data-[style='warning']:border-orange-300 data-[style='warning']:enabled:hover:text-orange-300

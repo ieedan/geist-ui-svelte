@@ -1,6 +1,6 @@
 {
 	"name": "geist-ui-svelte",
-	"version": "0.3.19",
+	"version": "0.3.20",
 	"author": {
 		"name": "Aidan Bleser",
 		"url": "https://aidanbleser.com"
@@ -279,11 +279,9 @@
 		"@types/eslint": "8.56.2",
 		"@typescript-eslint/eslint-plugin": "^6.18.1",
 		"@typescript-eslint/parser": "^6.18.1",
-		"autoprefixer": "^10.4.16",
 		"eslint": "^8.56.0",
 		"eslint-config-prettier": "^9.1.0",
 		"eslint-plugin-svelte": "^2.35.1",
-		"postcss": "^8.4.33",
 		"prettier": "^3.2.2",
 		"prettier-plugin-svelte": "^3.1.2",
 		"publint": "^0.1.9",
@@ -303,6 +301,8 @@
 		"@vercel/speed-insights": "^1.0.3",
 		"mode-watcher": "^0.1.2",
 		"shikiji": "^0.9.19",
-		"tailwindcss": "3.4.0"
+		"tailwindcss": "^3.4.1",
+		"autoprefixer": "^10.4.16",
+		"postcss": "^8.4.33"
 	}
 }

@@ -9,7 +9,8 @@
 	data-style={color}
 	class="border block px-2 py-2 rounded-md border-gray-100 dark:border-gray-900 text-gray-600 dark:text-gray-400
     
-    data-[style='success']:border-blue-500 data-[style='success']:text-blue-500
+    data-[style='success']:border-blue-600 data-[style='success']:text-blue-600
+	data-[style='success']:dark:border-blue-600 data-[style='success']:dark:text-blue-600
     
     data-[style='warning']:border-orange-300 data-[style='warning']:text-orange-300
     data-[style='warning']:dark:border-orange-400 data-[style='warning']:dark:text-orange-400

@@ -37,6 +37,7 @@
 	data-color={type}
 	class="flex justify-between place-items-start font-serif border px-3 py-[10px] rounded-md
 	border-gray-999 dark:border-gray-0 data-[color='success']:border-blue-600
+	data-[color='success']:dark:border-blue-600
 	data-[color='warning']:border-orange-300 transition-all
 	data-[color='secondary']:border-gray-300 data-[color='secondary']:dark:border-gray-700
 	data-[color='warning']:dark:border-orange-400 data-[color='error']:border-red-500
@@ -55,7 +56,8 @@
 					data-style={type}
 					class="text-gray-999 dark:text-gray-0 font-serif text-sm
 				data-[style='secondary']:text-gray-300 data-[style='secondary']:dark:text-gray-700
-				data-[style='success']:text-blue-600 data-[style='dark']:dark:text-gray-999
+				data-[style='success']:text-blue-600 data-[style='success']:dark:text-blue-600
+				data-[style='dark']:dark:text-gray-999
 				data-[style='warning']:text-orange-300 data-[style='warning']:dark:text-orange-400
 				data-[style='error']:text-red-500 data-[style='error']:dark:text-red-600
 				data-[style='dark']:text-gray-0 data-[style='subtle']:dark:text-gray-100

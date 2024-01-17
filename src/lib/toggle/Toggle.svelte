@@ -10,7 +10,7 @@
 		dispatch("change", { checked });
 	};
 
-	export let color: "default" | "secondary" | "success" | "warning" | "error" = "default";
+	export let color: "secondary" | "success" | "warning" | "error" = "success";
 </script>
 
 <button
