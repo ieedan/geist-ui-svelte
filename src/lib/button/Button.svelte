@@ -157,11 +157,12 @@
 
 		disabled:data-[loading=false]:dark:border-gray-900 disabled:data-[loading=false]:dark:bg-gray-925
 		disabled:data-[loading=false]:dark:text-gray-600 disabled:data-[loading=false]:cursor-not-allowed
-		disabled:data-[loading=false]:border-gray-100 disabled:data-[loading=false]:bg-gray-50 disabled:data-[loading=false]:text-gray-300
+		disabled:data-[loading=false]:border-gray-100 disabled:data-[loading=false]:bg-gray-50 
+		disabled:data-[loading=false]:text-gray-300
 
 		data-[style='default']:bg-gray-0 data-[style='default']:text-gray-999 data-[style='default']:border-gray-100
-		data-[style='default']:hover:bg-gray-100 data-[style='default']:dark:bg-gray-999
-		data-[style='default']:dark:border-gray-900 data-[style='default']:hover:dark:bg-gray-900
+		data-[style='default']:enabled:hover:bg-gray-100 data-[style='default']:dark:bg-gray-999
+		data-[style='default']:dark:border-gray-900 data-[style='default']:enabled:hover:dark:bg-gray-900
 		data-[style='default']:dark:text-gray-0
 
 		data-[style='secondary']:bg-gray-999 data-[style='secondary']:text-gray-0 data-[style='secondary']:border-gray-999
