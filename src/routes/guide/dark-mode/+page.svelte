@@ -14,8 +14,7 @@
 	/* eslint-disable no-useless-escape */
 	const darkModeExample = `<script lang="ts">
     import { setMode, userPrefersMode } from "mode-watcher";
-    import Select from "$lib/select/Select.svelte";
-	import Option from "$lib/select/Option.svelte";
+    import { Select, Option } from "geist-ui-svelte";
 
     $: currentPreference = $userPrefersMode;
 <\/script>
