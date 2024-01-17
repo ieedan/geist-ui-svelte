@@ -2,23 +2,23 @@
 	import Button from "$lib/button/Button.svelte";
 	import MoonIcon from "$lib/icons/MoonIcon.svelte";
 	import SunIcon from "$lib/icons/SunIcon.svelte";
-    import { mode, setMode } from "mode-watcher";
+	import { mode, setMode } from "mode-watcher";
 
-    $: currentMode = $mode;
+	$: currentMode = $mode;
 
-    const toggleMode = () => {
-        if (currentMode == 'dark') {
-            setMode('light');
-        } else {
-            setMode('dark');
-        }
-    }
+	const toggleMode = () => {
+		if (currentMode == "dark") {
+			setMode("light");
+		} else {
+			setMode("dark");
+		}
+	};
 </script>
 
 <Button square size="md" on:click={toggleMode}>
-    {#if currentMode == "light"}
-        <MoonIcon size={22}/>
-    {:else if currentMode == "dark"}
-        <SunIcon size={22}/>
-    {/if}
+	{#if currentMode == "light"}
+		<MoonIcon size={22} />
+	{:else if currentMode == "dark"}
+		<SunIcon size={22} />
+	{/if}
 </Button>

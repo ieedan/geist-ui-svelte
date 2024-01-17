@@ -102,7 +102,7 @@
 <main class="bg-gray-0 dark:bg-gray-999 min-h-svh">
 	<Header sticky>
 		<div
-			class="flex justify-between place-items-center md:grid md:grid-cols-3 w-full 
+			class="flex justify-between place-items-center md:grid md:grid-cols-3 w-full
 			px-6 max-w-5xl py-2 md:place-items-stretch md:justify-start"
 		>
 			<div class="col-start-1 flex place-items-center justify-start">
@@ -133,10 +133,15 @@
 					<CommandIcon size={16} />
 					<Text color="secondary">K</Text>
 				</div>
-				<Button href="https://github.com/ieedan/geist-ui-svelte" target="_blank" square size="md">
+				<Button
+					href="https://github.com/ieedan/geist-ui-svelte"
+					target="_blank"
+					square
+					size="md"
+				>
 					<GithubIcon size={16} />
 				</Button>
-				<LightSwitch/>
+				<LightSwitch />
 			</div>
 			<div class="flex place-items-center md:hidden col-start-2">
 				<Button color="abort" on:click={() => (menuVisible = true)}>
@@ -179,10 +184,15 @@
 			>Components
 		</a>
 		<div class="flex place-items-center py-2 gap-2 px-6">
-			<Button href="https://github.com/ieedan/geist-ui-svelte" target="_blank" square size="md">
-				<GithubIcon size={16}/>
+			<Button
+				href="https://github.com/ieedan/geist-ui-svelte"
+				target="_blank"
+				square
+				size="md"
+			>
+				<GithubIcon size={16} />
 			</Button>
-			<LightSwitch/>
+			<LightSwitch />
 		</div>
 	</div>
 </Page>

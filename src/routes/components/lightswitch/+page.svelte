@@ -32,7 +32,8 @@
 			<Code
 				lang="svelte"
 				code={`<LightSwitch />
-<!-- Yep that's it! -->`} />
+<!-- Yep that's it! -->`}
+			/>
 		</Details>
 	</div>
 </FieldSet>

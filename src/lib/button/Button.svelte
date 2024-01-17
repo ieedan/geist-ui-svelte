@@ -168,7 +168,7 @@
 
 		disabled:data-[loading=false]:dark:border-gray-900 disabled:data-[loading=false]:dark:bg-gray-925
 		disabled:data-[loading=false]:dark:text-gray-600 disabled:data-[loading=false]:cursor-not-allowed
-		disabled:data-[loading=false]:border-gray-100 disabled:data-[loading=false]:bg-gray-50 
+		disabled:data-[loading=false]:border-gray-100 disabled:data-[loading=false]:bg-gray-50
 		disabled:data-[loading=false]:text-gray-300
 
 		data-[style='default']:bg-gray-0 data-[style='default']:text-gray-999 data-[style='default']:border-gray-100

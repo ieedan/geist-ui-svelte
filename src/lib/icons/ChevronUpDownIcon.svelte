@@ -12,7 +12,8 @@
 	height={size}
 	viewBox="0 0 350 350"
 	fill="none"
-	xmlns="http://www.w3.org/2000/svg">
+	xmlns="http://www.w3.org/2000/svg"
+>
 	<rect
 		x="175.213"
 		y="28"
@@ -20,7 +21,8 @@
 		height="25"
 		rx="12.5"
 		transform="rotate(45 175.213 28)"
-		fill="currentColor" />
+		fill="currentColor"
+	/>
 	<rect
 		x="69"
 		y="134.066"
@@ -28,7 +30,8 @@
 		height="25"
 		rx="12.5"
 		transform="rotate(-45 69 134.066)"
-		fill="currentColor" />
+		fill="currentColor"
+	/>
 	<rect
 		x="175.066"
 		y="321.487"
@@ -36,7 +39,8 @@
 		height="25"
 		rx="12.5"
 		transform="rotate(-135 175.066 321.487)"
-		fill="currentColor" />
+		fill="currentColor"
+	/>
 	<rect
 		x="281.279"
 		y="215.421"
@@ -44,5 +48,6 @@
 		height="25"
 		rx="12.5"
 		transform="rotate(135 281.279 215.421)"
-		fill="currentColor" />
+		fill="currentColor"
+	/>
 </svg>
