@@ -13,4 +13,5 @@
   data-[type='success']:bg-blue-600 data-[type='success']:dark:bg-blue-600 data-[type='error']:dark:bg-red-600
 	inline-block data-[type='secondary']:dark:bg-gray-200
   data-[type='warning']:bg-orange-300 data-[type='go']:bg-green-600 data-[type='go']:dark:bg-green-700
-  data-[type='warning']:dark:bg-orange-400 data-[type='error']:bg-red-500"></span>
+  data-[type='warning']:dark:bg-orange-400 data-[type='error']:bg-red-500"
+></span>

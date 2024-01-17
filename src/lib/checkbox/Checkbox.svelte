@@ -30,8 +30,8 @@
 		aria-checked={checked}
 		data-color={color}
 		{disabled}
-		class="flex place-items-center justify-center border aria-[checked=false]:border-gray-200 dark:aria-[checked=false]:border-gray-800 rounded-md size-4 
-		data-[color='default']:aria-checked:border-gray-999 data-[color='default']:dark:aria-checked:border-gray-0 
+		class="flex place-items-center justify-center border aria-[checked=false]:border-gray-200 dark:aria-[checked=false]:border-gray-800 rounded-md size-4
+		data-[color='default']:aria-checked:border-gray-999 data-[color='default']:dark:aria-checked:border-gray-0
 		data-[color='success']:aria-checked:border-blue-600 data-[color='success']:aria-checked:dark:border-blue-600
         data-[color='warning']:aria-checked:border-orange-300 data-[color='secondary']:aria-checked:border-gray-200
         data-[color='secondary']:dark:aria-checked:border-gray-800 data-[ghost=true]:dark:aria-checked:border-gray-999
@@ -52,7 +52,7 @@
 			<div
 				class="absolute size-6 rounded-lg border-2 left-1/2 top-1/2 transition-all
 			-translate-y-1/2 -translate-x-1/2 group-focus:opacity-100 opacity-0
-			group-data-[color='success']:border-blue-600 group-data-[color='success']:dark:border-blue-600 
+			group-data-[color='success']:border-blue-600 group-data-[color='success']:dark:border-blue-600
 			dark:border-gray-0 border-gray-999
 			group-data-[color='warning']:border-orange-300 dark:group-data-[color='warning']:border-orange-400
 			group-data-[color='error']:border-red-500 dark:group-data-[color='error']:border-red-600
