@@ -41,7 +41,7 @@
 <Text type="h4">Colors</Text>
 <Spacer h={10} />
 <FieldSet>
-	<div class="flex flex-col gap-2 justify-start">
+	<div class="flex flex-wrap gap-2 justify-start">
 		<Badge size="xs">Default</Badge>
 		<Badge size="xs" type="success">Success</Badge>
 		<Badge size="xs" type="warning">Warning</Badge>
@@ -57,6 +57,30 @@
 <Badge size="xs" type="warning">Warning</Badge>
 <Badge size="xs" type="error">Error</Badge>
 <Badge size="xs" type="secondary">Secondary</Badge>`}
+			/>
+		</Details>
+	</div>
+</FieldSet>
+<Spacer h={30} />
+<Text type="h4">Ghost</Text>
+<Spacer h={10} />
+<FieldSet>
+	<div class="flex flex-wrap gap-2 justify-start">
+		<Badge size="xs" ghost>Default</Badge>
+		<Badge size="xs" type="success" ghost>Success</Badge>
+		<Badge size="xs" type="warning" ghost>Warning</Badge>
+		<Badge size="xs" type="error" ghost>Error</Badge>
+		<Badge size="xs" type="secondary" ghost>Secondary</Badge>
+	</div>
+	<div slot="footer">
+		<Details label="Code">
+			<Code
+				lang="svelte"
+				code={`<Badge size="xs" ghost>Default</Badge>
+<Badge size="xs" type="success" ghost>Success</Badge>
+<Badge size="xs" type="warning" ghost>Warning</Badge>
+<Badge size="xs" type="error" ghost>Error</Badge>
+<Badge size="xs" type="secondary" ghost>Secondary</Badge>`}
 			/>
 		</Details>
 	</div>

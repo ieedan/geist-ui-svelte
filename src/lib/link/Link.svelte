@@ -11,8 +11,10 @@
 	data-underline={underline}
 	data-color={color}
 	data-block={block}
-	class="data-[underline=true]:hover:underline transition-all text-gray-999 w-fit data-[block=true]:text-blue-500 geist-ui-link
-    dark:text-gray-0 data-[color=true]:text-blue-500 inline-flex place-items-center rounded-md px-[1px] bg-opacity-5"
+	class="data-[underline=true]:hover:underline transition-all text-gray-999 w-fit 
+	data-[block=true]:text-blue-600 data-[block=true]:dark:text-blue-600 geist-ui-link dark:text-gray-0 
+	data-[color=true]:text-blue-600 data-[color=true]:dark:text-blue-600 inline-flex place-items-center 
+	rounded-md px-[1px] bg-opacity-5"
 >
 	<slot />
 </a>
