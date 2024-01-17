@@ -9,9 +9,11 @@
 	export let ghost: boolean = false;
 	export let size: Size = "md";
 	export let type: HTMLButtonAttributes["type"] = "button";
-	export let proportional = false;
 	export let href: string | undefined = undefined;
 	export let width: string = "fit-content";
+	export let square: boolean = false;
+	export let proportional = false;
+	let actualProportional = square ? false : proportional;
 </script>
 
 {#if href != undefined}
@@ -31,14 +33,19 @@
 		data-size={size}
 		data-ghost={ghost}
 		data-loading={loading}
-		data-square={proportional}
+		data-proportional={actualProportional}
+		data-square={square}
 		style="width: {width};"
-		class="transition-all rounded-md border px-4 data-[square=true]:p-1 group relative
-		flex place-items-center text-nowrap whitespace-nowrap
+		class="transition-all rounded-md border px-4 data-[proportional=true]:p-1 group relative
+		flex place-items-center justify-center text-nowrap whitespace-nowrap data-[square=true]:p-0
 
 		data-[size='lg']:min-h-[40px] data-[size='md']:min-h-[36px] data-[size='sm']:min-h-[32px]
 		data-[size='xl']:min-h-[44px] data-[size='xs']:min-h-[28px] data-[size='lg']:text-lg data-[size='sm']:text-sm
 		data-[size='xl']:text-2xl data-[size='xs']:text-xs
+
+		data-[square=true]:data-[size='lg']:min-w-[40px] data-[square=true]:data-[size='md']:min-w-[36px]
+		data-[square=true]:data-[size='sm']:min-w-[32px] data-[square=true]:data-[size='xs']:min-w-[28px]
+		data-[square=true]:data-[size='xl']:min-w-[44px]
 
 		data-[style='default']:bg-gray-0 data-[style='default']:text-gray-999 data-[style='default']:border-gray-100
 		data-[style='default']:hover:bg-gray-100 data-[style='default']:dark:bg-gray-999
@@ -147,17 +154,22 @@
 		data-size={size}
 		data-ghost={ghost}
 		data-loading={loading}
-		data-square={proportional}
+		data-proportional={actualProportional}
+		data-square={square}
 		style="width: {width};"
-		class="transition-all rounded-md border px-4 data-[square=true]:p-1 group relative
+		class="transition-all rounded-md border px-4 data-[proportional=true]:p-1 group relative data-[square=true]:p-0
 
 		data-[size='lg']:min-h-[40px] data-[size='md']:min-h-[36px] data-[size='sm']:min-h-[32px]
 		data-[size='xl']:min-h-[44px] data-[size='xs']:min-h-[28px] data-[size='lg']:text-lg data-[size='sm']:text-sm
 		data-[size='xl']:text-2xl data-[size='xs']:text-xs
 
+		data-[square=true]:data-[size='lg']:min-w-[40px] data-[square=true]:data-[size='md']:min-w-[36px]
+		data-[square=true]:data-[size='sm']:min-w-[32px] data-[square=true]:data-[size='xs']:min-w-[28px]
+		data-[square=true]:data-[size='xl']:min-w-[44px]
+
 		disabled:data-[loading=false]:dark:border-gray-900 disabled:data-[loading=false]:dark:bg-gray-925
 		disabled:data-[loading=false]:dark:text-gray-600 disabled:data-[loading=false]:cursor-not-allowed
-		disabled:data-[loading=false]:border-gray-100 disabled:data-[loading=false]:bg-gray-50 
+		disabled:data-[loading=false]:border-gray-100 disabled:data-[loading=false]:bg-gray-50
 		disabled:data-[loading=false]:text-gray-300
 
 		data-[style='default']:bg-gray-0 data-[style='default']:text-gray-999 data-[style='default']:border-gray-100

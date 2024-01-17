@@ -92,6 +92,8 @@ export { default as Key } from "./key/Key.svelte";
 
 export { default as Loading } from "./loading/Loading.svelte";
 
+export { default as LightSwitch } from "./lightswitch/LightSwitch.svelte";
+
 /* Code */
 
 export { default as Code } from "./code/Code.svelte";
@@ -125,6 +127,14 @@ export { default as EyeIcon } from "./icons/EyeIcon.svelte";
 export { default as EyeSlashIcon } from "./icons/EyeSlashIcon.svelte";
 
 export { default as XIcon } from "./icons/XIcon.svelte";
+
+export { default as ChevronUpDownIcon } from "./icons/ChevronUpDownIcon.svelte";
+
+export { default as SunIcon } from "./icons/SunIcon.svelte";
+
+export { default as MoonIcon } from "./icons/MoonIcon.svelte";
+
+export { default as DesktopIcon } from "./icons/DesktopIcon.svelte";
 
 /* Types */
 

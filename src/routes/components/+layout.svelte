@@ -165,6 +165,10 @@
 			name: "Loading",
 			slug: "/components/loading",
 		},
+		{
+			name: "LightSwitch",
+			slug: "/components/lightswitch",
+		},
 		"CODE",
 		{
 			name: "Code",

@@ -25,6 +25,10 @@
 	import EyeIcon from "$lib/icons/EyeIcon.svelte";
 	import EyeSlash from "$lib/icons/EyeSlashIcon.svelte";
 	import XIcon from "$lib/icons/XIcon.svelte";
+	import ChevronUpDownIcon from "$lib/icons/ChevronUpDownIcon.svelte";
+	import SunIcon from "$lib/icons/SunIcon.svelte";
+	import MoonIcon from "$lib/icons/MoonIcon.svelte";
+	import DesktopIcon from "$lib/icons/DesktopIcon.svelte";
 
 	type Icon = {
 		name: string;
@@ -87,6 +91,22 @@
 		{
 			name: "X",
 			component: XIcon,
+		},
+		{
+			name: "ChevronUpDown",
+			component: ChevronUpDownIcon,
+		},
+		{
+			name: "Sun",
+			component: SunIcon,
+		},
+		{
+			name: "Moon",
+			component: MoonIcon,
+		},
+		{
+			name: "Desktop",
+			component: DesktopIcon,
 		},
 	];
 

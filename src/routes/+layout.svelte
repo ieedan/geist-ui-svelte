@@ -8,8 +8,6 @@
 	import Button from "$lib/button/Button.svelte";
 	import MenuIcon from "$lib/icons/MenuIcon.svelte";
 	import Page from "$lib/page/Page.svelte";
-	import Select from "$lib/select/Select.svelte";
-	import Option from "$lib/select/Option.svelte";
 	import GithubIcon from "$lib/icons/GithubIcon.svelte";
 	import favicon from "$lib/assets/favicon.svg";
 	import Modal from "$lib/modal/Modal.svelte";
@@ -18,14 +16,13 @@
 	import Spacer from "$lib/spacer/Spacer.svelte";
 	import CommandIcon from "$lib/icons/CommandIcon.svelte";
 	import { goto } from "$app/navigation";
-	import { ModeWatcher, setMode, userPrefersMode } from "mode-watcher";
+	import { ModeWatcher } from "mode-watcher";
+	import LightSwitch from "$lib/lightswitch/LightSwitch.svelte";
 
 	type Component = {
 		slug: string;
 		name: string;
 	};
-
-	$: currentPreference = $userPrefersMode;
 
 	const components: Component[] = process.env.COMPONENTS;
 
@@ -105,7 +102,8 @@
 <main class="bg-gray-0 dark:bg-gray-999 min-h-svh">
 	<Header sticky>
 		<div
-			class="flex justify-between place-items-center md:grid md:grid-cols-3 w-full px-6 max-w-5xl py-2 md:place-items-stretch md:justify-start"
+			class="flex justify-between place-items-center md:grid md:grid-cols-3 w-full
+			px-6 max-w-5xl py-2 md:place-items-stretch md:justify-start"
 		>
 			<div class="col-start-1 flex place-items-center justify-start">
 				<a href="/" class="flex place-items-center gap-2">
@@ -135,22 +133,15 @@
 					<CommandIcon size={16} />
 					<Text color="secondary">K</Text>
 				</div>
-				<Button href="https://github.com/ieedan/geist-ui-svelte" target="_blank">
+				<Button
+					href="https://github.com/ieedan/geist-ui-svelte"
+					target="_blank"
+					square
+					size="md"
+				>
 					<GithubIcon size={16} />
 				</Button>
-				<Select
-					bind:value={currentPreference}
-					on:change={(e) => {
-						setMode(e.detail.value);
-					}}
-					allowNone
-					noIcon
-					width="125px"
-				>
-					<Option value="light">☀️ Light</Option>
-					<Option value="dark">🌙 Dark</Option>
-					<Option value="system">🖥️ System</Option>
-				</Select>
+				<LightSwitch />
 			</div>
 			<div class="flex place-items-center md:hidden col-start-2">
 				<Button color="abort" on:click={() => (menuVisible = true)}>
@@ -193,22 +184,15 @@
 			>Components
 		</a>
 		<div class="flex place-items-center py-2 gap-2 px-6">
-			<Button href="https://github.com/ieedan/geist-ui-svelte" target="_blank">
+			<Button
+				href="https://github.com/ieedan/geist-ui-svelte"
+				target="_blank"
+				square
+				size="md"
+			>
 				<GithubIcon size={16} />
 			</Button>
-			<Select
-				bind:value={currentPreference}
-				on:change={(e) => {
-					setMode(e.detail.value);
-				}}
-				allowNone
-				noIcon
-				width="125px"
-			>
-				<Option value="light">☀️ Light</Option>
-				<Option value="dark">🌙 Dark</Option>
-				<Option value="system">🖥️ System</Option>
-			</Select>
+			<LightSwitch />
 		</div>
 	</div>
 </Page>
