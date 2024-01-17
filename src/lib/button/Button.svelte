@@ -12,7 +12,8 @@
 	export let href: string | undefined = undefined;
 	export let width: string = "fit-content";
 	export let square: boolean = false;
-	export let proportional = square ? false : false;
+	export let proportional = false;
+	let actualProportional = square ? false : proportional;
 </script>
 
 {#if href != undefined}
@@ -32,7 +33,7 @@
 		data-size={size}
 		data-ghost={ghost}
 		data-loading={loading}
-		data-proportional={proportional}
+		data-proportional={actualProportional}
 		data-square={square}
 		style="width: {width};"
 		class="transition-all rounded-md border px-4 data-[proportional=true]:p-1 group relative
@@ -153,7 +154,7 @@
 		data-size={size}
 		data-ghost={ghost}
 		data-loading={loading}
-		data-proportional={proportional}
+		data-proportional={actualProportional}
 		data-square={square}
 		style="width: {width};"
 		class="transition-all rounded-md border px-4 data-[proportional=true]:p-1 group relative data-[square=true]:p-0
