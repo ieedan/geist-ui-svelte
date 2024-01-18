@@ -30,6 +30,24 @@
 	</div>
 </FieldSet>
 <Spacer h={30} />
+<Text type="h4">Clearable</Text>
+<Spacer h={10} />
+<FieldSet>
+	<div class="flex flex-col justify-start">
+		<Search placeholder="Find what you need here" clearable value={"A better UI library"} />
+	</div>
+	<div slot="footer">
+		<Details label="Code">
+			<Code lang="svelte"
+			edits={[{number: 4, type: "add"}]} 
+			code={`<Search 
+	placeholder="Find what you need here" 
+	value={"A better UI library"} 
+	clearable/>`} />
+		</Details>
+	</div>
+</FieldSet>
+<Spacer h={30} />
 <Text type="h4">Debounce</Text>
 <Spacer h={5} />
 <Text>
@@ -44,8 +62,7 @@
 			placeholder="Type something here"
 			on:input={() => (requestMade = false)}
 			debounce={1000}
-			on:debounce={() => (requestMade = true)}
-		/>
+			on:debounce={() => (requestMade = true)} />
 		{#if requestMade}
 			Finished
 		{/if}
@@ -62,8 +79,7 @@
 	on:debounce={() => (requestMade = true)} />
 {#if requestMade}
 	Finished
-{/if}`}
-			/>
+{/if}`} />
 		</Details>
 	</div>
 </FieldSet>
@@ -82,8 +98,7 @@
 			on:input={() => (loading = true)}
 			debounce={1000}
 			on:debounce={() => (loading = false)}
-			bind:loading
-		/>
+			bind:loading />
 		{#if !loading}
 			Results
 		{/if}
@@ -101,8 +116,7 @@
 	bind:loading={loading}/>
 {#if !loading}
 	Results
-{/if}`}
-			/>
+{/if}`} />
 		</Details>
 	</div>
 </FieldSet>
