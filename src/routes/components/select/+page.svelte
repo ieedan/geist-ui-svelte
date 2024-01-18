@@ -271,20 +271,21 @@
 </FieldSet>
 <Spacer h={30} />
 <Text type="h4">Custom Icon</Text>
-<Spacer h={5}/>
+<Spacer h={5} />
 <Text>
-	Add a custom icon by adding your icon to the <code>`icon`</code> slot. You can also disable the icon rotation by setting <code>`iconRotation`</code> to false.
+	Add a custom icon by adding your icon to the <code>`icon`</code> slot. You can also disable the
+	icon rotation by setting <code>`iconRotation`</code> to false.
 </Text>
 <Spacer h={10} />
 <FieldSet>
 	<div class="flex flex-col gap-2">
 		<Select>
-			<ChevronUpDownIcon slot="icon" size={14}/>
+			<ChevronUpDownIcon slot="icon" size={14} />
 			<Option value={1}>Option 1</Option>
 			<Option value={2}>Option 2</Option>
 		</Select>
 		<Select iconRotation={false}>
-			<ChevronUpDownIcon slot="icon" size={14}/>
+			<ChevronUpDownIcon slot="icon" size={14} />
 			<Option value={1}>Option 1</Option>
 			<Option value={2}>Option 2</Option>
 		</Select>
@@ -293,7 +294,10 @@
 		<Details label="Code">
 			<Code
 				lang="svelte"
-				edits={[{number: 2, type: "add"}, {number: 6, type: "add"}]}
+				edits={[
+					{ number: 2, type: "add" },
+					{ number: 6, type: "add" },
+				]}
 				code={`<Select>
 	<ChevronUpDownIcon slot="icon" size={14}/>
 	<Option value={1}>Option 1</Option>

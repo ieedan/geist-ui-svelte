@@ -38,12 +38,14 @@
 	</div>
 	<div slot="footer">
 		<Details label="Code">
-			<Code lang="svelte"
-			edits={[{number: 4, type: "add"}]} 
-			code={`<Search 
+			<Code
+				lang="svelte"
+				edits={[{ number: 4, type: "add" }]}
+				code={`<Search 
 	placeholder="Find what you need here" 
 	value={"A better UI library"} 
-	clearable/>`} />
+	clearable/>`}
+			/>
 		</Details>
 	</div>
 </FieldSet>
@@ -62,7 +64,8 @@
 			placeholder="Type something here"
 			on:input={() => (requestMade = false)}
 			debounce={1000}
-			on:debounce={() => (requestMade = true)} />
+			on:debounce={() => (requestMade = true)}
+		/>
 		{#if requestMade}
 			Finished
 		{/if}
@@ -79,7 +82,8 @@
 	on:debounce={() => (requestMade = true)} />
 {#if requestMade}
 	Finished
-{/if}`} />
+{/if}`}
+			/>
 		</Details>
 	</div>
 </FieldSet>
@@ -98,7 +102,8 @@
 			on:input={() => (loading = true)}
 			debounce={1000}
 			on:debounce={() => (loading = false)}
-			bind:loading />
+			bind:loading
+		/>
 		{#if !loading}
 			Results
 		{/if}
@@ -116,7 +121,8 @@
 	bind:loading={loading}/>
 {#if !loading}
 	Results
-{/if}`} />
+{/if}`}
+			/>
 		</Details>
 	</div>
 </FieldSet>
