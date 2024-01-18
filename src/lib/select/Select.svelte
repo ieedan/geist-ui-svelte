@@ -23,6 +23,7 @@
 	export let allowXSS: boolean = false;
 	export let noIcon: boolean = false;
 	export let shadow: boolean = false;
+	export let iconRotation: boolean = true;
 
 	const toggleShow = () => {
 		show = !show;
@@ -182,9 +183,10 @@
 	{#if !noIcon}
 		<div
 			data-show={show}
-			class="data-[show=true]:rotate-180 transition-all dark:text-gray-700 text-gray-300"
+			data-rotate={iconRotation}
+			class="data-[rotate=true]:data-[show=true]:rotate-180 transition-all dark:text-gray-700 text-gray-300 flex place-items-center justify-center"
 		>
-			<ChevronIcon rotation="90deg" size={16} />
+			<slot name="icon"><ChevronIcon rotation="90deg" size={16} /></slot>
 		</div>
 	{/if}
 </button>
