@@ -23,6 +23,7 @@
 	export let allowXSS: boolean = false;
 	export let noIcon: boolean = false;
 	export let shadow: boolean = false;
+	export let iconRotation: boolean = true;
 
 	const toggleShow = () => {
 		show = !show;
@@ -156,8 +157,7 @@
 <svelte:window
 	on:resize={() => {
 		dropDownRef.style.width = buttonRef.offsetWidth + "px";
-	}}
-/>
+	}} />
 
 <button
 	on:click={toggleShow}
@@ -168,8 +168,7 @@
 	class="flex justify-between h-9 place-items-center w-full bg-gray-0 dark:bg-gray-999 py-1 pr-1 border focus:border-gray-200 focus:dark:border-gray-800
   disabled:bg-gray-50 dark:disabled:bg-gray-925 disabled:hover:cursor-not-allowed transition-all enabled:hover:border-gray-999
   border-gray-100 dark:border-gray-900 rounded-md data-[place-holder=true]:text-gray-300 enabled:hover:dark:border-gray-0
-  data-[place-holder=true]:dark:text-gray-700 disabled:text-gray-300 dark:disabled:text-gray-700"
->
+  data-[place-holder=true]:dark:text-gray-700 disabled:text-gray-300 dark:disabled:text-gray-700">
 	<div class="px-2">
 		{#if value == undefined}
 			<span>{placeholder}</span>
@@ -182,9 +181,9 @@
 	{#if !noIcon}
 		<div
 			data-show={show}
-			class="data-[show=true]:rotate-180 transition-all dark:text-gray-700 text-gray-300"
-		>
-			<ChevronIcon rotation="90deg" size={16} />
+			data-rotate={iconRotation}
+			class="data-[rotate=true]:data-[show=true]:rotate-180 transition-all dark:text-gray-700 text-gray-300 flex place-items-center justify-center">
+			<slot name="icon"><ChevronIcon rotation="90deg" size={16} /></slot>
 		</div>
 	{/if}
 </button>
@@ -196,8 +195,7 @@
 	style="width: {width};"
 	bind:this={dropDownRef}
 	class="absolute bg-gray-0 dark:bg-gray-999 border border-gray-100 dark:border-gray-900 z-[1] transition-all
-         rounded-md data-[show=false]:opacity-0 data-[show=false]:pointer-events-none data-[shadow=true]:shadow-sm dark:shadow-gray-999"
->
+         rounded-md data-[show=false]:opacity-0 data-[show=false]:pointer-events-none data-[shadow=true]:shadow-sm dark:shadow-gray-999">
 	<slot />
 </div>
 
