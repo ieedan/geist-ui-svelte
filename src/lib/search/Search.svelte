@@ -65,7 +65,7 @@ focus-within:dark:border-gray-800"
         placeholder:font-light placeholder:text-gray-500 placeholder:dark:text-gray-500"
 	/>
 	{#if clearable}
-		<button
+		<button type="button"
 			data-has-value={value.length > 0}
 			class="flex place-items-center h-full justify-center px-2
 					transition-all hover:text-gray-999 dark:hover:text-gray-0

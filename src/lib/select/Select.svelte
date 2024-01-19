@@ -161,6 +161,7 @@
 />
 
 <button
+	type="button"
 	on:click={toggleShow}
 	bind:this={buttonRef}
 	style="width: {width};"

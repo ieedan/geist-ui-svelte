@@ -163,7 +163,7 @@
 	<div data-code class="overflow-x-auto scrollbar-hide">
 		{@html highlightedCode ?? ""}
 	</div>
-	<button class="absolute top-2 right-2 hidden sm:flex" on:click={copyText}>
+	<button type="button" class="absolute top-2 right-2 hidden sm:flex" on:click={copyText}>
 		{#if copied}
 			<div in:scale={{ duration: 200 }}>
 				<CheckMarkIcon size={16} />

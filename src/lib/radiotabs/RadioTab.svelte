@@ -26,6 +26,7 @@
 </script>
 
 <button
+	type="button"
 	role="tab"
 	bind:this={tabRef}
 	on:click={click}

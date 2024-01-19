@@ -24,6 +24,7 @@
 	aria-disabled={disabled}
 >
 	<button
+		type="button"
 		on:click|preventDefault|stopPropagation={toggle}
 		{id}
 		role="checkbox"
