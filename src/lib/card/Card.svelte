@@ -12,16 +12,23 @@
 		| "warning"
 		| "error"
 		| "abort" = "transparent";
+
+	export let rounded: "sm" | "md" | "lg" | "xl" | "2xl" | "3xl" | "full" | "none" = "lg";
 </script>
 
 <div
 	data-hoverable={hoverable}
 	data-shadow={shadow}
 	data-color={color}
-	class="border rounded-lg ring-gray-100 dark:ring-gray-900 border-gray-100 dark:border-gray-900
+	data-rounded={rounded}
+	class="border ring-gray-100 dark:ring-gray-900 border-gray-100 dark:border-gray-900
 	p-4 data-[hoverable=true]:hover:ring-2 transition-all
     data-[shadow=true]:shadow-md data-[shadow=true]:border-transparent
 	data-[shadow=true]:dark:border-gray-900
+
+	data-[rounded='sm']:rounded-sm data-[rounded='none']:rounded-none rounded-lg
+	data-[rounded='md']:rounded-md data-[rounded='xl']:rounded-xl data-[rounded='2xl']:rounded-2xl
+	data-[rounded='3xl']:rounded-3xl
 	
 	data-[color='dark']:bg-gray-999 data-[color='dark']:border-gray-999
 	data-[color='dark']:dark:bg-gray-0 data-[color='dark']:dark:border-gray-0

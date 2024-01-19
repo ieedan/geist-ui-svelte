@@ -102,7 +102,7 @@
 <main class="bg-gray-0 dark:bg-gray-999 min-h-svh">
 	<Header sticky>
 		<div
-			class="flex justify-between place-items-center md:grid md:grid-cols-3 w-full
+			class="flex justify-between place-items-center w-full
 			px-6 max-w-5xl py-2 md:place-items-stretch md:justify-start"
 		>
 			<div class="col-start-1 flex place-items-center justify-start">
@@ -112,7 +112,7 @@
 						alt="geist-ui-svelte logo"
 						class="size-6 rounded-full border border-gray-0 dark:border-gray-900"
 					/>
-					<Text type="h5"
+					<Text type="h5" noWrap
 						>geist-ui-svelte <Text class="!hidden sm:!inline-block" type="small"
 							>v{process.env.PACKAGE_VERSION}</Text
 						></Text
@@ -124,6 +124,7 @@
 					<TabItem href="/" activeForSubdirectories={false}>Home</TabItem>
 					<TabItem href="/guide">Guide</TabItem>
 					<TabItem href="/components">Components</TabItem>
+					<TabItem href="/examples">Examples</TabItem>
 				</Tabs>
 			</div>
 			<div class="md:col-start-3 hidden md:flex gap-2 place-items-center justify-end">
@@ -182,6 +183,13 @@
 			class="border-b border-gray-100 px-6 py-2 dark:border-gray-900 hover:bg-gray-50 transition-all
 		dark:hover:bg-gray-950 text-gray-600 hover:text-gray-999 dark:text-gray-600 dark:hover:text-gray-0"
 			>Components
+		</a>
+		<a
+			href="/examples"
+			on:click={() => (menuVisible = false)}
+			class="border-b border-gray-100 px-6 py-2 dark:border-gray-900 hover:bg-gray-50 transition-all
+		dark:hover:bg-gray-950 text-gray-600 hover:text-gray-999 dark:text-gray-600 dark:hover:text-gray-0"
+			>Examples
 		</a>
 		<div class="flex place-items-center py-2 gap-2 px-6">
 			<Button
