@@ -10,6 +10,7 @@
 	export let placeholder: string = "";
 	export let value: string = "";
 	export let loading: boolean = false;
+	export let noIcon: boolean = false;
 	/** Time after input it takes for 'debounce' event to fire can be useful
 	 *   when working with server side search and large data sets.
 	 */
@@ -40,9 +41,10 @@
 <search
 	class="flex place-items-center border border-gray-100 transition-all
 dark:border-gray-900 text-gray-500 rounded-lg px-2 focus-within:border-gray-200
-focus-within:dark:border-gray-800"
->
-	<SearchIcon size={16} />
+focus-within:dark:border-gray-800">
+	{#if !noIcon}
+		<SearchIcon size={16} />
+	{/if}
 	<input
 		{...$$restProps}
 		bind:this={inputRef}
@@ -62,16 +64,16 @@ focus-within:dark:border-gray-800"
 		autocorrect="off"
 		{placeholder}
 		class="bg-transparent outline-none py-2 px-2 text-gray-999 dark:text-gray-0 w-full
-        placeholder:font-light placeholder:text-gray-500 placeholder:dark:text-gray-500"
-	/>
+        placeholder:font-light placeholder:text-gray-500 placeholder:dark:text-gray-500" />
 	{#if clearable}
-		<button type="button"
+		<button
+			type="button"
+			tabindex="-1"
 			data-has-value={value.length > 0}
 			class="flex place-items-center h-full justify-center px-2
 					transition-all hover:text-gray-999 dark:hover:text-gray-0
 				  text-gray-400 dark:text-gray-600 data-[has-value=false]:opacity-0"
-			on:click={() => (value = "")}
-		>
+			on:click={() => (value = "")}>
 			<XIcon size={14} />
 		</button>
 	{/if}

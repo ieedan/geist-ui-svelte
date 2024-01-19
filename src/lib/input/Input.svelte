@@ -122,7 +122,7 @@
 				<slot name="iconEnd" />
 			</div>
 			{#if clearable}
-				<button type="button"
+				<button type="button" tabindex="-1"
 					class="order-5 flex place-items-center h-full justify-center px-2
 					transition-all hover:text-gray-999 dark:hover:text-gray-0
 				  text-gray-400 dark:text-gray-600 group-data-[has-value=false]/geist-input:opacity-0"
@@ -135,7 +135,7 @@
 				</button>
 			{/if}
 			{#if type == "password"}
-				<button type="button"
+				<button type="button" tabindex="-1"
 					class="order-6 absolute px-2 right-0 flex h-full place-items-center
 					justify-center group-aria-disabled/geist-input:opacity-0
 					group-data-[has-value=false]/geist-input:opacity-0 transition-all"
