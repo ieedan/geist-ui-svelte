@@ -6,6 +6,7 @@
 </script>
 
 <button
+	type="button"
 	role="option"
 	data-value={value}
 	aria-selected={false}

@@ -82,7 +82,8 @@
 			>
 		{/if}
 	</code>
-	<button
+	<button 
+		type="button"
 		on:click={copy}
 		data-color={type}
 		class="flex place-items-center justify-center h-[20px] text-gray-999 dark:text-gray-0 data-[color='success']:text-blue-600

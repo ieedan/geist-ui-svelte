@@ -29,6 +29,7 @@
 	class="group/details flex flex-col data-[show=true]:gap-2 data-[transition=true]:transition-all gap-0"
 >
 	<button
+		type="button"
 		on:click={() => (show = !show)}
 		class="flex place-items-center gap-2 text-sm text-gray-600 dark:text-gray-500"
 	>

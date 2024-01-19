@@ -47,7 +47,8 @@
 </script>
 
 {#if to == undefined}
-	<button
+	<button 
+		type="button"
 		class="z-[1] flex place-items-center justify-center border-b-2
 		border-transparent px-3 py-3 text-sm text-gray-600
 		transition-all hover:text-black
