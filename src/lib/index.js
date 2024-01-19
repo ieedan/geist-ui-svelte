@@ -104,6 +104,8 @@ export { default as Snippet } from "./snippet/Snippet.svelte";
 
 export { default as ChevronIcon } from "./icons/ChevronIcon.svelte";
 
+export { default as MenuIcon } from "./icons/MenuIcon.svelte";
+
 export { default as CheckMarkIcon } from "./icons/CheckMarkIcon.svelte";
 
 export { default as CloneIcon } from "./icons/CloneIcon.svelte";
