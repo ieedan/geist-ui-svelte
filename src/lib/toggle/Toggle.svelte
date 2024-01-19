@@ -13,6 +13,7 @@
 	export let color: "secondary" | "success" | "warning" | "error" = "success";
 </script>
 
+<input {...$$restProps} on:click on:change class="hidden" type="checkbox" bind:checked={checked}>
 <button
 	type="button"
 	{...$$restProps}
