@@ -1,6 +1,4 @@
 <script lang="ts">
-	import type { Size } from "$lib/types.js";
-
 	export let hoverable = false;
 	export let shadow = false;
 	let className: string = "";
@@ -15,7 +13,7 @@
 		| "error"
 		| "abort" = "transparent";
 
-	export let rounded: "sm" | "md" | "lg" | "xl" | "2xl" | "3xl" | "full" | "none"  = "lg";
+	export let rounded: "sm" | "md" | "lg" | "xl" | "2xl" | "3xl" | "full" | "none" = "lg";
 </script>
 
 <div

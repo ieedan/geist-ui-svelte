@@ -8,7 +8,10 @@
 	export let label: string | undefined = undefined;
 </script>
 
-<div data-vertical={vertical} class="data-[vertical=true]:flex-col flex w-full data-[vertical=true]:w-[1px] place-items-center">
+<div
+	data-vertical={vertical}
+	class="data-[vertical=true]:flex-col flex w-full data-[vertical=true]:w-[1px] place-items-center"
+>
 	<hr
 		style="height: {height}; width: {width};"
 		data-margin={margin}
