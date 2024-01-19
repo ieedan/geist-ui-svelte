@@ -4,19 +4,23 @@
 	import Spacer from "$lib/spacer/Spacer.svelte";
 	import Card from "$lib/card/Card.svelte";
 	import Image from "$lib/image/Image.svelte";
+	import loginForm from "$lib/assets/login-form.png";
+	import loginFormLight from "$lib/assets/login-form-light.png";
 
 	type Example = {
 		href: string;
 		image: string;
-		name: string;
+		imageDark: string;
+		title: string;
 		description: string;
 	};
 
 	const examples: Example[] = [
 		{
 			href: "/examples/login-form",
-			image: "",
-			name: "Login Form",
+			image: loginFormLight,
+			imageDark: loginForm,
+			title: "Login Form",
 			description: "A simple login form",
 		},
 	];
@@ -33,9 +37,10 @@
 		{#each examples as example}
 			<a href={example.href}>
 				<Card class="flex flex-col gap-4 p-6" color="abort" hoverable>
-					<Image src={example.image} alt="{example.name} {example.description}" width="300px" height="200px" />
+					<img src={example.image} alt="{example.title} {example.description}" class="rounded-xl block dark:hidden" width="300px" height="200px" >
+					<img src={example.imageDark} alt="{example.title} {example.description}" class="rounded-xl hidden dark:block" width="300px" height="200px" >
 					<div class="flex flex-col">
-						<Text b>{example.name}</Text>
+						<Text b>{example.title}</Text>
 						<Text type="small">{example.description}</Text>
 					</div>
 				</Card>
