@@ -108,4 +108,9 @@ group-data-[style='abort']/gbd:text-gray-400 group-data-[style='abort']/gbd:dark
 	<slot />
 </button>
 
-<!-- group-data-[color='secondary']/gbd: -->
+<!--
+@component
+The button component for the ButtonGroup component.
+
+[See Docs](https://geist-ui-svelte.dev/components/buttongroup) | [Open Issue](https://github.com/ieedan/geist-ui-svelte/issues)
+-->

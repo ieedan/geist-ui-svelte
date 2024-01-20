@@ -157,3 +157,10 @@
 		display: none;
 	}
 </style>
+
+<!--
+@component
+Captures user input.
+
+[See Docs](https://geist-ui-svelte.dev/components/input) | [Open Issue](https://github.com/ieedan/geist-ui-svelte/issues)
+-->

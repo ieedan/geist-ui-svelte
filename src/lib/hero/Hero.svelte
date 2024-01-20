@@ -20,19 +20,7 @@
 
 <!--
 @component
-[Open Issue](https://github.com/ieedan/geist-ui-svelte/issues)
-#### Description
-A layout component for creating a "hero" page. 
-Has a height of 100svh and width 100% and automatically centers its content.
-##### Example:
-```svelte
-<Hero>
-	<Text type="h1">Geist-UI-Svelte</Text>
-	<Spacer h={20} />
-	<div class="flex place-items-center gap-2">
-		<Button color="secondary-light">Get Started</Button>
-		<Button>See Docs</Button>
-	</div>
-</Hero>
-```
+A layout component to help you create your hero pages.
+
+[See Docs](https://geist-ui-svelte.dev/components/hero) | [Open Issue](https://github.com/ieedan/geist-ui-svelte/issues)
 -->

@@ -46,3 +46,10 @@
     top-1/2 -translate-y-1/2 group-aria-[checked=false]:left-[1px] group-aria-checked:translate-x-[16px]"
 	></div>
 </button>
+
+<!--
+@component
+An input with a true / false state.
+
+[See Docs](https://geist-ui-svelte.dev/components/toggle) | [Open Issue](https://github.com/ieedan/geist-ui-svelte/issues)
+-->

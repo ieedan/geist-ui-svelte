@@ -206,17 +206,7 @@
 
 <!--
 @component
-[Open Issue](https://github.com/ieedan/geist-ui-svelte/issues)
-### Important Notes
-Make sure to use keyed each blocks when working with lists that may be mutated.
-##### Example:
-```svelte
-<Select bind:value={val}>
-	{#each list as thing (thing.name)}
-		<SelectOption value={thing.id}>
-            {thing.name}
-        </SelectOption>
-	{/each}
-</Select>
-```
+A drop down list component.
+
+[See Docs](https://geist-ui-svelte.dev/components/select) | [Open Issue](https://github.com/ieedan/geist-ui-svelte/issues)
 -->

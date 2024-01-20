@@ -165,10 +165,6 @@
 			"types": "./dist/buttondropdown/ButtonDropdown.svelte.d.ts",
 			"svelte": "./dist/buttondropdown/ButtonDropdown.svelte"
 		},
-		"./ButtonDropdownItem.svelte": {
-			"types": "./dist/buttondropdown/ButtonDropdownItem.svelte.d.ts",
-			"svelte": "./dist/buttondropdown/ButtonDropdownItem.svelte"
-		},
 		"./Drawer.svelte": {
 			"types": "./dist/drawer/Drawer.svelte.d.ts",
 			"svelte": "./dist/drawer/Drawer.svelte"

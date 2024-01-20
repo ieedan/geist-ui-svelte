@@ -33,3 +33,8 @@
          0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"
 	/>
 </svg>
+
+<!--
+@component
+[See Docs](https://geist-ui-svelte.dev/components/icons?icon=github) | [Open Issue](https://github.com/ieedan/geist-ui-svelte/issues)
+-->

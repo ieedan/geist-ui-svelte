@@ -9,13 +9,7 @@
 
 <!--
 @component
-[Open Issue](https://github.com/ieedan/geist-ui-svelte/issues)
-#### Description
-A layout component for centering content.
-##### Example:
-```svelte
-<Center>
-    <Text type="h1">Geist-UI-Svelte</Text>    
-<Center/>
-```
+A layout component used to center content.
+
+[See Docs](https://geist-ui-svelte.dev/components/center) | [Open Issue](https://github.com/ieedan/geist-ui-svelte/issues)
 -->

@@ -26,3 +26,10 @@
     dark:border-gray-900 outline-none focus:border-gray-200
 	dark:focus:border-gray-800 transition-all rounded-md w-fit min-w-0"
 />
+
+<!--
+@component
+A multi-line text input.
+
+[See Docs](https://geist-ui-svelte.dev/components/textarea) | [Open Issue](https://github.com/ieedan/geist-ui-svelte/issues)
+-->

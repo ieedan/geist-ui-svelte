@@ -9,7 +9,7 @@
 
 <Text type="h3">Details</Text>
 <Spacer h={10} />
-<Text>An expandable component to hide content.</Text>
+<Text>An expandable component to hide / show content.</Text>
 <Spacer h={20} />
 <Snippet width="450px" type="lite" text={`import { Details } from 'geist-ui-svelte';`} />
 <Spacer h={30} />

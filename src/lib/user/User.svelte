@@ -65,3 +65,10 @@
 		{/if}
 	</div>
 {/if}
+
+<!--
+@component
+A layout component to display a user.
+
+[See Docs](https://geist-ui-svelte.dev/components/user) | [Open Issue](https://github.com/ieedan/geist-ui-svelte/issues)
+-->

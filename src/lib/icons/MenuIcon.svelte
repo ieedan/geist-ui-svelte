@@ -18,3 +18,8 @@
 	<rect x="15" y="155" width="320" height="40" rx="20" fill="currentColor" />
 	<rect x="14" y="255" width="320" height="40" rx="20" fill="currentColor" />
 </svg>
+
+<!--
+@component
+[See Docs](https://geist-ui-svelte.dev/components/icons?icon=menu) | [Open Issue](https://github.com/ieedan/geist-ui-svelte/issues)
+-->

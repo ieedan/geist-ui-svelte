@@ -34,3 +34,8 @@
 	/>
 	<circle cx="174.5" cy="174.5" r="55" stroke="currentColor" stroke-width="15" />
 </svg>
+
+<!--
+@component
+[See Docs](https://geist-ui-svelte.dev/components/icons?icon=eye) | [Open Issue](https://github.com/ieedan/geist-ui-svelte/issues)
+-->

@@ -29,6 +29,8 @@
 	import SunIcon from "$lib/icons/SunIcon.svelte";
 	import MoonIcon from "$lib/icons/MoonIcon.svelte";
 	import DesktopIcon from "$lib/icons/DesktopIcon.svelte";
+	import { page } from "$app/stores";
+	import { goto } from "$app/navigation";
 
 	type Icon = {
 		name: string;
@@ -110,9 +112,13 @@
 		},
 	];
 
-	let currentIcon: Icon | undefined = undefined;
-	let search: string = "";
-	let showModal = false;
+	export let data;
+
+	let currentIcon: Icon | undefined = data.currentIcon
+		? icons.find((a) => a.name.toLowerCase() == data.currentIcon?.toLowerCase())
+		: undefined;
+	let search: string = data.currentIcon ?? "";
+	let showModal = currentIcon != undefined;
 
 	$: foundIcons = icons.filter(
 		(a) =>
@@ -123,6 +129,14 @@
 	const selectIcon = (icon: Icon) => {
 		currentIcon = icon;
 		showModal = true;
+
+		$page.url.searchParams.set("icon", icon.name);
+		goto($page.url.toString(), { noScroll: true });
+	};
+
+	const closed = () => {
+		$page.url.searchParams.delete("icon");
+		goto($page.url.toString(), { noScroll: true });
 	};
 </script>
 
@@ -152,8 +166,7 @@
 <SvelteIcon size={15}/>
 <SvelteIcon size={20}/>
 <SvelteIcon size={25}/>
-<SvelteIcon size={30}/>`}
-			/>
+<SvelteIcon size={30}/>`} />
 		</Details>
 	</div>
 </FieldSet>
@@ -176,8 +189,7 @@
 				code={`<Text color="success"><SvelteIcon size={24}/></Text>
 <Text color="warning"><SvelteIcon size={24}/></Text>
 <Text color="error"><SvelteIcon size={24}/></Text>
-<Text color="abort"><SvelteIcon size={24}/></Text>`}
-			/>
+<Text color="abort"><SvelteIcon size={24}/></Text>`} />
 		</Details>
 	</div>
 </FieldSet>
@@ -188,15 +200,14 @@
 <Spacer h={20} />
 <Card>
 	<div class="px-1 pb-4">
-		<Search placeholder="Search icons..." bind:value={search} />
+		<Search placeholder="Search icons..." bind:value={search} clearable/>
 	</div>
 	<div class="flex flex-wrap justify-evenly gap-5">
 		{#each foundIcons as icon}
 			<button
 				on:click={() => selectIcon(icon)}
 				class="flex place-items-center justify-center hover:border-gray-100 hover:dark:border-gray-900
-			border border-transparent size-28 rounded-lg transition-all"
-			>
+			border border-transparent size-28 rounded-lg transition-all">
 				<Center class="gap-2">
 					<div><svelte:component this={icon.component} size={28} /></div>
 					<Text type="small" color="secondary">{icon.name}</Text>
@@ -206,9 +217,9 @@
 	</div>
 </Card>
 <Modal
+	on:closed={closed}
 	bind:visible={showModal}
-	class="md:h-56 md:w-[525px] flex place-items-center justify-center px-4 py-4"
->
+	class="md:h-56 md:w-[525px] flex place-items-center justify-center px-4 py-4">
 	<div class="flex flex-col justify-center place-items-center gap-3">
 		{#if currentIcon}
 			<Card class="w-full flex place-items-center justify-center">
@@ -218,8 +229,7 @@
 				<Snippet
 					width="500px"
 					type="lite"
-					text={`import { ${currentIcon.name}Icon } from 'geist-ui-svelte'`}
-				/>
+					text={`import { ${currentIcon.name}Icon } from 'geist-ui-svelte'`} />
 			</div>
 		{/if}
 	</div>

@@ -20,3 +20,10 @@
 >
 	<slot />
 </button>
+
+<!--
+@component
+The option component for the Select component.
+
+[See Docs](https://geist-ui-svelte.dev/components/select) | [Open Issue](https://github.com/ieedan/geist-ui-svelte/issues)
+-->

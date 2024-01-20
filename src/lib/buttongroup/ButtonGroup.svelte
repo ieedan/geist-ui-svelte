@@ -16,3 +16,10 @@
 >
 	<slot />
 </div>
+
+<!--
+@component
+A set of related buttons.
+
+[See Docs](https://geist-ui-svelte.dev/components/buttongroup) | [Open Issue](https://github.com/ieedan/geist-ui-svelte/issues)
+-->

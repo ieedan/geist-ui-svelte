@@ -45,3 +45,10 @@
 >
 	<slot />
 </div>
+
+<!--
+@component
+Displays a popup around an anchor component.
+
+[See Docs](https://geist-ui-svelte.dev/components/dropdown) | [Open Issue](https://github.com/ieedan/geist-ui-svelte/issues)
+-->

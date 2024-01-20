@@ -77,3 +77,10 @@
 		<slot />
 	</a>
 {/if}
+
+<!--
+@component
+The tab component for the Tabs component.
+
+[See Docs](https://geist-ui-svelte.dev/components/tabs) | [Open Issue](https://github.com/ieedan/geist-ui-svelte/issues)
+-->

@@ -71,3 +71,10 @@
 	</button>
 	<span class="flex place-items-center justify-start"><slot /></span>
 </label>
+
+<!--
+@component
+An input with a true / false state.
+
+[See Docs](https://geist-ui-svelte.dev/components/checkbox) | [Open Issue](https://github.com/ieedan/geist-ui-svelte/issues)
+-->

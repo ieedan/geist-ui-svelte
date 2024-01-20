@@ -47,3 +47,8 @@
 		mask="url(#path-1-inside-1_33_50)"
 	/>
 </svg>
+
+<!--
+@component
+[See Docs](https://geist-ui-svelte.dev/components/icons?icon=moon) | [Open Issue](https://github.com/ieedan/geist-ui-svelte/issues)
+-->

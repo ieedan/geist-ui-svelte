@@ -81,3 +81,10 @@ focus-within:dark:border-gray-800">
 		<Loading size="xs" />
 	{/if}
 </search>
+
+<!--
+@component
+A component for searching.
+
+[See Docs](https://geist-ui-svelte.dev/components/search) | [Open Issue](https://github.com/ieedan/geist-ui-svelte/issues)
+-->

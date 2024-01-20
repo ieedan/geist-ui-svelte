@@ -10,7 +10,7 @@
 
 <Text type="h3">TextArea</Text>
 <Spacer h={10} />
-<Text>Enables multi-line text input.</Text>
+<Text>A multi-line text input.</Text>
 <Spacer h={20} />
 <Snippet width="450px" type="lite" text={`import { TextArea } from 'geist-ui-svelte';`} />
 <Spacer h={30} />

@@ -17,3 +17,10 @@
 >
 	<slot />
 </kbd>
+
+<!--
+@component
+A component to signify to the user a keyboard command.
+
+[See Docs](https://geist-ui-svelte.dev/components/key) | [Open Issue](https://github.com/ieedan/geist-ui-svelte/issues)
+-->

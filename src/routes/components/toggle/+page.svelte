@@ -10,7 +10,7 @@
 
 <Text type="h3">Toggle</Text>
 <Spacer h={10} />
-<Text>The toggle is an input with a true / false state.</Text>
+<Text>An input with a true / false state.</Text>
 <Spacer h={20} />
 <Snippet width="450px" type="lite" text={`import { Checkbox } from 'geist-ui-svelte';`} />
 <Spacer h={30} />
