@@ -166,7 +166,8 @@
 <SvelteIcon size={15}/>
 <SvelteIcon size={20}/>
 <SvelteIcon size={25}/>
-<SvelteIcon size={30}/>`} />
+<SvelteIcon size={30}/>`}
+			/>
 		</Details>
 	</div>
 </FieldSet>
@@ -189,7 +190,8 @@
 				code={`<Text color="success"><SvelteIcon size={24}/></Text>
 <Text color="warning"><SvelteIcon size={24}/></Text>
 <Text color="error"><SvelteIcon size={24}/></Text>
-<Text color="abort"><SvelteIcon size={24}/></Text>`} />
+<Text color="abort"><SvelteIcon size={24}/></Text>`}
+			/>
 		</Details>
 	</div>
 </FieldSet>
@@ -200,14 +202,15 @@
 <Spacer h={20} />
 <Card>
 	<div class="px-1 pb-4">
-		<Search placeholder="Search icons..." bind:value={search} clearable/>
+		<Search placeholder="Search icons..." bind:value={search} clearable />
 	</div>
 	<div class="flex flex-wrap justify-evenly gap-5">
 		{#each foundIcons as icon}
 			<button
 				on:click={() => selectIcon(icon)}
 				class="flex place-items-center justify-center hover:border-gray-100 hover:dark:border-gray-900
-			border border-transparent size-28 rounded-lg transition-all">
+			border border-transparent size-28 rounded-lg transition-all"
+			>
 				<Center class="gap-2">
 					<div><svelte:component this={icon.component} size={28} /></div>
 					<Text type="small" color="secondary">{icon.name}</Text>
@@ -219,7 +222,8 @@
 <Modal
 	on:closed={closed}
 	bind:visible={showModal}
-	class="md:h-56 md:w-[525px] flex place-items-center justify-center px-4 py-4">
+	class="md:h-56 md:w-[525px] flex place-items-center justify-center px-4 py-4"
+>
 	<div class="flex flex-col justify-center place-items-center gap-3">
 		{#if currentIcon}
 			<Card class="w-full flex place-items-center justify-center">
@@ -229,7 +233,8 @@
 				<Snippet
 					width="500px"
 					type="lite"
-					text={`import { ${currentIcon.name}Icon } from 'geist-ui-svelte'`} />
+					text={`import { ${currentIcon.name}Icon } from 'geist-ui-svelte'`}
+				/>
 			</div>
 		{/if}
 	</div>

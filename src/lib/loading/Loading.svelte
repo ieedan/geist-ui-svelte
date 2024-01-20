@@ -35,6 +35,13 @@
 	></span>
 </div>
 
+<!--
+@component
+A component to indicate a loading state.
+
+[See Docs](https://geist-ui-svelte.dev/components/loading) | [Open Issue](https://github.com/ieedan/geist-ui-svelte/issues)
+-->
+
 <style lang="postcss">
 	.animate-loading-blink {
 		animation: loading-blink 1.4s infinite both;
@@ -62,10 +69,3 @@
 		}
 	}
 </style>
-
-<!--
-@component
-A component to indicate a loading state.
-
-[See Docs](https://geist-ui-svelte.dev/components/loading) | [Open Issue](https://github.com/ieedan/geist-ui-svelte/issues)
--->

@@ -19,15 +19,15 @@
 	<slot />
 </a>
 
-<style lang="postcss">
-	.geist-ui-link:hover[data-block="true"] {
-		background-color: rgb(13 27 44);
-	}
-</style>
-
 <!--
 @component
 A simple link component.
 
 [See Docs](https://geist-ui-svelte.dev/components/link) | [Open Issue](https://github.com/ieedan/geist-ui-svelte/issues)
 -->
+
+<style lang="postcss">
+	.geist-ui-link:hover[data-block="true"] {
+		background-color: rgb(13 27 44);
+	}
+</style>

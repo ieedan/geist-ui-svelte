@@ -82,7 +82,7 @@
 			>
 		{/if}
 	</code>
-	<button 
+	<button
 		type="button"
 		on:click={copy}
 		data-color={type}
