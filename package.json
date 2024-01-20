@@ -1,6 +1,6 @@
 {
 	"name": "geist-ui-svelte",
-	"version": "0.3.27",
+	"version": "0.3.26",
 	"author": {
 		"name": "Aidan Bleser",
 		"url": "https://aidanbleser.com"
@@ -165,6 +165,10 @@
 			"types": "./dist/buttondropdown/ButtonDropdown.svelte.d.ts",
 			"svelte": "./dist/buttondropdown/ButtonDropdown.svelte"
 		},
+		"./ButtonDropdownItem.svelte": {
+			"types": "./dist/buttondropdown/ButtonDropdownItem.svelte.d.ts",
+			"svelte": "./dist/buttondropdown/ButtonDropdownItem.svelte"
+		},
 		"./Drawer.svelte": {
 			"types": "./dist/drawer/Drawer.svelte.d.ts",
 			"svelte": "./dist/drawer/Drawer.svelte"
@@ -180,10 +184,6 @@
 		"./Dropdown.svelte": {
 			"types": "./dist/dropdown/Dropdown.svelte.d.ts",
 			"svelte": "./dist/dropdown/Dropdown.svelte"
-		},
-		"./DropdownItem.svelte": {
-			"types": "./dist/dropdown/DropdownItem.svelte.d.ts",
-			"svelte": "./dist/dropdown/DropdownItem.svelte"
 		},
 		"./Link.svelte": {
 			"types": "./dist/link/Link.svelte.d.ts",
