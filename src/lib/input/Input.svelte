@@ -2,6 +2,7 @@
 	import EyeIcon from "$lib/icons/EyeIcon.svelte";
 	import EyeSlashIcon from "$lib/icons/EyeSlashIcon.svelte";
 	import XIcon from "$lib/icons/XIcon.svelte";
+	import type { Color } from "$lib/types.js";
 	import { createEventDispatcher, onDestroy } from "svelte";
 	import type { HTMLInputAttributes } from "svelte/elements";
 
@@ -19,6 +20,7 @@
 	export let placeholder: string = "";
 	export let width: string | undefined = undefined;
 	export let size: "base" | "sm" | "lg" | "xl" = "base";
+	export let color: Color = "default";
 
 	let inputRef: HTMLInputElement;
 	let debounceTimeout: number;
@@ -67,11 +69,21 @@
 		data-has-value={value.length > 0}
 		data-has-label={label != undefined}
 		data-size={size}
+		data-color={color}
+		aria-disabled={disabled}
 		class="group/geist-input grid grid-flow-col relative data-[has-label=false]:border rounded-md
 		border-gray-100 overflow-hidden aria-disabled:bg-gray-50 aria-disabled:dark:bg-gray-950
 		dark:border-gray-900 w-fit data-[has-label=false]:focus-within:border-gray-200
-		data-[has-label=false]:focus-within:dark:border-gray-800 transition-all"
-		aria-disabled={disabled}
+		data-[has-label=false]:focus-within:dark:border-gray-800 transition-all
+
+		data-[color='secondary']:border-gray-800 data-[color='secondary']:focus-within:border-gray-500
+		data-[color='secondary']:dark:border-gray-200 data-[color='secondary']:focus-within:dark:border-gray-500
+		data-[color='success']:border-blue-600 data-[color='success']:focus-within:border-blue-800
+		data-[color='success']:dark:border-blue-600 data-[color='success']:focus-within:dark:border-blue-800
+		data-[color='warning']:border-orange-300 data-[color='warning']:focus-within:border-orange-500
+		data-[color='warning']:dark:border-orange-400 data-[color='warning']:focus-within:dark:border-orange-600
+		data-[color='error']:border-red-500 data-[color='error']:focus-within:border-red-700
+		data-[color='error']:dark:border-red-600 data-[color='error']:focus-within:dark:border-red-800"
 	>
 		{#if label}
 			<span
@@ -90,11 +102,24 @@
 			class="flex place-items-center group-data-[has-label=true]/geist-input:border order-2
 			group-data-[placement='end']/geist-input:rounded-l-md group-data-[placement='start']/geist-input:rounded-r-md
 			focus-within:border-gray-200 dark:focus-within:border-gray-800 transition-all border-gray-100
-			dark:border-gray-900"
+			dark:border-gray-900
+
+			group-data-[color='secondary']/geist-input:border-gray-800 group-data-[color='secondary']/geist-input:focus-within:border-gray-500
+			group-data-[color='secondary']/geist-input:dark:border-gray-200 group-data-[color='secondary']/geist-input:focus-within:dark:border-gray-500
+			group-data-[color='success']/geist-input:border-blue-600 group-data-[color='success']/geist-input:focus-within:border-blue-800
+			group-data-[color='success']/geist-input:dark:border-blue-600 group-data-[color='success']/geist-input:focus-within:dark:border-blue-800
+			group-data-[color='warning']/geist-input:border-orange-300 group-data-[color='warning']/geist-input:focus-within:border-orange-500
+			group-data-[color='warning']/geist-input:dark:border-orange-400 group-data-[color='warning']/geist-input:focus-within:dark:border-orange-600
+			group-data-[color='error']/geist-input:border-red-500 group-data-[color='error']/geist-input:focus-within:border-red-700
+			group-data-[color='error']/geist-input:dark:border-red-600 group-data-[color='error']/geist-input:focus-within:dark:border-red-800"
 		>
 			<div
 				class="flex place-items-center justify-center pl-2 empty:hidden
-				order-2 text-gray-800 dark:text-gray-200"
+				order-2 text-gray-800 dark:text-gray-200
+				
+				group-data-[color='success']/geist-input:text-blue-600 group-data-[color='success']/geist-input:dark:text-blue-600
+				group-data-[color='warning']/geist-input:text-orange-300 group-data-[color='warning']/geist-input:dark:text-orange-400
+				group-data-[color='error']/geist-input:text-red-500 group-data-[color='error']/geist-input:dark:text-red-600"
 			>
 				<slot name="icon" />
 			</div>
@@ -113,11 +138,19 @@
 				outline-none focus:outline px-2 py-1 w-full rounded-none disabled:hover:cursor-not-allowed
 				disabled:text-gray-300 disabled:dark:text-gray-600 group-data-[size='sm']/geist-input:text-sm
 				group-data-[size='lg']/geist-input:text-lg group-data-[size='xl']/geist-input:text-xl
-				placeholder:text-gray-200 dark:placeholder:text-gray-600"
+				placeholder:text-gray-200 dark:placeholder:text-gray-600
+				
+				group-data-[color='success']/geist-input:text-blue-600 group-data-[color='success']/geist-input:dark:text-blue-600
+				group-data-[color='warning']/geist-input:text-orange-300 group-data-[color='warning']/geist-input:dark:text-orange-400
+				group-data-[color='error']/geist-input:text-red-500 group-data-[color='error']/geist-input:dark:text-red-600"
 			/>
 			<div
 				class="flex place-items-center justify-center pr-2 empty:hidden
-				order-4 text-gray-800 dark:text-gray-200"
+				order-4 text-gray-800 dark:text-gray-200
+				
+				group-data-[color='success']/geist-input:text-blue-600 group-data-[color='success']/geist-input:dark:text-blue-600
+				group-data-[color='warning']/geist-input:text-orange-300 group-data-[color='warning']/geist-input:dark:text-orange-400
+				group-data-[color='error']/geist-input:text-red-500 group-data-[color='error']/geist-input:dark:text-red-600"
 			>
 				<slot name="iconEnd" />
 			</div>

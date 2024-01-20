@@ -112,6 +112,50 @@ placeholder="https://github"/>`}
 	</div>
 </FieldSet>
 <Spacer h={30} />
+<Text type="h4">Colors</Text>
+<Spacer h={10} />
+<FieldSet>
+	<div class="flex flex-col gap-2">
+		<Input placeholder="username" value="geist-ui-svelte" />
+		<Input placeholder="username" value="geist-ui-svelte" color="secondary" />
+		<Input placeholder="username" value="geist-ui-svelte" color="success" />
+		<Input placeholder="username" value="geist-ui-svelte" color="warning" />
+		<Input placeholder="username" value="geist-ui-svelte" color="error" />
+	</div>
+	<div slot="footer">
+		<Details label="Code">
+			<Code
+				lang="svelte"
+				edits={[
+					{ number: 7, type: "add" },
+					{ number: 11, type: "add" },
+					{ number: 15, type: "add" },
+					{ number: 19, type: "add" },
+				]}
+				code={`<Input 
+  placeholder="username" 
+  value="geist-ui-svelte" />
+<Input 
+  placeholder="username" 
+  value="geist-ui-svelte" 
+  color="secondary" />
+<Input 
+  placeholder="username" 
+  value="geist-ui-svelte" 
+  color="success" />
+<Input 
+  placeholder="username" 
+  value="geist-ui-svelte" 
+  color="warning" />
+<Input 
+  placeholder="username" 
+  value="geist-ui-svelte" 
+  color="error" />`}
+			/>
+		</Details>
+	</div>
+</FieldSet>
+<Spacer h={30} />
 <Text type="h4">Input Types</Text>
 <Spacer h={20} />
 <Note color="warning">
