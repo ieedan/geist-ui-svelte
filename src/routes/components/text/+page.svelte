@@ -16,7 +16,7 @@
 
 <Text type="h3">Text</Text>
 <Spacer h={10} />
-<Text>The text component displays non-interactive text.</Text>
+<Text>Displays non-interactive text.</Text>
 <Spacer h={20} />
 <Snippet width="450px" type="lite" text={`import { Text } from 'geist-ui-svelte';`} />
 <Spacer h={30} />

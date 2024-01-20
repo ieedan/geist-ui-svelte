@@ -36,3 +36,10 @@
        data-[size='xl']:text-2xl data-[size='xs']:text-xs data-[size='xl']:rounded-3xl data-[size='sm']:rounded-2xl"
 	><slot /></span
 >
+
+<!--
+@component
+A simple component for status indicators or notification markers.
+
+[See Docs](https://geist-ui-svelte.dev/components/badge) | [Open Issue](https://github.com/ieedan/geist-ui-svelte/issues)
+-->

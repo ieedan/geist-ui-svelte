@@ -21,3 +21,8 @@
 	/>
 	<rect x="102" y="48" width="144" height="169" rx="72" stroke="currentColor" stroke-width="40" />
 </svg>
+
+<!--
+@component
+[See Docs](https://geist-ui-svelte.dev/components/icons?icon=lock) | [Open Issue](https://github.com/ieedan/geist-ui-svelte/issues)
+-->

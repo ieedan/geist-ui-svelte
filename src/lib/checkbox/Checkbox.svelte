@@ -18,7 +18,7 @@
 	};
 </script>
 
-<input {...$$restProps} on:click on:change class="hidden" type="checkbox" bind:checked={checked}>
+<input {...$$restProps} on:click on:change class="hidden" type="checkbox" bind:checked />
 <label
 	for={id}
 	class="flex place-items-center gap-2 group aria-disabled:hover:cursor-not-allowed select-none hover:cursor-pointer"
@@ -71,3 +71,10 @@
 	</button>
 	<span class="flex place-items-center justify-start"><slot /></span>
 </label>
+
+<!--
+@component
+An input with a true / false state.
+
+[See Docs](https://geist-ui-svelte.dev/components/checkbox) | [Open Issue](https://github.com/ieedan/geist-ui-svelte/issues)
+-->

@@ -185,10 +185,6 @@
 			"types": "./dist/dropdown/Dropdown.svelte.d.ts",
 			"svelte": "./dist/dropdown/Dropdown.svelte"
 		},
-		"./DropdownItem.svelte": {
-			"types": "./dist/dropdown/DropdownItem.svelte.d.ts",
-			"svelte": "./dist/dropdown/DropdownItem.svelte"
-		},
 		"./Link.svelte": {
 			"types": "./dist/link/Link.svelte.d.ts",
 			"svelte": "./dist/link/Link.svelte"

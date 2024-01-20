@@ -18,13 +18,7 @@
 
 <!--
 @component
-[Open Issue](https://github.com/ieedan/geist-ui-svelte/issues)
-#### Description
-A component for showing a caption below a bit of content.
-##### Example:
-```svelte
-<Display caption="...">
-	<Image ... />
-</Display>
-```
+A layout component to add a caption to your content.
+
+[See Docs](https://geist-ui-svelte.dev/components/display) | [Open Issue](https://github.com/ieedan/geist-ui-svelte/issues)
 -->

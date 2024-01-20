@@ -32,3 +32,8 @@
 		fill="currentColor"
 	/>
 </svg>
+
+<!--
+@component
+[See Docs](https://geist-ui-svelte.dev/components/icons?icon=clone) | [Open Issue](https://github.com/ieedan/geist-ui-svelte/issues)
+-->

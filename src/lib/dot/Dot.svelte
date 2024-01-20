@@ -15,3 +15,10 @@
   data-[type='warning']:bg-orange-300 data-[type='go']:bg-green-600 data-[type='go']:dark:bg-green-700
   data-[type='warning']:dark:bg-orange-400 data-[type='error']:bg-red-500"
 ></span>
+
+<!--
+@component
+A circle component great as a status indicator.
+
+[See Docs](https://geist-ui-svelte.dev/components/dot) | [Open Issue](https://github.com/ieedan/geist-ui-svelte/issues)
+-->

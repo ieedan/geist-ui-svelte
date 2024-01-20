@@ -82,7 +82,7 @@
 			>
 		{/if}
 	</code>
-	<button 
+	<button
 		type="button"
 		on:click={copy}
 		data-color={type}
@@ -110,3 +110,10 @@
 		{/if}
 	</button>
 </div>
+
+<!--
+@component
+Displays a code snippet.
+
+[See Docs](https://geist-ui-svelte.dev/components/snippet) | [Open Issue](https://github.com/ieedan/geist-ui-svelte/issues)
+-->

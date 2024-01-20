@@ -34,3 +34,8 @@
 	c8.4-2.2,17.3,1.1,22.2,8.2C79.5,25.9,80.7,31.1,79.8,36.2z"
 	/>
 </svg>
+
+<!--
+@component
+[See Docs](https://geist-ui-svelte.dev/components/icons?icon=svelte) | [Open Issue](https://github.com/ieedan/geist-ui-svelte/issues)
+-->

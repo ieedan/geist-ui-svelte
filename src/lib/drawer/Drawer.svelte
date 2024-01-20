@@ -54,3 +54,10 @@
 >
 	<slot />
 </div>
+
+<!--
+@component
+A component to hide / show content as a sidebar pop-up.
+
+[See Docs](https://geist-ui-svelte.dev/components/drawer) | [Open Issue](https://github.com/ieedan/geist-ui-svelte/issues)
+-->

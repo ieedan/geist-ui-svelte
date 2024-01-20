@@ -30,3 +30,10 @@
     data-[margin='lg']:my-4 data-[margin='xl']:my-5"
 	/>
 </div>
+
+<!--
+@component
+A layout component to separate your content.
+
+[See Docs](https://geist-ui-svelte.dev/components/divider) | [Open Issue](https://github.com/ieedan/geist-ui-svelte/issues)
+-->

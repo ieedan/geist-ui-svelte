@@ -8,3 +8,10 @@
 		<slot name="footer" />
 	</div>
 </div>
+
+<!--
+@component
+An organizational layout component to group related information.
+
+[See Docs](https://geist-ui-svelte.dev/components/fieldset) | [Open Issue](https://github.com/ieedan/geist-ui-svelte/issues)
+-->

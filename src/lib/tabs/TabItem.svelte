@@ -47,7 +47,7 @@
 </script>
 
 {#if to == undefined}
-	<button 
+	<button
 		type="button"
 		class="z-[1] flex place-items-center justify-center border-b-2
 		border-transparent px-3 py-3 text-sm text-gray-600
@@ -77,3 +77,10 @@
 		<slot />
 	</a>
 {/if}
+
+<!--
+@component
+The tab component for the Tabs component.
+
+[See Docs](https://geist-ui-svelte.dev/components/tabs) | [Open Issue](https://github.com/ieedan/geist-ui-svelte/issues)
+-->

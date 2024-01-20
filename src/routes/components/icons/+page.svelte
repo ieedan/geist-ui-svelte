@@ -29,6 +29,8 @@
 	import SunIcon from "$lib/icons/SunIcon.svelte";
 	import MoonIcon from "$lib/icons/MoonIcon.svelte";
 	import DesktopIcon from "$lib/icons/DesktopIcon.svelte";
+	import { page } from "$app/stores";
+	import { goto } from "$app/navigation";
 
 	type Icon = {
 		name: string;
@@ -110,9 +112,13 @@
 		},
 	];
 
-	let currentIcon: Icon | undefined = undefined;
-	let search: string = "";
-	let showModal = false;
+	export let data;
+
+	let currentIcon: Icon | undefined = data.currentIcon
+		? icons.find((a) => a.name.toLowerCase() == data.currentIcon?.toLowerCase())
+		: undefined;
+	let search: string = data.currentIcon ?? "";
+	let showModal = currentIcon != undefined;
 
 	$: foundIcons = icons.filter(
 		(a) =>
@@ -123,6 +129,14 @@
 	const selectIcon = (icon: Icon) => {
 		currentIcon = icon;
 		showModal = true;
+
+		$page.url.searchParams.set("icon", icon.name);
+		goto($page.url.toString(), { noScroll: true });
+	};
+
+	const closed = () => {
+		$page.url.searchParams.delete("icon");
+		goto($page.url.toString(), { noScroll: true });
 	};
 </script>
 
@@ -188,7 +202,7 @@
 <Spacer h={20} />
 <Card>
 	<div class="px-1 pb-4">
-		<Search placeholder="Search icons..." bind:value={search} />
+		<Search placeholder="Search icons..." bind:value={search} clearable />
 	</div>
 	<div class="flex flex-wrap justify-evenly gap-5">
 		{#each foundIcons as icon}
@@ -206,6 +220,7 @@
 	</div>
 </Card>
 <Modal
+	on:closed={closed}
 	bind:visible={showModal}
 	class="md:h-56 md:w-[525px] flex place-items-center justify-center px-4 py-4"
 >

@@ -11,7 +11,7 @@
 
 <Text type="h3">Center</Text>
 <Spacer h={10} />
-<Text>A layout component to help you center content.</Text>
+<Text>A layout component used to center content.</Text>
 <Spacer h={20} />
 <Snippet width="450px" type="lite" text={`import { Center } from 'geist-ui-svelte';`} />
 <Spacer h={30} />

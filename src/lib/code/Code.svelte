@@ -178,3 +178,10 @@
 		{/if}
 	</button>
 </div>
+
+<!--
+@component
+A component to display highlighted code.
+
+[See Docs](https://geist-ui-svelte.dev/components/code) | [Open Issue](https://github.com/ieedan/geist-ui-svelte/issues)
+-->

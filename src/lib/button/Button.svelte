@@ -126,11 +126,13 @@
 
 		data-[style='abort']:bg-transparent data-[style='abort']:dark:bg-transparent data-[style='abort']:hover:bg-transparent
 		data-[style='abort']:hover:dark:bg-transparent data-[style='abort']:border-transparent
-		data-[style='abort']:text-gray-400 data-[style='abort']:dark:text-gray-600 {className}">
+		data-[style='abort']:text-gray-400 data-[style='abort']:dark:text-gray-600 {className}"
+	>
 		{#if loading}
 			<Loading
 				size="sm"
-				class="absolute left-1/2 top-1/2 -translate-y-1/2 -translate-x-1/2" />
+				class="absolute left-1/2 top-1/2 -translate-y-1/2 -translate-x-1/2"
+			/>
 		{/if}
 		<div class="group-data-[loading=true]:opacity-0 flex place-items-center justify-center">
 			<slot />
@@ -265,14 +267,23 @@
 
 		data-[style='abort']:bg-transparent data-[style='abort']:dark:bg-transparent data-[style='abort']:hover:bg-transparent
 		data-[style='abort']:hover:dark:bg-transparent data-[style='abort']:border-transparent
-		data-[style='abort']:text-gray-400 data-[style='abort']:dark:text-gray-600 {className}">
+		data-[style='abort']:text-gray-400 data-[style='abort']:dark:text-gray-600 {className}"
+	>
 		{#if loading}
 			<Loading
 				size="sm"
-				class="absolute left-1/2 top-1/2 -translate-y-1/2 -translate-x-1/2" />
+				class="absolute left-1/2 top-1/2 -translate-y-1/2 -translate-x-1/2"
+			/>
 		{/if}
 		<div class="group-data-[loading=true]:opacity-0 flex place-items-center justify-center">
 			<slot />
 		</div>
 	</button>
 {/if}
+
+<!--
+@component
+The button component is used to trigger an event.
+
+[See Docs](https://geist-ui-svelte.dev/components/button) | [Open Issue](https://github.com/ieedan/geist-ui-svelte/issues)
+-->

@@ -18,7 +18,7 @@
 
 <Text type="h3">Drawer</Text>
 <Spacer h={10} />
-<Text>Hide and show content using a drawer.</Text>
+<Text>A component to hide / show content as a sidebar pop-up.</Text>
 <Spacer h={20} />
 <Snippet width="450px" type="lite" text={`import { Drawer } from 'geist-ui-svelte';`} />
 <Spacer h={30} />

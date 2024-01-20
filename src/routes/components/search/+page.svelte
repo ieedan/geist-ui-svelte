@@ -54,14 +54,11 @@
 <Spacer h={10} />
 <FieldSet>
 	<div class="flex flex-col justify-start">
-		<Search placeholder="Find what you need here" noIcon/>
+		<Search placeholder="Find what you need here" noIcon />
 	</div>
 	<div slot="footer">
 		<Details label="Code">
-			<Code
-				lang="svelte"
-				code={`<Search placeholder="Find what you need here" noIcon/>`}
-			/>
+			<Code lang="svelte" code={`<Search placeholder="Find what you need here" noIcon/>`} />
 		</Details>
 	</div>
 </FieldSet>

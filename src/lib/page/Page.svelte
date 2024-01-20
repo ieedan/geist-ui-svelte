@@ -37,3 +37,10 @@
 >
 	<slot />
 </div>
+
+<!--
+@component
+Displays a page over the original content.
+
+[See Docs](https://geist-ui-svelte.dev/components/page) | [Open Issue](https://github.com/ieedan/geist-ui-svelte/issues)
+-->
