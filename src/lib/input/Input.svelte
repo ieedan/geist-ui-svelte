@@ -73,8 +73,8 @@
 		aria-disabled={disabled}
 		class="group/geist-input grid grid-flow-col relative data-[has-label=false]:border rounded-md
 		border-gray-100 overflow-hidden aria-disabled:bg-gray-50 aria-disabled:dark:bg-gray-950
-		dark:border-gray-900 w-fit data-[has-label=false]:focus-within:border-gray-200
-		data-[has-label=false]:focus-within:dark:border-gray-800 transition-all
+		dark:border-gray-900 w-fit data-[color='default']:data-[has-label=false]:focus-within:border-gray-200
+		data-[color='default']:data-[has-label=false]:focus-within:dark:border-gray-800 transition-all
 
 		data-[color='secondary']:border-gray-800 data-[color='secondary']:focus-within:border-gray-500
 		data-[color='secondary']:dark:border-gray-200 data-[color='secondary']:focus-within:dark:border-gray-500
