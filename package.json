@@ -1,6 +1,6 @@
 {
 	"name": "geist-ui-svelte",
-	"version": "0.3.28",
+	"version": "0.3.29",
 	"author": {
 		"name": "Aidan Bleser",
 		"url": "https://aidanbleser.com"
@@ -293,19 +293,19 @@
 	},
 	"devDependencies": {
 		"@cspell/eslint-plugin": "^8.1.0",
-		"@sveltejs/adapter-auto": "^3.1.0",
-		"@sveltejs/package": "^2.0.0",
+		"@sveltejs/adapter-auto": "^3.1.1",
+		"@sveltejs/package": "^2.2.6",
 		"@sveltejs/vite-plugin-svelte": "^3.0.0",
 		"@types/eslint": "8.56.2",
-		"@typescript-eslint/eslint-plugin": "^6.18.1",
-		"@typescript-eslint/parser": "^6.18.1",
+		"@typescript-eslint/eslint-plugin": "^6.19.0",
+		"@typescript-eslint/parser": "^6.19.0",
 		"eslint": "^8.56.0",
 		"eslint-config-prettier": "^9.1.0",
 		"eslint-plugin-svelte": "^2.35.1",
-		"prettier": "^3.2.2",
+		"prettier": "^3.2.4",
 		"prettier-plugin-svelte": "^3.1.2",
 		"publint": "^0.1.9",
-		"svelte": "^4.2.7",
+		"svelte": "^4.2.9",
 		"svelte-check": "^3.6.3",
 		"tslib": "^2.4.1",
 		"typescript": "^5.0.0",
@@ -316,13 +316,13 @@
 	"type": "module",
 	"dependencies": {
 		"@popperjs/core": "^2.11.8",
-		"@sveltejs/kit": "^2.3.2",
-		"@vercel/analytics": "^1.1.1",
+		"@sveltejs/kit": "^2.4.1",
+		"@vercel/analytics": "^1.1.2",
 		"@vercel/speed-insights": "^1.0.3",
+		"autoprefixer": "^10.4.17",
 		"mode-watcher": "^0.1.2",
-		"shikiji": "^0.9.19",
-		"tailwindcss": "^3.4.1",
-		"autoprefixer": "^10.4.16",
-		"postcss": "^8.4.33"
+		"postcss": "^8.4.33",
+		"shikiji": "^0.10.0",
+		"tailwindcss": "^3.4.1"
 	}
 }
