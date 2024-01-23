@@ -1,48 +1,57 @@
 <script lang="ts">
-	import { onMount } from "svelte";
-	import { createPopper, type Placement } from "@popperjs/core";
+	import { place, type Placement } from "$lib/util/place.js";
 
+	export let visible: boolean = false;
 	export let shadow: boolean = false;
-	export let anchorRef: HTMLElement;
-	export let visible = false;
-	export let width: string = "auto";
-	export let placement: Placement = "bottom";
+	export let placement: Placement = "bottom-start";
+	export let anchor: HTMLElement;
+	export let flip = true;
+    let className: string = "";
+    export { className as class }
 
 	let dropDownRef: HTMLDivElement;
+    let currentPlacement: Placement;
 
-	const hide = () => {
-		visible = false;
-	};
+    $: {
+        if (anchor != undefined && dropDownRef != undefined) {
+            resize(placement);
+        }
+    }
 
-	const docClick = (e: MouseEvent) => {
-		if (anchorRef.contains(e.target as Node)) return;
+    const resize = (p: Placement) => {
+        if (anchor == undefined || dropDownRef == undefined) return;
+		currentPlacement = place(anchor, dropDownRef, { placement: p, flip });
+    }
 
-		hide();
-	};
-
-	onMount(() => {
-		const popper = createPopper(anchorRef, dropDownRef, {
-			placement,
-			modifiers: [{ name: "offset", options: { offset: [0, 2] } }],
-		});
-
-		return () => {
-			popper.destroy();
-		};
-	});
+    const docClick = (e: MouseEvent) => {
+        const target = e.target as Node;
+        if (!dropDownRef.contains(target) && !anchor.contains(target)) visible = false;
+    }
 </script>
 
-<svelte:document on:click={docClick} />
+<svelte:document on:click={docClick}/>
+<svelte:window on:resize={() => resize(placement)} on:scroll={() => resize(placement)}/>
 
 <div
-	data-shadow={shadow}
 	data-show={visible}
-	style="width: {width};"
+	data-shadow={shadow}
+    data-placement={currentPlacement}
 	bind:this={dropDownRef}
-	class="absolute bg-gray-0 dark:bg-gray-999 border border-gray-100
-    dark:border-gray-900 z-[1] transition-all rounded-md data-[show=false]:opacity-0
-    data-[show=false]:pointer-events-none data-[shadow=true]:shadow-sm dark:shadow-gray-999"
->
+	class="absolute data-[show=false]:pointer-events-none z-[1]
+    data-[show=false]:opacity-0 bg-gray-0 dark:bg-gray-999 rounded-lg
+	transition-all border border-gray-100 dark:border-gray-900 
+	data-[shadow=true]:shadow-md dark:shadow-gray-999
+    data-[placement='bottom-end']:data-[show=false]:-translate-y-1 
+    data-[placement='bottom-end']:data-[show=false]:translate-x-1
+    data-[placement='bottom-start']:data-[show=false]:-translate-y-1 
+    data-[placement='bottom-start']:data-[show=false]:-translate-x-1
+    data-[placement='bottom']:data-[show=false]:-translate-y-1
+    data-[placement='top']:data-[show=false]:translate-y-1
+    data-[placement='top-start']:data-[show=false]:translate-y-1
+    data-[placement='top-start']:data-[show=false]:-translate-x-1
+    data-[placement='top-end']:data-[show=false]:translate-y-1
+    data-[placement='top-end']:data-[show=false]:translate-x-1
+    {className}">
 	<slot />
 </div>
 
