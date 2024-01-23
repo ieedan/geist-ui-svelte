@@ -21,6 +21,7 @@
 	export let width: string | undefined = undefined;
 	export let size: "base" | "sm" | "lg" | "xl" = "base";
 	export let color: Color = "default";
+	export let noBorder = false;
 
 	let inputRef: HTMLInputElement;
 	let debounceTimeout: number;
@@ -70,8 +71,9 @@
 		data-has-label={label != undefined}
 		data-size={size}
 		data-color={color}
+		data-border={!noBorder}
 		aria-disabled={disabled}
-		class="group/geist-input grid grid-flow-col relative data-[has-label=false]:border rounded-md
+		class="group/geist-input grid grid-flow-col relative data-[border=true]:data-[has-label=false]:border rounded-md
 		border-gray-100 overflow-hidden aria-disabled:bg-gray-50 aria-disabled:dark:bg-gray-950
 		dark:border-gray-900 w-fit data-[color='default']:data-[has-label=false]:focus-within:border-gray-200
 		data-[color='default']:data-[has-label=false]:focus-within:dark:border-gray-800 transition-all
@@ -99,7 +101,7 @@
 			</span>
 		{/if}
 		<div
-			class="flex place-items-center group-data-[has-label=true]/geist-input:border order-2
+			class="flex place-items-center group-data-[border=true]/geist-input:group-data-[has-label=true]/geist-input:border order-2
 			group-data-[placement='end']/geist-input:rounded-l-md group-data-[placement='start']/geist-input:rounded-r-md
 			focus-within:border-gray-200 dark:focus-within:border-gray-800 transition-all border-gray-100
 			dark:border-gray-900

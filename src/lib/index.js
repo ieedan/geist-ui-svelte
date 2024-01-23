@@ -52,7 +52,7 @@ export { default as TabItem } from "./tabs/TabItem.svelte";
 
 export { default as Badge } from "./badge/Badge.svelte";
 
-export { default as User } from "./user/User.svelte";
+export { default as Avatar } from "./avatar/Avatar.svelte";
 
 export { default as Image } from "./image/Image.svelte";
 

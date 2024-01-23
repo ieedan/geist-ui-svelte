@@ -215,6 +215,28 @@ placeholder="https://github"/>`}
 	</div>
 </FieldSet>
 <Spacer h={30} />
+<Text type="h4">No Border</Text>
+<Spacer h={10} />
+<FieldSet>
+	<div class="flex flex-col gap-2">
+		<Input type="text" width="250px" placeholder="Type your stuff in here" noBorder />
+	</div>
+	<div slot="footer">
+		<Details label="Code">
+			<Code
+				lang="svelte"
+				edits={[{ number: 5, type: "add" }]}
+				code={`<Input
+	type="text"
+	width="250px"
+	placeholder="Type your stuff in here"
+	noBorder
+/>`}
+			/>
+		</Details>
+	</div>
+</FieldSet>
+<Spacer h={30} />
 <Text type="h4">With icon</Text>
 <Spacer h={10} />
 <FieldSet>

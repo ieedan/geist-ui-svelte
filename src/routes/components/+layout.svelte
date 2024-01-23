@@ -104,8 +104,8 @@
 			slug: "/components/badge",
 		},
 		{
-			name: "User",
-			slug: "/components/user",
+			name: "Avatar",
+			slug: "/components/avatar",
 		},
 		{
 			name: "Image",

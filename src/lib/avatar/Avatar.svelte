@@ -4,6 +4,7 @@
 	export let details: string | undefined = undefined;
 	export let detail: boolean = false;
 	export let href: string | undefined = undefined;
+	export let size: number = 28;
 
 	$: shortName = getShortName(name);
 
@@ -29,9 +30,16 @@
 {#if href != undefined}
 	<a {href} {...$$restProps} class="inline-flex place-items-center gap-2">
 		{#if img != undefined}
-			<img class="size-7 rounded-full" src={img} alt="{name}'s avatar" />
+			<img
+				class="rounded-full"
+				width="{size}px"
+				height="{size}px"
+				src={img}
+				alt="{name}'s avatar"
+			/>
 		{:else}
 			<div
+				style="width: {size}px; height: {size}px;"
 				class="rounded-full text-xs flex place-items-center justify-center border size-7 border-gray-100 dark:border-gray-900"
 				><span>{shortName}</span></div
 			>
@@ -48,9 +56,16 @@
 {:else}
 	<div class="inline-flex place-items-center gap-2">
 		{#if img != undefined}
-			<img class="size-7 rounded-full" src={img} alt="{name}'s avatar" />
+			<img
+				class="rounded-full"
+				width="{size}px"
+				height="{size}px"
+				src={img}
+				alt="{name}'s avatar"
+			/>
 		{:else}
 			<div
+				style="width: {size}px; height: {size}px;"
 				class="rounded-full text-xs flex place-items-center justify-center border size-7 border-gray-100 dark:border-gray-900"
 				><span>{shortName}</span></div
 			>
@@ -70,5 +85,5 @@
 @component
 A layout component to display a user.
 
-[See Docs](https://geist-ui-svelte.dev/components/user) | [Open Issue](https://github.com/ieedan/geist-ui-svelte/issues)
+[See Docs](https://geist-ui-svelte.dev/components/avatar) | [Open Issue](https://github.com/ieedan/geist-ui-svelte/issues)
 -->

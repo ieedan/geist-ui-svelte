@@ -8,7 +8,7 @@
 	import Skeleton from "$lib/skeleton/Skeleton.svelte";
 	import SkeletonContainer from "$lib/skeleton/SkeletonContainer.svelte";
 	import Button from "$lib/button/Button.svelte";
-	import User from "$lib/user/User.svelte";
+	import User from "$lib/avatar/Avatar.svelte";
 	import { onMount } from "svelte";
 
 	let loading = true;
