@@ -32,7 +32,8 @@
 				code={`<Avatar name="Aidan" />
 <Avatar name="Aidan Bleser" />
 <Avatar name="Aidan R Bleser" />
-<Avatar name="Eva Rivera" />`} />
+<Avatar name="Eva Rivera" />`}
+			/>
 		</Details>
 	</div>
 </FieldSet>
@@ -53,12 +54,13 @@
 				code={`<Avatar name="Aidan Bleser" size={24}/>
 <Avatar name="Aidan Bleser" />
 <Avatar name="Aidan Bleser" size={34}/>
-<Avatar name="Aidan Bleser" size={50}/>`} />
+<Avatar name="Aidan Bleser" size={50}/>`}
+			/>
 		</Details>
 	</div>
 </FieldSet>
 <Spacer h={30} />
-<Text type="h4">With Avatar</Text>
+<Text type="h4">With Image</Text>
 <Spacer h={10} />
 <FieldSet>
 	<div class="flex flex-col justify-start">
@@ -70,7 +72,8 @@
 				lang="svelte"
 				code={`<Avatar 
 	name="Aidan"
-	img="https://avatars.githubusercontent.com/u/117548273?v=4"/>`} />
+	img="https://avatars.githubusercontent.com/u/117548273?v=4"/>`}
+			/>
 		</Details>
 	</div>
 </FieldSet>
@@ -90,7 +93,8 @@
 				code={`<Avatar 
 	name="Aidan" 
 	img="https://avatars.githubusercontent.com/u/117548273?v=4" 
-	detail/>`} />
+	detail/>`}
+			/>
 		</Details>
 	</div>
 </FieldSet>
@@ -108,7 +112,8 @@
 			name="Aidan"
 			img="https://avatars.githubusercontent.com/u/117548273?v=4"
 			detail
-			details="Trash Dev" />
+			details="Trash Dev"
+		/>
 	</div>
 	<div slot="footer">
 		<Details label="Code">
@@ -118,7 +123,8 @@
 	name="Aidan"
 	img="https://avatars.githubusercontent.com/u/117548273?v=4"
 	detail
-	details="Trash Dev" />`} />
+	details="Trash Dev" />`}
+			/>
 		</Details>
 	</div>
 </FieldSet>
