@@ -80,6 +80,8 @@ module.exports = {
 						"Bleser",
 						"buttongroup",
 						"lightswitch",
+						"bunx",
+						"camelcase",
 					],
 				},
 			},
