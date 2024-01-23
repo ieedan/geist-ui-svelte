@@ -153,9 +153,9 @@
 			"types": "./dist/tabs/TabItem.svelte.d.ts",
 			"svelte": "./dist/tabs/TabItem.svelte"
 		},
-		"./User.svelte": {
-			"types": "./dist/user/User.svelte.d.ts",
-			"svelte": "./dist/user/User.svelte"
+		"./Avatar.svelte": {
+			"types": "./dist/avatar/Avatar.svelte.d.ts",
+			"svelte": "./dist/avatar/Avatar.svelte"
 		},
 		"./PlusIcon.svelte": {
 			"types": "./dist/icons/PlusIcon.svelte.d.ts",

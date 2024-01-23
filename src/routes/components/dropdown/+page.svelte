@@ -6,7 +6,7 @@
 	import Spacer from "$lib/spacer/Spacer.svelte";
 	import Text from "$lib/text/Text.svelte";
 	import Dropdown from "$lib/dropdown/Dropdown.svelte";
-	import User from "$lib/user/User.svelte";
+	import User from "$lib/avatar/Avatar.svelte";
 	import Divider from "$lib/divider/Divider.svelte";
 	import LightSwitch from "$lib/lightswitch/LightSwitch.svelte";
 	import Button from "$lib/button/Button.svelte";
