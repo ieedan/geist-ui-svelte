@@ -79,7 +79,7 @@
 				data-[style='error']:text-red-500 data-[style='error']:dark:text-red-600
 				data-[style='dark']:text-gray-0 data-[style='subtle']:dark:text-gray-100
 				data-[style='subtle']:text-gray-900 data-[style='subtle']:border-gray-100 
-				data-[style='transparent']:text-gray-900"
+				data-[style='transparent']:text-gray-900 data-[style='success']:dark:text-blue-600"
 			>
 				{symbol} {text}</span
 			>
@@ -90,7 +90,7 @@
 		on:click={copy}
 		data-color={type}
 		class="flex place-items-center justify-center h-[20px] text-gray-999 dark:text-gray-0 data-[color='success']:text-blue-600
-	data-[color='warning']:text-orange-300 transition-all hover:text-gray-900 dark:hover:text-gray-200
+	data-[color='warning']:text-orange-300 transition-all hover:text-gray-900 dark:hover:text-gray-200 data-[color='success']:dark:text-blue-600
 	data-[color='secondary']:text-gray-300 data-[color='secondary']:hover:text-gray-400
 	data-[color='secondary']:dark:text-gray-700 data-[color='secondary']:dark:hover:text-gray-800
 	data-[color='warning']:hover:text-orange-400 data-[color='error']:text-red-500
