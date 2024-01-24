@@ -217,10 +217,10 @@
 			bind:this={searchDivRef}
 			class="flex flex-col pt-2 border-t border-gray-100 dark:border-gray-900"
 		>
-			{#each foundComponents as { name, slug } (name)}
+			{#each foundComponents as { name, slug }, index (name)}
 				<a
 					data-key={name}
-					data-selected={false}
+					data-selected={index == 0}
 					on:click={() => (searchVisible = false)}
 					class="py-3 px-3 data-[selected=true]:dark:bg-gray-950
 					data-[selected=true]:bg-gray-50 hover:bg-gray-50
