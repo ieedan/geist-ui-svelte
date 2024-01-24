@@ -30,6 +30,8 @@ export { default as ButtonGroupButton } from "./buttongroup/ButtonGroupButton.sv
 
 export { default as ToggleButton } from "./togglebutton/ToggleButton.svelte";
 
+export { default as IPAddressInput } from "./ipaddressinput/IPAddressInput.svelte";
+
 /* Layout */
 
 export { default as Card } from "./card/Card.svelte";
