@@ -15,6 +15,10 @@
 	import ChevronIcon from "$lib/icons/ChevronIcon.svelte";
 </script>
 
+<svelte:head>
+	<title>Login Form - Examples - geist-ui-svelte</title>
+</svelte:head>
+
 <Hero exclusionHeight={89} class="sm:px-20 relative">
 	<div
 		class="flex justify-between border-transparent sm:border-gray-100

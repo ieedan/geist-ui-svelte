@@ -25,6 +25,10 @@
 	];
 </script>
 
+<svelte:head>
+	<title>Examples - geist-ui-svelte</title>
+</svelte:head>
+
 <Center class="px-6">
 	<Spacer h={100} />
 	<Text type="h1" style="max-width: 700px;" align="center"
