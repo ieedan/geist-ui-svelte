@@ -110,7 +110,8 @@
 
 		group-data-[style='abort-active']/gbd:bg-transparent group-data-[style='abort-active']/gbd:dark:bg-transparent group-data-[style='abort-active']/gbd:hover:bg-transparent
 		group-data-[style='abort-active']/gbd:hover:dark:bg-transparent group-data-[style='abort-active']/gbd:border-transparent group-data-[style='abort-active']/gbd:hover:dark:text-gray-0
-		group-data-[style='abort-active']/gbd:text-gray-400 group-data-[style='abort-active']/gbd:dark:text-gray-600 group-data-[style='abort-active']/gbd:hover:text-gray-999 {className}">
+		group-data-[style='abort-active']/gbd:text-gray-400 group-data-[style='abort-active']/gbd:dark:text-gray-600 group-data-[style='abort-active']/gbd:hover:text-gray-999 {className}"
+	>
 		<slot />
 	</a>
 {:else}
@@ -218,7 +219,8 @@
 
 		group-data-[style='abort-active']/gbd:bg-transparent group-data-[style='abort-active']/gbd:dark:bg-transparent group-data-[style='abort-active']/gbd:hover:bg-transparent
 		group-data-[style='abort-active']/gbd:hover:dark:bg-transparent group-data-[style='abort-active']/gbd:border-transparent group-data-[style='abort-active']/gbd:hover:dark:text-gray-0
-		group-data-[style='abort-active']/gbd:text-gray-400 group-data-[style='abort-active']/gbd:dark:text-gray-600 group-data-[style='abort-active']/gbd:hover:text-gray-999 {className}">
+		group-data-[style='abort-active']/gbd:text-gray-400 group-data-[style='abort-active']/gbd:dark:text-gray-600 group-data-[style='abort-active']/gbd:hover:text-gray-999 {className}"
+	>
 		<slot />
 	</button>
 {/if}

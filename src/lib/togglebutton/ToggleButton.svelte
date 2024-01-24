@@ -1,18 +1,18 @@
 <script lang="ts">
-	import type { ButtonColor, Size } from "$lib/types.js";
+	import type { Size } from "$lib/types.js";
 	import { createEventDispatcher } from "svelte";
 	import type { HTMLButtonAttributes } from "svelte/elements";
 
 	const dispatch = createEventDispatcher();
 
 	export let toggled = false;
-    export let disabled = false;
+	export let disabled = false;
 	export let color: "default" | "secondary" | "success" | "warning" | "error" = "default";
-    export let size: Size = "md";
-    export let square: boolean = false;
-    let className: string = "";
+	export let size: Size = "md";
+	export let square: boolean = false;
+	let className: string = "";
 	export { className as class };
-    export let type: HTMLButtonAttributes["type"] = "button";
+	export let type: HTMLButtonAttributes["type"] = "button";
 
 	const toggle = () => {
 		toggled = !toggled;
@@ -21,14 +21,14 @@
 </script>
 
 <button
-    {...$$restProps}
+	{...$$restProps}
 	on:click={toggle}
-    {type}
-    {disabled}
+	{type}
+	{disabled}
 	data-size={size}
-    data-color={color}
+	data-color={color}
 	data-toggled={toggled}
-    data-square={square}
+	data-square={square}
 	class="flex place-items-center justify-center transition-all w-fit px-2 py-2 rounded-md data-[toggled=true]:bg-gray-100 data-[toggled=true]:dark:bg-gray-900
     data-[toggled=false]:dark:text-gray-700 data-[toggled=false]:text-gray-300 data-[toggled=true]:text-gray-999 data-[toggled=true]:dark:text-gray-0
     
@@ -38,7 +38,7 @@
     
     data-[square=true]:data-[size='lg']:min-w-[40px] data-[square=true]:data-[size='md']:min-w-[36px]
 	data-[square=true]:data-[size='sm']:min-w-[32px] data-[square=true]:data-[size='xs']:min-w-[28px]
-	data-[square=true]:data-[size='xl']:min-w-[44px] 
+	data-[square=true]:data-[size='xl']:min-w-[44px]
 
     data-[color='secondary']:data-[toggled=true]:bg-gray-50 data-[color='secondary']:data-[toggled=true]:dark:bg-gray-950
     
@@ -51,7 +51,8 @@
     data-[color='error']:data-[toggled=true]:bg-red-500 data-[color='error']:data-[toggled=true]:dark:bg-red-600
     data-[color='error']:data-[toggled=true]:text-gray-0 data-[color='error']:data-[toggled=true]:dark:text-gray-0
     
-    {className}">
+    {className}"
+>
 	{#if toggled}
 		<slot name="on" />
 	{:else}

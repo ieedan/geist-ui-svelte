@@ -1,7 +1,7 @@
-import { redirect } from '@sveltejs/kit';
+import { redirect } from "@sveltejs/kit";
 
 export async function load({ url }) {
-    if (url.pathname == "/components") {
-        throw redirect(303, "/components/text");
-    }
+	if (url.pathname == "/components") {
+		throw redirect(303, "/components/text");
+	}
 }

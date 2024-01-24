@@ -54,7 +54,7 @@ module.exports = {
 								"bunx",
 								"camelcase",
 								"ieedan",
-								"togglebutton"
+								"togglebutton",
 							],
 						},
 					},
@@ -87,7 +87,7 @@ module.exports = {
 						"bunx",
 						"camelcase",
 						"ieedan",
-						"togglebutton"
+						"togglebutton",
 					],
 				},
 			},
