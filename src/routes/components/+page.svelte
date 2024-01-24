@@ -1,11 +1,9 @@
 <script lang="ts">
-	import { onMount } from "svelte";
-	import { goto } from "$app/navigation";
+	import Hero from "$lib/hero/Hero.svelte";
+	import Link from "$lib/link/Link.svelte";
 
-	// Redirects to introduction
-	onMount(() => {
-		if (window.location.pathname === "/components") {
-			goto("/components/text");
-		}
-	});
 </script>
+
+<Hero exclusionHeight={79}>
+	If you haven't already been redirected click <Link to="/components/text" color>Here</Link>
+</Hero>
