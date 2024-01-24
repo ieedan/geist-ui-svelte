@@ -73,6 +73,7 @@
 		<Button color="success-light">Success Light</Button>
 		<Button color="warning-light">Warning Light</Button>
 		<Button color="error-light">Error Light</Button>
+		<Button color="abort-active">Abort Active</Button>
 	</div>
 	<div slot="footer">
 		<Details label="Code">
@@ -86,7 +87,8 @@
 <Button color="secondary-light">Secondary Light</Button>
 <Button color="success-light">Success Light</Button>
 <Button color="warning-light">Warning Light</Button>
-<Button color="error-light">Error Light</Button>`}
+<Button color="error-light">Error Light</Button>
+<Button color="abort-active">Abort Active</Button>`}
 			/>
 		</Details>
 	</div>

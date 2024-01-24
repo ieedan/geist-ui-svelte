@@ -20,6 +20,7 @@
 		"success-light",
 		"warning-light",
 		"error-light",
+		"abort-active"
 	];
 
 	/* eslint-disable no-useless-escape */
