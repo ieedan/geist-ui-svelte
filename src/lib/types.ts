@@ -47,4 +47,5 @@ export type ButtonColor =
 	| "secondary-light"
 	| "success-light"
 	| "warning-light"
-	| "error-light";
+	| "error-light"
+	| "abort-active";

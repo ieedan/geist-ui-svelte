@@ -28,6 +28,8 @@ export { default as ButtonGroup } from "./buttongroup/ButtonGroup.svelte";
 
 export { default as ButtonGroupButton } from "./buttongroup/ButtonGroupButton.svelte";
 
+export { default as ToggleButton } from "./togglebutton/ToggleButton.svelte";
+
 /* Layout */
 
 export { default as Card } from "./card/Card.svelte";

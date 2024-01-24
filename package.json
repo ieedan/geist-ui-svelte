@@ -1,6 +1,6 @@
 {
 	"name": "geist-ui-svelte",
-	"version": "0.4.1",
+	"version": "0.4.2",
 	"author": {
 		"name": "Aidan Bleser",
 		"url": "https://aidanbleser.com"
@@ -280,6 +280,10 @@
 		"./LightSwitch.svelte": {
 			"types": "./dist/lightswitch/LightSwitch.svelte.d.ts",
 			"svelte": "./dist/lightswitch/LightSwitch.svelte"
+		},
+		"./ToggleButton.svelte": {
+			"types": "./dist/togglebutton/ToggleButton.svelte.d.ts",
+			"svelte": "./dist/togglebutton/ToggleButton.svelte"
 		},
 		"./styles/geist-ui-svelte.css": "./dist/styles/geist-ui-svelte.css"
 	},

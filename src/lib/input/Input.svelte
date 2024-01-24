@@ -93,7 +93,7 @@
 				group-data-[placement='end']/geist-input:border-r group-data-[placement='end']/geist-input:rounded-r-md
 				group-data-[placement='start']/geist-input:border-l group-data-[placement='start']/geist-input:rounded-l-md
 			  bg-gray-50 dark:bg-gray-950 border-gray-100 border-y dark:border-gray-900 py-1 px-2
-			    flex place-items-center justify-center text-gray-300 text-sm dark:text-gray-500 h-full
+			    flex place-items-center justify-center text-gray-300 text-sm dark:text-gray-700 h-full
 				group-data-[size='sm']/geist-input:text-xs group-data-[size='lg']/geist-input:text-base
 				group-data-[size='xl']/geist-input:text-lg"
 			>
