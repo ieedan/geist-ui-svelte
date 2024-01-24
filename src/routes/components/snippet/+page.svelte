@@ -36,6 +36,7 @@
 		<Snippet type="error" text="npm i geist-ui-svelte" />
 		<Snippet type="secondary" text="npm i geist-ui-svelte" />
 		<Snippet type="subtle" text="npm i geist-ui-svelte" />
+		<Snippet type="transparent" text="npm i geist-ui-svelte" />
 		<Snippet type="dark" text="npm i geist-ui-svelte" />
 		<Snippet type="lite" text="npm i geist-ui-svelte" />
 	</div>
@@ -49,6 +50,7 @@
 <Snippet type="error" text="npm i geist-ui-svelte"/>
 <Snippet type="secondary" text="npm i geist-ui-svelte"/>
 <Snippet type="subtle" text="npm i geist-ui-svelte"/>
+<Snippet type="transparent" text="npm i geist-ui-svelte" />
 <Snippet type="dark" text="npm i geist-ui-svelte"/>
 <Snippet type="lite" text="npm i geist-ui-svelte"/>`}
 			/>

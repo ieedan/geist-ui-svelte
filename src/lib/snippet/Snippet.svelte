@@ -6,7 +6,7 @@
 
 	export let text: string | string[];
 	export let width: string = "300px";
-	export let type: Color | "dark" | "lite" | "subtle" = "default";
+	export let type: Color | "dark" | "lite" | "subtle" | "transparent" = "default";
 	export let symbol: string = "$";
 
 	let copied = false;
@@ -47,7 +47,8 @@
 	data-[color='lite']:dark:border-gray-900 data-[color='lite']:bg-gray-50
 	data-[color='lite']:border-gray-200 data-[color='subtle']:dark:border-gray-900
 	data-[color='subtle']:dark:bg-gray-900 data-[color='subtle']:bg-gray-100
-	data-[color='subtle']:border-gray-100"
+	data-[color='transparent']:dark:text-gray-100 data-[color='transparent']:border-gray-100 
+	data-[color='transparent']:dark:border-gray-900"
 >
 	<code class="flex flex-col">
 		{#if Array.isArray(text)}
@@ -61,7 +62,8 @@
 				data-[style='warning']:text-orange-300 data-[style='warning']:dark:text-orange-400
 				data-[style='error']:text-red-500 data-[style='error']:dark:text-red-600
 				data-[style='dark']:text-gray-0 data-[style='subtle']:dark:text-gray-100
-				data-[style='subtle']:text-gray-900"
+				data-[style='subtle']:text-gray-900 data-[style='subtle']:border-gray-100 
+				data-[style='transparent']:text-gray-900"
 				>
 					{symbol}
 					{line}
@@ -76,7 +78,8 @@
 				data-[style='warning']:text-orange-300 data-[style='warning']:dark:text-orange-400
 				data-[style='error']:text-red-500 data-[style='error']:dark:text-red-600
 				data-[style='dark']:text-gray-0 data-[style='subtle']:dark:text-gray-100
-				data-[style='subtle']:text-gray-900"
+				data-[style='subtle']:text-gray-900 data-[style='subtle']:border-gray-100 
+				data-[style='transparent']:text-gray-900"
 			>
 				{symbol} {text}</span
 			>
