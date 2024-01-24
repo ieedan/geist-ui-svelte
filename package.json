@@ -281,6 +281,10 @@
 			"types": "./dist/lightswitch/LightSwitch.svelte.d.ts",
 			"svelte": "./dist/lightswitch/LightSwitch.svelte"
 		},
+		"./ToggleButton.svelte": {
+			"types": "./dist/togglebutton/ToggleButton.svelte.d.ts",
+			"svelte": "./dist/togglebutton/ToggleButton.svelte"
+		},
 		"./styles/geist-ui-svelte.css": "./dist/styles/geist-ui-svelte.css"
 	},
 	"files": [

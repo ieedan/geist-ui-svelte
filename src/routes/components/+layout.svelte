@@ -59,6 +59,10 @@
 			slug: "/components/buttongroup",
 		},
 		{
+			name: "ToggleButton",
+			slug: "/components/togglebutton",
+		},
+		{
 			name: "Search",
 			slug: "/components/search",
 		},
