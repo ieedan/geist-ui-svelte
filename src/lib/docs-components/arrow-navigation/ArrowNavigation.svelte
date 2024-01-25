@@ -8,9 +8,9 @@
 	export let next: ShortRoute | undefined = undefined;
 
 	const handleDocumentKeydown = (e: KeyboardEvent) => {
-		if (e.key == "ArrowRight" && next) {
+		if (e.key == "ArrowRight" && e.ctrlKey && next) {
 			goto(next?.slug);
-		} else if (e.key == "ArrowLeft" && last) {
+		} else if (e.key == "ArrowLeft" && e.ctrlKey && last) {
 			goto(last?.slug);
 		}
 	};
