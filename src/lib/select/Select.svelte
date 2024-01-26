@@ -9,6 +9,16 @@
 
 	const dispatch = createEventDispatcher();
 
+	type ValueType =
+		| "string"
+		| "number"
+		| "bigint"
+		| "boolean"
+		| "symbol"
+		| "undefined"
+		| "object"
+		| "function";
+
 	let dropDownRef: HTMLDivElement;
 	let buttonRef: HTMLButtonElement;
 	export let value: HTMLOptionAttributes["value"] = undefined;
@@ -24,6 +34,7 @@
 	export let noIcon: boolean = false;
 	export let shadow: boolean = false;
 	export let iconRotation: boolean = true;
+	export let maxHeight: number = 240;
 
 	const toggleShow = () => {
 		show = !show;
@@ -82,7 +93,17 @@
 
 		const v = option.getAttribute("data-value");
 
-		value = v;
+		const type = option.getAttribute("data-type") as ValueType;
+
+		if (v == null) {
+			value = v;
+		} else if (type == "number") {
+			value = parseFloat(v);
+		} else if (type == "boolean") {
+			value = v == "true";
+		} else {
+			value = v;
+		}
 
 		// Get html of selected option
 		selectedHTML = option.innerHTML;
@@ -196,10 +217,11 @@
 	aria-label="listbox dialog"
 	data-shadow={shadow}
 	data-show={show}
-	style="width: {width};"
+	style="width: {width}; max-height: {maxHeight}px;"
 	bind:this={dropDownRef}
 	class="absolute bg-gray-0 dark:bg-gray-999 border border-gray-100 dark:border-gray-900 z-[1] transition-all
-         rounded-md data-[show=false]:opacity-0 data-[show=false]:pointer-events-none data-[shadow=true]:shadow-sm dark:shadow-gray-999"
+         rounded-md data-[show=false]:opacity-0 data-[show=false]:pointer-events-none data-[shadow=true]:shadow-sm
+		 dark:shadow-gray-999 overflow-y-auto"
 >
 	<slot />
 </div>

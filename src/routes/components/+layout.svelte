@@ -136,6 +136,10 @@
 			slug: "/components/radiotabs",
 		},
 		{
+			name: "Label",
+			slug: "/components/label",
+		},
+		{
 			name: "Skeleton",
 			slug: "/components/skeleton",
 		},
