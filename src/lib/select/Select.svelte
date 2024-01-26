@@ -9,6 +9,8 @@
 
 	const dispatch = createEventDispatcher();
 
+	type ValueType = "string" | "number" | "bigint" | "boolean" | "symbol" | "undefined" | "object" | "function";
+
 	let dropDownRef: HTMLDivElement;
 	let buttonRef: HTMLButtonElement;
 	export let value: HTMLOptionAttributes["value"] = undefined;
@@ -83,7 +85,17 @@
 
 		const v = option.getAttribute("data-value");
 
-		value = v;
+		const type = option.getAttribute("data-type") as ValueType;
+
+		if (v == null) {
+			value = v;
+		} else if (type == "number") {
+			value = parseFloat(v);
+		} else if (type == "boolean") {
+			value = v == "true";
+		} else {
+			value = v;
+		}	
 
 		// Get html of selected option
 		selectedHTML = option.innerHTML;
