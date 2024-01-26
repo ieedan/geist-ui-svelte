@@ -10,10 +10,13 @@
 	import Note from "$lib/note/Note.svelte";
 	import Header from "$lib/header/Header.svelte";
 	import Hero from "$lib/hero/Hero.svelte";
+	import Tabs from "$lib/tabs/Tabs.svelte";
+	import TabItem from "$lib/tabs/TabItem.svelte";
 
 	let firstExamplePageVisible = false;
 	let secondExamplePageVisible = false;
 	let thirdExamplePageVisible = false;
+	let fourthExamplePageVisible = false;
 </script>
 
 <Text type="h3">Header</Text>
@@ -35,8 +38,7 @@
 					<div class="flex place-items-center justify-between w-full px-6 max-w-5xl">
 						<Text type="h5">default</Text>
 						<Button on:click={() => (firstExamplePageVisible = false)}
-							>Click to close</Button
-						>
+							>Click to close</Button>
 					</div>
 				</Header>
 				<Hero>
@@ -55,8 +57,7 @@
 		<Text type="h5">default</Text>
 		<Button>Click to close</Button>
 	</div>
-</Header>`}
-			/>
+</Header>`} />
 		</Details>
 	</div>
 </FieldSet>
@@ -77,8 +78,7 @@
 					<div class="flex place-items-center justify-between w-full px-6 max-w-5xl">
 						<Text type="h5">sticky</Text>
 						<Button on:click={() => (secondExamplePageVisible = false)}
-							>Click to close</Button
-						>
+							>Click to close</Button>
 					</div>
 				</Header>
 				<div class="flex flex-col place-items-center justify-center">
@@ -106,8 +106,7 @@
 		<Text type="h5">sticky</Text>
 		<Button>Click to close</Button>
 	</div>
-</Header>`}
-			/>
+</Header>`} />
 		</Details>
 	</div>
 </FieldSet>
@@ -125,8 +124,7 @@
 					<div class="flex place-items-center justify-between w-full px-6 max-w-5xl">
 						<Text type="h5">fixed</Text>
 						<Button on:click={() => (thirdExamplePageVisible = false)}
-							>Click to close</Button
-						>
+							>Click to close</Button>
 					</div>
 				</Header>
 				<Hero>
@@ -160,8 +158,65 @@
 		<Text type="h5">fixed</Text>
 		<Button>Click to close</Button>
 	</div>
-</Header>`}
-			/>
+</Header>`} />
+		</Details>
+	</div>
+</FieldSet>
+<Spacer h={30} />
+<Text type="h4">No Border</Text>
+<Spacer h={5} />
+<Text>
+	Sometimes you don't want a border on your header because something else should define that
+	border if this is the case just add the attribute <code>`noBorder`</code>.
+</Text>
+<Spacer h={10} />
+<FieldSet>
+	<div class="flex flex-col justify-start">
+		<Button on:click={() => (fourthExamplePageVisible = true)}>Show Example</Button>
+		<Page bind:visible={fourthExamplePageVisible}>
+			<div class="max-h-screen overflow-y-auto">
+				<Header noBorder>
+					<div class="flex place-items-center justify-between w-full px-6">
+						<Text type="h5">Borderless</Text>
+						<Button on:click={() => (fourthExamplePageVisible = false)}
+							>Click to close</Button>
+					</div>
+				</Header>
+				<div class="flex place-items-center justify-center">
+					<div class="w-full flex-grow">
+						<Tabs>
+							<TabItem>Overview</TabItem>
+							<TabItem>Insights</TabItem>
+							<TabItem>Settings</TabItem>
+						</Tabs>
+					</div>
+				</div>
+			</div>
+		</Page>
+	</div>
+	<div slot="footer">
+		<Details label="Code">
+			<Code
+				edits={[{number: 2, type: "add"}]}
+				lang="svelte"
+				code={`<div class="max-h-screen overflow-y-auto">
+	<Header noBorder>
+		<div class="flex place-items-center justify-between w-full px-6">
+			<Text type="h5">Borderless</Text>
+			<Button on:click={() => (fourthExamplePageVisible = false)}
+				>Click to close</Button>
+		</div>
+	</Header>
+	<div class="flex place-items-center justify-center">
+		<div class="w-full flex-grow">
+			<Tabs>
+				<TabItem>Overview</TabItem>
+				<TabItem>Insights</TabItem>
+				<TabItem>Settings</TabItem>
+			</Tabs>
+		</div>
+	</div>
+</div>`} />
 		</Details>
 	</div>
 </FieldSet>

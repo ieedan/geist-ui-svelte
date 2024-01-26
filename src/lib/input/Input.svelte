@@ -61,7 +61,7 @@
 	});
 </script>
 
-<div class="w-full">
+<div>
 	<Label for={id}>
 		<slot/>
 	</Label>

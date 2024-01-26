@@ -72,6 +72,8 @@ export { default as RadioTab } from "./radiotabs/RadioTab.svelte";
 
 export { default as Skeleton } from "./skeleton/Skeleton.svelte";
 
+export { default as Label } from "./label/Label.svelte";
+
 export { default as SkeletonContainer } from "./skeleton/SkeletonContainer.svelte";
 
 /* Interactivity */
