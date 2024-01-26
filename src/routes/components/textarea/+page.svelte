@@ -64,15 +64,16 @@
 <Spacer h={10} />
 <FieldSet>
 	<div class="flex flex-col gap-2">
-		<TextArea width="100%" placeholder="Some input">
-			Some Text
-		</TextArea>
+		<TextArea width="100%" placeholder="Some input">Some Text</TextArea>
 	</div>
 	<div slot="footer">
 		<Details label="Code">
-			<Code lang="svelte" code={`<TextArea width="100%" placeholder="Some input">
+			<Code
+				lang="svelte"
+				code={`<TextArea width="100%" placeholder="Some input">
 	Some Text
-</TextArea>`} />
+</TextArea>`}
+			/>
 		</Details>
 	</div>
 </FieldSet>
@@ -81,17 +82,20 @@
 <Spacer h={10} />
 <FieldSet>
 	<div class="flex flex-col gap-2">
-		<TextArea placeholder="Some input" size="sm"/>
-		<TextArea placeholder="Some input" size="base"/>
-		<TextArea placeholder="Some input" size="lg"/>
-		<TextArea placeholder="Some input" size="xl"/>
+		<TextArea placeholder="Some input" size="sm" />
+		<TextArea placeholder="Some input" size="base" />
+		<TextArea placeholder="Some input" size="lg" />
+		<TextArea placeholder="Some input" size="xl" />
 	</div>
 	<div slot="footer">
 		<Details label="Code">
-			<Code lang="svelte" code={`<TextArea placeholder="Some input" size="sm"/>
+			<Code
+				lang="svelte"
+				code={`<TextArea placeholder="Some input" size="sm"/>
 <TextArea placeholder="Some input" size="base"/>
 <TextArea placeholder="Some input" size="lg"/>
-<TextArea placeholder="Some input" size="xl"/>`} />
+<TextArea placeholder="Some input" size="xl"/>`}
+			/>
 		</Details>
 	</div>
 </FieldSet>

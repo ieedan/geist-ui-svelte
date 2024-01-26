@@ -63,7 +63,7 @@
 
 <div>
 	<Label for={id}>
-		<slot/>
+		<slot />
 	</Label>
 	<div
 		style="width: {width ? width : ''};"

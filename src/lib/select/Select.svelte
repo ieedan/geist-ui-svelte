@@ -9,7 +9,15 @@
 
 	const dispatch = createEventDispatcher();
 
-	type ValueType = "string" | "number" | "bigint" | "boolean" | "symbol" | "undefined" | "object" | "function";
+	type ValueType =
+		| "string"
+		| "number"
+		| "bigint"
+		| "boolean"
+		| "symbol"
+		| "undefined"
+		| "object"
+		| "function";
 
 	let dropDownRef: HTMLDivElement;
 	let buttonRef: HTMLButtonElement;
@@ -95,7 +103,7 @@
 			value = v == "true";
 		} else {
 			value = v;
-		}	
+		}
 
 		// Get html of selected option
 		selectedHTML = option.innerHTML;
@@ -212,7 +220,7 @@
 	style="width: {width}; max-height: {maxHeight}px;"
 	bind:this={dropDownRef}
 	class="absolute bg-gray-0 dark:bg-gray-999 border border-gray-100 dark:border-gray-900 z-[1] transition-all
-         rounded-md data-[show=false]:opacity-0 data-[show=false]:pointer-events-none data-[shadow=true]:shadow-sm 
+         rounded-md data-[show=false]:opacity-0 data-[show=false]:pointer-events-none data-[shadow=true]:shadow-sm
 		 dark:shadow-gray-999 overflow-y-auto"
 >
 	<slot />

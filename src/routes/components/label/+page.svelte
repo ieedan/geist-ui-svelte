@@ -7,7 +7,7 @@
 	import Snippet from "$lib/snippet/Snippet.svelte";
 	import Spacer from "$lib/spacer/Spacer.svelte";
 	import Text from "$lib/text/Text.svelte";
-    import Label from "$lib/label/Label.svelte";
+	import Label from "$lib/label/Label.svelte";
 </script>
 
 <Text type="h3">Label</Text>
@@ -20,13 +20,11 @@
 <Spacer h={10} />
 <FieldSet>
 	<div class="flex flex-col justify-start">
-        <Label>
-            Options
-        </Label>
-        <Select>
-            <Option value={1}>Option 1</Option>
-            <Option value={2}>Option 2</Option>
-        </Select>
+		<Label>Options</Label>
+		<Select>
+			<Option value={1}>Option 1</Option>
+			<Option value={2}>Option 2</Option>
+		</Select>
 	</div>
 	<div slot="footer">
 		<Details label="Code">
@@ -45,20 +43,18 @@
 </FieldSet>
 <Spacer h={30} />
 <Text type="h4">With spacing</Text>
-<Spacer h={5}/>
+<Spacer h={5} />
 <Text>The first example works but it doesn't look the best lets add some spacing.</Text>
 <Spacer h={10} />
 <FieldSet>
 	<div class="flex flex-col justify-start">
-        <div>
-            <Label>
-                Options
-            </Label>
-            <Select>
-                <Option value={1}>Option 1</Option>
-                <Option value={2}>Option 2</Option>
-            </Select>
-        </div>
+		<div>
+			<Label>Options</Label>
+			<Select>
+				<Option value={1}>Option 1</Option>
+				<Option value={2}>Option 2</Option>
+			</Select>
+		</div>
 	</div>
 	<div slot="footer">
 		<Details label="Code">

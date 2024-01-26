@@ -36,7 +36,7 @@
 
 <div>
 	<Label for={id}>
-		<slot/>
+		<slot />
 	</Label>
 	<textarea
 		{...$$restProps}

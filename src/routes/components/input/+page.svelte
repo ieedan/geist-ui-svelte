@@ -189,12 +189,8 @@ placeholder="https://github"/>`}
 <Spacer h={10} />
 <FieldSet>
 	<div class="flex flex-col gap-2">
-		<Input type="email" placeholder="Email" width="250px">
-			Email
-		</Input>
-		<Input type="password" placeholder="Password" width="250px">
-			Password
-		</Input>
+		<Input type="email" placeholder="Email" width="250px">Email</Input>
+		<Input type="password" placeholder="Password" width="250px">Password</Input>
 	</div>
 	<div slot="footer">
 		<Details label="Code">

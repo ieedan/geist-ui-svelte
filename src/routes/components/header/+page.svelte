@@ -38,7 +38,8 @@
 					<div class="flex place-items-center justify-between w-full px-6 max-w-5xl">
 						<Text type="h5">default</Text>
 						<Button on:click={() => (firstExamplePageVisible = false)}
-							>Click to close</Button>
+							>Click to close</Button
+						>
 					</div>
 				</Header>
 				<Hero>
@@ -57,7 +58,8 @@
 		<Text type="h5">default</Text>
 		<Button>Click to close</Button>
 	</div>
-</Header>`} />
+</Header>`}
+			/>
 		</Details>
 	</div>
 </FieldSet>
@@ -78,7 +80,8 @@
 					<div class="flex place-items-center justify-between w-full px-6 max-w-5xl">
 						<Text type="h5">sticky</Text>
 						<Button on:click={() => (secondExamplePageVisible = false)}
-							>Click to close</Button>
+							>Click to close</Button
+						>
 					</div>
 				</Header>
 				<div class="flex flex-col place-items-center justify-center">
@@ -106,7 +109,8 @@
 		<Text type="h5">sticky</Text>
 		<Button>Click to close</Button>
 	</div>
-</Header>`} />
+</Header>`}
+			/>
 		</Details>
 	</div>
 </FieldSet>
@@ -124,7 +128,8 @@
 					<div class="flex place-items-center justify-between w-full px-6 max-w-5xl">
 						<Text type="h5">fixed</Text>
 						<Button on:click={() => (thirdExamplePageVisible = false)}
-							>Click to close</Button>
+							>Click to close</Button
+						>
 					</div>
 				</Header>
 				<Hero>
@@ -158,7 +163,8 @@
 		<Text type="h5">fixed</Text>
 		<Button>Click to close</Button>
 	</div>
-</Header>`} />
+</Header>`}
+			/>
 		</Details>
 	</div>
 </FieldSet>
@@ -179,7 +185,8 @@
 					<div class="flex place-items-center justify-between w-full px-6">
 						<Text type="h5">Borderless</Text>
 						<Button on:click={() => (fourthExamplePageVisible = false)}
-							>Click to close</Button>
+							>Click to close</Button
+						>
 					</div>
 				</Header>
 				<div class="flex place-items-center justify-center">
@@ -197,7 +204,7 @@
 	<div slot="footer">
 		<Details label="Code">
 			<Code
-				edits={[{number: 2, type: "add"}]}
+				edits={[{ number: 2, type: "add" }]}
 				lang="svelte"
 				code={`<div class="max-h-screen overflow-y-auto">
 	<Header noBorder>
@@ -216,7 +223,8 @@
 			</Tabs>
 		</div>
 	</div>
-</div>`} />
+</div>`}
+			/>
 		</Details>
 	</div>
 </FieldSet>

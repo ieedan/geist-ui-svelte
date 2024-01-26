@@ -70,7 +70,10 @@
 			<CheckMarkIcon size={16} />
 		{/if}
 	</button>
-	<span class="flex place-items-center justify-start group-aria-disabled:text-gray-400 group-aria-disabled:dark:text-gray-600"><slot /></span>
+	<span
+		class="flex place-items-center justify-start group-aria-disabled:text-gray-400 group-aria-disabled:dark:text-gray-600"
+		><slot /></span
+	>
 </label>
 
 <!--
