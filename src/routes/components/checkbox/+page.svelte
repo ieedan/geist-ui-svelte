@@ -33,6 +33,11 @@
 	<div class="flex flex-col justify-start">
 		<Checkbox disabled>Notifications</Checkbox>
 		<Checkbox disabled checked={true}>Notifications</Checkbox>
+		<Checkbox disabled checked={true}>Default</Checkbox>
+		<Checkbox disabled color="success" checked={true}>Success</Checkbox>
+		<Checkbox disabled color="warning" checked={true}>Warning</Checkbox>
+		<Checkbox disabled color="error" checked={true}>Error</Checkbox>
+		<Checkbox disabled color="secondary" checked={true}>Secondary</Checkbox>
 	</div>
 	<div slot="footer">
 		<Details label="Code">
