@@ -24,6 +24,7 @@
 	export let noIcon: boolean = false;
 	export let shadow: boolean = false;
 	export let iconRotation: boolean = true;
+	export let maxHeight: number = 240;
 
 	const toggleShow = () => {
 		show = !show;
@@ -196,10 +197,11 @@
 	aria-label="listbox dialog"
 	data-shadow={shadow}
 	data-show={show}
-	style="width: {width};"
+	style="width: {width}; max-height: {maxHeight}px;"
 	bind:this={dropDownRef}
 	class="absolute bg-gray-0 dark:bg-gray-999 border border-gray-100 dark:border-gray-900 z-[1] transition-all
-         rounded-md data-[show=false]:opacity-0 data-[show=false]:pointer-events-none data-[shadow=true]:shadow-sm dark:shadow-gray-999"
+         rounded-md data-[show=false]:opacity-0 data-[show=false]:pointer-events-none data-[shadow=true]:shadow-sm 
+		 dark:shadow-gray-999 overflow-y-auto"
 >
 	<slot />
 </div>

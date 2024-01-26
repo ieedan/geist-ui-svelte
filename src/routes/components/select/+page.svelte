@@ -118,6 +118,35 @@
 		},
 	);
 
+	const alphabet: string[] = [
+		"A",
+		"B",
+		"C",
+		"D",
+		"E",
+		"F",
+		"G",
+		"H",
+		"I",
+		"J",
+		"K",
+		"L",
+		"M",
+		"N",
+		"O",
+		"P",
+		"Q",
+		"R",
+		"S",
+		"T",
+		"U",
+		"V",
+		"W",
+		"X",
+		"Y",
+		"Z",
+	];
+
 	let selectedCountry = "United States";
 	let selectedState = "California";
 	let selectedCity = "San Diego";
@@ -149,8 +178,7 @@
 				code={`<Select>
 	<Option value={1}>Option 1</Option>
 	<Option value={2}>Option 2</Option>
-</Select>`}
-			/>
+</Select>`} />
 		</Details>
 	</div>
 </FieldSet>
@@ -176,8 +204,7 @@
 				code={`<Select placeholder="Select one" allowNone>
 	<Option value={1}>Option 1</Option>
 	<Option value={2}>Option 2</Option>
-</Select>`}
-			/>
+</Select>`} />
 		</Details>
 	</div>
 </FieldSet>
@@ -198,8 +225,7 @@
 				code={`<Select disabled>
 	<Option value={1}>Option 1</Option>
 	<Option value={2}>Option 2</Option>
-</Select>`}
-			/>
+</Select>`} />
 		</Details>
 	</div>
 </FieldSet>
@@ -220,8 +246,7 @@
 				code={`<Select>
 	<Option value={1}>Option 1</Option>
 	<Option value={2} disabled>Option 2</Option>
-</Select>`}
-			/>
+</Select>`} />
 		</Details>
 	</div>
 </FieldSet>
@@ -242,8 +267,7 @@
 				code={`<Select width="100%">
 	<Option value={1}>Option 1</Option>
 	<Option value={2}>Option 2</Option>
-</Select>`}
-			/>
+</Select>`} />
 		</Details>
 	</div>
 </FieldSet>
@@ -264,8 +288,7 @@
 				code={`<Select width="100%">
 	<Option value={1}>Option 1</Option>
 	<Option value={2}>Option 2</Option>
-</Select>`}
-			/>
+</Select>`} />
 		</Details>
 	</div>
 </FieldSet>
@@ -307,8 +330,7 @@
 	<ChevronUpDownIcon slot="icon" size={14}/>
 	<Option value={1}>Option 1</Option>
 	<Option value={2}>Option 2</Option>
-</Select>`}
-			/>
+</Select>`} />
 		</Details>
 	</div>
 </FieldSet>
@@ -387,8 +409,7 @@
 		<Spacer inline w={5}/>
 		Option 2
 	</Option>
-</Select>`}
-			/>
+</Select>`} />
 		</Details>
 	</div>
 </FieldSet>
@@ -417,8 +438,7 @@
 	<Text class="px-2" type="small" color="abort">Group 2</Text>
 	<Divider/>
 	<Option value={3}>Option 3</Option>
-</Select>`}
-			/>
+</Select>`} />
 		</Details>
 	</div>
 </FieldSet>
@@ -511,8 +531,7 @@ let selectedCity = "San Diego";
 $: selectedCountryObject = countries.get(selectedCountry);
 $: selectedStateObject = countries
 	.get(selectedCountry)
-	?.states.find((a) => a.name == selectedState);`}
-			/>
+	?.states.find((a) => a.name == selectedState);`} />
 			<Code
 				lang="svelte"
 				code={`<Select bind:value={selectedCountry}>
@@ -533,8 +552,48 @@ $: selectedStateObject = countries
 			<Option value={city.name}>{city.name}</Option>
 		{/each}
 	{/if}
-</Select>`}
-			/>
+</Select>`} />
+		</Details>
+	</div>
+</FieldSet>
+<Spacer h={30} />
+<Text type="h4">Scrollable</Text>
+<Spacer h={5} />
+<Text>
+	Larger lists will scroll automatically by default at <code>`240px`</code> you can adjust this by
+	setting the <code>`maxHeight`</code> attribute.
+</Text>
+<Spacer h={10} />
+<FieldSet>
+	<div class="flex flex-col gap-2">
+		<Select>
+			{#each alphabet as letter}
+				<Option value={letter}>{letter}</Option>
+			{/each}
+		</Select>
+		<Select maxHeight={150}>
+			{#each alphabet as letter}
+				<Option value={letter}>{letter}</Option>
+			{/each}
+		</Select>
+	</div>
+	<div slot="footer">
+		<Details label="Code">
+			<Code
+				lang="svelte"
+				edits={[
+					{ number: 6, type: "add" },
+				]}
+				code={`<Select>
+	{#each alphabet as letter}
+		<Option value={letter}>{letter}</Option>
+	{/each}
+</Select>
+<Select maxHeight={150}>
+	{#each alphabet as letter}
+		<Option value={letter}>{letter}</Option>
+	{/each}
+</Select>`} />
 		</Details>
 	</div>
 </FieldSet>
