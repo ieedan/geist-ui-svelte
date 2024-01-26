@@ -320,13 +320,13 @@
 	"type": "module",
 	"dependencies": {
 		"@popperjs/core": "^2.11.8",
-		"@sveltejs/kit": "^2.4.3",
+		"@sveltejs/kit": "^2.5.0",
 		"@vercel/analytics": "^1.1.2",
 		"@vercel/speed-insights": "^1.0.3",
 		"autoprefixer": "^10.4.17",
 		"mode-watcher": "^0.1.2",
 		"postcss": "^8.4.33",
-		"shikiji": "^0.10.0",
+		"shikiji": "^0.10.2",
 		"tailwindcss": "^3.4.1"
 	}
 }

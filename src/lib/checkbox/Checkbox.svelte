@@ -21,7 +21,7 @@
 <input {...$$restProps} on:click on:change class="hidden" type="checkbox" bind:checked />
 <label
 	for={id}
-	class="flex place-items-center gap-2 group aria-disabled:hover:cursor-not-allowed select-none hover:cursor-pointer"
+	class="flex place-items-center gap-2 group aria-disabled:hover:cursor-not-allowed select-none hover:cursor-pointer w-fit"
 	aria-disabled={disabled}
 >
 	<button
