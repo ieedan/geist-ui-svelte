@@ -138,7 +138,7 @@
 				class="absolute left-1/2 top-1/2 -translate-y-1/2 -translate-x-1/2"
 			/>
 		{/if}
-		<div class="group-data-[loading=true]:opacity-0 flex place-items-center justify-center">
+		<div class="group-data-[loading=true]:opacity-0 flex place-items-center justify-center whitespace-nowrap">
 			<slot />
 		</div>
 	</a>
@@ -283,7 +283,7 @@
 				class="absolute left-1/2 top-1/2 -translate-y-1/2 -translate-x-1/2"
 			/>
 		{/if}
-		<div class="group-data-[loading=true]:opacity-0 flex place-items-center justify-center">
+		<div class="group-data-[loading=true]:opacity-0 flex place-items-center justify-center whitespace-nowrap">
 			<slot />
 		</div>
 	</button>

@@ -41,7 +41,7 @@
 <search
 	class="flex place-items-center border border-gray-100 transition-all
 dark:border-gray-900 text-gray-500 rounded-lg px-2 focus-within:border-gray-200
-focus-within:dark:border-gray-800"
+focus-within:dark:border-gray-800 w-full"
 >
 	{#if !noIcon}
 		<SearchIcon size={16} />

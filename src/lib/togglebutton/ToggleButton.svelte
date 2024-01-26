@@ -50,6 +50,7 @@
 
     data-[color='error']:data-[toggled=true]:bg-red-500 data-[color='error']:data-[toggled=true]:dark:bg-red-600
     data-[color='error']:data-[toggled=true]:text-gray-0 data-[color='error']:data-[toggled=true]:dark:text-gray-0
+	whitespace-nowrap
     
     {className}"
 >
