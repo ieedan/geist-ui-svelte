@@ -61,7 +61,8 @@
 	data-shadow={shadow}
 	data-color={color}
 	data-rounded={rounded}
-	class={cn(style({ color, rounded, hoverable, shadow }), className)}>
+	class={cn(style({ color, rounded, hoverable, shadow }), className)}
+>
 	<slot />
 </div>
 

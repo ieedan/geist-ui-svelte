@@ -3,25 +3,31 @@
 	import { cva, type VariantProps } from "class-variance-authority";
 	import { createEventDispatcher } from "svelte";
 
-	const style = cva("bg-gray-200 dark:bg-gray-800 h-[16px] w-[30px] rounded-xl group relative border border-transparent dark:border-transparent dark:border-gray-800 transition-all", {
-		variants: {
-			color: {
-				secondary: "enabled:aria-checked:bg-gray-900 enabled:aria-checked:dark:bg-gray-0 enabled:aria-checked:border-gray-900 enabled:aria-checked:dark:border-gray-0",
-				success: "enabled:aria-checked:bg-blue-600 enabled:aria-checked:dark:bg-blue-600 enabled:aria-checked:border-blue-600 enabled:aria-checked:dark:border-blue-600",
-				warning: "enabled:aria-checked:bg-orange-300 enabled:aria-checked:dark:bg-orange-400 enabled:aria-checked:border-orange-300 enabled:aria-checked:dark:border-orange-400",
-				error: "enabled:aria-checked:bg-red-500 enabled:aria-checked:dark:bg-red-600 enabled:aria-checked:border-red-400 enabled:aria-checked:dark:border-red-600"
+	const style = cva(
+		"bg-gray-200 dark:bg-gray-800 h-[16px] w-[30px] rounded-xl group relative border border-transparent dark:border-transparent dark:border-gray-800 transition-all",
+		{
+			variants: {
+				color: {
+					secondary:
+						"enabled:aria-checked:bg-gray-900 enabled:aria-checked:dark:bg-gray-0 enabled:aria-checked:border-gray-900 enabled:aria-checked:dark:border-gray-0",
+					success:
+						"enabled:aria-checked:bg-blue-600 enabled:aria-checked:dark:bg-blue-600 enabled:aria-checked:border-blue-600 enabled:aria-checked:dark:border-blue-600",
+					warning:
+						"enabled:aria-checked:bg-orange-300 enabled:aria-checked:dark:bg-orange-400 enabled:aria-checked:border-orange-300 enabled:aria-checked:dark:border-orange-400",
+					error: "enabled:aria-checked:bg-red-500 enabled:aria-checked:dark:bg-red-600 enabled:aria-checked:border-red-400 enabled:aria-checked:dark:border-red-600",
+				},
+				disabled: {
+					true: "dark:bg-gray-900 border-gray-200 hover:cursor-not-allowed bg-gray-100 dark:border-gray-800 aria-checked:bg-gray-200 dark:aria-checked:border-gray-700 dark:aria-checked:bg-gray-700",
+					false: "",
+				},
 			},
-			disabled: {
-				true: "dark:bg-gray-900 border-gray-200 hover:cursor-not-allowed bg-gray-100 dark:border-gray-800 aria-checked:bg-gray-200 dark:aria-checked:border-gray-700 dark:aria-checked:bg-gray-700",
-				false: ""
-			}
+			defaultVariants: {
+				color: "success",
+			},
 		},
-		defaultVariants: {
-			color: "success"
-		}
-	})
+	);
 
-	interface Props extends VariantProps<typeof style>{};
+	interface Props extends VariantProps<typeof style> {}
 
 	const dispatch = createEventDispatcher();
 

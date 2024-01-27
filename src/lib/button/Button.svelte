@@ -37,7 +37,7 @@
 					"warning-light": `bg-orange-300 text-gray-0 data-[a]:hover:bg-orange-200 enabled:hover:bg-orange-200 border-orange-300 
 					data-[a]:hover:border-orange-200 enabled:hover:border-orange-200 dark:bg-orange-400 dark:text-gray-0 data-[a]:hover:dark:bg-orange-300 
 					enabled:hover:dark:bg-orange-300 dark:border-orange-400 data-[a]:hover:dark:border-orange-300 enabled:hover:dark:border-orange-300`,
-					
+
 					"error-light": `bg-red-500 text-gray-0 border-red-500 data-[a]:hover:bg-red-400 enabled:hover:bg-red-400 data-[a]:hover:border-red-400 
 					enabled:hover:border-red-400 data-[a]:hover:dark:bg-red-500 enabled:hover:dark:bg-red-500 data-[a]:hover:dark:border-red-500 enabled:hover:dark:border-red-500
 					dark:border-red-600 dark:bg-red-600`,
@@ -207,7 +207,8 @@
 		on:mouseleave
 		data-a
 		style="width: {width};"
-		class={cn(style({ color, disabled, loading, ghost, size, square }), className)}>
+		class={cn(style({ color, disabled, loading, ghost, size, square }), className)}
+	>
 		{#if loading}
 			<Loading size="sm" />
 		{:else}
@@ -229,7 +230,8 @@
 		on:mouseleave
 		disabled={disabled || loading}
 		style="width: {width};"
-		class={cn(style({ color, disabled, loading, ghost, size, square }), className)}>
+		class={cn(style({ color, disabled, loading, ghost, size, square }), className)}
+	>
 		{#if loading}
 			<Loading size="sm" />
 		{:else}

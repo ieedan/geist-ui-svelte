@@ -108,7 +108,7 @@
 </FieldSet>
 <Spacer h={30} />
 <Text type="h4">Custom Class</Text>
-<Spacer h={5}/>
+<Spacer h={5} />
 <Text>
 	Apply new styles or override existing styles with <code>`class`</code>.
 </Text>
@@ -116,8 +116,10 @@
 <FieldSet>
 	<div class="flex flex-wrap gap-2 justify-start">
 		<div class="relative">
-			<Avatar name="Aidan Bleser" size={32}/>
-			<Badge padding={false} color="error" size="xs" class="absolute -top-1 -right-1">5+</Badge>
+			<Avatar name="Aidan Bleser" size={32} />
+			<Badge padding={false} color="error" size="xs" class="absolute -top-1 -right-1"
+				>5+</Badge
+			>
 		</div>
 	</div>
 	<div slot="footer">

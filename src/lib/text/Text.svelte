@@ -165,10 +165,11 @@
 			mdSize,
 			lgSize,
 			noWrap,
-			type
+			type,
 		}),
 		className,
-	)}>
+	)}
+>
 	<slot />
 </svelte:element>
 

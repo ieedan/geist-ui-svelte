@@ -142,34 +142,20 @@
 </FieldSet>
 <Spacer h={30} />
 <Text type="h4">Rounded</Text>
-<Spacer h={5}/>
+<Spacer h={5} />
 <Text>
 	Adjust the border radius with the <code>`rounded`</code> attribute.
 </Text>
 <Spacer h={10} />
 <FieldSet>
 	<div class="flex flex-wrap gap-2">
-		<Card rounded="sm">
-			sm
-		</Card>
-		<Card rounded="md">
-			md
-		</Card>
-		<Card rounded="lg">
-			lg
-		</Card>
-		<Card rounded="xl">
-			xl
-		</Card>
-		<Card rounded="2xl">
-			2xl
-		</Card>
-		<Card rounded="3xl">
-			3xl
-		</Card>
-		<Card rounded="full">
-			full
-		</Card>
+		<Card rounded="sm">sm</Card>
+		<Card rounded="md">md</Card>
+		<Card rounded="lg">lg</Card>
+		<Card rounded="xl">xl</Card>
+		<Card rounded="2xl">2xl</Card>
+		<Card rounded="3xl">3xl</Card>
+		<Card rounded="full">full</Card>
 	</div>
 	<div slot="footer">
 		<Details label="Code">

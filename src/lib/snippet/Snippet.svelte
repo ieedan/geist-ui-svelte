@@ -100,7 +100,8 @@
 		class={cn(
 			textColor({ color: type }),
 			"flex place-items-center justify-center h-[20px] transition-all",
-		)}>
+		)}
+	>
 		{#if copied}
 			<div in:scale={{ duration: 200 }}>
 				<CheckMarkIcon size={16} />

@@ -7,12 +7,7 @@
 	import Spacer from "$lib/spacer/Spacer.svelte";
 	import Text from "$lib/text/Text.svelte";
 	import Note from "$lib/note/Note.svelte";
-	import RadioTabs from "$lib/radiotabs/RadioTabs.svelte";
-	import RadioTab from "$lib/radiotabs/RadioTab.svelte";
-	import { setMode, userPrefersMode } from "mode-watcher";
 	import LightSwitch from "$lib/lightswitch/LightSwitch.svelte";
-
-	$: selectedMode = $userPrefersMode;
 </script>
 
 <Text type="h3">Text</Text>
@@ -117,7 +112,7 @@
 		<Card color="success">
 			<Text color="dark">Success</Text>
 		</Card>
-		<LightSwitch/>
+		<LightSwitch />
 	</div>
 	<div slot="footer">
 		<Details label="Code">

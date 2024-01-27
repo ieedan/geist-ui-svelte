@@ -38,8 +38,7 @@
 	);
 </script>
 
-<header
-	class={cn(style({ sticky, transparent, fixed, noBorder }))}>
+<header class={cn(style({ sticky, transparent, fixed, noBorder }))}>
 	<slot />
 </header>
 
