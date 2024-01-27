@@ -15,5 +15,5 @@
 @component
 A layout component to space your content.
 
-[See Docs](https://geist-ui-svelte.dev/components/spacer) | [Open Issue](https://github.com/ieedan/geist-ui-svelte/issues)
+[See Docs](https://geist-ui-svelte.dev/components/spacer) | [Open Issue](https://github.com/ieedan/geist-ui-svelte/issues/new)
 -->

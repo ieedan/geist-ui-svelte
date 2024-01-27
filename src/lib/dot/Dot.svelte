@@ -20,5 +20,5 @@
 @component
 A circle component great as a status indicator.
 
-[See Docs](https://geist-ui-svelte.dev/components/dot) | [Open Issue](https://github.com/ieedan/geist-ui-svelte/issues)
+[See Docs](https://geist-ui-svelte.dev/components/dot) | [Open Issue](https://github.com/ieedan/geist-ui-svelte/issues/new)
 -->

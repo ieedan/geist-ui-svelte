@@ -53,5 +53,5 @@
 @component
 Displays an image.
 
-[See Docs](https://geist-ui-svelte.dev/components/image) | [Open Issue](https://github.com/ieedan/geist-ui-svelte/issues)
+[See Docs](https://geist-ui-svelte.dev/components/image) | [Open Issue](https://github.com/ieedan/geist-ui-svelte/issues/new)
 -->

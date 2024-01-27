@@ -229,5 +229,5 @@
 @component
 The button component for the ButtonGroup component.
 
-[See Docs](https://geist-ui-svelte.dev/components/buttongroup) | [Open Issue](https://github.com/ieedan/geist-ui-svelte/issues)
+[See Docs](https://geist-ui-svelte.dev/components/buttongroup) | [Open Issue](https://github.com/ieedan/geist-ui-svelte/issues/new)
 -->

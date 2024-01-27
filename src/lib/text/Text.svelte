@@ -104,5 +104,5 @@
 @component
 Displays non-interactive text.
 
-[See Docs](https://geist-ui-svelte.dev/components/text) | [Open Issue](https://github.com/ieedan/geist-ui-svelte/issues)
+[See Docs](https://geist-ui-svelte.dev/components/text) | [Open Issue](https://github.com/ieedan/geist-ui-svelte/issues/new)
 -->

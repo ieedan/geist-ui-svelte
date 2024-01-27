@@ -22,5 +22,5 @@
 @component
 A layout component to help you create your hero pages.
 
-[See Docs](https://geist-ui-svelte.dev/components/hero) | [Open Issue](https://github.com/ieedan/geist-ui-svelte/issues)
+[See Docs](https://geist-ui-svelte.dev/components/hero) | [Open Issue](https://github.com/ieedan/geist-ui-svelte/issues/new)
 -->

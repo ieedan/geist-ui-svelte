@@ -29,5 +29,5 @@
 @component
 The option component for the ButtonDropdown.
 
-[See Docs](https://geist-ui-svelte.dev/components/buttondropdown) | [Open Issue](https://github.com/ieedan/geist-ui-svelte/issues)
+[See Docs](https://geist-ui-svelte.dev/components/buttondropdown) | [Open Issue](https://github.com/ieedan/geist-ui-svelte/issues/new)
 -->

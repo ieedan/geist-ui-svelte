@@ -66,5 +66,5 @@
 @component
 A button component that stays solid or transparent based on its toggled state.
 
-[See Docs](https://geist-ui-svelte.dev/components/togglebutton) | [Open Issue](https://github.com/ieedan/geist-ui-svelte/issues)
+[See Docs](https://geist-ui-svelte.dev/components/togglebutton) | [Open Issue](https://github.com/ieedan/geist-ui-svelte/issues/new)
 -->

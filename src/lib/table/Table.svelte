@@ -46,5 +46,5 @@
 @component
 Display table data.
 
-[See Docs](https://geist-ui-svelte.dev/components/table) | [Open Issue](https://github.com/ieedan/geist-ui-svelte/issues)
+[See Docs](https://geist-ui-svelte.dev/components/table) | [Open Issue](https://github.com/ieedan/geist-ui-svelte/issues/new)
 -->
