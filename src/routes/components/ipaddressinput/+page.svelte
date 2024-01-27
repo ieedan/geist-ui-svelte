@@ -47,3 +47,21 @@
 		</Details>
 	</div>
 </FieldSet>
+<Spacer h={30} />
+<Text type="h4">Mouse-less</Text>
+<Spacer h={5}/>
+<Text>The input works with both <code>`space`</code> and <code>`tab`</code>.</Text>
+<Spacer h={10} />
+<FieldSet>
+	<div class="flex flex-col justify-start">
+		<IPAddressInput value="172 16 10 100" noDot/>
+	</div>
+	<div slot="footer">
+		<Details label="Code">
+			<Code
+				lang="svelte"
+				code={`<IpAddressInput value="172 16 10 100"/>`}
+			/>
+		</Details>
+	</div>
+</FieldSet>

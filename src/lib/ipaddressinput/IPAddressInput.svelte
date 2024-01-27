@@ -93,7 +93,7 @@
 		const target = e.target as HTMLInputElement;
 		if (!target) return;
 		if (e.key == "Backspace" && target.value.length == 0) {
-			firstOctetRef.focus();
+			focusAndGoToEnd(firstOctetRef);
 			return;
 		}
 
@@ -138,7 +138,7 @@
 		const target = e.target as HTMLInputElement;
 		if (!target) return;
 		if (e.key == "Backspace" && target.value.length == 0) {
-			secondOctetRef.focus();
+			focusAndGoToEnd(secondOctetRef);
 			return;
 		}
 
@@ -183,7 +183,7 @@
 		const target = e.target as HTMLInputElement;
 		if (!target) return;
 		if (e.key == "Backspace" && target.value.length == 0) {
-			thirdOctetRef.focus();
+			focusAndGoToEnd(thirdOctetRef);
 			return;
 		}
 
