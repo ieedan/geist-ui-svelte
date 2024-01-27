@@ -153,7 +153,6 @@
 <svelte:element
 	this={type}
 	style="text-align: {align};"
-	data-type={type}
 	class={cn(
 		style({
 			color,

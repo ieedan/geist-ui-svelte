@@ -39,10 +39,6 @@
 </script>
 
 <header
-	data-sticky={sticky}
-	data-fixed={fixed}
-	data-transparent={transparent}
-	data-border={!noBorder}
 	class={cn(style({ sticky, transparent, fixed, noBorder }))}>
 	<slot />
 </header>
