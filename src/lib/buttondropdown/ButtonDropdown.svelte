@@ -91,5 +91,5 @@
 @component
 Display related but alternate actions for a button.
 
-[See Docs](https://geist-ui-svelte.dev/components/button) | [Open Issue](https://github.com/ieedan/geist-ui-svelte/issues)
+[See Docs](https://geist-ui-svelte.dev/components/button) | [Open Issue](https://github.com/ieedan/geist-ui-svelte/issues/new)
 -->

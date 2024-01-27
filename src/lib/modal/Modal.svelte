@@ -72,5 +72,5 @@
 @component
 Shows a popup and fades the background.
 
-[See Docs](https://geist-ui-svelte.dev/components/modal) | [Open Issue](https://github.com/ieedan/geist-ui-svelte/issues)
+[See Docs](https://geist-ui-svelte.dev/components/modal) | [Open Issue](https://github.com/ieedan/geist-ui-svelte/issues/new)
 -->

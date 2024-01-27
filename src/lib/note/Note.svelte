@@ -31,5 +31,5 @@
 @component
 A comment that stands out to the user.
 
-[See Docs](https://geist-ui-svelte.dev/components/note) | [Open Issue](https://github.com/ieedan/geist-ui-svelte/issues)
+[See Docs](https://geist-ui-svelte.dev/components/note) | [Open Issue](https://github.com/ieedan/geist-ui-svelte/issues/new)
 -->

@@ -118,5 +118,5 @@
 @component
 Displays a code snippet.
 
-[See Docs](https://geist-ui-svelte.dev/components/snippet) | [Open Issue](https://github.com/ieedan/geist-ui-svelte/issues)
+[See Docs](https://geist-ui-svelte.dev/components/snippet) | [Open Issue](https://github.com/ieedan/geist-ui-svelte/issues/new)
 -->

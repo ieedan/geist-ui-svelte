@@ -67,5 +67,5 @@ dark:border-gray-900 relative group/tabs"
 @component
 A layout component for navigation.
 
-[See Docs](https://geist-ui-svelte.dev/components/tabs) | [Open Issue](https://github.com/ieedan/geist-ui-svelte/issues)
+[See Docs](https://geist-ui-svelte.dev/components/tabs) | [Open Issue](https://github.com/ieedan/geist-ui-svelte/issues/new)
 -->

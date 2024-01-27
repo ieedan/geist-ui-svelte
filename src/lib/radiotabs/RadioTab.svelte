@@ -43,5 +43,5 @@ aria-selected:text-gray-0 aria-selected:dark:bg-gray-0 aria-selected:dark:text-g
 @component
 The tab component for the RadioTabs component.
 
-[See Docs](https://geist-ui-svelte.dev/components/radiotabs) | [Open Issue](https://github.com/ieedan/geist-ui-svelte/issues)
+[See Docs](https://geist-ui-svelte.dev/components/radiotabs) | [Open Issue](https://github.com/ieedan/geist-ui-svelte/issues/new)
 -->

@@ -85,5 +85,5 @@
 @component
 A layout component to display a user.
 
-[See Docs](https://geist-ui-svelte.dev/components/avatar) | [Open Issue](https://github.com/ieedan/geist-ui-svelte/issues)
+[See Docs](https://geist-ui-svelte.dev/components/avatar) | [Open Issue](https://github.com/ieedan/geist-ui-svelte/issues/new)
 -->

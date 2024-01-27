@@ -41,5 +41,5 @@
 @component
 A simple component for status indicators or notification markers.
 
-[See Docs](https://geist-ui-svelte.dev/components/badge) | [Open Issue](https://github.com/ieedan/geist-ui-svelte/issues)
+[See Docs](https://geist-ui-svelte.dev/components/badge) | [Open Issue](https://github.com/ieedan/geist-ui-svelte/issues/new)
 -->

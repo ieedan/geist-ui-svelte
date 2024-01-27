@@ -23,7 +23,7 @@
 @component
 A simple link component.
 
-[See Docs](https://geist-ui-svelte.dev/components/link) | [Open Issue](https://github.com/ieedan/geist-ui-svelte/issues)
+[See Docs](https://geist-ui-svelte.dev/components/link) | [Open Issue](https://github.com/ieedan/geist-ui-svelte/issues/new)
 -->
 
 <style lang="postcss">

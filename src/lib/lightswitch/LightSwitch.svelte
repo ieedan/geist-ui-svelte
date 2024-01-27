@@ -27,5 +27,5 @@
 @component
 A component to allow the user to toggle light/dark mode.
 
-[See Docs](https://geist-ui-svelte.dev/components/lightswitch) | [Open Issue](https://github.com/ieedan/geist-ui-svelte/issues)
+[See Docs](https://geist-ui-svelte.dev/components/lightswitch) | [Open Issue](https://github.com/ieedan/geist-ui-svelte/issues/new)
 -->

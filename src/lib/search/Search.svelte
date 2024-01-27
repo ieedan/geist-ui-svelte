@@ -89,5 +89,5 @@ focus-within:dark:border-gray-800 w-full"
 @component
 A component for searching.
 
-[See Docs](https://geist-ui-svelte.dev/components/search) | [Open Issue](https://github.com/ieedan/geist-ui-svelte/issues)
+[See Docs](https://geist-ui-svelte.dev/components/search) | [Open Issue](https://github.com/ieedan/geist-ui-svelte/issues/new)
 -->
