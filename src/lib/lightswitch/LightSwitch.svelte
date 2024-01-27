@@ -15,7 +15,7 @@
 	};
 </script>
 
-<Button type="button" square size="md" on:click={toggleMode}>
+<Button type="button" square size="md" class="max-h-[36px]" on:click={toggleMode}>
 	{#if currentMode == "light"}
 		<MoonIcon size={22} />
 	{:else if currentMode == "dark"}

@@ -1,19 +1,59 @@
 <script lang="ts">
+	import { cn } from "$lib/util/utils.js";
+	import { cva, type VariantProps } from "class-variance-authority";
+
+	const style = cva("transition-all border p-4", {
+		variants: {
+			color: {
+				transparent: `ring-gray-100 dark:ring-gray-900 border-gray-100 dark:border-gray-900 
+				text-gray-999 dark:text-gray-0`,
+				dark: `bg-gray-999 border-gray-999 dark:bg-gray-0 dark:border-gray-0 text-gray-0 
+				dark:text-gray-999 ring-gray-800 dark:ring-gray-200`,
+				secondary: `bg-gray-700 border-gray-700 dark:bg-gray-300 dark:border-gray-300 text-gray-0 
+				dark:text-gray-999 ring-gray-500 dark:ring-gray-500`,
+				success: `bg-blue-600 border-blue-600 dark:bg-blue-600 dark:border-blue-600 text-gray-0 
+				dark:text-gray-0 ring-blue-500 dark:ring-blue-500`,
+				warning: `bg-orange-300 border-orange-300 dark:bg-orange-400 dark:orange-red-400 text-gray-0 
+				dark:text-gray-0 ring-orange-500 dark:ring-orange-500`,
+				error: `bg-red-500 border-red-500 dark:bg-red-600 dark:border-red-600 text-gray-0 dark:text-gray-0 
+				ring-red-600 dark:ring-red-700`,
+				abort: `bg-gray-50 border-gray-50 dark:bg-gray-950 dark:border-gray-950 text-gray-999 dark:text-gray-0 
+				ring-gray-100 dark:ring-gray-900`,
+			},
+			rounded: {
+				sm: "rounded-sm",
+				md: "rounded-md",
+				lg: "rounded-lg",
+				xl: "rounded-xl",
+				"2xl": "rounded-2xl",
+				"3xl": "rounded-3xl",
+				full: "rounded-full",
+				none: "",
+			},
+			hoverable: {
+				true: "hover:ring-2",
+				false: "",
+			},
+			shadow: {
+				true: "shadow-md border-transparent dark:border-gray-900",
+				false: "",
+			},
+		},
+		defaultVariants: {
+			color: "transparent",
+			rounded: "lg",
+		},
+	});
+
+	interface Props extends VariantProps<typeof style> {}
+
+	export let color: Props["color"] = "transparent";
+	export let rounded: Props["rounded"] = "lg";
 	export let hoverable = false;
 	export let shadow = false;
+
 	let className: string = "";
 	export { className as class };
-
-	export let color:
-		| "transparent"
-		| "dark"
-		| "secondary"
-		| "success"
-		| "warning"
-		| "error"
-		| "abort" = "transparent";
-
-	export let rounded: "sm" | "md" | "lg" | "xl" | "2xl" | "3xl" | "full" | "none" = "lg";
 </script>
 
 <div
@@ -21,46 +61,7 @@
 	data-shadow={shadow}
 	data-color={color}
 	data-rounded={rounded}
-	class="border ring-gray-100 dark:ring-gray-900 border-gray-100 dark:border-gray-900
-	p-4 data-[hoverable=true]:hover:ring-2 transition-all
-    data-[shadow=true]:shadow-md data-[shadow=true]:border-transparent
-	data-[shadow=true]:dark:border-gray-900
-
-	data-[rounded='sm']:rounded-sm data-[rounded='none']:rounded-none rounded-lg
-	data-[rounded='md']:rounded-md data-[rounded='xl']:rounded-xl data-[rounded='2xl']:rounded-2xl
-	data-[rounded='3xl']:rounded-3xl
-	
-	data-[color='dark']:bg-gray-999 data-[color='dark']:border-gray-999
-	data-[color='dark']:dark:bg-gray-0 data-[color='dark']:dark:border-gray-0
-	data-[color='dark']:text-gray-0 data-[color='dark']:dark:text-gray-999
-	data-[color='dark']:ring-gray-800 data-[color='dark']:dark:ring-gray-200
-
-	data-[color='secondary']:bg-gray-700 data-[color='secondary']:border-gray-700
-	data-[color='secondary']:dark:bg-gray-300 data-[color='secondary']:dark:border-gray-300
-	data-[color='secondary']:text-gray-0 data-[color='secondary']:dark:text-gray-999
-	data-[color='secondary']:ring-gray-500 data-[color='secondary']:dark:ring-gray-500
-
-	data-[color='success']:bg-blue-600 data-[color='success']:border-blue-600
-	data-[color='success']:dark:bg-blue-600 data-[color='success']:dark:border-blue-600
-	data-[color='success']:text-gray-0 data-[color='success']:dark:text-gray-0
-	data-[color='success']:ring-blue-500 data-[color='success']:dark:ring-blue-500
-
-	data-[color='warning']:bg-orange-300 data-[color='warning']:border-orange-300
-	data-[color='warning']:dark:bg-orange-400 data-[color='warning']:dark:orange-red-400
-	data-[color='warning']:text-gray-0 data-[color='warning']:dark:text-gray-0
-	data-[color='warning']:ring-orange-500 data-[color='warning']:dark:ring-orange-500
-
-	data-[color='error']:bg-red-500 data-[color='error']:border-red-500
-	data-[color='error']:dark:bg-red-600 data-[color='error']:dark:border-red-600
-	data-[color='error']:text-gray-0 data-[color='error']:dark:text-gray-0
-	data-[color='error']:ring-red-600 data-[color='error']:dark:ring-red-700
-
-	data-[color='abort']:bg-gray-50 data-[color='abort']:border-gray-50
-	data-[color='abort']:dark:bg-gray-950 data-[color='abort']:dark:border-gray-950
-	data-[color='abort']:text-gray-999 data-[color='abort']:dark:text-gray-0
-	data-[color='abort']:ring-gray-100 data-[color='abort']:dark:ring-gray-900
-
-	{className}"
+	class={cn(style({ color, rounded, hoverable, shadow }), className)}
 >
 	<slot />
 </div>

@@ -1,41 +1,83 @@
 <script lang="ts">
-	import type { Color, Size } from "$lib/types.js";
+	import { cva, type VariantProps } from "class-variance-authority";
+	import { cn } from "$lib/util/utils.js";
 
-	export let type: Color = "default";
-	export let background: string = "auto";
-	export let text: string = "auto";
-	export let size: Size = "md";
+	const style = cva("border rounded-2xl", {
+		variants: {
+			color: {
+				default: "bg-gray-999 text-gray-0 dark:text-gray-999 dark:bg-gray-0",
+				success:
+					"bg-blue-600 border-blue-600 dark:bg-blue-600 dark:border-blue-600 text-gray-0 dark:text-gray-0",
+				warning:
+					"bg-orange-300 border-orange-300 dark:bg-orange-400 dark:border-orange-400 text-gray-0 dark:text-gray-0",
+				error: "bg-red-500 border-red-500 dark:bg-red-600 dark:border-red-600 text-gray-0 dark:text-gray-0",
+				secondary:
+					"bg-gray-200 border-gray-200 dark:bg-gray-800 dark:border-gray-800 dark:text-gray-0",
+			},
+			size: {
+				xs: "text-xs",
+				sm: "text-sm",
+				md: "text-base",
+				lg: "text-lg",
+				xl: "text-xl",
+			},
+			ghost: {
+				true: "",
+				false: "",
+			},
+			padding: {
+				true: "px-2",
+				false: "p-0",
+			},
+		},
+		defaultVariants: {
+			color: "default",
+			size: "md",
+			ghost: false,
+			padding: true,
+		},
+		compoundVariants: [
+			{
+				color: "default",
+				ghost: true,
+				class: "bg-transparent border-gray-999 text-gray-999 dark:bg-transparent dark:text-gray-0 dark:border-gray-0",
+			},
+			{
+				color: "success",
+				ghost: true,
+				class: "bg-transparent border-blue-600 dark:border-blue-600 dark:bg-transparent text-blue-600 dark:text-blue-600",
+			},
+			{
+				color: "warning",
+				ghost: true,
+				class: "bg-transparent dark:bg-transparent border-orange-300 dark:border-orange-400 text-orange-300 dark:text-orange-400",
+			},
+			{
+				color: "error",
+				ghost: true,
+				class: "bg-transparent dark:bg-transparent border-red-500 dark:border-red-600 text-red-500 dark:text-red-600",
+			},
+			{
+				color: "secondary",
+				ghost: true,
+				class: "bg-transparent border-gray-200 text-gray-200 dark:bg-transparent dark:border-gray-800 dark:text-gray-800",
+			},
+		],
+	});
 
+	interface Props extends VariantProps<typeof style> {}
+
+	export let color: Props["color"] = "default";
+	export let size: Props["size"] = "md";
+	export let padding: boolean = true;
 	export let ghost: boolean = false;
+	let className: string = "";
+	export { className as class };
 </script>
 
-<span
-	style="background-color: {background}; color: {text};"
-	data-color={type}
-	data-ghost={ghost}
-	data-size={size}
-	class="bg-gray-999 text-gray-0 dark:text-gray-0 dark:bg-gray-0 border
-     data-[color='success']:bg-blue-600 data-[color='success']:border-blue-600
-     data-[color='success']:dark:bg-blue-600 data-[color='success']:dark:border-blue-600
-     data-[color='warning']:bg-orange-300 data-[color='warning']:border-orange-300
-     data-[color='secondary']:bg-gray-200 data-[color='secondary']:border-gray-200
-     data-[color='secondary']:dark:bg-gray-800 data-[color='secondary']:dark:border-gray-800
-     data-[color='secondary']:dark:text-gray-0
-     data-[ghost=true]:dark:bg-opacity-35 data-[ghost=true]:bg-opacity-35
-     data-[ghost=true]:bg-gray-0 data-[ghost=true]:data-[color='default']:border-gray-999
-     data-[color='warning']:dark:bg-orange-400 data-[color='warning']:dark:border-orange-400
-     data-[color='error']:bg-red-500 data-[color='error']:border-red-500
-     data-[color='error']:dark:bg-red-600 data-[color='error']:dark:border-red-600
-     data-[color='error']:data-[ghost=true]:dark:text-red-600 data-[color='error']:data-[ghost=true]:text-red-500
-     data-[color='success']:data-[ghost=true]:dark:text-blue-600 data-[color='success']:data-[ghost=true]:text-blue-600
-     data-[color='warning']:data-[ghost=true]:dark:text-orange-400 data-[color='warning']:data-[ghost=true]:text-orange-300
-     data-[color='secondary']:data-[ghost=true]:dark:text-gray-800 data-[color='secondary']:data-[ghost=true]:text-gray-300
-     data-[ghost=true]:data-[color='default']:text-gray-999 data-[ghost=true]:data-[color='default']:dark:text-gray-0
-     data-[ghost=true]:data-[color='default']:dark:border-gray-0 data-[color='default']:dark:text-gray-999 border-gray-999
-       rounded-2xl px-3 py-[2px] w-fit data-[size='lg']:text-lg data-[size='lg']:rounded-3xl data-[size='sm']:text-sm
-       data-[size='xl']:text-2xl data-[size='xs']:text-xs data-[size='xl']:rounded-3xl data-[size='sm']:rounded-2xl"
-	><slot /></span
->
+<span {...$$restProps} class={cn(style({ color: color, size, ghost, padding }), className)}>
+	<slot />
+</span>
 
 <!--
 @component

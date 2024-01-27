@@ -7,11 +7,7 @@
 	import Spacer from "$lib/spacer/Spacer.svelte";
 	import Text from "$lib/text/Text.svelte";
 	import Note from "$lib/note/Note.svelte";
-	import RadioTabs from "$lib/radiotabs/RadioTabs.svelte";
-	import RadioTab from "$lib/radiotabs/RadioTab.svelte";
-	import { setMode, userPrefersMode } from "mode-watcher";
-
-	$: selectedMode = $userPrefersMode;
+	import LightSwitch from "$lib/lightswitch/LightSwitch.svelte";
 </script>
 
 <Text type="h3">Text</Text>
@@ -107,21 +103,16 @@
 </Note>
 <Spacer h={20} />
 <Text>Put your sunglasses on for this part 🕶️.</Text>
-<Spacer h={5} />
-<RadioTabs bind:selected={selectedMode}>
-	<RadioTab id="light" on:selected={() => setMode("light")}>Light</RadioTab>
-	<RadioTab id="dark" on:selected={() => setMode("dark")}>Dark</RadioTab>
-	<RadioTab id="system" on:selected={() => setMode("system")}>System</RadioTab>
-</RadioTabs>
 <Spacer h={10} />
 <FieldSet>
-	<div class="flex flex-wrap gap-2">
+	<div class="flex flex-wrap gap-2 place-items-center">
 		<Card color="success">
 			<Text>Success</Text>
 		</Card>
 		<Card color="success">
 			<Text color="dark">Success</Text>
 		</Card>
+		<LightSwitch />
 	</div>
 	<div slot="footer">
 		<Details label="Code">

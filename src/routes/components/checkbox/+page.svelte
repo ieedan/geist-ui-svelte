@@ -31,6 +31,7 @@
 <Spacer h={10} />
 <FieldSet>
 	<div class="flex flex-col justify-start">
+		<Checkbox>Notifications</Checkbox>
 		<Checkbox disabled>Notifications</Checkbox>
 		<Checkbox disabled checked={true}>Notifications</Checkbox>
 	</div>
@@ -38,7 +39,8 @@
 		<Details label="Code">
 			<Code
 				lang="svelte"
-				code={`<Checkbox disabled>Notifications</Checkbox>
+				code={`<Checkbox>Notifications</Checkbox>
+<Checkbox disabled>Notifications</Checkbox>
 <Checkbox disabled checked={true}>Notifications</Checkbox>`}
 			/>
 		</Details>
