@@ -118,6 +118,35 @@
 		},
 	);
 
+	const alphabet: string[] = [
+		"A",
+		"B",
+		"C",
+		"D",
+		"E",
+		"F",
+		"G",
+		"H",
+		"I",
+		"J",
+		"K",
+		"L",
+		"M",
+		"N",
+		"O",
+		"P",
+		"Q",
+		"R",
+		"S",
+		"T",
+		"U",
+		"V",
+		"W",
+		"X",
+		"Y",
+		"Z",
+	];
+
 	let selectedCountry = "United States";
 	let selectedState = "California";
 	let selectedCity = "San Diego";
@@ -533,6 +562,46 @@ $: selectedStateObject = countries
 			<Option value={city.name}>{city.name}</Option>
 		{/each}
 	{/if}
+</Select>`}
+			/>
+		</Details>
+	</div>
+</FieldSet>
+<Spacer h={30} />
+<Text type="h4">Scrollable</Text>
+<Spacer h={5} />
+<Text>
+	Larger lists will scroll automatically by default at <code>`240px`</code> you can adjust this by
+	setting the <code>`maxHeight`</code> attribute.
+</Text>
+<Spacer h={10} />
+<FieldSet>
+	<div class="flex flex-col gap-2">
+		<Select>
+			{#each alphabet as letter}
+				<Option value={letter}>{letter}</Option>
+			{/each}
+		</Select>
+		<Select maxHeight={150}>
+			{#each alphabet as letter}
+				<Option value={letter}>{letter}</Option>
+			{/each}
+		</Select>
+	</div>
+	<div slot="footer">
+		<Details label="Code">
+			<Code
+				lang="svelte"
+				edits={[{ number: 6, type: "add" }]}
+				code={`<Select>
+	{#each alphabet as letter}
+		<Option value={letter}>{letter}</Option>
+	{/each}
+</Select>
+<Select maxHeight={150}>
+	{#each alphabet as letter}
+		<Option value={letter}>{letter}</Option>
+	{/each}
 </Select>`}
 			/>
 		</Details>

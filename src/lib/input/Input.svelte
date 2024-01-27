@@ -5,6 +5,7 @@
 	import type { Color } from "$lib/types.js";
 	import { createEventDispatcher, onDestroy } from "svelte";
 	import type { HTMLInputAttributes } from "svelte/elements";
+	import Label from "$lib/label/Label.svelte";
 
 	const dispatch = createEventDispatcher();
 
@@ -60,10 +61,10 @@
 	});
 </script>
 
-<div class="w-full">
-	<label for={id}>
+<div>
+	<Label for={id}>
 		<slot />
-	</label>
+	</Label>
 	<div
 		style="width: {width ? width : ''};"
 		data-placement={labelPlacement}

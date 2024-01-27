@@ -6,6 +6,7 @@
 	import Spacer from "$lib/spacer/Spacer.svelte";
 	import Text from "$lib/text/Text.svelte";
 	import Button from "$lib/button/Button.svelte";
+	import XIcon from "$lib/icons/XIcon.svelte";
 </script>
 
 <Text type="h3">Button</Text>
@@ -113,6 +114,78 @@
 <Button color="success" ghost>Success</Button>
 <Button color="warning" ghost>Warning</Button>
 <Button color="error" ghost>Error</Button>`}
+			/>
+		</Details>
+	</div>
+</FieldSet>
+<Spacer h={30} />
+<Text type="h4">Sizes</Text>
+<Spacer h={10} />
+<FieldSet>
+	<div class="flex flex-wrap place-items-center gap-2">
+		<Button size="xs">xs</Button>
+		<Button size="sm">sm</Button>
+		<Button size="md">md</Button>
+		<Button size="lg">lg</Button>
+		<Button size="xl">xl</Button>
+	</div>
+	<div slot="footer">
+		<Details label="Code">
+			<Code
+				lang="svelte"
+				code={`<Button size="xs">xs</Button>
+<Button size="sm">sm</Button>
+<Button size="md">md</Button>
+<Button size="lg">lg</Button>
+<Button size="xl">xl</Button>`}
+			/>
+		</Details>
+	</div>
+</FieldSet>
+<Spacer h={30} />
+<Text type="h4">Square</Text>
+<Spacer h={5} />
+<Text>
+	Sometimes you need a button to be square the <code>`square`</code> attribute persists the
+	<code>`min-h`</code>
+	set by size but also adds a <code>`min-w`</code> matching the <code>`min-h`</code> this gives you
+	square buttons without issues with overflow.
+</Text>
+<Spacer h={10} />
+<FieldSet>
+	<div class="flex flex-wrap place-items-center gap-2">
+		<Button square><XIcon size={18} /></Button>
+	</div>
+	<div slot="footer">
+		<Details label="Code">
+			<Code lang="svelte" code={`<Button square><XIcon size={18}/></Button>`} />
+		</Details>
+	</div>
+</FieldSet>
+<Spacer h={30} />
+<Text type="h4">Use as Link</Text>
+<Spacer h={5} />
+<Text>
+	To use a button as an anchor tag just assign its <code>`href`</code> attribute and it will
+	become an a tag. You can also use <code>`target="_blank"`</code> to navigate to the link in a new
+	window.
+</Text>
+<Spacer h={10} />
+<FieldSet>
+	<div class="flex flex-wrap place-items-center gap-2">
+		<Button href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">
+			Check this out
+		</Button>
+	</div>
+	<div slot="footer">
+		<Details label="Code">
+			<Code
+				lang="svelte"
+				code={`<Button 
+	href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" 
+	target="_blank">
+	Check this out
+</Button>`}
 			/>
 		</Details>
 	</div>

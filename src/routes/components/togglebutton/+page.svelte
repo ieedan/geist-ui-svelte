@@ -37,7 +37,7 @@
 <Text type="h4">Colors</Text>
 <Spacer h={10} />
 <FieldSet>
-	<div class="flex place-items-center justify-start gap-2">
+	<div class="flex flex-wrap place-items-center justify-start gap-2">
 		<ToggleButton toggled={true}>Click Me</ToggleButton>
 		<ToggleButton toggled={true} color="secondary">Click Me</ToggleButton>
 		<ToggleButton toggled={true} color="success">Click Me</ToggleButton>

@@ -21,7 +21,7 @@
 <input {...$$restProps} on:click on:change class="hidden" type="checkbox" bind:checked />
 <label
 	for={id}
-	class="flex place-items-center gap-2 group aria-disabled:hover:cursor-not-allowed select-none hover:cursor-pointer"
+	class="flex place-items-center gap-2 group aria-disabled:hover:cursor-not-allowed select-none hover:cursor-pointer w-fit"
 	aria-disabled={disabled}
 >
 	<button
@@ -48,6 +48,7 @@
 		disabled:bg-gray-50 disabled:hover:cursor-not-allowed disabled:aria-checked:data-[color]:bg-gray-300
 		disabled:aria-checked:data-[color]:border-gray-300 disabled:dark:bg-gray-950 group
 		disabled:dark:aria-checked:data-[color]:bg-gray-700 disabled:dark:aria-checked:data-[color]:border-gray-700
+		disabled:aria-checked:dark:text-gray-999 disabled:aria-checked:text-gray-0
 		text-gray-0 dark:text-gray-999 transition-all relative outline-none focus:outline-none
 		data-[color='success']:text-gray-0 data-[color='success']:dark:text-gray-0
 		data-[color='warning']:text-gray-0 data-[color='warning']:dark:text-gray-0
@@ -69,7 +70,10 @@
 			<CheckMarkIcon size={16} />
 		{/if}
 	</button>
-	<span class="flex place-items-center justify-start"><slot /></span>
+	<span
+		class="flex place-items-center justify-start group-aria-disabled:text-gray-400 group-aria-disabled:dark:text-gray-600"
+		><slot /></span
+	>
 </label>
 
 <!--

@@ -9,6 +9,7 @@
 	type="button"
 	role="option"
 	data-value={value}
+	data-type={typeof value}
 	aria-selected={false}
 	{disabled}
 	class="enabled:hover:cursor-pointer disabled:cursor-not-allowed px-2 enabled:hover:bg-gray-50
