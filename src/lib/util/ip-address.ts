@@ -24,4 +24,16 @@ export class IPAddress {
 
         return octets;
     }
+
+    static toString(octets: Octets): IPV4Address {
+        return `${octets[0]} ${octets[1]} ${octets[2]} ${octets[3]}`;
+    }
+
+    static valid(octets: Octets): boolean {
+        for (let i = 0; i < octets.length; i++) {
+            if (octets[i] < 0 || octets[i] > 255) return false;
+        }
+
+        return true;
+    }
 }
