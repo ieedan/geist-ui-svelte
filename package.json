@@ -1,6 +1,6 @@
 {
 	"name": "geist-ui-svelte",
-	"version": "0.4.4",
+	"version": "0.4.5",
 	"author": {
 		"name": "Aidan Bleser",
 		"url": "https://aidanbleser.com"
@@ -332,9 +332,12 @@
 		"@vercel/analytics": "^1.1.2",
 		"@vercel/speed-insights": "^1.0.3",
 		"autoprefixer": "^10.4.17",
+		"class-variance-authority": "^0.7.0",
+		"clsx": "^2.1.0",
 		"mode-watcher": "^0.1.2",
 		"postcss": "^8.4.33",
 		"shikiji": "^0.10.2",
+		"tailwind-merge": "^2.2.1",
 		"tailwindcss": "^3.4.1"
 	}
 }
