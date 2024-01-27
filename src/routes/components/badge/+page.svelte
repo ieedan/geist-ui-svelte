@@ -6,6 +6,7 @@
 	import Spacer from "$lib/spacer/Spacer.svelte";
 	import Text from "$lib/text/Text.svelte";
 	import Badge from "$lib/badge/Badge.svelte";
+	import Avatar from "$lib/avatar/Avatar.svelte";
 </script>
 
 <Text type="h3">Badge</Text>
@@ -81,6 +82,57 @@
 <Badge size="xs" type="warning" ghost>Warning</Badge>
 <Badge size="xs" type="error" ghost>Error</Badge>
 <Badge size="xs" type="secondary" ghost>Secondary</Badge>`}
+			/>
+		</Details>
+	</div>
+</FieldSet>
+<Spacer h={30} />
+<Text type="h4">No Padding</Text>
+<Spacer h={10} />
+<FieldSet>
+	<div class="flex flex-wrap gap-2 justify-start">
+		<Badge size="xs" padding={false}>No padding</Badge>
+	</div>
+	<div slot="footer">
+		<Details label="Code">
+			<Code
+				lang="svelte"
+				code={`<Badge size="xs" ghost>Default</Badge>
+<Badge size="xs" type="success" ghost>Success</Badge>
+<Badge size="xs" type="warning" ghost>Warning</Badge>
+<Badge size="xs" type="error" ghost>Error</Badge>
+<Badge size="xs" type="secondary" ghost>Secondary</Badge>`}
+			/>
+		</Details>
+	</div>
+</FieldSet>
+<Spacer h={30} />
+<Text type="h4">Custom Class</Text>
+<Spacer h={5}/>
+<Text>
+	Apply new styles or override existing styles with <code>`class`</code>.
+</Text>
+<Spacer h={10} />
+<FieldSet>
+	<div class="flex flex-wrap gap-2 justify-start">
+		<div class="relative">
+			<Avatar name="Aidan Bleser" size={32}/>
+			<Badge padding={false} color="error" size="xs" class="absolute -top-1 -right-1">5+</Badge>
+		</div>
+	</div>
+	<div slot="footer">
+		<Details label="Code">
+			<Code
+				lang="svelte"
+				code={`<div class="relative">
+	<Avatar name="Aidan Bleser" size={32}/>
+	<Badge class="absolute -top-1 -right-1" 
+	  padding={false} 
+	  color="error" 
+	  size="xs">
+		5+
+	</Badge>
+</div>`}
 			/>
 		</Details>
 	</div>

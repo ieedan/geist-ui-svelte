@@ -81,10 +81,7 @@
 	};
 </script>
 
-<div
-	style="width: {width}; max-width: 100%;"
-	class={cn(background({ color: type }))}
->
+<div style="width: {width}; max-width: 100%;" class={cn(background({ color: type }))}>
 	<code class="flex flex-col">
 		{#if Array.isArray(text)}
 			{#each text as line}
@@ -103,8 +100,7 @@
 		class={cn(
 			textColor({ color: type }),
 			"flex place-items-center justify-center h-[20px] transition-all",
-		)}
-	>
+		)}>
 		{#if copied}
 			<div in:scale={{ duration: 200 }}>
 				<CheckMarkIcon size={16} />

@@ -1,5 +1,4 @@
 <script lang="ts">
-	import type { Color, Size } from "$lib/types.js";
 	import { cva, type VariantProps } from "class-variance-authority";
 	import { cn } from "$lib/util/utils.js";
 
@@ -26,16 +25,16 @@
 				true: "",
 				false: "",
 			},
-      padding: {
-        true: "px-2",
-        false: ""
-      }
+			padding: {
+				true: "px-2",
+				false: "p-0",
+			},
 		},
 		defaultVariants: {
 			color: "default",
 			size: "md",
 			ghost: false,
-      padding: true
+			padding: true,
 		},
 		compoundVariants: [
 			{
@@ -46,22 +45,22 @@
 			{
 				color: "success",
 				ghost: true,
-				class: "",
+				class: "bg-transparent border-blue-600 dark:border-blue-600 dark:bg-transparent text-blue-600 dark:text-blue-600",
 			},
 			{
 				color: "warning",
 				ghost: true,
-				class: "",
+				class: "bg-transparent dark:bg-transparent border-orange-300 dark:border-orange-400 text-orange-300 dark:text-orange-400",
 			},
 			{
 				color: "error",
 				ghost: true,
-				class: "",
+				class: "bg-transparent dark:bg-transparent border-red-500 dark:border-red-600 text-red-500 dark:text-red-600",
 			},
 			{
 				color: "secondary",
 				ghost: true,
-				class: "",
+				class: "bg-transparent border-gray-200 text-gray-200 dark:bg-transparent dark:border-gray-800 dark:text-gray-800",
 			},
 		],
 	});
@@ -70,11 +69,13 @@
 
 	export let color: Props["color"] = "default";
 	export let size: Props["size"] = "md";
-  export let padding: boolean = true;
+	export let padding: boolean = true;
 	export let ghost: boolean = false;
+	let className: string = "";
+	export { className as class };
 </script>
 
-<span {...$$restProps} class={cn(style({ color: color, size, ghost, padding }), $$restProps.class)}>
+<span {...$$restProps} class={cn(style({ color: color, size, ghost, padding }), className)}>
 	<slot />
 </span>
 
