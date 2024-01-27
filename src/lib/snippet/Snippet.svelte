@@ -2,11 +2,55 @@
 	import { scale } from "svelte/transition";
 	import CheckMarkIcon from "$lib/icons/CheckMarkIcon.svelte";
 	import CloneIcon from "$lib/icons/CloneIcon.svelte";
-	import type { Color } from "$lib/types.js";
+	import { cva, type VariantProps } from "class-variance-authority";
+	import { cn } from "$lib/util/utils.js";
+
+	const background = cva(
+		"flex justify-between place-items-start font-serif transition-all border px-3 py-[10px] rounded-md",
+		{
+			variants: {
+				intent: {
+					dark: "border-gray-999 dark:border-gray-0 bg-gray-999 dark:bg-gray-0 ",
+					lite: "dark:border-gray-900 border-gray-200 dark:bg-gray-950 bg-gray-50",
+					subtle: "dark:border-gray-900 dark:bg-gray-900 bg-gray-100 border-gray-100",
+					transparent: "border-gray-100 dark:border-gray-900",
+					success: "dark:border-blue-600 border-blue-600",
+					warning: "border-orange-300 dark:border-orange-400",
+					error: "dark:border-red-600 border-red-500",
+					secondary: "border-gray-300 dark:border-gray-700",
+					default: "border-gray-999 dark:border-gray-0",
+				},
+			},
+			defaultVariants: {
+				intent: "default",
+			},
+		},
+	);
+
+	const textColor = cva("", {
+		variants: {
+			intent: {
+				dark: "text-gray-0 dark:text-gray-999 enabled:dark:hover:text-gray-800 enabled:hover:text-gray-200",
+				lite: "text-gray-999 dark:text-gray-0 enabled:hover:text-gray-800 enabled:dark:hover:text-gray-200",
+				subtle: "dark:text-gray-100 text-gray-900 enabled:dark:hover:text-gray-300 enabled:hover:text-gray-700",
+				transparent: "text-gray-900 dark:text-gray-100 enabled:hover:text-gray-300 enabled:dark:hover:text-gray-700",
+				success: "text-blue-600 dark:text-blue-600 enabled:hover:text-blue-800 enabled:dark:hover:text-blue-800",
+				warning: "text-orange-300 dark:text-orange-400 enabled:hover:text-orange-500 enabled:dark:hover:text-orange-600",
+				error: "text-red-500 dark:text-red-600 enabled:hover:text-red-700 enabled:dark:hover:text-red-800",
+				secondary: "text-gray-300 dark:text-gray-700 enabled:hover:text-gray-500 enabled:dark:hover:text-gray-500",
+				default: "text-gray-999 dark:text-gray-0 enabled:hover:text-gray-800 enabled:dark:hover:text-gray-200",
+			},
+			defaultVariants: {
+				intent: "default",
+			},
+		},
+	});
+
+	interface Props extends VariantProps<typeof background> {}
 
 	export let text: string | string[];
 	export let width: string = "300px";
-	export let type: Color | "dark" | "lite" | "subtle" | "transparent" = "default";
+	export let type: Props["intent"]  = "default";
 	export let symbol: string = "$";
 
 	let copied = false;
@@ -35,36 +79,13 @@
 <div
 	style="width: {width}; max-width: 100%;"
 	data-color={type}
-	class="flex justify-between place-items-start font-serif border px-3 py-[10px] rounded-md
-	border-gray-999 dark:border-gray-0 data-[color='success']:border-blue-600
-	data-[color='success']:dark:border-blue-600
-	data-[color='warning']:border-orange-300 transition-all
-	data-[color='secondary']:border-gray-300 data-[color='secondary']:dark:border-gray-700
-	data-[color='warning']:dark:border-orange-400 data-[color='error']:border-red-500
-	data-[color='error']:dark:border-red-600 data-[color='dark']:bg-gray-999
-	data-[color='dark']:border-gray-999 data-[color='dark']:dark:border-gray-0
-	data-[color='dark']:dark:bg-gray-0 data-[color='lite']:dark:bg-gray-950
-	data-[color='lite']:dark:border-gray-900 data-[color='lite']:bg-gray-50
-	data-[color='lite']:border-gray-200 data-[color='subtle']:dark:border-gray-900
-	data-[color='subtle']:dark:bg-gray-900 data-[color='subtle']:bg-gray-100
-	data-[color='transparent']:dark:text-gray-100 data-[color='transparent']:border-gray-100
-	data-[color='transparent']:dark:border-gray-900"
->
+	class={cn(background({ intent: type }))}>
 	<code class="flex flex-col">
 		{#if Array.isArray(text)}
 			{#each text as line}
 				<span
 					data-style={type}
-					class="text-gray-999 dark:text-gray-0 font-serif text-sm
-				data-[style='secondary']:text-gray-300 data-[style='secondary']:dark:text-gray-700
-				data-[style='success']:text-blue-600 data-[style='success']:dark:text-blue-600
-				data-[style='dark']:dark:text-gray-999
-				data-[style='warning']:text-orange-300 data-[style='warning']:dark:text-orange-400
-				data-[style='error']:text-red-500 data-[style='error']:dark:text-red-600
-				data-[style='dark']:text-gray-0 data-[style='subtle']:dark:text-gray-100
-				data-[style='subtle']:text-gray-900 data-[style='subtle']:border-gray-100
-				data-[style='transparent']:text-gray-900"
-				>
+					class={cn(textColor({ intent: type }))}>
 					{symbol}
 					{line}
 				</span>
@@ -72,36 +93,15 @@
 		{:else}
 			<span
 				data-style={type}
-				class="text-gray-999 dark:text-gray-0 font-serif text-sm
-				data-[style='secondary']:text-gray-300 data-[style='secondary']:dark:text-gray-700
-				data-[style='success']:text-blue-600 data-[style='dark']:dark:text-gray-999
-				data-[style='warning']:text-orange-300 data-[style='warning']:dark:text-orange-400
-				data-[style='error']:text-red-500 data-[style='error']:dark:text-red-600
-				data-[style='dark']:text-gray-0 data-[style='subtle']:dark:text-gray-100
-				data-[style='subtle']:text-gray-900 data-[style='subtle']:border-gray-100
-				data-[style='transparent']:text-gray-900 data-[style='success']:dark:text-blue-600"
-			>
-				{symbol} {text}</span
-			>
+				class={cn(textColor({ intent: type }))}>
+				{symbol} {text}</span>
 		{/if}
 	</code>
 	<button
 		type="button"
 		on:click={copy}
 		data-color={type}
-		class="flex place-items-center justify-center h-[20px] text-gray-999 dark:text-gray-0 data-[color='success']:text-blue-600
-	data-[color='warning']:text-orange-300 transition-all hover:text-gray-900 dark:hover:text-gray-200 data-[color='success']:dark:text-blue-600
-	data-[color='secondary']:text-gray-300 data-[color='secondary']:hover:text-gray-400
-	data-[color='secondary']:dark:text-gray-700 data-[color='secondary']:dark:hover:text-gray-800
-	data-[color='warning']:hover:text-orange-400 data-[color='error']:text-red-500
-	data-[color='warning']:dark:text-orange-400 data-[color='warning']:dark:hover:text-orange-500
-	data-[color='error']:dark:text-red-600 data-[color='error']:hover:text-red-600
-	data-[color='error']:dark:hover:text-red-700 data-[color='dark']:text-gray-0
-	data-[color='dark']:hover:text-gray-200 data-[color='dark']:dark:text-gray-999
-	data-[color='dark']:hover:dark:text-gray-900 data-[color='subtle']:dark:text-gray-100
-	data-[color='subtle']:hover:dark:text-gray-200 data-[color='subtle']:text-gray-900
-	data-[color='subtle']:hover:text-gray-800"
-	>
+		class={cn(textColor({ intent: type }), "flex place-items-center justify-center h-[20px] transition-all")}>
 		{#if copied}
 			<div in:scale={{ duration: 200 }}>
 				<CheckMarkIcon size={16} />
