@@ -9,7 +9,7 @@
 		"flex justify-between place-items-start font-serif transition-all border px-3 py-[10px] rounded-md",
 		{
 			variants: {
-				intent: {
+				color: {
 					dark: "border-gray-999 dark:border-gray-0 bg-gray-999 dark:bg-gray-0 ",
 					lite: "dark:border-gray-900 border-gray-200 dark:bg-gray-950 bg-gray-50",
 					subtle: "dark:border-gray-900 dark:bg-gray-900 bg-gray-100 border-gray-100",
@@ -22,14 +22,14 @@
 				},
 			},
 			defaultVariants: {
-				intent: "default",
+				color: "default",
 			},
 		},
 	);
 
 	const textColor = cva("", {
 		variants: {
-			intent: {
+			color: {
 				dark: "text-gray-0 dark:text-gray-999 enabled:dark:hover:text-gray-800 enabled:hover:text-gray-200",
 				lite: "text-gray-999 dark:text-gray-0 enabled:hover:text-gray-800 enabled:dark:hover:text-gray-200",
 				subtle: "dark:text-gray-100 text-gray-900 enabled:dark:hover:text-gray-300 enabled:hover:text-gray-700",
@@ -46,7 +46,7 @@
 					"text-gray-999 dark:text-gray-0 enabled:hover:text-gray-800 enabled:dark:hover:text-gray-200",
 			},
 			defaultVariants: {
-				intent: "default",
+				color: "default",
 			},
 		},
 	});
@@ -55,7 +55,7 @@
 
 	export let text: string | string[];
 	export let width: string = "300px";
-	export let type: Props["intent"] = "default";
+	export let type: Props["color"] = "default";
 	export let symbol: string = "$";
 
 	let copied = false;
@@ -83,27 +83,25 @@
 
 <div
 	style="width: {width}; max-width: 100%;"
-	data-color={type}
-	class={cn(background({ intent: type }))}
+	class={cn(background({ color: type }))}
 >
 	<code class="flex flex-col">
 		{#if Array.isArray(text)}
 			{#each text as line}
-				<span data-style={type} class={cn(textColor({ intent: type }))}>
+				<span class={cn(textColor({ color: type }))}>
 					{symbol}
 					{line}
 				</span>
 			{/each}
 		{:else}
-			<span data-style={type} class={cn(textColor({ intent: type }))}> {symbol} {text}</span>
+			<span class={cn(textColor({ color: type }))}> {symbol} {text}</span>
 		{/if}
 	</code>
 	<button
 		type="button"
 		on:click={copy}
-		data-color={type}
 		class={cn(
-			textColor({ intent: type }),
+			textColor({ color: type }),
 			"flex place-items-center justify-center h-[20px] transition-all",
 		)}
 	>

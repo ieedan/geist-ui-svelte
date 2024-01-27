@@ -43,10 +43,10 @@
 <FieldSet>
 	<div class="flex flex-wrap gap-2 justify-start">
 		<Badge size="xs">Default</Badge>
-		<Badge size="xs" type="success">Success</Badge>
-		<Badge size="xs" type="warning">Warning</Badge>
-		<Badge size="xs" type="error">Error</Badge>
-		<Badge size="xs" type="secondary">Secondary</Badge>
+		<Badge size="xs" color="success">Success</Badge>
+		<Badge size="xs" color="warning">Warning</Badge>
+		<Badge size="xs" color="error">Error</Badge>
+		<Badge size="xs" color="secondary">Secondary</Badge>
 	</div>
 	<div slot="footer">
 		<Details label="Code">
@@ -67,10 +67,10 @@
 <FieldSet>
 	<div class="flex flex-wrap gap-2 justify-start">
 		<Badge size="xs" ghost>Default</Badge>
-		<Badge size="xs" type="success" ghost>Success</Badge>
-		<Badge size="xs" type="warning" ghost>Warning</Badge>
-		<Badge size="xs" type="error" ghost>Error</Badge>
-		<Badge size="xs" type="secondary" ghost>Secondary</Badge>
+		<Badge size="xs" color="success" ghost>Success</Badge>
+		<Badge size="xs" color="warning" ghost>Warning</Badge>
+		<Badge size="xs" color="error" ghost>Error</Badge>
+		<Badge size="xs" color="secondary" ghost>Secondary</Badge>
 	</div>
 	<div slot="footer">
 		<Details label="Code">
