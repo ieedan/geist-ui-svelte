@@ -1,8 +1,41 @@
 <script lang="ts">
+	import { cn } from "$lib/util/utils.js";
+	import { cva } from "class-variance-authority";
+
 	export let sticky: boolean = false;
 	export let fixed: boolean = false;
 	export let transparent: boolean = true;
 	export let noBorder: boolean = false;
+
+	const style = cva(
+		`bg-gray-0 dark:bg-gray-999 border-gray-100 dark:border-gray-900 w-full flex justify-center place-items-center py-2`,
+		{
+			variants: {
+				sticky: {
+					true: "sticky top-0 z-10",
+					false: "",
+				},
+				fixed: {
+					true: "fixed top-0 z-10",
+					false: "",
+				},
+				noBorder: {
+					true: "",
+					false: "border-b",
+				},
+				transparent: {
+					true: "backdrop-blur-sm",
+					false: "bg-opacity-90 dark:bg-opacity-90",
+				},
+			},
+			defaultVariants: {
+				sticky: false,
+				noBorder: false,
+				fixed: false,
+				transparent: true,
+			},
+		},
+	);
 </script>
 
 <header
@@ -10,12 +43,7 @@
 	data-fixed={fixed}
 	data-transparent={transparent}
 	data-border={!noBorder}
-	class="w-full flex justify-center place-items-center py-2 data-[sticky=true]:sticky data-[fixed=true]:fixed
-    data-[sticky=true]:z-10 data-[sticky=true]:top-0 data-[fixed=true]:z-10 data-[fixed=true]:top-0
-    data-[border=true]:border-b bg-gray-0 dark:bg-gray-999 border-gray-100
-    dark:border-gray-900 data-[transparent=true]:backdrop-blur-sm
-	data-[transparent=true]:dark:bg-opacity-90 data-[transparent=true]:bg-opacity-90"
->
+	class={cn(style({ sticky, transparent, fixed, noBorder }))}>
 	<slot />
 </header>
 
