@@ -66,6 +66,10 @@
 			name: "Search",
 			slug: "/components/search",
 		},
+		{
+			name: "IPAddressInput",
+			slug: "/components/ipaddressinput",
+		},
 		"LAYOUT",
 		{
 			name: "Card",

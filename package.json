@@ -285,6 +285,10 @@
 			"types": "./dist/togglebutton/ToggleButton.svelte.d.ts",
 			"svelte": "./dist/togglebutton/ToggleButton.svelte"
 		},
+		"./IPAddressInput.svelte": {
+			"types": "./dist/ipaddressinput/IPAddressInput.svelte.d.ts",
+			"svelte": "./dist/ipaddressinput/IPAddressInput.svelte"
+		},
 		"./Label.svelte": {
 			"types": "./dist/label/Label.svelte.d.ts",
 			"svelte": "./dist/label/Label.svelte"
