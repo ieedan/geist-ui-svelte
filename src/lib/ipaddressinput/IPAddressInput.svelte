@@ -8,8 +8,8 @@
 
 	let octets: Octets = IPAddress.parseIPV4(value);
 
-	$: valid = IPAddress.valid(octets);
-	$: value = IPAddress.toString(octets);
+	$: valid = IPAddress.validIP(value);
+	$: value = IPAddress.toString(octets, noDot);
 
 	let firstOctetRef: HTMLInputElement;
 	let secondOctetRef: HTMLInputElement;
@@ -41,7 +41,7 @@
 
 		if (e.key.length == 1 && isAlpha(e.key)) {
 			return false;
-		} else if (e.key.length == 1 && !isNaN(parseInt(e.key))) {
+		} else if (e.key.length == 1 && !isNaN(parseInt(e.key))) {			
 			const num = parseInt(e.key);
 
 			const next = `${target.value}${num}`;
@@ -51,6 +51,8 @@
 			if (nextValue > 255 || nextValue < 0) {
 				return false;
 			}
+		} else if (isNaN(parseInt(e.key)) && e.key.length == 1) {
+			return false;
 		}
 
 		return true;
@@ -209,7 +211,7 @@
 		on:keydown={firstOctetKeydown}
 		bind:this={firstOctetRef}
 		bind:value={octets[0]}
-		class="min-w-0 bg-transparent w-10 hide-spinner outline-none text-center selection:bg-gray-999 selection:text-gray-0 selection:dark:bg-gray-0 selection:dark:text-gray-999" />
+		class="min-w-0 bg-transparent w-10 hide-ramp outline-none text-center selection:bg-gray-999 selection:text-gray-0 selection:dark:bg-gray-0 selection:dark:text-gray-999" />
 	{#if !noDot}
 		<span>.</span>
 	{/if}
@@ -222,7 +224,7 @@
 		on:input={secondOctetInput}
 		on:keydown={secondOctetKeydown}
 		bind:value={octets[1]}
-		class="min-w-0 bg-transparent w-10 hide-spinner outline-none text-center selection:bg-gray-999 selection:text-gray-0 selection:dark:bg-gray-0 selection:dark:text-gray-999" />
+		class="min-w-0 bg-transparent w-10 hide-ramp outline-none text-center selection:bg-gray-999 selection:text-gray-0 selection:dark:bg-gray-0 selection:dark:text-gray-999" />
 	{#if !noDot}
 		<span>.</span>
 	{/if}
@@ -235,7 +237,7 @@
 		on:input={thirdOctetInput}
 		on:keydown={thirdOctetKeydown}
 		bind:value={octets[2]}
-		class="min-w-0 bg-transparent w-10 hide-spinner outline-none text-center selection:bg-gray-999 selection:text-gray-0 selection:dark:bg-gray-0 selection:dark:text-gray-999" />
+		class="min-w-0 bg-transparent w-10 hide-ramp outline-none text-center selection:bg-gray-999 selection:text-gray-0 selection:dark:bg-gray-0 selection:dark:text-gray-999" />
 	{#if !noDot}
 		<span>.</span>
 	{/if}
@@ -247,12 +249,12 @@
 		bind:this={fourthOctetRef}
 		on:keydown={fourthOctetKeydown}
 		bind:value={octets[3]}
-		class="min-w-0 bg-transparent w-10 hide-spinner outline-none text-center selection:bg-gray-999 selection:text-gray-0 selection:dark:bg-gray-0 selection:dark:text-gray-999" />
+		class="min-w-0 bg-transparent w-10 hide-ramp outline-none text-center selection:bg-gray-999 selection:text-gray-0 selection:dark:bg-gray-0 selection:dark:text-gray-999" />
 </div>
 
 <style lang="postcss">
-	.hide-spinner::-webkit-inner-spin-button,
-	.hide-spinner::-webkit-outer-spin-button {
+	.hide-ramp::-webkit-inner-spin-button,
+	.hide-ramp::-webkit-outer-spin-button {
 		-webkit-appearance: none;
 		margin: 0;
 	}

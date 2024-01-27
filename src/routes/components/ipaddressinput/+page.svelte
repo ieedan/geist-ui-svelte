@@ -6,6 +6,8 @@
 	import Snippet from "$lib/snippet/Snippet.svelte";
 	import Spacer from "$lib/spacer/Spacer.svelte";
 	import Text from "$lib/text/Text.svelte";
+
+	let valid: boolean;
 </script>
 
 <Text type="h3">IPAddressInput</Text>
@@ -54,7 +56,28 @@
 <Spacer h={10} />
 <FieldSet>
 	<div class="flex flex-col justify-start">
-		<IPAddressInput value="172 16 10 100" noDot/>
+		<IPAddressInput value="172 16 10 100" />
+	</div>
+	<div slot="footer">
+		<Details label="Code">
+			<Code
+				lang="svelte"
+				code={`<IpAddressInput value="172 16 10 100"/>`}
+			/>
+		</Details>
+	</div>
+</FieldSet>
+<Spacer h={30} />
+<Text type="h4">Validation</Text>
+<Spacer h={5}/>
+<Text>Validating the IP is easy just bind to <code>`valid`</code>.</Text>
+<Spacer h={10} />
+<FieldSet>
+	<div class="flex flex-col justify-start">
+		<IPAddressInput value="172 16 10 -1" bind:valid={valid}/>
+		{#if !valid}
+			<Text color="error">Invalid!</Text>
+		{/if}
 	</div>
 	<div slot="footer">
 		<Details label="Code">
