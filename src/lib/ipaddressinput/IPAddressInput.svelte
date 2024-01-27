@@ -33,7 +33,6 @@
 		element.focus();
 	};
 
-
 	/** Checks if the next entry would be valid */
 	const canEnter = (e: KeyboardEvent): boolean => {
 		const target = e.target as HTMLInputElement;
@@ -41,7 +40,7 @@
 
 		if (e.key.length == 1 && isAlpha(e.key)) {
 			return false;
-		} else if (e.key.length == 1 && !isNaN(parseInt(e.key))) {			
+		} else if (e.key.length == 1 && !isNaN(parseInt(e.key))) {
 			const num = parseInt(e.key);
 
 			const next = `${target.value}${num}`;
@@ -201,7 +200,8 @@
 </script>
 
 <div
-	class="flex place-items-center border border-gray-100 dark:border-gray-900 w-fit rounded-md py-1 px-1">
+	class="flex place-items-center border border-gray-100 dark:border-gray-900 w-fit rounded-md py-1 px-1"
+>
 	<input
 		min="0"
 		max="255"
@@ -211,7 +211,8 @@
 		on:keydown={firstOctetKeydown}
 		bind:this={firstOctetRef}
 		bind:value={octets[0]}
-		class="min-w-0 bg-transparent w-10 hide-ramp outline-none text-center selection:bg-gray-999 selection:text-gray-0 selection:dark:bg-gray-0 selection:dark:text-gray-999" />
+		class="min-w-0 bg-transparent w-10 hide-ramp outline-none text-center selection:bg-gray-999 selection:text-gray-0 selection:dark:bg-gray-0 selection:dark:text-gray-999"
+	/>
 	{#if !noDot}
 		<span>.</span>
 	{/if}
@@ -224,7 +225,8 @@
 		on:input={secondOctetInput}
 		on:keydown={secondOctetKeydown}
 		bind:value={octets[1]}
-		class="min-w-0 bg-transparent w-10 hide-ramp outline-none text-center selection:bg-gray-999 selection:text-gray-0 selection:dark:bg-gray-0 selection:dark:text-gray-999" />
+		class="min-w-0 bg-transparent w-10 hide-ramp outline-none text-center selection:bg-gray-999 selection:text-gray-0 selection:dark:bg-gray-0 selection:dark:text-gray-999"
+	/>
 	{#if !noDot}
 		<span>.</span>
 	{/if}
@@ -237,7 +239,8 @@
 		on:input={thirdOctetInput}
 		on:keydown={thirdOctetKeydown}
 		bind:value={octets[2]}
-		class="min-w-0 bg-transparent w-10 hide-ramp outline-none text-center selection:bg-gray-999 selection:text-gray-0 selection:dark:bg-gray-0 selection:dark:text-gray-999" />
+		class="min-w-0 bg-transparent w-10 hide-ramp outline-none text-center selection:bg-gray-999 selection:text-gray-0 selection:dark:bg-gray-0 selection:dark:text-gray-999"
+	/>
 	{#if !noDot}
 		<span>.</span>
 	{/if}
@@ -249,7 +252,8 @@
 		bind:this={fourthOctetRef}
 		on:keydown={fourthOctetKeydown}
 		bind:value={octets[3]}
-		class="min-w-0 bg-transparent w-10 hide-ramp outline-none text-center selection:bg-gray-999 selection:text-gray-0 selection:dark:bg-gray-0 selection:dark:text-gray-999" />
+		class="min-w-0 bg-transparent w-10 hide-ramp outline-none text-center selection:bg-gray-999 selection:text-gray-0 selection:dark:bg-gray-0 selection:dark:text-gray-999"
+	/>
 </div>
 
 <style lang="postcss">

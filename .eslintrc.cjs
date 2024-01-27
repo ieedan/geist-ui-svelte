@@ -55,7 +55,7 @@ module.exports = {
 								"camelcase",
 								"ieedan",
 								"togglebutton",
-								"ipaddressinput"
+								"ipaddressinput",
 							],
 						},
 					},
@@ -89,7 +89,7 @@ module.exports = {
 						"camelcase",
 						"ieedan",
 						"togglebutton",
-						"ipaddressinput"
+						"ipaddressinput",
 					],
 				},
 			},

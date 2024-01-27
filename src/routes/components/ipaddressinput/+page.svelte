@@ -20,38 +20,32 @@
 <Spacer h={10} />
 <FieldSet>
 	<div class="flex flex-col justify-start">
-		<IPAddressInput value="172 16 10 100"/>
+		<IPAddressInput value="172 16 10 100" />
 	</div>
 	<div slot="footer">
 		<Details label="Code">
-			<Code
-				lang="svelte"
-				code={`<IpAddressInput value="172 16 10 100"/>`}
-			/>
+			<Code lang="svelte" code={`<IpAddressInput value="172 16 10 100"/>`} />
 		</Details>
 	</div>
 </FieldSet>
 <Spacer h={30} />
 <Text type="h4">No Dot</Text>
-<Spacer h={5}/>
+<Spacer h={5} />
 <Text>Remove the dot between octets.</Text>
 <Spacer h={10} />
 <FieldSet>
 	<div class="flex flex-col justify-start">
-		<IPAddressInput value="172 16 10 100" noDot/>
+		<IPAddressInput value="172 16 10 100" noDot />
 	</div>
 	<div slot="footer">
 		<Details label="Code">
-			<Code
-				lang="svelte"
-				code={`<IpAddressInput value="172 16 10 100"/>`}
-			/>
+			<Code lang="svelte" code={`<IpAddressInput value="172 16 10 100"/>`} />
 		</Details>
 	</div>
 </FieldSet>
 <Spacer h={30} />
 <Text type="h4">Mouse-less</Text>
-<Spacer h={5}/>
+<Spacer h={5} />
 <Text>The input works with both <code>`space`</code> and <code>`tab`</code>.</Text>
 <Spacer h={10} />
 <FieldSet>
@@ -60,31 +54,25 @@
 	</div>
 	<div slot="footer">
 		<Details label="Code">
-			<Code
-				lang="svelte"
-				code={`<IpAddressInput value="172 16 10 100"/>`}
-			/>
+			<Code lang="svelte" code={`<IpAddressInput value="172 16 10 100"/>`} />
 		</Details>
 	</div>
 </FieldSet>
 <Spacer h={30} />
 <Text type="h4">Validation</Text>
-<Spacer h={5}/>
+<Spacer h={5} />
 <Text>Validating the IP is easy just bind to <code>`valid`</code>.</Text>
 <Spacer h={10} />
 <FieldSet>
 	<div class="flex flex-col justify-start">
-		<IPAddressInput value="172 16 10 -1" bind:valid={valid}/>
+		<IPAddressInput value="172 16 10 -1" bind:valid />
 		{#if !valid}
 			<Text color="error">Invalid!</Text>
 		{/if}
 	</div>
 	<div slot="footer">
 		<Details label="Code">
-			<Code
-				lang="svelte"
-				code={`<IpAddressInput value="172 16 10 100"/>`}
-			/>
+			<Code lang="svelte" code={`<IpAddressInput value="172 16 10 100"/>`} />
 		</Details>
 	</div>
 </FieldSet>

@@ -29,15 +29,15 @@ export class IPAddress {
 
 	static toString(octets: Octets, noDot: boolean = false): IPV4Address {
 		if (noDot) {
-            return `${octets[0]} ${octets[1]} ${octets[2]} ${octets[3]}`;
-        } 
+			return `${octets[0]} ${octets[1]} ${octets[2]} ${octets[3]}`;
+		}
 
-        return `${octets[0]}.${octets[1]}.${octets[2]}.${octets[3]}`;
+		return `${octets[0]}.${octets[1]}.${octets[2]}.${octets[3]}`;
 	}
 
 	static validOctets(octets: Octets): boolean {
 		for (let i = 0; i < octets.length; i++) {
-            if (isNaN(octets[i])) return false; 
+			if (isNaN(octets[i])) return false;
 			if (octets[i] < 0 || octets[i] > 255) return false;
 		}
 
@@ -64,6 +64,6 @@ export class IPAddress {
 			}
 		}
 
-        return this.validOctets(octets);
+		return this.validOctets(octets);
 	}
 }
