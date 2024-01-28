@@ -26,7 +26,7 @@
     }
 </script>
 
-<Hero exclusionHeight={79}>
+<Hero exclusionHeight={79} class="px-4">
     <FieldSet>
         <div class="p-2">
             <Text type="h6">Delete Project</Text>
