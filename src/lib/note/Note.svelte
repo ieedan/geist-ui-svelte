@@ -59,9 +59,7 @@
 
 <span data-style={color} class={cn(style({ color, block }))}>
 	{#if label}
-		<slot name="label">
-			NOTE:
-		</slot>
+		<slot name="label">NOTE:</slot>
 	{/if}
 	<slot />
 </span>

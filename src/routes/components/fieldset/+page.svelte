@@ -4,7 +4,6 @@
 	import Details from "$lib/details/Details.svelte";
 	import FieldSet from "$lib/fieldset/FieldSet.svelte";
 	import Input from "$lib/input/Input.svelte";
-	import Skeleton from "$lib/skeleton/Skeleton.svelte";
 	import Snippet from "$lib/snippet/Snippet.svelte";
 	import Spacer from "$lib/spacer/Spacer.svelte";
 	import Text from "$lib/text/Text.svelte";
@@ -68,42 +67,42 @@
 	<div class="flex flex-col justify-start gap-3">
 		<FieldSet>
 			<div class="py-2">
-				<Spacer h={10}/>
+				<Spacer h={10} />
 			</div>
 			<div slot="footer" class="flex place-items-center py-1">
-				<Spacer h={10}/>
+				<Spacer h={10} />
 			</div>
 		</FieldSet>
 		<FieldSet color="success">
 			<div class="py-2">
-				<Spacer h={10}/>
+				<Spacer h={10} />
 			</div>
 			<div slot="footer" class="flex place-items-center py-1">
-				<Spacer h={10}/>
+				<Spacer h={10} />
 			</div>
 		</FieldSet>
 		<FieldSet color="warning">
 			<div class="py-2">
-				<Spacer h={10}/>
+				<Spacer h={10} />
 			</div>
 			<div slot="footer" class="flex place-items-center py-1">
-				<Spacer h={10}/>
+				<Spacer h={10} />
 			</div>
 		</FieldSet>
 		<FieldSet color="error">
 			<div class="py-2">
-				<Spacer h={10}/>
+				<Spacer h={10} />
 			</div>
 			<div slot="footer" class="flex place-items-center py-1">
-				<Spacer h={10}/>
+				<Spacer h={10} />
 			</div>
 		</FieldSet>
 		<FieldSet color="transparent">
 			<div class="py-2">
-				<Spacer h={10}/>
+				<Spacer h={10} />
 			</div>
 			<div slot="footer" class="flex place-items-center py-1">
-				<Spacer h={10}/>
+				<Spacer h={10} />
 			</div>
 		</FieldSet>
 	</div>

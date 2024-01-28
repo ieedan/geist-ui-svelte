@@ -43,25 +43,30 @@
 	<Text type="h1" class="max-w-[700px]" align="center"
 		>Look your best in <span class="hidden dark:inline">black</span><span class="dark:hidden"
 			>white</span
-		>.</Text>
+		>.</Text
+	>
 	<Spacer h={75} />
 	<div class="flex flex-wrap justify-center place-items-center gap-8">
 		{#each examples as example}
 			<a href={example.href}>
 				<Card class="flex flex-col gap-4 p-6" color="abort" hoverable>
-					<Center class="bg-gray-0 dark:bg-gray-999 w-[300px] h-[225px] rounded-lg overflow-hidden">
+					<Center
+						class="bg-gray-0 dark:bg-gray-999 w-[300px] h-[225px] rounded-lg overflow-hidden"
+					>
 						<img
 							src={example.image}
 							alt="{example.title} {example.description}"
 							class="rounded-xl block dark:hidden"
 							width="300px"
-							height="200px" />
+							height="200px"
+						/>
 						<img
 							src={example.imageDark}
 							alt="{example.title} {example.description}"
 							class="rounded-xl hidden dark:block"
 							width="300px"
-							height="200px" />
+							height="200px"
+						/>
 					</Center>
 					<div class="flex flex-col">
 						<Text b>{example.title}</Text>

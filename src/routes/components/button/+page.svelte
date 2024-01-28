@@ -31,10 +31,8 @@
 </FieldSet>
 <Spacer h={30} />
 <Text type="h4">Loading</Text>
-<Spacer h={5}/>
-<Text>
-	When loading the button will maintain its original size to prevent layout shift.
-</Text>
+<Spacer h={5} />
+<Text>When loading the button will maintain its original size to prevent layout shift.</Text>
 <Spacer h={10} />
 <FieldSet>
 	<div class="flex flex-col justify-start">
@@ -50,7 +48,8 @@
 				setTimeout(() => {
 					loading = false;
 				}, 500);
-			}}>
+			}}
+		>
 			Click to load
 		</Button>
 	</div>
@@ -72,7 +71,8 @@
 		}, 500);
 	}}>
 	Click to load
-</Button>`} />
+</Button>`}
+			/>
 		</Details>
 	</div>
 </FieldSet>
@@ -118,7 +118,8 @@
 <Button color="success-light">Success Light</Button>
 <Button color="warning-light">Warning Light</Button>
 <Button color="error-light">Error Light</Button>
-<Button color="abort-active">Abort Active</Button>`} />
+<Button color="abort-active">Abort Active</Button>`}
+			/>
 		</Details>
 	</div>
 </FieldSet>
@@ -141,7 +142,8 @@
 				code={`<Button color="secondary" ghost>Secondary</Button>
 <Button color="success" ghost>Success</Button>
 <Button color="warning" ghost>Warning</Button>
-<Button color="error" ghost>Error</Button>`} />
+<Button color="error" ghost>Error</Button>`}
+			/>
 		</Details>
 	</div>
 </FieldSet>
@@ -164,7 +166,8 @@
 <Button size="sm">sm</Button>
 <Button size="md">md</Button>
 <Button size="lg">lg</Button>
-<Button size="xl">xl</Button>`} />
+<Button size="xl">xl</Button>`}
+			/>
 		</Details>
 	</div>
 </FieldSet>
@@ -211,7 +214,8 @@
 	href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" 
 	target="_blank">
 	Check this out
-</Button>`} />
+</Button>`}
+			/>
 		</Details>
 	</div>
 </FieldSet>

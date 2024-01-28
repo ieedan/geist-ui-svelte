@@ -62,10 +62,13 @@
 	</div>
 	<div slot="footer">
 		<Details label="Code">
-			<Code lang="svelte" code={`<Note>
+			<Code
+				lang="svelte"
+				code={`<Note>
 	<Text slot="label" b>Warning:</Text>
 	Elephants remember.
-</Note>`} />
+</Note>`}
+			/>
 		</Details>
 	</div>
 </FieldSet>

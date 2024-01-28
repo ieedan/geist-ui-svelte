@@ -1,6 +1,6 @@
 {
 	"name": "geist-ui-svelte",
-	"version": "0.5.0",
+	"version": "0.5.1",
 	"author": {
 		"name": "Aidan Bleser",
 		"url": "https://aidanbleser.com"
@@ -307,7 +307,7 @@
 		"@cspell/eslint-plugin": "^8.1.0",
 		"@sveltejs/adapter-auto": "^3.1.1",
 		"@sveltejs/package": "^2.2.6",
-		"@sveltejs/vite-plugin-svelte": "^3.0.0",
+		"@sveltejs/vite-plugin-svelte": "^3.0.2",
 		"@types/eslint": "8.56.2",
 		"@typescript-eslint/eslint-plugin": "^6.19.1",
 		"@typescript-eslint/parser": "^6.19.1",

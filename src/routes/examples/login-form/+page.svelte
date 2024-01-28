@@ -23,11 +23,13 @@
 	<div
 		class="flex justify-between border-transparent sm:border-gray-100
         sm:dark:border-gray-900 py-6 sm:border max-w-[350px] w-full
-        md:max-w-[600px] h-96 px-8 rounded-xl md:rounded-3xl">
+        md:max-w-[600px] h-96 px-8 rounded-xl md:rounded-3xl"
+	>
 		<form
 			action=""
 			on:submit|preventDefault
-			class="flex-grow w-full flex flex-col place-items-start justify-center">
+			class="flex-grow w-full flex flex-col place-items-start justify-center"
+		>
 			<Input type="email" placeholder="Email" width="100%">
 				<Text type="small" color="secondary">Email</Text>
 			</Input>
@@ -74,14 +76,16 @@
 					alt="geist-ui-svelte logo"
 					height="50"
 					width="50"
-					class="border border-transparent dark:border-gray-900 rounded-full" />
+					class="border border-transparent dark:border-gray-900 rounded-full"
+				/>
 				<Text type="h1" align="center" size="2xl" lgSize="3xl">Sign into your account</Text>
 			</Center>
 		</div>
 	</div>
 	<div class="absolute bottom-0 py-2 hidden md:flex place-items-center gap-[2px]">
 		<Text type="small" color="abort"
-			>See the code below <ChevronIcon size={16} rotation="90deg" /></Text>
+			>See the code below <ChevronIcon size={16} rotation="90deg" /></Text
+		>
 	</div>
 </Hero>
 <Center class="hidden md:flex ">
@@ -147,7 +151,8 @@
 			<Text type="h1" align="center" size="2xl" lgSize="3xl">Sign into your account</Text>
 		</Center>
 	</div>
-</div>`} />
+</div>`}
+		/>
 	</div>
 </Center>
 <Spacer h={20} />
