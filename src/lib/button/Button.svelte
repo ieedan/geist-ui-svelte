@@ -5,7 +5,7 @@
 	import { cn } from "$lib/util/utils.js";
 
 	const style = cva(
-		"transition-all rounded-md border flex place-items-center justify-center text-nowrap whitespace-nowrap group",
+		"transition-all rounded-md border flex place-items-center justify-center text-nowrap whitespace-nowrap group relative",
 		{
 			variants: {
 				color: {
@@ -207,8 +207,7 @@
 		on:mouseleave
 		data-a
 		style="width: {width};"
-		class={cn(style({ color, disabled, loading, ghost, size, square }), className)}
-	>
+		class={cn(style({ color, disabled, loading, ghost, size, square }), className)}>
 		{#if loading}
 			<Loading size="sm" />
 		{:else}
@@ -230,13 +229,15 @@
 		on:mouseleave
 		disabled={disabled || loading}
 		style="width: {width};"
-		class={cn(style({ color, disabled, loading, ghost, size, square }), className)}
-	>
+		class={cn(style({ color, disabled, loading, ghost, size, square }), className)}>
 		{#if loading}
-			<Loading size="sm" />
-		{:else}
-			<slot />
+			<Loading
+				size="sm"
+				class="absolute left-1/2 top-1/2 -translate-y-1/2 -translate-x-1/2" />
 		{/if}
+		<div data-loading={loading} class="data-[loading=true]:opacity-0 flex place-items-center justify-center">
+			<slot />
+		</div>
 	</button>
 {/if}
 

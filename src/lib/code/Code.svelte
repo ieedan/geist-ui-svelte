@@ -125,7 +125,7 @@
 <div
 	bind:this={editorRef}
 	class="rounded-lg px-4 py-4 relative bg-gray-0 dark:bg-gray-999
-	flex place-items-start selection:bg-blue-400 selection:bg-opacity-30"
+	flex place-items-start selection:bg-blue-400 selection:bg-opacity-30 max-w-full"
 >
 	{#if lineNumbers}
 		<div class="flex min-w-[40px] flex-col place-items-start justify-center">
