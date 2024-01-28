@@ -83,7 +83,7 @@
 				false: "",
 			},
 			bold: {
-				true: "text-bold",
+				true: "!font-bold",
 				false: "",
 			},
 			italics: {

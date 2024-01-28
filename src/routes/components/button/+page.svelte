@@ -7,6 +7,8 @@
 	import Text from "$lib/text/Text.svelte";
 	import Button from "$lib/button/Button.svelte";
 	import XIcon from "$lib/icons/XIcon.svelte";
+
+	let loading = false;
 </script>
 
 <Text type="h3">Button</Text>
@@ -29,20 +31,47 @@
 </FieldSet>
 <Spacer h={30} />
 <Text type="h4">Loading</Text>
+<Spacer h={5} />
+<Text>When loading the button will maintain its original size to prevent layout shift.</Text>
 <Spacer h={10} />
 <FieldSet>
 	<div class="flex flex-col justify-start">
 		<Button loading>Action</Button>
 		<Spacer h={5} />
 		<Button loading color="success">Action</Button>
+		<Spacer h={5} />
+		<Button
+			color="success-light"
+			{loading}
+			on:click={() => {
+				loading = true;
+				setTimeout(() => {
+					loading = false;
+				}, 500);
+			}}
+		>
+			Click to load
+		</Button>
 	</div>
 	<div slot="footer">
 		<Details label="Code">
 			<Code
 				lang="svelte"
 				code={`<Button loading>Action</Button>
-<Spacer h={5}/>
-<Button loading color="success">Action</Button>`}
+<Spacer h={5} />
+<Button loading color="success">Action</Button>
+<Spacer h={5} />
+<Button
+	color="success-light"
+	{loading}
+	on:click={() => {
+		loading = true;
+		setTimeout(() => {
+			loading = false;
+		}, 500);
+	}}>
+	Click to load
+</Button>`}
 			/>
 		</Details>
 	</div>

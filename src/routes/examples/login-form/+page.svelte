@@ -88,11 +88,12 @@
 		>
 	</div>
 </Hero>
-<Center class="hidden md:flex">
+<Center class="hidden md:flex ">
 	<Spacer h={20} />
-	<Code
-		lang="svelte"
-		code={`<div
+	<div class="max-w-[880px] flex justify-center">
+		<Code
+			lang="svelte"
+			code={`<div
     class="flex justify-between border-transparent sm:border-gray-100
     sm:dark:border-gray-900 py-6 sm:border max-w-[350px] w-full
     md:max-w-[600px] h-96 px-8 rounded-xl md:rounded-3xl">
@@ -151,6 +152,7 @@
 		</Center>
 	</div>
 </div>`}
-	/>
+		/>
+	</div>
 </Center>
 <Spacer h={20} />

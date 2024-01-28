@@ -51,15 +51,61 @@
 	</div>
 </FieldSet>
 <Spacer h={30} />
+<Text type="h4">Custom Label</Text>
+<Spacer h={10} />
+<FieldSet>
+	<div class="flex flex-col justify-start">
+		<Note>
+			<Text slot="label" b>Warning:</Text>
+			Elephants remember.
+		</Note>
+	</div>
+	<div slot="footer">
+		<Details label="Code">
+			<Code
+				lang="svelte"
+				code={`<Note>
+	<Text slot="label" b>Warning:</Text>
+	Elephants remember.
+</Note>`}
+			/>
+		</Details>
+	</div>
+</FieldSet>
+<Spacer h={30} />
 <Text type="h4">Without Label</Text>
 <Spacer h={10} />
 <FieldSet>
 	<div class="flex flex-col justify-start">
-		<Note label={false}>Elephants remember.</Note>
+		<Note label={false}>Without label.</Note>
 	</div>
 	<div slot="footer">
 		<Details label="Code">
-			<Code lang="svelte" code={`<Note label={false}>Elephants remember.</Note>`} />
+			<Code lang="svelte" code={`<Note label={false}>Without label.</Note>`} />
+		</Details>
+	</div>
+</FieldSet>
+<Spacer h={30} />
+<Text type="h4">Block</Text>
+<Spacer h={10} />
+<FieldSet>
+	<div class="flex flex-col justify-start gap-2">
+		<Note block>Default block.</Note>
+		<Note color="success" block>Success block.</Note>
+		<Note color="warning" block>Warning block.</Note>
+		<Note color="error" block>Error block.</Note>
+		<Note color="secondary" block>Secondary block.</Note>
+	</div>
+	<div slot="footer">
+		<Details label="Code">
+			<Code
+				lang="svelte"
+				code={`<Note block>Default block.</Note>
+<Note color="success" block>Success block.</Note>
+<Note color="warning" block>Warning block.</Note>
+<Note color="error" block>Error block.</Note>
+<Note color="secondary" block>Secondary block.</Note>`}
+			/>
 		</Details>
 	</div>
 </FieldSet>
