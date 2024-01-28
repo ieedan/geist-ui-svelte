@@ -60,7 +60,7 @@
 	</div>
 </Hero>
 
-<Modal bind:visible={open} class="w-[500px] h-fit">
+<Modal bind:visible={open} class="sm:w-[500px] h-fit">
 	<form on:submit|preventDefault={del} class="p-6 flex flex-col">
 		<Text type="h4">Delete Project</Text>
 		<Spacer h={15} />
