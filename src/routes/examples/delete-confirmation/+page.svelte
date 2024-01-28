@@ -27,7 +27,7 @@
 </script>
 
 <Hero exclusionHeight={79} class="px-4">
-    <FieldSet>
+    <FieldSet color="error">
         <div class="p-2">
             <Text type="h6">Delete Project</Text>
             <Text type="small">The project will be permanently deleted, including its deployments and domains. This action is irreversible and can not be undone.</Text>
