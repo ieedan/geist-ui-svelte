@@ -13,6 +13,7 @@
 	import Divider from "$lib/divider/Divider.svelte";
 	import toMap from "$lib/util/to-map.js";
 	import ChevronUpDownIcon from "$lib/icons/ChevronUpDownIcon.svelte";
+	import Button from "$lib/button/Button.svelte";
 
 	const countries = toMap(
 		[
@@ -154,6 +155,52 @@
 	$: selectedStateObject = countries
 		.get(selectedCountry)
 		?.states.find((a) => a.name == selectedState);
+
+	const alphabet2: string[] = [
+		"AA",
+		"BB",
+		"CC",
+		"DD",
+		"EE",
+		"FF",
+		"GG",
+		"HH",
+		"II",
+		"JJ",
+		"KK",
+		"LL",
+		"MM",
+		"NN",
+		"OO",
+		"PP",
+		"QQ",
+		"RR",
+		"SS",
+		"TT",
+		"UU",
+		"VV",
+		"WW",
+		"XX",
+		"YY",
+		"ZZ",
+	];
+
+	let listOptions = alphabet;
+	let toggledOptions = false;
+
+	let arrValue = ["A", "B"];
+
+	let value = "A";
+
+	const toggleOptions = () => {
+		if (toggledOptions) {
+			listOptions = alphabet;
+		} else {
+			listOptions = alphabet2;
+		}
+
+		toggledOptions = !toggledOptions;
+	};
 </script>
 
 <Text type="h3">Select</Text>
@@ -699,7 +746,8 @@ $: selectedStateObject = countries
 <Text type="h4">Disabled Multi-Select</Text>
 <Spacer h={5} />
 <Text>
-	Believe it or not, not everyone thinks of this but in our select the clear option is not enabled when the select is disabled. Scrolling is still enabled though.
+	Believe it or not, not everyone thinks of this but in our select the clear option is not enabled
+	when the select is disabled. Scrolling is still enabled though.
 </Text>
 <Spacer h={10} />
 <FieldSet>
@@ -733,6 +781,108 @@ $: selectedStateObject = countries
 		<Option value={letter}>{letter}</Option>
 	{/each}
 </Select>`}
+			/>
+		</Details>
+	</div>
+</FieldSet>
+<Spacer h={30} />
+<Text type="h4">Change Options</Text>
+<Spacer h={5} />
+<Text>When you change the options the select will react to the change.</Text>
+<Spacer h={10} />
+<FieldSet>
+	<div class="flex flex-col gap-2">
+		<Select placeholder="Select a letter">
+			{#each listOptions as letter (letter)}
+				<Option value={letter}>{letter}</Option>
+			{/each}
+		</Select>
+		<Select
+			multiSelect
+			value={["A", "B", "C", "D", "E", "F", "G"]}
+			placeholder="Select a letter"
+		>
+			{#each listOptions as letter (letter)}
+				<Option value={letter}>{letter}</Option>
+			{/each}
+		</Select>
+		<Button on:click={toggleOptions}>Change Options</Button>
+	</div>
+	<div slot="footer">
+		<Details label="Code">
+			<Code
+				lang="svelte"
+				code={`<Select placeholder="Select a letter">
+	{#each listOptions as letter (letter)}
+		<Option value={letter}>{letter}</Option>
+	{/each}
+</Select>
+<Select
+	multiSelect
+	value={["A", "B", "C", "D", "E", "F", "G"]}
+	placeholder="Select a letter"
+>
+	{#each listOptions as letter (letter)}
+		<Option value={letter}>{letter}</Option>
+	{/each}
+</Select>
+<Button on:click={toggleOptions}>
+	Change Options
+</Button>`}
+			/>
+		</Details>
+	</div>
+</FieldSet>
+<Spacer h={30} />
+<Text type="h4">Change Value</Text>
+<Spacer h={5} />
+<Text>When you change the value the select will react to the change.</Text>
+<Spacer h={10} />
+<FieldSet>
+	<div class="flex flex-col gap-2">
+		<Select placeholder="Select a letter" bind:value>
+			{#each listOptions as letter (letter)}
+				<Option value={letter}>{letter}</Option>
+			{/each}
+		</Select>
+		<Select multiSelect bind:value={arrValue} placeholder="Select a letter">
+			{#each listOptions as letter (letter)}
+				<Option value={letter}>{letter}</Option>
+			{/each}
+		</Select>
+		<Button
+			on:click={() => {
+				arrValue = [...arrValue, "H"];
+				value = "H";
+			}}
+		>
+			Select H
+		</Button>
+	</div>
+	<div slot="footer">
+		<Details label="Code">
+			<Code
+				lang="svelte"
+				code={`<Select placeholder="Select a letter" bind:value={value}>
+	{#each listOptions as letter (letter)}
+		<Option value={letter}>{letter}</Option>
+	{/each}
+</Select>
+<Select
+	multiSelect
+	bind:value={arrValue}
+	placeholder="Select a letter"
+>
+	{#each listOptions as letter (letter)}
+		<Option value={letter}>{letter}</Option>
+	{/each}
+</Select>
+<Button on:click={() => {
+	arrValue = [...arrValue, "H"];
+	value = "H";
+}}>
+	Select H
+</Button>`}
 			/>
 		</Details>
 	</div>
