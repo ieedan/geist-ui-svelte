@@ -31,6 +31,7 @@
 	import DesktopIcon from "$lib/icons/DesktopIcon.svelte";
 	import { page } from "$app/stores";
 	import { goto } from "$app/navigation";
+	import EllipsisIcon from "$lib/icons/EllipsisIcon.svelte";
 
 	type Icon = {
 		name: string;
@@ -109,6 +110,10 @@
 		{
 			name: "Desktop",
 			component: DesktopIcon,
+		},
+		{
+			name: "Ellipsis",
+			component: EllipsisIcon,
 		},
 	];
 
