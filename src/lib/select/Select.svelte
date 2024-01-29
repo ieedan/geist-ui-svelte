@@ -95,20 +95,35 @@
 	};
 
 	$: {
-		if (dropDownRef && !multiSelect) {
-			const option = findOption(value);
-			if (option) selectOption(option);
+		if (dropDownRef) {
+			if (!multiSelect) {
+				const option = findOption(value);
+				if (option) selectOption(option);
+			} else if (Array.isArray(value)) {
+				for (let i = 0; i < value.length; i++) {
+					if (!valuesMap.has(value[i])) findAndSelect(value[i]);
+				}
+			}
 		}
 	}
 
 	const handleMutation = () => {
 		// Check if value is still in list
-		const option = findOption(value);
-		if (allowNone) {
-			value = undefined;
-			selectedHTML = "";
+		if (!multiSelect) {
+			const option = findOption(value);
+			if (allowNone) {
+				value = undefined;
+				selectedHTML = "";
+			} else {
+				if (!option) selectFirstOption();
+			}
 		} else {
-			if (!option) selectFirstOption();
+			const tempMap = new Map(valuesMap);
+			for (const [k] of tempMap) {
+				const option = findOption(k);
+				if (!option) valuesMap.delete(k);
+			}
+			valuesMap = valuesMap;
 		}
 	};
 
@@ -120,8 +135,6 @@
 		if (!target) return;
 
 		selectOption(target);
-
-		dispatch("change", { value });
 	};
 
 	const findAndSelect = (v: HTMLOptionAttributes["value"]) => {
@@ -167,6 +180,12 @@
 				valuesMap.set(v, content);
 			}
 
+			if (allowXSS) {
+				selectedHTML = content;
+			} else {
+				selectedInnerText = content;
+			}
+
 			option.setAttribute("aria-selected", "true");
 		} else if (initialSelected) {
 			if (v == null) {
@@ -195,6 +214,8 @@
 		}
 
 		valuesMap = valuesMap;
+
+		dispatch("change");
 	};
 
 	const selectFirstOption = () => {
@@ -315,7 +336,7 @@
 							{:else}
 								{content}
 							{/if}
-							<button 
+							<button
 								{disabled}
 								on:click={() => findAndSelect(v)}
 								class="flex place-items-center justify-center text-gray-500 disabled:hover:cursor-not-allowed enabled:hover:text-gray-999
