@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { place, type Placement } from "$lib/util/place.js";
-	import { onDestroy, onMount } from "svelte";
+	import { onDestroy } from "svelte";
 
 	type DropdownEvent = "click/click" | "mouseenter/mouseleave" | "focus/blur";
 
@@ -121,7 +121,8 @@
     data-[placement='top-start']:data-[show=false]:-translate-x-1
     data-[placement='top-end']:data-[show=false]:translate-y-1
     data-[placement='top-end']:data-[show=false]:translate-x-1
-    {className}">
+    {className}"
+>
 	<slot />
 </div>
 

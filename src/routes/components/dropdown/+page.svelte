@@ -67,7 +67,8 @@
 </button>
 <Dropdown anchor={buttonRef} bind:visible={showDropdown} class="w-32 h-48">
 	This is a dropdown
-</Dropdown>`} />
+</Dropdown>`}
+			/>
 		</Details>
 	</div>
 </FieldSet>
@@ -102,7 +103,8 @@
 			<button
 				bind:this={userRef}
 				on:click={() => (showUserExample = !showUserExample)}
-				class="flex place-items-center justify-center">
+				class="flex place-items-center justify-center"
+			>
 				<User name={user.name} />
 			</button>
 			<Dropdown anchor={userRef} bind:visible={showUserExample} {placement} class="w-60">
@@ -114,13 +116,15 @@
 					<a
 						href="/dashboard"
 						class="rounded-md px-2 py-2 text-gray-500 hover:text-gray-999
-								hover:dark:text-gray-0 hover:bg-gray-50 dark:hover:bg-gray-950 transition-all">
+								hover:dark:text-gray-0 hover:bg-gray-50 dark:hover:bg-gray-950 transition-all"
+					>
 						Dashboard
 					</a>
 					<a
 						href="/dashboard/settings"
 						class="rounded-md px-2 py-2 text-gray-500 hover:text-gray-999
-								hover:dark:text-gray-0 hover:bg-gray-50 dark:hover:bg-gray-950 transition-all">
+								hover:dark:text-gray-0 hover:bg-gray-50 dark:hover:bg-gray-950 transition-all"
+					>
 						Settings
 					</a>
 					<Spacer h={5} />
@@ -129,7 +133,8 @@
 					<a
 						href="/"
 						class="rounded-md px-2 py-2 text-gray-500 hover:text-gray-999
-								hover:dark:text-gray-0 hover:bg-gray-50 dark:hover:bg-gray-950 transition-all">
+								hover:dark:text-gray-0 hover:bg-gray-50 dark:hover:bg-gray-950 transition-all"
+					>
 						Homepage
 					</a>
 					<Spacer h={5} />
@@ -197,7 +202,8 @@
 			<Button href="/dashboard/logout">Sign Out</Button>
 		</div>
 	</div>
-</Dropdown>`} />
+</Dropdown>`}
+			/>
 		</Details>
 	</div>
 </FieldSet>
@@ -216,7 +222,8 @@
 			bind:visible={showDropdownExample2}
 			class="w-32 h-48"
 			placement="bottom"
-			shadow>
+			shadow
+		>
 			This is a dropdown
 		</Dropdown>
 	</div>
@@ -234,7 +241,8 @@
 	placement="bottom"
 	shadow>
 	This is a dropdown
-</Dropdown>`} />
+</Dropdown>`}
+			/>
 		</Details>
 	</div>
 </FieldSet>
@@ -255,7 +263,8 @@
 			anchor={buttonRef3}
 			bind:visible={showDropdownExample3}
 			class="w-32 h-48"
-			placement="bottom">
+			placement="bottom"
+		>
 			This is a dropdown
 		</Dropdown>
 	</div>
@@ -273,7 +282,8 @@
 	placement="bottom"
 	shadow>
 	This is a dropdown
-</Dropdown>`} />
+</Dropdown>`}
+			/>
 		</Details>
 	</div>
 </FieldSet>
@@ -305,7 +315,8 @@
 	class="w-32 h-48" 
 	placement="bottom">
 	This is a dropdown
-</Dropdown>`} />
+</Dropdown>`}
+			/>
 		</Details>
 	</div>
 </FieldSet>
@@ -332,7 +343,8 @@
 			anchor="#hover-id"
 			event="mouseenter/mouseleave"
 			class="w-32 h-48"
-			placement="bottom">
+			placement="bottom"
+		>
 			This is a dropdown
 		</Dropdown>
 	</div>
@@ -368,7 +380,8 @@
 	class="w-32 h-48"
 	placement="bottom">
 	This is a dropdown
-</Dropdown>`} />
+</Dropdown>`}
+			/>
 		</Details>
 	</div>
 </FieldSet>
