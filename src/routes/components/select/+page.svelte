@@ -607,3 +607,91 @@ $: selectedStateObject = countries
 		</Details>
 	</div>
 </FieldSet>
+<Spacer h={30} />
+<Text type="h4">Multi-Select</Text>
+<Spacer h={5} />
+<Text>
+	Allow multiple selections using the <code>`multiSelect`</code> attribute.
+</Text>
+<Spacer h={10} />
+<FieldSet>
+	<div class="flex flex-col gap-2">
+		<Select multiSelect placeholder="Select a letter">
+			{#each alphabet as letter}
+				<Option value={letter}>{letter}</Option>
+			{/each}
+		</Select>
+		<Select multiSelect value={["A", "C", "D"]} placeholder="Select a letter">
+			{#each alphabet as letter}
+				<Option value={letter}>{letter}</Option>
+			{/each}
+		</Select>
+	</div>
+	<div slot="footer">
+		<Details label="Code">
+			<Code
+				lang="svelte"
+				edits={[
+					{ number: 2, type: "add" },
+					{ number: 9, type: "add" },
+				]}
+				code={`<Select 
+	multiSelect 
+	placeholder="Select a letter">
+	{#each alphabet as letter}
+		<Option value={letter}>{letter}</Option>
+	{/each}
+</Select>
+<Select 
+	multiSelect 
+	value={["A", "C", "D"]} 
+	placeholder="Select a letter">
+	{#each alphabet as letter}
+		<Option value={letter}>{letter}</Option>
+	{/each}
+</Select>`}
+			/>
+		</Details>
+	</div>
+</FieldSet>
+<Spacer h={30} />
+<Text type="h4">Selected Overflow</Text>
+<Spacer h={5} />
+<Text>
+	Many UI libraries choose to overflow selections vertically thats not always the best for layout
+	shift and also for style. Instead the selections will overflow horizontally and you can scroll
+	through them using <code>`shift + scroll`</code> or other scroll methods.
+</Text>
+<Spacer h={10} />
+<FieldSet>
+	<div class="flex flex-col gap-2">
+		<Select
+			multiSelect
+			value={["A", "B", "C", "D", "E", "F", "G"]}
+			placeholder="Select a letter"
+		>
+			{#each alphabet as letter}
+				<Option value={letter}>{letter}</Option>
+			{/each}
+		</Select>
+	</div>
+	<div slot="footer">
+		<Details label="Code">
+			<Code
+				lang="svelte"
+				edits={[
+					{ number: 2, type: "add" },
+					{ number: 9, type: "add" },
+				]}
+				code={`<Select 
+	multiSelect 
+	value={["A", "B", "C", "D", "E", "F", "G"]} 
+	placeholder="Select a letter">
+	{#each alphabet as letter}
+		<Option value={letter}>{letter}</Option>
+	{/each}
+</Select>`}
+			/>
+		</Details>
+	</div>
+</FieldSet>
