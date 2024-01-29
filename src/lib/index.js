@@ -142,6 +142,8 @@ export { default as MoonIcon } from "./icons/MoonIcon.svelte";
 
 export { default as DesktopIcon } from "./icons/DesktopIcon.svelte";
 
+export { default as EllipsisIcon } from "./icons/EllipsisIcon.svelte";
+
 /* Types */
 
 export * from "./types";
