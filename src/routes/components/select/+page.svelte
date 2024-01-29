@@ -695,3 +695,45 @@ $: selectedStateObject = countries
 		</Details>
 	</div>
 </FieldSet>
+<Spacer h={30} />
+<Text type="h4">Disabled Multi-Select</Text>
+<Spacer h={5} />
+<Text>
+	Believe it or not, not everyone thinks of this but in our select the clear option is not enabled when the select is disabled. Scrolling is still enabled though.
+</Text>
+<Spacer h={10} />
+<FieldSet>
+	<div class="flex flex-col gap-2">
+		<Select
+			multiSelect
+			disabled
+			value={["A", "B", "C", "D", "E", "F", "G"]}
+			placeholder="Select a letter"
+		>
+			{#each alphabet as letter}
+				<Option value={letter}>{letter}</Option>
+			{/each}
+		</Select>
+	</div>
+	<div slot="footer">
+		<Details label="Code">
+			<Code
+				lang="svelte"
+				edits={[
+					{ number: 2, type: "add" },
+					{ number: 9, type: "add" },
+				]}
+				code={`<Select
+	multiSelect
+	disabled
+	value={["A", "B", "C", "D", "E", "F", "G"]}
+	placeholder="Select a letter"
+>
+	{#each alphabet as letter}
+		<Option value={letter}>{letter}</Option>
+	{/each}
+</Select>`}
+			/>
+		</Details>
+	</div>
+</FieldSet>

@@ -315,10 +315,11 @@
 							{:else}
 								{content}
 							{/if}
-							<button
+							<button 
+								{disabled}
 								on:click={() => findAndSelect(v)}
-								class="flex place-items-center justify-center text-gray-500 hover:text-gray-999
-							dark:text-gray-500 dark:hover:text-gray-0 transition-all"
+								class="flex place-items-center justify-center text-gray-500 disabled:hover:cursor-not-allowed enabled:hover:text-gray-999
+							dark:text-gray-500 dark:enabled:hover:text-gray-0 transition-all"
 							>
 								<XIcon size={12} />
 							</button>
