@@ -2,8 +2,10 @@
 	import ChevronIcon from "$lib/icons/ChevronIcon.svelte";
 	import findAncestor from "$lib/util/find-ancestor.js";
 	import { createPopper } from "@popperjs/core";
+	import { toArray } from "$lib/util/to-array.js";
 	import { createEventDispatcher, onMount } from "svelte";
 	import type { HTMLOptionAttributes } from "svelte/elements";
+	import XIcon from "$lib/icons/XIcon.svelte";
 	export let initialShow = false;
 	let show = initialShow;
 
@@ -21,9 +23,10 @@
 
 	let dropDownRef: HTMLDivElement;
 	let buttonRef: HTMLButtonElement;
-	export let value: HTMLOptionAttributes["value"] = undefined;
 	let selectedHTML: string = "";
 	let selectedInnerText: string = "";
+	export let multiSelect = false;
+	export let value: HTMLOptionAttributes["value"] | HTMLOptionAttributes["value"][] = undefined;
 	export let disabled = false;
 	export let placeholder: string = "";
 	export let width: string = "184px";
@@ -35,6 +38,47 @@
 	export let shadow: boolean = false;
 	export let iconRotation: boolean = true;
 	export let maxHeight: number = 240;
+
+	let allowedOptionsWidth = 0;
+
+	let preMount = true;
+
+	// Maps the value of the selection the the HTML/text content
+	let valuesMap = new Map<HTMLOptionAttributes["value"], string>();
+
+	type Selection = {
+		value: HTMLOptionAttributes["value"];
+		content: string;
+	};
+
+	// Should not run before mounting so values don't get wiped out
+	$: if (!preMount) {
+		// Assigns the value and content display
+
+		if (multiSelect) {
+			value = toArray(valuesMap, (k) => k);
+		} else {
+			let selected = toArray<HTMLOptionAttributes["value"], string, Selection>(
+				valuesMap,
+				(v, content) => {
+					return {
+						value: v,
+						content,
+					};
+				},
+			)[0];
+
+			if (selected == undefined) selected = { value: undefined, content: "" };
+
+			value = selected.value;
+
+			if (allowXSS) {
+				selectedHTML = selected.content;
+			} else {
+				selectedInnerText = selected.content;
+			}
+		}
+	}
 
 	const toggleShow = () => {
 		show = !show;
@@ -51,7 +95,7 @@
 	};
 
 	$: {
-		if (dropDownRef) {
+		if (dropDownRef && !multiSelect) {
 			const option = findOption(value);
 			if (option) selectOption(option);
 		}
@@ -80,14 +124,29 @@
 		dispatch("change", { value });
 	};
 
+	const findAndSelect = (v: HTMLOptionAttributes["value"]) => {
+		const option = findOption(v);
+		if (option) selectOption(option);
+	};
+
 	const selectOption = (option: HTMLElement) => {
-		// Clear all other options
-		const options = Array.from(dropDownRef.children);
-		options.forEach((a) => {
-			if (a.tagName == "BUTTON" && a.hasAttribute("data-value")) {
-				a.setAttribute("aria-selected", "false");
-			}
-		});
+		const initialSelected = option.getAttribute("aria-selected") == "true";
+
+		// No need to change selection if the selection has already been made
+		if (!multiSelect && initialSelected) return;
+
+		if (!multiSelect) {
+			// Clear all other options
+			const options = Array.from(dropDownRef.children);
+			options.forEach((a) => {
+				if (a.tagName == "BUTTON" && a.hasAttribute("data-value")) {
+					a.setAttribute("aria-selected", "false");
+				}
+			});
+
+			valuesMap.clear();
+			valuesMap = valuesMap;
+		}
 
 		// get value
 
@@ -95,23 +154,47 @@
 
 		const type = option.getAttribute("data-type") as ValueType;
 
-		if (v == null) {
-			value = v;
-		} else if (type == "number") {
-			value = parseFloat(v);
-		} else if (type == "boolean") {
-			value = v == "true";
-		} else {
-			value = v;
+		const content = allowXSS ? option.innerHTML : option.innerText;
+
+		if (!multiSelect) {
+			if (v == null) {
+				valuesMap.set(v, content);
+			} else if (type == "number") {
+				valuesMap.set(parseFloat(v), content);
+			} else if (type == "boolean") {
+				valuesMap.set(v == "true", content);
+			} else {
+				valuesMap.set(v, content);
+			}
+
+			option.setAttribute("aria-selected", "true");
+		} else if (initialSelected) {
+			if (v == null) {
+				valuesMap.delete(v);
+			} else if (type == "number") {
+				valuesMap.delete(parseFloat(v));
+			} else if (type == "boolean") {
+				valuesMap.delete(v == "true");
+			} else {
+				valuesMap.delete(v);
+			}
+
+			option.setAttribute("aria-selected", "false");
+		} else if (!initialSelected) {
+			if (v == null) {
+				valuesMap.set(v, content);
+			} else if (type == "number") {
+				valuesMap.set(parseFloat(v), content);
+			} else if (type == "boolean") {
+				valuesMap.set(v == "true", content);
+			} else {
+				valuesMap.set(v, content);
+			}
+
+			option.setAttribute("aria-selected", "true");
 		}
 
-		// Get html of selected option
-		selectedHTML = option.innerHTML;
-		selectedInnerText = option.innerText;
-
-		// Set selected
-
-		option.setAttribute("aria-selected", "true");
+		valuesMap = valuesMap;
 	};
 
 	const selectFirstOption = () => {
@@ -140,6 +223,7 @@
 
 	onMount(() => {
 		dropDownRef.style.width = buttonRef.offsetWidth + "px";
+		allowedOptionsWidth = buttonRef.offsetWidth - 38;
 
 		const observer = new MutationObserver(handleMutation);
 
@@ -156,15 +240,34 @@
 		dropDownRef.addEventListener("click", selected);
 
 		if (value == undefined && !allowNone) {
-			selectFirstOption();
-		} else {
-			const option = findOption(value);
-			if (option) {
-				selectOption(option);
+			if (!multiSelect) {
+				selectFirstOption();
 			} else {
-				if (!allowNone) selectFirstOption();
+				value = [];
+			}
+		} else {
+			if (multiSelect) {
+				if (!Array.isArray(value))
+					throw new Error(
+						"When using a multiselect you must provide an Array as a value",
+					);
+
+				for (let i = 0; i < value.length; i++) {
+					const option = findOption(value[i]);
+
+					if (option) selectOption(option);
+				}
+			} else {
+				const option = findOption(value);
+				if (option) {
+					selectOption(option);
+				} else {
+					if (!allowNone) selectFirstOption();
+				}
 			}
 		}
+
+		preMount = false;
 
 		return () => {
 			popper.destroy();
@@ -187,14 +290,44 @@
 	bind:this={buttonRef}
 	style="width: {width};"
 	{disabled}
-	data-place-holder={value == undefined}
+	data-place-holder={value == undefined || (multiSelect && value && value.length == 0)}
 	class="flex justify-between h-9 place-items-center w-full bg-gray-0 dark:bg-gray-999 py-1 pr-1 border focus:border-gray-200 focus:dark:border-gray-800
   disabled:bg-gray-50 dark:disabled:bg-gray-925 disabled:hover:cursor-not-allowed transition-all enabled:hover:border-gray-999
   border-gray-100 dark:border-gray-900 rounded-md data-[place-holder=true]:text-gray-300 enabled:hover:dark:border-gray-0
   data-[place-holder=true]:dark:text-gray-700 disabled:text-gray-300 dark:disabled:text-gray-700"
 >
 	<div class="px-2">
-		{#if value == undefined}
+		{#if multiSelect}
+			{#if value && value.length == 0}
+				<span>{placeholder}</span>
+			{:else}
+				<ul
+					style="width: {allowedOptionsWidth}px;"
+					class="flex place-items-center gap-1 max-w-full overflow-x-auto scrollbar-hide"
+				>
+					{#each valuesMap as [v, content] (v)}
+						<div
+							class="flex justify-between place-items-center bg-gray-50 dark:bg-gray-950
+							 px-1 rounded-md gap-1 text-nowrap whitespace-nowrap"
+						>
+							{#if allowXSS}
+								{@html content}
+							{:else}
+								{content}
+							{/if}
+							<button 
+								{disabled}
+								on:click={() => findAndSelect(v)}
+								class="flex place-items-center justify-center text-gray-500 disabled:hover:cursor-not-allowed enabled:hover:text-gray-999
+							dark:text-gray-500 dark:enabled:hover:text-gray-0 transition-all"
+							>
+								<XIcon size={12} />
+							</button>
+						</div>
+					{/each}
+				</ul>
+			{/if}
+		{:else if value == undefined}
 			<span>{placeholder}</span>
 		{:else if allowXSS}
 			{@html selectedHTML}
