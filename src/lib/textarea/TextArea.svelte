@@ -9,6 +9,7 @@
 	export let size: "base" | "sm" | "lg" | "xl" = "base";
 	export let id: string | undefined = undefined;
 	export let debounce: number = 0;
+	export let readonly: boolean = false;
 
 	export let value: string = "";
 
@@ -41,6 +42,7 @@
 	<textarea
 		{...$$restProps}
 		{id}
+		readonly={readonly || null}
 		bind:this={inputRef}
 		style="width: {width ? width : ''}; height: {height ? height : ''};"
 		bind:value
