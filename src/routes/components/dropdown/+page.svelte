@@ -67,8 +67,7 @@
 </button>
 <Dropdown anchor={buttonRef} bind:visible={showDropdown} class="w-32 h-48">
 	This is a dropdown
-</Dropdown>`}
-			/>
+</Dropdown>`} />
 		</Details>
 	</div>
 </FieldSet>
@@ -103,8 +102,7 @@
 			<button
 				bind:this={userRef}
 				on:click={() => (showUserExample = !showUserExample)}
-				class="flex place-items-center justify-center"
-			>
+				class="flex place-items-center justify-center">
 				<User name={user.name} />
 			</button>
 			<Dropdown anchor={userRef} bind:visible={showUserExample} {placement} class="w-60">
@@ -116,15 +114,13 @@
 					<a
 						href="/dashboard"
 						class="rounded-md px-2 py-2 text-gray-500 hover:text-gray-999
-								hover:dark:text-gray-0 hover:bg-gray-50 dark:hover:bg-gray-950 transition-all"
-					>
+								hover:dark:text-gray-0 hover:bg-gray-50 dark:hover:bg-gray-950 transition-all">
 						Dashboard
 					</a>
 					<a
 						href="/dashboard/settings"
 						class="rounded-md px-2 py-2 text-gray-500 hover:text-gray-999
-								hover:dark:text-gray-0 hover:bg-gray-50 dark:hover:bg-gray-950 transition-all"
-					>
+								hover:dark:text-gray-0 hover:bg-gray-50 dark:hover:bg-gray-950 transition-all">
 						Settings
 					</a>
 					<Spacer h={5} />
@@ -133,8 +129,7 @@
 					<a
 						href="/"
 						class="rounded-md px-2 py-2 text-gray-500 hover:text-gray-999
-								hover:dark:text-gray-0 hover:bg-gray-50 dark:hover:bg-gray-950 transition-all"
-					>
+								hover:dark:text-gray-0 hover:bg-gray-50 dark:hover:bg-gray-950 transition-all">
 						Homepage
 					</a>
 					<Spacer h={5} />
@@ -202,8 +197,7 @@
 			<Button href="/dashboard/logout">Sign Out</Button>
 		</div>
 	</div>
-</Dropdown>`}
-			/>
+</Dropdown>`} />
 		</Details>
 	</div>
 </FieldSet>
@@ -222,8 +216,7 @@
 			bind:visible={showDropdownExample2}
 			class="w-32 h-48"
 			placement="bottom"
-			shadow
-		>
+			shadow>
 			This is a dropdown
 		</Dropdown>
 	</div>
@@ -241,8 +234,7 @@
 	placement="bottom"
 	shadow>
 	This is a dropdown
-</Dropdown>`}
-			/>
+</Dropdown>`} />
 		</Details>
 	</div>
 </FieldSet>
@@ -263,8 +255,7 @@
 			anchor={buttonRef3}
 			bind:visible={showDropdownExample3}
 			class="w-32 h-48"
-			placement="bottom"
-		>
+			placement="bottom">
 			This is a dropdown
 		</Dropdown>
 	</div>
@@ -282,8 +273,102 @@
 	placement="bottom"
 	shadow>
 	This is a dropdown
-</Dropdown>`}
-			/>
+</Dropdown>`} />
+		</Details>
+	</div>
+</FieldSet>
+<Spacer h={30} />
+<Text type="h4">Anchor Binding</Text>
+<Spacer h={5} />
+<Text>
+	You can bind a reference to an anchor or a query selector. This can be useful when working with
+	something like context menus on dynamic list where you can't create a reference for each item in
+	the list.
+</Text>
+<Spacer h={10} />
+<FieldSet>
+	<div class="flex place-items-center flex-wrap gap-4">
+		<button id="anchor-id"> Show Dropdown </button>
+		<Dropdown anchor="#anchor-id" event="click/click" class="w-32 h-48" placement="bottom">
+			This is a dropdown
+		</Dropdown>
+	</div>
+	<div slot="footer">
+		<Details label="Code">
+			<Code
+				lang="svelte"
+				edits={[{ number: 3, type: "add" }]}
+				code={`<button id="anchor-id"> Show Dropdown </button>
+<Dropdown 
+	anchor="#anchor-id" 
+	event="click/click" 
+	class="w-32 h-48" 
+	placement="bottom">
+	This is a dropdown
+</Dropdown>`} />
+		</Details>
+	</div>
+</FieldSet>
+<Spacer h={30} />
+<Text type="h4">Anchor Events</Text>
+<Spacer h={5} />
+<Text>
+	Sometimes it may be necessary or more convenient to create the event listener from the Dropdown
+	itself for this you can use the <code>`event`</code> attribute.
+</Text>
+<Spacer h={10} />
+<FieldSet>
+	<div class="flex place-items-center flex-wrap gap-4">
+		<button id="click-id"> Click To Show </button>
+		<Dropdown anchor="#click-id" event="click/click" class="w-32 h-48" placement="bottom">
+			This is a dropdown
+		</Dropdown>
+		<button id="focus-id"> Focus To Show </button>
+		<Dropdown anchor="#focus-id" event="focus/blur" class="w-32 h-48" placement="bottom">
+			This is a dropdown
+		</Dropdown>
+		<button id="hover-id"> Hover To Show </button>
+		<Dropdown
+			anchor="#hover-id"
+			event="mouseenter/mouseleave"
+			class="w-32 h-48"
+			placement="bottom">
+			This is a dropdown
+		</Dropdown>
+	</div>
+	<div slot="footer">
+		<Details label="Code">
+			<Code
+				lang="svelte"
+				edits={[
+					{ number: 4, type: "add" },
+					{ number: 12, type: "add" },
+					{ number: 20, type: "add" },
+				]}
+				code={`<button id="click-id"> Click To Show </button>
+<Dropdown 
+	anchor="#click-id" 
+	event="click/click" 
+	class="w-32 h-48" 
+	placement="bottom">
+	This is a dropdown
+</Dropdown>
+<button id="focus-id"> Focus To Show </button>
+<Dropdown 
+	anchor="#focus-id" 
+	event="focus/blur" 
+	class="w-32 h-48" 
+	placement="bottom">
+	This is a dropdown
+</Dropdown>
+<button id="hover-id"> Hover To Show </button>
+<Dropdown
+	anchor="#hover-id"
+	event="mouseenter/mouseleave"
+	class="w-32 h-48"
+	placement="bottom">
+	This is a dropdown
+</Dropdown>`} />
 		</Details>
 	</div>
 </FieldSet>

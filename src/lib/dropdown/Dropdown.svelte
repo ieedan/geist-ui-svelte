@@ -1,31 +1,101 @@
 <script lang="ts">
 	import { place, type Placement } from "$lib/util/place.js";
+	import { onDestroy, onMount } from "svelte";
+
+	type DropdownEvent = "click/click" | "mouseenter/mouseleave" | "focus/blur";
 
 	export let visible: boolean = false;
 	export let shadow: boolean = false;
 	export let placement: Placement = "bottom-start";
-	export let anchor: HTMLElement;
+	export let anchor: HTMLElement | string;
 	export let flip = true;
+	/** This event fires from the anchor element */
+	export let event: DropdownEvent | undefined = undefined;
 	let className: string = "";
 	export { className as class };
 
 	let dropDownRef: HTMLDivElement;
 	let currentPlacement: Placement;
+	let anchorRef: HTMLElement;
+
+	let hasCreatedListener = false;
 
 	$: {
-		if (anchor != undefined && dropDownRef != undefined) {
+		if (anchor != undefined && dropDownRef) {
+			if (typeof anchor == "string") {
+				const element = document.querySelector(anchor) as HTMLElement;
+				if (!element)
+					throw new Error(
+						`The '${anchor}' query does not find an element in the document.`,
+					);
+
+				anchorRef = element;
+			} else {
+				if (anchor) anchorRef = anchor;
+			}
+		}
+
+		if (anchorRef && event && !hasCreatedListener) {
+			switch (event) {
+				case "click/click":
+					anchorRef.addEventListener("click", toggle);
+					break;
+				case "focus/blur":
+					anchorRef.addEventListener("focus", show);
+					anchorRef.addEventListener("blur", hide);
+					break;
+				case "mouseenter/mouseleave":
+					anchorRef.addEventListener("mouseenter", show);
+					anchorRef.addEventListener("mouseleave", hide);
+					break;
+			}
+
+			hasCreatedListener = true;
+		}
+
+		if (anchorRef != undefined && dropDownRef != undefined) {
 			resize(placement);
 		}
 	}
 
+	const toggle = () => {
+		visible = !visible;
+	};
+
+	const show = () => {
+		visible = true;
+	};
+
+	const hide = () => {
+		visible = false;
+	};
+
+	onDestroy(() => {
+		if (!anchorRef) return;
+
+		switch (event) {
+			case "click/click":
+				anchorRef.removeEventListener("click", toggle);
+				break;
+			case "focus/blur":
+				anchorRef.removeEventListener("focus", show);
+				anchorRef.removeEventListener("blur", hide);
+				break;
+			case "mouseenter/mouseleave":
+				anchorRef.removeEventListener("mouseenter", show);
+				anchorRef.removeEventListener("mouseleave", hide);
+				break;
+		}
+	});
+
 	const resize = (p: Placement) => {
-		if (anchor == undefined || dropDownRef == undefined) return;
-		currentPlacement = place(anchor, dropDownRef, { placement: p, flip });
+		if (anchorRef == undefined || dropDownRef == undefined) return;
+		currentPlacement = place(anchorRef, dropDownRef, { placement: p, flip });
 	};
 
 	const docClick = (e: MouseEvent) => {
 		const target = e.target as Node;
-		if (!dropDownRef.contains(target) && !anchor.contains(target)) visible = false;
+		if (!dropDownRef.contains(target) && !anchorRef.contains(target)) visible = false;
 	};
 </script>
 
@@ -51,8 +121,7 @@
     data-[placement='top-start']:data-[show=false]:-translate-x-1
     data-[placement='top-end']:data-[show=false]:translate-y-1
     data-[placement='top-end']:data-[show=false]:translate-x-1
-    {className}"
->
+    {className}">
 	<slot />
 </div>
 
