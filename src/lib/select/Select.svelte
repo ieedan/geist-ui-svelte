@@ -38,6 +38,7 @@
 	export let shadow: boolean = false;
 	export let iconRotation: boolean = true;
 	export let maxHeight: number = 240;
+	export let readonly = false;
 
 	let allowedOptionsWidth = 0;
 
@@ -128,6 +129,7 @@
 	};
 
 	const selected = (e: MouseEvent) => {
+		if (readonly) return;
 		const target = findAncestor(e.target as Node, (a) => {
 			return a?.tagName == "BUTTON" && a?.hasAttribute("data-value");
 		});
@@ -371,11 +373,12 @@
 	aria-label="listbox dialog"
 	data-shadow={shadow}
 	data-show={show}
+	aria-readonly={readonly}
 	style="width: {width}; max-height: {maxHeight}px;"
 	bind:this={dropDownRef}
 	class="absolute bg-gray-0 dark:bg-gray-999 border border-gray-100 dark:border-gray-900 z-[1] transition-all
          rounded-md data-[show=false]:opacity-0 data-[show=false]:pointer-events-none data-[shadow=true]:shadow-sm
-		 dark:shadow-gray-999 overflow-y-auto"
+		 dark:shadow-gray-999 overflow-y-auto group"
 >
 	<slot />
 </div>

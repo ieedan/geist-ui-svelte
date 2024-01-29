@@ -258,11 +258,15 @@
 	</div>
 </FieldSet>
 <Spacer h={30} />
-<Text type="h4">Disabled</Text>
+<Text type="h4">Disabled / Readonly</Text>
 <Spacer h={10} />
 <FieldSet>
 	<div class="flex flex-col justify-start gap-1">
 		<Select disabled>
+			<Option value={1}>Option 1</Option>
+			<Option value={2}>Option 2</Option>
+		</Select>
+		<Select readonly>
 			<Option value={1}>Option 1</Option>
 			<Option value={2}>Option 2</Option>
 		</Select>
@@ -272,6 +276,10 @@
 			<Code
 				lang="svelte"
 				code={`<Select disabled>
+	<Option value={1}>Option 1</Option>
+	<Option value={2}>Option 2</Option>
+</Select>
+<Select readonly>
 	<Option value={1}>Option 1</Option>
 	<Option value={2}>Option 2</Option>
 </Select>`}
