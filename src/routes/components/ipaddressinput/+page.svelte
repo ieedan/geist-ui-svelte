@@ -8,6 +8,7 @@
 	import Text from "$lib/text/Text.svelte";
 
 	let valid: boolean;
+	let debounced = false;
 </script>
 
 <Text type="h3">IPAddressInput</Text>
@@ -73,6 +74,42 @@
 	<div slot="footer">
 		<Details label="Code">
 			<Code lang="svelte" code={`<IpAddressInput value="172 16 10 100"/>`} />
+		</Details>
+	</div>
+</FieldSet>
+<Spacer h={30} />
+<Text type="h4">Debounce</Text>
+<Spacer h={5} />
+<Text>
+	Sometimes when working with data from a server you want to wait for the user to finish typing
+	before making a request. The built in <code>`debounce`</code> property and
+	<code>`on:debounce`</code> event make this easy. Try it out below.
+</Text>
+<Spacer h={10} />
+<FieldSet>
+	<div class="flex flex-col justify-start">
+		<IPAddressInput
+			on:input={() => (debounced = false)}
+			debounce={1000}
+			on:debounce={() => (debounced = true)}
+		/>
+		{#if debounced}
+			Debounced
+		{/if}
+	</div>
+	<div slot="footer">
+		<Details label="Code">
+			<Code
+				lang="svelte"
+				code={`<IPAddressInput
+	on:input={() => (debounced = false)}
+	debounce={1000}
+	on:debounce={() => (debounced = true)}
+/>
+{#if debounced}
+	Debounced
+{/if}`}
+			/>
 		</Details>
 	</div>
 </FieldSet>

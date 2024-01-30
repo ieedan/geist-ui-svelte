@@ -25,7 +25,6 @@
 	export let noBorder = false;
 
 	let inputRef: HTMLInputElement;
-	let debounceTimeout: number;
 
 	let passwordShown = false;
 
@@ -41,6 +40,8 @@
 		value = (e.target as HTMLInputElement).value;
 		dispatch("change", { value });
 	};
+
+	let debounceTimeout: number;
 
 	const input = () => {
 		value = inputRef.value;
