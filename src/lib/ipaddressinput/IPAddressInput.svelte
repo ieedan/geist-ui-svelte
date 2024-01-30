@@ -205,6 +205,10 @@
 			return;
 		}
 	};
+	
+	const fourthOctetInput = () => {
+		input();
+	}
 
 	let debounceTimeout: number;
 
@@ -276,6 +280,7 @@
 		maxlength="3"
 		type="text"
 		bind:this={fourthOctetRef}
+		on:input={fourthOctetInput}
 		on:keydown={fourthOctetKeydown}
 		bind:value={octets[3]}
 		class="min-w-0 bg-transparent w-10 hide-ramp outline-none text-center selection:bg-gray-999 selection:text-gray-0 selection:dark:bg-gray-0 selection:dark:text-gray-999"
