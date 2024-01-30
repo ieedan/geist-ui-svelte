@@ -12,7 +12,8 @@
 	height={size}
 	viewBox="0 0 350 350"
 	fill="none"
-	xmlns="http://www.w3.org/2000/svg">
+	xmlns="http://www.w3.org/2000/svg"
+>
 	<circle cx="53" cy="175" r="40" fill="currentColor" />
 	<circle cx="297" cy="175" r="40" fill="currentColor" />
 	<circle cx="175" cy="175" r="40" fill="currentColor" />

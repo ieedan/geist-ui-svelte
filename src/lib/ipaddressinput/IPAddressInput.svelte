@@ -1,7 +1,7 @@
 <script lang="ts">
 	import type { IPV4Address, Octets } from "$lib/types.js";
 	import { IPAddress } from "$lib/util/ip-address.js";
-	import { createEventDispatcher, onDestroy, onMount } from "svelte";
+	import { createEventDispatcher, onDestroy } from "svelte";
 
 	const dispatch = createEventDispatcher();
 
@@ -282,6 +282,13 @@
 	/>
 </div>
 
+<!--
+@component
+An input component to display and retrieve IPV4 addresses.
+
+[See Docs](https://geist-ui-svelte.dev/components/ipaddressinput) | [Open Issue](https://github.com/ieedan/geist-ui-svelte/issues/new)
+-->
+
 <style lang="postcss">
 	.hide-ramp::-webkit-inner-spin-button,
 	.hide-ramp::-webkit-outer-spin-button {
@@ -289,10 +296,3 @@
 		margin: 0;
 	}
 </style>
-
-<!--
-@component
-An input component to display and retrieve IPV4 addresses.
-
-[See Docs](https://geist-ui-svelte.dev/components/ipaddressinput) | [Open Issue](https://github.com/ieedan/geist-ui-svelte/issues/new)
--->
