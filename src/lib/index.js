@@ -144,6 +144,10 @@ export { default as DesktopIcon } from "./icons/DesktopIcon.svelte";
 
 export { default as EllipsisIcon } from "./icons/EllipsisIcon.svelte";
 
+export { default as ListIcon } from "./icons/ListIcon.svelte";
+
+export { default as GridIcon } from "./icons/GridIcon.svelte";
+
 /* Types */
 
 export * from "./types";

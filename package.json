@@ -1,6 +1,6 @@
 {
 	"name": "geist-ui-svelte",
-	"version": "0.5.5",
+	"version": "0.5.6",
 	"author": {
 		"name": "Aidan Bleser",
 		"url": "https://aidanbleser.com"
@@ -296,6 +296,14 @@
 		"./EllipsisIcon.svelte": {
 			"types": "./dist/icons/EllipsisIcon.svelte.d.ts",
 			"svelte": "./dist/icons/EllipsisIcon.svelte"
+		},
+		"./GridIcon.svelte": {
+			"types": "./dist/icons/GridIcon.svelte.d.ts",
+			"svelte": "./dist/icons/GridIcon.svelte"
+		},
+		"./ListIcon.svelte": {
+			"types": "./dist/icons/ListIcon.svelte.d.ts",
+			"svelte": "./dist/icons/ListIcon.svelte"
 		},
 		"./styles/geist-ui-svelte.css": "./dist/styles/geist-ui-svelte.css"
 	},
