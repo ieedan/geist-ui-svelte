@@ -1,7 +1,4 @@
-export type Octets = [number, number, number, number];
-export type IPV4Address =
-	| `${number}.${number}.${number}.${number}`
-	| `${number} ${number} ${number} ${number}`;
+import type { IPV4Address, Octets } from "$lib/types.js";
 
 export class IPAddress {
 	static parseIPV4(address: IPV4Address): Octets {

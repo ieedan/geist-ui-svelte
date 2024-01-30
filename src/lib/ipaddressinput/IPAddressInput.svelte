@@ -1,5 +1,6 @@
 <script lang="ts">
-	import { IPAddress, type IPV4Address, type Octets } from "$lib/util/ip-address.js";
+	import type { IPV4Address, Octets } from "$lib/types.js";
+	import { IPAddress } from "$lib/util/ip-address.js";
 
 	/** '.' or ' ' separated IP address ex: '172.16.100.10' or '172 16 100 10' */
 	export let value: IPV4Address = "0 0 0 0";
@@ -263,3 +264,10 @@
 		margin: 0;
 	}
 </style>
+
+<!--
+@component
+An input component to display and retrieve IPV4 addresses.
+
+[See Docs](https://geist-ui-svelte.dev/components/ipaddressinput) | [Open Issue](https://github.com/ieedan/geist-ui-svelte/issues/new)
+-->

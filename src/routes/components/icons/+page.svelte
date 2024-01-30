@@ -32,6 +32,8 @@
 	import { page } from "$app/stores";
 	import { goto } from "$app/navigation";
 	import EllipsisIcon from "$lib/icons/EllipsisIcon.svelte";
+	import GridIcon from "$lib/icons/GridIcon.svelte";
+	import { ListIcon } from "$lib/index.js";
 
 	type Icon = {
 		name: string;
@@ -114,6 +116,14 @@
 		{
 			name: "Ellipsis",
 			component: EllipsisIcon,
+		},
+		{
+			name: "Grid",
+			component: GridIcon,
+		},
+		{
+			name: "List",
+			component: ListIcon,
 		},
 	];
 

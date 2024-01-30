@@ -49,3 +49,8 @@ export type ButtonColor =
 	| "warning-light"
 	| "error-light"
 	| "abort-active";
+
+export type Octets = [number, number, number, number];
+export type IPV4Address =
+	| `${number}.${number}.${number}.${number}`
+	| `${number} ${number} ${number} ${number}`;
