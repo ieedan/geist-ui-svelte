@@ -2,7 +2,7 @@
 	import Dropdown from "$lib/dropdown/Dropdown.svelte";
 	import { type Placement } from "$lib/util/place.js";
 	import { cn } from "$lib/util/utils.js";
-	import { cva, type VariantProps } from "class-variance-authority";
+	import { cva} from "class-variance-authority";
 
 	const style = cva("inline-block", {
 		variants: {
@@ -17,14 +17,13 @@
 		},
 	});
 
-	interface Props extends VariantProps<typeof style> {}
-
 	type DropdownEvent = "click/click" | "mouseenter/mouseleave" | "focus/blur";
 
 	export let visible: boolean = false;
 	export let shadow: boolean = false;
 	export let placement: Placement = "bottom";
 	export let anchor: HTMLElement | string;
+    export let animate = false;
 	export let flip = true;
 	/** This event fires from the anchor element */
 	export let event: DropdownEvent = "mouseenter/mouseleave";
@@ -39,6 +38,7 @@
 	bind:placement
 	{flip}
 	{event}
+    {animate}
 	class={cn(style({ placement }), className)}>
 	<div
 		data-placement={placement}

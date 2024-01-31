@@ -145,14 +145,14 @@
 <Text type="h4">Additional Attributes</Text>
 <Spacer h={5} />
 <Text>
-	You can use <code>`b`</code> for bold, <code>`i`</code> for italics, and <code>`del`</code> for line
-	through.
+	You can use <code>`b`</code> for bold, <code>`i`</code> for italics, <code>`del`</code> for line
+	through, and <code>`serif`</code> for your serif font style.
 </Text>
 <Spacer h={10} />
 <FieldSet>
 	<div class="flex flex-col">
 		<Text>
-			<Text b color="abort">geist</Text>
+			<Text b color="abort" serif>geist</Text>
 			<Text color="success">-</Text>
 			<Text color="warning" i>ui</Text>
 			<Text color="success">-</Text>
@@ -164,11 +164,11 @@
 			<Code
 				lang="svelte"
 				code={`<Text>
-	<Text b>geist</Text>
+	<Text b color="abort" serif>geist</Text>
 	<Text color="success">-</Text>
 	<Text color="warning" i>ui</Text>
 	<Text color="success">-</Text>
-	<Text color="error">svelte</Text>
+	<Text color="error" del>svelte</Text>
 </Text>`}
 			/>
 		</Details>
