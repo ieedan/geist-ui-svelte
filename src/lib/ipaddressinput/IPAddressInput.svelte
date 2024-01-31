@@ -205,10 +205,10 @@
 			return;
 		}
 	};
-	
+
 	const fourthOctetInput = () => {
 		input();
-	}
+	};
 
 	let debounceTimeout: number;
 

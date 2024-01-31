@@ -88,6 +88,8 @@ export { default as Page } from "./page/Page.svelte";
 
 export { default as Dropdown } from "./dropdown/Dropdown.svelte";
 
+export { default as ToolTip } from "./tooltip/ToolTip.svelte";
+
 export { default as Details } from "./details/Details.svelte";
 
 /* Utilities */

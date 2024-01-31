@@ -8,6 +8,7 @@
 	export let shadow: boolean = false;
 	export let placement: Placement = "bottom-start";
 	export let anchor: HTMLElement | string;
+	export let animate = true;
 	export let flip = true;
 	/** This event fires from the anchor element */
 	export let event: DropdownEvent | undefined = undefined;
@@ -105,11 +106,12 @@
 <div
 	data-show={visible}
 	data-shadow={shadow}
+	data-animate={animate}
 	data-placement={currentPlacement}
 	bind:this={dropDownRef}
 	class="absolute data-[show=false]:pointer-events-none z-[1]
     data-[show=false]:opacity-0 bg-gray-0 dark:bg-gray-999 rounded-lg
-	transition-all border border-gray-100 dark:border-gray-900
+	data-[animate=true]:transition-all border border-gray-100 dark:border-gray-900
 	data-[shadow=true]:shadow-md dark:shadow-gray-999
     data-[placement='bottom-end']:data-[show=false]:-translate-y-1
     data-[placement='bottom-end']:data-[show=false]:translate-x-1

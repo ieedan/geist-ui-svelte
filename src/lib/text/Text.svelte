@@ -94,6 +94,10 @@
 				true: "text-nowrap whitespace-nowrap",
 				false: "",
 			},
+			serif: {
+				true: "font-serif",
+				false: "",
+			},
 			blockquote: {
 				true: `bg-gray-50 border-gray-100 dark:bg-gray-950 dark:border-gray-900 border px-2 py-1 rounded-md`,
 				false: "",
@@ -122,6 +126,7 @@
 			mdSize: "default",
 			lgSize: "default",
 			color: "inherit",
+			serif: false,
 		},
 	});
 
@@ -139,6 +144,7 @@
 	export let lgSize: Props["lgSize"] = "default";
 	export let noWrap: boolean = false;
 
+	export let serif: boolean = false;
 	export let i = false;
 	export let b = false;
 	export let del = false;
@@ -166,6 +172,7 @@
 			lgSize,
 			noWrap,
 			type,
+			serif,
 		}),
 		className,
 	)}
