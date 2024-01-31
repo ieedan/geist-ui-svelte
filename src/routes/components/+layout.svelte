@@ -165,6 +165,10 @@
 			slug: "/components/dropdown",
 		},
 		{
+			name: "ToolTip",
+			slug: "/components/tooltip",
+		},
+		{
 			name: "Details",
 			slug: "/components/details",
 		},
