@@ -96,7 +96,7 @@
 			},
 			serif: {
 				true: "font-serif",
-				false: ""
+				false: "",
 			},
 			blockquote: {
 				true: `bg-gray-50 border-gray-100 dark:bg-gray-950 dark:border-gray-900 border px-2 py-1 rounded-md`,
@@ -126,7 +126,7 @@
 			mdSize: "default",
 			lgSize: "default",
 			color: "inherit",
-			serif: false
+			serif: false,
 		},
 	});
 
@@ -172,7 +172,7 @@
 			lgSize,
 			noWrap,
 			type,
-			serif
+			serif,
 		}),
 		className,
 	)}

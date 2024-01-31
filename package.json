@@ -305,6 +305,10 @@
 			"types": "./dist/icons/ListIcon.svelte.d.ts",
 			"svelte": "./dist/icons/ListIcon.svelte"
 		},
+		"./ToolTip.svelte": {
+			"types": "./dist/tooltip/ToolTip.svelte.d.ts",
+			"svelte": "./dist/tooltip/ToolTip.svelte"
+		},
 		"./styles/geist-ui-svelte.css": "./dist/styles/geist-ui-svelte.css"
 	},
 	"files": [

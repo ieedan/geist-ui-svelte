@@ -2,7 +2,7 @@
 	import Dropdown from "$lib/dropdown/Dropdown.svelte";
 	import { type Placement } from "$lib/util/place.js";
 	import { cn } from "$lib/util/utils.js";
-	import { cva} from "class-variance-authority";
+	import { cva } from "class-variance-authority";
 
 	const style = cva("inline-block", {
 		variants: {
@@ -23,7 +23,7 @@
 	export let shadow: boolean = false;
 	export let placement: Placement = "bottom";
 	export let anchor: HTMLElement | string;
-    export let animate = false;
+	export let animate = false;
 	export let flip = true;
 	/** This event fires from the anchor element */
 	export let event: DropdownEvent = "mouseenter/mouseleave";
@@ -38,11 +38,13 @@
 	bind:placement
 	{flip}
 	{event}
-    {animate}
-	class={cn(style({ placement }), className)}>
+	{animate}
+	class={cn(style({ placement }), className)}
+>
 	<div
 		data-placement={placement}
-		class="relative h-full w-full geist-tool-tip-text bg-gray-0 dark:bg-gray-999 dark:border-gray-900 border-gray-100 rounded-lg px-2 py-1">
+		class="relative h-full w-full geist-tool-tip-text bg-gray-0 dark:bg-gray-999 dark:border-gray-900 border-gray-100 rounded-lg px-2 py-1"
+	>
 		<slot />
 	</div>
 </Dropdown>
@@ -55,8 +57,8 @@ Displays a tooltip around an anchor component.
 -->
 
 <style>
-    .geist-tool-tip-text::after {
-        content: " ";
+	.geist-tool-tip-text::after {
+		content: " ";
 		position: absolute;
 		width: 15px;
 		height: 15px;
@@ -67,20 +69,19 @@ Displays a tooltip around an anchor component.
 		border-color: inherit;
 		border-width: 1px;
 		border-style: solid;
-    }
-
+	}
 
 	.geist-tool-tip-text[data-placement="top"]::after {
 		left: 42%;
 		top: 65%;
 	}
 
-    .geist-tool-tip-text[data-placement="top-end"]::after {
+	.geist-tool-tip-text[data-placement="top-end"]::after {
 		right: 10%;
 		top: 65%;
 	}
 
-    .geist-tool-tip-text[data-placement="top-start"]::after {
+	.geist-tool-tip-text[data-placement="top-start"]::after {
 		left: 10%;
 		top: 65%;
 	}
@@ -90,12 +91,12 @@ Displays a tooltip around an anchor component.
 		top: -11%;
 	}
 
-    .geist-tool-tip-text[data-placement="bottom-end"]::after {
+	.geist-tool-tip-text[data-placement="bottom-end"]::after {
 		right: 10%;
 		top: -11%;
 	}
 
-    .geist-tool-tip-text[data-placement="bottom-start"]::after {
+	.geist-tool-tip-text[data-placement="bottom-start"]::after {
 		left: 10%;
 		top: -11%;
 	}

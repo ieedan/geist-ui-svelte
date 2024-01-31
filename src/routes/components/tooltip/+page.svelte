@@ -19,6 +19,7 @@
 		"bottom-start",
 	];
 
+	/* eslint-disable no-useless-escape */
 	const exampleCode = `<script>
     const placements: Placement[] = [
 		"top",
@@ -62,7 +63,8 @@
 				code={`<Button id="button-id">Hover me</Button>
 <ToolTip anchor="#button-id">
     Hovered
-</ToolTip>`} />
+</ToolTip>`}
+			/>
 		</Details>
 	</div>
 </FieldSet>
@@ -85,7 +87,10 @@
 	</div>
 </FieldSet>
 <Spacer h={30} />
-<Note color="success">The Tooltip component uses the Dropdown component under the hood so it inherits many of its features.</Note>
+<Note color="success"
+	>The Tooltip component uses the Dropdown component under the hood so it inherits many of its
+	features.</Note
+>
 <Spacer h={20} />
 <Text type="h4">Animation</Text>
 <Spacer h={5} />
@@ -102,7 +107,10 @@
 	</div>
 	<div slot="footer">
 		<Details label="Code">
-			<Code lang="svelte" edits={[{number: 9, type: "add"}]} code={`<Button id="default-id">Hover me</Button>
+			<Code
+				lang="svelte"
+				edits={[{ number: 9, type: "add" }]}
+				code={`<Button id="default-id">Hover me</Button>
 <ToolTip 
   anchor="#default-id">
     Hovered
@@ -112,7 +120,8 @@
   anchor="#animate-id" 
   animate>
   Hovered
-</ToolTip>`} />
+</ToolTip>`}
+			/>
 		</Details>
 	</div>
 </FieldSet>
@@ -126,12 +135,16 @@
 	</div>
 	<div slot="footer">
 		<Details label="Code">
-			<Code lang="svelte" edits={[{number: 4, type: "add"}]} code={`<Button id="shadow-id">Hover me</Button>
+			<Code
+				lang="svelte"
+				edits={[{ number: 4, type: "add" }]}
+				code={`<Button id="shadow-id">Hover me</Button>
 <ToolTip 
   anchor="#shadow-id" 
   shadow>
   Hovered
-</ToolTip>`} />
+</ToolTip>`}
+			/>
 		</Details>
 	</div>
 </FieldSet>
@@ -142,19 +155,22 @@
 	<div class="flex flex-wrap gap-2 justify-start">
 		<Button id="hover-id">Hover me</Button>
 		<ToolTip anchor="#hover-id" shadow>Hovered</ToolTip>
-        <Button id="click-id">Click Me</Button>
+		<Button id="click-id">Click Me</Button>
 		<ToolTip anchor="#click-id" shadow event="click/click">Clicked</ToolTip>
-        <Button id="focus-id">Focus Me</Button>
+		<Button id="focus-id">Focus Me</Button>
 		<ToolTip anchor="#focus-id" shadow event="focus/blur">Focused</ToolTip>
 	</div>
 	<div slot="footer">
 		<Details label="Code">
-			<Code lang="svelte" code={`<Button id="hover-id">Hover me</Button>
+			<Code
+				lang="svelte"
+				code={`<Button id="hover-id">Hover me</Button>
 <ToolTip anchor="#hover-id" shadow>Hovered</ToolTip>
 <Button id="click-id">Click Me</Button>
 <ToolTip anchor="#click-id" shadow event="click/click">Clicked</ToolTip>
 <Button id="click-id">Focus Me</Button>
-<ToolTip anchor="#click-id" shadow event="focus/blur">Focused</ToolTip>`} />
+<ToolTip anchor="#click-id" shadow event="focus/blur">Focused</ToolTip>`}
+			/>
 		</Details>
 	</div>
 </FieldSet>
