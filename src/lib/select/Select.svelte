@@ -98,11 +98,24 @@
 	$: {
 		if (dropDownRef) {
 			if (!multiSelect) {
-				const option = findOption(value);
-				if (option) selectOption(option);
+				const selected = toArray(valuesMap, (k) => k)[0];
+				if (selected != value) {
+					const option = findOption(value);
+					if (option) selectOption(option);
+
+					dispatch("change", { value: toArray(valuesMap, (k) => k)[0] });
+				}
 			} else if (Array.isArray(value)) {
-				for (let i = 0; i < value.length; i++) {
-					if (!valuesMap.has(value[i])) findAndSelect(value[i]);
+				if (value.length != valuesMap.size) {
+					for (let i = 0; i < value.length; i++) {
+						if (!valuesMap.has(value[i])) findAndSelect(value[i], false);
+					}
+
+					for (const [k,v] of valuesMap) {
+						if (value.findIndex(k) == -1) valuesMap.delete(k);
+					}
+
+					dispatch("change", { value: toArray(valuesMap, (k) => k) });
 				}
 			}
 		}
@@ -137,11 +150,25 @@
 		if (!target) return;
 
 		selectOption(target);
+
+		if (multiSelect) {
+			dispatch("change", { value: toArray(valuesMap, (k) => k) });
+		} else {
+			dispatch("change", { value: toArray(valuesMap, (k) => k)[0] });
+		}
 	};
 
-	const findAndSelect = (v: HTMLOptionAttributes["value"]) => {
+	const findAndSelect = (v: HTMLOptionAttributes["value"], withChange: boolean = true) => {
 		const option = findOption(v);
 		if (option) selectOption(option);
+
+		if (withChange) {
+			if (multiSelect) {
+				dispatch("change", { value: toArray(valuesMap, (k) => k) });
+			} else {
+				dispatch("change", { value: toArray(valuesMap, (k) => k)[0] });
+			}
+		}
 	};
 
 	const selectOption = (option: HTMLElement) => {
@@ -216,8 +243,6 @@
 		}
 
 		valuesMap = valuesMap;
-
-		dispatch("change");
 	};
 
 	const selectFirstOption = () => {
@@ -304,8 +329,7 @@
 <svelte:window
 	on:resize={() => {
 		dropDownRef.style.width = buttonRef.offsetWidth + "px";
-	}}
-/>
+	}} />
 
 <button
 	type="button"
@@ -317,8 +341,7 @@
 	class="flex justify-between h-9 place-items-center w-full bg-gray-0 dark:bg-gray-999 py-1 pr-1 border focus:border-gray-200 focus:dark:border-gray-800
   disabled:bg-gray-50 dark:disabled:bg-gray-925 disabled:hover:cursor-not-allowed transition-all enabled:hover:border-gray-999
   border-gray-100 dark:border-gray-900 rounded-md data-[place-holder=true]:text-gray-300 enabled:hover:dark:border-gray-0
-  data-[place-holder=true]:dark:text-gray-700 disabled:text-gray-300 dark:disabled:text-gray-700"
->
+  data-[place-holder=true]:dark:text-gray-700 disabled:text-gray-300 dark:disabled:text-gray-700">
 	<div class="px-2">
 		{#if multiSelect}
 			{#if value && value.length == 0}
@@ -326,13 +349,11 @@
 			{:else}
 				<ul
 					style="width: {allowedOptionsWidth}px;"
-					class="flex place-items-center gap-1 max-w-full overflow-x-auto scrollbar-hide"
-				>
+					class="flex place-items-center gap-1 max-w-full overflow-x-auto scrollbar-hide">
 					{#each valuesMap as [v, content] (v)}
 						<div
 							class="flex justify-between place-items-center bg-gray-50 dark:bg-gray-950
-							 px-1 rounded-md gap-1 text-nowrap whitespace-nowrap"
-						>
+							 px-1 rounded-md gap-1 text-nowrap whitespace-nowrap">
 							{#if allowXSS}
 								{@html content}
 							{:else}
@@ -345,8 +366,7 @@
 									findAndSelect(v);
 								}}
 								class="flex place-items-center justify-center text-gray-500 disabled:hover:cursor-not-allowed enabled:hover:text-gray-999
-							dark:text-gray-500 dark:enabled:hover:text-gray-0 transition-all"
-							>
+							dark:text-gray-500 dark:enabled:hover:text-gray-0 transition-all">
 								<XIcon size={12} />
 							</button>
 						</div>
@@ -365,8 +385,7 @@
 		<div
 			data-show={show}
 			data-rotate={iconRotation}
-			class="data-[rotate=true]:data-[show=true]:rotate-180 transition-all dark:text-gray-700 text-gray-300 flex place-items-center justify-center"
-		>
+			class="data-[rotate=true]:data-[show=true]:rotate-180 transition-all dark:text-gray-700 text-gray-300 flex place-items-center justify-center">
 			<slot name="icon"><ChevronIcon rotation="90deg" size={16} /></slot>
 		</div>
 	{/if}
@@ -381,8 +400,7 @@
 	bind:this={dropDownRef}
 	class="absolute bg-gray-0 dark:bg-gray-999 border border-gray-100 dark:border-gray-900 z-[1] transition-all
          rounded-md data-[show=false]:opacity-0 data-[show=false]:pointer-events-none data-[shadow=true]:shadow-sm
-		 dark:shadow-gray-999 overflow-y-auto group"
->
+		 dark:shadow-gray-999 overflow-y-auto group">
 	<slot />
 </div>
 
