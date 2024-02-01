@@ -7,11 +7,6 @@ html.dark {
 	color-scheme: dark;
 }
 
-/* Prevents layout shift when scrollbar is hidden */
-html {
-	scrollbar-gutter: stable;
-}
-
 /* For components that need horizontal scrolling */
 .scrollbar-hide {
 	-ms-overflow-style: none; /* Internet Explorer and Edge */
@@ -41,4 +36,54 @@ html.dark .shiki span {
 	font-style: var(--shiki-dark-font-style) !important;
 	font-weight: var(--shiki-dark-font-weight) !important;
 	text-decoration: var(--shiki-dark-text-decoration) !important;
+}
+
+.dark .tippy-box[data-theme~="dark"] {
+	background-color: black;
+	border: 1px solid rgb(38 38 38);
+	border-radius: 4px;
+	padding: 3px 5px;
+	color: white;
+}
+
+.tippy-box[data-theme~="dark"] {
+	background-color: white;
+	border: 1px solid rgb(242 242 242);
+	border-radius: 4px;
+	padding: 3px 5px;
+	color: black;
+}
+
+/* Tippy Styles */
+
+.dark .tippy-box[data-theme~="dark"][data-placement^="top"] > .tippy-arrow::before {
+	border-top-color: black;
+}
+
+.dark .tippy-box[data-theme~="dark"][data-placement^="bottom"] > .tippy-arrow::before {
+	border-bottom-color: black;
+}
+
+.dark .tippy-box[data-theme~="dark"][data-placement^="left"] > .tippy-arrow::before {
+	border-left-color: black;
+}
+
+.dark .tippy-box[data-theme~="dark"][data-placement^="right"] > .tippy-arrow::before {
+	border-right-color: black;
+}
+
+.tippy-box[data-theme~="dark"][data-placement^="top"] > .tippy-arrow::before {
+	border-top-color: white;
+}
+
+.tippy-box[data-theme~="dark"][data-placement^="bottom"] > .tippy-arrow::before {
+	border-bottom-color: white;
+}
+
+.tippy-box[data-theme~="dark"][data-placement^="left"] > .tippy-arrow::before {
+	border-left-color: white;
+}
+
+.tippy-box[data-theme~="dark"][data-placement^="right"] > .tippy-arrow::before {
+	border-right-color: white;
 }
