@@ -8,7 +8,6 @@
 	export let hideOnClick: boolean = true;
 	let anchorRef: HTMLElement;
 	let dummyRef: HTMLElement;
-	export let config: Props | undefined = undefined;
 
 	let instance: Instance<Props>;
 
@@ -30,24 +29,13 @@
 		}
 
 		if (!instance) {
-			if (config) {
-				instance = tippy(anchorRef, {
-					...config,
-					placement,
-					hideOnClick,
-					content: content,
-					theme: "dark",
-					arrow: true,
-				});
-			} else {
-				instance = tippy(anchorRef, {
-					placement,
-					hideOnClick,
-					content: content,
-					theme: "dark",
-					arrow: true,
-				});
-			}
+			instance = tippy(anchorRef, {
+				placement,
+				hideOnClick,
+				content: content,
+				theme: "dark",
+				arrow: true,
+			});
 		}
 	}
 
