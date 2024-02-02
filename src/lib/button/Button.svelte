@@ -171,7 +171,7 @@
 				{
 					disabled: true,
 					loading: false,
-					class: "dark:border-gray-900 dark:bg-gray-925 dark:text-gray-600 cursor-not-allowed border-gray-100 bg-gray-50 text-gray-300",
+					class: "dark:border-gray-900 dark:bg-gray-925 dark:text-gray-700 cursor-not-allowed border-gray-100 bg-gray-50 text-gray-300",
 				},
 			],
 		},
