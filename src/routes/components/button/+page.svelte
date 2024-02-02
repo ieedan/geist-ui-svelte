@@ -99,6 +99,7 @@
 		<Button color="warning">Warning</Button>
 		<Button color="error">Error</Button>
 		<Button color="abort">Abort</Button>
+		<Button color="tab">Tab</Button>
 		<Button color="secondary-light">Secondary Light</Button>
 		<Button color="success-light">Success Light</Button>
 		<Button color="warning-light">Warning Light</Button>

@@ -98,11 +98,24 @@
 	$: {
 		if (dropDownRef) {
 			if (!multiSelect) {
-				const option = findOption(value);
-				if (option) selectOption(option);
+				const selected = toArray(valuesMap, (k) => k)[0];
+				if (selected != value) {
+					const option = findOption(value);
+					if (option) selectOption(option);
+
+					dispatch("change", { value: toArray(valuesMap, (k) => k)[0] });
+				}
 			} else if (Array.isArray(value)) {
-				for (let i = 0; i < value.length; i++) {
-					if (!valuesMap.has(value[i])) findAndSelect(value[i]);
+				if (value.length != valuesMap.size) {
+					for (let i = 0; i < value.length; i++) {
+						if (!valuesMap.has(value[i])) findAndSelect(value[i], false);
+					}
+
+					for (const [k] of valuesMap) {
+						if (value.findIndex(k) == -1) valuesMap.delete(k);
+					}
+
+					dispatch("change", { value: toArray(valuesMap, (k) => k) });
 				}
 			}
 		}
@@ -137,11 +150,25 @@
 		if (!target) return;
 
 		selectOption(target);
+
+		if (multiSelect) {
+			dispatch("change", { value: toArray(valuesMap, (k) => k) });
+		} else {
+			dispatch("change", { value: toArray(valuesMap, (k) => k)[0] });
+		}
 	};
 
-	const findAndSelect = (v: HTMLOptionAttributes["value"]) => {
+	const findAndSelect = (v: HTMLOptionAttributes["value"], withChange: boolean = true) => {
 		const option = findOption(v);
 		if (option) selectOption(option);
+
+		if (withChange) {
+			if (multiSelect) {
+				dispatch("change", { value: toArray(valuesMap, (k) => k) });
+			} else {
+				dispatch("change", { value: toArray(valuesMap, (k) => k)[0] });
+			}
+		}
 	};
 
 	const selectOption = (option: HTMLElement) => {
@@ -216,8 +243,6 @@
 		}
 
 		valuesMap = valuesMap;
-
-		dispatch("change");
 	};
 
 	const selectFirstOption = () => {

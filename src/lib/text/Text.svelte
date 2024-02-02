@@ -5,6 +5,19 @@
 
 	const style = cva("", {
 		variants: {
+			/* This must be at top or for some reason the text-size-inherit 
+			class will also set the text color to inherit ??! */
+			type: {
+				h1: "font-bold text-7xl",
+				h2: "font-bold text-5xl",
+				h3: "font-bold text-3xl",
+				h4: "font-bold text-2xl",
+				h5: "font-bold text-xl",
+				h6: "font-bold text-lg",
+				p: "inline text-size-inherit font-weight-inherit",
+				small: "text-xs inline",
+				span: "font-normal text-base inline text-size-inherit font-weight-inherit",
+			},
 			color: {
 				inherit: "text-inherit dark:text-inherit",
 				dark: "text-gray-999 dark:text-gray-0",
@@ -102,17 +115,6 @@
 				true: `bg-gray-50 border-gray-100 dark:bg-gray-950 dark:border-gray-900 border px-2 py-1 rounded-md`,
 				false: "",
 			},
-			type: {
-				h1: "font-bold text-7xl",
-				h2: "font-bold text-5xl",
-				h3: "font-bold text-3xl",
-				h4: "font-bold text-2xl",
-				h5: "font-bold text-xl",
-				h6: "font-bold text-lg",
-				p: "font-normal text-base inline",
-				small: "text-xs inline",
-				span: "font-normal text-base inline",
-			},
 		},
 		defaultVariants: {
 			type: "p",
@@ -175,8 +177,7 @@
 			serif,
 		}),
 		className,
-	)}
->
+	)}>
 	<slot />
 </svelte:element>
 
@@ -186,3 +187,13 @@ Displays non-interactive text.
 
 [See Docs](https://geist-ui-svelte.dev/components/text) | [Open Issue](https://github.com/ieedan/geist-ui-svelte/issues/new)
 -->
+
+<style lang="postcss">
+	.text-size-inherit {
+		font-size: inherit;
+	}
+
+	.font-weight-inherit {
+		font-weight: inherit;
+	}
+</style>

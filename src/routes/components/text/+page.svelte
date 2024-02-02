@@ -80,6 +80,29 @@
 	</div>
 </FieldSet>
 <Spacer h={30} />
+<Text type="h4">Default Size</Text>
+<Spacer h={5} />
+<Text>
+	The text component has a default font size of inherit for <code>`p`</code> and
+	<code>`span`</code> types. It also has a default font weight of inherit.
+</Text>
+<Spacer h={10} />
+<FieldSet>
+	<div class="flex flex-col">
+		<Text type="h5" b>geist-<Text>ui</Text>-svelte</Text>
+		<Text type="h5" b>geist-<Text type="span">ui</Text>-svelte</Text>
+	</div>
+	<div slot="footer">
+		<Details label="Code">
+			<Code
+				lang="svelte"
+				code={`<Text type="h5" b>geist-<Text>ui</Text>-svelte</Text>
+<Text type="h5" b>geist-<Text type="span">ui</Text>-svelte</Text>`}
+			/>
+		</Details>
+	</div>
+</FieldSet>
+<Spacer h={30} />
 <Text type="h4">Default Color</Text>
 <Spacer h={5} />
 <Text>

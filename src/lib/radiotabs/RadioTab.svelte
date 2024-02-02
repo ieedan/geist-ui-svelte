@@ -32,9 +32,18 @@
 	on:click={click}
 	{id}
 	aria-selected={initialSelected}
-	class="hover:bg-gray-100 dark:hover:bg-gray-900 transition-all
-px-3 py-2 rounded-md text-sm aria-selected:bg-gray-999
-aria-selected:text-gray-0 aria-selected:dark:bg-gray-0 aria-selected:dark:text-gray-999"
+	class="transition-all px-3 py-2 rounded-md
+
+	group-data-[color='primary']:text-gray-400 group-data-[color='primary']:dark:text-gray-600
+  group-data-[color='primary']:aria-selected:bg-gray-999 group-data-[color='primary']:hover:text-gray-999
+  group-data-[color='primary']:dark:hover:text-gray-0
+  group-data-[color='primary']:aria-selected:text-gray-0 group-data-[color='primary']:aria-selected:dark:bg-gray-0
+  group-data-[color='primary']:aria-selected:dark:text-gray-999
+  
+    group-data-[color='secondary']:aria-selected:dark:bg-gray-900 group-data-[color='secondary']:aria-selected:bg-gray-100
+	group-data-[color='secondary']:aria-selected:dark:text-gray-0 group-data-[color='secondary']:aria-selected:text-gray-999
+	group-data-[color='secondary']:hover:dark:text-gray-0 group-data-[color='secondary']:hover:text-gray-999
+	group-data-[color='secondary']:text-gray-400 group-data-[color='secondary']:dark:text-gray-600"
 >
 	<slot />
 </button>

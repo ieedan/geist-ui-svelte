@@ -106,7 +106,7 @@
 			class="flex place-items-center group-data-[border=true]/geist-input:group-data-[has-label=true]/geist-input:border order-2
 			group-data-[placement='end']/geist-input:rounded-l-md group-data-[placement='start']/geist-input:rounded-r-md
 			focus-within:border-gray-200 dark:focus-within:border-gray-800 transition-all border-gray-100
-			dark:border-gray-900
+			dark:border-gray-900 overflow-hidden
 
 			group-data-[color='secondary']/geist-input:border-gray-800 group-data-[color='secondary']/geist-input:focus-within:border-gray-500
 			group-data-[color='secondary']/geist-input:dark:border-gray-200 group-data-[color='secondary']/geist-input:focus-within:dark:border-gray-500
@@ -138,12 +138,13 @@
 				{disabled}
 				{readonly}
 				class="bg-transparent order-3 min-w-0 text-gray-999 dark:text-gray-0
-				disabled:placeholder:text-gray-300 disabled:dark:placeholder:text-gray-600
+				disabled:dark:border-gray-900 disabled:dark:bg-gray-925 disabled:dark:text-gray-700
+				disabled:cursor-not-allowed disabled:border-gray-100 disabled:bg-gray-50 disabled:text-gray-300
+				disabled:placeholder:text-gray-300 disabled:dark:placeholder:text-gray-700
 				outline-none focus:outline px-2 py-1 w-full rounded-none disabled:hover:cursor-not-allowed
-				disabled:text-gray-300 disabled:dark:text-gray-600 group-data-[size='sm']/geist-input:text-sm
+				group-data-[size='sm']/geist-input:text-sm
 				group-data-[size='lg']/geist-input:text-lg group-data-[size='xl']/geist-input:text-xl
 				placeholder:text-gray-200 dark:placeholder:text-gray-600
-				
 				group-data-[color='success']/geist-input:text-blue-600 group-data-[color='success']/geist-input:dark:text-blue-600
 				group-data-[color='warning']/geist-input:text-orange-300 group-data-[color='warning']/geist-input:dark:text-orange-400
 				group-data-[color='error']/geist-input:text-red-500 group-data-[color='error']/geist-input:dark:text-red-600"

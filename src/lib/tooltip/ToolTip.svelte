@@ -1,103 +1,49 @@
 <script lang="ts">
-	import Dropdown from "$lib/dropdown/Dropdown.svelte";
-	import { type Placement } from "$lib/util/place.js";
-	import { cn } from "$lib/util/utils.js";
-	import { cva } from "class-variance-authority";
+	import "tippy.js/dist/tippy.css";
+	import "tippy.js/dist/border.css";
+	import tippy, { type Instance, type Props, type Placement } from "tippy.js";
 
-	const style = cva("inline-block", {
-		variants: {
-			placement: {
-				bottom: "translate-y-2",
-				"bottom-end": "translate-y-2",
-				"bottom-start": "translate-y-2",
-				top: "-translate-y-2",
-				"top-end": "-translate-y-2",
-				"top-start": "-translate-y-2",
-			},
-		},
-	});
+	export let anchor: string | HTMLElement;
+	export let placement: Placement = "top";
+	export let hideOnClick: boolean = true;
+	let anchorRef: HTMLElement;
+	let dummyRef: HTMLElement;
 
-	type DropdownEvent = "click/click" | "mouseenter/mouseleave" | "focus/blur";
+	let instance: Instance<Props>;
 
-	export let visible: boolean = false;
-	export let shadow: boolean = false;
-	export let placement: Placement = "bottom";
-	export let anchor: HTMLElement | string;
-	export let animate = false;
-	export let flip = true;
-	/** This event fires from the anchor element */
-	export let event: DropdownEvent = "mouseenter/mouseleave";
-	let className: string = "";
-	export { className as class };
+	export let content: string;
+
+	// dummyRef is here as a check for 'mounted'
+	// This will ensure that even if the anchor is not undefined (such as during SSR)
+	// that the code will not run until the document is accessible
+	$: if (anchor != undefined && dummyRef) {
+		if (typeof anchor === "string") {
+			const element = document.querySelector(anchor) as HTMLElement;
+
+			if (!element)
+				throw new Error(`There was no element found with the query selector: '${anchor}'`);
+
+			anchorRef = element;
+		} else {
+			anchorRef = anchor;
+		}
+
+		if (!instance) {
+			instance = tippy(anchorRef, {
+				placement,
+				hideOnClick,
+				content: content,
+				theme: "dark",
+				arrow: true,
+			});
+		}
+	}
+
+	$: {
+		if (instance) {
+			instance.setContent(content);
+		}
+	}
 </script>
 
-<Dropdown
-	{anchor}
-	{shadow}
-	{visible}
-	bind:placement
-	{flip}
-	{event}
-	{animate}
-	class={cn(style({ placement }), className)}
->
-	<div
-		data-placement={placement}
-		class="relative h-full w-full geist-tool-tip-text bg-gray-0 dark:bg-gray-999 dark:border-gray-900 border-gray-100 rounded-lg px-2 py-1"
-	>
-		<slot />
-	</div>
-</Dropdown>
-
-<!--
-@component
-Displays a tooltip around an anchor component.
-
-[See Docs](https://geist-ui-svelte.dev/components/tooltip) | [Open Issue](https://github.com/ieedan/geist-ui-svelte/issues/new)
--->
-
-<style>
-	.geist-tool-tip-text::after {
-		content: " ";
-		position: absolute;
-		width: 15px;
-		height: 15px;
-		rotate: 45deg;
-		border-radius: 2px;
-		background-color: inherit;
-		z-index: -1;
-		border-color: inherit;
-		border-width: 1px;
-		border-style: solid;
-	}
-
-	.geist-tool-tip-text[data-placement="top"]::after {
-		left: 42%;
-		top: 65%;
-	}
-
-	.geist-tool-tip-text[data-placement="top-end"]::after {
-		right: 10%;
-		top: 65%;
-	}
-
-	.geist-tool-tip-text[data-placement="top-start"]::after {
-		left: 10%;
-		top: 65%;
-	}
-
-	.geist-tool-tip-text[data-placement="bottom"]::after {
-		left: 42%;
-		top: -11%;
-	}
-
-	.geist-tool-tip-text[data-placement="bottom-end"]::after {
-		right: 10%;
-		top: -11%;
-	}
-
-	.geist-tool-tip-text[data-placement="bottom-start"]::after {
-		left: 10%;
-		top: -11%;
-	}
-</style>
+<div class="hidden" bind:this={dummyRef} />

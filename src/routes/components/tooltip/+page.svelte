@@ -8,6 +8,8 @@
 	import Button from "$lib/button/Button.svelte";
 	import ToolTip from "$lib/tooltip/ToolTip.svelte";
 	import Note from "$lib/note/Note.svelte";
+	import CloneIcon from "$lib/icons/CloneIcon.svelte";
+	import Link from "$lib/link/Link.svelte";
 	import type { Placement } from "$lib/util/place.js";
 
 	const placements: Placement[] = [
@@ -20,7 +22,7 @@
 	];
 
 	/* eslint-disable no-useless-escape */
-	const exampleCode = `<script>
+	const exampleCode = `<script lang="ts">
     const placements: Placement[] = [
 		"top",
 		"top-end",
@@ -32,13 +34,15 @@
 <\/script>
 
 {#each placements as placement}
-    <Button id="placement-{placement}">
-        {placement}
-    </Button>
-    <ToolTip anchor="#placement-{placement}" {placement}>
-        {placement} Hover
-    </ToolTip>
+	<Button id="placement-{placement}">{placement}</Button>
+	<ToolTip anchor="#placement-{placement}" {placement} content="{placement} Hover" />
 {/each}`;
+
+	let copied = false;
+	const copy = () => {
+		copied = true;
+		setTimeout(() => (copied = false), 1000);
+	};
 </script>
 
 <Text type="h3">ToolTip</Text>
@@ -47,37 +51,40 @@
 <Spacer h={20} />
 <Snippet width="450px" type="lite" text={`import { ToolTip } from 'geist-ui-svelte';`} />
 <Spacer h={30} />
-<Note color="warning">This component is experimental</Note>
-<Spacer h={20} />
-<Text type="h4">Vertical Spacing</Text>
+<Text type="h4">Basic</Text>
 <Spacer h={10} />
 <FieldSet>
 	<div class="flex gap-2 justify-start">
 		<Button id="button-id">Hover me</Button>
-		<ToolTip anchor="#button-id">Hovered</ToolTip>
+		<ToolTip anchor="#button-id" content="Hovered" />
 	</div>
 	<div slot="footer">
 		<Details label="Code">
 			<Code
 				lang="svelte"
 				code={`<Button id="button-id">Hover me</Button>
-<ToolTip anchor="#button-id">
-    Hovered
-</ToolTip>`}
+<ToolTip anchor="#button-id" content='Hovered'/>`}
 			/>
 		</Details>
 	</div>
 </FieldSet>
 <Spacer h={30} />
-<Text type="h4">Placements</Text>
+<Note color="success">
+	The Tooltip component uses
+	<Text serif b>
+		<Link to="https://atomiks.github.io/tippyjs/" target="_blank" color underline>
+			tippy.js
+		</Link>
+	</Text> under the hood meaning it inherits many of its properties including placement.
+</Note>
+<Spacer h={20} />
+<Text type="h4">Placement</Text>
 <Spacer h={10} />
 <FieldSet>
 	<div class="flex flex-wrap gap-2 justify-start">
 		{#each placements as placement}
 			<Button id="placement-{placement}">{placement}</Button>
-			<ToolTip anchor="#placement-{placement}" {placement}>
-				{placement} Hover
-			</ToolTip>
+			<ToolTip anchor="#placement-{placement}" {placement} content="{placement} Hover" />
 		{/each}
 	</div>
 	<div slot="footer">
@@ -87,89 +94,31 @@
 	</div>
 </FieldSet>
 <Spacer h={30} />
-<Note color="success"
-	>The Tooltip component uses the Dropdown component under the hood so it inherits many of its
-	features.</Note
->
-<Spacer h={20} />
-<Text type="h4">Animation</Text>
+<Text type="h4">Dynamically Set Content</Text>
 <Spacer h={5} />
 <Text>
-	By default the animation is disabled but you can turn it on using the <code>`animate`</code> attribute.
+	This is really the only reason you'd need to use this component anyways outside of the styling.
+	Sometimes you need to set the content of a tooltip dynamically.
 </Text>
 <Spacer h={10} />
 <FieldSet>
 	<div class="flex flex-wrap gap-2 justify-start">
-		<Button id="default-id">Hover me</Button>
-		<ToolTip anchor="#default-id">Hovered</ToolTip>
-		<Button id="animate-id">Hover me</Button>
-		<ToolTip anchor="#animate-id" animate>Hovered</ToolTip>
+		<Button square id="copy-button" on:click={copy}>
+			<CloneIcon size={16} />
+		</Button>
+		<ToolTip anchor="#copy-button" content={copied ? "Copied!" : "Copy"} hideOnClick={false} />
 	</div>
 	<div slot="footer">
 		<Details label="Code">
 			<Code
 				lang="svelte"
-				edits={[{ number: 9, type: "add" }]}
-				code={`<Button id="default-id">Hover me</Button>
+				code={`<Button square id="copy-button" on:click={copy}>
+	<CloneIcon size={16} />
+</Button>
 <ToolTip 
-  anchor="#default-id">
-    Hovered
-</ToolTip>
-<Button id="animate-id">Hover me</Button>
-<ToolTip 
-  anchor="#animate-id" 
-  animate>
-  Hovered
-</ToolTip>`}
-			/>
-		</Details>
-	</div>
-</FieldSet>
-<Spacer h={30} />
-<Text type="h4">Shadow</Text>
-<Spacer h={10} />
-<FieldSet>
-	<div class="flex flex-wrap gap-2 justify-start">
-		<Button id="shadow-id">Hover me</Button>
-		<ToolTip anchor="#shadow-id" shadow>Hovered</ToolTip>
-	</div>
-	<div slot="footer">
-		<Details label="Code">
-			<Code
-				lang="svelte"
-				edits={[{ number: 4, type: "add" }]}
-				code={`<Button id="shadow-id">Hover me</Button>
-<ToolTip 
-  anchor="#shadow-id" 
-  shadow>
-  Hovered
-</ToolTip>`}
-			/>
-		</Details>
-	</div>
-</FieldSet>
-<Spacer h={30} />
-<Text type="h4">Event</Text>
-<Spacer h={10} />
-<FieldSet>
-	<div class="flex flex-wrap gap-2 justify-start">
-		<Button id="hover-id">Hover me</Button>
-		<ToolTip anchor="#hover-id" shadow>Hovered</ToolTip>
-		<Button id="click-id">Click Me</Button>
-		<ToolTip anchor="#click-id" shadow event="click/click">Clicked</ToolTip>
-		<Button id="focus-id">Focus Me</Button>
-		<ToolTip anchor="#focus-id" shadow event="focus/blur">Focused</ToolTip>
-	</div>
-	<div slot="footer">
-		<Details label="Code">
-			<Code
-				lang="svelte"
-				code={`<Button id="hover-id">Hover me</Button>
-<ToolTip anchor="#hover-id" shadow>Hovered</ToolTip>
-<Button id="click-id">Click Me</Button>
-<ToolTip anchor="#click-id" shadow event="click/click">Clicked</ToolTip>
-<Button id="click-id">Focus Me</Button>
-<ToolTip anchor="#click-id" shadow event="focus/blur">Focused</ToolTip>`}
+  anchor="#copy-button" 
+  hideOnClick={false}
+  content={copied ? "Copied!" : "Copy"}  />`}
 			/>
 		</Details>
 	</div>
