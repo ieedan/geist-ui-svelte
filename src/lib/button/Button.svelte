@@ -22,8 +22,11 @@
 					dark:border-orange-400 data-[a]:hover:dark:text-orange-400 enabled:hover:dark:text-orange-400`,
 					error: `bg-red-500 text-gray-0 data-[a]:hover:text-red-500 enabled:hover:text-red-500 border-red-500 data-[a]:hover:bg-gray-0 
 					enabled:hover:bg-gray-0 data-[a]:hover:dark:bg-gray-999 enabled:hover:dark:bg-gray-999 dark:border-red-600 dark:bg-red-600`,
+					tab: `enabled:hover:dark:bg-gray-900 data-[a]:hover:dark:bg-gray-900 enabled:hover:bg-gray-100 data-[a]:hover:bg-gray-100
+					enabled:hover:dark:text-gray-0 data-[a]:hover:dark:text-gray-0 enabled:hover:text-gray-999 data-[a]:hover:text-gray-999
+					border-transparent dark:text-gray-600 text-gray-400 `,
 					abort: `bg-transparent dark:bg-transparent border-transparent text-gray-400 dark:text-gray-600`,
-
+					
 					"abort-active": `bg-transparent dark:bg-transparent border-transparent data-[a]:hover:dark:text-gray-0 enabled:hover:dark:text-gray-0
 				  text-gray-400 dark:text-gray-600 data-[a]:hover:text-gray-999 enabled:hover:text-gray-999`,
 
