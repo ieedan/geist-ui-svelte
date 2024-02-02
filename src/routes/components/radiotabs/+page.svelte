@@ -59,6 +59,36 @@
 	</div>
 </FieldSet>
 <Spacer h={30} />
+<Text type="h4">Colors</Text>
+<Spacer h={10} />
+<FieldSet>
+	<div class="flex flex-col gap-2 justify-start">
+		<RadioTabs>
+			<RadioTab>Desktop</RadioTab>
+			<RadioTab>Mobile</RadioTab>
+		</RadioTabs>
+		<RadioTabs color="secondary">
+			<RadioTab>Desktop</RadioTab>
+			<RadioTab>Mobile</RadioTab>
+		</RadioTabs>
+	</div>
+	<div slot="footer">
+		<Details label="Code">
+			<Code
+				lang="svelte"
+				code={`<RadioTabs>
+	<RadioTab>Desktop</RadioTab>
+	<RadioTab>Mobile</RadioTab>
+</RadioTabs>
+<RadioTabs color="secondary">
+	<RadioTab>Desktop</RadioTab>
+	<RadioTab>Mobile</RadioTab>
+</RadioTabs>`}
+			/>
+		</Details>
+	</div>
+</FieldSet>
+<Spacer h={30} />
 <Text type="h4">Get selected tab</Text>
 <Spacer h={5} />
 <Text>

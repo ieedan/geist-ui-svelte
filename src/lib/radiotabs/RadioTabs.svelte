@@ -1,10 +1,14 @@
 <script lang="ts">
+	import { cn } from "$lib/util/utils.js";
 	import { createEventDispatcher, onMount } from "svelte";
 
 	const dispatch = createEventDispatcher();
 
 	let tabsRef: HTMLDivElement;
 	export let selected: string = "";
+	export let color: "primary" | "secondary" = "primary";
+	let className: string = "";
+	export { className as class };
 
 	$: {
 		if (tabsRef) {
@@ -60,10 +64,13 @@
 
 <div
 	bind:this={tabsRef}
+	data-color={color}
 	role="tablist"
-	class="border border-gray-100 dark:border-gray-900 bg-gray-0
-    dark:bg-gray-999 rounded-md p-1 w-fit flex place-items-center gap-1"
->
+	class={cn(
+		`border border-gray-100 dark:border-gray-900 bg-gray-0 dark:bg-gray-999 
+	rounded-md p-1 w-fit flex place-items-center gap-1 group`,
+		className,
+	)}>
 	<slot />
 </div>
 
