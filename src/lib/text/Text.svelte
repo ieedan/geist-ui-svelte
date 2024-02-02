@@ -109,9 +109,9 @@
 				h4: "font-bold text-2xl",
 				h5: "font-bold text-xl",
 				h6: "font-bold text-lg",
-				p: "font-normal text-base inline",
+				p: "inline text-size-inherit font-weight-inherit",
 				small: "text-xs inline",
-				span: "font-normal text-base inline",
+				span: "font-normal text-base inline text-size-inherit font-weight-inherit",
 			},
 		},
 		defaultVariants: {
@@ -186,3 +186,13 @@ Displays non-interactive text.
 
 [See Docs](https://geist-ui-svelte.dev/components/text) | [Open Issue](https://github.com/ieedan/geist-ui-svelte/issues/new)
 -->
+
+<style lang="postcss"> 
+	.text-size-inherit {
+		font-size: inherit;
+	}
+
+	.font-weight-inherit {
+		font-weight: inherit;
+	}
+</style>
