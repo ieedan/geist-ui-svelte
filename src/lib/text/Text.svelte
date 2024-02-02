@@ -187,7 +187,7 @@ Displays non-interactive text.
 [See Docs](https://geist-ui-svelte.dev/components/text) | [Open Issue](https://github.com/ieedan/geist-ui-svelte/issues/new)
 -->
 
-<style lang="postcss"> 
+<style lang="postcss">
 	.text-size-inherit {
 		font-size: inherit;
 	}

@@ -63,7 +63,8 @@
 			<Code
 				lang="svelte"
 				code={`<Button id="button-id">Hover me</Button>
-<ToolTip anchor="#button-id" content='Hovered'/>`} />
+<ToolTip anchor="#button-id" content='Hovered'/>`}
+			/>
 		</Details>
 	</div>
 </FieldSet>
@@ -117,7 +118,8 @@
 <ToolTip 
   anchor="#copy-button" 
   hideOnClick={false}
-  content={copied ? "Copied!" : "Copy"}  />`} />
+  content={copied ? "Copied!" : "Copy"}  />`}
+			/>
 		</Details>
 	</div>
 </FieldSet>

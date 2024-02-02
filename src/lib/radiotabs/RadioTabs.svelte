@@ -70,7 +70,8 @@
 		`border border-gray-100 dark:border-gray-900 bg-gray-0 dark:bg-gray-999 
 	rounded-md p-1 w-fit flex place-items-center gap-1 group`,
 		className,
-	)}>
+	)}
+>
 	<slot />
 </div>
 

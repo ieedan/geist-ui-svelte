@@ -26,7 +26,7 @@
 					enabled:hover:dark:text-gray-0 data-[a]:hover:dark:text-gray-0 enabled:hover:text-gray-999 data-[a]:hover:text-gray-999
 					border-transparent dark:text-gray-600 text-gray-400 `,
 					abort: `bg-transparent dark:bg-transparent border-transparent text-gray-400 dark:text-gray-600`,
-					
+
 					"abort-active": `bg-transparent dark:bg-transparent border-transparent data-[a]:hover:dark:text-gray-0 enabled:hover:dark:text-gray-0
 				  text-gray-400 dark:text-gray-600 data-[a]:hover:text-gray-999 enabled:hover:text-gray-999`,
 

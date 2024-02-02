@@ -138,7 +138,7 @@
 				{disabled}
 				{readonly}
 				class="bg-transparent order-3 min-w-0 text-gray-999 dark:text-gray-0
-				disabled:dark:border-gray-900 disabled:dark:bg-gray-925 disabled:dark:text-gray-700 
+				disabled:dark:border-gray-900 disabled:dark:bg-gray-925 disabled:dark:text-gray-700
 				disabled:cursor-not-allowed disabled:border-gray-100 disabled:bg-gray-50 disabled:text-gray-300
 				disabled:placeholder:text-gray-300 disabled:dark:placeholder:text-gray-700
 				outline-none focus:outline px-2 py-1 w-full rounded-none disabled:hover:cursor-not-allowed

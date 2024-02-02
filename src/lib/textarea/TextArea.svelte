@@ -58,7 +58,7 @@
 		on:mouseleave
 		data-size={size}
 		class="resize-none bg-gray-0 dark:bg-gray-999 border border-gray-100
-		px-2 py-1 disabled:dark:border-gray-900 disabled:dark:bg-gray-925 disabled:dark:text-gray-700 
+		px-2 py-1 disabled:dark:border-gray-900 disabled:dark:bg-gray-925 disabled:dark:text-gray-700
 		disabled:cursor-not-allowed disabled:border-gray-100 disabled:bg-gray-50 disabled:text-gray-300
 		disabled:placeholder:text-gray-300 disabled:dark:placeholder:text-gray-700
 		text-gray-999 placeholder:text-gray-200 dark:placeholder:text-gray-600
