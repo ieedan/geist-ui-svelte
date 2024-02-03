@@ -309,6 +309,10 @@
 			"types": "./dist/tooltip/ToolTip.svelte.d.ts",
 			"svelte": "./dist/tooltip/ToolTip.svelte"
 		},
+		"./BreadCrumbs.svelte": {
+			"types": "./dist/breadcrumbs/BreadCrumbs.svelte.d.ts",
+			"svelte": "./dist/breadcrumbs/BreadCrumbs.svelte"
+		},
 		"./styles/geist-ui-svelte.css": "./dist/styles/geist-ui-svelte.css"
 	},
 	"files": [
