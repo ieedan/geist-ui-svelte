@@ -102,6 +102,8 @@ export { default as Loading } from "./loading/Loading.svelte";
 
 export { default as LightSwitch } from "./lightswitch/LightSwitch.svelte";
 
+export { default as ModeSelector } from "./modeselector/ModeSelector.svelte";
+
 /* Code */
 
 export { default as Code } from "./code/Code.svelte";

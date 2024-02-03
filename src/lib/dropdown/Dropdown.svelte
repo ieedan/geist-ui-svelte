@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { place, type Placement } from "$lib/util/place.js";
+	import { cn } from "$lib/util/utils.js";
 	import { onDestroy } from "svelte";
 
 	type DropdownEvent = "click/click" | "mouseenter/mouseleave" | "focus/blur";
@@ -109,21 +110,23 @@
 	data-animate={animate}
 	data-placement={currentPlacement}
 	bind:this={dropDownRef}
-	class="absolute data-[show=false]:pointer-events-none z-[1]
-    data-[show=false]:opacity-0 bg-gray-0 dark:bg-gray-999 rounded-lg
-	data-[animate=true]:transition-all border border-gray-100 dark:border-gray-900
-	data-[shadow=true]:shadow-md dark:shadow-gray-999
-    data-[placement='bottom-end']:data-[show=false]:-translate-y-1
-    data-[placement='bottom-end']:data-[show=false]:translate-x-1
-    data-[placement='bottom-start']:data-[show=false]:-translate-y-1
-    data-[placement='bottom-start']:data-[show=false]:-translate-x-1
-    data-[placement='bottom']:data-[show=false]:-translate-y-1
-    data-[placement='top']:data-[show=false]:translate-y-1
-    data-[placement='top-start']:data-[show=false]:translate-y-1
-    data-[placement='top-start']:data-[show=false]:-translate-x-1
-    data-[placement='top-end']:data-[show=false]:translate-y-1
-    data-[placement='top-end']:data-[show=false]:translate-x-1
-    {className}"
+	class={cn(
+		`absolute data-[show=false]:pointer-events-none z-[1]
+		data-[show=false]:opacity-0 bg-gray-0 dark:bg-gray-999 rounded-lg
+		data-[animate=true]:transition-all border border-gray-100 dark:border-gray-900
+		data-[shadow=true]:shadow-md dark:shadow-gray-999
+		data-[placement='bottom-end']:data-[show=false]:-translate-y-1
+		data-[placement='bottom-end']:data-[show=false]:translate-x-1
+		data-[placement='bottom-start']:data-[show=false]:-translate-y-1
+		data-[placement='bottom-start']:data-[show=false]:-translate-x-1
+		data-[placement='bottom']:data-[show=false]:-translate-y-1
+		data-[placement='top']:data-[show=false]:translate-y-1
+		data-[placement='top-start']:data-[show=false]:translate-y-1
+		data-[placement='top-start']:data-[show=false]:-translate-x-1
+		data-[placement='top-end']:data-[show=false]:translate-y-1
+		data-[placement='top-end']:data-[show=false]:translate-x-1`,
+		className,
+	)}
 >
 	<slot />
 </div>

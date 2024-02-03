@@ -198,12 +198,14 @@
 	export let width: string = "fit-content";
 	export let square: boolean = false;
 	export let align: Props["align"] = "center";
+	export let ref: HTMLButtonElement | HTMLAnchorElement | undefined = undefined;
 	let className: string = "";
 	export { className as class };
 </script>
 
 {#if href != undefined}
 	<a
+		bind:this={ref}
 		{href}
 		{...$$restProps}
 		on:click
@@ -227,6 +229,7 @@
 	</a>
 {:else}
 	<button
+		bind:this={ref}
 		{type}
 		{...$$restProps}
 		on:click

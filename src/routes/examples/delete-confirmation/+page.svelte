@@ -85,7 +85,7 @@
 		<Divider />
 		<Spacer h={15} />
 		<div class="flex place-items-center justify-between">
-			<Button on:click={() => (open = true)}>Cancel</Button>
+			<Button on:click={() => (open = false)}>Cancel</Button>
 			<Button type="submit" color="secondary-light" loading={deleting}>Continue</Button>
 		</div>
 	</form>
@@ -155,7 +155,7 @@
         <Divider />
         <Spacer h={15} />
         <div class="flex place-items-center justify-between">
-            <Button on:click={() => (open = true)}>Cancel</Button>
+            <Button on:click={() => (open = false)}>Cancel</Button>
             <Button type="submit" color="secondary-light" loading={deleting}>Continue</Button>
         </div>
     </form>
