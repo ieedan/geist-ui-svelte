@@ -9,6 +9,7 @@
 	export let color: "primary" | "secondary" = "primary";
 	let className: string = "";
 	export { className as class };
+	export let height = "48px";
 
 	$: {
 		if (tabsRef) {
@@ -64,6 +65,7 @@
 
 <div
 	bind:this={tabsRef}
+	style="height: {height};"
 	data-color={color}
 	role="tablist"
 	class={cn(

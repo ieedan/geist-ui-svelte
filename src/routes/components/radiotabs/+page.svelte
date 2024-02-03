@@ -143,3 +143,33 @@
 		</Details>
 	</div>
 </FieldSet>
+<Spacer h={30} />
+<Text type="h4">Height</Text>
+<Spacer h={5} />
+<Text>You can adjust the height with the <code>`height`</code> attribute.</Text>
+<Spacer h={10} />
+<FieldSet>
+	<div class="flex place-items-center gap-2 justify-start">
+		<RadioTabs>
+			<RadioTab>Home</RadioTab>
+			<RadioTab>Dashboard</RadioTab>
+		</RadioTabs>
+		<RadioTabs height="42">
+			<RadioTab>A</RadioTab>
+			<RadioTab>B</RadioTab>
+		</RadioTabs>
+	</div>
+	<div slot="footer">
+		<Details label="Code">
+			<Code
+				lang="svelte"
+				code={`<RadioTabs>
+	<RadioTab>Home</RadioTab>
+	<RadioTab>Dashboard</RadioTab>
+	<RadioTab>Settings</RadioTab>
+	<RadioTab>Account</RadioTab>
+</RadioTabs>`}
+			/>
+		</Details>
+	</div>
+</FieldSet>

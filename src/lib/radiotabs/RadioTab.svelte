@@ -32,7 +32,7 @@
 	on:click={click}
 	{id}
 	aria-selected={initialSelected}
-	class="transition-all px-3 py-2 rounded-md
+	class="transition-all px-3 py-1 rounded-md h-full
 
 	group-data-[color='primary']:text-gray-400 group-data-[color='primary']:dark:text-gray-600
   group-data-[color='primary']:aria-selected:bg-gray-999 group-data-[color='primary']:hover:text-gray-999
