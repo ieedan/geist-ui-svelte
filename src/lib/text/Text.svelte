@@ -177,7 +177,8 @@
 			serif,
 		}),
 		className,
-	)}>
+	)}
+>
 	<slot />
 </svelte:element>
 

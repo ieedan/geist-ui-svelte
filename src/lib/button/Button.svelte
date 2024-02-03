@@ -5,7 +5,7 @@
 	import { cn } from "$lib/util/utils.js";
 
 	const style = cva(
-		"transition-all rounded-md border flex place-items-center justify-center text-nowrap whitespace-nowrap group relative",
+		"transition-all rounded-md border flex place-items-center text-nowrap whitespace-nowrap group relative",
 		{
 			variants: {
 				color: {
@@ -68,6 +68,11 @@
 					lg: "text-lg min-h-[40px]",
 					xl: "text-xl min-h-[44px]",
 				},
+				align: {
+					center: "justify-center",
+					start: "justify-start",
+					end: "justify-end",
+				},
 			},
 			defaultVariants: {
 				color: "default",
@@ -75,6 +80,7 @@
 				square: false,
 				disabled: false,
 				ghost: false,
+				align: "center",
 			},
 			compoundVariants: [
 				{
@@ -191,6 +197,7 @@
 	export let href: string | undefined = undefined;
 	export let width: string = "fit-content";
 	export let square: boolean = false;
+	export let align: Props["align"] = "center";
 	let className: string = "";
 	export { className as class };
 </script>
@@ -210,7 +217,7 @@
 		on:mouseleave
 		data-a
 		style="width: {width};"
-		class={cn(style({ color, disabled, loading, ghost, size, square }), className)}
+		class={cn(style({ color, disabled, loading, ghost, size, square, align }), className)}
 	>
 		{#if loading}
 			<Loading size="sm" />
@@ -233,7 +240,7 @@
 		on:mouseleave
 		disabled={disabled || loading}
 		style="width: {width};"
-		class={cn(style({ color, disabled, loading, ghost, size, square }), className)}
+		class={cn(style({ color, disabled, loading, ghost, size, square, align }), className)}
 	>
 		{#if loading}
 			<Loading

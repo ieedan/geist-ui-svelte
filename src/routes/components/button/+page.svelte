@@ -220,3 +220,48 @@
 		</Details>
 	</div>
 </FieldSet>
+<Spacer h={30} />
+<Text type="h4">Align</Text>
+<Spacer h={5} />
+<Text>
+	Sometimes you may want to align the content differently like if you are using the <code
+		>`tab`</code
+	>
+	color. Set <code>`align`</code> to change the alignment.
+</Text>
+<Spacer h={10} />
+<FieldSet>
+	<div class="flex flex-col gap-1">
+		<Button color="tab" align="start" width="200px">Dashboard</Button>
+		<Button color="tab" align="start" width="200px">Settings</Button>
+		<Button color="tab" align="end" width="200px">Dashboard</Button>
+		<Button color="tab" align="end" width="200px">Settings</Button>
+		<Button color="tab" align="center" width="200px">Dashboard</Button>
+		<Button color="tab" align="center" width="200px">Settings</Button>
+	</div>
+	<div slot="footer">
+		<Details label="Code">
+			<Code
+				lang="svelte"
+				code={`<Button color="tab" align="start" width="200px">
+	Dashboard
+</Button>
+<Button color="tab" align="start" width="200px">
+	Settings
+</Button>
+<Button color="tab" align="end" width="200px">
+	Dashboard
+</Button>
+<Button color="tab" align="end" width="200px">
+	Settings
+</Button>
+<Button color="tab" align="center" width="200px">
+	Dashboard
+</Button>
+<Button color="tab" align="center" width="200px">
+	Settings
+</Button>`}
+			/>
+		</Details>
+	</div>
+</FieldSet>
