@@ -189,6 +189,10 @@
 			name: "LightSwitch",
 			slug: "/components/lightswitch",
 		},
+		{
+			name: "ModeSelector",
+			slug: "/components/modeselector",
+		},
 		"CODE",
 		{
 			name: "Code",
