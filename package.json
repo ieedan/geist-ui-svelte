@@ -1,6 +1,6 @@
 {
 	"name": "geist-ui-svelte",
-	"version": "0.6.1",
+	"version": "0.6.2",
 	"author": {
 		"name": "Aidan Bleser",
 		"url": "https://aidanbleser.com"
@@ -308,6 +308,10 @@
 		"./ToolTip.svelte": {
 			"types": "./dist/tooltip/ToolTip.svelte.d.ts",
 			"svelte": "./dist/tooltip/ToolTip.svelte"
+		},
+		"./BreadCrumbs.svelte": {
+			"types": "./dist/breadcrumbs/BreadCrumbs.svelte.d.ts",
+			"svelte": "./dist/breadcrumbs/BreadCrumbs.svelte"
 		},
 		"./styles/geist-ui-svelte.css": "./dist/styles/geist-ui-svelte.css"
 	},

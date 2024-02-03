@@ -140,6 +140,10 @@
 			slug: "/components/radiotabs",
 		},
 		{
+			name: "BreadCrumbs",
+			slug: "/components/breadcrumbs",
+		},
+		{
 			name: "Label",
 			slug: "/components/label",
 		},

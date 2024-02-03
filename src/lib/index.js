@@ -72,6 +72,8 @@ export { default as RadioTabs } from "./radiotabs/RadioTabs.svelte";
 
 export { default as RadioTab } from "./radiotabs/RadioTab.svelte";
 
+export { default as BreadCrumbs } from "./breadcrumbs/BreadCrumbs.svelte";
+
 export { default as Skeleton } from "./skeleton/Skeleton.svelte";
 
 export { default as Label } from "./label/Label.svelte";

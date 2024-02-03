@@ -35,6 +35,7 @@ module.exports = {
 				"@typescript-eslint/no-shadow": "error",
 				"@typescript-eslint/no-explicit-any": "error",
 				"no-nested-ternary": "error",
+				"no-useless-escape": "off",
 				"svelte/no-at-html-tags": "warn",
 				"@cspell/spellchecker": [
 					"error",
@@ -70,6 +71,7 @@ module.exports = {
 		"@typescript-eslint/no-shadow": "error",
 		"@typescript-eslint/no-explicit-any": "error",
 		"no-nested-ternary": "error",
+		"no-useless-escape": "off",
 		"@cspell/spellchecker": [
 			"error",
 			{
