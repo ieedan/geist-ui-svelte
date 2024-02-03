@@ -33,7 +33,7 @@
 		on:click={() => (show = !show)}
 		class="flex place-items-center gap-2 text-sm text-gray-600 dark:text-gray-500"
 	>
-		<div class="data-[show=true]:rotate-90">
+		<div class="group-data-[show=true]/details:rotate-90 transition-all flex place-items-center justify-center">
 			<ChevronIcon size={16} />
 		</div>
 		{label}

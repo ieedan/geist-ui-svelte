@@ -166,8 +166,10 @@
 				code={`<RadioTabs>
 	<RadioTab>Home</RadioTab>
 	<RadioTab>Dashboard</RadioTab>
-	<RadioTab>Settings</RadioTab>
-	<RadioTab>Account</RadioTab>
+</RadioTabs>
+<RadioTabs height="42">
+	<RadioTab>A</RadioTab>
+	<RadioTab>B</RadioTab>
 </RadioTabs>`}
 			/>
 		</Details>
