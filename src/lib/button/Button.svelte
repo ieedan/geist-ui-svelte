@@ -71,8 +71,8 @@
 				align: {
 					center: "justify-center",
 					start: "justify-start",
-					end: "justify-end"
-				}
+					end: "justify-end",
+				},
 			},
 			defaultVariants: {
 				color: "default",
@@ -80,7 +80,7 @@
 				square: false,
 				disabled: false,
 				ghost: false,
-				align: "center"
+				align: "center",
 			},
 			compoundVariants: [
 				{
