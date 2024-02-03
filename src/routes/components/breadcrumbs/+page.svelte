@@ -20,7 +20,7 @@
 
 		let final = "";
 		for (let i = 0; i < words.length; i++) {
-            if (words[i].length == 0) continue;
+			if (words[i].length == 0) continue;
 			words[i] = words[i][0].toUpperCase() + words[i].slice(1);
 			final = final + words[i];
 			if (i < words.length - 1) final += " ";
@@ -29,7 +29,7 @@
 		return final;
 	};
 
-    const transformExampleCode = `<script>
+	const transformExampleCode = `<script>
     const capitalizeFirstLetter = (path: string): string => {
 		const words = path.split("-");
 
@@ -49,7 +49,7 @@
 <\/script>
     
 <BreadCrumbs/>
-<BreadCrumbs transform={capitalizeFirstLetter}/>`
+<BreadCrumbs transform={capitalizeFirstLetter}/>`;
 </script>
 
 <Text type="h3">BreadCrumbs</Text>
@@ -88,7 +88,7 @@
 <Spacer h={10} />
 <FieldSet>
 	<div class="flex flex-col gap-2 justify-start">
-		<Input bind:value={url} width="100%"/>
+		<Input bind:value={url} width="100%" />
 		<BreadCrumbsDemo {url} />
 		<BreadCrumbsDemo {url} excludePrefix="/dashboard" />
 	</div>
@@ -97,7 +97,8 @@
 			<Code
 				lang="svelte"
 				code={`<BreadCrumbs/>
-<BreadCrumbs excludePrefix="/dashboard"/>`} />
+<BreadCrumbs excludePrefix="/dashboard"/>`}
+			/>
 		</Details>
 	</div>
 </FieldSet>
@@ -106,20 +107,19 @@
 <Spacer h={5} />
 <Text>
 	Normally routes come in lowercase you can change the way the name is displayed by creating a
-	custom transform for the name. Heres a transform I wrote to capitalize the first letter of each word separated with a <code>`-`</code>.
+	custom transform for the name. Heres a transform I wrote to capitalize the first letter of each
+	word separated with a <code>`-`</code>.
 </Text>
 <Spacer h={10} />
 <FieldSet>
 	<div class="flex flex-col gap-2 justify-start">
-		<Input bind:value={url2} width="100%"/>
+		<Input bind:value={url2} width="100%" />
 		<BreadCrumbsDemo url={url2} />
 		<BreadCrumbsDemo url={url2} transform={capitalizeFirstLetter} />
 	</div>
 	<div slot="footer">
 		<Details label="Code">
-			<Code
-				lang="svelte"
-				code={transformExampleCode} />
+			<Code lang="svelte" code={transformExampleCode} />
 		</Details>
 	</div>
 </FieldSet>

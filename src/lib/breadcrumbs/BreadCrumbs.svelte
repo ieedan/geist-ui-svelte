@@ -1,12 +1,12 @@
 <script lang="ts">
 	import { page } from "$app/stores";
-    import Text from "$lib/text/Text.svelte";
+	import Text from "$lib/text/Text.svelte";
 
 	/** Can be used to exclude a path prefix EX: excludePrefix == '/dashboard' => route == '/dashboard/settings' => route == '/settings'*/
 	export let excludePrefix: string | undefined = undefined;
 	/** Allows you to apply a custom transform to the path name */
 	export let transform: (pathName: string) => string = (pathName: string) => pathName;
-    export let separator: string = "/";
+	export let separator: string = "/";
 
 	type BreadCrumb = {
 		name: string;
@@ -16,33 +16,33 @@
 	$: breadCrumbs = getBreadCrumbs($page.url.pathname);
 
 	const getBreadCrumbs = (path: string): BreadCrumb[] => {
-        let p = path;
+		let p = path;
 		if (excludePrefix) {
-            if (excludePrefix.endsWith("/")) {
-                excludePrefix = excludePrefix.slice(0, excludePrefix.length - 1);
-            }
+			if (excludePrefix.endsWith("/")) {
+				excludePrefix = excludePrefix.slice(0, excludePrefix.length - 1);
+			}
 
-            p = p.replace(excludePrefix, "");
-        }
+			p = p.replace(excludePrefix, "");
+		}
 
 		const routes = p.split("/");
 
 		let currentPath = excludePrefix != undefined ? excludePrefix : "";
 		const bcs: BreadCrumb[] = [];
-        let lastBCIndex = 0;
+		let lastBCIndex = 0;
 		for (let i = 0; i < routes.length; i++) {
 			if (routes[i] == "") {
-                if (i == routes.length - 1 && bcs[lastBCIndex] != undefined) {
-                    bcs[lastBCIndex].href = bcs[lastBCIndex].href + "/"
-                }
-                continue;
-            }
+				if (i == routes.length - 1 && bcs[lastBCIndex] != undefined) {
+					bcs[lastBCIndex].href = bcs[lastBCIndex].href + "/";
+				}
+				continue;
+			}
 			currentPath = currentPath + "/" + routes[i];
 			bcs.push({
 				name: transform(routes[i]),
 				href: currentPath,
 			});
-            lastBCIndex = bcs.length - 1;
+			lastBCIndex = bcs.length - 1;
 		}
 
 		return bcs;
