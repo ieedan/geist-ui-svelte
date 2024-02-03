@@ -1,9 +1,118 @@
 <script lang="ts">
-	import { place, type Placement } from "$lib/util/place.js";
+	import { place, type Offset, type Placement } from "$lib/util/place.js";
 	import { cn } from "$lib/util/utils.js";
+	import { cva } from "class-variance-authority";
 	import { onDestroy } from "svelte";
 
 	type DropdownEvent = "click/click" | "mouseenter/mouseleave" | "focus/blur";
+
+	const style = cva(
+		"absolute z-[1] border border-gray-100 dark:border-gray-900 bg-gray-0 dark:bg-gray-999 rounded-lg",
+		{
+			variants: {
+				placement: {
+					bottom: "",
+					"bottom-start": "",
+					"bottom-end": "",
+					top: "",
+					"top-start": "",
+					"top-end": "",
+					right: "",
+					"right-start": "",
+					"right-end": "",
+					left: "",
+					"left-start": "",
+					"left-end": "",
+				},
+				shadow: {
+					true: "shadow-md dark:shadow-gray-999",
+					false: "",
+				},
+				visible: {
+					true: "opacity-100",
+					false: "opacity-0 pointer-events-none",
+				},
+				animate: {
+					true: "transition-all",
+					false: "",
+				},
+			},
+			compoundVariants: [
+				{
+					animate: true,
+					visible: false,
+					placement: "bottom",
+					class: "-translate-y-1",
+				},
+				{
+					animate: true,
+					visible: false,
+					placement: "bottom-start",
+					class: "-translate-y-1 -translate-x-1",
+				},
+				{
+					animate: true,
+					visible: false,
+					placement: "bottom-end",
+					class: "-translate-y-1 translate-x-1",
+				},
+				{
+					animate: true,
+					visible: false,
+					placement: "top",
+					class: "translate-y-1",
+				},
+				{
+					animate: true,
+					visible: false,
+					placement: "top-start",
+					class: "translate-y-1 -translate-x-1",
+				},
+				{
+					animate: true,
+					visible: false,
+					placement: "top-end",
+					class: "translate-y-1 translate-x-1",
+				},
+				{
+					animate: true,
+					visible: false,
+					placement: "right",
+					class: "-translate-x-1",
+				},
+				{
+					animate: true,
+					visible: false,
+					placement: "right-start",
+					class: "-translate-y-1 -translate-x-1",
+				},
+				{
+					animate: true,
+					visible: false,
+					placement: "right-end",
+					class: "translate-y-1 -translate-x-1",
+				},
+				{
+					animate: true,
+					visible: false,
+					placement: "left",
+					class: "translate-x-1",
+				},
+				{
+					animate: true,
+					visible: false,
+					placement: "left-start",
+					class: "-translate-y-1 translate-x-1",
+				},
+				{
+					animate: true,
+					visible: false,
+					placement: "left-end",
+					class: "translate-y-1 translate-x-1",
+				},
+			],
+		},
+	);
 
 	export let visible: boolean = false;
 	export let shadow: boolean = false;
@@ -11,6 +120,7 @@
 	export let anchor: HTMLElement | string;
 	export let animate = true;
 	export let flip = true;
+	export let offset: Offset = { x: 0, y: 0 };
 	/** This event fires from the anchor element */
 	export let event: DropdownEvent | undefined = undefined;
 	let className: string = "";
@@ -92,7 +202,7 @@
 
 	const resize = (p: Placement) => {
 		if (anchorRef == undefined || dropDownRef == undefined) return;
-		currentPlacement = place(anchorRef, dropDownRef, { placement: p, flip });
+		currentPlacement = place(anchorRef, dropDownRef, { placement, flip, offset });
 	};
 
 	const docClick = (e: MouseEvent) => {
@@ -105,29 +215,8 @@
 <svelte:window on:resize={() => resize(placement)} on:scroll={() => resize(placement)} />
 
 <div
-	data-show={visible}
-	data-shadow={shadow}
-	data-animate={animate}
-	data-placement={currentPlacement}
 	bind:this={dropDownRef}
-	class={cn(
-		`absolute data-[show=false]:pointer-events-none z-[1]
-		data-[show=false]:opacity-0 bg-gray-0 dark:bg-gray-999 rounded-lg
-		data-[animate=true]:transition-all border border-gray-100 dark:border-gray-900
-		data-[shadow=true]:shadow-md dark:shadow-gray-999
-		data-[placement='bottom-end']:data-[show=false]:-translate-y-1
-		data-[placement='bottom-end']:data-[show=false]:translate-x-1
-		data-[placement='bottom-start']:data-[show=false]:-translate-y-1
-		data-[placement='bottom-start']:data-[show=false]:-translate-x-1
-		data-[placement='bottom']:data-[show=false]:-translate-y-1
-		data-[placement='top']:data-[show=false]:translate-y-1
-		data-[placement='top-start']:data-[show=false]:translate-y-1
-		data-[placement='top-start']:data-[show=false]:-translate-x-1
-		data-[placement='top-end']:data-[show=false]:translate-y-1
-		data-[placement='top-end']:data-[show=false]:translate-x-1`,
-		className,
-	)}
->
+	class={cn(style({ visible, shadow, animate, placement: currentPlacement }), className)}>
 	<slot />
 </div>
 

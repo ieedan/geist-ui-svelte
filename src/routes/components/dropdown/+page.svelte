@@ -51,7 +51,7 @@
 <Spacer h={10} />
 <FieldSet>
 	<div class="">
-		<button bind:this={buttonRef} on:click={() => (showDropdown = true)}>
+		<button bind:this={buttonRef} on:click={() => (showDropdown = !showDropdown)}>
 			Show dropdown
 		</button>
 		<Dropdown anchor={buttonRef} bind:visible={showDropdown} class="w-32 h-48">
@@ -67,8 +67,7 @@
 </button>
 <Dropdown anchor={buttonRef} bind:visible={showDropdown} class="w-32 h-48">
 	This is a dropdown
-</Dropdown>`}
-			/>
+</Dropdown>`} />
 		</Details>
 	</div>
 </FieldSet>
@@ -98,13 +97,18 @@
 				<Option value="top">Top</Option>
 				<Option value="top-end">Top End</Option>
 				<Option value="top-start">Top Start</Option>
+				<Option value="right">Right</Option>
+				<Option value="right-end">Right End</Option>
+				<Option value="right-start">Right Start</Option>
+				<Option value="left">Left</Option>
+				<Option value="left-end">Left End</Option>
+				<Option value="left-start">Left Start</Option>
 			</Select>
 			<Spacer h={20} />
 			<button
 				bind:this={userRef}
 				on:click={() => (showUserExample = !showUserExample)}
-				class="flex place-items-center justify-center"
-			>
+				class="flex place-items-center justify-center">
 				<User name={user.name} />
 			</button>
 			<Dropdown anchor={userRef} bind:visible={showUserExample} {placement} class="w-60">
@@ -116,15 +120,13 @@
 					<a
 						href="/dashboard"
 						class="rounded-md px-2 py-2 text-gray-500 hover:text-gray-999
-								hover:dark:text-gray-0 hover:bg-gray-50 dark:hover:bg-gray-950 transition-all"
-					>
+								hover:dark:text-gray-0 hover:bg-gray-50 dark:hover:bg-gray-950 transition-all">
 						Dashboard
 					</a>
 					<a
 						href="/dashboard/settings"
 						class="rounded-md px-2 py-2 text-gray-500 hover:text-gray-999
-								hover:dark:text-gray-0 hover:bg-gray-50 dark:hover:bg-gray-950 transition-all"
-					>
+								hover:dark:text-gray-0 hover:bg-gray-50 dark:hover:bg-gray-950 transition-all">
 						Settings
 					</a>
 					<Spacer h={5} />
@@ -133,8 +135,7 @@
 					<a
 						href="/"
 						class="rounded-md px-2 py-2 text-gray-500 hover:text-gray-999
-								hover:dark:text-gray-0 hover:bg-gray-50 dark:hover:bg-gray-950 transition-all"
-					>
+								hover:dark:text-gray-0 hover:bg-gray-50 dark:hover:bg-gray-950 transition-all">
 						Homepage
 					</a>
 					<Spacer h={5} />
@@ -202,8 +203,7 @@
 			<Button href="/dashboard/logout">Sign Out</Button>
 		</div>
 	</div>
-</Dropdown>`}
-			/>
+</Dropdown>`} />
 		</Details>
 	</div>
 </FieldSet>
@@ -214,7 +214,7 @@
 <Spacer h={10} />
 <FieldSet>
 	<div class="">
-		<button bind:this={buttonRef2} on:click={() => (showDropdownExample2 = true)}>
+		<button bind:this={buttonRef2} on:click={() => (showDropdownExample2 = !showDropdownExample2)}>
 			Show dropdown
 		</button>
 		<Dropdown
@@ -222,8 +222,7 @@
 			bind:visible={showDropdownExample2}
 			class="w-32 h-48"
 			placement="bottom"
-			shadow
-		>
+			shadow>
 			This is a dropdown
 		</Dropdown>
 	</div>
@@ -241,8 +240,7 @@
 	placement="bottom"
 	shadow>
 	This is a dropdown
-</Dropdown>`}
-			/>
+</Dropdown>`} />
 		</Details>
 	</div>
 </FieldSet>
@@ -256,15 +254,14 @@
 <Spacer h={10} />
 <FieldSet>
 	<div class="">
-		<button bind:this={buttonRef3} on:click={() => (showDropdownExample3 = true)}>
+		<button bind:this={buttonRef3} on:click={() => (showDropdownExample3 = !showDropdownExample3)}>
 			Show dropdown
 		</button>
 		<Dropdown
 			anchor={buttonRef3}
 			bind:visible={showDropdownExample3}
 			class="w-32 h-48"
-			placement="bottom"
-		>
+			placement="bottom">
 			This is a dropdown
 		</Dropdown>
 	</div>
@@ -282,8 +279,7 @@
 	placement="bottom"
 	shadow>
 	This is a dropdown
-</Dropdown>`}
-			/>
+</Dropdown>`} />
 		</Details>
 	</div>
 </FieldSet>
@@ -315,8 +311,7 @@
 	class="w-32 h-48" 
 	placement="bottom">
 	This is a dropdown
-</Dropdown>`}
-			/>
+</Dropdown>`} />
 		</Details>
 	</div>
 </FieldSet>
@@ -343,8 +338,7 @@
 			anchor="#hover-id"
 			event="mouseenter/mouseleave"
 			class="w-32 h-48"
-			placement="bottom"
-		>
+			placement="bottom">
 			This is a dropdown
 		</Dropdown>
 	</div>
@@ -380,8 +374,86 @@
 	class="w-32 h-48"
 	placement="bottom">
 	This is a dropdown
-</Dropdown>`}
-			/>
+</Dropdown>`} />
+		</Details>
+	</div>
+</FieldSet>
+<Spacer h={30} />
+<Text type="h4">Animation</Text>
+<Spacer h={5} />
+<Text>
+	Because dropdown keeps track of the position the drop down ends up at it can animate the in and
+	out. You can disable this using the <code>`animate`</code> attribute.
+</Text>
+<Spacer h={10} />
+<FieldSet>
+	<div class="flex place-items-center flex-wrap gap-4">
+		<button id="animate-id"> Click To Show </button>
+		<Dropdown
+			anchor="#animate-id"
+			event="click/click"
+			class="w-32 h-48"
+			animate={false}>
+			This is a dropdown
+		</Dropdown>
+	</div>
+	<div slot="footer">
+		<Details label="Code">
+			<Code
+				lang="svelte"
+				edits={[
+					{ number: 6, type: "add" },
+				]}
+				code={`<button id="animate-id"> Click To Show </button>
+<Dropdown
+	anchor="#animate-id"
+	event="click/click"
+	class="w-32 h-48"
+	animate={false}>
+	This is a dropdown
+</Dropdown>`} />
+		</Details>
+	</div>
+</FieldSet>
+<Spacer h={30} />
+<Text type="h4">Offsets</Text>
+<Spacer h={5} />
+<Text>
+	You can use offsets to add space between the anchor and the dropdown.
+</Text>
+<Spacer h={10} />
+<FieldSet>
+	<div class="flex place-items-center justify-center flex-wrap gap-4">
+		<Button id="offset-id">
+			{`offset={{ x: 10, y: 10 }}`}
+		</Button>
+		<Dropdown
+			anchor="#offset-id"
+			event="click/click"
+			class="w-32 h-48" 
+			placement="bottom"
+			offset={{ x: 10, y: 10 }}>
+			This is a dropdown
+		</Dropdown>
+	</div>
+	<div slot="footer">
+		<Details label="Code">
+			<Code
+				lang="svelte"
+				edits={[
+					{ number: 6, type: "add" },
+				]}
+				code={`<Button id="offset-id">
+	{\`offset={{ x: 10, y: 10 }}\`}
+</Button>
+<Dropdown
+	anchor="#offset-id"
+	event="click/click"
+	class="w-32 h-48" 
+	placement="bottom"
+	offset={{ x: 10, y: 10 }}>
+	This is a dropdown
+</Dropdown>`} />
 		</Details>
 	</div>
 </FieldSet>
