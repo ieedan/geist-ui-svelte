@@ -103,20 +103,17 @@
 	<Header sticky>
 		<div
 			class="flex justify-between place-items-center w-full
-			px-6 max-w-5xl py-2 md:place-items-stretch md:justify-start"
-		>
+			px-6 max-w-5xl py-2 md:place-items-stretch md:justify-start">
 			<div class="col-start-1 flex place-items-center justify-start">
 				<a href="/" class="flex place-items-center gap-2">
 					<img
 						src={favicon}
 						alt="geist-ui-svelte logo"
-						class="size-6 rounded-full border border-gray-0 dark:border-gray-900"
-					/>
+						class="size-6 rounded-full border border-gray-0 dark:border-gray-900" />
 					<Text type="h5" noWrap
 						>geist-ui-svelte <Text class="!hidden sm:!inline-block" type="small"
 							>v{process.env.PACKAGE_VERSION}</Text
-						></Text
-					>
+						></Text>
 				</a>
 			</div>
 			<div class="hidden md:flex place-items-center w-full justify-center md:col-start-2">
@@ -129,8 +126,7 @@
 			</div>
 			<div class="md:col-start-3 hidden md:flex gap-2 place-items-center justify-end">
 				<div
-					class="hidden lg:flex place-items-center gap-1 text-gray-300 dark:text-gray-700 hover:cursor-help px-2"
-				>
+					class="hidden lg:flex place-items-center gap-1 text-gray-300 dark:text-gray-700 hover:cursor-help px-2">
 					<CommandIcon size={16} />
 					<Text color="secondary">K</Text>
 				</div>
@@ -138,8 +134,7 @@
 					href="https://github.com/ieedan/geist-ui-svelte"
 					target="_blank"
 					square
-					size="md"
-				>
+					size="md">
 					<GithubIcon size={16} />
 				</Button>
 				<ModeSelector border />
@@ -156,8 +151,7 @@
 <Page bind:visible={menuVisible}>
 	<div class="flex flex-col">
 		<div
-			class="flex w-full place-items-center justify-between px-6 py-4 border-b-transparent border-b"
-		>
+			class="flex w-full place-items-center justify-between px-6 py-4 border-b-transparent border-b">
 			<a href="/"><Text type="h5">geist-ui-svelte</Text></a>
 			<Button color="abort" on:click={() => (menuVisible = false)}>
 				<MenuIcon size={18} />
@@ -196,8 +190,7 @@
 				href="https://github.com/ieedan/geist-ui-svelte"
 				target="_blank"
 				square
-				size="md"
-			>
+				size="md">
 				<GithubIcon size={16} />
 			</Button>
 			<ModeSelector border />
@@ -208,15 +201,13 @@
 	on:closed={() => (search = "")}
 	on:opened={() => searchRef.focus()}
 	bind:visible={searchVisible}
-	class="md:w-[500px] md:h-fit py-2 px-2 md:top-1/4 md:translate-y-0"
->
+	class="md:w-[500px] md:h-fit py-2 px-2 md:top-1/4 md:translate-y-0">
 	<Search bind:this={searchRef} placeholder="Search components..." bind:value={search} />
-	{#if foundComponents.length > 0}
-		<Spacer h={8} />
-		<div
-			bind:this={searchDivRef}
-			class="flex flex-col pt-2 border-t border-gray-100 dark:border-gray-900"
-		>
+	<Spacer h={8} />
+	<div
+		bind:this={searchDivRef}
+		class="flex flex-col pt-2 border-t border-gray-100 dark:border-gray-900">
+		{#if foundComponents.length > 0}
 			{#each foundComponents as { name, slug }, index (name)}
 				<a
 					data-key={name}
@@ -227,12 +218,45 @@
 					dark:hover:bg-gray-950 text-gray-400 hover:text-gray-999
 					rounded-lg transition-all flex place-items-center gap-2 data-[selected=true]:text-gray-999
 					dark:text-gray-600 dark:hover:text-gray-0 dark:data-[selected=true]:text-gray-0"
-					href={slug}
-				>
+					href={slug}>
 					<SvelteIcon size={16} />
 					{name}
 				</a>
 			{/each}
-		</div>
-	{/if}
+		{:else if search == ""}
+			<a
+				data-selected={true}
+				on:click={() => (searchVisible = false)}
+				class="py-3 px-3 data-[selected=true]:dark:bg-gray-950
+			data-[selected=true]:bg-gray-50 hover:bg-gray-50
+			dark:hover:bg-gray-950 text-gray-400 hover:text-gray-999
+			rounded-lg transition-all flex place-items-center gap-2 data-[selected=true]:text-gray-999
+			dark:text-gray-600 dark:hover:text-gray-0 dark:data-[selected=true]:text-gray-0"
+				href="/guide">
+				Guide
+			</a>
+			<a
+				data-selected={false}
+				on:click={() => (searchVisible = false)}
+				class="py-3 px-3 data-[selected=true]:dark:bg-gray-950
+			data-[selected=true]:bg-gray-50 hover:bg-gray-50
+			dark:hover:bg-gray-950 text-gray-400 hover:text-gray-999
+			rounded-lg transition-all flex place-items-center gap-2 data-[selected=true]:text-gray-999
+			dark:text-gray-600 dark:hover:text-gray-0 dark:data-[selected=true]:text-gray-0"
+				href="/components">
+				Components
+			</a>
+			<a
+				data-selected={false}
+				on:click={() => (searchVisible = false)}
+				class="py-3 px-3 data-[selected=true]:dark:bg-gray-950
+			data-[selected=true]:bg-gray-50 hover:bg-gray-50
+			dark:hover:bg-gray-950 text-gray-400 hover:text-gray-999
+			rounded-lg transition-all flex place-items-center gap-2 data-[selected=true]:text-gray-999
+			dark:text-gray-600 dark:hover:text-gray-0 dark:data-[selected=true]:text-gray-0"
+				href="/examples">
+				Examples
+			</a>
+		{/if}
+	</div>
 </Modal>
