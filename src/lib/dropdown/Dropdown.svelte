@@ -41,74 +41,79 @@
 				{
 					animate: true,
 					visible: false,
+					class: "scale-95"
+				},
+				{
+					animate: true,
+					visible: false,
 					placement: "bottom",
-					class: "-translate-y-1",
+					class: "-translate-y-2",
 				},
 				{
 					animate: true,
 					visible: false,
 					placement: "bottom-start",
-					class: "-translate-y-1 -translate-x-1",
+					class: "-translate-y-2 -translate-x-2",
 				},
 				{
 					animate: true,
 					visible: false,
 					placement: "bottom-end",
-					class: "-translate-y-1 translate-x-1",
+					class: "-translate-y-2 translate-x-2",
 				},
 				{
 					animate: true,
 					visible: false,
 					placement: "top",
-					class: "translate-y-1",
+					class: "translate-y-2",
 				},
 				{
 					animate: true,
 					visible: false,
 					placement: "top-start",
-					class: "translate-y-1 -translate-x-1",
+					class: "translate-y-2 -translate-x-2",
 				},
 				{
 					animate: true,
 					visible: false,
 					placement: "top-end",
-					class: "translate-y-1 translate-x-1",
+					class: "translate-y-2 translate-x-2",
 				},
 				{
 					animate: true,
 					visible: false,
 					placement: "right",
-					class: "-translate-x-1",
+					class: "-translate-x-2",
 				},
 				{
 					animate: true,
 					visible: false,
 					placement: "right-start",
-					class: "-translate-y-1 -translate-x-1",
+					class: "-translate-y-2 -translate-x-2",
 				},
 				{
 					animate: true,
 					visible: false,
 					placement: "right-end",
-					class: "translate-y-1 -translate-x-1",
+					class: "translate-y-2 -translate-x-2",
 				},
 				{
 					animate: true,
 					visible: false,
 					placement: "left",
-					class: "translate-x-1",
+					class: "translate-x-2",
 				},
 				{
 					animate: true,
 					visible: false,
 					placement: "left-start",
-					class: "-translate-y-1 translate-x-1",
+					class: "-translate-y-2 translate-x-2",
 				},
 				{
 					animate: true,
 					visible: false,
 					placement: "left-end",
-					class: "translate-y-1 translate-x-1",
+					class: "translate-y-2 translate-x-2",
 				},
 			],
 		},
@@ -125,15 +130,17 @@
 	export let event: DropdownEvent | undefined = undefined;
 	let className: string = "";
 	export { className as class };
+	export let ref: HTMLDivElement | undefined = undefined;
+	export let width: string | undefined = undefined;
+	export let height: string | undefined = undefined;
 
-	let dropDownRef: HTMLDivElement;
 	let currentPlacement: Placement;
 	let anchorRef: HTMLElement;
 
 	let hasCreatedListener = false;
 
 	$: {
-		if (anchor != undefined && dropDownRef) {
+		if (anchor != undefined && ref) {
 			if (typeof anchor == "string") {
 				const element = document.querySelector(anchor) as HTMLElement;
 				if (!element)
@@ -165,7 +172,7 @@
 			hasCreatedListener = true;
 		}
 
-		if (anchorRef != undefined && dropDownRef != undefined) {
+		if (anchorRef != undefined && ref != undefined) {
 			resize(placement);
 		}
 	}
@@ -201,21 +208,22 @@
 	});
 
 	const resize = (p: Placement) => {
-		if (anchorRef == undefined || dropDownRef == undefined) return;
-		currentPlacement = place(anchorRef, dropDownRef, { placement, flip, offset });
+		if (anchorRef == undefined || ref == undefined) return;
+		currentPlacement = place(anchorRef, ref, { placement: p, flip, offset });
 	};
 
 	const docClick = (e: MouseEvent) => {
 		const target = e.target as Node;
-		if (!dropDownRef.contains(target) && !anchorRef.contains(target)) visible = false;
+		if (!ref?.contains(target) && !anchorRef.contains(target)) visible = false;
 	};
 </script>
 
 <svelte:document on:click={docClick} />
 <svelte:window on:resize={() => resize(placement)} on:scroll={() => resize(placement)} />
 
-<div
-	bind:this={dropDownRef}
+<div {...$$restProps}
+	bind:this={ref}
+	style="{width ? `width: ${width};` : ""} {height ? `height: ${height};` : ""}"
 	class={cn(style({ visible, shadow, animate, placement: currentPlacement }), className)}>
 	<slot />
 </div>

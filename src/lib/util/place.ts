@@ -67,7 +67,7 @@ type Maxes = {
 
 const getMaxes = (element: HTMLElement): Maxes => {
 	const maxLeft = window.innerWidth + window.scrollX - (element.offsetWidth + 5);
-	const maxTop = window.innerHeight + window.scrollY - (element.offsetHeight + 5);
+	const maxTop = window.innerHeight + window.scrollY - (element.offsetHeight + 80);
 
 	return { left: maxLeft, top: maxTop };
 };

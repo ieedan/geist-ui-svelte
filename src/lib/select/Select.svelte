@@ -6,6 +6,7 @@
 	import { createEventDispatcher, onMount } from "svelte";
 	import type { HTMLOptionAttributes } from "svelte/elements";
 	import XIcon from "$lib/icons/XIcon.svelte";
+	import Dropdown from "$lib/dropdown/Dropdown.svelte";
 	export let initialShow = false;
 	let show = initialShow;
 
@@ -89,12 +90,6 @@
 		show = false;
 	};
 
-	const docClick = (e: MouseEvent) => {
-		if (buttonRef.contains(e.target as Node)) return;
-
-		hide();
-	};
-
 	$: {
 		if (dropDownRef) {
 			if (!multiSelect) {
@@ -155,6 +150,7 @@
 			dispatch("change", { value: toArray(valuesMap, (k) => k) });
 		} else {
 			dispatch("change", { value: toArray(valuesMap, (k) => k)[0] });
+			show = false;
 		}
 	};
 
@@ -270,7 +266,7 @@
 	};
 
 	onMount(() => {
-		dropDownRef.style.width = buttonRef.offsetWidth + "px";
+		width = buttonRef.offsetWidth + "px";
 		allowedOptionsWidth = buttonRef.offsetWidth - 38;
 
 		const observer = new MutationObserver(handleMutation);
@@ -279,11 +275,6 @@
 
 		// Observe the list for content changes
 		observer.observe(dropDownRef, config);
-
-		const popper = createPopper(buttonRef, dropDownRef, {
-			placement: "bottom-end",
-			modifiers: [{ name: "offset", options: { offset: [0, 2] } }],
-		});
 
 		dropDownRef.addEventListener("click", selected);
 
@@ -318,19 +309,16 @@
 		preMount = false;
 
 		return () => {
-			popper.destroy();
 			dropDownRef.removeEventListener("click", selected);
 			observer.disconnect();
 		};
 	});
 </script>
 
-<svelte:document on:click={docClick} />
 <svelte:window
 	on:resize={() => {
-		dropDownRef.style.width = buttonRef.offsetWidth + "px";
-	}}
-/>
+		width = buttonRef.offsetWidth + "px";
+	}} />
 
 <button
 	type="button"
@@ -340,10 +328,9 @@
 	{disabled}
 	data-place-holder={value == undefined || (multiSelect && value && value.length == 0)}
 	class="flex justify-between h-9 place-items-center w-full bg-gray-0 dark:bg-gray-999 py-1 pr-1 border focus:border-gray-200 focus:dark:border-gray-800
-  disabled:bg-gray-50 dark:disabled:bg-gray-925 disabled:hover:cursor-not-allowed transition-all enabled:hover:border-gray-999
-  border-gray-100 dark:border-gray-900 rounded-md data-[place-holder=true]:text-gray-300 enabled:hover:dark:border-gray-0
-  data-[place-holder=true]:dark:text-gray-700 disabled:text-gray-300 dark:disabled:text-gray-700"
->
+  disabled:bg-gray-50 dark:disabled:bg-gray-925 disabled:hover:cursor-not-allowed transition-all enabled:hover:border-gray-200
+  border-gray-100 dark:border-gray-900 rounded-md data-[place-holder=true]:text-gray-300 enabled:hover:dark:border-gray-800
+  data-[place-holder=true]:dark:text-gray-700 disabled:text-gray-300 dark:disabled:text-gray-700">
 	<div class="px-2">
 		{#if multiSelect}
 			{#if value && value.length == 0}
@@ -351,13 +338,11 @@
 			{:else}
 				<ul
 					style="width: {allowedOptionsWidth}px;"
-					class="flex place-items-center gap-1 max-w-full overflow-x-auto scrollbar-hide"
-				>
+					class="flex place-items-center gap-1 max-w-full overflow-x-auto scrollbar-hide">
 					{#each valuesMap as [v, content] (v)}
 						<div
 							class="flex justify-between place-items-center bg-gray-50 dark:bg-gray-950
-							 px-1 rounded-md gap-1 text-nowrap whitespace-nowrap"
-						>
+							 px-1 rounded-md gap-1 text-nowrap whitespace-nowrap">
 							{#if allowXSS}
 								{@html content}
 							{:else}
@@ -370,8 +355,7 @@
 									findAndSelect(v);
 								}}
 								class="flex place-items-center justify-center text-gray-500 disabled:hover:cursor-not-allowed enabled:hover:text-gray-999
-							dark:text-gray-500 dark:enabled:hover:text-gray-0 transition-all"
-							>
+							dark:text-gray-500 dark:enabled:hover:text-gray-0 transition-all">
 								<XIcon size={12} />
 							</button>
 						</div>
@@ -390,26 +374,29 @@
 		<div
 			data-show={show}
 			data-rotate={iconRotation}
-			class="data-[rotate=true]:data-[show=true]:rotate-180 transition-all dark:text-gray-700 text-gray-300 flex place-items-center justify-center"
-		>
-			<slot name="icon"><ChevronIcon rotation="90deg" size={16} /></slot>
+			class="data-[rotate=true]:data-[show=true]:rotate-180 transition-all dark:text-gray-700 
+			text-gray-300 flex place-items-center justify-center">
+			<slot name="icon">
+				<ChevronIcon rotation="90deg" size={16} />
+			</slot>
 		</div>
 	{/if}
 </button>
-<div
+<Dropdown
+	anchor={buttonRef}
+	{shadow}
+	bind:visible={show}
+	placement="bottom"
+	aria-readonly={readonly}
+	offset={{ x: 0, y: 2}}
+	{width}
 	role="listbox"
 	aria-label="listbox dialog"
-	data-shadow={shadow}
-	data-show={show}
-	aria-readonly={readonly}
-	style="width: {width}; max-height: {maxHeight}px;"
-	bind:this={dropDownRef}
-	class="absolute bg-gray-0 dark:bg-gray-999 border border-gray-100 dark:border-gray-900 z-[1] transition-all
-         rounded-md data-[show=false]:opacity-0 data-[show=false]:pointer-events-none data-[shadow=true]:shadow-sm
-		 dark:shadow-gray-999 overflow-y-auto group"
->
-	<slot />
-</div>
+	class="absolute overflow-y-auto group">
+	<div bind:this={dropDownRef} style="max-height: {maxHeight}px;" class="h-full w-full">
+		<slot />
+	</div>
+</Dropdown>
 
 <!--
 @component
