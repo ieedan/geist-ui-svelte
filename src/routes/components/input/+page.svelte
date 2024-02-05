@@ -319,7 +319,7 @@ placeholder="https://github"/>`}
 	</div>
 </FieldSet>
 <Spacer h={30} />
-<Text type="h4">EVERYTHING</Text>
+<Text type="h4">Kitchen Sink</Text>
 <Spacer h={5} />
 <Text>
 	While not recommended you can put pretty every gadget on an input here is what that looks like.
