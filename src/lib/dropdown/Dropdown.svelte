@@ -177,6 +177,7 @@
 		if (anchorRef != undefined && ref != undefined && resizeObserver != undefined) {
 			resize(placement);
 			resizeObserver.observe(anchorRef);
+			resizeObserver.observe(ref);
 		}
 	}
 
@@ -212,8 +213,6 @@
 
 	const resize = (p: Placement) => {
 		if (anchorRef == undefined || ref == undefined) return;
-		console.log('resize');
-		
 		currentPlacement = place(anchorRef, ref, { placement: p, flip, offset });
 	};
 

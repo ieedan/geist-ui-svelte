@@ -142,7 +142,7 @@
 				>
 					<GithubIcon size={16} />
 				</Button>
-				<!-- <ModeSelector border /> -->
+				<ModeSelector border />
 			</div>
 			<div class="flex place-items-center md:hidden col-start-2">
 				<Button color="abort" on:click={() => (menuVisible = true)}>
@@ -200,7 +200,7 @@
 			>
 				<GithubIcon size={16} />
 			</Button>
-			<!-- <ModeSelector border /> -->
+			<ModeSelector border />
 		</div>
 	</div>
 </Page>

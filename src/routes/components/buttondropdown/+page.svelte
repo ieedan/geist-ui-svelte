@@ -43,8 +43,7 @@
 		</Details>
 	</div>
 </FieldSet>
-<Spacer h={1000}/>
-<!-- <Spacer h={30} />
+<Spacer h={30} />
 <Text type="h4">Disabled</Text>
 <Spacer h={10} />
 <FieldSet>
@@ -117,4 +116,4 @@
 			/>
 		</Details>
 	</div>
-</FieldSet> -->
+</FieldSet>
