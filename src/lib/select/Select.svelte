@@ -395,7 +395,11 @@
 	aria-label="listbox dialog"
 	class="group"
 >
-	<div bind:this={dropDownRef} style="max-height: {maxHeight}px;" class="h-full w-full overflow-y-auto">
+	<div
+		bind:this={dropDownRef}
+		style="max-height: {maxHeight}px;"
+		class="h-full w-full overflow-y-auto"
+	>
 		<slot />
 	</div>
 </Dropdown>

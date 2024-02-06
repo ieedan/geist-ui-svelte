@@ -58,7 +58,14 @@
 	</button>
 </div>
 
-<Dropdown offset={{ x: 0, y: 2 }} anchor={ref} {width} {shadow} bind:visible={show} placement="bottom-end">
+<Dropdown
+	offset={{ x: 0, y: 2 }}
+	anchor={ref}
+	{width}
+	{shadow}
+	bind:visible={show}
+	placement="bottom-end"
+>
 	<slot />
 </Dropdown>
 

@@ -100,7 +100,7 @@ const placeBottomEnd = (
 	guard: number = 0,
 ): Placement => {
 	const maxes = getMaxes(element);
-	
+
 	const top = anchor.offsetTop + anchor.offsetHeight + options.offset.y;
 	if (top > maxes.top && options.flip && guard == 0)
 		return placeTopEnd(anchor, element, options, 1);

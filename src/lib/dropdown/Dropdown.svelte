@@ -239,7 +239,8 @@
 	{...$$restProps}
 	bind:this={ref}
 	style="{width ? `width: ${width};` : ''} {height ? `height: ${height};` : ''}"
-	class={cn(style({ visible, shadow, animate, placement: currentPlacement }), className)}>
+	class={cn(style({ visible, shadow, animate, placement: currentPlacement }), className)}
+>
 	<slot />
 </div>
 
