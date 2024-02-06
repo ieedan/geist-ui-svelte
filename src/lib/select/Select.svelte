@@ -1,11 +1,11 @@
 <script lang="ts">
 	import ChevronIcon from "$lib/icons/ChevronIcon.svelte";
 	import findAncestor from "$lib/util/find-ancestor.js";
-	import { createPopper } from "@popperjs/core";
 	import { toArray } from "$lib/util/to-array.js";
 	import { createEventDispatcher, onMount } from "svelte";
 	import type { HTMLOptionAttributes } from "svelte/elements";
 	import XIcon from "$lib/icons/XIcon.svelte";
+	import Dropdown from "$lib/dropdown/Dropdown.svelte";
 	export let initialShow = false;
 	let show = initialShow;
 
@@ -85,16 +85,6 @@
 		show = !show;
 	};
 
-	const hide = () => {
-		show = false;
-	};
-
-	const docClick = (e: MouseEvent) => {
-		if (buttonRef.contains(e.target as Node)) return;
-
-		hide();
-	};
-
 	$: {
 		if (dropDownRef) {
 			if (!multiSelect) {
@@ -155,6 +145,7 @@
 			dispatch("change", { value: toArray(valuesMap, (k) => k) });
 		} else {
 			dispatch("change", { value: toArray(valuesMap, (k) => k)[0] });
+			show = false;
 		}
 	};
 
@@ -270,7 +261,7 @@
 	};
 
 	onMount(() => {
-		dropDownRef.style.width = buttonRef.offsetWidth + "px";
+		width = buttonRef.offsetWidth + "px";
 		allowedOptionsWidth = buttonRef.offsetWidth - 38;
 
 		const observer = new MutationObserver(handleMutation);
@@ -279,11 +270,6 @@
 
 		// Observe the list for content changes
 		observer.observe(dropDownRef, config);
-
-		const popper = createPopper(buttonRef, dropDownRef, {
-			placement: "bottom-end",
-			modifiers: [{ name: "offset", options: { offset: [0, 2] } }],
-		});
 
 		dropDownRef.addEventListener("click", selected);
 
@@ -318,17 +304,15 @@
 		preMount = false;
 
 		return () => {
-			popper.destroy();
 			dropDownRef.removeEventListener("click", selected);
 			observer.disconnect();
 		};
 	});
 </script>
 
-<svelte:document on:click={docClick} />
 <svelte:window
 	on:resize={() => {
-		dropDownRef.style.width = buttonRef.offsetWidth + "px";
+		width = buttonRef.offsetWidth + "px";
 	}}
 />
 
@@ -340,8 +324,8 @@
 	{disabled}
 	data-place-holder={value == undefined || (multiSelect && value && value.length == 0)}
 	class="flex justify-between h-9 place-items-center w-full bg-gray-0 dark:bg-gray-999 py-1 pr-1 border focus:border-gray-200 focus:dark:border-gray-800
-  disabled:bg-gray-50 dark:disabled:bg-gray-925 disabled:hover:cursor-not-allowed transition-all enabled:hover:border-gray-999
-  border-gray-100 dark:border-gray-900 rounded-md data-[place-holder=true]:text-gray-300 enabled:hover:dark:border-gray-0
+  disabled:bg-gray-50 dark:disabled:bg-gray-925 disabled:hover:cursor-not-allowed transition-all enabled:hover:border-gray-200
+  border-gray-100 dark:border-gray-900 rounded-md data-[place-holder=true]:text-gray-300 enabled:hover:dark:border-gray-800
   data-[place-holder=true]:dark:text-gray-700 disabled:text-gray-300 dark:disabled:text-gray-700"
 >
 	<div class="px-2">
@@ -390,26 +374,35 @@
 		<div
 			data-show={show}
 			data-rotate={iconRotation}
-			class="data-[rotate=true]:data-[show=true]:rotate-180 transition-all dark:text-gray-700 text-gray-300 flex place-items-center justify-center"
+			class="data-[rotate=true]:data-[show=true]:rotate-180 transition-all dark:text-gray-700
+			text-gray-300 flex place-items-center justify-center"
 		>
-			<slot name="icon"><ChevronIcon rotation="90deg" size={16} /></slot>
+			<slot name="icon">
+				<ChevronIcon rotation="90deg" size={16} />
+			</slot>
 		</div>
 	{/if}
 </button>
-<div
+<Dropdown
+	anchor={buttonRef}
+	{shadow}
+	bind:visible={show}
+	placement="bottom"
+	aria-readonly={readonly}
+	offset={{ x: 0, y: 2 }}
+	{width}
 	role="listbox"
 	aria-label="listbox dialog"
-	data-shadow={shadow}
-	data-show={show}
-	aria-readonly={readonly}
-	style="width: {width}; max-height: {maxHeight}px;"
-	bind:this={dropDownRef}
-	class="absolute bg-gray-0 dark:bg-gray-999 border border-gray-100 dark:border-gray-900 z-[1] transition-all
-         rounded-md data-[show=false]:opacity-0 data-[show=false]:pointer-events-none data-[shadow=true]:shadow-sm
-		 dark:shadow-gray-999 overflow-y-auto group"
+	class="group"
 >
-	<slot />
-</div>
+	<div
+		bind:this={dropDownRef}
+		style="max-height: {maxHeight}px;"
+		class="h-full w-full overflow-y-auto"
+	>
+		<slot />
+	</div>
+</Dropdown>
 
 <!--
 @component

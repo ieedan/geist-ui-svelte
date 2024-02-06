@@ -1,6 +1,6 @@
 {
 	"name": "geist-ui-svelte",
-	"version": "0.6.3",
+	"version": "0.6.4",
 	"author": {
 		"name": "Aidan Bleser",
 		"url": "https://aidanbleser.com"
@@ -351,7 +351,6 @@
 	"types": "./dist/index.d.ts",
 	"type": "module",
 	"dependencies": {
-		"@popperjs/core": "^2.11.8",
 		"@sveltejs/kit": "^2.5.0",
 		"@vercel/analytics": "^1.1.2",
 		"@vercel/speed-insights": "^1.0.3",

@@ -16,6 +16,7 @@
 	 */
 	export let debounce: number = 0;
 	export let clearable: boolean = false;
+	export let noBorder = false;
 
 	let inputRef: HTMLInputElement;
 
@@ -39,9 +40,10 @@
 </script>
 
 <search
-	class="flex place-items-center border border-gray-100 transition-all
+	data-border={!noBorder}
+	class="flex place-items-center border-gray-100 transition-all
 dark:border-gray-900 text-gray-500 rounded-lg px-2 focus-within:border-gray-200
-focus-within:dark:border-gray-800 w-full"
+focus-within:dark:border-gray-800 w-full data-[border=true]:border"
 >
 	{#if !noIcon}
 		<SearchIcon size={16} />

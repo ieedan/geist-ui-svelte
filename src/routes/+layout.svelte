@@ -211,12 +211,12 @@
 	class="md:w-[500px] md:h-fit py-2 px-2 md:top-1/4 md:translate-y-0"
 >
 	<Search bind:this={searchRef} placeholder="Search components..." bind:value={search} />
-	{#if foundComponents.length > 0}
-		<Spacer h={8} />
-		<div
-			bind:this={searchDivRef}
-			class="flex flex-col pt-2 border-t border-gray-100 dark:border-gray-900"
-		>
+	<Spacer h={8} />
+	<div
+		bind:this={searchDivRef}
+		class="flex flex-col pt-2 border-t border-gray-100 dark:border-gray-900"
+	>
+		{#if foundComponents.length > 0}
 			{#each foundComponents as { name, slug }, index (name)}
 				<a
 					data-key={name}
@@ -233,6 +233,43 @@
 					{name}
 				</a>
 			{/each}
-		</div>
-	{/if}
+		{:else if search == ""}
+			<a
+				data-selected={true}
+				on:click={() => (searchVisible = false)}
+				class="py-3 px-3 data-[selected=true]:dark:bg-gray-950
+			data-[selected=true]:bg-gray-50 hover:bg-gray-50
+			dark:hover:bg-gray-950 text-gray-400 hover:text-gray-999
+			rounded-lg transition-all flex place-items-center gap-2 data-[selected=true]:text-gray-999
+			dark:text-gray-600 dark:hover:text-gray-0 dark:data-[selected=true]:text-gray-0"
+				href="/guide"
+			>
+				Guide
+			</a>
+			<a
+				data-selected={false}
+				on:click={() => (searchVisible = false)}
+				class="py-3 px-3 data-[selected=true]:dark:bg-gray-950
+			data-[selected=true]:bg-gray-50 hover:bg-gray-50
+			dark:hover:bg-gray-950 text-gray-400 hover:text-gray-999
+			rounded-lg transition-all flex place-items-center gap-2 data-[selected=true]:text-gray-999
+			dark:text-gray-600 dark:hover:text-gray-0 dark:data-[selected=true]:text-gray-0"
+				href="/components"
+			>
+				Components
+			</a>
+			<a
+				data-selected={false}
+				on:click={() => (searchVisible = false)}
+				class="py-3 px-3 data-[selected=true]:dark:bg-gray-950
+			data-[selected=true]:bg-gray-50 hover:bg-gray-50
+			dark:hover:bg-gray-950 text-gray-400 hover:text-gray-999
+			rounded-lg transition-all flex place-items-center gap-2 data-[selected=true]:text-gray-999
+			dark:text-gray-600 dark:hover:text-gray-0 dark:data-[selected=true]:text-gray-0"
+				href="/examples"
+			>
+				Examples
+			</a>
+		{/if}
+	</div>
 </Modal>

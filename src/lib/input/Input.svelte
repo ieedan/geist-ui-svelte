@@ -37,7 +37,15 @@
 	export const focus = () => inputRef.focus();
 
 	const change = (e: Event) => {
-		value = (e.target as HTMLInputElement).value;
+		const target = e.target as HTMLInputElement;
+		if (!target) return;
+
+		if (target.type == "number") {
+			value = parseFloat(target.value);
+		} else {
+			value = target.value;
+		}
+
 		dispatch("change", { value });
 	};
 
