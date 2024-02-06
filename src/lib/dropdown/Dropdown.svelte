@@ -2,7 +2,7 @@
 	import { place, type Offset, type Placement } from "$lib/util/place.js";
 	import { cn } from "$lib/util/utils.js";
 	import { cva } from "class-variance-authority";
-	import { onDestroy } from "svelte";
+	import { onDestroy, onMount } from "svelte";
 
 	type DropdownEvent = "click/click" | "mouseenter/mouseleave" | "focus/blur";
 
@@ -41,7 +41,7 @@
 				{
 					animate: true,
 					visible: false,
-					class: "scale-95"
+					class: "scale-95",
 				},
 				{
 					animate: true,
@@ -134,6 +134,8 @@
 	export let width: string | undefined = undefined;
 	export let height: string | undefined = undefined;
 
+	let resizeObserver: ResizeObserver;
+
 	let currentPlacement: Placement;
 	let anchorRef: HTMLElement;
 
@@ -172,8 +174,9 @@
 			hasCreatedListener = true;
 		}
 
-		if (anchorRef != undefined && ref != undefined) {
+		if (anchorRef != undefined && ref != undefined && resizeObserver != undefined) {
 			resize(placement);
+			resizeObserver.observe(anchorRef);
 		}
 	}
 
@@ -209,6 +212,8 @@
 
 	const resize = (p: Placement) => {
 		if (anchorRef == undefined || ref == undefined) return;
+		console.log('resize');
+		
 		currentPlacement = place(anchorRef, ref, { placement: p, flip, offset });
 	};
 
@@ -216,14 +221,25 @@
 		const target = e.target as Node;
 		if (!ref?.contains(target) && !anchorRef.contains(target)) visible = false;
 	};
+
+	onMount(() => {
+		resizeObserver = new ResizeObserver(() => {
+			resize(placement);
+		});
+
+		return () => {
+			resizeObserver.disconnect();
+		};
+	});
 </script>
 
 <svelte:document on:click={docClick} />
 <svelte:window on:resize={() => resize(placement)} on:scroll={() => resize(placement)} />
 
-<div {...$$restProps}
+<div
+	{...$$restProps}
 	bind:this={ref}
-	style="{width ? `width: ${width};` : ""} {height ? `height: ${height};` : ""}"
+	style="{width ? `width: ${width};` : ''} {height ? `height: ${height};` : ''}"
 	class={cn(style({ visible, shadow, animate, placement: currentPlacement }), className)}>
 	<slot />
 </div>

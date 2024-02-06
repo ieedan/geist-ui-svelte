@@ -45,7 +45,7 @@
 		} else {
 			value = target.value;
 		}
-		
+
 		dispatch("change", { value });
 	};
 

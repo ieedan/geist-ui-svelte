@@ -1,7 +1,6 @@
 <script lang="ts">
 	import ChevronIcon from "$lib/icons/ChevronIcon.svelte";
 	import findAncestor from "$lib/util/find-ancestor.js";
-	import { createPopper } from "@popperjs/core";
 	import { toArray } from "$lib/util/to-array.js";
 	import { createEventDispatcher, onMount } from "svelte";
 	import type { HTMLOptionAttributes } from "svelte/elements";
@@ -84,10 +83,6 @@
 
 	const toggleShow = () => {
 		show = !show;
-	};
-
-	const hide = () => {
-		show = false;
 	};
 
 	$: {
@@ -318,7 +313,8 @@
 <svelte:window
 	on:resize={() => {
 		width = buttonRef.offsetWidth + "px";
-	}} />
+	}}
+/>
 
 <button
 	type="button"
@@ -330,7 +326,8 @@
 	class="flex justify-between h-9 place-items-center w-full bg-gray-0 dark:bg-gray-999 py-1 pr-1 border focus:border-gray-200 focus:dark:border-gray-800
   disabled:bg-gray-50 dark:disabled:bg-gray-925 disabled:hover:cursor-not-allowed transition-all enabled:hover:border-gray-200
   border-gray-100 dark:border-gray-900 rounded-md data-[place-holder=true]:text-gray-300 enabled:hover:dark:border-gray-800
-  data-[place-holder=true]:dark:text-gray-700 disabled:text-gray-300 dark:disabled:text-gray-700">
+  data-[place-holder=true]:dark:text-gray-700 disabled:text-gray-300 dark:disabled:text-gray-700"
+>
 	<div class="px-2">
 		{#if multiSelect}
 			{#if value && value.length == 0}
@@ -338,11 +335,13 @@
 			{:else}
 				<ul
 					style="width: {allowedOptionsWidth}px;"
-					class="flex place-items-center gap-1 max-w-full overflow-x-auto scrollbar-hide">
+					class="flex place-items-center gap-1 max-w-full overflow-x-auto scrollbar-hide"
+				>
 					{#each valuesMap as [v, content] (v)}
 						<div
 							class="flex justify-between place-items-center bg-gray-50 dark:bg-gray-950
-							 px-1 rounded-md gap-1 text-nowrap whitespace-nowrap">
+							 px-1 rounded-md gap-1 text-nowrap whitespace-nowrap"
+						>
 							{#if allowXSS}
 								{@html content}
 							{:else}
@@ -355,7 +354,8 @@
 									findAndSelect(v);
 								}}
 								class="flex place-items-center justify-center text-gray-500 disabled:hover:cursor-not-allowed enabled:hover:text-gray-999
-							dark:text-gray-500 dark:enabled:hover:text-gray-0 transition-all">
+							dark:text-gray-500 dark:enabled:hover:text-gray-0 transition-all"
+							>
 								<XIcon size={12} />
 							</button>
 						</div>
@@ -374,8 +374,9 @@
 		<div
 			data-show={show}
 			data-rotate={iconRotation}
-			class="data-[rotate=true]:data-[show=true]:rotate-180 transition-all dark:text-gray-700 
-			text-gray-300 flex place-items-center justify-center">
+			class="data-[rotate=true]:data-[show=true]:rotate-180 transition-all dark:text-gray-700
+			text-gray-300 flex place-items-center justify-center"
+		>
 			<slot name="icon">
 				<ChevronIcon rotation="90deg" size={16} />
 			</slot>
@@ -388,12 +389,13 @@
 	bind:visible={show}
 	placement="bottom"
 	aria-readonly={readonly}
-	offset={{ x: 0, y: 2}}
+	offset={{ x: 0, y: 2 }}
 	{width}
 	role="listbox"
 	aria-label="listbox dialog"
-	class="absolute overflow-y-auto group">
-	<div bind:this={dropDownRef} style="max-height: {maxHeight}px;" class="h-full w-full">
+	class="group"
+>
+	<div bind:this={dropDownRef} style="max-height: {maxHeight}px;" class="h-full w-full overflow-y-auto">
 		<slot />
 	</div>
 </Dropdown>

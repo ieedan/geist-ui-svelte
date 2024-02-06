@@ -71,7 +71,10 @@
 	</div>
 	<div slot="footer">
 		<Details label="Code">
-			<Code lang="svelte" code={`<Search placeholder="Find what you need here" noBorder />`} />
+			<Code
+				lang="svelte"
+				code={`<Search placeholder="Find what you need here" noBorder />`}
+			/>
 		</Details>
 	</div>
 </FieldSet>

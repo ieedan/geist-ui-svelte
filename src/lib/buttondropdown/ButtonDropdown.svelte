@@ -1,27 +1,17 @@
 <script lang="ts">
 	import ChevronIcon from "$lib/icons/ChevronIcon.svelte";
 	import { createEventDispatcher, onMount } from "svelte";
-	import { createPopper } from "@popperjs/core";
+	import Dropdown from "$lib/dropdown/Dropdown.svelte";
 
 	const dispatch = createEventDispatcher();
 
 	export let disabled: boolean = false;
 	export let initialShow = false;
 	let show = initialShow;
-	let dropDownRef: HTMLDivElement;
 	let buttonRef: HTMLButtonElement;
 	let ref: HTMLDivElement;
 	export let shadow: boolean = false;
-
-	const docClick = (e: MouseEvent) => {
-		if (buttonRef.contains(e.target as Node)) return;
-
-		hide();
-	};
-
-	const hide = () => {
-		show = false;
-	};
+	let width = "150px";
 
 	const toggleShow = () => {
 		show = !show;
@@ -32,23 +22,13 @@
 	};
 
 	onMount(() => {
-		dropDownRef.style.width = ref.offsetWidth + "px";
-
-		const popper = createPopper(buttonRef, dropDownRef, {
-			placement: "bottom-end",
-			modifiers: [{ name: "offset", options: { offset: [0, 2] } }],
-		});
-
-		return () => {
-			popper.destroy();
-		};
+		width = ref.offsetWidth + "px";
 	});
 </script>
 
-<svelte:document on:click={docClick} />
 <svelte:window
 	on:resize={() => {
-		dropDownRef.style.width = ref.offsetWidth + "px";
+		width = ref.offsetWidth + "px";
 	}}
 />
 
@@ -76,16 +56,11 @@
 			<ChevronIcon rotation="90deg" size={16} />
 		</slot>
 	</button>
-	<div
-		data-shadow={shadow}
-		data-show={show}
-		bind:this={dropDownRef}
-		class="absolute bg-gray-0 dark:bg-gray-999 border border-gray-100 dark:border-gray-900 z-[1] transition-all
-         rounded-md data-[show=false]:opacity-0 data-[show=false]:pointer-events-none data-[shadow=true]:shadow-sm dark:shadow-gray-999"
-	>
-		<slot />
-	</div>
 </div>
+
+<Dropdown offset={{ x: 0, y: 2 }} anchor={ref} {width} {shadow} bind:visible={show} placement="bottom-end">
+	<slot />
+</Dropdown>
 
 <!--
 @component

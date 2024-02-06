@@ -67,7 +67,8 @@
 </button>
 <Dropdown anchor={buttonRef} bind:visible={showDropdown} class="w-32 h-48">
 	This is a dropdown
-</Dropdown>`} />
+</Dropdown>`}
+			/>
 		</Details>
 	</div>
 </FieldSet>
@@ -108,7 +109,8 @@
 			<button
 				bind:this={userRef}
 				on:click={() => (showUserExample = !showUserExample)}
-				class="flex place-items-center justify-center">
+				class="flex place-items-center justify-center"
+			>
 				<User name={user.name} />
 			</button>
 			<Dropdown anchor={userRef} bind:visible={showUserExample} {placement} class="w-60">
@@ -120,13 +122,15 @@
 					<a
 						href="/dashboard"
 						class="rounded-md px-2 py-2 text-gray-500 hover:text-gray-999
-								hover:dark:text-gray-0 hover:bg-gray-50 dark:hover:bg-gray-950 transition-all">
+								hover:dark:text-gray-0 hover:bg-gray-50 dark:hover:bg-gray-950 transition-all"
+					>
 						Dashboard
 					</a>
 					<a
 						href="/dashboard/settings"
 						class="rounded-md px-2 py-2 text-gray-500 hover:text-gray-999
-								hover:dark:text-gray-0 hover:bg-gray-50 dark:hover:bg-gray-950 transition-all">
+								hover:dark:text-gray-0 hover:bg-gray-50 dark:hover:bg-gray-950 transition-all"
+					>
 						Settings
 					</a>
 					<Spacer h={5} />
@@ -135,7 +139,8 @@
 					<a
 						href="/"
 						class="rounded-md px-2 py-2 text-gray-500 hover:text-gray-999
-								hover:dark:text-gray-0 hover:bg-gray-50 dark:hover:bg-gray-950 transition-all">
+								hover:dark:text-gray-0 hover:bg-gray-50 dark:hover:bg-gray-950 transition-all"
+					>
 						Homepage
 					</a>
 					<Spacer h={5} />
@@ -203,7 +208,8 @@
 			<Button href="/dashboard/logout">Sign Out</Button>
 		</div>
 	</div>
-</Dropdown>`} />
+</Dropdown>`}
+			/>
 		</Details>
 	</div>
 </FieldSet>
@@ -214,7 +220,10 @@
 <Spacer h={10} />
 <FieldSet>
 	<div class="">
-		<button bind:this={buttonRef2} on:click={() => (showDropdownExample2 = !showDropdownExample2)}>
+		<button
+			bind:this={buttonRef2}
+			on:click={() => (showDropdownExample2 = !showDropdownExample2)}
+		>
 			Show dropdown
 		</button>
 		<Dropdown
@@ -222,7 +231,8 @@
 			bind:visible={showDropdownExample2}
 			class="w-32 h-48"
 			placement="bottom"
-			shadow>
+			shadow
+		>
 			This is a dropdown
 		</Dropdown>
 	</div>
@@ -240,7 +250,8 @@
 	placement="bottom"
 	shadow>
 	This is a dropdown
-</Dropdown>`} />
+</Dropdown>`}
+			/>
 		</Details>
 	</div>
 </FieldSet>
@@ -254,14 +265,18 @@
 <Spacer h={10} />
 <FieldSet>
 	<div class="">
-		<button bind:this={buttonRef3} on:click={() => (showDropdownExample3 = !showDropdownExample3)}>
+		<button
+			bind:this={buttonRef3}
+			on:click={() => (showDropdownExample3 = !showDropdownExample3)}
+		>
 			Show dropdown
 		</button>
 		<Dropdown
 			anchor={buttonRef3}
 			bind:visible={showDropdownExample3}
 			class="w-32 h-48"
-			placement="bottom">
+			placement="bottom"
+		>
 			This is a dropdown
 		</Dropdown>
 	</div>
@@ -279,7 +294,8 @@
 	placement="bottom"
 	shadow>
 	This is a dropdown
-</Dropdown>`} />
+</Dropdown>`}
+			/>
 		</Details>
 	</div>
 </FieldSet>
@@ -311,7 +327,8 @@
 	class="w-32 h-48" 
 	placement="bottom">
 	This is a dropdown
-</Dropdown>`} />
+</Dropdown>`}
+			/>
 		</Details>
 	</div>
 </FieldSet>
@@ -338,7 +355,8 @@
 			anchor="#hover-id"
 			event="mouseenter/mouseleave"
 			class="w-32 h-48"
-			placement="bottom">
+			placement="bottom"
+		>
 			This is a dropdown
 		</Dropdown>
 	</div>
@@ -374,7 +392,8 @@
 	class="w-32 h-48"
 	placement="bottom">
 	This is a dropdown
-</Dropdown>`} />
+</Dropdown>`}
+			/>
 		</Details>
 	</div>
 </FieldSet>
@@ -389,11 +408,7 @@
 <FieldSet>
 	<div class="flex place-items-center flex-wrap gap-4">
 		<button id="animate-id"> Click To Show </button>
-		<Dropdown
-			anchor="#animate-id"
-			event="click/click"
-			class="w-32 h-48"
-			animate={false}>
+		<Dropdown anchor="#animate-id" event="click/click" class="w-32 h-48" animate={false}>
 			This is a dropdown
 		</Dropdown>
 	</div>
@@ -401,9 +416,7 @@
 		<Details label="Code">
 			<Code
 				lang="svelte"
-				edits={[
-					{ number: 6, type: "add" },
-				]}
+				edits={[{ number: 6, type: "add" }]}
 				code={`<button id="animate-id"> Click To Show </button>
 <Dropdown
 	anchor="#animate-id"
@@ -411,16 +424,15 @@
 	class="w-32 h-48"
 	animate={false}>
 	This is a dropdown
-</Dropdown>`} />
+</Dropdown>`}
+			/>
 		</Details>
 	</div>
 </FieldSet>
 <Spacer h={30} />
 <Text type="h4">Offsets</Text>
 <Spacer h={5} />
-<Text>
-	You can use offsets to add space between the anchor and the dropdown.
-</Text>
+<Text>You can use offsets to add space between the anchor and the dropdown.</Text>
 <Spacer h={10} />
 <FieldSet>
 	<div class="flex place-items-center justify-center flex-wrap gap-4">
@@ -430,9 +442,10 @@
 		<Dropdown
 			anchor="#offset-id"
 			event="click/click"
-			class="w-32 h-48" 
+			class="w-32 h-48"
 			placement="bottom"
-			offset={{ x: 10, y: 10 }}>
+			offset={{ x: 10, y: 10 }}
+		>
 			This is a dropdown
 		</Dropdown>
 	</div>
@@ -440,9 +453,7 @@
 		<Details label="Code">
 			<Code
 				lang="svelte"
-				edits={[
-					{ number: 6, type: "add" },
-				]}
+				edits={[{ number: 6, type: "add" }]}
 				code={`<Button id="offset-id">
 	{\`offset={{ x: 10, y: 10 }}\`}
 </Button>
@@ -453,7 +464,8 @@
 	placement="bottom"
 	offset={{ x: 10, y: 10 }}>
 	This is a dropdown
-</Dropdown>`} />
+</Dropdown>`}
+			/>
 		</Details>
 	</div>
 </FieldSet>
