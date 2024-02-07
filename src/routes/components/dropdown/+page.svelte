@@ -469,3 +469,50 @@
 		</Details>
 	</div>
 </FieldSet>
+<Spacer h={30} />
+<Text type="h4">Scroll Lock</Text>
+<Spacer h={5} />
+<Text
+	>Sometimes you may want to lock scroll when a popup is open add the <code>`lockScroll`</code> attribute
+	to hide the scrollbar when visible.</Text
+>
+<Spacer h={20} />
+<Note color="success"
+	>Remember to use <code>`scrollbar-gutter: stable;`</code> to prevent layout shift when using this
+	feature.</Note
+>
+<Spacer h={20} />
+<FieldSet>
+	<div class="flex place-items-center justify-center flex-wrap gap-4">
+		<Button id="lock-id">Lock my scroll</Button>
+		<Dropdown
+			anchor="#lock-id"
+			event="click/click"
+			class="w-32 h-48"
+			placement="bottom"
+			offset={{ x: 0, y: 2 }}
+			lockScroll
+		>
+			This is a dropdown
+		</Dropdown>
+	</div>
+	<div slot="footer">
+		<Details label="Code">
+			<Code
+				lang="svelte"
+				edits={[{ number: 6, type: "add" }]}
+				code={`<Button id="offset-id">
+	{\`offset={{ x: 10, y: 10 }}\`}
+</Button>
+<Dropdown
+	anchor="#offset-id"
+	event="click/click"
+	class="w-32 h-48" 
+	placement="bottom"
+	offset={{ x: 10, y: 10 }}>
+	This is a dropdown
+</Dropdown>`}
+			/>
+		</Details>
+	</div>
+</FieldSet>

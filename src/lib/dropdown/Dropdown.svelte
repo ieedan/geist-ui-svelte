@@ -133,6 +133,7 @@
 	export let ref: HTMLDivElement | undefined = undefined;
 	export let width: string | undefined = undefined;
 	export let height: string | undefined = undefined;
+	export let lockScroll = false;
 
 	let resizeObserver: ResizeObserver;
 
@@ -191,7 +192,14 @@
 
 	const hide = () => {
 		visible = false;
+		if (lockScroll) document.body.classList.toggle("overflow-hidden", visible);
 	};
+
+	$: {
+		if (typeof window !== "undefined" && document && lockScroll) {
+			document.body.classList.toggle("overflow-hidden", visible);
+		}
+	}
 
 	onDestroy(() => {
 		if (!anchorRef) return;
@@ -221,10 +229,16 @@
 		if (!ref?.contains(target) && !anchorRef.contains(target)) visible = false;
 	};
 
+	const docKeydown = (e: KeyboardEvent) => {
+		if (e.key == "Escape" && visible) hide();
+	};
+
 	onMount(() => {
 		resizeObserver = new ResizeObserver(() => {
 			resize(placement);
 		});
+
+		if (lockScroll && visible) document.body.classList.add("overflow-hidden");
 
 		return () => {
 			resizeObserver.disconnect();
@@ -232,7 +246,7 @@
 	});
 </script>
 
-<svelte:document on:click={docClick} />
+<svelte:document on:click={docClick} on:keydown={docKeydown} />
 <svelte:window on:resize={() => resize(placement)} on:scroll={() => resize(placement)} />
 
 <div

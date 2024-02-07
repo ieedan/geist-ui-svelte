@@ -34,7 +34,7 @@
 	};
 
 	const docKeydown = (e: KeyboardEvent) => {
-		if (e.key == "Escape") hide();
+		if (e.key == "Escape" && visible) hide();
 	};
 
 	onMount(() => {
