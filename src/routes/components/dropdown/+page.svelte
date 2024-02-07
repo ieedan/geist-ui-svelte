@@ -472,15 +472,19 @@
 <Spacer h={30} />
 <Text type="h4">Scroll Lock</Text>
 <Spacer h={5} />
-<Text>Sometimes you may want to lock scroll when a popup is open add the <code>`lockScroll`</code> attribute to hide the scrollbar when visible.</Text>
+<Text
+	>Sometimes you may want to lock scroll when a popup is open add the <code>`lockScroll`</code> attribute
+	to hide the scrollbar when visible.</Text
+>
 <Spacer h={20} />
-<Note color="success" >Remember to use <code>`scrollbar-gutter: stable;`</code> to prevent layout shift when using this feature.</Note>
+<Note color="success"
+	>Remember to use <code>`scrollbar-gutter: stable;`</code> to prevent layout shift when using this
+	feature.</Note
+>
 <Spacer h={20} />
 <FieldSet>
 	<div class="flex place-items-center justify-center flex-wrap gap-4">
-		<Button id="lock-id">
-			Lock my scroll
-		</Button>
+		<Button id="lock-id">Lock my scroll</Button>
 		<Dropdown
 			anchor="#lock-id"
 			event="click/click"

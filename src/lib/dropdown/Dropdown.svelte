@@ -246,7 +246,7 @@
 	});
 </script>
 
-<svelte:document on:click={docClick} on:keydown={docKeydown}/>
+<svelte:document on:click={docClick} on:keydown={docKeydown} />
 <svelte:window on:resize={() => resize(placement)} on:scroll={() => resize(placement)} />
 
 <div

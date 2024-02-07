@@ -1,4 +1,4 @@
-export const findChild = (parent: Element ,fn: (node: Element) => boolean): Element | undefined => {
+export const findChild = (parent: Element, fn: (node: Element) => boolean): Element | undefined => {
 	if (!parent) return undefined;
 	const children = Array.from(parent.children);
 
@@ -13,4 +13,4 @@ export const findChild = (parent: Element ,fn: (node: Element) => boolean): Elem
 	}
 
 	return undefined;
-}
+};

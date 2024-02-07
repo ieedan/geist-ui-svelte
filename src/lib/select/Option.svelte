@@ -23,7 +23,7 @@
 >
 	<div class="size-4 flex justify-center place-items-center">
 		<div class="hidden group-aria-selected:flex place-items-center justify-center">
-			<CheckMarkIcon size={16}/>
+			<CheckMarkIcon size={16} />
 		</div>
 	</div>
 	<div class="flex place-items-center justify-start" data-html>

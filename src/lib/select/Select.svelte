@@ -190,7 +190,7 @@
 
 		const type = option.getAttribute("data-type") as ValueType;
 
-		const contentRef = findChild(option, a => a.hasAttribute("data-html")) as HTMLDivElement;
+		const contentRef = findChild(option, (a) => a.hasAttribute("data-html")) as HTMLDivElement;
 
 		if (!contentRef) return;
 
