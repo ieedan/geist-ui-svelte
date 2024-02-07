@@ -6,6 +6,8 @@
 	import type { HTMLOptionAttributes } from "svelte/elements";
 	import XIcon from "$lib/icons/XIcon.svelte";
 	import Dropdown from "$lib/dropdown/Dropdown.svelte";
+	import { findChild } from "$lib/util/find-child.js";
+
 	export let initialShow = false;
 	let show = initialShow;
 
@@ -187,7 +189,11 @@
 
 		const type = option.getAttribute("data-type") as ValueType;
 
-		const content = allowXSS ? option.innerHTML : option.innerText;
+		const contentRef = findChild(option, a => a.hasAttribute("data-html")) as HTMLDivElement;
+
+		if (!contentRef) return;
+
+		const content = allowXSS ? contentRef.innerHTML : contentRef.innerText;
 
 		if (!multiSelect) {
 			if (v == null) {
@@ -260,6 +266,57 @@
 		return undefined;
 	};
 
+	const docKeydown = (e: KeyboardEvent) => {
+		if ((e.key == "ArrowDown" || e.key == "ArrowUp") && show) {
+			e.preventDefault();
+			navigate(e.key == "ArrowUp");
+		}
+
+		if (e.key == "Enter" && show) {
+			e.preventDefault();
+			searchEnter();
+		}
+	};
+
+	const navigate = (up: boolean) => {
+		const children = Array.from(dropDownRef.children);
+
+		let startIndex: number = -1;
+
+		for (let i = 0; i < children.length; i++) {
+			const child = children[i];
+			if (child.getAttribute("data-focused") == "true") {
+				startIndex = i;
+				child.setAttribute("data-focused", "false");
+				break;
+			}
+		}
+
+		let i = startIndex;
+
+		if (up) {
+			i--;
+			if (i < 0) i = children.length - 1;
+		} else {
+			i++;
+			if (i >= children.length) i = 0;
+		}
+
+		children[i].setAttribute("data-focused", "true");
+	};
+
+	const searchEnter = () => {
+		const children = Array.from(dropDownRef.children) as HTMLAnchorElement[];
+
+		children.forEach((child) => {
+			if (child.getAttribute("data-focused") == "true") {
+				selectOption(child);
+				if (!multiSelect) show = false;
+				return;
+			}
+		});
+	};
+
 	onMount(() => {
 		width = buttonRef.offsetWidth + "px";
 		allowedOptionsWidth = buttonRef.offsetWidth - 38;
@@ -314,6 +371,7 @@
 	on:resize={() => {
 		width = buttonRef.offsetWidth + "px";
 	}}
+	on:keydown={docKeydown}
 />
 
 <button
@@ -326,7 +384,7 @@
 	class="flex justify-between h-9 place-items-center w-full bg-gray-0 dark:bg-gray-999 py-1 pr-1 border focus:border-gray-200 focus:dark:border-gray-800
   disabled:bg-gray-50 dark:disabled:bg-gray-925 disabled:hover:cursor-not-allowed transition-all enabled:hover:border-gray-200
   border-gray-100 dark:border-gray-900 rounded-md data-[place-holder=true]:text-gray-300 enabled:hover:dark:border-gray-800
-  data-[place-holder=true]:dark:text-gray-700 disabled:text-gray-300 dark:disabled:text-gray-700"
+  data-[place-holder=true]:dark:text-gray-700 disabled:text-gray-300 dark:disabled:text-gray-700 focus:outline-none outline-none"
 >
 	<div class="px-2">
 		{#if multiSelect}
@@ -398,7 +456,7 @@
 	<div
 		bind:this={dropDownRef}
 		style="max-height: {maxHeight}px;"
-		class="h-full w-full overflow-y-auto"
+		class="h-full w-full overflow-y-auto p-1"
 	>
 		<slot />
 	</div>
