@@ -41,6 +41,7 @@
 	export let iconRotation: boolean = true;
 	export let maxHeight: number = 240;
 	export let readonly = false;
+	export let lockScroll = false;
 
 	let allowedOptionsWidth = 0;
 
@@ -444,6 +445,7 @@
 <Dropdown
 	anchor={buttonRef}
 	{shadow}
+	{lockScroll}
 	bind:visible={show}
 	placement="bottom"
 	aria-readonly={readonly}
