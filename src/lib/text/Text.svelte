@@ -160,6 +160,7 @@
 
 <svelte:element
 	this={type}
+	{...$$restProps}
 	style="text-align: {align};"
 	class={cn(
 		style({
