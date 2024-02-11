@@ -17,7 +17,8 @@
 	class="enabled:hover:cursor-pointer disabled:cursor-not-allowed px-2 gap-1 data-[focused=true]:text-gray-999 text-gray-999 dark:text-gray-0
     py-1 data-[focused=true]:bg-gray-100 data-[focused=true]:dark:text-gray-0 z-[11]
     data-[focused=true]:dark:bg-gray-900 flex justify-start place-items-center w-full
-	disabled:bg-gray-50 disabled:dark:bg-gray-950 group-aria-readonly:hover:cursor-default group rounded-md focus:outline-none outline-none">
+	disabled:bg-gray-50 disabled:dark:bg-gray-950 group-aria-readonly:hover:cursor-default group rounded-md focus:outline-none outline-none"
+>
 	<div class="size-4 flex justify-center place-items-center">
 		<div class="hidden group-aria-selected:flex place-items-center justify-center">
 			<CheckMarkIcon size={16} />

@@ -35,7 +35,8 @@
 	<TabItem>Home</TabItem>
 	<TabItem initialSelected={true}>Guide</TabItem>
 	<TabItem>Components</TabItem>
-</Tabs>`} />
+</Tabs>`}
+			/>
 		</Details>
 	</div>
 </FieldSet>
@@ -58,7 +59,8 @@
 	<TabItem>Home</TabItem>
 	<TabItem initialSelected={true}>Guide</TabItem>
 	<TabItem>Components</TabItem>
-</Tabs>`} />
+</Tabs>`}
+			/>
 		</Details>
 	</div>
 </FieldSet>
@@ -83,7 +85,8 @@
 	<TabItem>Home</TabItem>
 	<TabItem initialSelected={true}>Guide</TabItem>
 	<TabItem>Components</TabItem>
-</Tabs>`} />
+</Tabs>`}
+			/>
 		</Details>
 	</div>
 </FieldSet>
@@ -127,7 +130,8 @@
 	<TabItem>Account</TabItem>
 	<TabItem>About</TabItem>
 	<TabItem>Contact Us</TabItem>
-</Tabs>`} />
+</Tabs>`}
+			/>
 		</Details>
 	</div>
 </FieldSet>
@@ -166,7 +170,8 @@
 		<Spacer w={10} />
 		Svelte
 	</TabItem>
-</Tabs>`} />
+</Tabs>`}
+			/>
 		</Details>
 	</div>
 </FieldSet>

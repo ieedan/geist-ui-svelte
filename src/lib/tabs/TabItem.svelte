@@ -50,9 +50,9 @@
 		const target = e.target as HTMLAnchorElement;
 
 		if (disabled) return;
-		
+
 		goto(target.href);
-	}
+	};
 </script>
 
 {#if to == undefined}
@@ -77,7 +77,7 @@
 		data-active={active}
 		aria-disabled={disabled}
 		class="z-[1] flex place-items-center justify-center px-3 py-3 text-sm text-gray-600
-	transition-all hover:text-black data-[active=true]:text-black dark:text-gray-400 aria-disabled:hover:cursor-not-allowed 
+	transition-all hover:text-black data-[active=true]:text-black dark:text-gray-400 aria-disabled:hover:cursor-not-allowed
 	aria-disabled:!text-gray-300 aria-disabled:dark:!text-gray-700 dark:data-[active=true]:text-white
 	dark:data-[active=false]:hover:text-white text-nowrap outline-none focus:outline-none"
 	>
