@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { goto } from "$app/navigation";
 	import { page } from "$app/stores";
 	import { createEventDispatcher } from "svelte";
 
@@ -26,7 +27,7 @@
 		return link;
 	};
 
-	const click = (e: MouseEvent) => {
+	const select = (e: MouseEvent) => {
 		const target = e.target as HTMLElement;
 		const parent = target.parentElement;
 
@@ -44,6 +45,14 @@
 
 		dispatch("clicked");
 	};
+
+	const clicked = (e: MouseEvent) => {
+		const target = e.target as HTMLAnchorElement;
+
+		if (disabled) return;
+		
+		goto(target.href);
+	}
 </script>
 
 {#if to == undefined}
@@ -54,9 +63,9 @@
 		transition-all hover:text-black
 		group-data-[border=true]/tabs:aria-selected:border-b-black aria-selected:text-black
 		dark:text-gray-400 group-data-[border=true]/tabs:dark:aria-selected:border-b-white
-		dark:aria-selected:text-white
+		dark:aria-selected:text-white disabled:hover:cursor-not-allowed disabled:!text-gray-300 disabled:dark:!text-gray-700
 		dark:aria-[selected='false']:hover:text-white text-nowrap"
-		on:click={click}
+		on:click={select}
 		{disabled}
 		role="tab"
 		aria-selected={selected}
@@ -66,11 +75,12 @@
 {:else}
 	<a
 		{href}
-		aria-disabled={disabled}
+		on:click|preventDefault={clicked}
 		data-active={active}
+		aria-disabled={disabled}
 		class="z-[1] flex place-items-center justify-center border-b-2 border-transparent px-3 py-3 text-sm text-gray-600
 	transition-all hover:text-black group-data-[border=true]/tabs:data-[active=true]:border-b-black
-	data-[active=true]:text-black dark:text-gray-400
+	data-[active=true]:text-black dark:text-gray-400 aria-disabled:hover:cursor-not-allowed aria-disabled:!text-gray-300 aria-disabled:dark:!text-gray-700
 	group-data-[border=true]/tabs:dark:data-[active=true]:border-b-white dark:data-[active=true]:text-white
 	dark:data-[active=false]:hover:text-white text-nowrap"
 	>

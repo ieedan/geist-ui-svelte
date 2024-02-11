@@ -35,8 +35,30 @@
 	<TabItem>Home</TabItem>
 	<TabItem initialSelected={true}>Guide</TabItem>
 	<TabItem>Components</TabItem>
-</Tabs>`}
-			/>
+</Tabs>`} />
+		</Details>
+	</div>
+</FieldSet>
+<Spacer h={30} />
+<Text type="h4">Disabled</Text>
+<Spacer h={10} />
+<FieldSet>
+	<div class="flex flex-col justify-start">
+		<Tabs>
+			<TabItem initialSelected={true}>Home</TabItem>
+			<TabItem>Guide</TabItem>
+			<TabItem disabled>Components</TabItem>
+		</Tabs>
+	</div>
+	<div slot="footer">
+		<Details label="Code">
+			<Code
+				lang="svelte"
+				code={`<Tabs>
+	<TabItem>Home</TabItem>
+	<TabItem initialSelected={true}>Guide</TabItem>
+	<TabItem>Components</TabItem>
+</Tabs>`} />
 		</Details>
 	</div>
 </FieldSet>
@@ -61,8 +83,7 @@
 	<TabItem>Home</TabItem>
 	<TabItem initialSelected={true}>Guide</TabItem>
 	<TabItem>Components</TabItem>
-</Tabs>`}
-			/>
+</Tabs>`} />
 		</Details>
 	</div>
 </FieldSet>
@@ -106,8 +127,7 @@
 	<TabItem>Account</TabItem>
 	<TabItem>About</TabItem>
 	<TabItem>Contact Us</TabItem>
-</Tabs>`}
-			/>
+</Tabs>`} />
 		</Details>
 	</div>
 </FieldSet>
@@ -146,8 +166,7 @@
 		<Spacer w={10} />
 		Svelte
 	</TabItem>
-</Tabs>`}
-			/>
+</Tabs>`} />
 		</Details>
 	</div>
 </FieldSet>
