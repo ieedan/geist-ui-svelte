@@ -58,11 +58,9 @@
 {#if to == undefined}
 	<button
 		type="button"
-		class="z-[1] flex place-items-center justify-center border-b-2
-		border-transparent px-3 py-3 text-sm text-gray-600
-		transition-all hover:text-black
-		group-data-[border=true]/tabs:aria-selected:border-b-black aria-selected:text-black
-		dark:text-gray-400 group-data-[border=true]/tabs:dark:aria-selected:border-b-white
+		class="z-[1] flex place-items-center justify-center px-3 py-3 text-sm text-gray-600
+		transition-all hover:text-black aria-selected:text-black
+		dark:text-gray-400 outline-none focus:outline-none
 		dark:aria-selected:text-white disabled:hover:cursor-not-allowed disabled:!text-gray-300 disabled:dark:!text-gray-700
 		dark:aria-[selected='false']:hover:text-white text-nowrap"
 		on:click={select}
@@ -78,11 +76,10 @@
 		on:click|preventDefault={clicked}
 		data-active={active}
 		aria-disabled={disabled}
-		class="z-[1] flex place-items-center justify-center border-b-2 border-transparent px-3 py-3 text-sm text-gray-600
-	transition-all hover:text-black group-data-[border=true]/tabs:data-[active=true]:border-b-black
-	data-[active=true]:text-black dark:text-gray-400 aria-disabled:hover:cursor-not-allowed aria-disabled:!text-gray-300 aria-disabled:dark:!text-gray-700
-	group-data-[border=true]/tabs:dark:data-[active=true]:border-b-white dark:data-[active=true]:text-white
-	dark:data-[active=false]:hover:text-white text-nowrap"
+		class="z-[1] flex place-items-center justify-center px-3 py-3 text-sm text-gray-600
+	transition-all hover:text-black data-[active=true]:text-black dark:text-gray-400 aria-disabled:hover:cursor-not-allowed 
+	aria-disabled:!text-gray-300 aria-disabled:dark:!text-gray-700 dark:data-[active=true]:text-white
+	dark:data-[active=false]:hover:text-white text-nowrap outline-none focus:outline-none"
 	>
 		<slot />
 	</a>
