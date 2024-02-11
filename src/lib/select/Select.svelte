@@ -105,7 +105,7 @@
 					}
 
 					for (const [k] of valuesMap) {
-						if (value.findIndex(k) == -1) valuesMap.delete(k);
+						if (value.findIndex((a) => a == k) == -1) valuesMap.delete(k);
 					}
 
 					dispatch("change", { value: toArray(valuesMap, (k) => k) });
@@ -279,15 +279,16 @@
 		}
 	};
 
+	let selectedIndex = 0;
+
 	const navigate = (up: boolean) => {
 		const children = Array.from(dropDownRef.children);
 
-		let startIndex: number = -1;
+		let startIndex: number = selectedIndex;
 
 		for (let i = 0; i < children.length; i++) {
 			const child = children[i];
 			if (child.getAttribute("data-focused") == "true") {
-				startIndex = i;
 				child.setAttribute("data-focused", "false");
 				break;
 			}
@@ -303,7 +304,24 @@
 			if (i >= children.length) i = 0;
 		}
 
-		children[i].setAttribute("data-focused", "true");
+		const child = children[i] as HTMLButtonElement;
+
+		child.setAttribute("data-focused", "true");
+		selectedIndex = i;
+
+		if (child) {
+			const top = dropDownRef.offsetHeight + dropDownRef.scrollTop;
+			const elementBottom = child.offsetHeight + child.offsetTop;
+			if (top < elementBottom) {
+				const scrollTop = elementBottom + 8 - dropDownRef.offsetHeight;
+				dropDownRef.scrollTop = scrollTop;
+			}
+
+			if (top - child.offsetTop + 110 > dropDownRef.offsetHeight) {
+				const scrollTop = child.offsetTop - dropDownRef.offsetHeight / 2;
+				dropDownRef.scrollTop = scrollTop;
+			}
+		}
 	};
 
 	const searchEnter = () => {
@@ -318,6 +336,36 @@
 		});
 	};
 
+	const dropdownMouseMove = (e: MouseEvent) => {
+		const option = findAncestor(
+			e.target as Node,
+			(a) => a?.hasAttribute("data-focused") ?? false,
+		);
+		const children = Array.from(dropDownRef.children);
+		if (!option) {
+			for (let i = 0; i < children.length; i++) {
+				const child = children[i];
+				child.setAttribute("data-focused", "false");
+			}
+			return;
+		}
+
+		for (let i = 0; i < children.length; i++) {
+			const child = children[i];
+			child.setAttribute("data-focused", "false");
+		}
+
+		option.setAttribute("data-focused", "true");
+
+		for (let i = 0; i < children.length; i++) {
+			const child = children[i];
+			if (child.getAttribute("data-focused") == "true") {
+				selectedIndex = i;
+				break;
+			}
+		}
+	};
+
 	onMount(() => {
 		width = buttonRef.offsetWidth + "px";
 		allowedOptionsWidth = buttonRef.offsetWidth - 38;
@@ -330,6 +378,7 @@
 		observer.observe(dropDownRef, config);
 
 		dropDownRef.addEventListener("click", selected);
+		dropDownRef.addEventListener("mousemove", dropdownMouseMove);
 
 		if (value == undefined && !allowNone) {
 			if (!multiSelect) {
@@ -372,8 +421,7 @@
 	on:resize={() => {
 		width = buttonRef.offsetWidth + "px";
 	}}
-	on:keydown={docKeydown}
-/>
+	on:keydown={docKeydown} />
 
 <button
 	type="button"
@@ -385,8 +433,7 @@
 	class="flex justify-between h-9 place-items-center w-full bg-gray-0 dark:bg-gray-999 py-1 pr-1 border focus:border-gray-200 focus:dark:border-gray-800
   disabled:bg-gray-50 dark:disabled:bg-gray-925 disabled:hover:cursor-not-allowed transition-all enabled:hover:border-gray-200
   border-gray-100 dark:border-gray-900 rounded-md data-[place-holder=true]:text-gray-300 enabled:hover:dark:border-gray-800
-  data-[place-holder=true]:dark:text-gray-700 disabled:text-gray-300 dark:disabled:text-gray-700 focus:outline-none outline-none"
->
+  data-[place-holder=true]:dark:text-gray-700 disabled:text-gray-300 dark:disabled:text-gray-700 focus:outline-none outline-none">
 	<div class="px-2">
 		{#if multiSelect}
 			{#if value && value.length == 0}
@@ -394,13 +441,11 @@
 			{:else}
 				<ul
 					style="width: {allowedOptionsWidth}px;"
-					class="flex place-items-center gap-1 max-w-full overflow-x-auto scrollbar-hide"
-				>
+					class="flex place-items-center gap-1 max-w-full overflow-x-auto scrollbar-hide">
 					{#each valuesMap as [v, content] (v)}
 						<div
 							class="flex justify-between place-items-center bg-gray-50 dark:bg-gray-950
-							 px-1 rounded-md gap-1 text-nowrap whitespace-nowrap"
-						>
+							 px-1 rounded-md gap-1 text-nowrap whitespace-nowrap">
 							{#if allowXSS}
 								{@html content}
 							{:else}
@@ -413,8 +458,7 @@
 									findAndSelect(v);
 								}}
 								class="flex place-items-center justify-center text-gray-500 disabled:hover:cursor-not-allowed enabled:hover:text-gray-999
-							dark:text-gray-500 dark:enabled:hover:text-gray-0 transition-all"
-							>
+							dark:text-gray-500 dark:enabled:hover:text-gray-0 transition-all">
 								<XIcon size={12} />
 							</button>
 						</div>
@@ -434,8 +478,7 @@
 			data-show={show}
 			data-rotate={iconRotation}
 			class="data-[rotate=true]:data-[show=true]:rotate-180 transition-all dark:text-gray-700
-			text-gray-300 flex place-items-center justify-center"
-		>
+			text-gray-300 flex place-items-center justify-center">
 			<slot name="icon">
 				<ChevronIcon rotation="90deg" size={16} />
 			</slot>
@@ -453,13 +496,11 @@
 	{width}
 	role="listbox"
 	aria-label="listbox dialog"
-	class="group"
->
+	class="group">
 	<div
 		bind:this={dropDownRef}
 		style="max-height: {maxHeight}px;"
-		class="h-full w-full overflow-y-auto p-1"
-	>
+		class="h-full w-full overflow-y-auto p-1">
 		<slot />
 	</div>
 </Dropdown>

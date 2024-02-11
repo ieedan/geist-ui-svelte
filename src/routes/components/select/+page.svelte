@@ -849,12 +849,12 @@ $: selectedStateObject = countries
 <FieldSet>
 	<div class="flex flex-col gap-2">
 		<Select placeholder="Select a letter" bind:value>
-			{#each listOptions as letter (letter)}
+			{#each alphabet as letter (letter)}
 				<Option value={letter}>{letter}</Option>
 			{/each}
 		</Select>
 		<Select multiSelect bind:value={arrValue} placeholder="Select a letter">
-			{#each listOptions as letter (letter)}
+			{#each alphabet as letter (letter)}
 				<Option value={letter}>{letter}</Option>
 			{/each}
 		</Select>
@@ -872,7 +872,7 @@ $: selectedStateObject = countries
 			<Code
 				lang="svelte"
 				code={`<Select placeholder="Select a letter" bind:value={value}>
-	{#each listOptions as letter (letter)}
+	{#each alphabet as letter (letter)}
 		<Option value={letter}>{letter}</Option>
 	{/each}
 </Select>
@@ -881,7 +881,7 @@ $: selectedStateObject = countries
 	bind:value={arrValue}
 	placeholder="Select a letter"
 >
-	{#each listOptions as letter (letter)}
+	{#each alphabet as letter (letter)}
 		<Option value={letter}>{letter}</Option>
 	{/each}
 </Select>
