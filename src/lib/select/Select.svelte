@@ -105,7 +105,7 @@
 					}
 
 					for (const [k] of valuesMap) {
-						if (value.findIndex(k) == -1) valuesMap.delete(k);
+						if (value.findIndex((a) => a == k) == -1) valuesMap.delete(k);
 					}
 
 					dispatch("change", { value: toArray(valuesMap, (k) => k) });
@@ -279,15 +279,16 @@
 		}
 	};
 
+	let selectedIndex = 0;
+
 	const navigate = (up: boolean) => {
 		const children = Array.from(dropDownRef.children);
 
-		let startIndex: number = -1;
+		let startIndex: number = selectedIndex;
 
 		for (let i = 0; i < children.length; i++) {
 			const child = children[i];
 			if (child.getAttribute("data-focused") == "true") {
-				startIndex = i;
 				child.setAttribute("data-focused", "false");
 				break;
 			}
@@ -303,7 +304,24 @@
 			if (i >= children.length) i = 0;
 		}
 
-		children[i].setAttribute("data-focused", "true");
+		const child = children[i] as HTMLButtonElement;
+
+		child.setAttribute("data-focused", "true");
+		selectedIndex = i;
+
+		if (child) {
+			const top = dropDownRef.offsetHeight + dropDownRef.scrollTop;
+			const elementBottom = child.offsetHeight + child.offsetTop;
+			if (top < elementBottom) {
+				const scrollTop = elementBottom + 8 - dropDownRef.offsetHeight;
+				dropDownRef.scrollTop = scrollTop;
+			}
+
+			if (top - child.offsetTop + 110 > dropDownRef.offsetHeight) {
+				const scrollTop = child.offsetTop - dropDownRef.offsetHeight / 2;
+				dropDownRef.scrollTop = scrollTop;
+			}
+		}
 	};
 
 	const searchEnter = () => {
@@ -318,6 +336,36 @@
 		});
 	};
 
+	const dropdownMouseMove = (e: MouseEvent) => {
+		const option = findAncestor(
+			e.target as Node,
+			(a) => a?.hasAttribute("data-focused") ?? false,
+		);
+		const children = Array.from(dropDownRef.children);
+		if (!option) {
+			for (let i = 0; i < children.length; i++) {
+				const child = children[i];
+				child.setAttribute("data-focused", "false");
+			}
+			return;
+		}
+
+		for (let i = 0; i < children.length; i++) {
+			const child = children[i];
+			child.setAttribute("data-focused", "false");
+		}
+
+		option.setAttribute("data-focused", "true");
+
+		for (let i = 0; i < children.length; i++) {
+			const child = children[i];
+			if (child.getAttribute("data-focused") == "true") {
+				selectedIndex = i;
+				break;
+			}
+		}
+	};
+
 	onMount(() => {
 		width = buttonRef.offsetWidth + "px";
 		allowedOptionsWidth = buttonRef.offsetWidth - 38;
@@ -330,6 +378,7 @@
 		observer.observe(dropDownRef, config);
 
 		dropDownRef.addEventListener("click", selected);
+		dropDownRef.addEventListener("mousemove", dropdownMouseMove);
 
 		if (value == undefined && !allowNone) {
 			if (!multiSelect) {

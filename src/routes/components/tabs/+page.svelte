@@ -41,6 +41,30 @@
 	</div>
 </FieldSet>
 <Spacer h={30} />
+<Text type="h4">Disabled</Text>
+<Spacer h={10} />
+<FieldSet>
+	<div class="flex flex-col justify-start">
+		<Tabs>
+			<TabItem initialSelected={true}>Home</TabItem>
+			<TabItem>Guide</TabItem>
+			<TabItem disabled>Components</TabItem>
+		</Tabs>
+	</div>
+	<div slot="footer">
+		<Details label="Code">
+			<Code
+				lang="svelte"
+				code={`<Tabs>
+	<TabItem>Home</TabItem>
+	<TabItem initialSelected={true}>Guide</TabItem>
+	<TabItem>Components</TabItem>
+</Tabs>`}
+			/>
+		</Details>
+	</div>
+</FieldSet>
+<Spacer h={30} />
 <Text type="h4">No Underline</Text>
 <Spacer h={5} />
 <Text>Remove the bottom border by setting <code>`border={false}`</code>.</Text>
