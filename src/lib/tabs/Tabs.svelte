@@ -47,6 +47,12 @@
 	};
 
 	const selectedTab = (node: HTMLElement) => {
+		if (
+			node.getAttribute("data-active") != "true" &&
+			node.getAttribute("aria-selected") != "true"
+		)
+			return;
+
 		selectedBorder.style.top = elementRef.offsetTop + node.offsetHeight - 2 + "px";
 		selectedBorder.style.width = node.offsetWidth + "px";
 
@@ -61,7 +67,10 @@
 
 		for (let i = 0; i < children.length; i++) {
 			const child = children[i] as HTMLElement;
-			if (child.getAttribute("aria-selected") == "true") {
+			if (
+				child.getAttribute("aria-selected") == "true" ||
+				child.getAttribute("data-active") == "true"
+			) {
 				selectedTab(child);
 				return;
 			}

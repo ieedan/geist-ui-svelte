@@ -175,3 +175,40 @@
 		</Details>
 	</div>
 </FieldSet>
+<Spacer h={30} />
+<Text type="h4">As Links</Text>
+<Spacer h={5} />
+<Text>You can use tabs as links by using the <code>`href`</code> attribute.</Text>
+<Spacer h={10} />
+<FieldSet>
+	<div class="flex flex-col justify-start">
+		<Tabs>
+			<TabItem href="/components/tabs">Tabs</TabItem>
+			<TabItem href="/components/badge">Badge</TabItem>
+			<TabItem href="/components/avatar">Avatar</TabItem>
+		</Tabs>
+	</div>
+	<div slot="footer">
+		<Details label="Code">
+			<Code
+				lang="svelte"
+				edits={[
+					{ number: 2, type: "add" },
+					{ number: 5, type: "add" },
+					{ number: 8, type: "add" },
+				]}
+				code={`<Tabs>
+	<TabItem href="/components/tabs">
+		Tabs
+	</TabItem>
+	<TabItem href="/components/badge">
+		Badge
+	</TabItem>
+	<TabItem href="/components/avatar">
+		Avatar
+	</TabItem>
+</Tabs>`}
+			/>
+		</Details>
+	</div>
+</FieldSet>
