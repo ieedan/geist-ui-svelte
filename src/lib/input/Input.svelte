@@ -74,7 +74,7 @@
 	});
 </script>
 
-<div>
+<div style="width: {width ? width : ''};">
 	<Label for={id}>
 		<slot />
 	</Label>

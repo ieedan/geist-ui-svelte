@@ -48,10 +48,11 @@
 		<Details label="Code">
 			<Code
 				lang="svelte"
-				code={`<ToggleButton>
-    <EyeIcon slot="on"/>
-    <EyeSlashIcon slot="off"/>
-</ToggleButton>`}
+				code={`<ToggleButton toggled={true}>Click Me</ToggleButton>
+<ToggleButton toggled={true} color="secondary">Click Me</ToggleButton>
+<ToggleButton toggled={true} color="success">Click Me</ToggleButton>
+<ToggleButton toggled={true} color="warning">Click Me</ToggleButton>
+<ToggleButton toggled={true} color="error">Click Me</ToggleButton>`}
 			/>
 		</Details>
 	</div>
