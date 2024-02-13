@@ -30,6 +30,10 @@
 		debounceTimeout = setTimeout(db, debounce);
 	};
 
+	const change = () => {
+		dispatch("change", { value });
+	}
+
 	const db = () => {
 		dispatch("debounce", { value });
 	};
@@ -61,7 +65,7 @@ focus-within:dark:border-gray-800 w-full data-[border=true]:border"
 		on:touchcancel
 		on:mouseenter
 		on:mouseleave
-		on:change
+		on:change={change}
 		type="text"
 		autocomplete="off"
 		autocorrect="off"
@@ -77,7 +81,10 @@ focus-within:dark:border-gray-800 w-full data-[border=true]:border"
 			class="flex place-items-center h-full justify-center px-2
 					transition-all hover:text-gray-999 dark:hover:text-gray-0
 				  text-gray-400 dark:text-gray-600 data-[has-value=false]:opacity-0"
-			on:click={() => (value = "")}
+			on:click={() => {
+				value = "";
+				change();
+			}}
 		>
 			<XIcon size={14} />
 		</button>
