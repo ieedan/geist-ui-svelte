@@ -32,7 +32,7 @@
 
 	const change = () => {
 		dispatch("change", { value });
-	}
+	};
 
 	const db = () => {
 		dispatch("debounce", { value });

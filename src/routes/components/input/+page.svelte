@@ -263,7 +263,6 @@ placeholder="https://github"/>`}
 	<div class="flex flex-col gap-2">
 		<Input
 			type="text"
-			on:change={(e) => console.log('new value',e.detail.value)}
 			clearable
 			width="250px"
 			placeholder="geist-ui-svelte"
