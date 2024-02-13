@@ -36,14 +36,14 @@
 
 	export const focus = () => inputRef.focus();
 
-	const change = (e: Event) => {
-		const target = e.target as HTMLInputElement;
-		if (!target) return;
-
-		if (target.type == "number") {
-			value = parseFloat(target.value);
-		} else {
-			value = target.value;
+	const change = (e: Event | null = null) => {
+		const target = e?.target as HTMLInputElement;
+		if (target) {
+			if (type == "number") {
+				value = parseFloat(target.value);
+			} else {
+				value = target.value;
+			}
 		}
 
 		dispatch("change", { value });
@@ -52,7 +52,11 @@
 	let debounceTimeout: number;
 
 	const input = () => {
-		value = inputRef.value;
+		if (type == "number") {
+			value = parseFloat(inputRef.value);
+		} else {
+			value = inputRef.value;
+		}
 
 		clearTimeout(debounceTimeout);
 
@@ -70,7 +74,7 @@
 	});
 </script>
 
-<div>
+<div style="width: {width ? width : ''};">
 	<Label for={id}>
 		<slot />
 	</Label>
@@ -177,6 +181,7 @@
 					on:click={() => {
 						inputRef.value = "";
 						value = "";
+						change();
 					}}
 				>
 					<XIcon size={14} />
