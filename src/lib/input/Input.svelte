@@ -81,7 +81,7 @@
 	<div
 		style="width: {width ? width : ''};"
 		data-placement={labelPlacement}
-		data-has-value={value.length > 0}
+		data-has-value={value != null && value != undefined && value.length > 0}
 		data-has-label={label != undefined}
 		data-size={size}
 		data-color={color}
