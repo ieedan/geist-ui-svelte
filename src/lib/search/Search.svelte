@@ -77,7 +77,7 @@ focus-within:dark:border-gray-800 w-full data-[border=true]:border"
 		<button
 			type="button"
 			tabindex="-1"
-			data-has-value={value.length > 0}
+			data-has-value={value && value.length > 0}
 			class="flex place-items-center h-full justify-center px-2
 					transition-all hover:text-gray-999 dark:hover:text-gray-0
 				  text-gray-400 dark:text-gray-600 data-[has-value=false]:opacity-0"
