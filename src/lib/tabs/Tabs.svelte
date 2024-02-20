@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { onMount } from "svelte";
+	import { page } from "$app/stores";
 
 	export let border: boolean = true;
 	let showHoverBackground = false;
@@ -45,6 +46,28 @@
 		const node = e.target as HTMLElement;
 		selectedTab(node);
 	};
+
+	let lastPage = $page.url.pathname;
+
+	$: {
+		// Fixes issue where link isn't updated when navigating through other methods
+		if (lastPage != $page.url.pathname && elementRef) {
+			const children = Array.from(elementRef.children);
+
+			for (let i = 0; i < children.length; i++) {
+				const child = children[i] as HTMLElement;
+				if (
+					child.getAttribute("aria-selected") == "true" ||
+					child.getAttribute("data-active") == "true"
+				) {
+					selectedTab(child);
+					break;
+				}
+			}
+
+			lastPage = $page.url.pathname;
+		}
+	}
 
 	const selectedTab = (node: HTMLElement) => {
 		selectedBorder.style.top = elementRef.offsetTop + node.offsetHeight - 2 + "px";
