@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { onMount } from "svelte";
+	import { page } from "$app/stores";
 
 	export let border: boolean = true;
 	let showHoverBackground = false;
@@ -46,7 +47,27 @@
 		selectedTab(node);
 	};
 
-	const selectedTab = (node: HTMLElement) => {
+	$: if (elementRef) {
+		/* eslint-disable @typescript-eslint/no-unused-vars */
+		let _ = $page.url.pathname; // Need this for the effect
+		const children = Array.from(elementRef.children);
+
+		setTimeout(() => {
+			for (let i = 0; i < children.length; i++) {
+				const child = children[i] as HTMLElement;
+				if (
+					child.getAttribute("aria-selected") == "true" ||
+					child.getAttribute("data-active") == "true"
+				) {
+					selectedTab(child, true);
+					break;
+				}
+			}
+		}, 0);
+	}
+
+	const selectedTab = (node: HTMLElement, fromPage: boolean = false) => {
+		if (node.tagName != "BUTTON" && !fromPage) return;
 		selectedBorder.style.top = elementRef.offsetTop + node.offsetHeight - 2 + "px";
 		selectedBorder.style.width = node.offsetWidth + "px";
 
