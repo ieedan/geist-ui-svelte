@@ -65,7 +65,7 @@
 	const firstOctetKeydown = (e: KeyboardEvent) => {
 		const target = e.target as HTMLInputElement;
 		if (!target) return;
-		if (e.key == " ") {
+		if (e.key == " " || e.key == ".") {
 			e.preventDefault();
 			secondOctetRef.focus();
 			return;
@@ -106,7 +106,7 @@
 
 		if (!canEnter(e)) e.preventDefault();
 
-		if (e.key == " ") {
+		if (e.key == " " || e.key == ".") {
 			e.preventDefault();
 			thirdOctetRef.focus();
 			return;
@@ -152,7 +152,7 @@
 
 		if (!canEnter(e)) e.preventDefault();
 
-		if (e.key == " ") {
+		if (e.key == " " || e.key == ".") {
 			e.preventDefault();
 			fourthOctetRef.focus();
 			return;
