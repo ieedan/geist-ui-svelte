@@ -60,11 +60,10 @@
 	data-show={visible}
 	aria-label={ariaLabel}
 	role="dialog"
-	style="max-height: calc(100svh - 20px);"
 	class="bg-gray-0 dark:bg-gray-999 border-t max-w-full w-full bottom-0 left-0 fixed sm:top-1/2 transition-all
     sm:-translate-x-1/2 sm:left-1/2 sm:-translate-y-1/2 z-50 data-[show=false]:opacity-0 data-[show=false]:sm:scale-90
 	data-[show=false]:pointer-events-none data-[show=false]:scale-95 sm:rounded-xl border-gray-100 sm:border
-	dark:border-gray-900 overflow-y-auto {className}"
+	dark:border-gray-900 {className}"
 >
 	<slot />
 </div>
