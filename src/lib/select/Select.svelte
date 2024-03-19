@@ -8,6 +8,7 @@
 	import Dropdown from "$lib/dropdown/Dropdown.svelte";
 	import { findChild } from "$lib/util/find-child.js";
 
+	export let dropdownZIndex: number = 1;
 	export let initialShow = false;
 	let show = initialShow;
 
@@ -431,10 +432,11 @@
 	style="width: {width};"
 	{disabled}
 	data-place-holder={value == undefined || (multiSelect && value && value.length == 0)}
-	class="flex justify-between h-9 place-items-center w-full bg-gray-0 dark:bg-gray-999 py-1 pr-1 border focus:border-gray-200 focus:dark:border-gray-800
-  disabled:bg-gray-50 dark:disabled:bg-gray-925 disabled:hover:cursor-not-allowed transition-all enabled:hover:border-gray-200
-  border-gray-100 dark:border-gray-900 rounded-md data-[place-holder=true]:text-gray-300 enabled:hover:dark:border-gray-800
-  data-[place-holder=true]:dark:text-gray-700 disabled:text-gray-300 dark:disabled:text-gray-700 focus:outline-none outline-none"
+	class="flex justify-between h-9 place-items-center w-full bg-gray-0 dark:bg-gray-999 py-1 pr-1 border focus:border-gray-200
+	focus:dark:border-gray-800 disabled:bg-gray-50 dark:disabled:bg-gray-925 disabled:hover:cursor-not-allowed
+	transition-all enabled:hover:border-gray-200 border-gray-100 dark:border-gray-900 rounded-md
+	data-[place-holder=true]:text-gray-300 enabled:hover:dark:border-gray-800 data-[place-holder=true]:dark:text-gray-700
+	disabled:text-gray-300 dark:disabled:text-gray-700 focus:outline-none outline-none"
 >
 	<div class="px-2">
 		{#if multiSelect}
@@ -461,8 +463,8 @@
 									if (readonly) return;
 									findAndSelect(v);
 								}}
-								class="flex place-items-center justify-center text-gray-500 disabled:hover:cursor-not-allowed enabled:hover:text-gray-999
-							dark:text-gray-500 dark:enabled:hover:text-gray-0 transition-all"
+								class="flex place-items-center justify-center text-gray-500 disabled:hover:cursor-not-allowed
+								enabled:hover:text-gray-999 dark:text-gray-500 dark:enabled:hover:text-gray-0 transition-all"
 							>
 								<XIcon size={12} />
 							</button>
@@ -502,6 +504,7 @@
 	{width}
 	role="listbox"
 	aria-label="listbox dialog"
+	style="z-index: {dropdownZIndex};"
 	class="group"
 >
 	<div
