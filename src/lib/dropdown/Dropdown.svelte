@@ -7,7 +7,7 @@
 	type DropdownEvent = "click/click" | "mouseenter/mouseleave" | "focus/blur";
 
 	const style = cva(
-		"absolute z-[1] border border-gray-100 dark:border-gray-900 bg-gray-0 dark:bg-gray-999 rounded-lg",
+		"absolute z-10 border border-gray-100 dark:border-gray-900 bg-gray-0 dark:bg-gray-999 rounded-lg",
 		{
 			variants: {
 				placement: {

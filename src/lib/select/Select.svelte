@@ -8,7 +8,7 @@
 	import Dropdown from "$lib/dropdown/Dropdown.svelte";
 	import { findChild } from "$lib/util/find-child.js";
 
-	export let dropdownZIndex: number = 1;
+	export let dropdownZIndex: number = 10;
 	export let initialShow = false;
 	let show = initialShow;
 

@@ -12,11 +12,11 @@
 		{
 			variants: {
 				sticky: {
-					true: "sticky top-0 z-10",
+					true: "sticky top-0 z-20",
 					false: "",
 				},
 				fixed: {
-					true: "fixed top-0 z-10",
+					true: "fixed top-0 z-20",
 					false: "",
 				},
 				noBorder: {
