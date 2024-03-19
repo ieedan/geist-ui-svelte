@@ -6,6 +6,7 @@
 	import { scale } from "svelte/transition";
 	import dark from "./dark-theme.js";
 	import light from "./light-theme.js";
+	import { cn } from "$lib/util/utils.js";
 
 	type EditType = "add" | "remove";
 
@@ -53,6 +54,8 @@
 	export let code: string;
 	/** When true displays line numbers */
 	export let lineNumbers: boolean = true;
+	let className = "";
+	export { className as class };
 	let highlightedCode: string;
 	let fontSize = 14;
 	let editorRef: HTMLDivElement;
@@ -124,16 +127,17 @@
 
 <div
 	bind:this={editorRef}
-	class="rounded-lg px-4 py-4 relative bg-gray-0 dark:bg-gray-999
-	flex place-items-start selection:bg-blue-400 selection:bg-opacity-30 max-w-full"
->
+	class={cn(
+		`rounded-lg px-4 py-4 relative bg-gray-0 dark:bg-gray-999
+		flex place-items-start selection:bg-blue-400 selection:bg-opacity-30 max-w-full overflow-y-auto`,
+		className,
+	)}>
 	{#if lineNumbers}
 		<div class="flex min-w-[40px] flex-col place-items-start justify-center">
 			{#each lines as line}
 				<div
 					class="h-[20px] min-w-[20px] select-none text-gray-600 dark:text-gray-400 relative"
-					style="font-size: {fontSize}px;"
-				>
+					style="font-size: {fontSize}px;">
 					{line.number}
 					<div class="w-5">
 						{#if editsMap.has(line.number)}
@@ -141,16 +145,14 @@
 								<div
 									style="width: {editorWidth}px;"
 									class="absolute top-0 left-full text-gray-999 bg-opacity-25 transition-all
-								bg-blue-200 dark:bg-blue-500 dark:text-gray-0 dark:bg-opacity-25 px-1 pointer-events-none"
-								>
+								bg-blue-200 dark:bg-blue-500 dark:text-gray-0 dark:bg-opacity-25 px-1 pointer-events-none">
 									+
 								</div>
 							{:else}
 								<div
 									style="width: {editorWidth}px;"
 									class="absolute top-0 left-full text-gray-999 bg-red-600 transition-all
-								dark:bg-red-400 dark:text-gray-0 bg-opacity-25 dark:bg-opacity-25 px-1 pointer-events-none"
-								>
+								dark:bg-red-400 dark:text-gray-0 bg-opacity-25 dark:bg-opacity-25 px-1 pointer-events-none">
 									-
 								</div>
 							{/if}
@@ -171,8 +173,7 @@
 		{:else}
 			<div
 				class="hover:text-gray-999 transition-all dark:hover:text-gray-0 text-gray-600 dark:text-gray-400"
-				in:scale={{ duration: 100 }}
-			>
+				in:scale={{ duration: 100 }}>
 				<CloneIcon size={16} />
 			</div>
 		{/if}
