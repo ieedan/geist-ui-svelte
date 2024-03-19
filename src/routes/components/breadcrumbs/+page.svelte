@@ -11,6 +11,7 @@
 
 	let url = "/dashboard/settings/general";
 	let url2 = "/dashboard/components/bread-crumbs";
+	let url3 = "/dashboard/users/aidan-bleser/profile";
 
 	const capitalizeFirstLetter = (path: string): string => {
 		const words = path.split("-");
@@ -97,8 +98,7 @@
 			<Code
 				lang="svelte"
 				code={`<BreadCrumbs/>
-<BreadCrumbs excludePrefix="/dashboard"/>`}
-			/>
+<BreadCrumbs excludePrefix="/dashboard"/>`} />
 		</Details>
 	</div>
 </FieldSet>
@@ -120,6 +120,37 @@
 	<div slot="footer">
 		<Details label="Code">
 			<Code lang="svelte" code={transformExampleCode} />
+		</Details>
+	</div>
+</FieldSet>
+<Spacer h={30} />
+<Text type="h4">Do Not Transform</Text>
+<Spacer h={5} />
+<Text>
+	There are some cases which you may not want to transform the text of certain routes. Like when
+	the slug for a route contains characters like <code>`-`</code> that should not be transformed. For
+	this you can provide the parent route of the route that you don't want to be transformed and it will
+	not transform that route.
+</Text>
+<Spacer h={10} />
+<FieldSet>
+	<div class="flex flex-col gap-2 justify-start">
+		<Input bind:value={url3} width="100%" />
+		<BreadCrumbsDemo url={url3} transform={capitalizeFirstLetter} />
+		<BreadCrumbsDemo
+			url={url3}
+			transform={capitalizeFirstLetter}
+			doNotTransform={["/users"]} />
+	</div>
+	<div slot="footer">
+		<Details label="Code">
+			<Code lang="svelte" code={`<BreadCrumbsDemo 
+	url={url} 
+	transform={capitalizeFirstLetter}/>
+<BreadCrumbsDemo 
+	url={url} 
+	transform={capitalizeFirstLetter} 
+	doNotTransform={["/users"]}/>`} />
 		</Details>
 	</div>
 </FieldSet>
