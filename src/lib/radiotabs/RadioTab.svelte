@@ -29,7 +29,7 @@
 				md: "text-base",
 				lg: "text-lg",
 				xl: "text-xl",
-			}
+			},
 		},
 	});
 
@@ -60,7 +60,8 @@
 	on:click={click}
 	{id}
 	aria-selected={initialSelected}
-	class={cn(style({ color, size }))}>
+	class={cn(style({ color, size }))}
+>
 	<slot />
 </button>
 

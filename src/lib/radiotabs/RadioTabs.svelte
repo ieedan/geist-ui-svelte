@@ -18,7 +18,7 @@
 			color: {
 				primary: "border-gray-100 dark:border-gray-900 bg-gray-0 dark:bg-gray-999",
 				secondary: "border-gray-100 dark:border-gray-900 bg-gray-0 dark:bg-gray-999",
-				ghost: "border-gray-100 dark:border-gray-900 bg-gray-100 dark:bg-gray-900"
+				ghost: "border-gray-100 dark:border-gray-900 bg-gray-100 dark:bg-gray-900",
 			},
 			size: {
 				xs: "",
@@ -26,9 +26,9 @@
 				md: "h-[48px]",
 				lg: "",
 				xl: "",
-			}
-		}
-	})
+			},
+		},
+	});
 
 	$: setContext("geist-radio-tab-color", color);
 	$: setContext("geist-radio-tab-size", size);
@@ -85,15 +85,7 @@
 	});
 </script>
 
-<div
-	bind:this={tabsRef}
-	data-color={color}
-	role="tablist"
-	class={cn(
-		style({ color }),
-		className,
-	)}
->
+<div bind:this={tabsRef} data-color={color} role="tablist" class={cn(style({ color }), className)}>
 	<slot />
 </div>
 
