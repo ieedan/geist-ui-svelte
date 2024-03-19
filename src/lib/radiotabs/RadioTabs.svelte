@@ -1,15 +1,37 @@
 <script lang="ts">
+	import type { Size } from "$lib/types.js";
 	import { cn } from "$lib/util/utils.js";
-	import { createEventDispatcher, onMount } from "svelte";
+	import { cva } from "class-variance-authority";
+	import { createEventDispatcher, onMount, setContext } from "svelte";
 
 	const dispatch = createEventDispatcher();
 
 	let tabsRef: HTMLDivElement;
 	export let selected: string = "";
-	export let color: "primary" | "secondary" = "primary";
+	export let color: "primary" | "secondary" | "ghost" = "primary";
+	export let size: Size = "md";
 	let className: string = "";
 	export { className as class };
-	export let height = "48px";
+
+	const style = cva("border rounded-md p-1 w-fit flex place-items-center gap-1 group", {
+		variants: {
+			color: {
+				primary: "border-gray-100 dark:border-gray-900 bg-gray-0 dark:bg-gray-999",
+				secondary: "border-gray-100 dark:border-gray-900 bg-gray-0 dark:bg-gray-999",
+				ghost: "border-gray-100 dark:border-gray-900 bg-gray-100 dark:bg-gray-900"
+			},
+			size: {
+				xs: "",
+				sm: "",
+				md: "h-[48px]",
+				lg: "",
+				xl: "",
+			}
+		}
+	})
+
+	$: setContext("geist-radio-tab-color", color);
+	$: setContext("geist-radio-tab-size", size);
 
 	$: {
 		if (tabsRef) {
@@ -65,12 +87,10 @@
 
 <div
 	bind:this={tabsRef}
-	style="height: {height};"
 	data-color={color}
 	role="tablist"
 	class={cn(
-		`border border-gray-100 dark:border-gray-900 bg-gray-0 dark:bg-gray-999 
-	rounded-md p-1 w-fit flex place-items-center gap-1 group`,
+		style({ color }),
 		className,
 	)}
 >
