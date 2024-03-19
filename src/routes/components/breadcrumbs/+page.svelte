@@ -98,7 +98,8 @@
 			<Code
 				lang="svelte"
 				code={`<BreadCrumbs/>
-<BreadCrumbs excludePrefix="/dashboard"/>`} />
+<BreadCrumbs excludePrefix="/dashboard"/>`}
+			/>
 		</Details>
 	</div>
 </FieldSet>
@@ -137,20 +138,20 @@
 	<div class="flex flex-col gap-2 justify-start">
 		<Input bind:value={url3} width="100%" />
 		<BreadCrumbsDemo url={url3} transform={capitalizeFirstLetter} />
-		<BreadCrumbsDemo
-			url={url3}
-			transform={capitalizeFirstLetter}
-			doNotTransform={["/users"]} />
+		<BreadCrumbsDemo url={url3} transform={capitalizeFirstLetter} doNotTransform={["/users"]} />
 	</div>
 	<div slot="footer">
 		<Details label="Code">
-			<Code lang="svelte" code={`<BreadCrumbsDemo 
+			<Code
+				lang="svelte"
+				code={`<BreadCrumbsDemo 
 	url={url} 
 	transform={capitalizeFirstLetter}/>
 <BreadCrumbsDemo 
 	url={url} 
 	transform={capitalizeFirstLetter} 
-	doNotTransform={["/users"]}/>`} />
+	doNotTransform={["/users"]}/>`}
+			/>
 		</Details>
 	</div>
 </FieldSet>
