@@ -351,6 +351,8 @@
 	"types": "./dist/index.d.ts",
 	"type": "module",
 	"dependencies": {
+		"@fontsource/geist-mono": "^5.0.2",
+		"@fontsource/geist-sans": "^5.0.2",
 		"@sveltejs/kit": "^2.5.4",
 		"@vercel/analytics": "^1.2.2",
 		"@vercel/speed-insights": "^1.0.10",

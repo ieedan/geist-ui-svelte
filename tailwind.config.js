@@ -3,8 +3,8 @@ export default {
 	content: ["./src/**/*.{html,js,svelte,ts}"],
 	theme: {
 		fontFamily: {
-			serif: ["GeistMono", "Monospace"],
-			sans: ["Inter", "sans-serif"],
+			serif: ["Geist Mono", "Monospace"],
+			sans: ["Geist Sans", "sans-serif"],
 		},
 		extend: {
 			colors: {
