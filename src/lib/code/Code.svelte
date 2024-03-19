@@ -6,6 +6,7 @@
 	import { scale } from "svelte/transition";
 	import dark from "./dark-theme.js";
 	import light from "./light-theme.js";
+	import { cn } from "$lib/util/utils.js";
 
 	type EditType = "add" | "remove";
 
@@ -53,6 +54,8 @@
 	export let code: string;
 	/** When true displays line numbers */
 	export let lineNumbers: boolean = true;
+	let className = "";
+	export { className as class };
 	let highlightedCode: string;
 	let fontSize = 14;
 	let editorRef: HTMLDivElement;
@@ -124,8 +127,11 @@
 
 <div
 	bind:this={editorRef}
-	class="rounded-lg px-4 py-4 relative bg-gray-0 dark:bg-gray-999
-	flex place-items-start selection:bg-blue-400 selection:bg-opacity-30 max-w-full"
+	class={cn(
+		`rounded-lg px-4 py-4 relative bg-gray-0 dark:bg-gray-999
+		flex place-items-start selection:bg-blue-400 selection:bg-opacity-30 max-w-full overflow-y-auto`,
+		className,
+	)}
 >
 	{#if lineNumbers}
 		<div class="flex min-w-[40px] flex-col place-items-start justify-center">

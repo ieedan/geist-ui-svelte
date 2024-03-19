@@ -1,5 +1,8 @@
 <script lang="ts">
-	import { createEventDispatcher } from "svelte";
+	import type { Size } from "$lib/types.js";
+	import { cn } from "$lib/util/utils.js";
+	import { cva } from "class-variance-authority";
+	import { createEventDispatcher, getContext } from "svelte";
 
 	const dispatch = createEventDispatcher();
 
@@ -7,6 +10,31 @@
 	export let initialSelected: boolean = false;
 	/* Use ids to differentiate tabs */
 	export let id: string = "";
+
+	const style = cva("transition-all px-3 py-1 rounded-md h-full", {
+		variants: {
+			color: {
+				primary: `text-gray-400 dark:text-gray-600 aria-selected:bg-gray-999 
+				hover:text-gray-999 dark:hover:text-gray-0 aria-selected:text-gray-0 
+				aria-selected:dark:bg-gray-0 aria-selected:dark:text-gray-999`,
+				secondary: `aria-selected:dark:bg-gray-900 aria-selected:bg-gray-100 aria-selected:dark:text-gray-0 
+				aria-selected:text-gray-999 hover:dark:text-gray-0 hover:text-gray-999 
+				text-gray-400 dark:text-gray-600`,
+				ghost: `text-gray-999 dark:text-gray-0 aria-selected:dark:bg-gray-999 
+				aria-selected:text-gray-999 aria-selected:bg-gray-0 aria-selected:dark:text-gray-0`,
+			},
+			size: {
+				xs: "text-xs",
+				sm: "text-sm",
+				md: "text-base",
+				lg: "text-lg",
+				xl: "text-xl",
+			},
+		},
+	});
+
+	$: color = getContext<"primary" | "secondary" | "ghost">("geist-radio-tab-color");
+	$: size = getContext<Size>("geist-radio-tab-size");
 
 	let tabRef: HTMLButtonElement;
 
@@ -32,18 +60,7 @@
 	on:click={click}
 	{id}
 	aria-selected={initialSelected}
-	class="transition-all px-3 py-1 rounded-md h-full
-
-	group-data-[color='primary']:text-gray-400 group-data-[color='primary']:dark:text-gray-600
-  group-data-[color='primary']:aria-selected:bg-gray-999 group-data-[color='primary']:hover:text-gray-999
-  group-data-[color='primary']:dark:hover:text-gray-0
-  group-data-[color='primary']:aria-selected:text-gray-0 group-data-[color='primary']:aria-selected:dark:bg-gray-0
-  group-data-[color='primary']:aria-selected:dark:text-gray-999
-  
-    group-data-[color='secondary']:aria-selected:dark:bg-gray-900 group-data-[color='secondary']:aria-selected:bg-gray-100
-	group-data-[color='secondary']:aria-selected:dark:text-gray-0 group-data-[color='secondary']:aria-selected:text-gray-999
-	group-data-[color='secondary']:hover:dark:text-gray-0 group-data-[color='secondary']:hover:text-gray-999
-	group-data-[color='secondary']:text-gray-400 group-data-[color='secondary']:dark:text-gray-600"
+	class={cn(style({ color, size }))}
 >
 	<slot />
 </button>
