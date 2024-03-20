@@ -24,9 +24,9 @@ export { default as ButtonDropdownItem } from "./buttondropdown/ButtonDropdownIt
 
 export { default as Search } from "./search/Search.svelte";
 
-export { default as ButtonGroup } from "./buttongroup/ButtonGroup.svelte";
+export { default as ButtonGroup } from "./buttongroup/button-group.svelte";
 
-export { default as ButtonGroupButton } from "./buttongroup/ButtonGroupButton.svelte";
+export { default as ButtonGroupButton } from "./buttongroup/button-group-button.svelte";
 
 export { default as ToggleButton } from "./togglebutton/ToggleButton.svelte";
 

@@ -5,8 +5,8 @@
 	import Snippet from "$lib/snippet/Snippet.svelte";
 	import Spacer from "$lib/spacer/Spacer.svelte";
 	import Text from "$lib/text/Text.svelte";
-	import ButtonGroup from "$lib/buttongroup/ButtonGroup.svelte";
-	import ButtonGroupButton from "$lib/buttongroup/ButtonGroupButton.svelte";
+	import ButtonGroup from "$lib/buttongroup/button-group.svelte";
+	import ButtonGroupButton from "$lib/buttongroup/button-group-button.svelte";
 	import type { ButtonColor } from "$lib/types.js";
 
 	const colors: ButtonColor[] = [
