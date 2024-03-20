@@ -112,7 +112,7 @@
 			name="Aidan"
 			img="https://avatars.githubusercontent.com/u/117548273?v=4"
 			detail
-			details="Trash Dev"
+			details="Senior Nobody"
 		/>
 	</div>
 	<div slot="footer">
@@ -123,7 +123,7 @@
 	name="Aidan"
 	img="https://avatars.githubusercontent.com/u/117548273?v=4"
 	detail
-	details="Trash Dev" />`}
+	details="Senior Nobody" />`}
 			/>
 		</Details>
 	</div>
