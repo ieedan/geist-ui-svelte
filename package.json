@@ -1,6 +1,6 @@
 {
 	"name": "geist-ui-svelte",
-	"version": "0.7.0",
+	"version": "0.7.1",
 	"author": {
 		"name": "Aidan Bleser",
 		"url": "https://aidanbleser.com"
@@ -328,13 +328,13 @@
 		"svelte": "^4.0.0"
 	},
 	"devDependencies": {
-		"@cspell/eslint-plugin": "^8.6.0",
-		"@sveltejs/adapter-auto": "^3.1.1",
+		"@cspell/eslint-plugin": "^8.6.1",
+		"@sveltejs/adapter-auto": "^3.2.0",
 		"@sveltejs/package": "^2.3.0",
 		"@sveltejs/vite-plugin-svelte": "^3.0.2",
 		"@types/eslint": "^8.56.6",
-		"@typescript-eslint/eslint-plugin": "^7.3.1",
-		"@typescript-eslint/parser": "^7.3.1",
+		"@typescript-eslint/eslint-plugin": "^7.4.0",
+		"@typescript-eslint/parser": "^7.4.0",
 		"eslint": "^8.57.0",
 		"eslint-config-prettier": "^9.1.0",
 		"eslint-plugin-svelte": "^2.35.1",
@@ -344,8 +344,8 @@
 		"svelte": "^4.2.12",
 		"svelte-check": "^3.6.8",
 		"tslib": "^2.4.1",
-		"typescript": "^5.4.2",
-		"vite": "^5.1.6"
+		"typescript": "^5.4.3",
+		"vite": "^5.2.6"
 	},
 	"svelte": "./dist/index.js",
 	"types": "./dist/index.d.ts",
@@ -353,17 +353,17 @@
 	"dependencies": {
 		"@fontsource/geist-mono": "^5.0.2",
 		"@fontsource/geist-sans": "^5.0.2",
-		"@sveltejs/kit": "^2.5.4",
+		"@sveltejs/kit": "^2.5.5",
 		"@vercel/analytics": "^1.2.2",
 		"@vercel/speed-insights": "^1.0.10",
-		"autoprefixer": "^10.4.18",
+		"autoprefixer": "^10.4.19",
 		"class-variance-authority": "^0.7.0",
 		"clsx": "^2.1.0",
 		"mode-watcher": "^0.3.0",
-		"postcss": "^8.4.36",
+		"postcss": "^8.4.38",
 		"shikiji": "^0.10.2",
 		"tailwind-merge": "^2.2.2",
-		"tailwindcss": "^3.4.1",
+		"tailwindcss": "^3.4.3",
 		"tippy.js": "^6.3.7"
 	}
 }
