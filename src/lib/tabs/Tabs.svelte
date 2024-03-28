@@ -40,11 +40,24 @@
 		let offset = lastElement.offsetLeft - scrollLeft;
 
 		hoverBackgroundRef.style.left = offset + "px";
+
+		const children = Array.from(elementRef.children);
+
+		for (let i = 0; i < children.length; i++) {
+			const child = children[i] as HTMLElement;
+			if (
+				child.getAttribute("aria-selected") == "true" ||
+				child.getAttribute("data-active") == "true"
+			) {
+				selectTab(child, true);
+				break;
+			}
+		}
 	};
 
 	const click = (e: MouseEvent) => {
 		const node = e.target as HTMLElement;
-		selectedTab(node);
+		selectTab(node);
 	};
 
 	$: if (elementRef) {
@@ -59,14 +72,14 @@
 					child.getAttribute("aria-selected") == "true" ||
 					child.getAttribute("data-active") == "true"
 				) {
-					selectedTab(child, true);
+					selectTab(child, true);
 					break;
 				}
 			}
 		}, 0);
 	}
 
-	const selectedTab = (node: HTMLElement, fromPage: boolean = false) => {
+	const selectTab = (node: HTMLElement, fromPage: boolean = false) => {
 		if (node.tagName != "BUTTON" && !fromPage) return;
 		selectedBorder.style.top = elementRef.offsetTop + node.offsetHeight - 2 + "px";
 		selectedBorder.style.width = node.offsetWidth + "px";
@@ -86,7 +99,7 @@
 				child.getAttribute("aria-selected") == "true" ||
 				child.getAttribute("data-active") == "true"
 			) {
-				selectedTab(child);
+				selectTab(child);
 				return;
 			}
 		}
