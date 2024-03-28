@@ -40,11 +40,24 @@
 		let offset = lastElement.offsetLeft - scrollLeft;
 
 		hoverBackgroundRef.style.left = offset + "px";
+
+		const children = Array.from(elementRef.children);
+		
+		for (let i = 0; i < children.length; i++) {
+			const child = children[i] as HTMLElement;
+			if (
+				child.getAttribute("aria-selected") == "true" ||
+				child.getAttribute("data-active") == "true"
+			) {
+				selectTab(child, true);
+				break;
+			}
+		}
 	};
 
 	const click = (e: MouseEvent) => {
 		const node = e.target as HTMLElement;
-		selectedTab(node);
+		selectTab(node);
 	};
 
 	$: if (elementRef) {
@@ -59,14 +72,14 @@
 					child.getAttribute("aria-selected") == "true" ||
 					child.getAttribute("data-active") == "true"
 				) {
-					selectedTab(child, true);
+					selectTab(child, true);
 					break;
 				}
 			}
 		}, 0);
 	}
 
-	const selectedTab = (node: HTMLElement, fromPage: boolean = false) => {
+	const selectTab = (node: HTMLElement, fromPage: boolean = false) => {
 		if (node.tagName != "BUTTON" && !fromPage) return;
 		selectedBorder.style.top = elementRef.offsetTop + node.offsetHeight - 2 + "px";
 		selectedBorder.style.width = node.offsetWidth + "px";
@@ -86,7 +99,7 @@
 				child.getAttribute("aria-selected") == "true" ||
 				child.getAttribute("data-active") == "true"
 			) {
-				selectedTab(child);
+				selectTab(child);
 				return;
 			}
 		}
@@ -96,8 +109,7 @@
 <div
 	data-border={border}
 	class="flex place-items-center data-[border=true]:border-b border-gray-100 overflow-hidden
-dark:border-gray-900 relative group/tabs"
->
+dark:border-gray-900 relative group/tabs">
 	<!-- svelte-ignore a11y-mouse-events-have-key-events -->
 	<!-- svelte-ignore a11y-click-events-have-key-events -->
 	<!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
@@ -109,21 +121,18 @@ dark:border-gray-900 relative group/tabs"
 		on:mouseleave={() => (showHoverBackground = false)}
 		on:focusin={hover}
 		on:focusout={() => (showHoverBackground = false)}
-		on:click={click}
-	>
+		on:click={click}>
 		<slot />
 	</nav>
 	<div
 		bind:this={selectedBorder}
 		data-show={border}
-		class="h-[2px] bg-gray-999 dark:bg-gray-0 transition-all absolute z-[0] hidden data-[show=true]:block"
-	>
+		class="h-[2px] bg-gray-999 dark:bg-gray-0 transition-all absolute z-[0] hidden data-[show=true]:block">
 	</div>
 	<div
 		bind:this={hoverBackgroundRef}
 		class="absolute z-[0] rounded-md bg-gray-100 transition-all data-[show=false]:opacity-0 dark:bg-gray-900"
-		data-show={showHoverBackground}
-	></div>
+		data-show={showHoverBackground}></div>
 </div>
 
 <!--
