@@ -1,6 +1,5 @@
 <script lang="ts">
 	import { page } from "$app/stores";
-	import Text from "$lib/text/Text.svelte";
 
 	/** Can be used to exclude a path prefix EX: excludePrefix == '/dashboard' => route == '/dashboard/settings' => route == '/settings'*/
 	export let excludePrefix: string | undefined = undefined;
@@ -60,7 +59,8 @@
 	{#each breadCrumbs as { name, href }}
 		<span
 			class="text-gray-300
-			dark:text-gray-700 font-serif font-thin italic">
+			dark:text-gray-700 font-serif font-thin italic"
+		>
 			{separator}
 		</span>
 		<a
@@ -69,7 +69,8 @@
 			class="font-medium data-[active=true]:text-gray-999 text-gray-500
             dark:text-gray-500 data-[active=true]:dark:text-gray-0
             dark:hover:bg-gray-925 dark:hover:text-gray-0 hover:text-gray-999 hover:bg-gray-50
-            flex place-items-center gap-4 px-2 py-1 transition-all rounded-md">
+            flex place-items-center gap-4 px-2 py-1 transition-all rounded-md"
+		>
 			{name}
 		</a>
 	{/each}
