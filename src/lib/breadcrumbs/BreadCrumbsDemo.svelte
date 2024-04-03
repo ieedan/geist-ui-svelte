@@ -1,6 +1,4 @@
 <script lang="ts">
-	import Text from "$lib/text/Text.svelte";
-
 	/** Can be used to exclude a path prefix EX: excludePrefix == '/dashboard' => route == '/dashboard/settings' => route == '/settings'*/
 	export let excludePrefix: string | undefined = undefined;
 	/** Allows you to apply a custom transform to the path name */
@@ -59,7 +57,12 @@
 
 <ul class="flex place-items-center gap-2 px-4">
 	{#each breadCrumbs as { name, href }}
-		<Text color="secondary" i>{separator}</Text>
+		<span
+			class="text-gray-300
+		dark:text-gray-700 font-serif font-thin italic"
+		>
+			{separator}
+		</span>
 		<a
 			{href}
 			data-active={url == href}
