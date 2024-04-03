@@ -58,15 +58,18 @@
 
 <ul class="flex place-items-center gap-2 px-4">
 	{#each breadCrumbs as { name, href }}
-		<Text color="secondary" i>{separator}</Text>
+		<span
+			class="text-gray-300
+			dark:text-gray-700 font-serif font-thin italic">
+			{separator}
+		</span>
 		<a
 			{href}
 			data-active={$page.url.pathname == href}
 			class="font-medium data-[active=true]:text-gray-999 text-gray-500
             dark:text-gray-500 data-[active=true]:dark:text-gray-0
             dark:hover:bg-gray-925 dark:hover:text-gray-0 hover:text-gray-999 hover:bg-gray-50
-            flex place-items-center gap-4 px-2 py-1 transition-all rounded-md"
-		>
+            flex place-items-center gap-4 px-2 py-1 transition-all rounded-md">
 			{name}
 		</a>
 	{/each}
