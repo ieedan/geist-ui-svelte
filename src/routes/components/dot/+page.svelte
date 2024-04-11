@@ -1,8 +1,6 @@
 <script lang="ts">
-	import Code from "$lib/code/Code.svelte";
-	import Details from "$lib/details/Details.svelte";
+	import Playground from "$lib/docs-components/playground/playground.svelte";
 	import Dot from "$lib/dot/Dot.svelte";
-	import FieldSet from "$lib/fieldset/FieldSet.svelte";
 	import Snippet from "$lib/snippet/Snippet.svelte";
 	import Spacer from "$lib/spacer/Spacer.svelte";
 	import Text from "$lib/text/Text.svelte";
@@ -16,61 +14,36 @@
 <Spacer h={30} />
 <Text type="h4">Sizes</Text>
 <Spacer h={10} />
-<FieldSet>
-	<div class="flex gap-2 justify-start place-items-end">
-		<Dot />
-		<Dot size={16} />
-		<Dot size={20} />
-		<Dot size={24} />
-	</div>
-	<div slot="footer">
-		<Details label="Code">
-			<Code
-				lang="svelte"
-				code={`<Dot/>
+<Playground class="flex-row gap-2 place-items-end"
+	code={`<Dot/>
 <Dot size={16}/>
 <Dot size={20}/>
-<Dot size={24}/>`}
-			/>
-		</Details>
-	</div>
-</FieldSet>
+<Dot size={24}/>`}>
+	<Dot />
+	<Dot size={16} />
+	<Dot size={20} />
+	<Dot size={24} />
+</Playground>
 <Spacer h={30} />
 <Text type="h4">Colors</Text>
 <Spacer h={10} />
-<FieldSet>
-	<div class="flex gap-2 justify-start place-items-end">
-		<Dot />
-		<Dot type="success" />
-		<Dot type="warning" />
-		<Dot type="error" />
-		<Dot type="secondary" />
-		<Dot type="go" />
-	</div>
-	<div slot="footer">
-		<Details label="Code">
-			<Code
-				lang="svelte"
-				code={`<Dot/>
+<Playground class="flex-row gap-2"
+	code={`<Dot/>
 <Dot type="success"/>
 <Dot type="warning"/>
 <Dot type="error"/>
 <Dot type="secondary"/>
-<Dot type="go"/>`}
-			/>
-		</Details>
-	</div>
-</FieldSet>
+<Dot type="go"/>`}>
+	<Dot />
+	<Dot type="success" />
+	<Dot type="warning" />
+	<Dot type="error" />
+	<Dot type="secondary" />
+	<Dot type="go" />
+</Playground>
 <Spacer h={30} />
 <Text type="h4">Custom Color</Text>
 <Spacer h={10} />
-<FieldSet>
-	<div class="flex gap-2 justify-start place-items-end">
-		<Dot color="#ff00ff" />
-	</div>
-	<div slot="footer">
-		<Details label="Code">
-			<Code lang="svelte" code={`<Dot color="#ff00ff"/>`} />
-		</Details>
-	</div>
-</FieldSet>
+<Playground code={`<Dot color="#ff00ff"/>`}>
+	<Dot color="#ff00ff" />
+</Playground>

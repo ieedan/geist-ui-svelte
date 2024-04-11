@@ -15,7 +15,7 @@
 
 	const updateHeight = async () => {
 		await tick(); // Ensures DOM is updated
-		contentHeight = contentElement.scrollHeight;
+		if (contentElement) contentHeight = contentElement.scrollHeight;
 	};
 
 	$: if (show) {

@@ -48,8 +48,8 @@
 <Spacer h={10} />
 <Playground
 	code={`<Avatar 
-name="Aidan"
-img="https://avatars.githubusercontent.com/u/117548273?v=4"/>`}>
+	name="Aidan"
+	img="https://avatars.githubusercontent.com/u/117548273?v=4"/>`}>
 	<Avatar name="Aidan" img="https://avatars.githubusercontent.com/u/117548273?v=4" />
 </Playground>
 <Spacer h={30} />

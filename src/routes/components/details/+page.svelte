@@ -1,7 +1,6 @@
 <script lang="ts">
-	import Code from "$lib/code/Code.svelte";
 	import Details from "$lib/details/Details.svelte";
-	import FieldSet from "$lib/fieldset/FieldSet.svelte";
+	import Playground from "$lib/docs-components/playground/playground.svelte";
 	import Snippet from "$lib/snippet/Snippet.svelte";
 	import Spacer from "$lib/spacer/Spacer.svelte";
 	import Text from "$lib/text/Text.svelte";
@@ -15,58 +14,43 @@
 <Spacer h={30} />
 <Text type="h4">Basic</Text>
 <Spacer h={10} />
-<FieldSet>
-	<div class="flex flex-col justify-start">
-		<Details label="See more">Some details here</Details>
-	</div>
-	<div slot="footer">
-		<Details label="Code">
-			<Code
-				lang="svelte"
-				code={`<Details label="See more">
+<Playground
+	code={`<Details label="See more">
 	Some details here
-</Details>`}
-			/>
-		</Details>
-	</div>
-</FieldSet>
+</Details>`}>
+	<Details label="See more">Some details here</Details>
+</Playground>
 <Spacer h={30} />
 <Text type="h4">With animation</Text>
 <Spacer h={10} />
-<FieldSet>
-	<div class="flex flex-col justify-start">
-		<Details label="See more" animate>Some details here</Details>
-	</div>
-	<div slot="footer">
-		<Details label="Code">
-			<Code
-				lang="svelte"
-				edits={[{ number: 2, type: "add" }]}
-				code={`<Details label="See more" 
+<Playground
+	edits={[{ number: 2, type: "add" }]}
+	code={`<Details label="See more" 
 	animate>
-	Some details here
-</Details>`}
-			/>
-		</Details>
-	</div>
-</FieldSet>
+Some details here
+</Details>`}>
+	<Details label="See more" animate>Some details here</Details>
+</Playground>
 <Spacer h={30} />
 <Text type="h4">Initial show</Text>
 <Spacer h={10} />
-<FieldSet>
-	<div class="flex flex-col justify-start">
-		<Details label="See more" initialShow={true}>Some details here</Details>
-	</div>
-	<div slot="footer">
-		<Details label="Code">
-			<Code
-				lang="svelte"
-				edits={[{ number: 2, type: "add" }]}
-				code={`<Details label="See more" 
+<Playground
+	edits={[{ number: 2, type: "add" }]}
+	code={`<Details label="See more" 
 	initialShow={true}>
-	Some details here
-</Details>`}
-			/>
-		</Details>
-	</div>
-</FieldSet>
+Some details here
+</Details>`}>
+	<Details label="See more" initialShow={true}>Some details here</Details>
+</Playground>
+<Spacer h={30} />
+<Text type="h4">Different Label When Shown</Text>
+<Spacer h={10} />
+<Playground
+	edits={[{ number: 2, type: "add" }]}
+	code={`<Details label="Show Code" showLabel="Hide Code">
+	<Snippet text="npm i geist-ui-svelte" type="transparent"/>
+</Details>`}>
+	<Details label="Show Code" showLabel="Hide Code">
+		<Snippet text="npm i geist-ui-svelte" type="transparent"/>
+	</Details>
+</Playground>

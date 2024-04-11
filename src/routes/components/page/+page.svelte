@@ -8,6 +8,7 @@
 	import Text from "$lib/text/Text.svelte";
 	import Page from "$lib/page/Page.svelte";
 	import Center from "$lib/center/Center.svelte";
+	import Playground from "$lib/docs-components/playground/playground.svelte";
 
 	let showPage = false;
 </script>
@@ -25,30 +26,21 @@
 	shrink this page to a mobile view and click the menu icon.
 </Text>
 <Spacer h={10} />
-<FieldSet>
-	<div class="flex flex-col justify-start">
-		<Button on:click={() => (showPage = true)}>Show page</Button>
-		<Page bind:visible={showPage}>
-			<Center class="h-full">
-				<Button on:click={() => (showPage = false)}>
-					Click here or press <code>`Esc`</code> to exit
-				</Button>
-			</Center>
-		</Page>
-	</div>
-	<div slot="footer">
-		<Details label="Code">
-			<Code
-				lang="svelte"
-				code={`<Button on:click={() => (showPage = true)}>Show page</Button>
+<Playground
+	code={`<Button on:click={() => (showPage = true)}>Show page</Button>
 <Page bind:visible={showPage}>
 	<Center class="h-full">
 		<Button on:click={() => showPage = false}>
 			Click here or press <code>\`Esc\`</code> to exit
 		</Button>
 	</Center>
-</Page>`}
-			/>
-		</Details>
-	</div>
-</FieldSet>
+</Page>`}>
+	<Button on:click={() => (showPage = true)}>Show page</Button>
+	<Page bind:visible={showPage}>
+		<Center class="h-full">
+			<Button on:click={() => (showPage = false)}>
+				Click here or press <code>`Esc`</code> to exit
+			</Button>
+		</Center>
+	</Page>
+</Playground>

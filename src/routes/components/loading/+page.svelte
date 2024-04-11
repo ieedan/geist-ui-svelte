@@ -1,11 +1,9 @@
 <script lang="ts">
-	import Code from "$lib/code/Code.svelte";
-	import Details from "$lib/details/Details.svelte";
-	import FieldSet from "$lib/fieldset/FieldSet.svelte";
 	import Snippet from "$lib/snippet/Snippet.svelte";
 	import Spacer from "$lib/spacer/Spacer.svelte";
 	import Text from "$lib/text/Text.svelte";
 	import Loading from "$lib/loading/Loading.svelte";
+	import Playground from "$lib/docs-components/playground/playground.svelte";
 </script>
 
 <Text type="h3">Loading</Text>
@@ -16,46 +14,30 @@
 <Spacer h={30} />
 <Text type="h4">Sizes</Text>
 <Spacer h={10} />
-<FieldSet>
-	<div class="flex gap-3 place-items-end justify-start py-2">
-		<Loading size="xs" />
-		<Loading size="sm" />
-		<Loading size="md" />
-		<Loading size="lg" />
-		<Loading size="xl" />
-	</div>
-	<div slot="footer">
-		<Details label="Code">
-			<Code
-				lang="svelte"
-				code={`<Loading size="xs"/>
+<Playground
+	class="flex-row gap-2 place-items-end py-2"
+	code={`<Loading size="xs"/>
 <Loading size="sm"/>
 <Loading size="md"/>
 <Loading size="lg"/>
-<Loading size="xl"/>`}
-			/>
-		</Details>
-	</div>
-</FieldSet>
+<Loading size="xl"/>`}>
+	<Loading size="xs" />
+	<Loading size="sm" />
+	<Loading size="md" />
+	<Loading size="lg" />
+	<Loading size="xl" />
+</Playground>
 <Spacer h={30} />
 <Text type="h4">Colors</Text>
 <Spacer h={10} />
-<FieldSet>
-	<div class="flex gap-3 place-items-end justify-start py-2">
-		<Loading />
-		<Loading type="success" />
-		<Loading type="warning" />
-		<Loading type="error" />
-	</div>
-	<div slot="footer">
-		<Details label="Code">
-			<Code
-				lang="svelte"
-				code={`<Loading />
+<Playground
+	class="flex-row gap-2 py-2"
+	code={`<Loading />
 <Loading type="success"/>
 <Loading type="warning"/>
-<Loading type="error"/>`}
-			/>
-		</Details>
-	</div>
-</FieldSet>
+<Loading type="error"/>`}>
+	<Loading />
+	<Loading type="success" />
+	<Loading type="warning" />
+	<Loading type="error" />
+</Playground>

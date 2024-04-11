@@ -1,7 +1,4 @@
 <script lang="ts">
-	import Code from "$lib/code/Code.svelte";
-	import Details from "$lib/details/Details.svelte";
-	import FieldSet from "$lib/fieldset/FieldSet.svelte";
 	import Snippet from "$lib/snippet/Snippet.svelte";
 	import Spacer from "$lib/spacer/Spacer.svelte";
 	import Text from "$lib/text/Text.svelte";
@@ -11,6 +8,7 @@
 	import CloneIcon from "$lib/icons/CloneIcon.svelte";
 	import Link from "$lib/link/Link.svelte";
 	import type { Placement } from "$lib/util/place.js";
+	import Playground from "$lib/docs-components/playground/playground.svelte";
 
 	const placements: Placement[] = [
 		"top",
@@ -53,21 +51,12 @@
 <Spacer h={30} />
 <Text type="h4">Basic</Text>
 <Spacer h={10} />
-<FieldSet>
-	<div class="flex gap-2 justify-start">
-		<Button id="button-id">Hover me</Button>
-		<ToolTip anchor="#button-id" content="Hovered" />
-	</div>
-	<div slot="footer">
-		<Details label="Code">
-			<Code
-				lang="svelte"
-				code={`<Button id="button-id">Hover me</Button>
-<ToolTip anchor="#button-id" content='Hovered'/>`}
-			/>
-		</Details>
-	</div>
-</FieldSet>
+<Playground
+	code={`<Button id="button-id">Hover me</Button>
+<ToolTip anchor="#button-id" content='Hovered'/>`}>
+	<Button id="button-id">Hover me</Button>
+	<ToolTip anchor="#button-id" content="Hovered" />
+</Playground>
 <Spacer h={30} />
 <Note color="success">
 	The Tooltip component uses
@@ -80,19 +69,12 @@
 <Spacer h={20} />
 <Text type="h4">Placement</Text>
 <Spacer h={10} />
-<FieldSet>
-	<div class="flex flex-wrap gap-2 justify-start">
-		{#each placements as placement}
-			<Button id="placement-{placement}">{placement}</Button>
-			<ToolTip anchor="#placement-{placement}" {placement} content="{placement} Hover" />
-		{/each}
-	</div>
-	<div slot="footer">
-		<Details label="Code">
-			<Code lang="svelte" code={exampleCode} />
-		</Details>
-	</div>
-</FieldSet>
+<Playground code={exampleCode} class="gap-2 flex-row flex-wrap">
+	{#each placements as placement}
+		<Button id="placement-{placement}">{placement}</Button>
+		<ToolTip anchor="#placement-{placement}" {placement} content="{placement} Hover" />
+	{/each}
+</Playground>
 <Spacer h={30} />
 <Text type="h4">Dynamically Set Content</Text>
 <Spacer h={5} />
@@ -101,25 +83,16 @@
 	Sometimes you need to set the content of a tooltip dynamically.
 </Text>
 <Spacer h={10} />
-<FieldSet>
-	<div class="flex flex-wrap gap-2 justify-start">
-		<Button square id="copy-button" on:click={copy}>
-			<CloneIcon size={16} />
-		</Button>
-		<ToolTip anchor="#copy-button" content={copied ? "Copied!" : "Copy"} hideOnClick={false} />
-	</div>
-	<div slot="footer">
-		<Details label="Code">
-			<Code
-				lang="svelte"
-				code={`<Button square id="copy-button" on:click={copy}>
+<Playground
+	code={`<Button square id="copy-button" on:click={copy}>
 	<CloneIcon size={16} />
 </Button>
 <ToolTip 
   anchor="#copy-button" 
   hideOnClick={false}
-  content={copied ? "Copied!" : "Copy"}  />`}
-			/>
-		</Details>
-	</div>
-</FieldSet>
+  content={copied ? "Copied!" : "Copy"} />`}>
+	<Button square id="copy-button" on:click={copy}>
+		<CloneIcon size={16} />
+	</Button>
+	<ToolTip anchor="#copy-button" content={copied ? "Copied!" : "Copy"} hideOnClick={false} />
+</Playground>

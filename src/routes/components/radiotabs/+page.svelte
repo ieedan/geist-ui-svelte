@@ -1,13 +1,11 @@
 <script lang="ts">
-	import Code from "$lib/code/Code.svelte";
-	import Details from "$lib/details/Details.svelte";
-	import FieldSet from "$lib/fieldset/FieldSet.svelte";
 	import Snippet from "$lib/snippet/Snippet.svelte";
 	import Spacer from "$lib/spacer/Spacer.svelte";
 	import Text from "$lib/text/Text.svelte";
 	import RadioTabs from "$lib/radiotabs/RadioTabs.svelte";
 	import RadioTab from "$lib/radiotabs/RadioTab.svelte";
 	import type { Size } from "$lib/types.js";
+	import Playground from "$lib/docs-components/playground/playground.svelte";
 
 	let selected: string = "mobile";
 
@@ -35,55 +33,28 @@
 <Snippet
 	width="550px"
 	type="transparent"
-	text={`import { RadioTabs, RadioTab } from 'geist-ui-svelte';`}
-/>
+	text={`import { RadioTabs, RadioTab } from 'geist-ui-svelte';`} />
 <Spacer h={30} />
 <Text type="h4">Basic</Text>
 <Spacer h={5} />
 <Text>If no tab is initially selected the first tab will automatically be selected.</Text>
 <Spacer h={10} />
-<FieldSet>
-	<div class="flex flex-col justify-start">
-		<RadioTabs>
-			<RadioTab>Desktop</RadioTab>
-			<RadioTab>Mobile</RadioTab>
-		</RadioTabs>
-	</div>
-	<div slot="footer">
-		<Details label="Code">
-			<Code
-				lang="svelte"
-				code={`<RadioTabs>
+<Playground
+	code={`<RadioTabs>
 	<RadioTab>Desktop</RadioTab>
 	<RadioTab>Mobile</RadioTab>
-</RadioTabs>`}
-			/>
-		</Details>
-	</div>
-</FieldSet>
+</RadioTabs>`}>
+	<RadioTabs>
+		<RadioTab>Desktop</RadioTab>
+		<RadioTab>Mobile</RadioTab>
+	</RadioTabs>
+</Playground>
 <Spacer h={30} />
 <Text type="h4">Colors</Text>
 <Spacer h={10} />
-<FieldSet>
-	<div class="flex flex-col gap-2 justify-start">
-		<RadioTabs>
-			<RadioTab>Desktop</RadioTab>
-			<RadioTab>Mobile</RadioTab>
-		</RadioTabs>
-		<RadioTabs color="secondary">
-			<RadioTab>Desktop</RadioTab>
-			<RadioTab>Mobile</RadioTab>
-		</RadioTabs>
-		<RadioTabs color="ghost">
-			<RadioTab>Desktop</RadioTab>
-			<RadioTab>Mobile</RadioTab>
-		</RadioTabs>
-	</div>
-	<div slot="footer">
-		<Details label="Code">
-			<Code
-				lang="svelte"
-				code={`<RadioTabs>
+<Playground
+	class="gap-2"
+	code={`<RadioTabs>
 	<RadioTab>Desktop</RadioTab>
 	<RadioTab>Mobile</RadioTab>
 </RadioTabs>
@@ -94,37 +65,38 @@
 <RadioTabs color="ghost">
 	<RadioTab>Desktop</RadioTab>
 	<RadioTab>Mobile</RadioTab>
-</RadioTabs>`}
-			/>
-		</Details>
-	</div>
-</FieldSet>
+</RadioTabs>`}>
+	<RadioTabs>
+		<RadioTab>Desktop</RadioTab>
+		<RadioTab>Mobile</RadioTab>
+	</RadioTabs>
+	<RadioTabs color="secondary">
+		<RadioTab>Desktop</RadioTab>
+		<RadioTab>Mobile</RadioTab>
+	</RadioTabs>
+	<RadioTabs color="ghost">
+		<RadioTab>Desktop</RadioTab>
+		<RadioTab>Mobile</RadioTab>
+	</RadioTabs>
+</Playground>
 <Spacer h={30} />
 <Text type="h4">Sizes</Text>
 <Spacer h={10} />
-<FieldSet>
-	<div class="flex flex-col gap-2 justify-start">
-		{#each sizes as size}
-			<RadioTabs {size}>
-				<RadioTab>Desktop</RadioTab>
-				<RadioTab>Mobile</RadioTab>
-			</RadioTabs>
-		{/each}
-	</div>
-	<div slot="footer">
-		<Details label="Code">
-			<Code
-				lang="svelte"
-				code={`{#each sizes as size}
+<Playground
+	class="gap-2"
+	code={`{#each sizes as size}
 	<RadioTabs {size}>
 		<RadioTab>Desktop</RadioTab>
 		<RadioTab>Mobile</RadioTab>
 	</RadioTabs>
-{/each}`}
-			/>
-		</Details>
-	</div>
-</FieldSet>
+{/each}`}>
+	{#each sizes as size}
+		<RadioTabs {size}>
+			<RadioTab>Desktop</RadioTab>
+			<RadioTab>Mobile</RadioTab>
+		</RadioTabs>
+	{/each}
+</Playground>
 <Spacer h={30} />
 <Text type="h4">Get selected tab</Text>
 <Spacer h={5} />
@@ -134,49 +106,33 @@
 	RadioTab.
 </Text>
 <Spacer h={10} />
-<FieldSet>
-	<div class="flex flex-col justify-start">
-		<RadioTabs bind:selected>
-			<RadioTab id="desktop">Desktop</RadioTab>
-			<RadioTab id="mobile">Mobile</RadioTab>
-		</RadioTabs>
-		{#if selected == "mobile"}
-			Mobile
-		{:else}
-			Desktop
-		{/if}
-	</div>
-	<div slot="footer">
-		<Details label="Code">
-			<Code lang="svelte" code={secondExampleCode} />
-		</Details>
-	</div>
-</FieldSet>
+<Playground code={secondExampleCode}>
+	<RadioTabs bind:selected>
+		<RadioTab id="desktop">Desktop</RadioTab>
+		<RadioTab id="mobile">Mobile</RadioTab>
+	</RadioTabs>
+	{#if selected == "mobile"}
+		Mobile
+	{:else}
+		Desktop
+	{/if}
+</Playground>
 <Spacer h={30} />
 <Text type="h4">More tabs</Text>
 <Spacer h={5} />
 <Text>You can have as many tabs as you want.</Text>
 <Spacer h={10} />
-<FieldSet>
-	<div class="flex flex-col justify-start">
-		<RadioTabs>
-			<RadioTab>Home</RadioTab>
-			<RadioTab>Dashboard</RadioTab>
-			<RadioTab>Settings</RadioTab>
-			<RadioTab>Account</RadioTab>
-		</RadioTabs>
-	</div>
-	<div slot="footer">
-		<Details label="Code">
-			<Code
-				lang="svelte"
-				code={`<RadioTabs>
+<Playground
+	code={`<RadioTabs>
 	<RadioTab>Home</RadioTab>
 	<RadioTab>Dashboard</RadioTab>
 	<RadioTab>Settings</RadioTab>
 	<RadioTab>Account</RadioTab>
-</RadioTabs>`}
-			/>
-		</Details>
-	</div>
-</FieldSet>
+</RadioTabs>`}>
+	<RadioTabs>
+		<RadioTab>Home</RadioTab>
+		<RadioTab>Dashboard</RadioTab>
+		<RadioTab>Settings</RadioTab>
+		<RadioTab>Account</RadioTab>
+	</RadioTabs>
+</Playground>

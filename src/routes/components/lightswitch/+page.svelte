@@ -1,12 +1,10 @@
 <script lang="ts">
-	import Code from "$lib/code/Code.svelte";
-	import Details from "$lib/details/Details.svelte";
-	import FieldSet from "$lib/fieldset/FieldSet.svelte";
 	import LightSwitch from "$lib/lightswitch/LightSwitch.svelte";
 	import Snippet from "$lib/snippet/Snippet.svelte";
 	import Spacer from "$lib/spacer/Spacer.svelte";
 	import Text from "$lib/text/Text.svelte";
 	import Link from "$lib/link/Link.svelte";
+	import Playground from "$lib/docs-components/playground/playground.svelte";
 </script>
 
 <Text type="h3">LightSwitch</Text>
@@ -23,17 +21,6 @@
 	continue.
 </Text>
 <Spacer h={10} />
-<FieldSet>
-	<div class="flex flex-col justify-start">
-		<LightSwitch />
-	</div>
-	<div slot="footer">
-		<Details label="Code">
-			<Code
-				lang="svelte"
-				code={`<LightSwitch />
-<!-- Yep that's it! -->`}
-			/>
-		</Details>
-	</div>
-</FieldSet>
+<Playground code={`<LightSwitch />`}>
+	<LightSwitch />
+</Playground>

@@ -1,13 +1,11 @@
 <script lang="ts">
-	import Code from "$lib/code/Code.svelte";
-	import Details from "$lib/details/Details.svelte";
-	import FieldSet from "$lib/fieldset/FieldSet.svelte";
 	import Snippet from "$lib/snippet/Snippet.svelte";
 	import Spacer from "$lib/spacer/Spacer.svelte";
 	import Text from "$lib/text/Text.svelte";
 	import BreadCrumbs from "$lib/breadcrumbs/BreadCrumbs.svelte";
 	import BreadCrumbsDemo from "$lib/breadcrumbs/BreadCrumbsDemo.svelte";
 	import Input from "$lib/input/Input.svelte";
+	import Playground from "$lib/docs-components/playground/playground.svelte";
 
 	let url = "/dashboard/settings/general";
 	let url2 = "/dashboard/components/bread-crumbs";
@@ -61,48 +59,26 @@
 <Spacer h={30} />
 <Text type="h4">Basic</Text>
 <Spacer h={10} />
-<FieldSet>
-	<div class="flex flex-col justify-start">
-		<BreadCrumbs />
-	</div>
-	<div slot="footer">
-		<Details label="Code">
-			<Code lang="svelte" code={`<BreadCrumbs/>`} />
-		</Details>
-	</div>
-</FieldSet>
+<Playground code={`<BreadCrumbs/>`}>
+	<BreadCrumbs />
+</Playground>
 <Spacer h={30} />
 <Text type="h4">Custom Separator</Text>
 <Spacer h={10} />
-<FieldSet>
-	<div class="flex flex-col justify-start">
-		<BreadCrumbs separator=">" />
-	</div>
-	<div slot="footer">
-		<Details label="Code">
-			<Code lang="svelte" code={`<BreadCrumbs/>`} />
-		</Details>
-	</div>
-</FieldSet>
+<Playground code={`<BreadCrumbs/>`}>
+	<BreadCrumbs separator=">" />
+</Playground>
 <Spacer h={30} />
 <Text type="h4">Route Shortening</Text>
 <Spacer h={10} />
-<FieldSet>
-	<div class="flex flex-col gap-2 justify-start">
-		<Input bind:value={url} width="100%" />
-		<BreadCrumbsDemo {url} />
-		<BreadCrumbsDemo {url} excludePrefix="/dashboard" />
-	</div>
-	<div slot="footer">
-		<Details label="Code">
-			<Code
-				lang="svelte"
-				code={`<BreadCrumbs/>
-<BreadCrumbs excludePrefix="/dashboard"/>`}
-			/>
-		</Details>
-	</div>
-</FieldSet>
+<Playground
+	class="gap-2"
+	code={`<BreadCrumbs/>
+<BreadCrumbs excludePrefix="/dashboard"/>`}>
+	<Input bind:value={url} width="100%" />
+	<BreadCrumbsDemo {url} />
+	<BreadCrumbsDemo {url} excludePrefix="/dashboard" />
+</Playground>
 <Spacer h={30} />
 <Text type="h4">Route Transforms</Text>
 <Spacer h={5} />
@@ -112,18 +88,11 @@
 	word separated with a <code>`-`</code>.
 </Text>
 <Spacer h={10} />
-<FieldSet>
-	<div class="flex flex-col gap-2 justify-start">
-		<Input bind:value={url2} width="100%" />
-		<BreadCrumbsDemo url={url2} />
-		<BreadCrumbsDemo url={url2} transform={capitalizeFirstLetter} />
-	</div>
-	<div slot="footer">
-		<Details label="Code">
-			<Code lang="svelte" code={transformExampleCode} />
-		</Details>
-	</div>
-</FieldSet>
+<Playground code={transformExampleCode} class="gap-2">
+	<Input bind:value={url2} width="100%" />
+	<BreadCrumbsDemo url={url2} />
+	<BreadCrumbsDemo url={url2} transform={capitalizeFirstLetter} />
+</Playground>
 <Spacer h={30} />
 <Text type="h4">Do Not Transform</Text>
 <Spacer h={5} />
@@ -134,24 +103,15 @@
 	not transform that route.
 </Text>
 <Spacer h={10} />
-<FieldSet>
-	<div class="flex flex-col gap-2 justify-start">
-		<Input bind:value={url3} width="100%" />
-		<BreadCrumbsDemo url={url3} transform={capitalizeFirstLetter} />
-		<BreadCrumbsDemo url={url3} transform={capitalizeFirstLetter} doNotTransform={["/users"]} />
-	</div>
-	<div slot="footer">
-		<Details label="Code">
-			<Code
-				lang="svelte"
-				code={`<BreadCrumbsDemo 
+<Playground class="gap-2"
+	code={`<BreadCrumbsDemo 
 	url={url} 
 	transform={capitalizeFirstLetter}/>
 <BreadCrumbsDemo 
 	url={url} 
 	transform={capitalizeFirstLetter} 
-	doNotTransform={["/users"]}/>`}
-			/>
-		</Details>
-	</div>
-</FieldSet>
+	doNotTransform={["/users"]}/>`}>
+	<Input bind:value={url3} width="100%" />
+	<BreadCrumbsDemo url={url3} transform={capitalizeFirstLetter} />
+	<BreadCrumbsDemo url={url3} transform={capitalizeFirstLetter} doNotTransform={["/users"]} />
+</Playground>
