@@ -1,6 +1,7 @@
 <script lang="ts">
 	import Code from "$lib/code/Code.svelte";
 	import Details from "$lib/details/Details.svelte";
+	import Playground from "$lib/docs-components/playground/playground.svelte";
 	import FieldSet from "$lib/fieldset/FieldSet.svelte";
 	import Snippet from "$lib/snippet/Snippet.svelte";
 	import Spacer from "$lib/spacer/Spacer.svelte";
@@ -16,55 +17,32 @@
 <Spacer h={30} />
 <Text type="h4">Basic</Text>
 <Spacer h={10} />
-<FieldSet>
-	<div class="flex flex-col justify-start">
-		<Toggle />
-	</div>
-	<div slot="footer">
-		<Details label="Code">
-			<Code lang="svelte" code={`<Toggle/>`} />
-		</Details>
-	</div>
-</FieldSet>
+<Playground code={`<Toggle/>`}>
+	<Toggle />
+</Playground>
 <Spacer h={30} />
 <Text type="h4">Disabled</Text>
 <Spacer h={10} />
-<FieldSet>
-	<div class="flex flex-col justify-start gap-2">
-		<Toggle disabled />
-		<Toggle disabled checked={true} />
-	</div>
-	<div slot="footer">
-		<Details label="Code">
-			<Code
-				lang="svelte"
-				code={`<Toggle disabled/>
-<Toggle disabled checked={true}/>`}
-			/>
-		</Details>
-	</div>
-</FieldSet>
+<Playground
+	class="gap-2"
+	code={`<Toggle disabled/>
+<Toggle disabled checked={true}/>`}>
+	<Toggle disabled />
+	<Toggle disabled checked={true} />
+</Playground>
 <Spacer h={30} />
 <Text type="h4">Colors</Text>
 <Spacer h={10} />
-<FieldSet>
-	<div class="flex flex-wrap gap-2">
-		<Toggle checked={true} />
-		<Toggle color="secondary" checked={true} />
-		<Toggle color="warning" checked={true} />
-		<Toggle color="error" checked={true} />
-		<Toggle color="success" checked={true} />
-	</div>
-	<div slot="footer">
-		<Details label="Code">
-			<Code
-				lang="svelte"
-				code={`<Toggle checked={true}/>
+<Playground
+	class="flex-row gap-2 flex-wrap"
+	code={`<Toggle checked={true}/>
 <Toggle color="secondary" checked={true}/>
 <Toggle color="warning" checked={true}/>
 <Toggle color="error" checked={true}/>
-<Toggle color="success" checked={true}/>`}
-			/>
-		</Details>
-	</div>
-</FieldSet>
+<Toggle color="success" checked={true}/>`}>
+	<Toggle checked={true} />
+	<Toggle color="secondary" checked={true} />
+	<Toggle color="warning" checked={true} />
+	<Toggle color="error" checked={true} />
+	<Toggle color="success" checked={true} />
+</Playground>

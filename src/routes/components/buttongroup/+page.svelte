@@ -8,6 +8,7 @@
 	import ButtonGroup from "$lib/buttongroup/ButtonGroup.svelte";
 	import ButtonGroupButton from "$lib/buttongroup/ButtonGroupButton.svelte";
 	import type { ButtonColor } from "$lib/types.js";
+	import Playground from "$lib/docs-components/playground/playground.svelte";
 
 	const colors: ButtonColor[] = [
 		"default",
@@ -83,75 +84,49 @@
 <Snippet
 	width="650px"
 	type="transparent"
-	text={`import { ButtonGroup, ButtonGroupButton } from 'geist-ui-svelte';`}
-/>
+	text={`import { ButtonGroup, ButtonGroupButton } from 'geist-ui-svelte';`} />
 <Spacer h={30} />
 <Text type="h4">Basic</Text>
 <Spacer h={10} />
-<FieldSet>
-	<div class="flex flex-wrap justify-start gap-2">
-		<ButtonGroup>
+<Playground
+	code={`<ButtonGroup>
+    <ButtonGroupButton>Code</ButtonGroupButton>
+    <ButtonGroupButton>Svelte</ButtonGroupButton>
+    <ButtonGroupButton>Group</ButtonGroupButton>
+</ButtonGroup>`}>
+	<ButtonGroup>
+		<ButtonGroupButton>Code</ButtonGroupButton>
+		<ButtonGroupButton>Svelte</ButtonGroupButton>
+		<ButtonGroupButton>Group</ButtonGroupButton>
+	</ButtonGroup>
+</Playground>
+<Spacer h={30} />
+<Text type="h4">Disabled Button</Text>
+<Spacer h={10} />
+<Playground
+	code={`<ButtonGroup>
+    <ButtonGroupButton disabled>Code</ButtonGroupButton>
+    <ButtonGroupButton>Svelte</ButtonGroupButton>
+    <ButtonGroupButton>Group</ButtonGroupButton>
+</ButtonGroup>`}>
+	<ButtonGroup>
+		<ButtonGroupButton disabled>Code</ButtonGroupButton>
+		<ButtonGroupButton>Svelte</ButtonGroupButton>
+		<ButtonGroupButton>Group</ButtonGroupButton>
+	</ButtonGroup>
+</Playground>
+<Spacer h={30} />
+<Text type="h4">Colors</Text>
+<Spacer h={10} />
+<Playground code={colorExampleCode} class="flex-row gap-2 flex-wrap">
+	{#each colors as color}
+		<ButtonGroup {color}>
 			<ButtonGroupButton>Code</ButtonGroupButton>
 			<ButtonGroupButton>Svelte</ButtonGroupButton>
 			<ButtonGroupButton>Group</ButtonGroupButton>
 		</ButtonGroup>
-	</div>
-	<div slot="footer">
-		<Details label="Code">
-			<Code
-				lang="svelte"
-				code={`<ButtonGroup>
-    <ButtonGroupButton>Code</ButtonGroupButton>
-    <ButtonGroupButton>Svelte</ButtonGroupButton>
-    <ButtonGroupButton>Group</ButtonGroupButton>
-</ButtonGroup>`}
-			/>
-		</Details>
-	</div>
-</FieldSet>
-<Spacer h={30} />
-<Text type="h4">Disabled Button</Text>
-<Spacer h={10} />
-<FieldSet>
-	<div class="flex flex-wrap justify-start gap-2">
-		<ButtonGroup>
-			<ButtonGroupButton disabled>Code</ButtonGroupButton>
-			<ButtonGroupButton>Svelte</ButtonGroupButton>
-			<ButtonGroupButton>Group</ButtonGroupButton>
-		</ButtonGroup>
-	</div>
-	<div slot="footer">
-		<Details label="Code">
-			<Code
-				lang="svelte"
-				code={`<ButtonGroup>
-    <ButtonGroupButton disabled>Code</ButtonGroupButton>
-    <ButtonGroupButton>Svelte</ButtonGroupButton>
-    <ButtonGroupButton>Group</ButtonGroupButton>
-</ButtonGroup>`}
-			/>
-		</Details>
-	</div>
-</FieldSet>
-<Spacer h={30} />
-<Text type="h4">Colors</Text>
-<Spacer h={10} />
-<FieldSet>
-	<div class="flex flex-wrap justify-start gap-2">
-		{#each colors as color}
-			<ButtonGroup {color}>
-				<ButtonGroupButton>Code</ButtonGroupButton>
-				<ButtonGroupButton>Svelte</ButtonGroupButton>
-				<ButtonGroupButton>Group</ButtonGroupButton>
-			</ButtonGroup>
-		{/each}
-	</div>
-	<div slot="footer">
-		<Details label="Code">
-			<Code lang="svelte" code={colorExampleCode} />
-		</Details>
-	</div>
-</FieldSet>
+	{/each}
+</Playground>
 <Spacer h={30} />
 <Text type="h4">Ghost</Text>
 <Spacer h={5} />
@@ -159,19 +134,12 @@
 	Add <code>`ghost`</code> to invert the background of the button.
 </Text>
 <Spacer h={10} />
-<FieldSet>
-	<div class="flex flex-wrap justify-start gap-2">
-		{#each colors as color}
-			<ButtonGroup {color} ghost>
-				<ButtonGroupButton>Code</ButtonGroupButton>
-				<ButtonGroupButton>Svelte</ButtonGroupButton>
-				<ButtonGroupButton>Group</ButtonGroupButton>
-			</ButtonGroup>
-		{/each}
-	</div>
-	<div slot="footer">
-		<Details label="Code">
-			<Code lang="svelte" edits={[{ number: 19, type: "add" }]} code={ghostExampleCode} />
-		</Details>
-	</div>
-</FieldSet>
+<Playground edits={[{ number: 19, type: "add" }]} code={ghostExampleCode} class="flex-row gap-2 flex-wrap">
+	{#each colors as color}
+		<ButtonGroup {color} ghost>
+			<ButtonGroupButton>Code</ButtonGroupButton>
+			<ButtonGroupButton>Svelte</ButtonGroupButton>
+			<ButtonGroupButton>Group</ButtonGroupButton>
+		</ButtonGroup>
+	{/each}
+</Playground>

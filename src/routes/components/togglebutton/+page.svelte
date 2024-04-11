@@ -8,6 +8,7 @@
 	import Text from "$lib/text/Text.svelte";
 	import ToggleButton from "$lib/togglebutton/ToggleButton.svelte";
 	import EyeSlashIcon from "$lib/icons/EyeSlashIcon.svelte";
+	import Playground from "$lib/docs-components/playground/playground.svelte";
 </script>
 
 <Text type="h3">ToggleButton</Text>
@@ -18,66 +19,36 @@
 <Spacer h={30} />
 <Text type="h4">Basic</Text>
 <Spacer h={10} />
-<FieldSet>
-	<div class="flex flex-col justify-start">
-		<ToggleButton>Click Me</ToggleButton>
-	</div>
-	<div slot="footer">
-		<Details label="Code">
-			<Code
-				lang="svelte"
-				code={`<ToggleButton>
+<Playground code={`<ToggleButton>
     Click Me
-</ToggleButton>`}
-			/>
-		</Details>
-	</div>
-</FieldSet>
+</ToggleButton>`}>
+	<ToggleButton>Click Me</ToggleButton>
+</Playground>
 <Spacer h={30} />
 <Text type="h4">Colors</Text>
 <Spacer h={10} />
-<FieldSet>
-	<div class="flex flex-wrap place-items-center justify-start gap-2">
-		<ToggleButton toggled={true}>Click Me</ToggleButton>
-		<ToggleButton toggled={true} color="secondary">Click Me</ToggleButton>
-		<ToggleButton toggled={true} color="success">Click Me</ToggleButton>
-		<ToggleButton toggled={true} color="warning">Click Me</ToggleButton>
-		<ToggleButton toggled={true} color="error">Click Me</ToggleButton>
-	</div>
-	<div slot="footer">
-		<Details label="Code">
-			<Code
-				lang="svelte"
-				code={`<ToggleButton toggled={true}>Click Me</ToggleButton>
+<Playground class="flex-row flex-wrap gap-2" code={`<ToggleButton toggled={true}>Click Me</ToggleButton>
 <ToggleButton toggled={true} color="secondary">Click Me</ToggleButton>
 <ToggleButton toggled={true} color="success">Click Me</ToggleButton>
 <ToggleButton toggled={true} color="warning">Click Me</ToggleButton>
-<ToggleButton toggled={true} color="error">Click Me</ToggleButton>`}
-			/>
-		</Details>
-	</div>
-</FieldSet>
+<ToggleButton toggled={true} color="error">Click Me</ToggleButton>`}>
+	<ToggleButton toggled={true}>Click Me</ToggleButton>
+	<ToggleButton toggled={true} color="secondary">Click Me</ToggleButton>
+	<ToggleButton toggled={true} color="success">Click Me</ToggleButton>
+	<ToggleButton toggled={true} color="warning">Click Me</ToggleButton>
+	<ToggleButton toggled={true} color="error">Click Me</ToggleButton>
+</Playground>
 <Spacer h={30} />
 <Text type="h4">Slots</Text>
 <Spacer h={5} />
 <Text>Use different slots for toggled / un-toggled.</Text>
 <Spacer h={10} />
-<FieldSet>
-	<div class="flex flex-col justify-start">
-		<ToggleButton>
-			<EyeIcon slot="on" />
-			<EyeSlashIcon slot="off" />
-		</ToggleButton>
-	</div>
-	<div slot="footer">
-		<Details label="Code">
-			<Code
-				lang="svelte"
-				code={`<ToggleButton>
+<Playground code={`<ToggleButton>
     <EyeIcon slot="on"/>
     <EyeSlashIcon slot="off"/>
-</ToggleButton>`}
-			/>
-		</Details>
-	</div>
-</FieldSet>
+</ToggleButton>`}> 
+	<ToggleButton>
+		<EyeIcon slot="on" />
+		<EyeSlashIcon slot="off" />
+	</ToggleButton>
+</Playground>
