@@ -14,6 +14,7 @@
 	import toMap from "$lib/util/to-map.js";
 	import ChevronUpDownIcon from "$lib/icons/ChevronUpDownIcon.svelte";
 	import Button from "$lib/button/Button.svelte";
+	import Playground from "$lib/docs-components/playground/playground.svelte";
 
 	const countries = toMap(
 		[
@@ -207,29 +208,23 @@
 <Spacer h={10} />
 <Text>A drop down list component.</Text>
 <Spacer h={20} />
-<Snippet width="500px" type="lite" text={`import { Select, Option } from 'geist-ui-svelte';`} />
+<Snippet
+	width="500px"
+	type="transparent"
+	text={`import { Select, Option } from 'geist-ui-svelte';`} />
 <Spacer h={30} />
 <Text type="h4">Basic</Text>
 <Spacer h={10} />
-<FieldSet>
-	<div class="flex flex-col justify-start">
-		<Select>
-			<Option value={1}>Option 1</Option>
-			<Option value={2}>Option 2</Option>
-		</Select>
-	</div>
-	<div slot="footer">
-		<Details label="Code">
-			<Code
-				lang="svelte"
-				code={`<Select>
+<Playground
+	code={`<Select>
 	<Option value={1}>Option 1</Option>
 	<Option value={2}>Option 2</Option>
-</Select>`}
-			/>
-		</Details>
-	</div>
-</FieldSet>
+</Select>`}>
+	<Select>
+		<Option value={1}>Option 1</Option>
+		<Option value={2}>Option 2</Option>
+	</Select>
+</Playground>
 <Spacer h={30} />
 <Text type="h4">Allow None</Text>
 <Spacer h={5} />
@@ -238,121 +233,77 @@
 	left undefined. To opt out of this behavior set <code>`allowNone`</code>.
 </Text>
 <Spacer h={10} />
-<FieldSet>
-	<div class="flex flex-col justify-start">
-		<Select placeholder="Select one" allowNone>
-			<Option value={1}>Option 1</Option>
-			<Option value={2}>Option 2</Option>
-		</Select>
-	</div>
-	<div slot="footer">
-		<Details label="Code">
-			<Code
-				lang="svelte"
-				code={`<Select placeholder="Select one" allowNone>
+<Playground
+	code={`<Select placeholder="Select one" allowNone>
 	<Option value={1}>Option 1</Option>
 	<Option value={2}>Option 2</Option>
-</Select>`}
-			/>
-		</Details>
-	</div>
-</FieldSet>
+</Select>`}>
+	<Select placeholder="Select one" allowNone>
+		<Option value={1}>Option 1</Option>
+		<Option value={2}>Option 2</Option>
+	</Select>
+</Playground>
 <Spacer h={30} />
 <Text type="h4">Disabled / Readonly</Text>
 <Spacer h={10} />
-<FieldSet>
-	<div class="flex flex-col justify-start gap-1">
-		<Select disabled>
-			<Option value={1}>Option 1</Option>
-			<Option value={2}>Option 2</Option>
-		</Select>
-		<Select readonly>
-			<Option value={1}>Option 1</Option>
-			<Option value={2}>Option 2</Option>
-		</Select>
-	</div>
-	<div slot="footer">
-		<Details label="Code">
-			<Code
-				lang="svelte"
-				code={`<Select disabled>
+<Playground
+	class="gap-2"
+	code={`<Select disabled>
 	<Option value={1}>Option 1</Option>
 	<Option value={2}>Option 2</Option>
 </Select>
 <Select readonly>
 	<Option value={1}>Option 1</Option>
 	<Option value={2}>Option 2</Option>
-</Select>`}
-			/>
-		</Details>
-	</div>
-</FieldSet>
+</Select>`}>
+	<Select disabled>
+		<Option value={1}>Option 1</Option>
+		<Option value={2}>Option 2</Option>
+	</Select>
+	<Select readonly>
+		<Option value={1}>Option 1</Option>
+		<Option value={2}>Option 2</Option>
+	</Select>
+</Playground>
 <Spacer h={30} />
 <Text type="h4">Disabled Option</Text>
 <Spacer h={10} />
-<FieldSet>
-	<div class="flex flex-col justify-start gap-1">
-		<Select>
-			<Option value={1}>Option 1</Option>
-			<Option value={2} disabled>Option 2</Option>
-		</Select>
-	</div>
-	<div slot="footer">
-		<Details label="Code">
-			<Code
-				lang="svelte"
-				code={`<Select>
+<Playground
+	code={`<Select>
 	<Option value={1}>Option 1</Option>
 	<Option value={2} disabled>Option 2</Option>
-</Select>`}
-			/>
-		</Details>
-	</div>
-</FieldSet>
+</Select>`}>
+	<Select>
+		<Option value={1}>Option 1</Option>
+		<Option value={2} disabled>Option 2</Option>
+	</Select>
+</Playground>
 <Spacer h={30} />
 <Text type="h4">Width</Text>
 <Spacer h={10} />
-<FieldSet>
-	<div class="flex flex-col gap-2">
-		<Select width="100%">
-			<Option value={1}>Option 1</Option>
-			<Option value={2}>Option 2</Option>
-		</Select>
-	</div>
-	<div slot="footer">
-		<Details label="Code">
-			<Code
-				lang="svelte"
-				code={`<Select width="100%">
+<Playground
+	code={`<Select width="100%">
 	<Option value={1}>Option 1</Option>
 	<Option value={2}>Option 2</Option>
-</Select>`}
-			/>
-		</Details>
-	</div>
-</FieldSet>
+</Select>`}>
+	<Select width="100%">
+		<Option value={1}>Option 1</Option>
+		<Option value={2}>Option 2</Option>
+	</Select>
+</Playground>
 <Spacer h={30} />
 <Text type="h4">Without Icon</Text>
 <Spacer h={10} />
-<FieldSet>
-	<div class="flex flex-col gap-2">
-		<Select noIcon>
-			<Option value={1}>Option 1</Option>
-			<Option value={2}>Option 2</Option>
-		</Select>
-	</div>
-	<div slot="footer">
-		<Details label="Code">
-			<Code
-				lang="svelte"
-				code={`<Select width="100%">
+<Playground
+	code={`<Select width="100%">
 	<Option value={1}>Option 1</Option>
 	<Option value={2}>Option 2</Option>
-</Select>`}
-			/>
-		</Details>
-	</div>
-</FieldSet>
+</Select>`}>
+	<Select noIcon>
+		<Option value={1}>Option 1</Option>
+		<Option value={2}>Option 2</Option>
+	</Select>
+</Playground>
 <Spacer h={30} />
 <Text type="h4">Custom Icon</Text>
 <Spacer h={5} />
@@ -361,28 +312,13 @@
 	icon rotation by setting <code>`iconRotation`</code> to false.
 </Text>
 <Spacer h={10} />
-<FieldSet>
-	<div class="flex flex-col gap-2">
-		<Select>
-			<ChevronUpDownIcon slot="icon" size={14} />
-			<Option value={1}>Option 1</Option>
-			<Option value={2}>Option 2</Option>
-		</Select>
-		<Select iconRotation={false}>
-			<ChevronUpDownIcon slot="icon" size={14} />
-			<Option value={1}>Option 1</Option>
-			<Option value={2}>Option 2</Option>
-		</Select>
-	</div>
-	<div slot="footer">
-		<Details label="Code">
-			<Code
-				lang="svelte"
-				edits={[
-					{ number: 2, type: "add" },
-					{ number: 6, type: "add" },
-				]}
-				code={`<Select>
+<Playground
+	class="gap-2"
+	edits={[
+		{ number: 2, type: "add" },
+		{ number: 6, type: "add" },
+	]}
+	code={`<Select>
 	<ChevronUpDownIcon slot="icon" size={14}/>
 	<Option value={1}>Option 1</Option>
 	<Option value={2}>Option 2</Option>
@@ -391,11 +327,18 @@
 	<ChevronUpDownIcon slot="icon" size={14}/>
 	<Option value={1}>Option 1</Option>
 	<Option value={2}>Option 2</Option>
-</Select>`}
-			/>
-		</Details>
-	</div>
-</FieldSet>
+</Select>`}>
+	<Select>
+		<ChevronUpDownIcon slot="icon" size={14} />
+		<Option value={1}>Option 1</Option>
+		<Option value={2}>Option 2</Option>
+	</Select>
+	<Select iconRotation={false}>
+		<ChevronUpDownIcon slot="icon" size={14} />
+		<Option value={1}>Option 1</Option>
+		<Option value={2}>Option 2</Option>
+	</Select>
+</Playground>
 <Spacer h={30} />
 <Text type="h4">HTML Content</Text>
 <Spacer h={5} />
@@ -415,38 +358,9 @@
 	</Link>.
 </Note>
 <Spacer h={20} />
-<FieldSet>
-	<div class="flex flex-col gap-2">
-		<Select>
-			<Option value={1}>
-				<Dot type="success" size={10} />
-				<Spacer inline w={5} />
-				Option 1
-			</Option>
-			<Option value={2}>
-				<Dot type="warning" size={10} />
-				<Spacer inline w={5} />
-				Option 2
-			</Option>
-		</Select>
-		<Select allowXSS>
-			<Option value={1}>
-				<Dot type="success" size={10} />
-				<Spacer inline w={5} />
-				Option 1
-			</Option>
-			<Option value={2}>
-				<Dot type="warning" size={10} />
-				<Spacer inline w={5} />
-				Option 2
-			</Option>
-		</Select>
-	</div>
-	<div slot="footer">
-		<Details label="Code">
-			<Code
-				lang="svelte"
-				code={`<!-- Without allowXSS -->
+<Playground
+	class="gap-2"
+	code={`<!-- Without allowXSS -->
 <Select>
 	<Option value={1}>
 		<Dot type="success" size={10}/>
@@ -471,41 +385,53 @@
 		<Spacer inline w={5}/>
 		Option 2
 	</Option>
-</Select>`}
-			/>
-		</Details>
-	</div>
-</FieldSet>
+</Select>`}>
+	<Select>
+		<Option value={1}>
+			<Dot type="success" size={10} />
+			<Spacer inline w={5} />
+			Option 1
+		</Option>
+		<Option value={2}>
+			<Dot type="warning" size={10} />
+			<Spacer inline w={5} />
+			Option 2
+		</Option>
+	</Select>
+	<Select allowXSS>
+		<Option value={1}>
+			<Dot type="success" size={10} />
+			<Spacer inline w={5} />
+			Option 1
+		</Option>
+		<Option value={2}>
+			<Dot type="warning" size={10} />
+			<Spacer inline w={5} />
+			Option 2
+		</Option>
+	</Select>
+</Playground>
 <Spacer h={30} />
 <Text type="h4">Dividers / Headers</Text>
 <Spacer h={5} />
 <Text>You can put any valid HTML inside of the select component.</Text>
 <Spacer h={10} />
-<FieldSet>
-	<div class="flex flex-col gap-2">
-		<Select>
-			<Option value={1}>Option 1</Option>
-			<Option value={2}>Option 2</Option>
-			<Text class="px-2" type="small" color="abort">Group 2</Text>
-			<Divider />
-			<Option value={3}>Option 3</Option>
-		</Select>
-	</div>
-	<div slot="footer">
-		<Details label="Code">
-			<Code
-				lang="svelte"
-				code={`<Select>
+<Playground
+	code={`<Select>
 	<Option value={1}>Option 1</Option>
 	<Option value={2}>Option 2</Option>
 	<Text class="px-2" type="small" color="abort">Group 2</Text>
 	<Divider/>
 	<Option value={3}>Option 3</Option>
-</Select>`}
-			/>
-		</Details>
-	</div>
-</FieldSet>
+</Select>`}>
+	<Select>
+		<Option value={1}>Option 1</Option>
+		<Option value={2}>Option 2</Option>
+		<Text class="px-2" type="small" color="abort">Group 2</Text>
+		<Divider />
+		<Option value={3}>Option 3</Option>
+	</Select>
+</Playground>
 <Spacer h={30} />
 <Text type="h4">Multiple Selects</Text>
 <Spacer h={5} />
@@ -519,87 +445,9 @@
 	Make sure to key your each blocks otherwise the mutation observer may not catch the change.
 </Note>
 <Spacer h={20} />
-<FieldSet>
-	<div class="flex flex-col gap-2">
-		<Select bind:value={selectedCountry}>
-			{#each countries as [name, country] (name)}
-				<Option value={name}>{country.name}</Option>
-			{/each}
-		</Select>
-		<Select bind:value={selectedState}>
-			{#if selectedCountryObject}
-				{#each selectedCountryObject.states as state (state.name)}
-					<Option value={state.name}>{state.name}</Option>
-				{/each}
-			{/if}
-		</Select>
-		<Select bind:value={selectedCity}>
-			{#if selectedStateObject}
-				{#each selectedStateObject.cities as city (city.name)}
-					<Option value={city.name}>{city.name}</Option>
-				{/each}
-			{/if}
-		</Select>
-	</div>
-	<div slot="footer">
-		<Details label="Code">
-			<Code
-				lang="ts"
-				code={`const countries = toMap(
-[
-	{
-		name: "United States",
-		states: [
-			{
-				name: "Texas",
-				cities: [
-					{
-						name: "San Antonio",
-					},
-					{
-						name: "Houston",
-					},
-					{
-						name: "Dallas",
-					},
-					{
-						name: "Corpus Christi",
-					},
-				],
-			},
-			{
-				name: "California",
-				cities: [
-					{
-						name: "San Francisco",
-					},
-					{
-								name: "Los Angeles",
-							},
-							{
-								name: "San Diego",
-							},
-						],
-					},
-				],
-			},
-		],
-		(a) => {
-			return { key: a.name, value: a };
-		},
-	);
-
-let selectedCountry = "United States";
-let selectedState = "California";
-let selectedCity = "San Diego";
-$: selectedCountryObject = countries.get(selectedCountry);
-$: selectedStateObject = countries
-	.get(selectedCountry)
-	?.states.find((a) => a.name == selectedState);`}
-			/>
-			<Code
-				lang="svelte"
-				code={`<Select bind:value={selectedCountry}>
+<Playground
+	class="gap-2"
+	code={`<Select bind:value={selectedCountry}>
 	{#each countries as [name, country] (name)}
 		<Option value={name}>{country.name}</Option>
 	{/each}
@@ -617,11 +465,27 @@ $: selectedStateObject = countries
 			<Option value={city.name}>{city.name}</Option>
 		{/each}
 	{/if}
-</Select>`}
-			/>
-		</Details>
-	</div>
-</FieldSet>
+</Select>`}>
+	<Select bind:value={selectedCountry}>
+		{#each countries as [name, country] (name)}
+			<Option value={name}>{country.name}</Option>
+		{/each}
+	</Select>
+	<Select bind:value={selectedState}>
+		{#if selectedCountryObject}
+			{#each selectedCountryObject.states as state (state.name)}
+				<Option value={state.name}>{state.name}</Option>
+			{/each}
+		{/if}
+	</Select>
+	<Select bind:value={selectedCity}>
+		{#if selectedStateObject}
+			{#each selectedStateObject.cities as city (city.name)}
+				<Option value={city.name}>{city.name}</Option>
+			{/each}
+		{/if}
+	</Select>
+</Playground>
 <Spacer h={30} />
 <Text type="h4">Scrollable</Text>
 <Spacer h={5} />
@@ -630,25 +494,10 @@ $: selectedStateObject = countries
 	setting the <code>`maxHeight`</code> attribute.
 </Text>
 <Spacer h={10} />
-<FieldSet>
-	<div class="flex flex-col gap-2">
-		<Select>
-			{#each alphabet as letter}
-				<Option value={letter}>{letter}</Option>
-			{/each}
-		</Select>
-		<Select maxHeight={150}>
-			{#each alphabet as letter}
-				<Option value={letter}>{letter}</Option>
-			{/each}
-		</Select>
-	</div>
-	<div slot="footer">
-		<Details label="Code">
-			<Code
-				lang="svelte"
-				edits={[{ number: 6, type: "add" }]}
-				code={`<Select>
+<Playground
+	class="gap-2"
+	edits={[{ number: 6, type: "add" }]}
+	code={`<Select>
 	{#each alphabet as letter}
 		<Option value={letter}>{letter}</Option>
 	{/each}
@@ -657,11 +506,18 @@ $: selectedStateObject = countries
 	{#each alphabet as letter}
 		<Option value={letter}>{letter}</Option>
 	{/each}
-</Select>`}
-			/>
-		</Details>
-	</div>
-</FieldSet>
+</Select>`}>
+	<Select>
+		{#each alphabet as letter}
+			<Option value={letter}>{letter}</Option>
+		{/each}
+	</Select>
+	<Select maxHeight={150}>
+		{#each alphabet as letter}
+			<Option value={letter}>{letter}</Option>
+		{/each}
+	</Select>
+</Playground>
 <Spacer h={30} />
 <Text type="h4">Multi-Select</Text>
 <Spacer h={5} />
@@ -669,28 +525,13 @@ $: selectedStateObject = countries
 	Allow multiple selections using the <code>`multiSelect`</code> attribute.
 </Text>
 <Spacer h={10} />
-<FieldSet>
-	<div class="flex flex-col gap-2">
-		<Select multiSelect placeholder="Select a letter">
-			{#each alphabet as letter}
-				<Option value={letter}>{letter}</Option>
-			{/each}
-		</Select>
-		<Select multiSelect value={["A", "C", "D"]} placeholder="Select a letter">
-			{#each alphabet as letter}
-				<Option value={letter}>{letter}</Option>
-			{/each}
-		</Select>
-	</div>
-	<div slot="footer">
-		<Details label="Code">
-			<Code
-				lang="svelte"
-				edits={[
-					{ number: 2, type: "add" },
-					{ number: 9, type: "add" },
-				]}
-				code={`<Select 
+<Playground
+	class="gap-2"
+	edits={[
+		{ number: 2, type: "add" },
+		{ number: 9, type: "add" },
+	]}
+	code={`<Select 
 	multiSelect 
 	placeholder="Select a letter">
 	{#each alphabet as letter}
@@ -704,11 +545,18 @@ $: selectedStateObject = countries
 	{#each alphabet as letter}
 		<Option value={letter}>{letter}</Option>
 	{/each}
-</Select>`}
-			/>
-		</Details>
-	</div>
-</FieldSet>
+</Select>`}>
+	<Select multiSelect placeholder="Select a letter">
+		{#each alphabet as letter}
+			<Option value={letter}>{letter}</Option>
+		{/each}
+	</Select>
+	<Select multiSelect value={["A", "C", "D"]} placeholder="Select a letter">
+		{#each alphabet as letter}
+			<Option value={letter}>{letter}</Option>
+		{/each}
+	</Select>
+</Playground>
 <Spacer h={30} />
 <Text type="h4">Selected Overflow</Text>
 <Spacer h={5} />
@@ -718,38 +566,25 @@ $: selectedStateObject = countries
 	through them using <code>`shift + scroll`</code> or other scroll methods.
 </Text>
 <Spacer h={10} />
-<FieldSet>
-	<div class="flex flex-col gap-2">
-		<Select
-			multiSelect
-			value={["A", "B", "C", "D", "E", "F", "G"]}
-			placeholder="Select a letter"
-		>
-			{#each alphabet as letter}
-				<Option value={letter}>{letter}</Option>
-			{/each}
-		</Select>
-	</div>
-	<div slot="footer">
-		<Details label="Code">
-			<Code
-				lang="svelte"
-				edits={[
-					{ number: 2, type: "add" },
-					{ number: 9, type: "add" },
-				]}
-				code={`<Select 
-	multiSelect 
-	value={["A", "B", "C", "D", "E", "F", "G"]} 
-	placeholder="Select a letter">
+<Playground
+	edits={[
+		{ number: 2, type: "add" },
+		{ number: 9, type: "add" },
+	]}
+	code={`<Select 
+multiSelect 
+value={["A", "B", "C", "D", "E", "F", "G"]} 
+placeholder="Select a letter">
 	{#each alphabet as letter}
 		<Option value={letter}>{letter}</Option>
 	{/each}
-</Select>`}
-			/>
-		</Details>
-	</div>
-</FieldSet>
+</Select>`}>
+	<Select multiSelect value={["A", "B", "C", "D", "E", "F", "G"]} placeholder="Select a letter">
+		{#each alphabet as letter}
+			<Option value={letter}>{letter}</Option>
+		{/each}
+	</Select>
+</Playground>
 <Spacer h={30} />
 <Text type="h4">Disabled Multi-Select</Text>
 <Spacer h={5} />
@@ -758,69 +593,37 @@ $: selectedStateObject = countries
 	when the select is disabled. Scrolling is still enabled though.
 </Text>
 <Spacer h={10} />
-<FieldSet>
-	<div class="flex flex-col gap-2">
-		<Select
-			multiSelect
-			disabled
-			value={["A", "B", "C", "D", "E", "F", "G"]}
-			placeholder="Select a letter"
-		>
-			{#each alphabet as letter}
-				<Option value={letter}>{letter}</Option>
-			{/each}
-		</Select>
-	</div>
-	<div slot="footer">
-		<Details label="Code">
-			<Code
-				lang="svelte"
-				edits={[
-					{ number: 2, type: "add" },
-					{ number: 9, type: "add" },
-				]}
-				code={`<Select
-	multiSelect
-	disabled
-	value={["A", "B", "C", "D", "E", "F", "G"]}
-	placeholder="Select a letter"
+<Playground
+	edits={[
+		{ number: 2, type: "add" },
+		{ number: 9, type: "add" },
+	]}
+	code={`<Select
+multiSelect
+disabled
+value={["A", "B", "C", "D", "E", "F", "G"]}
+placeholder="Select a letter"
 >
 	{#each alphabet as letter}
 		<Option value={letter}>{letter}</Option>
 	{/each}
-</Select>`}
-			/>
-		</Details>
-	</div>
-</FieldSet>
+</Select>`}>
+	<Select
+		multiSelect
+		disabled
+		value={["A", "B", "C", "D", "E", "F", "G"]}
+		placeholder="Select a letter">
+		{#each alphabet as letter}
+			<Option value={letter}>{letter}</Option>
+		{/each}
+	</Select>
+</Playground>
 <Spacer h={30} />
 <Text type="h4">Change Options</Text>
 <Spacer h={5} />
 <Text>When you change the options the select will react to the change.</Text>
 <Spacer h={10} />
-<FieldSet>
-	<div class="flex flex-col gap-2">
-		<Select placeholder="Select a letter">
-			{#each listOptions as letter (letter)}
-				<Option value={letter}>{letter}</Option>
-			{/each}
-		</Select>
-		<Select
-			multiSelect
-			value={["A", "B", "C", "D", "E", "F", "G"]}
-			placeholder="Select a letter"
-		>
-			{#each listOptions as letter (letter)}
-				<Option value={letter}>{letter}</Option>
-			{/each}
-		</Select>
-		<Button on:click={toggleOptions}>Change Options</Button>
-	</div>
-	<div slot="footer">
-		<Details label="Code">
-			<Code
-				lang="svelte"
-				code={`<Select placeholder="Select a letter">
+<Playground class="gap-2" code={`<Select placeholder="Select a letter">
 	{#each listOptions as letter (letter)}
 		<Option value={letter}>{letter}</Option>
 	{/each}
@@ -836,42 +639,28 @@ $: selectedStateObject = countries
 </Select>
 <Button on:click={toggleOptions}>
 	Change Options
-</Button>`}
-			/>
-		</Details>
-	</div>
-</FieldSet>
+</Button>`}>
+	<Select placeholder="Select a letter">
+		{#each listOptions as letter (letter)}
+			<Option value={letter}>{letter}</Option>
+		{/each}
+	</Select>
+	<Select
+		multiSelect
+		value={["A", "B", "C", "D", "E", "F", "G"]}
+		placeholder="Select a letter">
+		{#each listOptions as letter (letter)}
+			<Option value={letter}>{letter}</Option>
+		{/each}
+	</Select>
+	<Button on:click={toggleOptions}>Change Options</Button>
+</Playground>
 <Spacer h={30} />
 <Text type="h4">Change Value</Text>
 <Spacer h={5} />
 <Text>When you change the value the select will react to the change.</Text>
 <Spacer h={10} />
-<FieldSet>
-	<div class="flex flex-col gap-2">
-		<Select placeholder="Select a letter" bind:value>
-			{#each alphabet as letter (letter)}
-				<Option value={letter}>{letter}</Option>
-			{/each}
-		</Select>
-		<Select multiSelect bind:value={arrValue} placeholder="Select a letter">
-			{#each alphabet as letter (letter)}
-				<Option value={letter}>{letter}</Option>
-			{/each}
-		</Select>
-		<Button
-			on:click={() => {
-				arrValue = [...arrValue, "H"];
-				value = "H";
-			}}
-		>
-			Select H
-		</Button>
-	</div>
-	<div slot="footer">
-		<Details label="Code">
-			<Code
-				lang="svelte"
-				code={`<Select placeholder="Select a letter" bind:value={value}>
+<Playground class="gap-2" code={`<Select placeholder="Select a letter" bind:value={value}>
 	{#each alphabet as letter (letter)}
 		<Option value={letter}>{letter}</Option>
 	{/each}
@@ -890,8 +679,22 @@ $: selectedStateObject = countries
 	value = "H";
 }}>
 	Select H
-</Button>`}
-			/>
-		</Details>
-	</div>
-</FieldSet>
+</Button>`}>
+	<Select placeholder="Select a letter" bind:value>
+		{#each alphabet as letter (letter)}
+			<Option value={letter}>{letter}</Option>
+		{/each}
+	</Select>
+	<Select multiSelect bind:value={arrValue} placeholder="Select a letter">
+		{#each alphabet as letter (letter)}
+			<Option value={letter}>{letter}</Option>
+		{/each}
+	</Select>
+	<Button
+		on:click={() => {
+			arrValue = [...arrValue, "H"];
+			value = "H";
+		}}>
+		Select H
+	</Button>
+</Playground>

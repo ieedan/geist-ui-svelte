@@ -13,7 +13,7 @@
 <Spacer h={10} />
 <Text>A component to display highlighted code.</Text>
 <Spacer h={20} />
-<Snippet width="450px" type="lite" text={`import { Code } from 'geist-ui-svelte';`} />
+<Snippet width="450px" type="transparent" text={`import { Code } from 'geist-ui-svelte';`} />
 <Spacer h={30} />
 <Text type="h4">Basic</Text>
 <Spacer h={5} />

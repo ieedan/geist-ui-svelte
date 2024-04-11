@@ -82,7 +82,7 @@
 <Spacer h={20} />
 <Snippet
 	width="650px"
-	type="lite"
+	type="transparent"
 	text={`import { ButtonGroup, ButtonGroupButton } from 'geist-ui-svelte';`}
 />
 <Spacer h={30} />

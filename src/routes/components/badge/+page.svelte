@@ -13,7 +13,7 @@
 <Spacer h={10} />
 <Text>A simple component for status indicators or notification markers.</Text>
 <Spacer h={20} />
-<Snippet width="425px" type="lite" text={`import { Badge } from 'geist-ui-svelte';`} />
+<Snippet width="425px" type="transparent" text={`import { Badge } from 'geist-ui-svelte';`} />
 <Spacer h={30} />
 <Text type="h4">Sizes</Text>
 <Spacer h={10} />

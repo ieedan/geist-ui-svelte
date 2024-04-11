@@ -15,7 +15,7 @@
 <Spacer h={10} />
 <Text>A component for searching.</Text>
 <Spacer h={20} />
-<Snippet width="450px" type="lite" text={`import { Search } from 'geist-ui-svelte';`} />
+<Snippet width="450px" type="transparent" text={`import { Search } from 'geist-ui-svelte';`} />
 <Spacer h={30} />
 <Text type="h4">Basic</Text>
 <Spacer h={10} />

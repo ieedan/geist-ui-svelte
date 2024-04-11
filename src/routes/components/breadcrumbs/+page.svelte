@@ -57,7 +57,7 @@
 <Spacer h={10} />
 <Text>A component to show the current path.</Text>
 <Spacer h={20} />
-<Snippet width="500px" type="lite" text={`import { BreadCrumbs } from 'geist-ui-svelte';`} />
+<Snippet width="500px" type="transparent" text={`import { BreadCrumbs } from 'geist-ui-svelte';`} />
 <Spacer h={30} />
 <Text type="h4">Basic</Text>
 <Spacer h={10} />

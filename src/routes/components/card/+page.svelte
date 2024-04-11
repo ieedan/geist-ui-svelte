@@ -12,7 +12,7 @@
 <Spacer h={10} />
 <Text>A common organizational layout component.</Text>
 <Spacer h={20} />
-<Snippet width="400px" type="lite" text={`import { Card } from 'geist-ui-svelte';`} />
+<Snippet width="400px" type="transparent" text={`import { Card } from 'geist-ui-svelte';`} />
 <Spacer h={30} />
 <Text type="h4">Basic</Text>
 <Spacer h={10} />

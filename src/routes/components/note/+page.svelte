@@ -12,7 +12,7 @@
 <Spacer h={10} />
 <Text>A comment that stands out to the user.</Text>
 <Spacer h={20} />
-<Snippet width="450px" type="lite" text={`import { Note } from 'geist-ui-svelte';`} />
+<Snippet width="450px" type="transparent" text={`import { Note } from 'geist-ui-svelte';`} />
 <Spacer h={30} />
 <Text type="h4">Basic</Text>
 <Spacer h={10} />

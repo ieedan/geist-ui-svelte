@@ -89,7 +89,7 @@
 <Spacer h={10} />
 <Text>Display table data.</Text>
 <Spacer h={20} />
-<Snippet width="450px" type="lite" text={`import { Table } from 'geist-ui-svelte';`} />
+<Snippet width="450px" type="transparent" text={`import { Table } from 'geist-ui-svelte';`} />
 <Spacer h={30} />
 <Text type="h4">Basic</Text>
 <Spacer h={10} />

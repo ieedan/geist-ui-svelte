@@ -6,34 +6,32 @@
 	import Text from "$lib/text/Text.svelte";
 	import RadioTabs from "$lib/radiotabs/RadioTabs.svelte";
 	import RadioTab from "$lib/radiotabs/RadioTab.svelte";
+	import Card from "$lib/card/Card.svelte";
 	import { onMount } from "svelte";
 
 	const PACKAGE_MANAGER_KEY = "package-manager";
 
-	type PackageManager = "npm" | "pnpm" | "bun";
-	type PackageManagerRunCommand = "npx" | "pnpm dlx" | "bunx";
+	let packageManager: keyof PackageManager = "npm";
 
-	// Assign npm as default value
-	let packageManager: PackageManager = "npm";
-	let runCommand: PackageManagerRunCommand;
+	type PackageManager = {
+		npm: string;
+		bun: string;
+		pnpm: string;
+		yarn: string;
+	};
 
-	// Reactively set runCommand based on packageManager
-	$: {
-		switch (packageManager) {
-			case "npm":
-				runCommand = "npx";
-				break;
-			case "pnpm":
-				runCommand = "pnpm dlx";
-				break;
-			case "bun":
-				runCommand = "bunx";
-				break;
-		}
-	}
+	let packageManagers: PackageManager = {
+		npm: "npx",
+		bun: "bunx",
+		pnpm: "pnpm dlx",
+		yarn: "yarn dlx",
+	};
+
+	$: runCommand = packageManagers[packageManager];
 
 	/* eslint-disable no-useless-escape */
 	const importExample = `<script lang="ts">
+	import "../app.pcss";
 	import "geist-ui-svelte/styles/geist-ui-svelte.css";
 <\/script>
 
@@ -53,13 +51,14 @@
 	};
 
 	onMount(() => {
-		packageManager = (localStorage.getItem(PACKAGE_MANAGER_KEY) as PackageManager) ?? "npm";
+		packageManager =
+			(localStorage.getItem(PACKAGE_MANAGER_KEY) as keyof PackageManager) ?? "npm";
 	});
 </script>
 
 <Text type="h3">Installation</Text>
 <Spacer h={10} />
-<RadioTabs bind:selected={packageManager} on:change={savePreference}>
+<RadioTabs bind:selected={packageManager} on:change={savePreference} color="secondary">
 	<RadioTab id="npm">npm</RadioTab>
 	<RadioTab id="pnpm">pnpm</RadioTab>
 	<RadioTab id="bun">bun</RadioTab>
@@ -71,36 +70,31 @@
 <Spacer h={10} />
 <Snippet
 	width="550px"
-	text={[`${packageManager} create vite@latest my-project`, "cd my-project"]}
-	type="lite"
-/>
+	text={[`${packageManager} create svelte@latest my-project`, "cd my-project"]}
+	type="transparent" />
 <Spacer h={20} />
 <Text>Setup TailwindCSS</Text>
 <Spacer h={10} />
 <Snippet
 	width="550px"
 	text={[
-		`${packageManager} i -D tailwindcss postcss autoprefixer`,
-		`${runCommand} tailwindcss init -p`,
+		`${runCommand} svelte-add@latest tailwindcss`,
 	]}
-	type="lite"
-/>
+	type="transparent" />
 <Spacer h={20} />
 <Text>Configure TailwindCSS with our recommended settings.</Text>
 <Spacer h={10} />
-<Code
-	lang="svelte"
-	edits={[
-		{ start: 4, end: 5, type: "add" },
-		{ start: 9, end: 30, type: "add" },
-	]}
-	code={`/** @type {import('tailwindcss').Config} */
-export default {
-	content: [
-		"./src/**/*.{html,js,svelte,ts}",
-		"./node_modules/geist-ui-svelte/**/*.{html,js,svelte,ts}",
-	],
-	theme: {
+<Card>
+	<Code
+		lang="svelte"
+		edits={[
+			{ start: 5, end: 24, type: "add" },
+			{ number: 28, type: "add" },
+		]}
+		code={`/** @type {import('tailwindcss').Config}*/
+const config = {
+  content: ["./src/**/*.{html,js,svelte,ts}"],
+  theme: {
 		extend: {
 			colors: {
 				gray: {
@@ -122,33 +116,39 @@ export default {
 			},
 		},
 	},
-	plugins: [],
-	darkMode: "class",
-};`}
-/>
+
+  plugins: [],
+  darkMode: "class",
+};
+
+module.exports = config;`} />
+</Card>
 <Spacer h={20} />
 <Text>Install geist-ui-svelte</Text>
 <Spacer h={10} />
-<Snippet width="550px" text="{packageManager} i geist-ui-svelte" type="lite" />
+<Snippet width="550px" text="{packageManager} i geist-ui-svelte" type="transparent" />
 <Spacer h={20} />
 <Text>Import our CSS into <code>`/routes/+layout.svelte`</code></Text>
 <Spacer h={10} />
-<Code lang="ts" edits={[{ number: 2, type: "add" }]} code={importExample} />
+<Card>
+	<Code lang="ts" edits={[{ number: 3, type: "add" }]} code={importExample} />
+</Card>
 <Spacer h={20} />
 <Text>Setup Dark Mode (Optional)</Text>
 <Spacer h={10} />
-<Snippet width="550px" text="{packageManager} i mode-watcher" type="lite" />
+<Snippet width="550px" text="{packageManager} i mode-watcher" type="transparent" />
 <Spacer h={20} />
 <Text>Add ModeWatcher component to <code>`/routes/+layout.svelte`</code></Text>
 <Spacer h={10} />
-<Code
-	lang="ts"
-	edits={[
-		{ number: 3, type: "add" },
-		{ number: 6, type: "add" },
-	]}
-	code={darkModeExample}
-/>
+<Card>
+	<Code
+		lang="ts"
+		edits={[
+			{ number: 3, type: "add" },
+			{ number: 6, type: "add" },
+		]}
+		code={darkModeExample} />
+</Card>
 <Spacer h={20} />
 <Text>
 	See additional docs for <code>`mode-watcher`</code>

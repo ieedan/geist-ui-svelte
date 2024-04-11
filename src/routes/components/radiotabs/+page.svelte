@@ -34,7 +34,7 @@
 <Spacer h={20} />
 <Snippet
 	width="550px"
-	type="lite"
+	type="transparent"
 	text={`import { RadioTabs, RadioTab } from 'geist-ui-svelte';`}
 />
 <Spacer h={30} />

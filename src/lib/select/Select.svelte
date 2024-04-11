@@ -413,6 +413,7 @@
 
 		return () => {
 			dropDownRef.removeEventListener("click", selected);
+			dropDownRef.removeEventListener("mousemove", dropdownMouseMove);
 			observer.disconnect();
 		};
 	});

@@ -12,7 +12,7 @@
 <Spacer h={10} />
 <Text>A circle component great as a status indicator.</Text>
 <Spacer h={20} />
-<Snippet width="400px" type="lite" text={`import { Dot } from 'geist-ui-svelte';`} />
+<Snippet width="400px" type="transparent" text={`import { Dot } from 'geist-ui-svelte';`} />
 <Spacer h={30} />
 <Text type="h4">Sizes</Text>
 <Spacer h={10} />

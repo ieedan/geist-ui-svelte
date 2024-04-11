@@ -13,7 +13,7 @@
 <Spacer h={10} />
 <Text>A component to allow the user to toggle light/dark mode.</Text>
 <Spacer h={20} />
-<Snippet width="500px" type="lite" text={`import { LightSwitch } from 'geist-ui-svelte';`} />
+<Snippet width="500px" type="transparent" text={`import { LightSwitch } from 'geist-ui-svelte';`} />
 <Spacer h={30} />
 <Text type="h4">Basic</Text>
 <Spacer h={5} />

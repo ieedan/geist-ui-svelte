@@ -14,7 +14,7 @@
 <Spacer h={10} />
 <Text>A button component that stays solid or transparent based on its toggled state.</Text>
 <Spacer h={20} />
-<Snippet width="500px" type="lite" text={`import { ToggleButton } from 'geist-ui-svelte';`} />
+<Snippet width="500px" type="transparent" text={`import { ToggleButton } from 'geist-ui-svelte';`} />
 <Spacer h={30} />
 <Text type="h4">Basic</Text>
 <Spacer h={10} />

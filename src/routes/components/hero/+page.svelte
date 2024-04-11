@@ -21,7 +21,7 @@
 <Spacer h={10} />
 <Text>A layout component to help you create your hero pages.</Text>
 <Spacer h={20} />
-<Snippet width="450px" type="lite" text={`import { Hero } from 'geist-ui-svelte';`} />
+<Snippet width="450px" type="transparent" text={`import { Hero } from 'geist-ui-svelte';`} />
 <Spacer h={20} />
 <Note color="success">Click `Show Example` to see the the full size component.</Note>
 <Spacer h={20} />

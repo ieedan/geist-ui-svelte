@@ -34,6 +34,7 @@
 	import EllipsisIcon from "$lib/icons/EllipsisIcon.svelte";
 	import GridIcon from "$lib/icons/GridIcon.svelte";
 	import { ListIcon } from "$lib/index.js";
+	import Playground from "$lib/docs-components/playground/playground.svelte";
 
 	type Icon = {
 		name: string;
@@ -165,51 +166,37 @@
 	Use the <code>`size`</code> attribute to size the icon.
 </Text>
 <Spacer h={10} />
-<FieldSet>
-	<div class="flex place-items-end gap-1">
+<Playground
+	code={`<SvelteIcon size={10}/>
+<SvelteIcon size={15}/>
+<SvelteIcon size={20}/>
+<SvelteIcon size={25}/>
+<SvelteIcon size={30}/>`}>
+	<div class="flex place-items-end gap-2">
 		<SvelteIcon size={10} />
 		<SvelteIcon size={15} />
 		<SvelteIcon size={20} />
 		<SvelteIcon size={25} />
 		<SvelteIcon size={30} />
 	</div>
-	<div slot="footer">
-		<Details label="Code">
-			<Code
-				lang="svelte"
-				code={`<SvelteIcon size={10}/>
-<SvelteIcon size={15}/>
-<SvelteIcon size={20}/>
-<SvelteIcon size={25}/>
-<SvelteIcon size={30}/>`}
-			/>
-		</Details>
-	</div>
-</FieldSet>
+</Playground>
 <Spacer h={30} />
 <Text type="h4">Color</Text>
 <Spacer h={5} />
 <Text>The parent container will set the color of the icon from its text color.</Text>
 <Spacer h={10} />
-<FieldSet>
+<Playground
+	code={`<Text color="success"><SvelteIcon size={24}/></Text>
+	<Text color="warning"><SvelteIcon size={24}/></Text>
+	<Text color="error"><SvelteIcon size={24}/></Text>
+	<Text color="abort"><SvelteIcon size={24}/></Text>`}>
 	<div class="flex place-items-end gap-1">
 		<Text color="success"><SvelteIcon size={24} /></Text>
 		<Text color="warning"><SvelteIcon size={24} /></Text>
 		<Text color="error"><SvelteIcon size={24} /></Text>
 		<Text color="abort"><SvelteIcon size={24} /></Text>
 	</div>
-	<div slot="footer">
-		<Details label="Code">
-			<Code
-				lang="svelte"
-				code={`<Text color="success"><SvelteIcon size={24}/></Text>
-<Text color="warning"><SvelteIcon size={24}/></Text>
-<Text color="error"><SvelteIcon size={24}/></Text>
-<Text color="abort"><SvelteIcon size={24}/></Text>`}
-			/>
-		</Details>
-	</div>
-</FieldSet>
+</Playground>
 <Spacer h={20} />
 <Note color="warning">
 	The icons included only represent what is necessary to support the components in this library.
@@ -224,8 +211,7 @@
 			<button
 				on:click={() => selectIcon(icon)}
 				class="flex place-items-center justify-center hover:border-gray-100 hover:dark:border-gray-900
-			border border-transparent size-28 rounded-lg transition-all"
-			>
+			border border-transparent size-28 rounded-lg transition-all">
 				<Center class="gap-2">
 					<div><svelte:component this={icon.component} size={28} /></div>
 					<Text type="small" color="secondary">{icon.name}</Text>
@@ -237,8 +223,7 @@
 <Modal
 	on:closed={closed}
 	bind:visible={showModal}
-	class="md:h-56 md:w-[525px] flex place-items-center justify-center px-4 py-4"
->
+	class="md:h-56 md:w-[525px] flex place-items-center justify-center px-4 py-4">
 	<div class="flex flex-col justify-center place-items-center gap-3">
 		{#if currentIcon}
 			<Card class="w-full flex place-items-center justify-center">
@@ -247,9 +232,8 @@
 			<div class="hidden md:block">
 				<Snippet
 					width="500px"
-					type="lite"
-					text={`import { ${currentIcon.name}Icon } from 'geist-ui-svelte'`}
-				/>
+					type="transparent"
+					text={`import { ${currentIcon.name}Icon } from 'geist-ui-svelte'`} />
 			</div>
 		{/if}
 	</div>

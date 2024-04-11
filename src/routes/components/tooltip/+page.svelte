@@ -49,7 +49,7 @@
 <Spacer h={10} />
 <Text>A component to show the user additional information.</Text>
 <Spacer h={20} />
-<Snippet width="450px" type="lite" text={`import { ToolTip } from 'geist-ui-svelte';`} />
+<Snippet width="450px" type="transparent" text={`import { ToolTip } from 'geist-ui-svelte';`} />
 <Spacer h={30} />
 <Text type="h4">Basic</Text>
 <Spacer h={10} />

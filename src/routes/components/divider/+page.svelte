@@ -13,7 +13,7 @@
 <Spacer h={10} />
 <Text>A layout component to separate your content.</Text>
 <Spacer h={20} />
-<Snippet width="450px" type="lite" text={`import { Divider } from 'geist-ui-svelte';`} />
+<Snippet width="450px" type="transparent" text={`import { Divider } from 'geist-ui-svelte';`} />
 <Spacer h={30} />
 <Text type="h4">Basic</Text>
 <Spacer h={5} />

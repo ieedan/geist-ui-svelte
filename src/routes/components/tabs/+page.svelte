@@ -15,7 +15,7 @@
 <Spacer h={10} />
 <Text>A layout component for navigation.</Text>
 <Spacer h={20} />
-<Snippet width="500px" type="lite" text={`import { Tabs, TabItem } from 'geist-ui-svelte';`} />
+<Snippet width="500px" type="transparent" text={`import { Tabs, TabItem } from 'geist-ui-svelte';`} />
 <Spacer h={30} />
 <Text type="h4">Basic</Text>
 <Spacer h={10} />

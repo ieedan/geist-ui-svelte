@@ -171,12 +171,13 @@
 	</div>
 	<button type="button" class="absolute top-2 right-2 hidden sm:flex" on:click={copyText}>
 		{#if copied}
-			<div in:scale={{ duration: 200 }}>
+			<div class="text-gray-999 dark:text-gray-0" in:scale={{ duration: 200 }}>
 				<CheckMarkIcon size={16} />
 			</div>
 		{:else}
 			<div
-				class="hover:text-gray-999 transition-all dark:hover:text-gray-0 text-gray-600 dark:text-gray-400"
+				class="text-gray-999 dark:text-gray-0 hover:text-gray-800 
+				dark:hover:text-gray-200 transition-all"
 				in:scale={{ duration: 100 }}
 			>
 				<CloneIcon size={16} />

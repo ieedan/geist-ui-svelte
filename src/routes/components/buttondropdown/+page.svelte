@@ -16,7 +16,7 @@
 <Spacer h={20} />
 <Snippet
 	width="100%"
-	type="lite"
+	type="transparent"
 	text={`import { ButtonDropdown, ButtonDropdownItem } from 'geist-ui-svelte';`}
 />
 <Spacer h={30} />

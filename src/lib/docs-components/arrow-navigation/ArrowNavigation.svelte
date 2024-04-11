@@ -30,7 +30,7 @@
 			<small class="px-6 text-xs text-gray-600 dark:text-gray-400">Last</small>
 			<a
 				href={last.slug}
-				class="flex place-items-center gap-2 hover:underline text-gray-600 dark:text-gray-400"
+				class="flex place-items-center gap-2 hover:underline text-gray-999 dark:text-gray-0"
 			>
 				<ChevronIcon size={16} rotation="180deg" />
 				{last?.name}
@@ -44,7 +44,7 @@
 			<small class="px-6 text-xs text-gray-600 dark:text-gray-400">Next</small>
 			<a
 				href={next.slug}
-				class="flex place-items-center gap-2 hover:underline text-gray-600 dark:text-gray-400"
+				class="flex place-items-center gap-2 hover:underline text-gray-999 dark:text-gray-0"
 			>
 				{next.name}
 				<ChevronIcon size={16} rotation="0deg" />

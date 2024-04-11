@@ -20,7 +20,7 @@
 <Spacer h={10} />
 <Text>A component to hide / show content as a sidebar pop-up.</Text>
 <Spacer h={20} />
-<Snippet width="450px" type="lite" text={`import { Drawer } from 'geist-ui-svelte';`} />
+<Snippet width="450px" type="transparent" text={`import { Drawer } from 'geist-ui-svelte';`} />
 <Spacer h={30} />
 <Text type="h4">Default</Text>
 <Spacer h={5} />

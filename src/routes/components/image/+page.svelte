@@ -14,7 +14,7 @@
 <Spacer h={10} />
 <Text>Displays an image.</Text>
 <Spacer h={20} />
-<Snippet width="450px" type="lite" text={`import { Image } from 'geist-ui-svelte';`} />
+<Snippet width="450px" type="transparent" text={`import { Image } from 'geist-ui-svelte';`} />
 <Spacer h={30} />
 <Text type="h4">Basic</Text>
 <Spacer h={10} />

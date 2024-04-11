@@ -12,7 +12,7 @@
 <Spacer h={10} />
 <Text>A component to allow the user to select their dark mode preference.</Text>
 <Spacer h={20} />
-<Snippet width="500px" type="lite" text={`import { ModeSelector } from 'geist-ui-svelte';`} />
+<Snippet width="500px" type="transparent" text={`import { ModeSelector } from 'geist-ui-svelte';`} />
 <Spacer h={30} />
 <Text type="h4">Basic</Text>
 <Spacer h={10} />

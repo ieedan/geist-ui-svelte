@@ -6,7 +6,7 @@
 	import { cn } from "$lib/util/utils.js";
 
 	const background = cva(
-		"flex justify-between place-items-start font-serif transition-all border px-3 py-[10px] rounded-md",
+		"flex justify-between place-items-start font-serif transition-all border px-3 py-[10px] rounded-md font-light",
 		{
 			variants: {
 				color: {
@@ -34,7 +34,7 @@
 				lite: "text-gray-999 dark:text-gray-0 enabled:hover:text-gray-800 enabled:dark:hover:text-gray-200",
 				subtle: "dark:text-gray-100 text-gray-900 enabled:dark:hover:text-gray-300 enabled:hover:text-gray-700",
 				transparent:
-					"text-gray-900 dark:text-gray-100 enabled:hover:text-gray-300 enabled:dark:hover:text-gray-700",
+					"text-gray-999 dark:text-gray-0 enabled:hover:text-gray-800 enabled:dark:hover:text-gray-200",
 				success:
 					"text-blue-600 dark:text-blue-600 enabled:hover:text-blue-800 enabled:dark:hover:text-blue-800",
 				warning:

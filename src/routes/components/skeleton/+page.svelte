@@ -131,7 +131,7 @@
 <Spacer h={20} />
 <Snippet
 	width="600px"
-	type="lite"
+	type="transparent"
 	text={`import { Skeleton, SkeletonContainer } from 'geist-ui-svelte';`}
 />
 <Spacer h={30} />

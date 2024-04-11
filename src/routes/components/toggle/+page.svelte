@@ -12,7 +12,7 @@
 <Spacer h={10} />
 <Text>An input with a true / false state.</Text>
 <Spacer h={20} />
-<Snippet width="450px" type="lite" text={`import { Toggle } from 'geist-ui-svelte';`} />
+<Snippet width="450px" type="transparent" text={`import { Toggle } from 'geist-ui-svelte';`} />
 <Spacer h={30} />
 <Text type="h4">Basic</Text>
 <Spacer h={10} />
