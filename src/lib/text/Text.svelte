@@ -20,12 +20,12 @@
 			},
 			color: {
 				inherit: "text-inherit dark:text-inherit",
-				dark: "text-gray-999 dark:text-gray-0",
-				secondary: "text-gray-500 dark:text-gray-500",
-				success: "text-blue-600 dark:text-blue-600",
-				warning: "text-orange-300 dark:text-orange-400",
-				error: "text-red-500 dark:text-red-600",
-				abort: "text-gray-300 dark:text-gray-700",
+				dark: "text-gui-foreground",
+				secondary: "text-gui-foreground-secondary",
+				success: "text-gui-success",
+				warning: "text-gui-warning",
+				error: "text-gui-error",
+				abort: "text-gui-foreground-muted",
 			},
 			size: {
 				xs: "!text-xs",
@@ -112,7 +112,7 @@
 				false: "",
 			},
 			blockquote: {
-				true: `bg-gray-50 border-gray-100 dark:bg-gray-950 dark:border-gray-900 border px-2 py-1 rounded-md`,
+				true: `border border-gui-border bg-gui-component-background px-2 py-1 rounded-md`,
 				false: "",
 			},
 		},

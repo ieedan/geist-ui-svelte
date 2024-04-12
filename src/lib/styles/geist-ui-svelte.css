@@ -18,7 +18,7 @@ html.dark {
 }
 
 ::-webkit-scrollbar-corner {
-	background: rgba(0, 0, 0, 0);
+	background: var(--gui-background-100);
 }
 
 /* For Code component */
@@ -39,8 +39,8 @@ html.dark .shiki span {
 }
 
 .dark .tippy-box[data-theme~="dark"] {
-	background-color: black;
-	border: 1px solid rgb(38 38 38);
+	background-color: var(--gui-background-100);
+	border: 1px solid hsl(var(--gui-gray-400));
 	border-radius: 4px;
 	padding: 3px 5px;
 	color: white;
@@ -48,7 +48,7 @@ html.dark .shiki span {
 
 .tippy-box[data-theme~="dark"] {
 	background-color: white;
-	border: 1px solid rgb(242 242 242);
+	border: 1px solid hsl(var(--gui-gray-400));
 	border-radius: 4px;
 	padding: 3px 5px;
 	color: black;
@@ -86,4 +86,206 @@ html.dark .shiki span {
 
 .tippy-box[data-theme~="dark"][data-placement^="right"] > .tippy-arrow::before {
 	border-right-color: white;
+}
+
+/* Reference: https://vercel.com/geist/colors */
+@layer base {
+	:root {
+		--gui-gray-100: 0 0% 95%;
+		--gui-gray-200: 0 0% 92%;
+		--gui-gray-300: 0 0% 90%;
+		--gui-gray-400: 0 0% 92%;
+		--gui-gray-500: 0 0% 79%;
+		--gui-gray-600: 0 0% 66%;
+		--gui-gray-700: 0 0% 56%;
+		--gui-gray-800: 0 0% 49%;
+		--gui-gray-900: 0 0% 40%;
+		--gui-gray-1000: 0 0% 9%;
+		--gui-blue-100: 212 100% 97%;
+		--gui-blue-200: 210 100% 96%;
+		--gui-blue-300: 210 100% 94%;
+		--gui-blue-400: 209 100% 90%;
+		--gui-blue-500: 209 100% 80%;
+		--gui-blue-600: 208 100% 66%;
+		--gui-blue-700: 212 100% 48%;
+		--gui-blue-800: 212 100% 41%;
+		--gui-blue-900: 211 100% 42%;
+		--gui-blue-1000: 211 100% 15%;
+		--gui-red-100: 0 100% 97%;
+		--gui-red-200: 0 100% 96%;
+		--gui-red-300: 0 100% 95%;
+		--gui-red-400: 0 90% 92%;
+		--gui-red-500: 0 82% 85%;
+		--gui-red-600: 359 90% 71%;
+		--gui-red-700: 358 75% 59%;
+		--gui-red-800: 358 70% 52%;
+		--gui-red-900: 358 66% 48%;
+		--gui-red-1000: 355 49% 15%;
+		--gui-amber-100: 39 100% 95%;
+		--gui-amber-200: 44 100% 92%;
+		--gui-amber-300: 43 96% 90%;
+		--gui-amber-400: 42 100% 78%;
+		--gui-amber-500: 38 100% 71%;
+		--gui-amber-600: 36 90% 62%;
+		--gui-amber-700: 39 100% 57%;
+		--gui-amber-800: 35 100% 52%;
+		--gui-amber-900: 30 100% 32%;
+		--gui-amber-1000: 20 79% 17%;
+		--gui-green-100: 120 60% 96%;
+		--gui-green-200: 120 60% 95%;
+		--gui-green-300: 120 60% 91%;
+		--gui-green-400: 122 60% 86%;
+		--gui-green-500: 124 60% 75%;
+		--gui-green-600: 125 60% 64%;
+		--gui-green-700: 131 41% 46%;
+		--gui-green-800: 132 43% 39%;
+		--gui-green-900: 133 50% 32%;
+		--gui-green-1000: 128 29% 15%;
+		--gui-teal-100: 169 70% 96%;
+		--gui-teal-200: 167 70% 94%;
+		--gui-teal-300: 168 70% 90%;
+		--gui-teal-400: 170 70% 85%;
+		--gui-teal-500: 170 70% 72%;
+		--gui-teal-600: 170 70% 57%;
+		--gui-teal-700: 173 80% 36%;
+		--gui-teal-800: 173 83% 30%;
+		--gui-teal-900: 174 91% 25%;
+		--gui-teal-1000: 171 80% 13%;
+		--gui-purple-100: 276 100% 97%;
+		--gui-purple-200: 277 87% 97%;
+		--gui-purple-300: 274 78% 95%;
+		--gui-purple-400: 276 71% 92%;
+		--gui-purple-500: 274 70% 82%;
+		--gui-purple-600: 273 72% 73%;
+		--gui-purple-700: 272 51% 54%;
+		--gui-purple-800: 272 47% 45%;
+		--gui-purple-900: 274 71% 43%;
+		--gui-purple-1000: 276 100% 15%;
+		--gui-pink-100: 330 100% 96%;
+		--gui-pink-200: 340 90% 96%;
+		--gui-pink-300: 340 82% 94%;
+		--gui-pink-400: 341 76% 91%;
+		--gui-pink-500: 340 75% 84%;
+		--gui-pink-600: 341 75% 73%;
+		--gui-pink-700: 336 80% 58%;
+		--gui-pink-800: 336 74% 51%;
+		--gui-pink-900: 336 65% 45%;
+		--gui-pink-1000: 333 74% 15%;
+		--gui-gray-alpha-100: rgba(0 0 0 0.05);
+		--gui-gray-alpha-200: rgba(0 0 0 0.08);
+		--gui-gray-alpha-300: rgba(0 0 0 0.1);
+		--gui-gray-alpha-400: rgba(0 0 0 0.08);
+		--gui-gray-alpha-500: rgba(0 0 0 0.21);
+		--gui-gray-alpha-600: rgba(0 0 0 0.34);
+		--gui-gray-alpha-700: rgba(0 0 0 0.44);
+		--gui-gray-alpha-800: rgba(0 0 0 0.51);
+		--gui-gray-alpha-900: rgba(0 0 0 0.61);
+		--gui-gray-alpha-1000: rgba(0 0 0 0.91);
+		--gui-background-100: #fff;
+		--gui-background-200: #fafafa;
+	}
+
+	.dark {
+		--gui-gray-100: 0 0% 10%;
+		--gui-gray-200: 0 0% 12%;
+		--gui-gray-300: 0 0% 16%;
+		--gui-gray-400: 0 0% 18%;
+		--gui-gray-500: 0 0% 27%;
+		--gui-gray-600: 0 0% 53%;
+		--gui-gray-700: 0 0% 56%;
+		--gui-gray-800: 0 0% 49%;
+		--gui-gray-900: 0 0% 63%;
+		--gui-gray-1000: 0 0% 93%;
+		--gui-blue-100: 216 50% 12%;
+		--gui-blue-200: 214 59% 15%;
+		--gui-blue-300: 213 71% 20%;
+		--gui-blue-400: 212 78% 23%;
+		--gui-blue-500: 211 86% 27%;
+		--gui-blue-600: 206 100% 50%;
+		--gui-blue-700: 212 100% 48%;
+		--gui-blue-800: 212 100% 41%;
+		--gui-blue-900: 210 100% 66%;
+		--gui-blue-1000: 206 100% 96%;
+		--gui-red-100: 357 37% 12%;
+		--gui-red-200: 357 46% 16%;
+		--gui-red-300: 356 54% 22%;
+		--gui-red-400: 357 55% 26%;
+		--gui-red-500: 357 60% 32%;
+		--gui-red-600: 358 75% 59%;
+		--gui-red-700: 358 75% 59%;
+		--gui-red-800: 358 69% 52%;
+		--gui-red-900: 358 100% 69%;
+		--gui-red-1000: 353 90% 96%;
+		--gui-amber-100: 35 100% 8%;
+		--gui-amber-200: 32 100% 10%;
+		--gui-amber-300: 33 100% 15%;
+		--gui-amber-400: 35 100% 17%;
+		--gui-amber-500: 35 91% 22%;
+		--gui-amber-600: 39 85% 49%;
+		--gui-amber-700: 39 100% 57%;
+		--gui-amber-800: 35 100% 52%;
+		--gui-amber-900: 35 100% 52%;
+		--gui-amber-1000: 40 94% 93%;
+		--gui-green-100: 136 50% 9%;
+		--gui-green-200: 137 50% 12%;
+		--gui-green-300: 136 50% 14%;
+		--gui-green-400: 135 70% 16%;
+		--gui-green-500: 135 70% 23%;
+		--gui-green-600: 135 70% 34%;
+		--gui-green-700: 131 41% 46%;
+		--gui-green-800: 132 43% 39%;
+		--gui-green-900: 131 43% 57%;
+		--gui-green-1000: 136 73% 94%;
+		--gui-teal-100: 169 78% 7%;
+		--gui-teal-200: 170 74% 9%;
+		--gui-teal-300: 171 75% 13%;
+		--gui-teal-400: 171 85% 13%;
+		--gui-teal-500: 172 85% 20%;
+		--gui-teal-600: 172 85% 32%;
+		--gui-teal-700: 173 80% 36%;
+		--gui-teal-800: 173 83% 30%;
+		--gui-teal-900: 174 90% 41%;
+		--gui-teal-1000: 166 71% 93%;
+		--gui-purple-100: 283 30% 12%;
+		--gui-purple-200: 281 38% 16%;
+		--gui-purple-300: 279 44% 23%;
+		--gui-purple-400: 277 46% 28%;
+		--gui-purple-500: 274 49% 35%;
+		--gui-purple-600: 272 51% 54%;
+		--gui-purple-700: 272 51% 54%;
+		--gui-purple-800: 272 47% 45%;
+		--gui-purple-900: 275 80% 71%;
+		--gui-purple-1000: 281 73% 96%;
+		--gui-pink-100: 335 32% 12%;
+		--gui-pink-200: 335 43% 16%;
+		--gui-pink-300: 335 47% 21%;
+		--gui-pink-400: 335 51% 22%;
+		--gui-pink-500: 335 57% 27%;
+		--gui-pink-600: 336 75% 40%;
+		--gui-pink-700: 336 80% 58%;
+		--gui-pink-800: 336 74% 51%;
+		--gui-pink-900: 341 90% 67%;
+		--gui-pink-1000: 333 90% 96%;
+		--gui-gray-alpha-100: hsla(0 0% 100% 0.06);
+		--gui-gray-alpha-200: hsla(0 0% 100% 0.09);
+		--gui-gray-alpha-300: hsla(0 0% 100% 0.13);
+		--gui-gray-alpha-400: hsla(0 0% 100% 0.14);
+		--gui-gray-alpha-500: hsla(0 0% 100% 0.24);
+		--gui-gray-alpha-600: hsla(0 0% 100% 0.51);
+		--gui-gray-alpha-700: hsla(0 0% 100% 0.54);
+		--gui-gray-alpha-800: hsla(0 0% 100% 0.47);
+		--gui-gray-alpha-900: hsla(0 0% 100% 0.61);
+		--gui-gray-alpha-1000: hsla(0 0% 100% 0.92);
+		--gui-background-100: #0a0a0a;
+		--gui-background-200: #000;
+	}
+}
+
+@layer base {
+	* {
+		@apply border-gui-border;
+	}
+	body {
+		@apply bg-gui-background text-gui-foreground-primary;
+	}
 }
