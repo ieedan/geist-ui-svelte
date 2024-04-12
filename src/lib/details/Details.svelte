@@ -5,6 +5,8 @@
 	export let initialShow = false;
 	let show = initialShow;
 	export let label: string;
+	/** The label to be shown when expanded */
+	export let showLabel: string | undefined = undefined;
 	/** Adds animation to the open and close of the content */
 	export let animate: boolean = false;
 
@@ -13,7 +15,7 @@
 
 	const updateHeight = async () => {
 		await tick(); // Ensures DOM is updated
-		contentHeight = contentElement.scrollHeight;
+		if (contentElement) contentHeight = contentElement.scrollHeight;
 	};
 
 	$: if (show) {
@@ -38,7 +40,11 @@
 		>
 			<ChevronIcon size={16} />
 		</div>
-		{label}
+		{#if show && showLabel != undefined}
+			{showLabel}
+		{:else}
+			{label}
+		{/if}
 	</button>
 	<div
 		bind:this={contentElement}

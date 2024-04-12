@@ -14,5 +14,5 @@
 		".svelte-kit": true
 	},
 	"explorerExclude.backup": {},
-	"cSpell.words": ["hoverable"]
+	"cSpell.words": ["bunx", "hoverable", "pcss", "tailwindcss"]
 }

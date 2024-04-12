@@ -16,9 +16,6 @@
 	import Search from "$lib/search/Search.svelte";
 	import Modal from "$lib/modal/Modal.svelte";
 	import type { ComponentType } from "svelte";
-	import FieldSet from "$lib/fieldset/FieldSet.svelte";
-	import Details from "$lib/details/Details.svelte";
-	import Code from "$lib/code/Code.svelte";
 	import SvelteIcon from "$lib/icons/SvelteIcon.svelte";
 	import CommandIcon from "$lib/icons/CommandIcon.svelte";
 	import EditIcon from "$lib/icons/EditIcon.svelte";
@@ -34,6 +31,7 @@
 	import EllipsisIcon from "$lib/icons/EllipsisIcon.svelte";
 	import GridIcon from "$lib/icons/GridIcon.svelte";
 	import { ListIcon } from "$lib/index.js";
+	import Playground from "$lib/docs-components/playground/playground.svelte";
 
 	type Icon = {
 		name: string;
@@ -165,51 +163,39 @@
 	Use the <code>`size`</code> attribute to size the icon.
 </Text>
 <Spacer h={10} />
-<FieldSet>
-	<div class="flex place-items-end gap-1">
+<Playground
+	code={`<SvelteIcon size={10}/>
+<SvelteIcon size={15}/>
+<SvelteIcon size={20}/>
+<SvelteIcon size={25}/>
+<SvelteIcon size={30}/>`}
+>
+	<div class="flex place-items-end gap-2">
 		<SvelteIcon size={10} />
 		<SvelteIcon size={15} />
 		<SvelteIcon size={20} />
 		<SvelteIcon size={25} />
 		<SvelteIcon size={30} />
 	</div>
-	<div slot="footer">
-		<Details label="Code">
-			<Code
-				lang="svelte"
-				code={`<SvelteIcon size={10}/>
-<SvelteIcon size={15}/>
-<SvelteIcon size={20}/>
-<SvelteIcon size={25}/>
-<SvelteIcon size={30}/>`}
-			/>
-		</Details>
-	</div>
-</FieldSet>
+</Playground>
 <Spacer h={30} />
 <Text type="h4">Color</Text>
 <Spacer h={5} />
 <Text>The parent container will set the color of the icon from its text color.</Text>
 <Spacer h={10} />
-<FieldSet>
+<Playground
+	code={`<Text color="success"><SvelteIcon size={24}/></Text>
+	<Text color="warning"><SvelteIcon size={24}/></Text>
+	<Text color="error"><SvelteIcon size={24}/></Text>
+	<Text color="abort"><SvelteIcon size={24}/></Text>`}
+>
 	<div class="flex place-items-end gap-1">
 		<Text color="success"><SvelteIcon size={24} /></Text>
 		<Text color="warning"><SvelteIcon size={24} /></Text>
 		<Text color="error"><SvelteIcon size={24} /></Text>
 		<Text color="abort"><SvelteIcon size={24} /></Text>
 	</div>
-	<div slot="footer">
-		<Details label="Code">
-			<Code
-				lang="svelte"
-				code={`<Text color="success"><SvelteIcon size={24}/></Text>
-<Text color="warning"><SvelteIcon size={24}/></Text>
-<Text color="error"><SvelteIcon size={24}/></Text>
-<Text color="abort"><SvelteIcon size={24}/></Text>`}
-			/>
-		</Details>
-	</div>
-</FieldSet>
+</Playground>
 <Spacer h={20} />
 <Note color="warning">
 	The icons included only represent what is necessary to support the components in this library.
@@ -247,7 +233,7 @@
 			<div class="hidden md:block">
 				<Snippet
 					width="500px"
-					type="lite"
+					type="transparent"
 					text={`import { ${currentIcon.name}Icon } from 'geist-ui-svelte'`}
 				/>
 			</div>

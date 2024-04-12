@@ -1,7 +1,6 @@
 <script lang="ts">
 	import Code from "$lib/code/Code.svelte";
-	import Details from "$lib/details/Details.svelte";
-	import FieldSet from "$lib/fieldset/FieldSet.svelte";
+	import Playground from "$lib/docs-components/playground/playground.svelte";
 	import Link from "$lib/link/Link.svelte";
 	import Note from "$lib/note/Note.svelte";
 	import Snippet from "$lib/snippet/Snippet.svelte";
@@ -13,7 +12,7 @@
 <Spacer h={10} />
 <Text>A component to display highlighted code.</Text>
 <Spacer h={20} />
-<Snippet width="450px" type="lite" text={`import { Code } from 'geist-ui-svelte';`} />
+<Snippet width="450px" type="transparent" text={`import { Code } from 'geist-ui-svelte';`} />
 <Spacer h={30} />
 <Text type="h4">Basic</Text>
 <Spacer h={5} />
@@ -22,39 +21,38 @@
 	under the hood for extremely accurate and beautiful syntax highlighting.
 </Text>
 <Spacer h={10} />
-<FieldSet>
-	<div class="flex flex-col justify-start">
-		<Code
-			lang="javascript"
-			code={`const mergeSort = (arr) => {
+<Playground code={`<Code lang="js" code={\`...\`}/>`}>
+	<Code
+		lang="javascript"
+		code={`const mergeSort = (arr) => {
 	if (arr.length <= 1) return arr;
-		
+
 	const middle = Math.floor(arr.length / 2);
-		
+
 	const leftHalf = mergeSort(arr.slice(0, middle));
 	const rightHalf = mergeSort(arr.slice(middle));
-		
+
 	return merge(leftHalf, rightHalf);
 };
-		
+
 const merge = (leftHalf, rightHalf) => {
 	const mergedArr = [];
 	let leftIndex = 0;
 	let rightIndex = 0;
-		
+
 	while (leftIndex < leftHalf.length || rightIndex < rightHalf.length) {
 		if (leftIndex >= leftHalf.length){
 			mergedArr.push(rightHalf[rightIndex]);
 			rightIndex++;
 			break;
 		}
-		
+
 		if (rightIndex >= rightHalf.length){
 			mergedArr.push(leftHalf[leftIndex]);
 			leftIndex++;
 			break;
 		}
-		
+
 		if (leftHalf[leftIndex] < rightHalf[rightIndex]){
 			mergedArr.push(leftHalf[leftIndex]);
 			leftIndex++;
@@ -63,17 +61,11 @@ const merge = (leftHalf, rightHalf) => {
 			rightIndex++;
 		}
 	}
-		
+
 	return mergedArr;
 };`}
-		/>
-	</div>
-	<div slot="footer">
-		<Details label="Code">
-			<Code lang="svelte" code={`<Code lang="js" code={\`...\`}/>`} />
-		</Details>
-	</div>
-</FieldSet>
+	/>
+</Playground>
 <Spacer h={30} />
 <Text type="h4">With Edit highlighting</Text>
 <Spacer h={5} />
@@ -84,43 +76,35 @@ const merge = (leftHalf, rightHalf) => {
 <Spacer h={20} />
 <Note color="warning">This currently only works with line numbers enabled.</Note>
 <Spacer h={20} />
-<FieldSet>
-	<div class="flex flex-col justify-start">
-		<Code
-			lang="json"
-			edits={[
-				{ number: 3, type: "remove" },
-				{ number: 4, type: "add" },
-			]}
-			code={`{
-	"dependencies": {
-    	"react": "^18.2.0",
-		"svelte": "^4.0.0",
-  	},
-}`}
-		/>
-	</div>
-	<div slot="footer">
-		<Details label="Code">
-			<Code
-				lang="svelte"
-				edits={[{ start: 3, end: 6, type: "add" }]}
-				code={`<Code
+<Playground
+	edits={[{ start: 3, end: 6, type: "add" }]}
+	code={`<Code
 	lang="json"
 	edits={[
-		{ number: 3, type: "remove" },
-		{ number: 4, type: "add" },
+	{ number: 3, type: "remove" },
+	{ number: 4, type: "add" },
 	]}
 	code={\`{
-"dependencies": {
-	"react": "^18.2.0",
-	"svelte": "^4.0.0",
+	"dependencies": {
+		"react": "^18.2.0",
+		"svelte": "^4.0.0",
 	},
 }\`} />`}
-			/>
-		</Details>
-	</div>
-</FieldSet>
+>
+	<Code
+		lang="json"
+		edits={[
+			{ number: 3, type: "remove" },
+			{ number: 4, type: "add" },
+		]}
+		code={`{
+	"dependencies": {
+		"react": "^18.2.0",
+		"svelte": "^4.0.0",
+	},
+}`}
+	/>
+</Playground>
 <Spacer h={30} />
 <Text type="h4">Multi-line highlighting</Text>
 <Spacer h={5} />
@@ -130,36 +114,13 @@ const merge = (leftHalf, rightHalf) => {
 	end of the code.
 </Text>
 <Spacer h={10} />
-<FieldSet>
-	<div class="flex flex-col justify-start">
-		<Code
-			lang="json"
-			edits={[
-				{ number: 3, type: "remove" },
-				{ start: 4, end: 8, type: "add" },
-			]}
-			code={`{
-	"dependencies": {
-    	"react": "^18.2.0",
-		"svelte": "^4.0.0",
-		"@sveltejs/adapter-auto": "^3.0.0",
-		"@sveltejs/kit": "^2.0.0",
-		"@sveltejs/package": "^2.0.0",
-		"@sveltejs/vite-plugin-svelte": "^3.0.0",
-  	},
-}`}
-		/>
-	</div>
-	<div slot="footer">
-		<Details label="Code">
-			<Code
-				lang="json"
-				edits={[{ number: 5, type: "add" }]}
-				code={`<Code
+<Playground
+	edits={[{ number: 5, type: "add" }]}
+	code={`<Code
 	lang="json"
 	edits={[
-		{ number: 3, type: "remove" },
-		{ start: 4, end: 8, type: "add" },
+	{ number: 3, type: "remove" },
+	{ start: 4, end: 8, type: "add" },
 	]}
 	code={\`{
 	"dependencies": {
@@ -171,10 +132,25 @@ const merge = (leftHalf, rightHalf) => {
 		"@sveltejs/vite-plugin-svelte": "^3.0.0",
 	},
 }\`} />`}
-			/>
-		</Details>
-	</div>
-</FieldSet>
+>
+	<Code
+		lang="json"
+		edits={[
+			{ number: 3, type: "remove" },
+			{ start: 4, end: 8, type: "add" },
+		]}
+		code={`{
+	"dependencies": {
+		"react": "^18.2.0",
+		"svelte": "^4.0.0",
+		"@sveltejs/adapter-auto": "^3.0.0",
+		"@sveltejs/kit": "^2.0.0",
+		"@sveltejs/package": "^2.0.0",
+		"@sveltejs/vite-plugin-svelte": "^3.0.0",
+	},
+}`}
+	/>
+</Playground>
 <Spacer h={30} />
 <Text type="h4">Without line numbers</Text>
 <Spacer h={5} />
@@ -183,23 +159,15 @@ const merge = (leftHalf, rightHalf) => {
 	its more your style.</Text
 >
 <Spacer h={10} />
-<FieldSet>
-	<div class="flex flex-col justify-start">
-		<Code
-			lang="sql"
-			lineNumbers={false}
-			code={`SELECT * FROM Closet WHERE Clean = 1 AND Color = 'Black';`}
-		/>
-	</div>
-	<div slot="footer">
-		<Details label="Code">
-			<Code
-				lang="svelte"
-				code={`<Code 
+<Playground
+	code={`<Code 
 	lang="sql" 
 	lineNumbers={false} 
 	code={\`SELECT * FROM Closet WHERE Clean = 1 AND Color = 'Black';\`}/>`}
-			/>
-		</Details>
-	</div>
-</FieldSet>
+>
+	<Code
+		lang="sql"
+		lineNumbers={false}
+		code={`SELECT * FROM Closet WHERE Clean = 1 AND Color = 'Black';`}
+	/>
+</Playground>

@@ -204,7 +204,7 @@
 		},
 	];
 
-	$: currentDoc = getCurrentDoc(routes, $page.url.href.replace($page.url.origin, ""));
+	$: currentDoc = getCurrentDoc(routes, $page.url.pathname);
 
 	let next: ShortRoute | undefined;
 	let last: ShortRoute | undefined;

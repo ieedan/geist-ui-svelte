@@ -38,7 +38,13 @@
 		<MoonIcon size={22} />
 	{/if}
 </button>
-<Dropdown anchor={buttonRef} {placement} bind:visible={expanded} class="p-1 w-36">
+<Dropdown
+	anchor={buttonRef}
+	{placement}
+	bind:visible={expanded}
+	class="p-1 w-36"
+	offset={{ x: 0, y: 2 }}
+>
 	<Button
 		color="tab"
 		align="start"
