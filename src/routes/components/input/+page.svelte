@@ -120,6 +120,7 @@
 </Note>
 <Spacer h={20} />
 <Playground
+	class="gap-2"
 	code={`<Input type="password" 
 	placeholder="Your password" 
 	value="987654321" />
@@ -165,6 +166,7 @@ noBorder
 <Text type="h4">With icon</Text>
 <Spacer h={10} />
 <Playground
+	class="gap-2"
 	code={`<Input type="text" placeholder="Search" width="250px">
 	<SearchIcon slot="icon" size={16}/>
 </Input>
