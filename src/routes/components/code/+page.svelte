@@ -25,44 +25,44 @@
 	<Code
 		lang="javascript"
 		code={`const mergeSort = (arr) => {
-if (arr.length <= 1) return arr;
+	if (arr.length <= 1) return arr;
 
-const middle = Math.floor(arr.length / 2);
+	const middle = Math.floor(arr.length / 2);
 
-const leftHalf = mergeSort(arr.slice(0, middle));
-const rightHalf = mergeSort(arr.slice(middle));
+	const leftHalf = mergeSort(arr.slice(0, middle));
+	const rightHalf = mergeSort(arr.slice(middle));
 
-return merge(leftHalf, rightHalf);
+	return merge(leftHalf, rightHalf);
 };
 
 const merge = (leftHalf, rightHalf) => {
-const mergedArr = [];
-let leftIndex = 0;
-let rightIndex = 0;
+	const mergedArr = [];
+	let leftIndex = 0;
+	let rightIndex = 0;
 
-while (leftIndex < leftHalf.length || rightIndex < rightHalf.length) {
-if (leftIndex >= leftHalf.length){
-	mergedArr.push(rightHalf[rightIndex]);
-	rightIndex++;
-	break;
-}
+	while (leftIndex < leftHalf.length || rightIndex < rightHalf.length) {
+		if (leftIndex >= leftHalf.length){
+			mergedArr.push(rightHalf[rightIndex]);
+			rightIndex++;
+			break;
+		}
 
-if (rightIndex >= rightHalf.length){
-	mergedArr.push(leftHalf[leftIndex]);
-	leftIndex++;
-	break;
-}
+		if (rightIndex >= rightHalf.length){
+			mergedArr.push(leftHalf[leftIndex]);
+			leftIndex++;
+			break;
+		}
 
-if (leftHalf[leftIndex] < rightHalf[rightIndex]){
-	mergedArr.push(leftHalf[leftIndex]);
-	leftIndex++;
-} else {
-	mergedArr.push(rightHalf[rightIndex]);
-	rightIndex++;
-}
-}
+		if (leftHalf[leftIndex] < rightHalf[rightIndex]){
+			mergedArr.push(leftHalf[leftIndex]);
+			leftIndex++;
+		} else {
+			mergedArr.push(rightHalf[rightIndex]);
+			rightIndex++;
+		}
+	}
 
-return mergedArr;
+	return mergedArr;
 };`} />
 </Playground>
 <Spacer h={30} />

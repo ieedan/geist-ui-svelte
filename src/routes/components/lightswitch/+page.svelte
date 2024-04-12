@@ -24,3 +24,13 @@
 <Playground code={`<LightSwitch />`}>
 	<LightSwitch />
 </Playground>
+<Spacer h={30} />
+<Text type="h4">Basic</Text>
+<Spacer h={5} />
+<Text>
+	Border.
+</Text>
+<Spacer h={10} />
+<Playground code={`<LightSwitch border/>`}>
+	<LightSwitch border/>
+</Playground>
