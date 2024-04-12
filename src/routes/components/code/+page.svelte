@@ -63,7 +63,8 @@ const merge = (leftHalf, rightHalf) => {
 	}
 
 	return mergedArr;
-};`} />
+};`}
+	/>
 </Playground>
 <Spacer h={30} />
 <Text type="h4">With Edit highlighting</Text>
@@ -88,7 +89,8 @@ const merge = (leftHalf, rightHalf) => {
 		"react": "^18.2.0",
 		"svelte": "^4.0.0",
 	},
-}\`} />`}>
+}\`} />`}
+>
 	<Code
 		lang="json"
 		edits={[
@@ -100,7 +102,8 @@ const merge = (leftHalf, rightHalf) => {
 		"react": "^18.2.0",
 		"svelte": "^4.0.0",
 	},
-}`} />
+}`}
+	/>
 </Playground>
 <Spacer h={30} />
 <Text type="h4">Multi-line highlighting</Text>
@@ -128,7 +131,8 @@ const merge = (leftHalf, rightHalf) => {
 		"@sveltejs/package": "^2.0.0",
 		"@sveltejs/vite-plugin-svelte": "^3.0.0",
 	},
-}\`} />`}>
+}\`} />`}
+>
 	<Code
 		lang="json"
 		edits={[
@@ -144,22 +148,26 @@ const merge = (leftHalf, rightHalf) => {
 		"@sveltejs/package": "^2.0.0",
 		"@sveltejs/vite-plugin-svelte": "^3.0.0",
 	},
-}`} />
+}`}
+	/>
 </Playground>
 <Spacer h={30} />
 <Text type="h4">Without line numbers</Text>
 <Spacer h={5} />
 <Text
 	>Remove the line numbers with <code>`lineNumbers={false}`</code> to save space on the page or if
-	its more your style.</Text>
+	its more your style.</Text
+>
 <Spacer h={10} />
 <Playground
 	code={`<Code 
 	lang="sql" 
 	lineNumbers={false} 
-	code={\`SELECT * FROM Closet WHERE Clean = 1 AND Color = 'Black';\`}/>`}>
+	code={\`SELECT * FROM Closet WHERE Clean = 1 AND Color = 'Black';\`}/>`}
+>
 	<Code
 		lang="sql"
 		lineNumbers={false}
-		code={`SELECT * FROM Closet WHERE Clean = 1 AND Color = 'Black';`} />
+		code={`SELECT * FROM Closet WHERE Clean = 1 AND Color = 'Black';`}
+	/>
 </Playground>

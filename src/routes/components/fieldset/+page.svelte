@@ -32,7 +32,8 @@
 		<Text type="small" color="secondary">Please use 32 characters at maximum.</Text>
 		<Button color="secondary-light" size="sm">Save</Button>
 	</div>
-</FieldSet>`}>
+</FieldSet>`}
+>
 	<FieldSet>
 		<div class="py-2">
 			<Text type="h4">Team Name</Text>
@@ -53,7 +54,8 @@
 <Spacer h={30} />
 <Text type="h4">Colors</Text>
 <Spacer h={10} />
-<Playground class="gap-2"
+<Playground
+	class="gap-2"
 	code={`<FieldSet>
 	<div class="py-2">
 		<Spacer h={10}/>
@@ -93,7 +95,8 @@
 	<div slot="footer" class="flex place-items-center py-1">
 		<Spacer h={10}/>
 	</div>
-</FieldSet>`}>
+</FieldSet>`}
+>
 	<FieldSet>
 		<div class="py-2">
 			<Spacer h={10} />

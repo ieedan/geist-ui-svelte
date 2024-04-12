@@ -14,13 +14,9 @@
 	<Text type="h1" align="center">geist-ui-svelte</Text>
 	<Spacer h={20} />
 	<div class="flex place-items-center">
-		<Button href="/guide" color="secondary-light">
-			Get Started
-		</Button>
+		<Button href="/guide" color="secondary-light">Get Started</Button>
 		<Spacer w={10} />
-		<Button href="/components">
-			Components
-		</Button>
+		<Button href="/components">Components</Button>
 	</div>
 	<Spacer h={20} />
 	<div class="hidden md:block">

@@ -130,7 +130,8 @@
 <Snippet
 	width="600px"
 	type="transparent"
-	text={`import { Skeleton, SkeletonContainer } from 'geist-ui-svelte';`} />
+	text={`import { Skeleton, SkeletonContainer } from 'geist-ui-svelte';`}
+/>
 <Spacer h={30} />
 <Text type="h4">Basic</Text>
 <Spacer h={5} />

@@ -17,7 +17,8 @@
 <Playground
 	code={`<Card>
 	A basic card
-</Card>`}>
+</Card>`}
+>
 	<Card>A basic card</Card>
 </Playground>
 <Spacer h={30} />
@@ -26,7 +27,8 @@
 <Playground
 	code={`<Card hoverable>
 	A hoverable card
-</Card>`}>
+</Card>`}
+>
 	<Card hoverable>A hoverable card</Card>
 </Playground>
 <Spacer h={30} />
@@ -39,7 +41,8 @@
 	<Text>
 		Lorem, ipsum ...
 	</Text>
-</Card>`}>
+</Card>`}
+>
 	<Card shadow>
 		<Text type="h6">This card has a shadow.</Text>
 		<Spacer h={10} />
@@ -80,7 +83,8 @@
 </Card>
 <Card color="abort">
 	<Text>Abort</Text>
-</Card>`}>
+</Card>`}
+>
 	<Card color="transparent">
 		<Text>Transparent</Text>
 	</Card>
@@ -118,7 +122,8 @@
 	<Text>
 		Lorem, ipsum ...
 	</Text>
-</Card>`}>
+</Card>`}
+>
 	<Card rounded="sm">sm</Card>
 	<Card rounded="md">md</Card>
 	<Card rounded="lg">lg</Card>

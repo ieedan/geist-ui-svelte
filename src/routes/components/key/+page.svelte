@@ -15,21 +15,25 @@
 <Spacer h={30} />
 <Text type="h4">Basic</Text>
 <Spacer h={10} />
-<Playground class="flex-row gap-2"
+<Playground
+	class="flex-row gap-2"
 	code={`<Key><CommandIcon size={16}/></Key>
-<Key>K</Key>`}>
+<Key>K</Key>`}
+>
 	<Key><CommandIcon size={16} /></Key>
 	<Key>K</Key>
 </Playground>
 <Spacer h={30} />
 <Text type="h4">Sizes</Text>
 <Spacer h={10} />
-<Playground class="flex-row place-items-end gap-2"
+<Playground
+	class="flex-row place-items-end gap-2"
 	code={`<Key size="xs">K</Key>
 <Key size="sm">K</Key>
 <Key >K</Key>
 <Key size="lg">K</Key>
-<Key size="xl">K</Key>`}>
+<Key size="xl">K</Key>`}
+>
 	<Key size="xs">K</Key>
 	<Key size="sm">K</Key>
 	<Key>K</Key>

@@ -20,7 +20,8 @@
 	code={`<Avatar name="Aidan" />
 <Avatar name="Aidan Bleser" />
 <Avatar name="Aidan R Bleser" />
-<Avatar name="Eva Rivera" />`}>
+<Avatar name="Eva Rivera" />`}
+>
 	<div class="flex place-items-center gap-2">
 		<Avatar name="Aidan" />
 		<Avatar name="Aidan Bleser" />
@@ -35,7 +36,8 @@
 	code={`<Avatar name="Aidan Bleser" size={24}/>
 <Avatar name="Aidan Bleser" />
 <Avatar name="Aidan Bleser" size={34}/>
-<Avatar name="Aidan Bleser" size={50}/>`}>
+<Avatar name="Aidan Bleser" size={50}/>`}
+>
 	<div class="flex place-items-center gap-2">
 		<Avatar name="Aidan Bleser" size={24} />
 		<Avatar name="Aidan Bleser" />
@@ -49,7 +51,8 @@
 <Playground
 	code={`<Avatar 
 	name="Aidan"
-	img="https://avatars.githubusercontent.com/u/117548273?v=4"/>`}>
+	img="https://avatars.githubusercontent.com/u/117548273?v=4"/>`}
+>
 	<Avatar name="Aidan" img="https://avatars.githubusercontent.com/u/117548273?v=4" />
 </Playground>
 <Spacer h={30} />
@@ -61,7 +64,8 @@
 	code={`<Avatar 
 	name="Aidan" 
 	img="https://avatars.githubusercontent.com/u/117548273?v=4" 
-	detail/>`}>
+	detail/>`}
+>
 	<Avatar name="Aidan" img="https://avatars.githubusercontent.com/u/117548273?v=4" detail />
 </Playground>
 <Spacer h={30} />
@@ -77,10 +81,12 @@
 	name="Aidan"
 	img="https://avatars.githubusercontent.com/u/117548273?v=4"
 	detail
-	details="Trash Dev" />`}>
+	details="Trash Dev" />`}
+>
 	<Avatar
 		name="Aidan"
 		img="https://avatars.githubusercontent.com/u/117548273?v=4"
 		detail
-		details="Trash Dev" />
+		details="Trash Dev"
+	/>
 </Playground>

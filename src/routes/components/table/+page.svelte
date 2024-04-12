@@ -99,7 +99,8 @@
 			{ label: "Property", property: "property" },
 			{ label: "Description", property: "description" },
 			{ label: "Type", property: "type" },
-		]} />
+		]}
+	/>
 </Playground>
 <Spacer h={30} />
 <Text type="h4">With Animation</Text>
@@ -108,7 +109,8 @@
 	Add <code>`animate`</code> attribute to animate the addition / removal of a row.
 </Text>
 <Spacer h={10} />
-<Playground class="justify-center place-items-center gap-2"
+<Playground
+	class="justify-center place-items-center gap-2"
 	edits={[{ number: 2, type: "add" }]}
 	code={`<Table
 	animate
@@ -117,7 +119,8 @@
 	{ label: "Property", property: "property" },
 	{ label: "Description", property: "description" },
 	{ label: "Type", property: "type" },
-	]} />`}>
+	]} />`}
+>
 	<Button on:click={addDataExample2}>Add row</Button>
 	<Table
 		animate
@@ -126,5 +129,6 @@
 			{ label: "Property", property: "property" },
 			{ label: "Description", property: "description" },
 			{ label: "Type", property: "type" },
-		]} />
+		]}
+	/>
 </Playground>

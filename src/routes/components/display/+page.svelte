@@ -20,10 +20,12 @@
 	code={`<Display caption="geist-ui-svelte makes building 
 pretty, interactive applications easy">
 	<Image src={exampleImage} alt="Thing" width="400px" height="auto"/>
-</Display>`}>
+</Display>`}
+>
 	<Display
 		caption="geist-ui-svelte makes building 
-pretty, interactive applications easy">
+pretty, interactive applications easy"
+	>
 		<Image src={exampleImage} alt="Thing" width="400px" height="auto" />
 	</Display>
 </Playground>

@@ -74,7 +74,8 @@
 <Playground
 	class="gap-2"
 	code={`<BreadCrumbs/>
-<BreadCrumbs excludePrefix="/dashboard"/>`}>
+<BreadCrumbs excludePrefix="/dashboard"/>`}
+>
 	<Input bind:value={url} width="100%" />
 	<BreadCrumbsDemo {url} />
 	<BreadCrumbsDemo {url} excludePrefix="/dashboard" />
@@ -103,14 +104,16 @@
 	not transform that route.
 </Text>
 <Spacer h={10} />
-<Playground class="gap-2"
+<Playground
+	class="gap-2"
 	code={`<BreadCrumbsDemo 
 	url={url} 
 	transform={capitalizeFirstLetter}/>
 <BreadCrumbsDemo 
 	url={url} 
 	transform={capitalizeFirstLetter} 
-	doNotTransform={["/users"]}/>`}>
+	doNotTransform={["/users"]}/>`}
+>
 	<Input bind:value={url3} width="100%" />
 	<BreadCrumbsDemo url={url3} transform={capitalizeFirstLetter} />
 	<BreadCrumbsDemo url={url3} transform={capitalizeFirstLetter} doNotTransform={["/users"]} />

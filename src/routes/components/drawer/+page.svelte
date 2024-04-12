@@ -35,14 +35,16 @@
 </Button>
 <Drawer bind:visible={showDefaultExample}>
 	This is a drawer
-</Drawer>`}>
+</Drawer>`}
+>
 	<Button on:click={() => (showDefaultExample = true)}>Show drawer</Button>
 	<Drawer bind:visible={showDefaultExample}>This is a drawer</Drawer>
 </Playground>
 <Spacer h={30} />
 <Text type="h4">Positioning</Text>
 <Spacer h={10} />
-<Playground class="gap-2"
+<Playground
+	class="gap-2"
 	code={`<Button on:click={() => (showLeft = true)}>
 	Show left
 </Button>
@@ -66,7 +68,8 @@
 </Button>
 <Drawer placement="right" bind:visible={showBottom}>
 	This is a drawer
-</Drawer>`}>
+</Drawer>`}
+>
 	<Button on:click={() => (showLeft = true)}>Show left</Button>
 	<Drawer placement="left" bind:visible={showLeft}>This is a drawer</Drawer>
 	<Button on:click={() => (showRight = true)}>Show right</Button>

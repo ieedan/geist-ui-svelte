@@ -1,8 +1,5 @@
 <script lang="ts">
-	import Code from "$lib/code/Code.svelte";
-	import Details from "$lib/details/Details.svelte";
 	import Playground from "$lib/docs-components/playground/playground.svelte";
-	import FieldSet from "$lib/fieldset/FieldSet.svelte";
 	import IPAddressInput from "$lib/ipaddressinput/IPAddressInput.svelte";
 	import Snippet from "$lib/snippet/Snippet.svelte";
 	import Spacer from "$lib/spacer/Spacer.svelte";
@@ -19,7 +16,8 @@
 <Snippet
 	width="500px"
 	type="transparent"
-	text={`import { IPAddressInput } from 'geist-ui-svelte';`} />
+	text={`import { IPAddressInput } from 'geist-ui-svelte';`}
+/>
 <Spacer h={30} />
 <Text type="h4">Basic</Text>
 <Spacer h={10} />
@@ -47,10 +45,12 @@
 <Spacer h={5} />
 <Text>Validating the IP is easy just bind to <code>`valid`</code>.</Text>
 <Spacer h={10} />
-<Playground code={`<IpAddressInput value="172 16 10 100" bind:valid/>
+<Playground
+	code={`<IpAddressInput value="172 16 10 100" bind:valid/>
 {#if !valid}
 	<Text color="error">Invalid!</Text>
-{/if}`}>
+{/if}`}
+>
 	<IPAddressInput value="172 16 10 -1" bind:valid />
 	{#if !valid}
 		<Text color="error">Invalid!</Text>
@@ -73,11 +73,13 @@
 />
 {#if debounced}
 	Debounced
-{/if}`}>
+{/if}`}
+>
 	<IPAddressInput
 		on:input={() => (debounced = false)}
 		debounce={1000}
-		on:debounce={() => (debounced = true)} />
+		on:debounce={() => (debounced = true)}
+	/>
 	{#if debounced}
 		Debounced
 	{/if}

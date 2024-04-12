@@ -1,7 +1,4 @@
 <script lang="ts">
-	import Code from "$lib/code/Code.svelte";
-	import Details from "$lib/details/Details.svelte";
-	import FieldSet from "$lib/fieldset/FieldSet.svelte";
 	import Snippet from "$lib/snippet/Snippet.svelte";
 	import Spacer from "$lib/spacer/Spacer.svelte";
 	import Text from "$lib/text/Text.svelte";
@@ -23,7 +20,8 @@
 <Badge size="sm">sm</Badge>
 <Badge size="md">md</Badge>
 <Badge size="lg">lg</Badge>
-<Badge size="xl">xl</Badge>`}>
+<Badge size="xl">xl</Badge>`}
+>
 	<div>
 		<Badge size="xs">xs</Badge>
 		<Badge size="sm">sm</Badge>
@@ -40,7 +38,8 @@
 <Badge size="xs" type="success">Success</Badge>
 <Badge size="xs" type="warning">Warning</Badge>
 <Badge size="xs" type="error">Error</Badge>
-<Badge size="xs" type="secondary">Secondary</Badge>`}>
+<Badge size="xs" type="secondary">Secondary</Badge>`}
+>
 	<div>
 		<Badge size="xs">Default</Badge>
 		<Badge size="xs" color="success">Success</Badge>
@@ -57,7 +56,8 @@
 <Badge size="xs" type="success" ghost>Success</Badge>
 <Badge size="xs" type="warning" ghost>Warning</Badge>
 <Badge size="xs" type="error" ghost>Error</Badge>
-<Badge size="xs" type="secondary" ghost>Secondary</Badge>`}>
+<Badge size="xs" type="secondary" ghost>Secondary</Badge>`}
+>
 	<div>
 		<Badge size="xs" ghost>Default</Badge>
 		<Badge size="xs" color="success" ghost>Success</Badge>
@@ -90,9 +90,10 @@
 	  size="xs">
 		5+
 	</Badge>
-</div>`}>
+</div>`}
+>
 	<div class="relative w-fit">
-		<Avatar name="Aidan Bleser" size={32}/>
+		<Avatar name="Aidan Bleser" size={32} />
 		<Badge padding={false} color="error" size="xs" class="absolute -top-1 -right-1">5+</Badge>
 	</div>
 </Playground>

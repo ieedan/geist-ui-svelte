@@ -27,7 +27,8 @@
 <Spacer h={5} />
 <Text
 	>Automatically centers content on the screen and takes up the entire page <code>`100svh`</code
-	>.</Text>
+	>.</Text
+>
 <Spacer h={10} />
 <Playground
 	code={`<Hero>
@@ -37,7 +38,8 @@
 		<Button color="secondary-light">Get Started</Button>
 		<Button>Components</Button>
 	</div>
-</Hero>`}>
+</Hero>`}
+>
 	<Button on:click={() => (firstExamplePage = true)}>Show Example</Button>
 	<Page bind:visible={firstExamplePage}>
 		<div class="max-h-screen overflow-y-auto">
@@ -50,7 +52,8 @@
 				</div>
 				<Spacer h={150} />
 				<Button on:click={() => (firstExamplePage = false)}
-					>Click here to close or press `Escape`</Button>
+					>Click here to close or press `Escape`</Button
+				>
 			</Hero>
 		</div>
 	</Page>
@@ -68,7 +71,8 @@
 		<Button color="secondary-light">Get Started</Button>
 		<Button>Components</Button>
 	</div>
-</Hero>`}>
+</Hero>`}
+>
 	<Button on:click={() => (secondExamplePage = true)}>Show Example</Button>
 	<Page bind:visible={secondExamplePage}>
 		<div class="max-h-screen overflow-y-auto">
@@ -81,7 +85,8 @@
 				</div>
 				<Spacer h={150} />
 				<Button on:click={() => (secondExamplePage = false)}
-					>Click here to close or press `Escape`</Button>
+					>Click here to close or press `Escape`</Button
+				>
 			</Hero>
 		</div>
 	</Page>
@@ -112,7 +117,8 @@
 	<Button on:click={() => (thirdExamplePage = false)}
 		>Click here to close or press \`Escape\`</Button
 		>
-</Hero>`}>
+</Hero>`}
+>
 	<Button on:click={() => (thirdExamplePage = true)}>Show Example</Button>
 	<Page bind:visible={thirdExamplePage}>
 		<div class="max-h-screen overflow-y-auto">
@@ -132,7 +138,8 @@
 				</div>
 				<Spacer h={150} />
 				<Button on:click={() => (thirdExamplePage = false)}
-					>Click here to close or press `Escape`</Button>
+					>Click here to close or press `Escape`</Button
+				>
 			</Hero>
 		</div>
 	</Page>
@@ -142,7 +149,8 @@
 <Spacer h={5} />
 <Text>
 	Sometimes you want your hero section to account for a header use the <code
-		>`exclusionHeight`</code>
+		>`exclusionHeight`</code
+	>
 	to calculate the height of the header and subtract it from the 100svh. This can also be useful if
 	you have footers or other content that should take space from the hero section.
 </Text>
@@ -167,7 +175,8 @@
 	<Spacer h={150} />
 	<Button on:click={() => (fourthExamplePage = false)}
 		>Click here to close or press \`Escape\`</Button>
-</Hero>`}>
+</Hero>`}
+>
 	<Button on:click={() => (fourthExamplePage = true)}>Show Example</Button>
 	<Page bind:visible={fourthExamplePage}>
 		<div class="max-h-screen overflow-y-auto">
@@ -186,7 +195,8 @@
 				</div>
 				<Spacer h={150} />
 				<Button on:click={() => (fourthExamplePage = false)}
-					>Click here to close or press `Escape`</Button>
+					>Click here to close or press `Escape`</Button
+				>
 			</Hero>
 		</div>
 	</Page>

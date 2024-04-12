@@ -24,7 +24,8 @@
 <Spacer h={10} />
 <Playground
 	code={`<TextArea disabled placeholder="Some input"/>
-<TextArea readonly value="Some input"/>`}>
+<TextArea readonly value="Some input"/>`}
+>
 	<TextArea disabled placeholder="Some input" />
 	<TextArea readonly value="Some input" />
 </Playground>
@@ -40,7 +41,8 @@
 <Playground
 	code={`<TextArea width="100%" placeholder="Some input">
 	Some Text
-</TextArea>`}>
+</TextArea>`}
+>
 	<TextArea width="100%" placeholder="Some input">Some Text</TextArea>
 </Playground>
 <Spacer h={30} />
@@ -50,7 +52,8 @@
 	code={`<TextArea placeholder="Some input" size="sm"/>
 <TextArea placeholder="Some input" size="base"/>
 <TextArea placeholder="Some input" size="lg"/>
-<TextArea placeholder="Some input" size="xl"/>`}>
+<TextArea placeholder="Some input" size="xl"/>`}
+>
 	<TextArea placeholder="Some input" size="sm" />
 	<TextArea placeholder="Some input" size="base" />
 	<TextArea placeholder="Some input" size="lg" />
@@ -73,12 +76,14 @@
 	on:debounce={() => (debounced = true)} />
 {#if debounced}
 	Debounced
-{/if}`}>
+{/if}`}
+>
 	<TextArea
 		placeholder="Some input"
 		on:input={() => (debounced = false)}
 		debounce={1000}
-		on:debounce={() => (debounced = true)} />
+		on:debounce={() => (debounced = true)}
+	/>
 	{#if debounced}
 		Debounced
 	{/if}

@@ -44,7 +44,8 @@
 		<code>\`Esc\`</code>.
 		</Text>
 	</div>
-</Modal>`}>
+</Modal>`}
+>
 	<Button on:click={() => (showFirstExample = true)}>Show modal</Button>
 	<Modal bind:visible={showFirstExample} class="sm:w-[640px]">
 		<div class="p-4 flex flex-col place-items-center justify-center h-full">

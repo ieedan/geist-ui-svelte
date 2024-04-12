@@ -1,8 +1,5 @@
 <script lang="ts">
 	import Card from "$lib/card/Card.svelte";
-	import Code from "$lib/code/Code.svelte";
-	import Details from "$lib/details/Details.svelte";
-	import FieldSet from "$lib/fieldset/FieldSet.svelte";
 	import Snippet from "$lib/snippet/Snippet.svelte";
 	import Spacer from "$lib/spacer/Spacer.svelte";
 	import Text from "$lib/text/Text.svelte";
@@ -32,7 +29,8 @@
 <Text type="h6">Text</Text>
 <Text>Text</Text>
 <Text type="span">Text</Text>
-<Text type="small">Text</Text>`}>
+<Text type="small">Text</Text>`}
+>
 	<Text type="h1">Text</Text>
 	<Text type="h2">Text</Text>
 	<Text type="h3">Text</Text>
@@ -54,7 +52,8 @@
 <Text color="success">Text</Text>
 <Text color="error">Text</Text>
 <Text color="warning">Text</Text>
-<Text color="abort">Text</Text>`}>
+<Text color="abort">Text</Text>`}
+>
 	<Text color="inherit">Text</Text>
 	<Text color="secondary">Text</Text>
 	<Text color="success">Text</Text>
@@ -72,7 +71,8 @@
 <Spacer h={10} />
 <Playground
 	code={`<Text type="h5" b>geist-<Text>ui</Text>-svelte</Text>
-<Text type="h5" b>geist-<Text type="span">ui</Text>-svelte</Text>`}>
+<Text type="h5" b>geist-<Text type="span">ui</Text>-svelte</Text>`}
+>
 	<Text type="h5" b>geist-<Text>ui</Text>-svelte</Text>
 	<Text type="h5" b>geist-<Text type="span">ui</Text>-svelte</Text>
 </Playground>
@@ -90,7 +90,8 @@
 	width="500px"
 	type="transparent"
 	text={'class="text-gray-999 dark:text-gray-0"'}
-	symbol="" />
+	symbol=""
+/>
 <Spacer h={10} />
 <Text>
 	This enables setting the text color from the container which can be useful when dealing with a
@@ -111,7 +112,8 @@
 </Card>
 <Card color="success">
 	<Text color="dark">Success</Text>
-</Card>`}>
+</Card>`}
+>
 	<div class="flex place-items-center gap-2">
 		<Card color="success">
 			<Text>Success</Text>
@@ -143,7 +145,8 @@
 	<Text color="warning" i>ui</Text>
 	<Text color="success">-</Text>
 	<Text color="error" del>svelte</Text>
-</Text>`}>
+</Text>`}
+>
 	<Text>
 		<Text b color="abort" serif>geist</Text>
 		<Text color="success">-</Text>
@@ -170,6 +173,7 @@
 	mdSize="6xl" 
 	lgSize="9xl">
 	geist-ui-svelte
-</Text>`}>
+</Text>`}
+>
 	<Text type="h1" size="2xl" smSize="4xl" mdSize="6xl" lgSize="9xl">geist-ui-svelte</Text>
 </Playground>

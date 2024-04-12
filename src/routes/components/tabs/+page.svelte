@@ -16,7 +16,8 @@
 <Snippet
 	width="500px"
 	type="transparent"
-	text={`import { Tabs, TabItem } from 'geist-ui-svelte';`} />
+	text={`import { Tabs, TabItem } from 'geist-ui-svelte';`}
+/>
 <Spacer h={30} />
 <Text type="h4">Basic</Text>
 <Spacer h={10} />
@@ -25,7 +26,8 @@
 	<TabItem>Home</TabItem>
 	<TabItem initialSelected={true}>Guide</TabItem>
 	<TabItem>Components</TabItem>
-</Tabs>`}>
+</Tabs>`}
+>
 	<Tabs>
 		<TabItem>Home</TabItem>
 		<TabItem initialSelected={true}>Guide</TabItem>
@@ -40,7 +42,8 @@
 	<TabItem>Home</TabItem>
 	<TabItem initialSelected={true}>Guide</TabItem>
 	<TabItem>Components</TabItem>
-</Tabs>`}>
+</Tabs>`}
+>
 	<Tabs>
 		<TabItem initialSelected={true}>Home</TabItem>
 		<TabItem>Guide</TabItem>
@@ -57,7 +60,8 @@
 	<TabItem>Home</TabItem>
 	<TabItem initialSelected={true}>Guide</TabItem>
 	<TabItem>Components</TabItem>
-</Tabs>`}>
+</Tabs>`}
+>
 	<Tabs border={false}>
 		<TabItem>Home</TabItem>
 		<TabItem initialSelected={true}>Guide</TabItem>
@@ -85,7 +89,8 @@
 	<TabItem>Account</TabItem>
 	<TabItem>About</TabItem>
 	<TabItem>Contact Us</TabItem>
-</Tabs>`}>
+</Tabs>`}
+>
 	<Tabs>
 		<TabItem initialSelected={true}>Home</TabItem>
 		<TabItem>Guide</TabItem>
@@ -117,7 +122,8 @@
 		<Spacer w={10} />
 		Svelte
 	</TabItem>
-</Tabs>`}>
+</Tabs>`}
+>
 	<Tabs>
 		<TabItem initialSelected={true}>
 			<GithubIcon size={16} />
@@ -152,7 +158,8 @@
 	<TabItem href="/components/avatar">
 		Avatar
 	</TabItem>
-</Tabs>`}>
+</Tabs>`}
+>
 	<Tabs>
 		<TabItem href="/components/tabs">Tabs</TabItem>
 		<TabItem href="/components/badge">Badge</TabItem>

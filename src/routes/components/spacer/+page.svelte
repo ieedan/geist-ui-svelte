@@ -19,7 +19,8 @@
 <Spacer h={30}/>
 <Card></Card>
 <Spacer h={10}/>
-<Card></Card>`}>
+<Card></Card>`}
+>
 	<Card></Card>
 	<Spacer h={30} />
 	<Card></Card>
@@ -29,12 +30,14 @@
 <Spacer h={30} />
 <Text type="h4">Horizontal Spacing</Text>
 <Spacer h={10} />
-<Playground class="flex-row"
+<Playground
+	class="flex-row"
 	code={`<Card></Card>
 <Spacer w={30} />
 <Card></Card>
 <Spacer w={10} />
-<Card></Card>`}>
+<Card></Card>`}
+>
 	<Card></Card>
 	<Spacer w={30} />
 	<Card></Card>

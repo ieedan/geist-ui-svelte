@@ -33,7 +33,8 @@
 <Snippet
 	width="550px"
 	type="transparent"
-	text={`import { RadioTabs, RadioTab } from 'geist-ui-svelte';`} />
+	text={`import { RadioTabs, RadioTab } from 'geist-ui-svelte';`}
+/>
 <Spacer h={30} />
 <Text type="h4">Basic</Text>
 <Spacer h={5} />
@@ -43,7 +44,8 @@
 	code={`<RadioTabs>
 	<RadioTab>Desktop</RadioTab>
 	<RadioTab>Mobile</RadioTab>
-</RadioTabs>`}>
+</RadioTabs>`}
+>
 	<RadioTabs>
 		<RadioTab>Desktop</RadioTab>
 		<RadioTab>Mobile</RadioTab>
@@ -65,7 +67,8 @@
 <RadioTabs color="ghost">
 	<RadioTab>Desktop</RadioTab>
 	<RadioTab>Mobile</RadioTab>
-</RadioTabs>`}>
+</RadioTabs>`}
+>
 	<RadioTabs>
 		<RadioTab>Desktop</RadioTab>
 		<RadioTab>Mobile</RadioTab>
@@ -89,7 +92,8 @@
 		<RadioTab>Desktop</RadioTab>
 		<RadioTab>Mobile</RadioTab>
 	</RadioTabs>
-{/each}`}>
+{/each}`}
+>
 	{#each sizes as size}
 		<RadioTabs {size}>
 			<RadioTab>Desktop</RadioTab>
@@ -128,7 +132,8 @@
 	<RadioTab>Dashboard</RadioTab>
 	<RadioTab>Settings</RadioTab>
 	<RadioTab>Account</RadioTab>
-</RadioTabs>`}>
+</RadioTabs>`}
+>
 	<RadioTabs>
 		<RadioTab>Home</RadioTab>
 		<RadioTab>Dashboard</RadioTab>

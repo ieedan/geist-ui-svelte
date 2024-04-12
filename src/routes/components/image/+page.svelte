@@ -22,7 +22,8 @@
 	src={exampleDark} 
 	alt="An example image" 
 	width="575px" 
-	height="auto" />`}>
+	height="auto" />`}
+>
 	<Image src={exampleLight} alt="An example image" width="400px" height="auto" />
 </Playground>
 <Spacer h={30} />
@@ -41,13 +42,15 @@
 	alt="An example image"
 	width="575px"
 	height="auto"
-/>`}>
+/>`}
+>
 	<Image
 		browserURL="https://geist-ui-svelte.dev"
 		src={exampleLight}
 		alt="An example image"
 		width="575px"
-		height="auto" />
+		height="auto"
+	/>
 </Playground>
 <Spacer h={30} />
 <Text type="h4">Invert Colors</Text>
@@ -63,14 +66,16 @@
 	width="575px"
 	height="auto"
 	browserInvert
-/>`}>
+/>`}
+>
 	<Image
 		browserURL="https://geist-ui-svelte.dev"
 		src={exampleDark}
 		alt="An example image"
 		width="575px"
 		height="auto"
-		browserInvert />
+		browserInvert
+	/>
 </Playground>
 <Spacer h={30} />
 <Text type="h4">Lock Responds to URL</Text>
@@ -96,18 +101,21 @@
 	alt="An example image"
 	width="400px"
 	height="auto"
-/>`}>
+/>`}
+>
 	<Image
 		browserURL="http://geist-ui-svelte.dev"
 		src={exampleDark}
 		alt="An example image"
 		width="400px"
-		height="auto" />
+		height="auto"
+	/>
 	<Spacer h={10} />
 	<Image
 		browserURL="https://geist-ui-svelte.dev"
 		src={exampleDark}
 		alt="An example image"
 		width="400px"
-		height="auto" />
+		height="auto"
+	/>
 </Playground>

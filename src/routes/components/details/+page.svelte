@@ -17,7 +17,8 @@
 <Playground
 	code={`<Details label="See more">
 	Some details here
-</Details>`}>
+</Details>`}
+>
 	<Details label="See more">Some details here</Details>
 </Playground>
 <Spacer h={30} />
@@ -28,7 +29,8 @@
 	code={`<Details label="See more" 
 	animate>
 Some details here
-</Details>`}>
+</Details>`}
+>
 	<Details label="See more" animate>Some details here</Details>
 </Playground>
 <Spacer h={30} />
@@ -39,7 +41,8 @@ Some details here
 	code={`<Details label="See more" 
 	initialShow={true}>
 Some details here
-</Details>`}>
+</Details>`}
+>
 	<Details label="See more" initialShow={true}>Some details here</Details>
 </Playground>
 <Spacer h={30} />
@@ -49,8 +52,9 @@ Some details here
 	edits={[{ number: 2, type: "add" }]}
 	code={`<Details label="Show Code" showLabel="Hide Code">
 	<Snippet text="npm i geist-ui-svelte" type="transparent"/>
-</Details>`}>
+</Details>`}
+>
 	<Details label="Show Code" showLabel="Hide Code">
-		<Snippet text="npm i geist-ui-svelte" type="transparent"/>
+		<Snippet text="npm i geist-ui-svelte" type="transparent" />
 	</Details>
 </Playground>

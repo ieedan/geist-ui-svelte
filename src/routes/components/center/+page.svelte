@@ -17,14 +17,17 @@
 <Spacer h={5} />
 <Text>Center the content of a card.</Text>
 <Spacer h={10} />
-<Playground class="gap-2" code={`<Card>
+<Playground
+	class="gap-2"
+	code={`<Card>
 	<Text>Not Centered Text</Text>
 </Card>
 <Card>
 	<Center>
 		<Text>Centered Text</Text>
 	</Center>
-</Card>`}>
+</Card>`}
+>
 	<Card>
 		<Text>Not Centered Text</Text>
 	</Card>
