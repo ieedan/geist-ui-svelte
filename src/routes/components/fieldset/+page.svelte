@@ -138,3 +138,90 @@
 		</div>
 	</FieldSet>
 </Playground>
+<Spacer h={30} />
+<Text type="h4">Inverted</Text>
+<Spacer h={10} />
+<Playground
+	class="gap-2"
+	code={`<FieldSet inverted>
+	<div class="py-2">
+		<Spacer h={10} />
+	</div>
+	<div slot="footer" class="flex place-items-center py-1">
+		<Spacer h={10} />
+	</div>
+</FieldSet>
+<FieldSet color="success" inverted>
+	<div class="py-2">
+		<Spacer h={10} />
+	</div>
+	<div slot="footer" class="flex place-items-center py-1">
+		<Spacer h={10} />
+	</div>
+</FieldSet>
+<FieldSet color="warning" inverted>
+	<div class="py-2">
+		<Spacer h={10} />
+	</div>
+	<div slot="footer" class="flex place-items-center py-1">
+		<Spacer h={10} />
+	</div>
+</FieldSet>
+<FieldSet color="error" inverted>
+	<div class="py-2">
+		<Spacer h={10} />
+	</div>
+	<div slot="footer" class="flex place-items-center py-1">
+		<Spacer h={10} />
+	</div>
+</FieldSet>
+<FieldSet color="transparent" inverted>
+	<div class="py-2">
+		<Spacer h={10} />
+	</div>
+	<div slot="footer" class="flex place-items-center py-1">
+		<Spacer h={10} />
+	</div>
+</FieldSet>`}
+>
+	<FieldSet inverted>
+		<div class="py-2">
+			<Spacer h={10} />
+		</div>
+		<div slot="footer" class="flex place-items-center py-1">
+			<Spacer h={10} />
+		</div>
+	</FieldSet>
+	<FieldSet color="success" inverted>
+		<div class="py-2">
+			<Spacer h={10} />
+		</div>
+		<div slot="footer" class="flex place-items-center py-1">
+			<Spacer h={10} />
+		</div>
+	</FieldSet>
+	<FieldSet color="warning" inverted>
+		<div class="py-2">
+			<Spacer h={10} />
+		</div>
+		<div slot="footer" class="flex place-items-center py-1">
+			<Spacer h={10} />
+		</div>
+	</FieldSet>
+	<FieldSet color="error" inverted>
+		<div class="py-2">
+			<Spacer h={10} />
+		</div>
+		<div slot="footer" class="flex place-items-center py-1">
+			<Spacer h={10} />
+		</div>
+	</FieldSet>
+	<FieldSet color="transparent" inverted>
+		<div class="py-2">
+			<Spacer h={10} />
+		</div>
+		<div slot="footer" class="flex place-items-center py-1">
+			<Spacer h={10} />
+		</div>
+	</FieldSet>
+</Playground>

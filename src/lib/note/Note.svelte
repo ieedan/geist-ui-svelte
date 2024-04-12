@@ -5,12 +5,11 @@
 	const style = cva("border block px-2 py-2 rounded-md", {
 		variants: {
 			color: {
-				default: "border-gray-100 dark:border-gray-900 text-gray-600 dark:text-gray-400",
-				success: "border-blue-600 text-blue-600 dark:border-blue-600 dark:text-blue-600",
-				warning:
-					"border-orange-300 text-orange-300 dark:border-orange-400 dark:text-orange-400",
-				error: "border-red-500 text-red-500 dark:border-red-600 dark:text-red-600",
-				secondary: "border-gray-999 text-gray-999 dark:border-gray-0 dark:text-gray-0",
+				default: "border-gui-border text-gui-foreground-secondary",
+				success: "border-gui-success text-gui-success",
+				warning: "border-gui-warning text-gui-warning",
+				error: "border-gui-error text-gui-error",
+				secondary: "border-gui-foreground-primary text-gui-foreground-primary",
 			},
 			block: {
 				true: "",
@@ -25,27 +24,27 @@
 			{
 				color: "default",
 				block: true,
-				class: "bg-gray-100 text-gray-700 dark:bg-gray-900 dark:text-gray-100",
+				class: "bg-gui-component-background-hover text-gui-foreground-secondary border-gui-component-background-hover",
 			},
 			{
 				color: "success",
 				block: true,
-				class: "border-blue-600 bg-blue-600 text-blue-300 dark:border-blue-600 dark:bg-blue-600 dark:text-blue-300",
+				class: "border-gui-blue-100 bg-gui-blue-200 text-gui-blue-600",
 			},
 			{
 				color: "warning",
 				block: true,
-				class: "border-orange-300 bg-orange-300 text-orange-600 dark:border-orange-400 dark:text-orange-700 dark:bg-orange-400",
+				class: "border-gui-amber-100 bg-gui-amber-300 text-gui-amber-700",
 			},
 			{
 				color: "error",
 				block: true,
-				class: "border-red-500 border-opacity-65 text-red-600 bg-opacity-65 bg-red-500 dark:border-red-900 dark:bg-red-500 dark:border-opacity-45 dark:bg-opacity-45 dark:text-red-500",
+				class: "border-gui-red-100 bg-gui-red-200 text-gui-red-800",
 			},
 			{
 				color: "secondary",
 				block: true,
-				class: "bg-gray-999 text-gray-0 dark:bg-gray-0 dark:text-gray-999",
+				class: "bg-gui-foreground-primary border-gui-foreground-primary text-gui-background",
 			},
 		],
 	});

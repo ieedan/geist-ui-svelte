@@ -32,7 +32,7 @@
 	aria-label={ariaLabel}
 	data-show={visible}
 	role="dialog"
-	class="bg-gray-0 dark:bg-gray-999 max-w-full w-full bottom-0
+	class="bg-gui-background max-w-full w-full bottom-0
 	 fixed top-0 left-0 transition-all z-50 data-[show=false]:opacity-0 data-[show=false]:pointer-events-none"
 >
 	<slot />

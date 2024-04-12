@@ -8,22 +8,6 @@ export default {
 		},
 		extend: {
 			colors: {
-				gray: {
-					0: "#ffffff",
-					50: "#f9f9f9",
-					100: "#f2f2f2",
-					200: "#d9d9d9",
-					300: "#bfbfbf",
-					400: "#a6a6a6",
-					500: "#8c8c8c",
-					600: "#737373",
-					700: "#595959",
-					800: "#404040",
-					900: "#262626",
-					925: "#1d1d1d",
-					950: "#141414",
-					999: "#000000",
-				},
 				"gui-gray": {
 					"100": "hsl(var(--gui-gray-100) / <alpha-value>)",
 					"200": "hsl(var(--gui-gray-200) / <alpha-value>)",
@@ -153,7 +137,7 @@ export default {
 				"gui-foreground": {
 					"primary": "hsl(var(--gui-gray-1000) / <alpha-value>)",
 					"secondary": "hsl(var(--gui-gray-900) / <alpha-value>)",
-					"muted": "hsl(var(--gui-gray-500) / <alpha-value>)",
+					"muted": "hsl(var(--gui-gray-600) / <alpha-value>)",
 				},
 				"gui": {
 					"warning": "hsl(var(--gui-amber-700) / <alpha-value>)",

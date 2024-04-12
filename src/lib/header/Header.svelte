@@ -8,7 +8,7 @@
 	export let noBorder: boolean = false;
 
 	const style = cva(
-		`bg-gray-0 dark:bg-gray-999 border-gray-100 dark:border-gray-900 w-full flex justify-center place-items-center py-2`,
+		`bg-gray-0 bg-gui-background border-gui-border w-full flex justify-center place-items-center py-2`,
 		{
 			variants: {
 				sticky: {

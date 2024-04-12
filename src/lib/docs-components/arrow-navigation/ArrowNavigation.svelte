@@ -27,10 +27,10 @@
 <div class="flex w-full place-items-center justify-between py-8">
 	{#if last}
 		<div class="flex flex-col place-items-start justify-start">
-			<small class="px-6 text-xs text-gray-600 dark:text-gray-400">Last</small>
+			<small class="px-6 text-xs text-gui-foreground-secondary">Last</small>
 			<a
 				href={last.slug}
-				class="flex place-items-center gap-2 hover:underline text-gray-999 dark:text-gray-0"
+				class="flex place-items-center gap-2 hover:underline text-gui-foreground-primary"
 			>
 				<ChevronIcon size={16} rotation="180deg" />
 				{last?.name}
@@ -41,10 +41,10 @@
 	{/if}
 	{#if next}
 		<div class="flex flex-col place-items-end justify-end">
-			<small class="px-6 text-xs text-gray-600 dark:text-gray-400">Next</small>
+			<small class="px-6 text-xs text-gui-foreground-secondary">Next</small>
 			<a
 				href={next.slug}
-				class="flex place-items-center gap-2 hover:underline text-gray-999 dark:text-gray-0"
+				class="flex place-items-center gap-2 hover:underline text-gui-foreground-primary"
 			>
 				{next.name}
 				<ChevronIcon size={16} rotation="0deg" />

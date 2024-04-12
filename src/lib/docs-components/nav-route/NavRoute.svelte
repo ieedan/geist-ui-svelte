@@ -30,17 +30,16 @@
 			href={slug}
 			data-active={active}
 			on:click={() => dispatch("navigated")}
-			class="w-full rounded-md px-2 py-2 text-gray-500 transition-all
-    		data-[active=true]:text-blue-600 dark:text-gray-600
-			data-[active=true]:dark:text-blue-600"
+			class="w-full rounded-md px-2 py-2 text-gui-foreground-muted transition-all
+    		data-[active=true]:text-gui-success"
 		>
 			{name}
 		</a>
 		{#if routes}
 			<button on:click={toggleExpanded}>
 				<div
-					class="transition-all hover:text-black data-[show=false]:-rotate-90
-					text-gray-300 dark:text-gray-600 hover:dark:text-white data-[show=true]:dark:text-white"
+					class="transition-all hover:text-gui-foreground-primary data-[show=false]:-rotate-90
+					text-gui-foreground-muted data-[show=true]:text-gui-foreground-primary"
 					data-show={expanded}
 				>
 					<ChevronIcon rotation="90deg" size={20} />
@@ -49,7 +48,7 @@
 		{/if}
 	</div>
 	<div
-		class="border-l border-gray-100 data-[show=false]:hidden dark:border-gray-900"
+		class="border-l data-[show=false]:hidden border-gui-border"
 		data-show={expanded}
 	>
 		{#if routes}

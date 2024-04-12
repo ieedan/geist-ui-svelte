@@ -88,22 +88,22 @@
 	<Card color="transparent">
 		<Text>Transparent</Text>
 	</Card>
-	<Card color="dark">
+	<Card color="dark" hoverable>
 		<Text>Dark</Text>
 	</Card>
-	<Card color="secondary">
+	<Card color="secondary" hoverable>
 		<Text>Secondary</Text>
 	</Card>
-	<Card color="success">
+	<Card color="success" hoverable>
 		<Text>Success</Text>
 	</Card>
-	<Card color="warning">
+	<Card color="warning" hoverable>
 		<Text>Warning</Text>
 	</Card>
-	<Card color="error">
+	<Card color="error" hoverable>
 		<Text>Error</Text>
 	</Card>
-	<Card color="abort">
+	<Card color="abort" hoverable>
 		<Text>Abort</Text>
 	</Card>
 </Playground>

@@ -19,9 +19,9 @@
 <button
 	type="button"
 	data-border={border}
-	class="flex place-items-center justify-center hover:bg-gray-100 dark:hover:bg-gray-900
-    transition-all text-gray-999 dark:text-gray-0 size-9 rounded-md data-[border='true']:border
-    border-gray-100 dark:border-gray-900"
+	class="flex place-items-center justify-center hover:bg-gui-component-background-active
+    transition-all text-gui-foreground-primary size-9 rounded-md data-[border='true']:border
+    border-gui-border"
 	on:click={toggleMode}
 >
 	{#if currentMode == "light"}

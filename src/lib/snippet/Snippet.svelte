@@ -10,15 +10,14 @@
 		{
 			variants: {
 				color: {
-					dark: "border-gray-999 dark:border-gray-0 bg-gray-999 dark:bg-gray-0 ",
-					lite: "dark:border-gray-900 border-gray-200 dark:bg-gray-950 bg-gray-50",
-					subtle: "dark:border-gray-900 dark:bg-gray-900 bg-gray-100 border-gray-100",
-					transparent: "border-gray-100 dark:border-gray-900",
-					success: "dark:border-blue-600 border-blue-600",
-					warning: "border-orange-300 dark:border-orange-400",
-					error: "dark:border-red-600 border-red-500",
-					secondary: "border-gray-300 dark:border-gray-700",
-					default: "border-gray-999 dark:border-gray-0",
+					default: "border-gui-foreground-primary",
+					dark: "border-gui-border bg-gui-foreground-primary",
+					lite: "bg-gui-component-background",
+					subtle: "bg-gui-component-background-active border-gui-component-background-active",
+					transparent: "border-gui-border",
+					success: "border-gui-success bg-gui-success bg-opacity-25",
+					warning: "border-gui-warning bg-gui-warning bg-opacity-25",
+					error: "border-gui-error bg-gui-error bg-opacity-25",
 				},
 			},
 			defaultVariants: {
@@ -30,20 +29,14 @@
 	const textColor = cva("", {
 		variants: {
 			color: {
-				dark: "text-gray-0 dark:text-gray-999 enabled:dark:hover:text-gray-800 enabled:hover:text-gray-200",
-				lite: "text-gray-999 dark:text-gray-0 enabled:hover:text-gray-800 enabled:dark:hover:text-gray-200",
-				subtle: "dark:text-gray-100 text-gray-900 enabled:dark:hover:text-gray-300 enabled:hover:text-gray-700",
-				transparent:
-					"text-gray-999 dark:text-gray-0 enabled:hover:text-gray-800 enabled:dark:hover:text-gray-200",
-				success:
-					"text-blue-600 dark:text-blue-600 enabled:hover:text-blue-800 enabled:dark:hover:text-blue-800",
-				warning:
-					"text-orange-300 dark:text-orange-400 enabled:hover:text-orange-500 enabled:dark:hover:text-orange-600",
-				error: "text-red-500 dark:text-red-600 enabled:hover:text-red-700 enabled:dark:hover:text-red-800",
-				secondary:
-					"text-gray-300 dark:text-gray-700 enabled:hover:text-gray-500 enabled:dark:hover:text-gray-500",
-				default:
-					"text-gray-999 dark:text-gray-0 enabled:hover:text-gray-800 enabled:dark:hover:text-gray-200",
+				dark: "text-gui-gray-100 enabled:hover:text-opacity-75",
+				lite: "",
+				subtle: "",
+				transparent: "text-gui-foreground-primary enabled:hover:text-opacity-75",
+				success: "text-gui-success enabled:hover:text-opacity-75",
+				warning: "text-gui-warning enabled:hover:text-opacity-75",
+				error: "text-gui-error enabled:hover:text-opacity-75",
+				default: "text-gui-foreground-primary enabled:hover:text-opacity-75",
 			},
 			defaultVariants: {
 				color: "default",
@@ -100,8 +93,7 @@
 		class={cn(
 			textColor({ color: type }),
 			"flex place-items-center justify-center h-[20px] transition-all",
-		)}
-	>
+		)}>
 		{#if copied}
 			<div in:scale={{ duration: 200 }}>
 				<CheckMarkIcon size={16} />

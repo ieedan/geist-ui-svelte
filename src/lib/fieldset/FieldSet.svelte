@@ -5,13 +5,11 @@
 	const style = cva("border rounded-lg overflow-hidden", {
 		variants: {
 			color: {
-				default: "bg-gray-50 dark:bg-gray-950 border-gray-100 dark:border-gray-900",
-				success:
-					"border-blue-600 bg-blue-600 bg-opacity-50 dark:border-blue-600 dark:bg-blue-600 dark:bg-opacity-35",
-				warning:
-					"border-orange-300 bg-orange-300 bg-opacity-50 dark:border-orange-400 dark:bg-orange-400 dark:bg-opacity-35",
-				error: "border-red-600 bg-red-600 bg-opacity-50 dark:border-red-600 dark:bg-red-600 dark:bg-opacity-35",
-				transparent: "border-gray-100 dark:border-gray-900",
+				default: "bg-gui-background-secondary border-gui-border",
+				success: "border-gui-success bg-gui-success bg-opacity-50 dark:bg-opacity-35",
+				warning: "border-gui-warning bg-gui-warning bg-opacity-50 dark:bg-opacity-35",
+				error: "border-gui-error bg-gui-error bg-opacity-50 dark:bg-opacity-35",
+				transparent: "border-gui-border bg-transparent",
 			},
 		},
 	});
@@ -19,13 +17,18 @@
 	interface Props extends VariantProps<typeof style> {}
 
 	export let color: Props["color"] = "default";
+	export let inverted = false;
 </script>
 
 <div class={cn(style({ color }))}>
-	<div class="px-4 py-3 bg-gray-0 dark:bg-gray-999">
+	<div
+		data-inverted={inverted}
+		class="px-4 py-3 bg-gui-background data-[inverted=true]:bg-transparent">
 		<slot />
 	</div>
-	<div class="px-4 py-2 border-t border-inherit dark:border-inherit bg-transparent">
+	<div
+		data-inverted={inverted}
+		class="px-4 py-2 border-t border-inherit bg-transparent data-[inverted=true]:bg-gui-background">
 		<slot name="footer" />
 	</div>
 </div>

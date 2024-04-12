@@ -58,11 +58,9 @@
 {#if to == undefined}
 	<button
 		type="button"
-		class="z-[1] flex place-items-center justify-center px-3 py-3 text-sm text-gray-500
-		transition-all hover:text-black aria-selected:text-black
-		dark:text-gray-500 outline-none focus:outline-none
-		dark:aria-selected:text-white disabled:hover:cursor-not-allowed disabled:!text-gray-300 disabled:dark:!text-gray-700
-		dark:aria-[selected='false']:hover:text-white text-nowrap"
+		class="z-[1] flex place-items-center justify-center px-3 py-3 text-sm text-gui-foreground-secondary
+		transition-all hover:text-gui-foreground-primary aria-selected:text-gui-foreground-primary
+		outline-none focus:outline-none disabled:hover:cursor-not-allowed disabled:text-gui-foreground-muted text-nowrap"
 		on:click={select}
 		{disabled}
 		role="tab"
@@ -76,10 +74,10 @@
 		on:click|preventDefault={clicked}
 		data-active={active}
 		aria-disabled={disabled}
-		class="z-[1] flex place-items-center justify-center px-3 py-3 text-sm text-gray-500
-	transition-all hover:text-black data-[active=true]:text-black dark:text-gray-500 aria-disabled:hover:cursor-not-allowed
-	aria-disabled:!text-gray-300 aria-disabled:dark:!text-gray-700 dark:data-[active=true]:text-white
-	dark:data-[active=false]:hover:text-white text-nowrap outline-none focus:outline-none"
+		class="z-[1] flex place-items-center justify-center px-3 py-3 text-sm text-gui-foreground-secondary
+		transition-all hover:text-gui-foreground-primary data-[active=true]:text-gui-foreground-primary 
+		aria-disabled:hover:cursor-not-allowed aria-disabled:text-gui-foreground-secondary text-nowrap 
+		outline-none focus:outline-none"
 	>
 		<slot />
 	</a>

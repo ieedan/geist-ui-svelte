@@ -33,7 +33,7 @@
 	<button
 		type="button"
 		on:click={() => (show = !show)}
-		class="flex place-items-center gap-2 text-sm text-gray-600 dark:text-gray-500"
+		class="flex place-items-center gap-2 text-sm text-gui-foreground-secondary"
 	>
 		<div
 			class="group-data-[show=true]/details:rotate-90 transition-all flex place-items-center justify-center"

@@ -6,24 +6,23 @@
 
 	const style = cva(
 		`flex place-items-center justify-center border rounded-md size-4 
-	aria-[checked=false]:border-gray-200 dark:aria-[checked=false]:border-gray-800 group
-	transition-all relative outline-none focus:outline-none text-gray-0 dark:text-gray-999`,
+	aria-[checked=false]:border-gui-component-background-active group
+	transition-all relative outline-none focus:outline-none text-gui-foreground-primary`,
 		{
 			variants: {
 				color: {
 					default:
-						"aria-checked:bg-gray-999 dark:aria-checked:bg-gray-0 aria-checked:border-gray-999 dark:aria-checked:border-gray-0",
-					success:
-						"aria-checked:bg-blue-600 aria-checked:dark:bg-blue-600 aria-checked:border-blue-600 aria-checked:dark:border-blue-600",
+						"aria-checked:bg-gui-foreground-primary aria-checked:border-gui-foreground-primary text-gui-background",
+					success: "aria-checked:bg-gui-success aria-checked:border-gui-success text-white",
 					warning:
-						"aria-checked:bg-orange-300 aria-checked:dark:bg-orange-400 aria-checked:border-orange-300 aria-checked:dark:border-orange-400",
-					error: "aria-checked:bg-red-500 aria-checked:dark:bg-red-600 aria-checked:border-red-500 aria-checked:dark:border-red-600",
+						"aria-checked:bg-gui-warning aria-checked:border-gui-warning text-white",
+					error: "aria-checked:bg-gui-error aria-checked:border-gui-error text-white",
 					secondary:
-						"aria-checked:bg-gray-200 dark:aria-checked:bg-gray-800 aria-checked:border-gray-200 dark:aria-checked:border-gray-800",
+						"aria-checked:bg-gui-component-background-active aria-checked:border-gui-component-background-active",
 				},
 				disabled: {
-					true: `aria-checked:bg-gray-200 aria-checked:border-gray-200 aria-[checked=false]:border-gray-50 dark:aria-[checked=false]:border-gray-925 
-				aria-checked:dark:bg-gray-600 aria-checked:dark:border-gray-600 hover:cursor-not-allowed`,
+					true: `aria-checked:bg-gui-component-background-active aria-[checked=false]:border-gui-border 
+				aria-checked:border-gui-component-background hover:cursor-not-allowed`,
 					false: "",
 				},
 			},
@@ -68,8 +67,7 @@
 <label
 	for={id}
 	class="flex place-items-center gap-2 group aria-disabled:hover:cursor-not-allowed select-none hover:cursor-pointer w-fit"
-	aria-disabled={disabled}
->
+	aria-disabled={disabled}>
 	<button
 		type="button"
 		on:click|preventDefault|stopPropagation={toggle}
@@ -77,8 +75,7 @@
 		role="checkbox"
 		aria-checked={checked}
 		{disabled}
-		class={cn(style({ color, disabled }))}
-	>
+		class={cn(style({ color, disabled }))}>
 		{#if ring}
 			<div class={cn(ringStyle({ color }))} />
 		{/if}
@@ -87,8 +84,7 @@
 		{/if}
 	</button>
 	<span
-		class="flex place-items-center justify-start group-aria-disabled:text-gray-400 group-aria-disabled:dark:text-gray-600"
-	>
+		class="flex place-items-center justify-start group-aria-disabled:text-gui-foreground-muted">
 		<slot />
 	</span>
 </label>

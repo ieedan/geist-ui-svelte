@@ -51,19 +51,18 @@
 <div
 	data-show={visible}
 	on:click={hide}
-	class="fixed left-0 top-0 z-[49] h-screen w-full bg-gray-400 transition-all
+	class="fixed left-0 top-0 z-[49] h-screen w-full bg-gui-background transition-all
     data-[show=false]:pointer-events-none data-[show=false]:opacity-0
-    data-[show=true]:opacity-80 print:hidden dark:bg-gray-999"
+    data-[show=true]:opacity-80 print:hidden"
 ></div>
 
 <div
 	data-show={visible}
 	aria-label={ariaLabel}
 	role="dialog"
-	class="bg-gray-0 dark:bg-gray-999 border-t max-w-full w-full bottom-0 left-0 fixed sm:top-1/2 transition-all
+	class="bg-gui-background border-gui-border border-t max-w-full w-full bottom-0 left-0 fixed sm:top-1/2 transition-all
     sm:-translate-x-1/2 sm:left-1/2 sm:-translate-y-1/2 z-50 data-[show=false]:opacity-0 data-[show=false]:sm:scale-90
-	data-[show=false]:pointer-events-none data-[show=false]:scale-95 sm:rounded-xl border-gray-100 sm:border
-	dark:border-gray-900 {className}"
+	data-[show=false]:pointer-events-none data-[show=false]:scale-95 sm:rounded-xl sm:border {className}"
 >
 	<slot />
 </div>
