@@ -28,13 +28,16 @@
 <div
 	data-transition={animate}
 	data-show={show}
-	class="group/details flex flex-col data-[show=true]:gap-2 data-[transition=true]:transition-all gap-0">
+	class="group/details flex flex-col data-[show=true]:gap-2 data-[transition=true]:transition-all gap-0"
+>
 	<button
 		type="button"
 		on:click={() => (show = !show)}
-		class="flex place-items-center gap-2 text-sm text-gray-600 dark:text-gray-500">
+		class="flex place-items-center gap-2 text-sm text-gray-600 dark:text-gray-500"
+	>
 		<div
-			class="group-data-[show=true]/details:rotate-90 transition-all flex place-items-center justify-center">
+			class="group-data-[show=true]/details:rotate-90 transition-all flex place-items-center justify-center"
+		>
 			<ChevronIcon size={16} />
 		</div>
 		{#if show && showLabel != undefined}
@@ -46,7 +49,8 @@
 	<div
 		bind:this={contentElement}
 		class="group-data-[transition=true]/details:transition-all overflow-hidden group-data-[show=false]/details:opacity-0"
-		style="height: {show ? `${contentHeight}px` : '0px'};">
+		style="height: {show ? `${contentHeight}px` : '0px'};"
+	>
 		<slot />
 	</div>
 </div>

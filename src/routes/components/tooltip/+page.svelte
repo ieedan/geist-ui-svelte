@@ -53,7 +53,8 @@
 <Spacer h={10} />
 <Playground
 	code={`<Button id="button-id">Hover me</Button>
-<ToolTip anchor="#button-id" content='Hovered'/>`}>
+<ToolTip anchor="#button-id" content='Hovered'/>`}
+>
 	<Button id="button-id">Hover me</Button>
 	<ToolTip anchor="#button-id" content="Hovered" />
 </Playground>
@@ -90,7 +91,8 @@
 <ToolTip 
   anchor="#copy-button" 
   hideOnClick={false}
-  content={copied ? "Copied!" : "Copy"} />`}>
+  content={copied ? "Copied!" : "Copy"} />`}
+>
 	<Button square id="copy-button" on:click={copy}>
 		<CloneIcon size={16} />
 	</Button>

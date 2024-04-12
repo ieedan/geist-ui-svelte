@@ -23,7 +23,8 @@
 <Playground
 	code={`<Checkbox>Notifications</Checkbox>
 <Checkbox disabled>Notifications</Checkbox>
-<Checkbox disabled checked={true}>Notifications</Checkbox>`}>
+<Checkbox disabled checked={true}>Notifications</Checkbox>`}
+>
 	<Checkbox>Notifications</Checkbox>
 	<Checkbox disabled>Notifications</Checkbox>
 	<Checkbox disabled checked={true}>Notifications</Checkbox>
@@ -36,7 +37,8 @@
 <Checkbox color="success" checked={true}>Success</Checkbox>
 <Checkbox color="warning" checked={true}>Warning</Checkbox>
 <Checkbox color="error" checked={true}>Error</Checkbox>
-<Checkbox color="secondary" checked={true}>Secondary</Checkbox>`}>
+<Checkbox color="secondary" checked={true}>Secondary</Checkbox>`}
+>
 	<Checkbox checked={true}>Default</Checkbox>
 	<Checkbox color="success" checked={true}>Success</Checkbox>
 	<Checkbox color="warning" checked={true}>Warning</Checkbox>
@@ -50,11 +52,13 @@
 	Add a ring around the checkbox when focused by adding the <code>`ring`</code> attribute.
 </Text>
 <Spacer h={10} />
-<Playground code={`<Checkbox ring checked={true}>Default</Checkbox>
+<Playground
+	code={`<Checkbox ring checked={true}>Default</Checkbox>
 <Checkbox ring color="success" checked={true}>Success</Checkbox>
 <Checkbox ring color="warning" checked={true}>Warning</Checkbox>
 <Checkbox ring color="error" checked={true}>Error</Checkbox>
-<Checkbox ring color="secondary" checked={true}>Secondary</Checkbox>`}>
+<Checkbox ring color="secondary" checked={true}>Secondary</Checkbox>`}
+>
 	<Checkbox ring checked={true}>Default</Checkbox>
 	<Checkbox ring color="success" checked={true}>Success</Checkbox>
 	<Checkbox ring color="warning" checked={true}>Warning</Checkbox>

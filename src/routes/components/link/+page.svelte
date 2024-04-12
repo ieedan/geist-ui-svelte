@@ -19,7 +19,8 @@
 	to="https://github.com/ieedan/geist-ui-svelte" 
 	target="_blank">
 	Check out the geist-ui-svelte source here
-</Link>`}>
+</Link>`}
+>
 	<Link to="https://github.com/ieedan/geist-ui-svelte" target="_blank">
 		Check out the geist-ui-svelte source here
 	</Link>
@@ -33,7 +34,8 @@
 	target="_blank" 
 	color>
 	Check out the geist-ui-svelte source here
-</Link>`}>
+</Link>`}
+>
 	<Link to="https://github.com/ieedan/geist-ui-svelte" target="_blank" color>
 		Check out the geist-ui-svelte source here
 	</Link>
@@ -54,7 +56,8 @@
 	color 
 	underline>
 	Check out the geist-ui-svelte source here
-</Link>`}>
+</Link>`}
+>
 	<Link to="https://github.com/ieedan/geist-ui-svelte" target="_blank" underline>
 		Check out the geist-ui-svelte source here
 	</Link>
@@ -71,7 +74,8 @@
 	target="_blank" 
 	block>
 	Check out the geist-ui-svelte source here
-</Link>`}>
+</Link>`}
+>
 	<Link to="https://github.com/ieedan/geist-ui-svelte" target="_blank" block>
 		Check out the geist-ui-svelte source here
 	</Link>

@@ -176,7 +176,7 @@
 			</div>
 		{:else}
 			<div
-				class="text-gray-999 dark:text-gray-0 hover:text-gray-800 
+				class="text-gray-999 dark:text-gray-0 hover:text-gray-800
 				dark:hover:text-gray-200 transition-all"
 				in:scale={{ duration: 100 }}
 			>

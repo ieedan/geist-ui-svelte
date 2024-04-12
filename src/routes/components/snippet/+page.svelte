@@ -19,7 +19,9 @@
 <Spacer h={30} />
 <Text type="h4">Colors</Text>
 <Spacer h={10} />
-<Playground class="gap-2" code={`<Snippet text="npm i geist-ui-svelte"/>
+<Playground
+	class="gap-2"
+	code={`<Snippet text="npm i geist-ui-svelte"/>
 <Snippet type="success" text="npm i geist-ui-svelte"/>
 <Snippet type="warning" text="npm i geist-ui-svelte"/>
 <Snippet type="error" text="npm i geist-ui-svelte"/>
@@ -27,7 +29,8 @@
 <Snippet type="subtle" text="npm i geist-ui-svelte"/>
 <Snippet type="transparent" text="npm i geist-ui-svelte" />
 <Snippet type="dark" text="npm i geist-ui-svelte"/>
-<Snippet type="lite" text="npm i geist-ui-svelte"/>`}>
+<Snippet type="lite" text="npm i geist-ui-svelte"/>`}
+>
 	<Snippet text="npm i geist-ui-svelte" />
 	<Snippet type="success" text="npm i geist-ui-svelte" />
 	<Snippet type="warning" text="npm i geist-ui-svelte" />
@@ -41,9 +44,11 @@
 <Spacer h={30} />
 <Text type="h4">Multi-Line</Text>
 <Spacer h={10} />
-<Playground code={`<Snippet 
+<Playground
+	code={`<Snippet 
 	type="lite" 
-	text={["npm create vite@latest", "npm i geist-ui-svelte"]}/>`}>
+	text={["npm create vite@latest", "npm i geist-ui-svelte"]}/>`}
+>
 	<Snippet type="lite" text={["npm create vite@latest", "npm i geist-ui-svelte"]} />
 </Playground>
 <Spacer h={30} />

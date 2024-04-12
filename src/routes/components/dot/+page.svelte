@@ -14,11 +14,13 @@
 <Spacer h={30} />
 <Text type="h4">Sizes</Text>
 <Spacer h={10} />
-<Playground class="flex-row gap-2 place-items-end"
+<Playground
+	class="flex-row gap-2 place-items-end"
 	code={`<Dot/>
 <Dot size={16}/>
 <Dot size={20}/>
-<Dot size={24}/>`}>
+<Dot size={24}/>`}
+>
 	<Dot />
 	<Dot size={16} />
 	<Dot size={20} />
@@ -27,13 +29,15 @@
 <Spacer h={30} />
 <Text type="h4">Colors</Text>
 <Spacer h={10} />
-<Playground class="flex-row gap-2"
+<Playground
+	class="flex-row gap-2"
 	code={`<Dot/>
 <Dot type="success"/>
 <Dot type="warning"/>
 <Dot type="error"/>
 <Dot type="secondary"/>
-<Dot type="go"/>`}>
+<Dot type="go"/>`}
+>
 	<Dot />
 	<Dot type="success" />
 	<Dot type="warning" />

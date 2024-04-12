@@ -16,9 +16,6 @@
 	import Search from "$lib/search/Search.svelte";
 	import Modal from "$lib/modal/Modal.svelte";
 	import type { ComponentType } from "svelte";
-	import FieldSet from "$lib/fieldset/FieldSet.svelte";
-	import Details from "$lib/details/Details.svelte";
-	import Code from "$lib/code/Code.svelte";
 	import SvelteIcon from "$lib/icons/SvelteIcon.svelte";
 	import CommandIcon from "$lib/icons/CommandIcon.svelte";
 	import EditIcon from "$lib/icons/EditIcon.svelte";
@@ -171,7 +168,8 @@
 <SvelteIcon size={15}/>
 <SvelteIcon size={20}/>
 <SvelteIcon size={25}/>
-<SvelteIcon size={30}/>`}>
+<SvelteIcon size={30}/>`}
+>
 	<div class="flex place-items-end gap-2">
 		<SvelteIcon size={10} />
 		<SvelteIcon size={15} />
@@ -189,7 +187,8 @@
 	code={`<Text color="success"><SvelteIcon size={24}/></Text>
 	<Text color="warning"><SvelteIcon size={24}/></Text>
 	<Text color="error"><SvelteIcon size={24}/></Text>
-	<Text color="abort"><SvelteIcon size={24}/></Text>`}>
+	<Text color="abort"><SvelteIcon size={24}/></Text>`}
+>
 	<div class="flex place-items-end gap-1">
 		<Text color="success"><SvelteIcon size={24} /></Text>
 		<Text color="warning"><SvelteIcon size={24} /></Text>
@@ -211,7 +210,8 @@
 			<button
 				on:click={() => selectIcon(icon)}
 				class="flex place-items-center justify-center hover:border-gray-100 hover:dark:border-gray-900
-			border border-transparent size-28 rounded-lg transition-all">
+			border border-transparent size-28 rounded-lg transition-all"
+			>
 				<Center class="gap-2">
 					<div><svelte:component this={icon.component} size={28} /></div>
 					<Text type="small" color="secondary">{icon.name}</Text>
@@ -223,7 +223,8 @@
 <Modal
 	on:closed={closed}
 	bind:visible={showModal}
-	class="md:h-56 md:w-[525px] flex place-items-center justify-center px-4 py-4">
+	class="md:h-56 md:w-[525px] flex place-items-center justify-center px-4 py-4"
+>
 	<div class="flex flex-col justify-center place-items-center gap-3">
 		{#if currentIcon}
 			<Card class="w-full flex place-items-center justify-center">
@@ -233,7 +234,8 @@
 				<Snippet
 					width="500px"
 					type="transparent"
-					text={`import { ${currentIcon.name}Icon } from 'geist-ui-svelte'`} />
+					text={`import { ${currentIcon.name}Icon } from 'geist-ui-svelte'`}
+				/>
 			</div>
 		{/if}
 	</div>

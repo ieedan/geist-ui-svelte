@@ -208,7 +208,8 @@
 <Snippet
 	width="500px"
 	type="transparent"
-	text={`import { Select, Option } from 'geist-ui-svelte';`} />
+	text={`import { Select, Option } from 'geist-ui-svelte';`}
+/>
 <Spacer h={30} />
 <Text type="h4">Basic</Text>
 <Spacer h={10} />
@@ -216,7 +217,8 @@
 	code={`<Select>
 	<Option value={1}>Option 1</Option>
 	<Option value={2}>Option 2</Option>
-</Select>`}>
+</Select>`}
+>
 	<Select>
 		<Option value={1}>Option 1</Option>
 		<Option value={2}>Option 2</Option>
@@ -234,7 +236,8 @@
 	code={`<Select placeholder="Select one" allowNone>
 	<Option value={1}>Option 1</Option>
 	<Option value={2}>Option 2</Option>
-</Select>`}>
+</Select>`}
+>
 	<Select placeholder="Select one" allowNone>
 		<Option value={1}>Option 1</Option>
 		<Option value={2}>Option 2</Option>
@@ -252,7 +255,8 @@
 <Select readonly>
 	<Option value={1}>Option 1</Option>
 	<Option value={2}>Option 2</Option>
-</Select>`}>
+</Select>`}
+>
 	<Select disabled>
 		<Option value={1}>Option 1</Option>
 		<Option value={2}>Option 2</Option>
@@ -269,7 +273,8 @@
 	code={`<Select>
 	<Option value={1}>Option 1</Option>
 	<Option value={2} disabled>Option 2</Option>
-</Select>`}>
+</Select>`}
+>
 	<Select>
 		<Option value={1}>Option 1</Option>
 		<Option value={2} disabled>Option 2</Option>
@@ -282,7 +287,8 @@
 	code={`<Select width="100%">
 	<Option value={1}>Option 1</Option>
 	<Option value={2}>Option 2</Option>
-</Select>`}>
+</Select>`}
+>
 	<Select width="100%">
 		<Option value={1}>Option 1</Option>
 		<Option value={2}>Option 2</Option>
@@ -295,7 +301,8 @@
 	code={`<Select width="100%">
 	<Option value={1}>Option 1</Option>
 	<Option value={2}>Option 2</Option>
-</Select>`}>
+</Select>`}
+>
 	<Select noIcon>
 		<Option value={1}>Option 1</Option>
 		<Option value={2}>Option 2</Option>
@@ -324,7 +331,8 @@
 	<ChevronUpDownIcon slot="icon" size={14}/>
 	<Option value={1}>Option 1</Option>
 	<Option value={2}>Option 2</Option>
-</Select>`}>
+</Select>`}
+>
 	<Select>
 		<ChevronUpDownIcon slot="icon" size={14} />
 		<Option value={1}>Option 1</Option>
@@ -382,7 +390,8 @@
 		<Spacer inline w={5}/>
 		Option 2
 	</Option>
-</Select>`}>
+</Select>`}
+>
 	<Select>
 		<Option value={1}>
 			<Dot type="success" size={10} />
@@ -420,7 +429,8 @@
 	<Text class="px-2" type="small" color="abort">Group 2</Text>
 	<Divider/>
 	<Option value={3}>Option 3</Option>
-</Select>`}>
+</Select>`}
+>
 	<Select>
 		<Option value={1}>Option 1</Option>
 		<Option value={2}>Option 2</Option>
@@ -462,7 +472,8 @@
 			<Option value={city.name}>{city.name}</Option>
 		{/each}
 	{/if}
-</Select>`}>
+</Select>`}
+>
 	<Select bind:value={selectedCountry}>
 		{#each countries as [name, country] (name)}
 			<Option value={name}>{country.name}</Option>
@@ -503,7 +514,8 @@
 	{#each alphabet as letter}
 		<Option value={letter}>{letter}</Option>
 	{/each}
-</Select>`}>
+</Select>`}
+>
 	<Select>
 		{#each alphabet as letter}
 			<Option value={letter}>{letter}</Option>
@@ -542,7 +554,8 @@
 	{#each alphabet as letter}
 		<Option value={letter}>{letter}</Option>
 	{/each}
-</Select>`}>
+</Select>`}
+>
 	<Select multiSelect placeholder="Select a letter">
 		{#each alphabet as letter}
 			<Option value={letter}>{letter}</Option>
@@ -575,7 +588,8 @@ placeholder="Select a letter">
 	{#each alphabet as letter}
 		<Option value={letter}>{letter}</Option>
 	{/each}
-</Select>`}>
+</Select>`}
+>
 	<Select multiSelect value={["A", "B", "C", "D", "E", "F", "G"]} placeholder="Select a letter">
 		{#each alphabet as letter}
 			<Option value={letter}>{letter}</Option>
@@ -604,12 +618,14 @@ placeholder="Select a letter"
 	{#each alphabet as letter}
 		<Option value={letter}>{letter}</Option>
 	{/each}
-</Select>`}>
+</Select>`}
+>
 	<Select
 		multiSelect
 		disabled
 		value={["A", "B", "C", "D", "E", "F", "G"]}
-		placeholder="Select a letter">
+		placeholder="Select a letter"
+	>
 		{#each alphabet as letter}
 			<Option value={letter}>{letter}</Option>
 		{/each}
@@ -620,7 +636,9 @@ placeholder="Select a letter"
 <Spacer h={5} />
 <Text>When you change the options the select will react to the change.</Text>
 <Spacer h={10} />
-<Playground class="gap-2" code={`<Select placeholder="Select a letter">
+<Playground
+	class="gap-2"
+	code={`<Select placeholder="Select a letter">
 	{#each listOptions as letter (letter)}
 		<Option value={letter}>{letter}</Option>
 	{/each}
@@ -636,16 +654,14 @@ placeholder="Select a letter"
 </Select>
 <Button on:click={toggleOptions}>
 	Change Options
-</Button>`}>
+</Button>`}
+>
 	<Select placeholder="Select a letter">
 		{#each listOptions as letter (letter)}
 			<Option value={letter}>{letter}</Option>
 		{/each}
 	</Select>
-	<Select
-		multiSelect
-		value={["A", "B", "C", "D", "E", "F", "G"]}
-		placeholder="Select a letter">
+	<Select multiSelect value={["A", "B", "C", "D", "E", "F", "G"]} placeholder="Select a letter">
 		{#each listOptions as letter (letter)}
 			<Option value={letter}>{letter}</Option>
 		{/each}
@@ -657,7 +673,9 @@ placeholder="Select a letter"
 <Spacer h={5} />
 <Text>When you change the value the select will react to the change.</Text>
 <Spacer h={10} />
-<Playground class="gap-2" code={`<Select placeholder="Select a letter" bind:value={value}>
+<Playground
+	class="gap-2"
+	code={`<Select placeholder="Select a letter" bind:value={value}>
 	{#each alphabet as letter (letter)}
 		<Option value={letter}>{letter}</Option>
 	{/each}
@@ -676,7 +694,8 @@ placeholder="Select a letter"
 	value = "H";
 }}>
 	Select H
-</Button>`}>
+</Button>`}
+>
 	<Select placeholder="Select a letter" bind:value>
 		{#each alphabet as letter (letter)}
 			<Option value={letter}>{letter}</Option>
@@ -691,7 +710,8 @@ placeholder="Select a letter"
 		on:click={() => {
 			arrValue = [...arrValue, "H"];
 			value = "H";
-		}}>
+		}}
+	>
 		Select H
 	</Button>
 </Playground>

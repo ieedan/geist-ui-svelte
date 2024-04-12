@@ -1,7 +1,4 @@
 <script lang="ts">
-	import Code from "$lib/code/Code.svelte";
-	import Details from "$lib/details/Details.svelte";
-	import FieldSet from "$lib/fieldset/FieldSet.svelte";
 	import Snippet from "$lib/snippet/Snippet.svelte";
 	import Spacer from "$lib/spacer/Spacer.svelte";
 	import Text from "$lib/text/Text.svelte";
@@ -84,7 +81,8 @@
 <Snippet
 	width="650px"
 	type="transparent"
-	text={`import { ButtonGroup, ButtonGroupButton } from 'geist-ui-svelte';`} />
+	text={`import { ButtonGroup, ButtonGroupButton } from 'geist-ui-svelte';`}
+/>
 <Spacer h={30} />
 <Text type="h4">Basic</Text>
 <Spacer h={10} />
@@ -93,7 +91,8 @@
     <ButtonGroupButton>Code</ButtonGroupButton>
     <ButtonGroupButton>Svelte</ButtonGroupButton>
     <ButtonGroupButton>Group</ButtonGroupButton>
-</ButtonGroup>`}>
+</ButtonGroup>`}
+>
 	<ButtonGroup>
 		<ButtonGroupButton>Code</ButtonGroupButton>
 		<ButtonGroupButton>Svelte</ButtonGroupButton>
@@ -108,7 +107,8 @@
     <ButtonGroupButton disabled>Code</ButtonGroupButton>
     <ButtonGroupButton>Svelte</ButtonGroupButton>
     <ButtonGroupButton>Group</ButtonGroupButton>
-</ButtonGroup>`}>
+</ButtonGroup>`}
+>
 	<ButtonGroup>
 		<ButtonGroupButton disabled>Code</ButtonGroupButton>
 		<ButtonGroupButton>Svelte</ButtonGroupButton>
@@ -134,7 +134,11 @@
 	Add <code>`ghost`</code> to invert the background of the button.
 </Text>
 <Spacer h={10} />
-<Playground edits={[{ number: 19, type: "add" }]} code={ghostExampleCode} class="flex-row gap-2 flex-wrap">
+<Playground
+	edits={[{ number: 19, type: "add" }]}
+	code={ghostExampleCode}
+	class="flex-row gap-2 flex-wrap"
+>
 	{#each colors as color}
 		<ButtonGroup {color} ghost>
 			<ButtonGroupButton>Code</ButtonGroupButton>

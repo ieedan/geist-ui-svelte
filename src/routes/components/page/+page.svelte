@@ -1,8 +1,5 @@
 <script lang="ts">
 	import Button from "$lib/button/Button.svelte";
-	import Code from "$lib/code/Code.svelte";
-	import Details from "$lib/details/Details.svelte";
-	import FieldSet from "$lib/fieldset/FieldSet.svelte";
 	import Snippet from "$lib/snippet/Snippet.svelte";
 	import Spacer from "$lib/spacer/Spacer.svelte";
 	import Text from "$lib/text/Text.svelte";
@@ -34,7 +31,8 @@
 			Click here or press <code>\`Esc\`</code> to exit
 		</Button>
 	</Center>
-</Page>`}>
+</Page>`}
+>
 	<Button on:click={() => (showPage = true)}>Show page</Button>
 	<Page bind:visible={showPage}>
 		<Center class="h-full">

@@ -22,12 +22,14 @@
 	<Text>Lorem, ipsum dol...</Text>
 	<Divider margin="md"/>
 	<Text>Footer</Text>
-</Card>`}>
+</Card>`}
+>
 	<Card>
 		<Text
 			>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Mollitia illo dicta incidunt
 			placeat cupiditate obcaecati laboriosam labore consectetur expedita libero tenetur
-			pariatur veniam cumque repudiandae, eligendi aliquid ut ea soluta.</Text>
+			pariatur veniam cumque repudiandae, eligendi aliquid ut ea soluta.</Text
+		>
 		<Divider margin="md" />
 		<Text>Footer</Text>
 	</Card>

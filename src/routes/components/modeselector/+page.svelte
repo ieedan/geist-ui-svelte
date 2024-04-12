@@ -10,7 +10,11 @@
 <Spacer h={10} />
 <Text>A component to allow the user to select their dark mode preference.</Text>
 <Spacer h={20} />
-<Snippet width="500px" type="transparent" text={`import { ModeSelector } from 'geist-ui-svelte';`} />
+<Snippet
+	width="500px"
+	type="transparent"
+	text={`import { ModeSelector } from 'geist-ui-svelte';`}
+/>
 <Spacer h={30} />
 <Text type="h4">Basic</Text>
 <Spacer h={10} />
@@ -36,8 +40,11 @@
 	The mode selector uses the dropdown component under the hood so the same placements apply.
 </Text>
 <Spacer h={10} />
-<Playground class="flex-row gap-2" code={`<ModeSelector />
-<ModeSelector placement="bottom-start" />`}>
+<Playground
+	class="flex-row gap-2"
+	code={`<ModeSelector />
+<ModeSelector placement="bottom-start" />`}
+>
 	<ModeSelector />
 	<ModeSelector placement="bottom-start" />
 </Playground>

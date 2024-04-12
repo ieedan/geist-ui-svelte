@@ -1,7 +1,4 @@
 <script lang="ts">
-	import Code from "$lib/code/Code.svelte";
-	import Details from "$lib/details/Details.svelte";
-	import FieldSet from "$lib/fieldset/FieldSet.svelte";
 	import Snippet from "$lib/snippet/Snippet.svelte";
 	import Spacer from "$lib/spacer/Spacer.svelte";
 	import Text from "$lib/text/Text.svelte";
@@ -29,7 +26,8 @@
 <Note color="success">Elephants can outswim you.</Note>
 <Note color="warning">Elephants can throw objects at you.</Note>
 <Note color="error">Elephants do not think you are cute.</Note>
-<Note color="secondary">Elephants are very emotional.</Note>`}>
+<Note color="secondary">Elephants are very emotional.</Note>`}
+>
 	<Note>Elephants can outrun you.</Note>
 	<Note color="success">Elephants can outswim you.</Note>
 	<Note color="warning">Elephants can throw objects at you.</Note>
@@ -43,7 +41,8 @@
 	code={`<Note>
 	<Text slot="label" b>Warning:</Text>
 	Elephants remember.
-</Note>`}>
+</Note>`}
+>
 	<Note>
 		<Text slot="label" b>Warning:</Text>
 		Elephants remember.
@@ -58,12 +57,14 @@
 <Spacer h={30} />
 <Text type="h4">Block</Text>
 <Spacer h={10} />
-<Playground class="gap-2"
+<Playground
+	class="gap-2"
 	code={`<Note block>Default block.</Note>
 <Note color="success" block>Success block.</Note>
 <Note color="warning" block>Warning block.</Note>
 <Note color="error" block>Error block.</Note>
-<Note color="secondary" block>Secondary block.</Note>`}>
+<Note color="secondary" block>Secondary block.</Note>`}
+>
 	<Note block>Default block.</Note>
 	<Note color="success" block>Success block.</Note>
 	<Note color="warning" block>Warning block.</Note>

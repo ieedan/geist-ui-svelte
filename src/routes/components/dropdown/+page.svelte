@@ -53,7 +53,8 @@
 </button>
 <Dropdown anchor={buttonRef} bind:visible={showDropdown} class="w-32 h-48">
 	This is a dropdown
-</Dropdown>`}>
+</Dropdown>`}
+>
 	<Center>
 		<button bind:this={buttonRef} on:click={() => (showDropdown = !showDropdown)}>
 			Show dropdown
@@ -130,7 +131,8 @@
 			<Button href="/dashboard/logout">Sign Out</Button>
 		</div>
 	</div>
-</Dropdown>`}>
+</Dropdown>`}
+>
 	<Center class="h-full">
 		<Select bind:value={placement}>
 			<Option value="bottom">Bottom</Option>
@@ -150,7 +152,8 @@
 		<button
 			bind:this={userRef}
 			on:click={() => (showUserExample = !showUserExample)}
-			class="flex place-items-center justify-center">
+			class="flex place-items-center justify-center"
+		>
 			<User name={user.name} />
 		</button>
 		<Dropdown anchor={userRef} bind:visible={showUserExample} {placement} class="w-60">
@@ -162,13 +165,15 @@
 				<a
 					href="/dashboard"
 					class="rounded-md px-2 py-2 text-gray-500 hover:text-gray-999
-							hover:dark:text-gray-0 hover:bg-gray-50 dark:hover:bg-gray-950 transition-all">
+							hover:dark:text-gray-0 hover:bg-gray-50 dark:hover:bg-gray-950 transition-all"
+				>
 					Dashboard
 				</a>
 				<a
 					href="/dashboard/settings"
 					class="rounded-md px-2 py-2 text-gray-500 hover:text-gray-999
-							hover:dark:text-gray-0 hover:bg-gray-50 dark:hover:bg-gray-950 transition-all">
+							hover:dark:text-gray-0 hover:bg-gray-50 dark:hover:bg-gray-950 transition-all"
+				>
 					Settings
 				</a>
 				<Spacer h={5} />
@@ -177,7 +182,8 @@
 				<a
 					href="/"
 					class="rounded-md px-2 py-2 text-gray-500 hover:text-gray-999
-							hover:dark:text-gray-0 hover:bg-gray-50 dark:hover:bg-gray-950 transition-all">
+							hover:dark:text-gray-0 hover:bg-gray-50 dark:hover:bg-gray-950 transition-all"
+				>
 					Homepage
 				</a>
 				<Spacer h={5} />
@@ -207,7 +213,8 @@
 	placement="bottom"
 	shadow>
 	This is a dropdown
-</Dropdown>`}>
+</Dropdown>`}
+>
 	<button bind:this={buttonRef2} on:click={() => (showDropdownExample2 = !showDropdownExample2)}>
 		Show dropdown
 	</button>
@@ -216,7 +223,8 @@
 		bind:visible={showDropdownExample2}
 		class="w-32 h-48"
 		placement="bottom"
-		shadow>
+		shadow
+	>
 		This is a dropdown
 	</Dropdown>
 </Playground>
@@ -239,7 +247,8 @@
 	placement="bottom"
 	shadow>
 	This is a dropdown
-</Dropdown>`}>
+</Dropdown>`}
+>
 	<button bind:this={buttonRef3} on:click={() => (showDropdownExample3 = !showDropdownExample3)}>
 		Show dropdown
 	</button>
@@ -247,7 +256,8 @@
 		anchor={buttonRef3}
 		bind:visible={showDropdownExample3}
 		class="w-32 h-48"
-		placement="bottom">
+		placement="bottom"
+	>
 		This is a dropdown
 	</Dropdown>
 </Playground>
@@ -269,7 +279,8 @@
 	class="w-32 h-48" 
 	placement="bottom">
 	This is a dropdown
-</Dropdown>`}>
+</Dropdown>`}
+>
 	<button id="anchor-id"> Show Dropdown </button>
 	<Dropdown anchor="#anchor-id" event="click/click" class="w-32 h-48" placement="bottom">
 		This is a dropdown
@@ -313,7 +324,8 @@
 	class="w-32 h-48"
 	placement="bottom">
 	This is a dropdown
-</Dropdown>`}>
+</Dropdown>`}
+>
 	<button id="click-id"> Click To Show </button>
 	<Dropdown anchor="#click-id" event="click/click" class="w-32 h-48" placement="bottom">
 		This is a dropdown
@@ -344,7 +356,8 @@
 	class="w-32 h-48"
 	animate={false}>
 	This is a dropdown
-</Dropdown>`}>
+</Dropdown>`}
+>
 	<Center>
 		<button id="animate-id"> Click To Show </button>
 		<Dropdown anchor="#animate-id" event="click/click" class="w-32 h-48" animate={false}>
@@ -369,7 +382,8 @@
 	placement="bottom"
 	offset={{ x: 10, y: 10 }}>
 	This is a dropdown
-</Dropdown>`}>
+</Dropdown>`}
+>
 	<Button id="offset-id">
 		{`offset={{ x: 10, y: 10 }}`}
 	</Button>
@@ -378,7 +392,8 @@
 		event="click/click"
 		class="w-32 h-48"
 		placement="bottom"
-		offset={{ x: 10, y: 10 }}>
+		offset={{ x: 10, y: 10 }}
+	>
 		This is a dropdown
 	</Dropdown>
 </Playground>
@@ -387,11 +402,13 @@
 <Spacer h={5} />
 <Text
 	>Sometimes you may want to lock scroll when a popup is open add the <code>`lockScroll`</code> attribute
-	to hide the scrollbar when visible.</Text>
+	to hide the scrollbar when visible.</Text
+>
 <Spacer h={20} />
 <Note color="success"
 	>Remember to use <code>`scrollbar-gutter: stable;`</code> to prevent layout shift when using this
-	feature.</Note>
+	feature.</Note
+>
 <Spacer h={20} />
 <Playground
 	edits={[{ number: 8, type: "add" }]}
@@ -404,7 +421,8 @@
 	offset={{ x: 0, y: 2 }}
 	lockScroll>
 	This is a dropdown
-</Dropdown>`}>
+</Dropdown>`}
+>
 	<Button id="lock-id">Lock my scroll</Button>
 	<Dropdown
 		anchor="#lock-id"
@@ -412,7 +430,8 @@
 		class="w-32 h-48"
 		placement="bottom"
 		offset={{ x: 0, y: 2 }}
-		lockScroll>
+		lockScroll
+	>
 		This is a dropdown
 	</Dropdown>
 </Playground>

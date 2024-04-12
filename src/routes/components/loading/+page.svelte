@@ -20,7 +20,8 @@
 <Loading size="sm"/>
 <Loading size="md"/>
 <Loading size="lg"/>
-<Loading size="xl"/>`}>
+<Loading size="xl"/>`}
+>
 	<Loading size="xs" />
 	<Loading size="sm" />
 	<Loading size="md" />
@@ -35,7 +36,8 @@
 	code={`<Loading />
 <Loading type="success"/>
 <Loading type="warning"/>
-<Loading type="error"/>`}>
+<Loading type="error"/>`}
+>
 	<Loading />
 	<Loading type="success" />
 	<Loading type="warning" />

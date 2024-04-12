@@ -23,7 +23,8 @@
 <Select>
     <Option value={1}>Option 1</Option>
     <Option value={2}>Option 2</Option>
-</Select>`}>
+</Select>`}
+>
 	<div>
 		<Label>Options</Label>
 		<Select>
@@ -46,7 +47,8 @@
         <Option value={1}>Option 1</Option>
         <Option value={2}>Option 2</Option>
     </Select>
-</div>`}>
+</div>`}
+>
 	<div>
 		<Label>Options</Label>
 		<Select>

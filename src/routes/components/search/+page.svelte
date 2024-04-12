@@ -1,8 +1,5 @@
 <script lang="ts">
-	import Code from "$lib/code/Code.svelte";
-	import Details from "$lib/details/Details.svelte";
 	import Playground from "$lib/docs-components/playground/playground.svelte";
-	import FieldSet from "$lib/fieldset/FieldSet.svelte";
 	import Search from "$lib/search/Search.svelte";
 	import Snippet from "$lib/snippet/Snippet.svelte";
 	import Spacer from "$lib/spacer/Spacer.svelte";
@@ -31,7 +28,8 @@
 	code={`<Search 
 	placeholder="Find what you need here" 
 	value={"A better UI library"} 
-	clearable/>`}>
+	clearable/>`}
+>
 	<Search placeholder="Find what you need here" clearable value={"A better UI library"} />
 </Playground>
 <Spacer h={30} />
@@ -63,12 +61,14 @@
 	on:debounce={() => (requestMade = true)} />
 {#if requestMade}
 	Finished
-{/if}`}>
+{/if}`}
+>
 	<Search
 		placeholder="Type something here"
 		on:input={() => (requestMade = false)}
 		debounce={1000}
-		on:debounce={() => (requestMade = true)} />
+		on:debounce={() => (requestMade = true)}
+	/>
 	{#if requestMade}
 		Finished
 	{/if}
@@ -90,13 +90,15 @@
 	bind:loading={loading}/>
 {#if !loading}
 	Results
-{/if}`}>
+{/if}`}
+>
 	<Search
 		placeholder="Type something here"
 		on:input={() => (loading = true)}
 		debounce={1000}
 		on:debounce={() => (loading = false)}
-		bind:loading />
+		bind:loading
+	/>
 	{#if !loading}
 		Results
 	{/if}
