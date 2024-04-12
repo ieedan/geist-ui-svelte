@@ -10,23 +10,20 @@
 			variants: {
 				color: {
 					default: `border-gui-border enabled:hover:bg-gui-component-background-active
-					 data-[a]:hover:bg-gui-component-background-active text-gui-foreground-primary`,
+					data-[a]:hover:bg-gui-component-background-active text-gui-foreground-primary`,
 
 					secondary: `bg-gui-foreground-primary text-gui-background enabled:hover:bg-transparent 
-					enabled:hover:text-gui-foreground-primary enabled:hover:border-gui-foreground-primary data-[a]:hover:bg-transparent 
-					data-[a]:hover:text-gui-foreground-primary data-[a]:hover:border-gui-foreground-primary`,
+					border-gui-foreground-primary enabled:hover:text-gui-foreground-primary data-[a]:hover:bg-transparent
+					data-[a]:hover:text-gui-foreground-primary`,
 
-					success: `bg-gui-success text-white enabled:hover:bg-transparent enabled:hover:border-gui-success 
-					enabled:hover:text-gui-success data-[a]:hover:bg-transparent data-[a]:hover:border-gui-success 
-					data-[a]:hover:text-gui-success`,
-					
-					warning: `bg-gui-warning text-white enabled:hover:bg-transparent enabled:hover:border-gui-warning 
-					enabled:hover:text-gui-warning data-[a]:hover:bg-transparent data-[a]:hover:border-gui-warning 
-					data-[a]:hover:text-gui-warning`,
+					success: `bg-gui-success text-white enabled:hover:bg-transparent border-gui-success 
+					enabled:hover:text-gui-success data-[a]:hover:bg-transparent data-[a]:hover:text-gui-success`,
 
-					error: `bg-gui-error text-white enabled:hover:bg-transparent enabled:hover:border-gui-error 
-					enabled:hover:text-gui-error data-[a]:hover:bg-transparent data-[a]:hover:border-gui-error 
-					data-[a]:hover:text-gui-error`,
+					warning: `bg-gui-warning text-white enabled:hover:bg-transparent border-gui-warning 
+					enabled:hover:text-gui-warning data-[a]:hover:bg-transparent data-[a]:hover:text-gui-warning`,
+
+					error: `bg-gui-error text-white enabled:hover:bg-transparent border-gui-error 
+					enabled:hover:text-gui-error data-[a]:hover:bg-transparent data-[a]:hover:text-gui-error`,
 
 					tab: `border-transparent text-gui-foreground-primary enabled:hover:bg-gui-component-background-active
 					enabled:hover:border-gui-component-background-active data-[a]:hover:bg-gui-component-background-active
@@ -37,19 +34,18 @@
 					"abort-active": `bg-transparent border-transparent text-gui-foreground-secondary 
 					enabled:hover:text-gui-foreground-primary data-[a]:hover:text-gui-foreground-primary`,
 
-					"secondary-light": `border-gui-foreground-primary bg-gui-foreground-primary text-gui-background`,
+					"secondary-light": `border-gui-foreground-primary bg-gui-foreground-primary 
+					text-gui-background enabled:hover:bg-opacity-95 enabled:hover:border-opacity-95
+					data-[a]:hover:bg-opacity-95 data-[a]:hover:border-opacity-95`,
 
-					"success-light": `bg-blue-600 dark:bg-blue-600 text-gray-0 dark:text-gray-0 dark:border-blue-600 border-blue-600 
-					data-[a]:hover:bg-blue-500 enabled:hover:bg-blue-500 data-[a]:hover:border-blue-500 enabled:hover:border-blue-500 
-					data-[a]:hover:dark:border-blue-500 enabled:hover:dark:border-blue-500 data-[a]:hover:dark:bg-blue-500 enabled:hover:dark:bg-blue-500`,
+					"success-light": `bg-gui-success text-white border-gui-success enabled:hover:bg-opacity-95 
+					enabled:hover:border-opacity-95 data-[a]:hover:bg-opacity-95 data-[a]:hover:border-opacity-95`,
 
-					"warning-light": `bg-orange-300 text-gray-0 data-[a]:hover:bg-orange-200 enabled:hover:bg-orange-200 border-orange-300 
-					data-[a]:hover:border-orange-200 enabled:hover:border-orange-200 dark:bg-orange-400 dark:text-gray-0 data-[a]:hover:dark:bg-orange-300 
-					enabled:hover:dark:bg-orange-300 dark:border-orange-400 data-[a]:hover:dark:border-orange-300 enabled:hover:dark:border-orange-300`,
+					"warning-light": `bg-gui-warning text-white border-gui-warning enabled:hover:bg-opacity-95 
+					enabled:hover:border-opacity-95 data-[a]:hover:bg-opacity-95 data-[a]:hover:border-opacity-95`,
 
-					"error-light": `bg-red-500 text-gray-0 border-red-500 data-[a]:hover:bg-red-400 enabled:hover:bg-red-400 data-[a]:hover:border-red-400 
-					enabled:hover:border-red-400 data-[a]:hover:dark:bg-red-500 enabled:hover:dark:bg-red-500 data-[a]:hover:dark:border-red-500 enabled:hover:dark:border-red-500
-					dark:border-red-600 dark:bg-red-600`,
+					"error-light": `bg-gui-error text-white border-gui-error enabled:hover:bg-opacity-95 
+					enabled:hover:border-opacity-95 data-[a]:hover:bg-opacity-95 data-[a]:hover:border-opacity-95`,
 				},
 				ghost: {
 					true: "",
@@ -97,66 +93,52 @@
 				{
 					color: "secondary",
 					ghost: true,
-					class: `bg-gray-0 text-gray-999 data-[a]:hover:bg-gray-999 enabled:hover:bg-gray-999 data-[a]:hover:text-gray-0 enabled:hover:text-gray-0 
-					dark:bg-gray-999 dark:text-gray-0 data-[a]:hover:dark:bg-gray-0 enabled:hover:dark:bg-gray-0 data-[a]:hover:dark:text-gray-999 enabled:hover:dark:text-gray-999`,
+					class: `text-gui-foreground-primary bg-transparent enabled:hover:bg-gui-foreground-primary 
+					border-gui-foreground-primary enabled:hover:text-gui-background data-[a]:hover:bg-gui-foreground-primary
+					data-[a]:hover:text-gui-background`,
 				},
 				{
 					color: "success",
 					ghost: true,
-					class: `bg-gray-0 text-blue-600 border-blue-600 data-[a]:hover:bg-blue-600 enabled:hover:bg-blue-600 data-[a]:hover:text-gray-0 enabled:hover:text-gray-0
-					dark:text-blue-600 dark:border-blue-600 data-[a]:hover:dark:bg-blue-600 enabled:hover:dark:bg-blue-600 data-[a]:hover:dark:text-gray-0 
-					enabled:hover:dark:text-gray-0 dark:bg-gray-999`,
+					class: `bg-transparent text-gui-success enabled:hover:bg-gui-success border-gui-success 
+					enabled:hover:text-white data-[a]:hover:bg-gui-success data-[a]:hover:text-white`,
 				},
 				{
 					color: "warning",
 					ghost: true,
-					class: `bg-gray-0 text-orange-300 data-[a]:hover:text-gray-0 enabled:hover:text-gray-0 data-[a]:hover:bg-orange-300 enabled:hover:bg-orange-300
-				  dark:bg-gray-999 dark:text-orange-400 data-[a]:hover:dark:text-gray-0 enabled:hover:dark:text-gray-0 data-[a]:hover:dark:bg-orange-400 enabled:hover:dark:bg-orange-400`,
+					class: `bg-transparent text-gui-warning enabled:hover:bg-gui-warning border-gui-warning 
+					enabled:hover:text-white data-[a]:hover:bg-gui-warning data-[a]:hover:text-white`,
 				},
 				{
 					color: "error",
 					ghost: true,
-					class: `bg-gray-0 text-red-500 data-[a]:hover:text-gray-0 enabled:hover:text-gray-0 border-red-500 data-[a]:hover:bg-red-500 
-				  enabled:hover:bg-red-500 dark:bg-gray-999 data-[a]:hover:dark:bg-red-600 enabled:hover:dark:bg-red-600
-				  dark:text-red-600 dark:border-red-600`,
-				},
-				{
-					color: "abort",
-					ghost: true,
-					class: "bg-transparent dark:bg-transparent border-transparent text-gray-400 dark:text-gray-600",
-				},
-
-				{
-					color: "abort-active",
-					ghost: true,
-					class: `bg-transparent dark:bg-transparent border-transparent data-[a]:hover:dark:text-gray-0 enabled:hover:dark:text-gray-0
-				  text-gray-400 dark:text-gray-600 data-[a]:hover:text-gray-999 enabled:hover:text-gray-999`,
+					class: `bg-gui-transparent text-gui-error enabled:hover:bg-gui-error border-gui-error 
+					enabled:hover:text-white data-[a]:hover:bg-gui-error data-[a]:hover:text-white`,
 				},
 				{
 					color: "secondary-light",
 					ghost: true,
-					class: `bg-gray-0 text-gray-999 data-[a]:hover:bg-gray-999 enabled:hover:bg-gray-999 data-[a]:hover:text-gray-0 enabled:hover:text-gray-0 
-					dark:bg-gray-999 dark:text-gray-0 data-[a]:hover:dark:bg-gray-0 enabled:hover:dark:bg-gray-0 data-[a]:hover:dark:text-gray-999 enabled:hover:dark:text-gray-999`,
+					class: `text-gui-foreground-primary bg-transparent enabled:hover:bg-gui-foreground-primary
+					border-gui-foreground-primary enabled:hover:text-gui-background data-[a]:hover:bg-gui-foreground-primary 
+					data-[a]:hover:text-gui-background`,
 				},
 				{
 					color: "success-light",
 					ghost: true,
-					class: `bg-gray-0 text-blue-600 border-blue-600 data-[a]:hover:bg-blue-600 enabled:hover:bg-blue-600 data-[a]:hover:text-gray-0 enabled:hover:text-gray-0
-					dark:text-blue-600 dark:border-blue-600 data-[a]:hover:dark:bg-blue-600 enabled:hover:dark:bg-blue-600 data-[a]:hover:dark:text-gray-0 
-					enabled:hover:dark:text-gray-0 dark:bg-gray-999`,
+					class: `bg-transparent text-gui-success enabled:hover:bg-gui-success border-gui-success 
+					enabled:hover:text-white data-[a]:hover:bg-gui-success data-[a]:hover:text-white`,
 				},
 				{
 					color: "warning-light",
 					ghost: true,
-					class: `bg-gray-0 text-orange-300 data-[a]:hover:text-gray-0 enabled:hover:text-gray-0 data-[a]:hover:bg-orange-300 enabled:hover:bg-orange-300
-				    dark:bg-gray-999 dark:text-orange-400 data-[a]:hover:dark:text-gray-0 enabled:hover:dark:text-gray-0 data-[a]:hover:dark:bg-orange-400 enabled:hover:dark:bg-orange-400`,
+					class: `bg-transparent text-gui-warning enabled:hover:bg-gui-warning border-gui-warning 
+					enabled:hover:text-white data-[a]:hover:bg-gui-warning data-[a]:hover:text-white`,
 				},
 				{
 					color: "error-light",
 					ghost: true,
-					class: `bg-gray-0 text-red-500 data-[a]:hover:text-gray-0 enabled:hover:text-gray-0 border-red-500 data-[a]:hover:bg-red-500 
-				  enabled:hover:bg-red-500 dark:bg-gray-999 data-[a]:hover:dark:bg-red-600 enabled:hover:dark:bg-red-600
-				  dark:text-red-600 dark:border-red-600`,
+					class: `bg-gui-transparent text-gui-error enabled:hover:bg-gui-error border-gui-error 
+					enabled:hover:text-white data-[a]:hover:bg-gui-error data-[a]:hover:text-white`,
 				},
 				{
 					square: true,
@@ -186,7 +168,7 @@
 				{
 					disabled: true,
 					loading: false,
-					class: "dark:border-gray-900 dark:bg-gray-925 dark:text-gray-700 cursor-not-allowed border-gray-100 bg-gray-50 text-gray-300",
+					class: "hover:cursor-not-allowed bg-gui-component-background-hover text-gui-foreground-muted border-gui-border",
 				},
 			],
 		},
@@ -225,8 +207,7 @@
 		on:mouseleave
 		data-a
 		style="width: {width};"
-		class={cn(style({ color, disabled, loading, ghost, size, square, align }), className)}
-	>
+		class={cn(style({ color, disabled, loading, ghost, size, square, align }), className)}>
 		{#if loading}
 			<Loading size="sm" />
 		{:else}
@@ -249,18 +230,15 @@
 		on:mouseleave
 		disabled={disabled || loading}
 		style="width: {width};"
-		class={cn(style({ color, disabled, loading, ghost, size, square, align }), className)}
-	>
+		class={cn(style({ color, disabled, loading, ghost, size, square, align }), className)}>
 		{#if loading}
 			<Loading
 				size="sm"
-				class="absolute left-1/2 top-1/2 -translate-y-1/2 -translate-x-1/2"
-			/>
+				class="absolute left-1/2 top-1/2 -translate-y-1/2 -translate-x-1/2" />
 		{/if}
 		<div
 			data-loading={loading}
-			class="data-[loading=true]:opacity-0 flex place-items-center justify-center"
-		>
+			class="data-[loading=true]:opacity-0 flex place-items-center justify-center">
 			<slot />
 		</div>
 	</button>

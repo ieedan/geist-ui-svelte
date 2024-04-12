@@ -185,9 +185,9 @@
 <Spacer h={10} />
 <Playground
 	code={`<Text color="success"><SvelteIcon size={24}/></Text>
-	<Text color="warning"><SvelteIcon size={24}/></Text>
-	<Text color="error"><SvelteIcon size={24}/></Text>
-	<Text color="abort"><SvelteIcon size={24}/></Text>`}
+<Text color="warning"><SvelteIcon size={24}/></Text>
+<Text color="error"><SvelteIcon size={24}/></Text>
+<Text color="abort"><SvelteIcon size={24}/></Text>`}
 >
 	<div class="flex place-items-end gap-1">
 		<Text color="success"><SvelteIcon size={24} /></Text>
