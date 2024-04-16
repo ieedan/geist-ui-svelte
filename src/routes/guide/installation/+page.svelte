@@ -89,7 +89,10 @@
 		]}
 		code={`/** @type {import('tailwindcss').Config}*/
 const config = {
-  content: ["./src/**/*.{html,js,svelte,ts}"],
+  content: [
+	"./src/**/*.{html,js,svelte,ts}",
+	"./node_modules/geist-ui-svelte/**/*.{html,js,svelte,ts}",
+  ],
   theme: {
 		extend: {
 			colors: {
