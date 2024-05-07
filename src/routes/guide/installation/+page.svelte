@@ -71,7 +71,8 @@
 <Snippet
 	width="550px"
 	text={[`${packageManager} create svelte@latest my-project`, "cd my-project"]}
-	type="transparent" />
+	type="transparent"
+/>
 <Spacer h={20} />
 <Text>Setup TailwindCSS</Text>
 <Spacer h={10} />
@@ -84,7 +85,7 @@
 		lang="svelte"
 		edits={[
 			{ start: 3, end: 28, type: "add" },
-			{ number: 30, type: "add" }
+			{ number: 30, type: "add" },
 		]}
 		code={`/** @type {import('tailwindcss').Config}*/
 const config = {
@@ -118,7 +119,8 @@ const config = {
   darkMode: "class",
 };
 
-module.exports = config;`} />
+module.exports = config;`}
+	/>
 </Card>
 <Spacer h={20} />
 <Text>Install geist-ui-svelte</Text>
@@ -144,7 +146,8 @@ module.exports = config;`} />
 			{ number: 3, type: "add" },
 			{ number: 6, type: "add" },
 		]}
-		code={darkModeExample} />
+		code={darkModeExample}
+	/>
 </Card>
 <Spacer h={20} />
 <Text>
