@@ -88,7 +88,7 @@
 		<Spacer h={10}/>
 	</div>
 </FieldSet>
-<FieldSet color="secondary">
+<FieldSet color="transparent">
 	<div class="py-2">
 		<Spacer h={10}/>
 	</div>
