@@ -13,6 +13,8 @@
 	let secondExamplePage = false;
 	let thirdExamplePage = false;
 	let fourthExamplePage = false;
+	let fifthExamplePage = false;
+	let centered = true;
 </script>
 
 <Text type="h3">Hero</Text>
@@ -25,10 +27,10 @@
 <Spacer h={20} />
 <Text type="h4">Basic</Text>
 <Spacer h={5} />
-<Text
-	>Automatically centers content on the screen and takes up the entire page <code>`100svh`</code
-	>.</Text
->
+<Text>
+	Automatically centers content on the screen and takes up the entire page
+	<code>`100svh`</code>.
+</Text>
 <Spacer h={10} />
 <Playground
 	code={`<Hero>
@@ -38,8 +40,7 @@
 		<Button color="secondary-light">Get Started</Button>
 		<Button>Components</Button>
 	</div>
-</Hero>`}
->
+</Hero>`}>
 	<Button on:click={() => (firstExamplePage = true)}>Show Example</Button>
 	<Page bind:visible={firstExamplePage}>
 		<div class="max-h-screen overflow-y-auto">
@@ -52,8 +53,7 @@
 				</div>
 				<Spacer h={150} />
 				<Button on:click={() => (firstExamplePage = false)}
-					>Click here to close or press `Escape`</Button
-				>
+					>Click here to close or press `Escape`</Button>
 			</Hero>
 		</div>
 	</Page>
@@ -71,8 +71,7 @@
 		<Button color="secondary-light">Get Started</Button>
 		<Button>Components</Button>
 	</div>
-</Hero>`}
->
+</Hero>`}>
 	<Button on:click={() => (secondExamplePage = true)}>Show Example</Button>
 	<Page bind:visible={secondExamplePage}>
 		<div class="max-h-screen overflow-y-auto">
@@ -85,8 +84,7 @@
 				</div>
 				<Spacer h={150} />
 				<Button on:click={() => (secondExamplePage = false)}
-					>Click here to close or press `Escape`</Button
-				>
+					>Click here to close or press `Escape`</Button>
 			</Hero>
 		</div>
 	</Page>
@@ -117,8 +115,7 @@
 	<Button on:click={() => (thirdExamplePage = false)}
 		>Click here to close or press \`Escape\`</Button
 		>
-</Hero>`}
->
+</Hero>`}>
 	<Button on:click={() => (thirdExamplePage = true)}>Show Example</Button>
 	<Page bind:visible={thirdExamplePage}>
 		<div class="max-h-screen overflow-y-auto">
@@ -138,8 +135,7 @@
 				</div>
 				<Spacer h={150} />
 				<Button on:click={() => (thirdExamplePage = false)}
-					>Click here to close or press `Escape`</Button
-				>
+					>Click here to close or press `Escape`</Button>
 			</Hero>
 		</div>
 	</Page>
@@ -149,8 +145,7 @@
 <Spacer h={5} />
 <Text>
 	Sometimes you want your hero section to account for a header use the <code
-		>`exclusionHeight`</code
-	>
+		>`exclusionHeight`</code>
 	to calculate the height of the header and subtract it from the 100svh. This can also be useful if
 	you have footers or other content that should take space from the hero section.
 </Text>
@@ -175,8 +170,7 @@
 	<Spacer h={150} />
 	<Button on:click={() => (fourthExamplePage = false)}
 		>Click here to close or press \`Escape\`</Button>
-</Hero>`}
->
+</Hero>`}>
 	<Button on:click={() => (fourthExamplePage = true)}>Show Example</Button>
 	<Page bind:visible={fourthExamplePage}>
 		<div class="max-h-screen overflow-y-auto">
@@ -195,8 +189,51 @@
 				</div>
 				<Spacer h={150} />
 				<Button on:click={() => (fourthExamplePage = false)}
-					>Click here to close or press `Escape`</Button
-				>
+					>Click here to close or press `Escape`</Button>
+			</Hero>
+		</div>
+	</Page>
+</Playground>
+<Spacer h={30} />
+<Text type="h4">True Center</Text>
+<Spacer h={5} />
+<Text>
+	When using Hero sometimes you want the content to be at the center of the screen not the center
+	of the hero. In this case use the <code>`trueCenter`</code> property to add a spacer at the bottom
+	of the Hero pushing the content to the screen true center.
+</Text>
+<Spacer h={10} />
+<Playground
+	code={`<Header sticky>
+	<div class="flex place-items-center justify-between w-full px-6 max-w-5xl">
+		<Text type="h5">geist-ui-svelte</Text>
+		<Button on:click={() => (fifthExamplePage = false)}>
+			Click to close
+		</Button>
+	</div>
+</Header>
+<Hero exclusionHeight={53} trueCenter={centered}>
+	<Text align="center" type="h1">Centered</Text>
+	<Button on:click={() => centered = !centered}>
+		Toggle Centered
+	</Button>
+</Hero>`}>
+	<Button on:click={() => (fifthExamplePage = true)}>Show Example</Button>
+	<Page bind:visible={fifthExamplePage}>
+		<div class="max-h-screen overflow-y-auto">
+			<Header sticky>
+				<div class="flex place-items-center justify-between w-full px-6 max-w-5xl">
+					<Text type="h5">geist-ui-svelte</Text>
+					<Button on:click={() => (fifthExamplePage = false)}>
+						Click to close
+					</Button>
+				</div>
+			</Header>
+			<Hero exclusionHeight={53} trueCenter={centered}>
+				<Text align="center" type="h1">Centered</Text>
+				<Button on:click={() => centered = !centered}>
+					Toggle Centered
+				</Button>
 			</Hero>
 		</div>
 	</Page>
