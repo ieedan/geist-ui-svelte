@@ -1,10 +1,13 @@
 <script lang="ts">
+	import Spacer from "$lib/spacer/Spacer.svelte";
+
 	export let type: "default" | "secondary" = "default";
 
 	let className: string = "";
 	export { className as class };
 	/** Set this attribute to have this height subtracted from the hero height */
 	export let exclusionHeight = 0;
+	export let trueCenter = false;
 </script>
 
 <section
@@ -16,6 +19,9 @@
 	 data-[type='secondary']:dark:bg-gray-950 {className}"
 >
 	<slot />
+	{#if trueCenter}
+		<Spacer h={exclusionHeight} />
+	{/if}
 </section>
 
 <!--
