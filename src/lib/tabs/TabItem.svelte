@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { goto } from "$app/navigation";
 	import { page } from "$app/stores";
 	import { createEventDispatcher } from "svelte";
 
@@ -66,7 +65,8 @@
 		on:click={select}
 		{disabled}
 		role="tab"
-		aria-selected={selected}>
+		aria-selected={selected}
+	>
 		<slot />
 	</button>
 {:else}
@@ -78,7 +78,8 @@
 		class="z-[1] flex place-items-center justify-center px-3 py-3 text-sm text-gray-500
 	transition-all hover:text-black data-[active=true]:text-black dark:text-gray-500 aria-disabled:hover:cursor-not-allowed
 	aria-disabled:!text-gray-300 aria-disabled:dark:!text-gray-700 dark:data-[active=true]:text-white
-	dark:data-[active=false]:hover:text-white text-nowrap outline-none focus:outline-none">
+	dark:data-[active=false]:hover:text-white text-nowrap outline-none focus:outline-none"
+	>
 		<slot />
 	</a>
 {/if}
