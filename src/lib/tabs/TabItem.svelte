@@ -11,11 +11,15 @@
 	export let disabled: boolean = false;
 	export let activeForSubdirectories = true;
 
+	$: isHash = href ? href.startsWith("#") : false;
+
 	$: to = href ? trimLink(href) : null;
 
 	$: active =
 		href === $page.url.pathname ||
-		(activeForSubdirectories && $page.url.pathname.startsWith(href ?? ""));
+		(activeForSubdirectories && $page.url.pathname.startsWith(href ?? "")) ||
+		(isHash &&
+			($page.url.hash == href || ((href == "#" || href == "#/") && $page.url.hash == "")));
 
 	const trimLink = (link: string) => {
 		if (link[link.length - 1] == "/") {
@@ -47,11 +51,7 @@
 	};
 
 	const clicked = (e: MouseEvent) => {
-		const target = e.target as HTMLAnchorElement;
-
-		if (disabled) return;
-
-		goto(target.href);
+		if (disabled) e.preventDefault();
 	};
 </script>
 
@@ -66,21 +66,19 @@
 		on:click={select}
 		{disabled}
 		role="tab"
-		aria-selected={selected}
-	>
+		aria-selected={selected}>
 		<slot />
 	</button>
 {:else}
 	<a
 		{href}
-		on:click|preventDefault={clicked}
+		on:click={clicked}
 		data-active={active}
 		aria-disabled={disabled}
 		class="z-[1] flex place-items-center justify-center px-3 py-3 text-sm text-gray-500
 	transition-all hover:text-black data-[active=true]:text-black dark:text-gray-500 aria-disabled:hover:cursor-not-allowed
 	aria-disabled:!text-gray-300 aria-disabled:dark:!text-gray-700 dark:data-[active=true]:text-white
-	dark:data-[active=false]:hover:text-white text-nowrap outline-none focus:outline-none"
-	>
+	dark:data-[active=false]:hover:text-white text-nowrap outline-none focus:outline-none">
 		<slot />
 	</a>
 {/if}
