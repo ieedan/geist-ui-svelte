@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { goto } from "$app/navigation";
 	import { page } from "$app/stores";
 	import { createEventDispatcher } from "svelte";
 
@@ -11,11 +10,15 @@
 	export let disabled: boolean = false;
 	export let activeForSubdirectories = true;
 
+	$: isHash = href ? href.startsWith("#") : false;
+
 	$: to = href ? trimLink(href) : null;
 
 	$: active =
 		href === $page.url.pathname ||
-		(activeForSubdirectories && $page.url.pathname.startsWith(href ?? ""));
+		(activeForSubdirectories && $page.url.pathname.startsWith(href ?? "")) ||
+		(isHash &&
+			($page.url.hash == href || ((href == "#" || href == "#/") && $page.url.hash == "")));
 
 	const trimLink = (link: string) => {
 		if (link[link.length - 1] == "/") {
@@ -47,11 +50,7 @@
 	};
 
 	const clicked = (e: MouseEvent) => {
-		const target = e.target as HTMLAnchorElement;
-
-		if (disabled) return;
-
-		goto(target.href);
+		if (disabled) e.preventDefault();
 	};
 </script>
 
@@ -73,7 +72,7 @@
 {:else}
 	<a
 		{href}
-		on:click|preventDefault={clicked}
+		on:click={clicked}
 		data-active={active}
 		aria-disabled={disabled}
 		class="z-[1] flex place-items-center justify-center px-3 py-3 text-sm text-gray-500

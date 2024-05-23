@@ -7,6 +7,7 @@
 	import GithubIcon from "$lib/icons/GithubIcon.svelte";
 	import SvelteIcon from "$lib/icons/SvelteIcon.svelte";
 	import Playground from "$lib/docs-components/playground/playground.svelte";
+	import { page } from "$app/stores";
 </script>
 
 <Text type="h3">Tabs</Text>
@@ -165,4 +166,49 @@
 		<TabItem href="/components/badge">Badge</TabItem>
 		<TabItem href="/components/avatar">Avatar</TabItem>
 	</Tabs>
+</Playground>
+<Spacer h={30} />
+<Text type="h4">Using <Text serif>`#`</Text></Text>
+<Spacer h={5} />
+<Text>
+	Tabs pattern matching is made so that its easy to use <code>`#`</code> this allows you to maintain
+	your tab state even through refresh.
+</Text>
+<Spacer h={10} />
+<Playground
+	code={`<Tabs>
+	<!-- 
+		You can use '#/' to prevent scroll 
+		while still being the default tab 
+	-->
+	<TabItem href="#/">Materials</TabItem>
+	<TabItem href="#assignees">Assignees</TabItem>
+	<TabItem href="#time-logs">Time Logs</TabItem>
+	<TabItem href="#scheduling" disabled>Scheduling</TabItem>
+</Tabs>
+{#if $page.url.hash == '#/' || $page.url.hash == ""}
+	materials
+{:else if $page.url.hash == '#assignees'}
+	assignees
+{:else if $page.url.hash == '#time-logs'}
+	time logs
+{:else if $page.url.hash == '#scheduling'}
+	scheduling
+{/if}`}
+>
+	<Tabs>
+		<TabItem href="#/">Materials</TabItem>
+		<TabItem href="#assignees">Assignees</TabItem>
+		<TabItem href="#time-logs">Time Logs</TabItem>
+		<TabItem href="#scheduling" disabled>Scheduling</TabItem>
+	</Tabs>
+	{#if $page.url.hash == "#/" || $page.url.hash == ""}
+		materials
+	{:else if $page.url.hash == "#assignees"}
+		assignees
+	{:else if $page.url.hash == "#time-logs"}
+		time logs
+	{:else if $page.url.hash == "#scheduling"}
+		scheduling
+	{/if}
 </Playground>
