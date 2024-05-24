@@ -278,6 +278,43 @@
 			e.preventDefault();
 			searchEnter();
 		}
+
+		if (show && /^[a-zA-Z]{1,1}$/.test(e.key)) {
+			findByCharacter(e.key);
+		}
+	};
+
+	const findByCharacter = (char: string) => {
+		const options = Array.from(dropDownRef.children);
+
+		let hasSelected = false;
+
+		for (let i = 0; i < options.length; i++) {
+			const option = options[i] as HTMLElement;
+			if (option.tagName == "BUTTON" && option.hasAttribute("data-value")) {
+				const child = findChild(option, (a) =>
+					a.hasAttribute("data-html"),
+				) as HTMLDivElement;
+				if (child.innerText[0].toLowerCase() == char.toLowerCase() && !hasSelected) {
+					selectedIndex = i;
+					hasSelected = true;
+					option.setAttribute("data-focused", "true");
+					const top = dropDownRef.offsetHeight + dropDownRef.scrollTop;
+					const elementBottom = option.offsetHeight + option.offsetTop;
+					if (top < elementBottom) {
+						const scrollTop = elementBottom + 8 - dropDownRef.offsetHeight;
+						dropDownRef.scrollTop = scrollTop;
+					}
+
+					if (top - option.offsetTop + 110 > dropDownRef.offsetHeight) {
+						const scrollTop = option.offsetTop - dropDownRef.offsetHeight / 2;
+						dropDownRef.scrollTop = scrollTop;
+					}
+				} else {
+					option.setAttribute("data-focused", "false");
+				}
+			}
+		}
 	};
 
 	let selectedIndex = 0;
