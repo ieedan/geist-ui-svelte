@@ -56,6 +56,8 @@
 		content: string;
 	};
 
+	const CHILD_TAG_NAME = "BUTTON";
+
 	// Should not run before mounting so values don't get wiped out
 	$: if (!preMount) {
 		// Assigns the value and content display
@@ -85,8 +87,12 @@
 		}
 	}
 
-	const toggleShow = () => {
-		show = !show;
+	const toggleShow = (state: boolean | undefined = undefined) => {
+		if (state == undefined) {
+			show = !show;
+		} else {
+			show = state;
+		}
 	};
 
 	$: {
@@ -138,7 +144,7 @@
 	const selected = (e: MouseEvent) => {
 		if (readonly) return;
 		const target = findAncestor(e.target as Node, (a) => {
-			return a?.tagName == "BUTTON" && a?.hasAttribute("data-value");
+			return a?.tagName == CHILD_TAG_NAME && a?.hasAttribute("data-value");
 		});
 
 		if (!target) return;
@@ -176,7 +182,7 @@
 			// Clear all other options
 			const options = Array.from(dropDownRef.children);
 			options.forEach((a) => {
-				if (a.tagName == "BUTTON" && a.hasAttribute("data-value")) {
+				if (a.tagName == CHILD_TAG_NAME && a.hasAttribute("data-value")) {
 					a.setAttribute("aria-selected", "false");
 				}
 			});
@@ -248,7 +254,7 @@
 		const children = Array.from(dropDownRef.children);
 		for (let i = 0; i < children.length; i++) {
 			const child = children[i] as HTMLElement;
-			if (child.tagName == "BUTTON" && child.hasAttribute("data-value")) {
+			if (child.tagName == CHILD_TAG_NAME && child.hasAttribute("data-value")) {
 				selectOption(child);
 				break;
 			}
@@ -259,7 +265,7 @@
 		const children = Array.from(dropDownRef.children);
 		for (let i = 0; i < children.length; i++) {
 			const child = children[i] as HTMLElement;
-			if (child.tagName != "BUTTON" || !child.hasAttribute("data-value")) continue;
+			if (child.tagName != CHILD_TAG_NAME || !child.hasAttribute("data-value")) continue;
 			const v = child.getAttribute("data-value");
 
 			if (v == val) return child;
@@ -274,7 +280,7 @@
 			navigate(e.key == "ArrowUp");
 		}
 
-		if (e.key == "Enter" && show) {
+		if (e.key == "Enter" && show && !disabled && !readonly) {
 			e.preventDefault();
 			searchEnter();
 		}
@@ -291,7 +297,7 @@
 
 		for (let i = 0; i < options.length; i++) {
 			const option = options[i] as HTMLElement;
-			if (option.tagName == "BUTTON" && option.hasAttribute("data-value")) {
+			if (option.tagName == CHILD_TAG_NAME && option.hasAttribute("data-value")) {
 				const child = findChild(option, (a) =>
 					a.hasAttribute("data-html"),
 				) as HTMLDivElement;
@@ -465,7 +471,7 @@
 
 <button
 	type="button"
-	on:click={toggleShow}
+	on:click={() => toggleShow()}
 	bind:this={buttonRef}
 	style="width: {width};"
 	{disabled}
