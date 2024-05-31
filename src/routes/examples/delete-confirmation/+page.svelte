@@ -73,13 +73,13 @@
 		<Spacer h={20} />
 		<Divider />
 		<Spacer h={15} />
-		<Input width="100%">
-			Enter the project name <Text type="small" b>ieedan/echo-chamber</Text> to continue:
+		<Input width="100%" required>
+			*Enter the project name <Text type="small" b>ieedan/echo-chamber</Text> to continue:
 		</Input>
 		<Spacer h={15} />
 		<Spacer h={5} />
-		<Input width="100%">
-			To verify, type <Text type="small" b>delete my project</Text> below:
+		<Input width="100%" required>
+			*To verify, type <Text type="small" b>delete my project</Text> below:
 		</Input>
 		<Spacer h={15} />
 		<Divider />
@@ -143,13 +143,13 @@
         <Spacer h={20} />
         <Divider />
         <Spacer h={15} />
-        <Input width="100%">
-            Enter the project name <Text type="small" b>ieedan/echo-chamber</Text> to continue:
+        <Input width="100%" required>
+            *Enter the project name <Text type="small" b>ieedan/echo-chamber</Text> to continue:
         </Input>
         <Spacer h={15} />
         <Spacer h={5} />
-        <Input width="100%">
-            To verify, type <Text type="small" b>delete my project</Text> below:
+        <Input width="100%" required>
+            *To verify, type <Text type="small" b>delete my project</Text> below:
         </Input>
         <Spacer h={15} />
         <Divider />

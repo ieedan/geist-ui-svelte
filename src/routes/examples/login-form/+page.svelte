@@ -30,12 +30,12 @@
 			on:submit|preventDefault
 			class="flex-grow w-full flex flex-col place-items-start justify-center"
 		>
-			<Input type="email" placeholder="Email" width="100%">
-				<Text type="small" color="secondary">Email</Text>
+			<Input type="email" placeholder="Email" width="100%" required>
+				<Text type="small" color="secondary">Email*</Text>
 			</Input>
 			<Spacer h={5} />
-			<Input type="password" placeholder="Password" width="100%">
-				<Text type="small" color="secondary">Password</Text>
+			<Input type="password" placeholder="Password" width="100%" required>
+				<Text type="small" color="secondary">Password*</Text>
 			</Input>
 			<Spacer h={15} />
 			<div class="flex place-items-center justify-between w-full">
@@ -101,12 +101,12 @@
         action=""
         on:submit|preventDefault
         class="flex-grow w-full flex flex-col place-items-start justify-center">
-        <Input type="email" placeholder="Email" width="100%">
-            <Text type="small" color="secondary">Email</Text>
+        <Input type="email" placeholder="Email" width="100%" required>
+            <Text type="small" color="secondary">Email*</Text>
         </Input>
         <Spacer h={5} />
-        <Input type="password" placeholder="Password" width="100%">
-            <Text type="small" color="secondary">Password</Text>
+        <Input type="password" placeholder="Password" width="100%" required>
+            <Text type="small" color="secondary">Password*</Text>
         </Input>
         <Spacer h={15} />
         <div class="flex place-items-center justify-between w-full">
