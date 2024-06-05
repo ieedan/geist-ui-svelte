@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { page } from "$app/stores";
-	import { createEventDispatcher } from "svelte";
+	import { createEventDispatcher, onMount } from "svelte";
 
 	const dispatch = createEventDispatcher();
 
@@ -9,6 +9,7 @@
 	let selected: boolean = initialSelected;
 	export let disabled: boolean = false;
 	export let activeForSubdirectories = true;
+	let ref: HTMLElement;
 
 	$: isHash = href ? href.startsWith("#") : false;
 
@@ -57,6 +58,7 @@
 {#if to == undefined}
 	<button
 		type="button"
+		bind:this={ref}
 		class="z-[1] flex place-items-center justify-center px-3 py-3 text-sm text-gray-500
 		transition-all hover:text-black aria-selected:text-black
 		dark:text-gray-500 outline-none focus:outline-none
@@ -72,6 +74,7 @@
 {:else}
 	<a
 		{href}
+		bind:this={ref}
 		on:click={clicked}
 		data-active={active}
 		aria-disabled={disabled}
