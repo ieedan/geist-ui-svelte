@@ -32,6 +32,7 @@
 	};
 
 	const scroll = () => {
+		if (!lastElement) return;
 		hoverBackgroundRef.style.top = elementRef.offsetTop + 4 + "px";
 		hoverBackgroundRef.style.height = lastElement.offsetHeight - 8 + "px";
 		hoverBackgroundRef.style.width = lastElement.offsetWidth + "px";
@@ -83,6 +84,19 @@
 		if (node.tagName != "BUTTON" && !fromPage) return;
 		selectedBorder.style.top = elementRef.offsetTop + node.offsetHeight - 2 + "px";
 		selectedBorder.style.width = node.offsetWidth + "px";
+
+		// the max horizontal view window
+		const viewTop = elementRef.scrollLeft + elementRef.offsetWidth;
+		// the min horizontal view window
+		const viewBottom = elementRef.scrollLeft;
+
+		// if not fully in view scroll into view
+		if (
+			!fromPage &&
+			(viewBottom > node.offsetLeft || viewTop < node.offsetLeft + node.offsetWidth)
+		) {
+			elementRef.scrollTo({ left: node.offsetLeft });
+		}
 
 		const scrollLeft = elementRef.scrollLeft;
 		let offset = node.offsetLeft - scrollLeft;

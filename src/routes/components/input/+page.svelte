@@ -6,6 +6,7 @@
 	import Note from "$lib/note/Note.svelte";
 	import SearchIcon from "$lib/icons/SearchIcon.svelte";
 	import Playground from "$lib/docs-components/playground/playground.svelte";
+	import Button from "$lib/button/Button.svelte";
 
 	let debounced = true;
 </script>
@@ -137,16 +138,32 @@
 <Text>Add a label to the input using the <code>`{"<slot/>"}`</code></Text>
 <Spacer h={10} />
 <Playground
-	code={`<Input type="email" placeholder="Email" width="250px">
+	code={`<Input 
+	type="email" 
+	placeholder="Email" 
+	width="250px" 
+	required>
+	Username
+</Input>
+<Input 
+	type="email" 
+	placeholder="Email" 
+	width="250px" 
+	required>
 	Email
 </Input>
-<Input type="password" placeholder="Password" width="250px">
+<Input 
+	type="password" 
+	placeholder="Password" 
+	width="250px" 
+	required>
 	Password
 </Input>`}
 	class="gap-2"
 >
-	<Input type="email" placeholder="Email" width="250px">Email</Input>
-	<Input type="password" placeholder="Password" width="250px">Password</Input>
+	<Input type="email" placeholder="Email" width="250px" required>Username</Input>
+	<Input type="email" placeholder="Email" width="250px" required>Email</Input>
+	<Input type="password" placeholder="Password" width="250px" required>Password</Input>
 </Playground>
 <Spacer h={30} />
 <Text type="h4">No Border</Text>
@@ -243,4 +260,42 @@ noBorder
 		<SearchIcon slot="icon" size={16} />
 		<SearchIcon slot="iconEnd" size={16} />
 	</Input>
+</Playground>
+<Spacer h={30} />
+<Text type="h4">Forms</Text>
+<Spacer h={5} />
+<Text>Inputs also play nice with forms.</Text>
+<Spacer h={10} />
+<Playground
+	code={`<form on:submit|preventDefault class="flex flex-col gap-2">
+	<Input label="@" width="250px" name="username" required placeholder="john.doe">
+		Username
+	</Input>
+	<Input type="email" width="250px" name="email" required placeholder="john.doe@example.com">
+		Email
+	</Input>
+	<Input type="tel" width="250px" name="phone-number" placeholder="+12104444444">
+		Phone Number
+	</Input>
+	<Input type="password" width="250px" name="password" placeholder="Your password" required>Password</Input>
+	<Button type="submit" color="secondary-light">
+		Submit
+	</Button>
+</form>`}
+>
+	<form on:submit|preventDefault class="flex flex-col gap-2">
+		<Input label="@" width="250px" name="username" required placeholder="john.doe">
+			Username
+		</Input>
+		<Input type="email" width="250px" name="email" required placeholder="john.doe@example.com">
+			Email
+		</Input>
+		<Input type="tel" width="250px" name="phone-number" placeholder="+12104444444">
+			Phone Number
+		</Input>
+		<Input type="password" width="250px" name="password" placeholder="Your password" required
+			>Password</Input
+		>
+		<Button type="submit" color="secondary-light">Submit</Button>
+	</form>
 </Playground>

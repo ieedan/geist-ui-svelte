@@ -34,23 +34,35 @@
 	</div>
 </Playground>
 <Spacer h={30} />
-<Text type="h4">With spacing</Text>
+<Text type="h4">Required Fields</Text>
 <Spacer h={5} />
-<Text>The first example works but it doesn't look the best lets add some spacing.</Text>
+<Text
+	>Sometimes you want to indicate to your users that a field is required you can do this with the <code
+		>`required`</code
+	> property.</Text
+>
 <Spacer h={10} />
 <Playground
-	code={`<div>
-    <Label>
-        Options
-    </Label>
-    <Select>
-        <Option value={1}>Option 1</Option>
-        <Option value={2}>Option 2</Option>
-    </Select>
-</div>`}
+	code={`<Label required>Options</Label>
+<Select>
+	<Option value={1}>Option 1</Option>
+	<Option value={2}>Option 2</Option>
+</Select>
+<!-- You can change the required marker by setting \`requiredSymbol\` -->
+<Label required requiredSymbol="(Required)">Options</Label>
+<Select>
+	<Option value={1}>Option 1</Option>
+	<Option value={2}>Option 2</Option>
+</Select>`}
 >
 	<div>
-		<Label>Options</Label>
+		<Label required>Options</Label>
+		<Select>
+			<Option value={1}>Option 1</Option>
+			<Option value={2}>Option 2</Option>
+		</Select>
+		<!-- You can change the required marker by setting `requiredSymbol` -->
+		<Label required requiredSymbol="(Required)">Options</Label>
 		<Select>
 			<Option value={1}>Option 1</Option>
 			<Option value={2}>Option 2</Option>

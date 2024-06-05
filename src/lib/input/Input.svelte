@@ -23,6 +23,9 @@
 	export let size: "base" | "sm" | "lg" | "xl" = "base";
 	export let color: Color = "default";
 	export let noBorder = false;
+	export let required: boolean | undefined = undefined;
+	/** The symbol shown when the `required` prop is set to true @default "*" */
+	export let requiredSymbol = "*";
 
 	let inputRef: HTMLInputElement;
 
@@ -75,7 +78,7 @@
 </script>
 
 <div style="width: {width ? width : ''};">
-	<Label for={id}>
+	<Label for={id} {required} {requiredSymbol}>
 		<slot />
 	</Label>
 	<div
@@ -147,6 +150,7 @@
 				type={passwordShown ? "text" : type}
 				{placeholder}
 				{id}
+				{required}
 				{disabled}
 				{readonly}
 				class="bg-transparent order-3 min-w-0 text-gray-999 dark:text-gray-0
