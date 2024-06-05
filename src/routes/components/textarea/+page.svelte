@@ -41,9 +41,13 @@
 <Playground
 	code={`<TextArea width="100%" placeholder="Some input">
 	Some Text
+</TextArea>
+<TextArea width="100%" placeholder="Some input" required>
+	Some Text
 </TextArea>`}
 >
 	<TextArea width="100%" placeholder="Some input">Some Text</TextArea>
+	<TextArea width="100%" placeholder="Some input" required>Some Text</TextArea>
 </Playground>
 <Spacer h={30} />
 <Text type="h4">Sizes</Text>

@@ -6,6 +6,7 @@
 	import Note from "$lib/note/Note.svelte";
 	import SearchIcon from "$lib/icons/SearchIcon.svelte";
 	import Playground from "$lib/docs-components/playground/playground.svelte";
+	import Button from "$lib/button/Button.svelte";
 
 	let debounced = true;
 </script>
@@ -27,8 +28,7 @@
 <Playground
 	class="gap-2"
 	code={`<Input disabled placeholder="Some input"/>
-<Input readonly placeholder="Some input"/>`}
->
+<Input readonly placeholder="Some input"/>`}>
 	<Input disabled placeholder="Some input" />
 	<Input readonly value="Some input" />
 </Playground>
@@ -54,8 +54,7 @@
 	code={`<Input placeholder="Some input" size="sm"/>
 <Input placeholder="Some input" size="base"/>
 <Input placeholder="Some input" size="lg"/>
-<Input placeholder="Some input" size="xl"/>`}
->
+<Input placeholder="Some input" size="xl"/>`}>
 	<Input placeholder="sm" size="sm" />
 	<Input placeholder="base" size="base" />
 	<Input placeholder="lg" size="lg" />
@@ -69,8 +68,7 @@
 	code={`<Input label="username" placeholder="username"/>
 <Input label=".com" 
 	labelPlacement="end" 
-	placeholder="https://github"/>`}
->
+	placeholder="https://github"/>`}>
 	<Input label="username" placeholder="username" />
 	<Input label=".com" labelPlacement="end" placeholder="https://github" />
 </Playground>
@@ -103,8 +101,7 @@
 <Input 
 	placeholder="username" 
 	value="geist-ui-svelte" 
-	color="error" />`}
->
+	color="error" />`}>
 	<Input placeholder="username" value="geist-ui-svelte" />
 	<Input placeholder="username" value="geist-ui-svelte" color="secondary" />
 	<Input placeholder="username" value="geist-ui-svelte" color="success" />
@@ -125,8 +122,7 @@
 	placeholder="Your password" 
 	value="987654321" />
 <Input type="date" value="2024-12-25" />
-<Input type="number" value={10} />`}
->
+<Input type="number" value={10} />`}>
 	<Input type="password" placeholder="Your password" value="987654321" />
 	<Input type="date" value="2024-12-25" />
 	<Input type="number" value={10} />
@@ -137,16 +133,31 @@
 <Text>Add a label to the input using the <code>`{"<slot/>"}`</code></Text>
 <Spacer h={10} />
 <Playground
-	code={`<Input type="email" placeholder="Email" width="250px">
+	code={`<Input 
+	type="email" 
+	placeholder="Email" 
+	width="250px" 
+	required>
+	Username
+</Input>
+<Input 
+	type="email" 
+	placeholder="Email" 
+	width="250px" 
+	required>
 	Email
 </Input>
-<Input type="password" placeholder="Password" width="250px">
+<Input 
+	type="password" 
+	placeholder="Password" 
+	width="250px" 
+	required>
 	Password
 </Input>`}
-	class="gap-2"
->
-	<Input type="email" placeholder="Email" width="250px">Email</Input>
-	<Input type="password" placeholder="Password" width="250px">Password</Input>
+	class="gap-2">
+	<Input type="email" placeholder="Email" width="250px" required>Username</Input>
+	<Input type="email" placeholder="Email" width="250px" required>Email</Input>
+	<Input type="password" placeholder="Password" width="250px" required>Password</Input>
 </Playground>
 <Spacer h={30} />
 <Text type="h4">No Border</Text>
@@ -158,8 +169,7 @@ type="text"
 width="250px"
 placeholder="Type your stuff in here"
 noBorder
-/>`}
->
+/>`}>
 	<Input type="text" width="250px" placeholder="Type your stuff in here" noBorder />
 </Playground>
 <Spacer h={30} />
@@ -172,8 +182,7 @@ noBorder
 </Input>
 <Input type="text" placeholder="Search" width="250px">
 	<SearchIcon slot="iconEnd" size={16}/>
-</Input>`}
->
+</Input>`}>
 	<Input type="text" placeholder="Search" width="250px">
 		<SearchIcon slot="icon" size={16} />
 	</Input>
@@ -190,8 +199,7 @@ noBorder
 	code={`<Input type="text" 
 	clearable width="250px"
 	placeholder="geist-ui-svelte" 
-	value="Some value"/>`}
->
+	value="Some value"/>`}>
 	<Input type="text" clearable width="250px" placeholder="geist-ui-svelte" value="Some value" />
 </Playground>
 <Spacer h={30} />
@@ -211,14 +219,12 @@ noBorder
 	on:debounce={() => (debounced = true)} />
 {#if debounced}
 	Debounced
-{/if}`}
->
+{/if}`}>
 	<Input
 		placeholder="Some input"
 		on:input={() => (debounced = false)}
 		debounce={1000}
-		on:debounce={() => (debounced = true)}
-	/>
+		on:debounce={() => (debounced = true)} />
 	{#if debounced}
 		Debounced
 	{/if}
@@ -237,10 +243,46 @@ noBorder
 	clearable>
 	<SearchIcon slot="icon" size={16}/>
 	<SearchIcon slot="iconEnd" size={16}/>
-</Input>`}
->
+</Input>`}>
 	<Input label="everything" clearable placeholder="Everything">
 		<SearchIcon slot="icon" size={16} />
 		<SearchIcon slot="iconEnd" size={16} />
 	</Input>
+</Playground>
+<Spacer h={30} />
+<Text type="h4">Forms</Text>
+<Spacer h={5} />
+<Text>Inputs also play nice with forms.</Text>
+<Spacer h={10} />
+<Playground
+	code={`<form on:submit|preventDefault class="flex flex-col gap-2">
+	<Input label="@" width="250px" name="username" required placeholder="john.doe">
+		Username
+	</Input>
+	<Input type="email" width="250px" name="email" required placeholder="john.doe@example.com">
+		Email
+	</Input>
+	<Input type="tel" width="250px" name="phone-number" placeholder="+12104444444">
+		Phone Number
+	</Input>
+	<Input type="password" width="250px" name="password" placeholder="Your password" required>Password</Input>
+	<Button type="submit" color="secondary-light">
+		Submit
+	</Button>
+</form>`}>
+	<form on:submit|preventDefault class="flex flex-col gap-2">
+		<Input label="@" width="250px" name="username" required placeholder="john.doe">
+			Username
+		</Input>
+		<Input type="email" width="250px" name="email" required placeholder="john.doe@example.com">
+			Email
+		</Input>
+		<Input type="tel" width="250px" name="phone-number" placeholder="+12104444444">
+			Phone Number
+		</Input>
+		<Input type="password" width="250px" name="password" placeholder="Your password" required>Password</Input>
+		<Button type="submit" color="secondary-light">
+			Submit
+		</Button>
+	</form>
 </Playground>

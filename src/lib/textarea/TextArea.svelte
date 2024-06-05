@@ -10,6 +10,9 @@
 	export let id: string | undefined = undefined;
 	export let debounce: number = 0;
 	export let readonly: boolean = false;
+	export let required: boolean | undefined = undefined;
+	/** The symbol shown when the `required` prop is set to true @default "*" */
+	export let requiredSymbol = "*";
 
 	export let value: string = "";
 
@@ -36,7 +39,7 @@
 </script>
 
 <div>
-	<Label for={id}>
+	<Label for={id} {required} {requiredSymbol}>
 		<slot />
 	</Label>
 	<textarea
