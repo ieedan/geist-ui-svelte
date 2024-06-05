@@ -28,7 +28,8 @@
 <Playground
 	class="gap-2"
 	code={`<Input disabled placeholder="Some input"/>
-<Input readonly placeholder="Some input"/>`}>
+<Input readonly placeholder="Some input"/>`}
+>
 	<Input disabled placeholder="Some input" />
 	<Input readonly value="Some input" />
 </Playground>
@@ -54,7 +55,8 @@
 	code={`<Input placeholder="Some input" size="sm"/>
 <Input placeholder="Some input" size="base"/>
 <Input placeholder="Some input" size="lg"/>
-<Input placeholder="Some input" size="xl"/>`}>
+<Input placeholder="Some input" size="xl"/>`}
+>
 	<Input placeholder="sm" size="sm" />
 	<Input placeholder="base" size="base" />
 	<Input placeholder="lg" size="lg" />
@@ -68,7 +70,8 @@
 	code={`<Input label="username" placeholder="username"/>
 <Input label=".com" 
 	labelPlacement="end" 
-	placeholder="https://github"/>`}>
+	placeholder="https://github"/>`}
+>
 	<Input label="username" placeholder="username" />
 	<Input label=".com" labelPlacement="end" placeholder="https://github" />
 </Playground>
@@ -101,7 +104,8 @@
 <Input 
 	placeholder="username" 
 	value="geist-ui-svelte" 
-	color="error" />`}>
+	color="error" />`}
+>
 	<Input placeholder="username" value="geist-ui-svelte" />
 	<Input placeholder="username" value="geist-ui-svelte" color="secondary" />
 	<Input placeholder="username" value="geist-ui-svelte" color="success" />
@@ -122,7 +126,8 @@
 	placeholder="Your password" 
 	value="987654321" />
 <Input type="date" value="2024-12-25" />
-<Input type="number" value={10} />`}>
+<Input type="number" value={10} />`}
+>
 	<Input type="password" placeholder="Your password" value="987654321" />
 	<Input type="date" value="2024-12-25" />
 	<Input type="number" value={10} />
@@ -154,7 +159,8 @@
 	required>
 	Password
 </Input>`}
-	class="gap-2">
+	class="gap-2"
+>
 	<Input type="email" placeholder="Email" width="250px" required>Username</Input>
 	<Input type="email" placeholder="Email" width="250px" required>Email</Input>
 	<Input type="password" placeholder="Password" width="250px" required>Password</Input>
@@ -169,7 +175,8 @@ type="text"
 width="250px"
 placeholder="Type your stuff in here"
 noBorder
-/>`}>
+/>`}
+>
 	<Input type="text" width="250px" placeholder="Type your stuff in here" noBorder />
 </Playground>
 <Spacer h={30} />
@@ -182,7 +189,8 @@ noBorder
 </Input>
 <Input type="text" placeholder="Search" width="250px">
 	<SearchIcon slot="iconEnd" size={16}/>
-</Input>`}>
+</Input>`}
+>
 	<Input type="text" placeholder="Search" width="250px">
 		<SearchIcon slot="icon" size={16} />
 	</Input>
@@ -199,7 +207,8 @@ noBorder
 	code={`<Input type="text" 
 	clearable width="250px"
 	placeholder="geist-ui-svelte" 
-	value="Some value"/>`}>
+	value="Some value"/>`}
+>
 	<Input type="text" clearable width="250px" placeholder="geist-ui-svelte" value="Some value" />
 </Playground>
 <Spacer h={30} />
@@ -219,12 +228,14 @@ noBorder
 	on:debounce={() => (debounced = true)} />
 {#if debounced}
 	Debounced
-{/if}`}>
+{/if}`}
+>
 	<Input
 		placeholder="Some input"
 		on:input={() => (debounced = false)}
 		debounce={1000}
-		on:debounce={() => (debounced = true)} />
+		on:debounce={() => (debounced = true)}
+	/>
 	{#if debounced}
 		Debounced
 	{/if}
@@ -243,7 +254,8 @@ noBorder
 	clearable>
 	<SearchIcon slot="icon" size={16}/>
 	<SearchIcon slot="iconEnd" size={16}/>
-</Input>`}>
+</Input>`}
+>
 	<Input label="everything" clearable placeholder="Everything">
 		<SearchIcon slot="icon" size={16} />
 		<SearchIcon slot="iconEnd" size={16} />
@@ -269,7 +281,8 @@ noBorder
 	<Button type="submit" color="secondary-light">
 		Submit
 	</Button>
-</form>`}>
+</form>`}
+>
 	<form on:submit|preventDefault class="flex flex-col gap-2">
 		<Input label="@" width="250px" name="username" required placeholder="john.doe">
 			Username
@@ -280,9 +293,9 @@ noBorder
 		<Input type="tel" width="250px" name="phone-number" placeholder="+12104444444">
 			Phone Number
 		</Input>
-		<Input type="password" width="250px" name="password" placeholder="Your password" required>Password</Input>
-		<Button type="submit" color="secondary-light">
-			Submit
-		</Button>
+		<Input type="password" width="250px" name="password" placeholder="Your password" required
+			>Password</Input
+		>
+		<Button type="submit" color="secondary-light">Submit</Button>
 	</form>
 </Playground>

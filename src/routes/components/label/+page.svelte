@@ -23,7 +23,8 @@
 <Select>
     <Option value={1}>Option 1</Option>
     <Option value={2}>Option 2</Option>
-</Select>`}>
+</Select>`}
+>
 	<div>
 		<Label>Options</Label>
 		<Select>
@@ -37,7 +38,9 @@
 <Spacer h={5} />
 <Text
 	>Sometimes you want to indicate to your users that a field is required you can do this with the <code
-		>`required`</code> property.</Text>
+		>`required`</code
+	> property.</Text
+>
 <Spacer h={10} />
 <Playground
 	code={`<Label required>Options</Label>
@@ -50,7 +53,8 @@
 <Select>
 	<Option value={1}>Option 1</Option>
 	<Option value={2}>Option 2</Option>
-</Select>`}>
+</Select>`}
+>
 	<div>
 		<Label required>Options</Label>
 		<Select>

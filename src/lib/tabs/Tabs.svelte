@@ -91,7 +91,10 @@
 		const viewBottom = elementRef.scrollLeft;
 
 		// if not fully in view scroll into view
-		if (!fromPage && (viewBottom > node.offsetLeft || viewTop < node.offsetLeft + node.offsetWidth)) {
+		if (
+			!fromPage &&
+			(viewBottom > node.offsetLeft || viewTop < node.offsetLeft + node.offsetWidth)
+		) {
 			elementRef.scrollTo({ left: node.offsetLeft });
 		}
 
@@ -120,7 +123,8 @@
 <div
 	data-border={border}
 	class="flex place-items-center data-[border=true]:border-b border-gray-100 overflow-hidden
-dark:border-gray-900 relative group/tabs">
+dark:border-gray-900 relative group/tabs"
+>
 	<!-- svelte-ignore a11y-mouse-events-have-key-events -->
 	<!-- svelte-ignore a11y-click-events-have-key-events -->
 	<!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
@@ -132,18 +136,21 @@ dark:border-gray-900 relative group/tabs">
 		on:mouseleave={() => (showHoverBackground = false)}
 		on:focusin={hover}
 		on:focusout={() => (showHoverBackground = false)}
-		on:click={click}>
+		on:click={click}
+	>
 		<slot />
 	</nav>
 	<div
 		bind:this={selectedBorder}
 		data-show={border}
-		class="h-[2px] bg-gray-999 dark:bg-gray-0 transition-all absolute z-[0] hidden data-[show=true]:block">
+		class="h-[2px] bg-gray-999 dark:bg-gray-0 transition-all absolute z-[0] hidden data-[show=true]:block"
+	>
 	</div>
 	<div
 		bind:this={hoverBackgroundRef}
 		class="absolute z-[0] rounded-md bg-gray-100 transition-all data-[show=false]:opacity-0 dark:bg-gray-900"
-		data-show={showHoverBackground}></div>
+		data-show={showHoverBackground}
+	></div>
 </div>
 
 <!--

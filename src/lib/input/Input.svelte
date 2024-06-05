@@ -102,7 +102,8 @@
 		data-[color='warning']:border-orange-300 data-[color='warning']:focus-within:border-orange-500
 		data-[color='warning']:dark:border-orange-400 data-[color='warning']:focus-within:dark:border-orange-600
 		data-[color='error']:border-red-500 data-[color='error']:focus-within:border-red-700
-		data-[color='error']:dark:border-red-600 data-[color='error']:focus-within:dark:border-red-800">
+		data-[color='error']:dark:border-red-600 data-[color='error']:focus-within:dark:border-red-800"
+	>
 		{#if label}
 			<span
 				class="order-1 group-data-[placement='end']/geist-input:order-7
@@ -111,7 +112,8 @@
 			  bg-gray-50 dark:bg-gray-950 border-gray-100 border-y dark:border-gray-900 py-1 px-2
 			    flex place-items-center justify-center text-gray-300 dark:text-gray-700 text-sm h-full
 				group-data-[size='sm']/geist-input:text-xs group-data-[size='lg']/geist-input:text-base
-				group-data-[size='xl']/geist-input:text-lg">
+				group-data-[size='xl']/geist-input:text-lg"
+			>
 				{label}
 			</span>
 		{/if}
@@ -128,14 +130,16 @@
 			group-data-[color='warning']/geist-input:border-orange-300 group-data-[color='warning']/geist-input:focus-within:border-orange-500
 			group-data-[color='warning']/geist-input:dark:border-orange-400 group-data-[color='warning']/geist-input:focus-within:dark:border-orange-600
 			group-data-[color='error']/geist-input:border-red-500 group-data-[color='error']/geist-input:focus-within:border-red-700
-			group-data-[color='error']/geist-input:dark:border-red-600 group-data-[color='error']/geist-input:focus-within:dark:border-red-800">
+			group-data-[color='error']/geist-input:dark:border-red-600 group-data-[color='error']/geist-input:focus-within:dark:border-red-800"
+		>
 			<div
 				class="flex place-items-center justify-center pl-2 empty:hidden
 				order-2 text-gray-300 dark:text-gray-700
 				
 				group-data-[color='success']/geist-input:text-blue-600 group-data-[color='success']/geist-input:dark:text-blue-600
 				group-data-[color='warning']/geist-input:text-orange-300 group-data-[color='warning']/geist-input:dark:text-orange-400
-				group-data-[color='error']/geist-input:text-red-500 group-data-[color='error']/geist-input:dark:text-red-600">
+				group-data-[color='error']/geist-input:text-red-500 group-data-[color='error']/geist-input:dark:text-red-600"
+			>
 				<slot name="icon" />
 			</div>
 			<input
@@ -159,14 +163,16 @@
 				placeholder:text-gray-200 dark:placeholder:text-gray-600
 				group-data-[color='success']/geist-input:text-blue-600 group-data-[color='success']/geist-input:dark:text-blue-600
 				group-data-[color='warning']/geist-input:text-orange-300 group-data-[color='warning']/geist-input:dark:text-orange-400
-				group-data-[color='error']/geist-input:text-red-500 group-data-[color='error']/geist-input:dark:text-red-600" />
+				group-data-[color='error']/geist-input:text-red-500 group-data-[color='error']/geist-input:dark:text-red-600"
+			/>
 			<div
 				class="flex place-items-center justify-center pr-2 empty:hidden
 				order-4 text-gray-300 dark:text-gray-700
 				
 				group-data-[color='success']/geist-input:text-blue-600 group-data-[color='success']/geist-input:dark:text-blue-600
 				group-data-[color='warning']/geist-input:text-orange-300 group-data-[color='warning']/geist-input:dark:text-orange-400
-				group-data-[color='error']/geist-input:text-red-500 group-data-[color='error']/geist-input:dark:text-red-600">
+				group-data-[color='error']/geist-input:text-red-500 group-data-[color='error']/geist-input:dark:text-red-600"
+			>
 				<slot name="iconEnd" />
 			</div>
 			{#if clearable}
@@ -180,7 +186,8 @@
 						inputRef.value = "";
 						value = "";
 						change();
-					}}>
+					}}
+				>
 					<XIcon size={14} />
 				</button>
 			{/if}
@@ -191,7 +198,8 @@
 					class="order-6 absolute px-2 right-0 flex h-full place-items-center
 					justify-center group-aria-disabled/geist-input:opacity-0
 					group-data-[has-value=false]/geist-input:opacity-0 transition-all"
-					on:click={() => (passwordShown = !passwordShown)}>
+					on:click={() => (passwordShown = !passwordShown)}
+				>
 					{#if passwordShown}
 						<EyeSlashIcon size={21} />
 					{:else}
