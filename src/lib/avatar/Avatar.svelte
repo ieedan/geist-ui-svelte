@@ -28,22 +28,25 @@
 </script>
 
 {#if href != undefined}
-	<a {href} {...$$restProps} class="inline-flex place-items-center gap-2">
-		{#if img != undefined}
-			<img
-				class="rounded-full"
-				width="{size}px"
-				height="{size}px"
-				src={img}
-				alt="{name}'s avatar"
-			/>
-		{:else}
-			<div
-				style="width: {size}px; height: {size}px;"
-				class="rounded-full text-xs flex place-items-center justify-center border size-7 border-gray-100 dark:border-gray-900"
-				><span>{shortName}</span></div
-			>
-		{/if}
+	<div class="inline-flex place-items-center gap-2">
+		<a
+			{href}
+			{...$$restProps}
+			class="inline-flex place-items-center gap-2 rounded-full overflow-hidden
+			data-[border=true]:border border-gray-100 dark:border-gray-900"
+			style="width: {size}px; height: {size}px;"
+			data-border={img == undefined}
+		>
+			{#if img != undefined}
+				<img class="h-full object-cover" src={img} alt="{name}'s avatar" />
+			{:else}
+				<div class="text-xs flex place-items-center justify-center w-full h-full">
+					<span>
+						{shortName}
+					</span>
+				</div>
+			{/if}
+		</a>
 		{#if detail}
 			<div class="flex flex-col">
 				<span class="text-sm font-medium">{name}</span>
@@ -52,24 +55,26 @@
 				{/if}
 			</div>
 		{/if}
-	</a>
+	</div>
 {:else}
 	<div class="inline-flex place-items-center gap-2">
-		{#if img != undefined}
-			<img
-				class="rounded-full"
-				width="{size}px"
-				height="{size}px"
-				src={img}
-				alt="{name}'s avatar"
-			/>
-		{:else}
-			<div
-				style="width: {size}px; height: {size}px;"
-				class="rounded-full text-xs flex place-items-center justify-center border size-7 border-gray-100 dark:border-gray-900"
-				><span>{shortName}</span></div
-			>
-		{/if}
+		<div
+			class="inline-flex place-items-center gap-2 rounded-full overflow-hidden
+			data-[border=true]:border border-gray-100 dark:border-gray-900"
+			style="width: {size}px; height: {size}px;"
+			data-border={img == undefined}
+			{...$$restProps}
+		>
+			{#if img != undefined}
+				<img class="h-full object-cover" src={img} alt="{name}'s avatar" />
+			{:else}
+				<div class="text-xs flex place-items-center justify-center w-full h-full">
+					<span>
+						{shortName}
+					</span>
+				</div>
+			{/if}
+		</div>
 		{#if detail}
 			<div class="flex flex-col">
 				<span class="text-sm font-medium">{name}</span>
