@@ -132,7 +132,7 @@
 		},
 	});
 
-	interface Props extends VariantProps<typeof style> {}
+	type Props = VariantProps<typeof style>;
 
 	export let type: "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "p" | "small" | "span" = "p";
 

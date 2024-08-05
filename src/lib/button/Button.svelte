@@ -186,7 +186,7 @@
 		},
 	);
 
-	interface Props extends VariantProps<typeof style> {}
+	type Props = VariantProps<typeof style>;
 
 	export let disabled = false;
 	export let color: Props["color"] = "default";

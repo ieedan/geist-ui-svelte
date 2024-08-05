@@ -50,7 +50,7 @@
 		],
 	});
 
-	interface Props extends VariantProps<typeof style> {}
+	type Props = VariantProps<typeof style>;
 
 	export let color: Props["color"] = "default";
 	export let label: boolean = true;

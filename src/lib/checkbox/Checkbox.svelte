@@ -47,7 +47,7 @@
 		},
 	);
 
-	interface Props extends VariantProps<typeof style> {}
+	type Props = VariantProps<typeof style>;
 
 	const dispatch = createEventDispatcher();
 
