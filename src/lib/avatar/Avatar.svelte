@@ -66,7 +66,7 @@
 			{...$$restProps}
 		>
 			{#if img != undefined}
-				<img class="h-full object-cover" src={img} alt="{name}'s avatar" />
+				<img class="h-full object-cover w-full" src={img} alt="{name}'s avatar" />
 			{:else}
 				<div class="text-xs flex place-items-center justify-center w-full h-full">
 					<span>

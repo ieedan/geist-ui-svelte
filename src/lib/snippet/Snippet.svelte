@@ -51,7 +51,7 @@
 		},
 	});
 
-	interface Props extends VariantProps<typeof background> {}
+	type Props = VariantProps<typeof background>;
 
 	export let text: string | string[];
 	export let width: string = "300px";
