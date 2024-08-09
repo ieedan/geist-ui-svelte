@@ -1,5 +1,6 @@
 <script lang="ts">
 	import Playground from "$lib/docs-components/playground/playground.svelte";
+	import Note from "$lib/note/Note.svelte";
 	import Snippet from "$lib/snippet/Snippet.svelte";
 	import Spacer from "$lib/spacer/Spacer.svelte";
 	import Text from "$lib/text/Text.svelte";
@@ -63,6 +64,38 @@
 	<TextArea placeholder="Some input" size="lg" />
 	<TextArea placeholder="Some input" size="xl" />
 </Playground>
+<Spacer h={30} />
+<Text type="h4">Resizing</Text>
+<Spacer h={5} />
+<Text>
+	While we are still talking about size. How about we talk about resizing. This will be important
+	when your users ruin your beautiful website by adding content to it.
+</Text>
+<Spacer h={10} />
+<Playground
+	edits={[
+		{ type: "add", number: 3 },
+		{ type: "add", number: 7 },
+	]}
+	code={`<TextArea 
+	placeholder="Some input" 
+	resize 
+/>
+<TextArea 
+	placeholder="Some input" 
+	autoResize 
+	width="195px" 
+	className="min-h-[58px]" 
+/>`}
+>
+	<TextArea placeholder="Some input" resize />
+	<TextArea placeholder="Some input" autoResize width="195px" className="min-h-[58px]" />
+</Playground>
+<Spacer h={30} />
+<Note color="success">
+	When using the <code>`autoResize`</code> property you will want to specify a min-height and width
+	since by default they will fit the content of the TextArea.
+</Note>
 <Spacer h={30} />
 <Text type="h4">Debounce</Text>
 <Spacer h={5} />
