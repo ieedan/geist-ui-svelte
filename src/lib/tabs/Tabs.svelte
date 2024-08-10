@@ -4,7 +4,8 @@
 	import {cn} from "$lib/util/utils.js";
 
 	export let border: boolean = true;
-	export let className: string = "";
+	let className: string | undefined | null = undefined;
+	export { className as class}
 	let showHoverBackground = false;
 	let hoverBackgroundRef: HTMLDivElement;
 	let selectedBorder: HTMLDivElement;
