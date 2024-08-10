@@ -125,8 +125,7 @@
 
 
 <div data-border={border}
-	 class={cn('flex place-items-center overflow-hidden data-[border=true]:border-b border-gray-100 relative group/tabs ', className)}>
-
+	 class={cn('flex place-items-center data-[border=true]:border-b border-gray-100 overflow-hidden dark:border-gray-900 relative group/tabs', className)}>
 	<!-- svelte-ignore a11y-mouse-events-have-key-events -->
 	<!-- svelte-ignore a11y-click-events-have-key-events -->
 	<!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
