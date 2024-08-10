@@ -1,8 +1,11 @@
 <script lang="ts">
 	import { onMount } from "svelte";
 	import { page } from "$app/stores";
+	import {cn} from "$lib/util/utils.js";
 
 	export let border: boolean = true;
+	let className: string | undefined | null = undefined;
+	export { className as class}
 	let showHoverBackground = false;
 	let hoverBackgroundRef: HTMLDivElement;
 	let selectedBorder: HTMLDivElement;
@@ -47,8 +50,8 @@
 		for (let i = 0; i < children.length; i++) {
 			const child = children[i] as HTMLElement;
 			if (
-				child.getAttribute("aria-selected") == "true" ||
-				child.getAttribute("data-active") == "true"
+					child.getAttribute("aria-selected") == "true" ||
+					child.getAttribute("data-active") == "true"
 			) {
 				selectTab(child, true);
 				break;
@@ -70,8 +73,8 @@
 			for (let i = 0; i < children.length; i++) {
 				const child = children[i] as HTMLElement;
 				if (
-					child.getAttribute("aria-selected") == "true" ||
-					child.getAttribute("data-active") == "true"
+						child.getAttribute("aria-selected") == "true" ||
+						child.getAttribute("data-active") == "true"
 				) {
 					selectTab(child, true);
 					break;
@@ -92,8 +95,8 @@
 
 		// if not fully in view scroll into view
 		if (
-			!fromPage &&
-			(viewBottom > node.offsetLeft || viewTop < node.offsetLeft + node.offsetWidth)
+				!fromPage &&
+				(viewBottom > node.offsetLeft || viewTop < node.offsetLeft + node.offsetWidth)
 		) {
 			elementRef.scrollTo({ left: node.offsetLeft });
 		}
@@ -110,8 +113,8 @@
 		for (let i = 0; i < children.length; i++) {
 			const child = children[i] as HTMLElement;
 			if (
-				child.getAttribute("aria-selected") == "true" ||
-				child.getAttribute("data-active") == "true"
+					child.getAttribute("aria-selected") == "true" ||
+					child.getAttribute("data-active") == "true"
 			) {
 				selectTab(child);
 				return;
@@ -120,36 +123,34 @@
 	});
 </script>
 
-<div
-	data-border={border}
-	class="flex place-items-center data-[border=true]:border-b border-gray-100 overflow-hidden
-dark:border-gray-900 relative group/tabs"
->
+
+<div data-border={border}
+	 class={cn('flex place-items-center data-[border=true]:border-b border-gray-100 overflow-hidden dark:border-gray-900 relative group/tabs', className)}>
 	<!-- svelte-ignore a11y-mouse-events-have-key-events -->
 	<!-- svelte-ignore a11y-click-events-have-key-events -->
 	<!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
 	<nav
-		bind:this={elementRef}
-		class="flex place-items-center transition-all overflow-x-auto scrollbar-hide"
-		on:mouseover={hover}
-		on:scroll={scroll}
-		on:mouseleave={() => (showHoverBackground = false)}
-		on:focusin={hover}
-		on:focusout={() => (showHoverBackground = false)}
-		on:click={click}
+			bind:this={elementRef}
+			class="flex place-items-center transition-all overflow-x-auto scrollbar-hide"
+			on:mouseover={hover}
+			on:scroll={scroll}
+			on:mouseleave={() => (showHoverBackground = false)}
+			on:focusin={hover}
+			on:focusout={() => (showHoverBackground = false)}
+			on:click={click}
 	>
 		<slot />
 	</nav>
 	<div
-		bind:this={selectedBorder}
-		data-show={border}
-		class="h-[2px] bg-gray-999 dark:bg-gray-0 transition-all absolute z-[0] hidden data-[show=true]:block"
+			bind:this={selectedBorder}
+			data-show={border}
+			class="h-[2px] bg-gray-999 dark:bg-gray-0 transition-all absolute z-[0] hidden data-[show=true]:block"
 	>
 	</div>
 	<div
-		bind:this={hoverBackgroundRef}
-		class="absolute z-[0] rounded-md bg-gray-100 transition-all data-[show=false]:opacity-0 dark:bg-gray-900"
-		data-show={showHoverBackground}
+			bind:this={hoverBackgroundRef}
+			class="absolute z-[0] rounded-md bg-gray-100 transition-all data-[show=false]:opacity-0 dark:bg-gray-900"
+			data-show={showHoverBackground}
 	></div>
 </div>
 
