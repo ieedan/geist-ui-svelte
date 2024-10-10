@@ -4,6 +4,9 @@
 
 geist-ui-svelte is UI Library for Svelte built to match Vercel's design inspired by other libraries such as geist-ui.
 
+> [!WARNING]
+> This is not longer maintained see [#272](https://github.com/ieedan/geist-ui-svelte/issues/272)
+
 I started this project on 1/2/2024 in hopes of making it easy to build interactive apps that look good.
 
 ### Get started with geist-ui-svelte
